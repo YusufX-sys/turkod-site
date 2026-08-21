@@ -3,17 +3,20 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   base: '/turkod-site/',
+  site: 'https://yusufx-sys.github.io',
   integrations: [
     starlight({
       title: 'TürKod',
       customCss: ['./src/styles/custom.css'],
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
+        ThemeSelect: './src/components/EmptyTheme.astro',
       },
       head: [
         {
           tag: 'script',
           content: `
+            document.documentElement.setAttribute('data-theme', 'dark');
             document.addEventListener('DOMContentLoaded', tkInit);
             document.addEventListener('astro:page-load', tkInit);
             function tkInit(){
@@ -53,16 +56,16 @@ export default defineConfig({
         {
           label: 'Başlangıç',
           items: [
-            { label: 'Giriş', link: '/getting-started/' },
-            { label: 'Kurulum', link: '/install/' },
-            { label: 'Canlı Demo', link: '/demo/' },
+            { label: 'Giriş', link: '/turkod-site/getting-started/' },
+            { label: 'Kurulum', link: '/turkod-site/install/' },
+            { label: 'Canlı Demo', link: '/turkod-site/demo/' },
           ],
         },
         {
           label: 'Özellikler',
           items: [
-            { label: 'Arayüz', link: '/features/ui/' },
-            { label: 'Güvenlik', link: '/features/security/' },
+            { label: 'Arayüz', link: '/turkod-site/features/ui/' },
+            { label: 'Güvenlik', link: '/turkod-site/features/security/' },
           ],
         },
       ],

@@ -1,9 +1,12 @@
 ﻿:root {
+  color-scheme: dark;
   --sl-color-accent-low: #312e81;
   --sl-color-accent: #6366f1;
   --sl-color-accent-high: #c7d2fe;
   --tk-grad: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9, #22d3ee);
 }
+
+html { background: #070b16; }
 
 ::selection { background: #6366f1; color: #fff; }
 ::-webkit-scrollbar { width: 10px; }
@@ -34,7 +37,6 @@ body::after {
 
 header { backdrop-filter: blur(12px); background: rgba(7,11,22,.8) !important; border-bottom: 1px solid rgba(129,140,248,.2); }
 
-/* ===== Sidebar: neon aktif öğe + kayan glow ===== */
 .sidebar { position: relative; }
 .sidebar a { position: relative; z-index: 1; }
 .sidebar a[aria-current="page"] {
