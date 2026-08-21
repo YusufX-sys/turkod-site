@@ -77,11 +77,6 @@ export default defineConfig({
             { label: 'Hakkımda', link: '/about/' },
           ],
         },
-        {
-          label: 'Geliştirici',
-          items: [
-            { label: 'Hakkımda', link: '/about/' },
-          ],
         },
       ],
     }),
