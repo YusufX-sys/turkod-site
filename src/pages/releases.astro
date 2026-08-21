@@ -1,5 +1,5 @@
 ﻿---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases')
   .then(r => r.json())
@@ -7,8 +7,6 @@ const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide
 
 const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 ---
-
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 
 <StarlightPage
   frontmatter={{
