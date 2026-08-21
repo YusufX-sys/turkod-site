@@ -184,12 +184,13 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 .right-sidebar { width: 100%; }
 .right-sidebar starlight-toc a { font-size: .78rem; }
 
-:root { --sl-sidebar-width: 15rem; }
+:root { --sl-sidebar-width: 30rem; }
 .right-sidebar-container { width: var(--sl-sidebar-width) !important; max-width: var(--sl-sidebar-width) !important; flex: 0 0 var(--sl-sidebar-width) !important; }
 .right-sidebar { width: 100% !important; max-width: 100% !important; }
 .right-sidebar starlight-toc a, .right-sidebar nav a { font-size: .78rem; line-height: 1.4; padding-block: .25rem; }
 .right-sidebar a[aria-current="true"] { background: rgba(99,102,241,.18); border-radius: 6px; }
 
 
-.right-sidebar-container { width: 7rem !important; max-width: 7rem !important; flex: 0 0 7rem !important; }
+.right-sidebar-container { width: 3.5rem !important; max-width: 3.5rem !important; flex: 0 0 3.5rem !important; }
+
 
