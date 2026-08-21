@@ -247,3 +247,5 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 .hero { align-items: center; text-align: center; }
 .hero .copy { align-items: center; text-align: center; }
 .hero .actions { justify-content: center; }
+
+.hero { justify-content: flex-start; }
