@@ -180,17 +180,14 @@ main h2::after {
 
 pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,248,.2); }
 
-.right-sidebar-container { width: 11rem !important; max-width: 11rem; }
-.right-sidebar { width: 100%; }
 .right-sidebar starlight-toc a { font-size: .78rem; }
 
-:root { --sl-sidebar-width: 30rem; }
-.right-sidebar-container { width: var(--sl-sidebar-width) !important; max-width: var(--sl-sidebar-width) !important; flex: 0 0 var(--sl-sidebar-width) !important; }
-.right-sidebar { width: 100% !important; max-width: 100% !important; }
+:root { --sl-sidebar-width: 15rem; }
 .right-sidebar starlight-toc a, .right-sidebar nav a { font-size: .78rem; line-height: 1.4; padding-block: .25rem; }
 .right-sidebar a[aria-current="true"] { background: rgba(99,102,241,.18); border-radius: 6px; }
 
 
-.right-sidebar-container { width: 3.5rem !important; max-width: 3.5rem !important; flex: 0 0 3.5rem !important; }
 
+
+@media (min-width: 72rem) { .main-frame { grid-template-columns: var(--sl-nav-width) minmax(0, 1fr) 15rem !important; } }
 
