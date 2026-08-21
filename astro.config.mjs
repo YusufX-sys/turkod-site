@@ -60,6 +60,7 @@ export default defineConfig({
             { label: 'Giriş', link: '/getting-started/' },
             { label: 'Kurulum', link: '/install/' },
             { label: 'Canlı Demo', link: '/demo/' },
+            { label: 'Sürüm Geçmişi', link: '/releases/' },
           ],
         },
         {

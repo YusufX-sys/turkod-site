@@ -1,0 +1,79 @@
+﻿---
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases')
+  .then(r => r.json())
+  .catch(() => []);
+
+const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+---
+
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+<StarlightPage
+  frontmatter={{
+    title: 'Sürüm Geçmişi',
+    description: 'TürKod sürümleri ve yenilikler.',
+  }}
+>
+  <div class="sl-markdown-content">
+    <p>Tüm TürKod sürümleri, en yeniden en eskiye.</p>
+
+    <div class="tk-releases">
+      {sorted.map((release) => {
+        const zipAsset = release.assets.find(a => a.name.endsWith('.zip'));
+        const downloadUrl = zipAsset ? zipAsset.browser_download_url : release.zipball_url;
+        const releaseUrl = release.html_url;
+        const body = (release.body || '').split('\n').slice(0, 5).join('\n');
+        
+        return (
+          <div class="tk-release">
+            <div class="tk-release-header">
+              <h3>{release.tag_name}</h3>
+              <span class="tk-release-date">
+                {new Date(release.published_at).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+            </div>
+            <p class="tk-release-body">{body || 'Açıklama yok.'}</p>
+            <div class="tk-release-actions">
+              <a href={downloadUrl} class="tk-release-btn tk-release-btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                İndir
+              </a>
+              <a href={releaseUrl} class="tk-release-btn" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</StarlightPage>
+
+<style is:global>
+  .tk-releases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  .tk-release {
+    padding: 1.5rem; border-radius: 12px;
+    background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
+    backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+  }
+  .tk-release:hover { transform: translateY(-4px); border-color: rgba(34,211,238,.5); }
+  .tk-release-header { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; }
+  .tk-release-header h3 { margin: 0; color: #e6edf3; }
+  .tk-release-date { color: #8b949e; font-size: .875rem; }
+  .tk-release-body { color: #c9d1d9; font-size: .9rem; margin-bottom: 1rem; white-space: pre-line; }
+  .tk-release-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+  .tk-release-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: .5rem 1rem; border-radius: 8px; text-decoration: none; font-size: .875rem;
+    border: 1px solid rgba(129,140,248,.4); color: #e6edf3;
+    transition: all .3s ease;
+  }
+  .tk-release-btn-primary {
+    background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
+    border: none; color: #fff;
+  }
+  .tk-release-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(99,102,241,.5); }
+</style>
