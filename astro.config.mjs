@@ -2,6 +2,7 @@
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  base: '/turkod-site/',
   integrations: [
     starlight({
       title: 'TürKod',
