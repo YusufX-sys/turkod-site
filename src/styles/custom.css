@@ -189,5 +189,17 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 
 
 
-@media (min-width: 72rem) { .main-frame { grid-template-columns: var(--sl-nav-width) minmax(0, 1fr) 15rem !important; } }
+@media (min-width: 72rem) { .main-frame { grid-template-columns: var(--sl-nav-width) minmax(0, 1fr) 12rem !important; } }
 
+
+.tk-shot {
+  display: block; max-width: 100%; margin: 1.25rem 0;
+  border-radius: 12px; border: 1px solid rgba(129,140,248,.3);
+  box-shadow: 0 0 24px rgba(99,102,241,.25);
+}
+
+.main-pane { min-width: 0 !important; overflow-x: hidden; }
+.sl-container { max-width: 100%; overflow-x: hidden; }
+.sl-markdown-content { max-width: 100%; overflow-x: hidden; }
+.tk-releases { max-width: 100%; }
+.tk-release { box-sizing: border-box; max-width: 100%; }
