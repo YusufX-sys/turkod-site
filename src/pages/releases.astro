@@ -10,8 +10,10 @@ const sorted = Array.isArray(releases)
   ? releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
   : [];
 
-const descriptions = {
-  'v1.0.0': 'TürKod IDE programının ilk versiyonu.'
+const norm = (t) => (t || '').toLowerCase().replace(/^v/, '');
+
+const prefixes = {
+  '1.0.0': 'TürKod IDE programının ilk versiyonu.\n\n'
 };
 ---
 
@@ -30,7 +32,8 @@ const descriptions = {
         const downloadUrl = zipAsset ? zipAsset.browser_download_url : release.zipball_url;
         const releaseUrl = release.html_url;
         const key = norm(release.tag_name);
-        const rawBody = descriptions[key] || descriptions[release.tag_name] || release.body || 'Açıklama yok.';
+        const prefix = prefixes[key] || '';
+        const rawBody = prefix + (release.body || 'Açıklama yok.');
         const html = marked.parse(rawBody);
 
         return (
@@ -77,6 +80,7 @@ const descriptions = {
   .tk-release-body li { margin: .2rem 0; }
   .tk-release-body code { background: rgba(110,118,129,.25); padding: .1em .4em; border-radius: 4px; font-size: .85em; }
   .tk-release-body a { color: #22d3ee; }
+  .tk-release-body img { max-width: 100%; border-radius: 8px; margin: .5rem 0; }
   .tk-release-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
   .tk-release-btn {
     display: inline-flex; align-items: center; gap: 6px;
@@ -90,5 +94,3 @@ const descriptions = {
   }
   .tk-release-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(99,102,241,.5); }
 </style>
-
-
