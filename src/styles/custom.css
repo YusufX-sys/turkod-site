@@ -118,7 +118,7 @@ main h2::after {
 @keyframes tk-shine { to { background-position: 200% center; } }
 
 .tk-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 2rem 0; }
-@media (min-width: 800px) { .tk-stats { grid-template-columns: repeat(4,1fr); } }
+
 .tk-stat {
   text-align: center; padding: 18px 10px; border-radius: 14px;
   background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
@@ -242,3 +242,4 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
     grid-template-columns: var(--sl-nav-width) minmax(0, 1fr) 12rem !important;
   }
 }
+
