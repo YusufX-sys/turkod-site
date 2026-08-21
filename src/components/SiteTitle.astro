@@ -1,0 +1,23 @@
+﻿---
+import logo from '../assets/logo.png';
+---
+<a href="/" class="tk-brand">
+  <img src={logo.src} alt="" class="tk-logo" />
+  <span class="tk-name">TürKod</span>
+</a>
+
+<style>
+  .tk-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .tk-logo {
+    width: 30px; height: 30px; border-radius: 8px; object-fit: cover;
+    box-shadow: 0 0 12px rgba(99,102,241,.6);
+  }
+  .tk-name {
+    font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em;
+    background: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9, #22d3ee);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: tk-shine 6s linear infinite;
+  }
+  @keyframes tk-shine { to { background-position: 200% center; } }
+</style>

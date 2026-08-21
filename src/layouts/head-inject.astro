@@ -1,0 +1,18 @@
+﻿---
+to: ../../../node_modules/@astrojs/starlight/__virtual__/starlight/__internal__/BaseHead.astro
+---
+<script is:inline>
+  // Grid ve noise arka plan katmanlarını body'ye ekle
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!document.querySelector('.tk-grid-bg')) {
+      const grid = document.createElement('div');
+      grid.className = 'tk-grid-bg';
+      document.body.appendChild(grid);
+    }
+    if (!document.querySelector('.tk-noise-bg')) {
+      const noise = document.createElement('div');
+      noise.className = 'tk-noise-bg';
+      document.body.appendChild(noise);
+    }
+  });
+</script>

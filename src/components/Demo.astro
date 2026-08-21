@@ -1,0 +1,121 @@
+﻿<div class="tk-demo">
+  <div class="tk-pane">
+    <div class="tk-bar"><span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span><span class="tk-t">kod-editörü</span></div>
+    <textarea id="tk-code" spellcheck="false">yazdır("Merhaba Dünya")</textarea>
+    <div class="tk-row">
+      <button id="tk-run">▶ Çalıştır</button>
+      <button id="tk-clear" class="tk-ghost">Temizle</button>
+    </div>
+  </div>
+  <div class="tk-pane">
+    <div class="tk-bar"><span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span><span class="tk-t">terminal</span></div>
+    <div id="tk-out"><div class="tk-line dim">TürKod Demo v1.0 — hazır.</div><div id="tk-cursor" class="tk-cursor"></div></div>
+  </div>
+</div>
+<p class="tk-note">
+  Demo yalnızca <code>yazdır()</code> komutunu çalıştırır.
+  Tüm özellikler için <a href="https://github.com/YusufX-sys/turkod-ide/releases" target="_blank" rel="noopener">tam sürümü indir</a>.
+</p>
+
+<style>
+  .tk-demo { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1rem 0; }
+  @media (min-width: 720px) { .tk-demo { grid-template-columns: 1fr 1fr; } }
+
+  .tk-pane {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#0d1117, #0d1117) padding-box,
+      linear-gradient(120deg, #22d3ee, #6366f1, #e879f9) border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px -12px rgba(99,102,241,.35);
+  }
+
+  .tk-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: rgba(22,27,34,.9); border-bottom: 1px solid rgba(129,140,248,.25); }
+  .tk-d { width: 10px; height: 10px; border-radius: 50%; animation: tk-pulse 2.4s infinite; }
+  .tk-d.y { animation-delay: .3s; } .tk-d.g { animation-delay: .6s; }
+  .r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
+  @keyframes tk-pulse { 50% { opacity: .5; } }
+  .tk-t { margin-left: 8px; font-size: 12px; color: #8b949e; font-family: var(--sl-font-mono); }
+
+  textarea {
+    width: 100%; min-height: 120px; resize: vertical; border: 0; outline: none;
+    background: transparent; color: #e6edf3; font-family: var(--sl-font-mono);
+    font-size: 14px; padding: 12px; box-sizing: border-box;
+  }
+  textarea:focus { background: rgba(99,102,241,.08); }
+
+  .tk-row { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid rgba(129,140,248,.25); }
+
+  #tk-run {
+    background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
+    background-size: 200% auto;
+    color: #fff; border: 0; border-radius: 8px; padding: 10px 18px;
+    font-weight: 700; cursor: pointer;
+    box-shadow: 0 0 16px rgba(99,102,241,.5);
+    transition: background-position .4s, transform .2s, box-shadow .2s;
+  }
+  #tk-run:hover { background-position: 200% center; transform: translateY(-2px); box-shadow: 0 0 26px rgba(217,70,239,.65); }
+  #tk-run:active { transform: scale(.97); }
+
+  .tk-ghost { background: transparent; color: #8b949e; border: 1px solid rgba(129,140,248,.3); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .tk-ghost:hover { color: #e6edf3; border-color: #22d3ee; }
+
+  #tk-out { min-height: 150px; padding: 12px; font-family: var(--sl-font-mono); font-size: 14px; color: #e6edf3; white-space: pre-wrap; }
+  .tk-line.cmd { color: #79c0ff; }
+  .tk-line.ok { color: #7ee787; text-shadow: 0 0 12px rgba(126,231,135,.5); }
+  .tk-line.warn { color: #ffa657; animation: tk-shake .3s; }
+  .tk-line.dim { color: #8b949e; }
+  @keyframes tk-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+
+  .tk-cursor { display: inline-block; width: 8px; height: 16px; background: #7ee787; animation: tk-blink 1s steps(1) infinite; }
+  @keyframes tk-blink { 50% { opacity: 0; } }
+
+  .tk-note { font-size: 14px; color: #8b949e; }
+  .tk-note a { color: #22d3ee; }
+</style>
+
+<script>
+  const code = document.getElementById('tk-code');
+  const out = document.getElementById('tk-out');
+  const cursor = document.getElementById('tk-cursor');
+
+  const line = (text, cls, typed) => {
+    const div = document.createElement('div');
+    div.className = 'tk-line ' + (cls || '');
+    out.insertBefore(div, cursor);
+    if (!typed) { div.textContent = text; return; }
+    let i = 0;
+    const iv = setInterval(() => {
+      i++;
+      div.textContent = text.slice(0, i);
+      if (i >= text.length) clearInterval(iv);
+    }, 16);
+  };
+
+  document.getElementById('tk-run').addEventListener('click', () => {
+    const src = code.value.trim();
+    out.innerHTML = '';
+    out.appendChild(cursor);
+    line('turkod> ' + src, 'cmd');
+    setTimeout(() => {
+      if (!src) { line('Hata: Çalıştırılacak kod yok.', 'warn'); return; }
+      const m = src.match(/^yazdır\(\s*(?:"([^"]*)"|'([^']*)')\s*\)$/);
+      if (m) {
+        line(m[1] !== undefined ? m[1] : m[2], 'ok', true);
+      } else {
+        line('⚠ Bu komut demo ortamında desteklenmiyor.', 'warn');
+        line('Demo yalnızca yazdır() fonksiyonunu çalıştırır.', 'warn');
+        line('Tüm özelliklere erişmek için tam sürümü indirin:', 'dim');
+        line('https://github.com/YusufX-sys/turkod-ide/releases', 'cmd');
+      }
+    }, 350);
+  });
+
+  document.getElementById('tk-clear').addEventListener('click', () => {
+    code.value = '';
+    out.innerHTML = '';
+    out.appendChild(cursor);
+    code.focus();
+  });
+</script>
