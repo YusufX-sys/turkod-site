@@ -12,6 +12,7 @@ export default defineConfig({
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
         ThemeSelect: './src/components/EmptyTheme.astro',
+        Footer: './src/components/Footer.astro',
       },
       head: [
         {
@@ -70,7 +71,20 @@ export default defineConfig({
             { label: 'Güvenlik', link: '/features/security/' },
           ],
         },
+	{
+          label: 'Geliştirici',
+          items: [
+            { label: 'Hakkımda', link: '/about/' },
+          ],
+        },
+        {
+          label: 'Geliştirici',
+          items: [
+            { label: 'Hakkımda', link: '/about/' },
+          ],
+        },
       ],
     }),
   ],
 });
+

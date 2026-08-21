@@ -203,3 +203,34 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 .sl-markdown-content { max-width: 100%; overflow-x: hidden; }
 .tk-releases { max-width: 100%; }
 .tk-release { box-sizing: border-box; max-width: 100%; }
+
+.tk-about { display: grid; gap: 1.5rem; }
+.tk-about-card {
+  text-align: center; padding: 2.5rem 1.5rem; border-radius: 16px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgba(13,17,23,.85), rgba(13,17,23,.85)) padding-box,
+    linear-gradient(140deg, rgba(34,211,238,.45), rgba(99,102,241,.3), rgba(232,121,249,.45)) border-box;
+}
+.tk-about-avatar {
+  width: 84px; height: 84px; margin: 0 auto 1rem; border-radius: 50%;
+  display: grid; place-items: center; font-size: 2rem; font-weight: 800; color: #fff;
+  background: linear-gradient(135deg, #06b6d4, #6366f1, #d946ef);
+  box-shadow: 0 0 28px rgba(99,102,241,.6);
+}
+.tk-about-name {
+  margin: 0; font-size: 1.6rem;
+  background: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tk-about-role { color: #8b949e; margin: .25rem 0 0; }
+.tk-about-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 600px) { .tk-about-grid { grid-template-columns: 1fr 1fr; } }
+.tk-about-item {
+  display: block; padding: 1.25rem; border-radius: 14px; text-decoration: none !important;
+  background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+}
+.tk-about-item:hover { transform: translateY(-4px); border-color: rgba(34,211,238,.5); box-shadow: 0 14px 40px -16px rgba(99,102,241,.5); }
+.tk-about-item strong { display: block; color: #e6edf3; font-size: 1rem; margin-bottom: .25rem; }
+.tk-about-item small { color: #22d3ee; word-break: break-all; }
