@@ -1,11 +1,18 @@
 ﻿---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { marked } from 'marked';
 
 const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases')
   .then(r => r.json())
   .catch(() => []);
 
-const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+const sorted = Array.isArray(releases)
+  ? releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+  : [];
+
+const descriptions = {
+  'v1.0.0': 'TürKod IDE programının ilk versiyonu.'
+};
 ---
 
 <StarlightPage
@@ -19,11 +26,11 @@ const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.pub
 
     <div class="tk-releases">
       {sorted.map((release) => {
-        const zipAsset = release.assets.find(a => a.name.endsWith('.zip'));
+        const zipAsset = (release.assets || []).find(a => a.name.endsWith('.zip'));
         const downloadUrl = zipAsset ? zipAsset.browser_download_url : release.zipball_url;
-        const releaseUrl = release.html_url;
-        const body = (release.body || '').split('\n').slice(0, 5).join('\n');
-        
+        const rawBody = descriptions[release.tag_name] || release.body || 'Açıklama yok.';
+        const html = marked.parse(rawBody);
+
         return (
           <div class="tk-release">
             <div class="tk-release-header">
@@ -32,7 +39,7 @@ const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.pub
                 {new Date(release.published_at).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}
               </span>
             </div>
-            <p class="tk-release-body">{body || 'Açıklama yok.'}</p>
+            <div class="tk-release-body" set:html={html} />
             <div class="tk-release-actions">
               <a href={downloadUrl} class="tk-release-btn tk-release-btn-primary">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
@@ -61,7 +68,13 @@ const sorted = releases.sort((a, b) => new Date(b.published_at) - new Date(a.pub
   .tk-release-header { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; }
   .tk-release-header h3 { margin: 0; color: #e6edf3; }
   .tk-release-date { color: #8b949e; font-size: .875rem; }
-  .tk-release-body { color: #c9d1d9; font-size: .9rem; margin-bottom: 1rem; white-space: pre-line; }
+  .tk-release-body { color: #c9d1d9; font-size: .9rem; margin-bottom: 1rem; }
+  .tk-release-body h1, .tk-release-body h2, .tk-release-body h3 { color: #e6edf3; margin: .75rem 0 .4rem; font-size: 1rem; }
+  .tk-release-body p { margin: .4rem 0; }
+  .tk-release-body ul, .tk-release-body ol { margin: .4rem 0; padding-left: 1.2rem; }
+  .tk-release-body li { margin: .2rem 0; }
+  .tk-release-body code { background: rgba(110,118,129,.25); padding: .1em .4em; border-radius: 4px; font-size: .85em; }
+  .tk-release-body a { color: #22d3ee; }
   .tk-release-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
   .tk-release-btn {
     display: inline-flex; align-items: center; gap: 6px;
