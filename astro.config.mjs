@@ -71,15 +71,13 @@ export default defineConfig({
             { label: 'Güvenlik', link: '/features/security/' },
           ],
         },
-	{
+        {
           label: 'Geliştirici',
           items: [
             { label: 'Hakkımda', link: '/about/' },
           ],
         },
-        },
       ],
     }),
   ],
 });
-
