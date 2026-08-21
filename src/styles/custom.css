@@ -179,3 +179,7 @@ main h2::after {
 .tk-step:hover .tk-arrow { transform: translateX(5px); }
 
 pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,248,.2); }
+
+.right-sidebar-container { width: 11rem !important; max-width: 11rem; }
+.right-sidebar { width: 100%; }
+.right-sidebar starlight-toc a { font-size: .78rem; }
