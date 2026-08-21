@@ -29,7 +29,8 @@ const descriptions = {
         const zipAsset = (release.assets || []).find(a => a.name.endsWith('.zip'));
         const downloadUrl = zipAsset ? zipAsset.browser_download_url : release.zipball_url;
         const releaseUrl = release.html_url;
-        const rawBody = descriptions[release.tag_name] || release.body || 'Açıklama yok.';
+        const key = norm(release.tag_name);
+        const rawBody = descriptions[key] || descriptions[release.tag_name] || release.body || 'Açıklama yok.';
         const html = marked.parse(rawBody);
 
         return (
@@ -89,4 +90,5 @@ const descriptions = {
   }
   .tk-release-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(99,102,241,.5); }
 </style>
+
 
