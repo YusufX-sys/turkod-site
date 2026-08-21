@@ -249,3 +249,38 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 .hero .actions { justify-content: center; }
 
 .hero { justify-content: flex-start; }
+
+[data-has-hero] .sl-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+[data-has-hero] .hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+}
+[data-has-hero] .hero .stack {
+  align-items: center !important;
+  width: 100% !important;
+}
+[data-has-hero] .hero .copy {
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+[data-has-hero] .hero h1 {
+  text-align: center !important;
+  width: 100% !important;
+}
+[data-has-hero] .hero .tagline {
+  text-align: center !important;
+  width: 100% !important;
+}
+[data-has-hero] .hero .actions {
+  justify-content: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
