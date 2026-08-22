@@ -1,0 +1,69 @@
+﻿---
+title: Temel İfadeler
+description: TürKod dilinin temel yapı taşları.
+---
+
+Tüm örnekleri [Canlı Demo](https://yusufx-sys.github.io/turkod-site/demo/) sayfasında deneyebilirsin.
+
+## Ekrana Yazdırma ve Girdi
+
+```
+yazdır("Merhaba Dünya")
+isim = girdi_al("Adın ne? ")
+yazdır("Merhaba " + isim)
+```
+
+## Değişkenler ve Matematik
+
+```
+yas = 15
+sonuc = (10 + 5) * 2
+kalan = 7 % 3
+us = 2 ** 5
+```
+
+| İşleç | Anlamı |
+| ----- | ------ |
+| `+ - * /` | dört işlem |
+| `//` | tam sayılı bölme |
+| `%` | kalan |
+| `**` | üs |
+
+## Tür Dönüşümleri ve Yardımcılar
+
+```
+tamsayı("42")
+ondalıklı("3.14")
+metin(100)
+mantıksal(1)
+uzunluk("TürKod")
+aralık(5)
+mutlak(-7)
+yuvarla(3.7)
+```
+
+## Listeler
+
+```
+sayilar = [3, 1, 2]
+sayilar.sona_ekle(4)
+sayilar.sırala()
+sayilar.tersine_çevir()
+yazdır(sayilar)
+```
+
+## Döngüler
+
+```
+döngü i aralık(5):
+    yazdır(i)
+
+sayac = 0
+döngü sayac < 3:
+    yazdır(sayac)
+    sayac = sayac + 1
+```
+
+- `kır` → döngüyü durdur (break)
+- `devam_et` → o adımı atla (continue)
+- `geç` → hiçbir şey yapma (pass)

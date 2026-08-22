@@ -1,0 +1,59 @@
+﻿---
+title: Koşullar
+description: eğer / değilse_eğer / değilse ile karar verme.
+---
+
+## eğer / değilse_eğer / değilse
+
+```
+yas = 15
+eğer yas >= 18:
+    yazdır("Reşitsin")
+değilse:
+    yazdır("Reşit değilsin")
+```
+
+```
+not_ort = 76
+eğer not_ort >= 85:
+    yazdır("Pekiyi")
+değilse_eğer not_ort >= 70:
+    yazdır("İyi")
+değilse:
+    yazdır("Çalışmalısın")
+```
+
+## Karşılaştırma ve Mantık
+
+| TürKod | Python |
+| ------ | ------ |
+| `> < >= <= == !=` | aynı |
+| `ve` | and |
+| `veya` | or |
+| `değil` | not |
+| `içinde` | in |
+| `aynı_mı` | is |
+
+```
+hava = "güneşli"
+yağmur = Yanlış
+eğer hava == "güneşli" ve değil yağmur:
+    yazdır("Dışarı çık")
+```
+
+## Doğru / Yanlış / Hiçlik
+
+```
+aktif = Doğru
+puan = Hiçlik
+eğer aktif ve puan aynı_mı Hiçlik:
+    yazdır("Çalışıyor")
+```
+
+## içinde ile üyelik kontrolü
+
+```
+meyveler = ["elma", "armut"]
+eğer "elma" içinde meyveler:
+    yazdır("Var")
+```

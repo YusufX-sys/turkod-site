@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+﻿import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
@@ -30,6 +30,17 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Dili Öğrenin',
+          collapsed: false,
+          items: [
+            { label: 'Temel İfadeler', link: '/learn/basics/' },
+            { label: 'Koşullar', link: '/learn/conditions/' },
+            { label: 'Varsayılan Kütüphaneler', link: '/learn/stdlib/' },
+            { label: 'Diğer Kütüphaneler', link: '/learn/extra-libs/' },
+            { label: 'Kendini Test Et', link: '/learn/quiz/' },
+          ],
+        },
+        {
           label: 'Özellikler',
           items: [
             { label: 'Arayüz', link: '/features/ui/' },
@@ -47,3 +58,4 @@ export default defineConfig({
     }),
   ],
 });
+

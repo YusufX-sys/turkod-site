@@ -1,0 +1,70 @@
+﻿---
+title: Diğer Kütüphaneler
+description: TürKod kurulumuyla birlikte gelen ek kütüphaneler.
+---
+
+Bu kütüphaneler TürKod ile birlikte kurulu gelir; ek kurulum gerekmez.
+
+## py_oyun (pygame) — 2B oyunlar
+
+```
+içe_aktar py_oyun
+py_oyun.oyun_başlat()
+ekran = py_oyun.ekran_oluştur((400, 300))
+py_oyun.dikdörtgen_çiz(ekran, (0, 128, 255), (50, 50, 100, 60))
+py_oyun.ekran_güncelle()
+py_oyun.bekle_ms(2000)
+```
+
+## ursina — 3B oyun motoru
+
+```
+içe_aktar ursina_kütüphanesi
+kutu = ursina_kütüphanesi.varlık(model = küp, ursina_renk = kırmızı, ölçek = 2)
+ursina_kütüphanesi.çalıştır_oyun()
+```
+
+## Veri ve grafik (pandas, matplotlib)
+
+```
+içe_aktar pandas_veri_çerçevesi den pandas
+tablo = pandas_veri_çerçevesi({"ad": ["Ali", "Ayşe"], "puan": [80, 90]})
+yazdır(tablo.baş_satırlar())
+```
+
+```
+içe_aktar matplotlib.pyplot
+matplotlib.pyplot.grafik_çiz([1, 4, 9, 16])
+matplotlib.pyplot.grafik_göster()
+```
+
+## Desteklenen diğer kütüphaneler
+
+| Kütüphane | Türkçe giriş noktaları | Alan |
+| --------- | ---------------------- | ---- |
+| numpy | `sifirlar`, `birler`, `matris_çarpımı` | sayısal hesaplama |
+| django | `django_uygulaması`, `django_modeli` | web framework |
+| flask | `flask_uygulaması`, `flask_rota` | mikro web |
+| fastapi | `fastapi_uygulaması`, `temel_model` | API |
+| sympy | `sembolik_matematik`, `turev_al` | sembolik matematik |
+| scipy | `bilimsel_hesaplama` | bilimsel hesaplama |
+| redis | `redis_kütüphanesi`, `redis_ekle` | önbellek |
+| docker | `docker_kütüphanesi` | konteyner |
+| pytest | `pytest_kütüphanesi` | test |
+| coverage | `coverage_kütüphanesi` | kapsama analizi |
+| kivy | `kivy_uygulaması` | arayüz / mobil |
+| spacy | `spacy_yükle` | doğal dil işleme |
+| bs4 | `bs4_GuzelCorbalar` | HTML ayrıştırma |
+| openai | `openai_istemcisi` | yapay zeka |
+| polars | `polars_veri_cercesi` | hızlı veri |
+| streamlit | `streamlit_buton` | veri uygulamaları |
+| sqlalchemy | `veritabanı_motoru_oluştur` | ORM |
+| requests | `yanıt_durum_kodu` | HTTP istekleri |
+
+:::tip[İpucu]
+Sınıf adlarını doğrudan kullanmak için `den` kalıbını kullan: `içe_aktar flask_uygulaması den flask` satırı Python'da `from flask import Flask` olur.
+:::
+
+:::caution
+`tensorflow_kütüphanesi` ve `torch_kütüphanesi` sözlükte vardır ancak birlikte kurulu gelmez; kullanmak için ayrı kurman gerekir.
+:::
