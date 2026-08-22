@@ -69,6 +69,7 @@ export default defineConfig({
           items: [
             { label: 'Arayüz', link: '/features/ui/' },
             { label: 'Güvenlik', link: '/features/security/' },
+            { label: 'Gereksinimler', link: '/features/requirements/' },
           ],
         },
         {
