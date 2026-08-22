@@ -21,7 +21,7 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Başlangıç',
+          label: '🚀 Başlangıç',
           items: [
             { label: 'Giriş', link: '/getting-started/' },
             { label: 'Kurulum', link: '/install/' },
@@ -30,7 +30,7 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Dili Öğrenin',
+          label: '📚 Dili Öğrenin',
           collapsed: false,
           items: [
             { label: 'Temel İfadeler', link: '/learn/basics/' },
@@ -41,7 +41,7 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Özellikler',
+          label: '✨ Özellikler',
           items: [
             { label: 'Arayüz', link: '/features/ui/' },
             { label: 'Güvenlik', link: '/features/security/' },
@@ -49,7 +49,7 @@ export default defineConfig({
           ],
         },
         {
-          label: 'Geliştirici',
+          label: '🛠️ Geliştirici',
           items: [
             { label: 'Hakkımda', link: '/about/' },
           ],
@@ -58,4 +58,5 @@ export default defineConfig({
     }),
   ],
 });
+
 

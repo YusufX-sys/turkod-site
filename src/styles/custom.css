@@ -312,3 +312,48 @@ pre { background: rgba(13,17,23,.9) !important; border: 1px solid rgba(129,140,2
 }
 .tk-learn-intro p { margin: 0; color: #c9d1d9; }
 .tk-learn-intro strong { color: #22d3ee; }
+
+.tk-release-actions .tk-release-downloads {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34,211,238,.5);
+  background: linear-gradient(90deg, rgba(6,182,212,.15), rgba(99,102,241,.15));
+  color: #7dd3fc;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  box-shadow: 0 0 16px rgba(34,211,238,.25);
+}
+.tk-release-actions .tk-release-downloads svg { color: #22d3ee; }
+.tk-release-actions .tk-release-downloads .tk-release-count { color: #22d3ee; }
+
+/* === Sidebar tasarımı === */
+.sidebar summary {
+  position: relative;
+  padding-left: .75rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.sidebar summary::before {
+  content: "";
+  position: absolute; left: 0; top: 15%; bottom: 15%; width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #22d3ee, #d946ef);
+}
+.sidebar ul a {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all .25s ease;
+}
+.sidebar ul a:hover {
+  background: rgba(34,211,238,.08);
+  color: #22d3ee;
+  transform: translateX(3px);
+}
+.sidebar a[aria-current="page"] {
+  background: linear-gradient(90deg, rgba(6,182,212,.18), rgba(217,70,239,.18));
+  border-color: rgba(34,211,238,.35);
+  box-shadow: 0 0 12px rgba(34,211,238,.2);
+}
