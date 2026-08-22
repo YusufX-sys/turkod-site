@@ -3,7 +3,9 @@ title: Varsayılan Kütüphaneler
 description: Python standart kütüphanelerinin Türkçe karşılıkları.
 ---
 
-Standart kütüphaneler Türkçe adla içe aktarılır: `içe_aktar matematik`.
+<div class="tk-learn-intro">
+<p>TürKod, Python'un hazır kütüphanelerini <strong>Türkçe adlarla</strong> içe aktarır. Bu sayfada en çok kullanılanları öğrenirsin: matematik, rastgele, tarih, istatistik ve çizim.</p>
+</div>
 
 ## matematik
 
@@ -20,6 +22,10 @@ içe_aktar rastgele
 yazdır(rastgele.rastgele_tamsayı(1, 10))
 ```
 
+:::tip[Şimdi dene]
+Kodu birkaç kez çalıştır ve her seferinde sayının değiştiğini izle.
+:::
+
 ## tarih_saat
 
 ```
@@ -34,6 +40,20 @@ içe_aktar istatistik
 sayilar = [1, 2, 2, 3]
 yazdır(istatistik.ortalama(sayilar))
 ```
+
+## kaplumbaga — çizerek öğren
+
+```
+içe_aktar kaplumbaga
+kaplumbaga.ileri(100)
+kaplumbaga.sola_dön(90)
+kaplumbaga.ileri(100)
+kaplumbaga.çember(50)
+```
+
+:::caution[Not]
+Çizim örneği tam sürümde çalışır; Canlı Demo'da kütüphaneler yoktur.
+:::
 
 ## Diğer hazır kütüphaneler
 
@@ -50,7 +70,10 @@ yazdır(istatistik.ortalama(sayilar))
 | `iş_parçacığı` | threading | çoklu iş parçacığı |
 | `alt_süreç` | subprocess | dış program çalıştırma |
 | `veritabanı_sqlite` | sqlite3 | SQLite veritabanı |
-| `kaplumbaga` | turtle | çizimle öğrenme |
 | `tkinter_arayüz` | tkinter | pencere arayüzü |
 | `fonksiyon_araclari` | functools | fonksiyon araçları |
 | `kesirler` | fractions | kesirli sayılar |
+
+## Mini Görev
+
+`rastgele` kütüphanesiyle 1-100 arası bir sayı üret ve 50'den büyük olup olmadığını yazdır. İpucu: koşul için [Koşullar](https://yusufx-sys.github.io/turkod-site/learn/conditions/) sayfasına bak.

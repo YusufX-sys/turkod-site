@@ -3,7 +3,9 @@ title: Temel İfadeler
 description: TürKod dilinin temel yapı taşları.
 ---
 
-Yazdırma ve koşul örneklerini [Canlı Demo](https://yusufx-sys.github.io/turkod-site/demo/) sayfasında deneyebilirsin; döngü, liste ve kütüphane örnekleri tam sürümde çalışır.
+<div class="tk-learn-intro">
+<p><strong>TürKod</strong>'a hoş geldin! Bu sayfada dilin temel yapı taşlarını öğrenirsin: yazdırma, girdi, değişkenler, listeler ve döngüler. Yazdırma ve koşul örneklerini <a href="https://yusufx-sys.github.io/turkod-site/demo/">Canlı Demo</a> sayfasında deneyebilirsin; döngü, liste ve kütüphane örnekleri tam sürümde çalışır.</p>
+</div>
 
 ## Ekrana Yazdırma ve Girdi
 
@@ -12,6 +14,10 @@ yazdır("Merhaba Dünya")
 isim = girdi_al("Adın ne? ")
 yazdır("Merhaba " + isim)
 ```
+
+:::tip[Şimdi dene]
+`yazdır` içindeki metni kendi adınla değiştir ve çalıştır.
+:::
 
 ## Değişkenler ve Matematik
 
@@ -28,6 +34,10 @@ us = 2 ** 5
 | `//` | tam sayılı bölme |
 | `%` | kalan |
 | `**` | üs |
+
+:::caution[Dikkat]
+`toplam` kelimesi listenin toplamını alan bir komuttur (sum). Bu yüzden değişken adı olarak `toplam` kullanma; `toplam_deger` gibi bir ad seç.
+:::
 
 ## Tür Dönüşümleri ve Yardımcılar
 
@@ -68,3 +78,6 @@ döngü sayac < 3:
 - `devam_et` → o adımı atla (continue)
 - `geç` → hiçbir şey yapma (pass)
 
+## Mini Görev
+
+Kullanıcıdan yaşını alıp ekrana yazdıran bir kod yaz. Takılırsan cevaplar [Kendini Test Et](https://yusufx-sys.github.io/turkod-site/learn/quiz/) sayfasında.

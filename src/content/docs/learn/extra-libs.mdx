@@ -3,7 +3,9 @@ title: Diğer Kütüphaneler
 description: TürKod kurulumuyla birlikte gelen ek kütüphaneler.
 ---
 
-Bu kütüphaneler TürKod ile birlikte kurulu gelir; ek kurulum gerekmez.
+<div class="tk-learn-intro">
+<p>Bu kütüphaneler TürKod ile birlikte <strong>kurulu gelir</strong>; ek kurulum gerekmez. Türkçe sözdizimiyle oyun, veri ve web projeleri yapabilirsin.</p>
+</div>
 
 ## py_oyun (pygame) — 2B oyunlar
 
@@ -11,10 +13,19 @@ Bu kütüphaneler TürKod ile birlikte kurulu gelir; ek kurulum gerekmez.
 içe_aktar py_oyun
 py_oyun.oyun_başlat()
 ekran = py_oyun.ekran_oluştur((400, 300))
-py_oyun.dikdörtgen_çiz(ekran, (0, 128, 255), (50, 50, 100, 60))
-py_oyun.ekran_güncelle()
-py_oyun.bekle_ms(2000)
+py_oyun.pencere_başlığı("İlk Oyunum")
+döngü Doğru:
+    döngü olay içinde py_oyun.olayları_al():
+        eğer olay.tip == py_oyun.çıkış_olayı:
+            py_oyun.oyun_kapat()
+            kır
+    py_oyun.dikdörtgen_çiz(ekran, (0, 128, 255), (50, 50, 100, 60))
+    py_oyun.ekran_güncelle()
 ```
+
+:::tip[Şimdi dene]
+`dikdörtgen_çiz` yerine `çember_çiz` yazıp bir daire çizmeyi dene.
+:::
 
 ## ursina — 3B oyun motoru
 
@@ -68,3 +79,7 @@ Sınıf adlarını doğrudan kullanmak için `den` kalıbını kullan: `içe_akt
 :::caution
 `tensorflow_kütüphanesi` ve `torch_kütüphanesi` sözlükte vardır ancak birlikte kurulu gelmez; kullanmak için ayrı kurman gerekir.
 :::
+
+## Mini Görev
+
+`py_oyun` ile pencere başlığını kendi adın yap ve ekrana bir daire çiz. İpucu: `çember_çiz` ve `pencere_başlığı`.

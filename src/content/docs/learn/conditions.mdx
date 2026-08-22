@@ -3,7 +3,11 @@ title: Koşullar
 description: eğer / değilse_eğer / değilse ile karar verme.
 ---
 
-## eğer / değilse_eğer / değilse
+<div class="tk-learn-intro">
+<p>Koşullar, kodun <strong>karar vermesini</strong> sağlar. Bu sayfada <strong>eğer / değilse_eğer / değilse</strong> yapısını, karşılaştırma işleçlerini ve mantıksal bağlaçları öğrenirsin. Temel eğer / değilse örneklerini <a href="https://yusufx-sys.github.io/turkod-site/demo/">Canlı Demo</a> sayfasında deneyebilirsin.</p>
+</div>
+
+## eğer / değilse
 
 ```
 yas = 15
@@ -12,6 +16,8 @@ eğer yas >= 18:
 değilse:
     yazdır("Reşit değilsin")
 ```
+
+## değilse_eğer — birden çok koşul
 
 ```
 not_ort = 76
@@ -22,6 +28,10 @@ değilse_eğer not_ort >= 70:
 değilse:
     yazdır("Çalışmalısın")
 ```
+
+:::tip[Şimdi dene]
+`not_ort` değerini değiştir ve kodun hangi dala girdiğini izle.
+:::
 
 ## Karşılaştırma ve Mantık
 
@@ -57,3 +67,11 @@ meyveler = ["elma", "armut"]
 eğer "elma" içinde meyveler:
     yazdır("Var")
 ```
+
+:::caution[Dikkat]
+`=` atama yapar, `==` karşılaştırır. Koşul içinde tek `=` yazmak en sık yapılan başlangıç hatasıdır.
+:::
+
+## Mini Görev
+
+Bir sayının pozitif, negatif veya sıfır olduğunu yazdıran koşulları yaz. Cevaplar [Kendini Test Et](https://yusufx-sys.github.io/turkod-site/learn/quiz/) sayfasında.
