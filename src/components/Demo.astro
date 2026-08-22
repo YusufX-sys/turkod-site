@@ -1,7 +1,11 @@
-﻿<div class="tk-demo">
+<div class="tk-demo">
   <div class="tk-pane">
     <div class="tk-bar"><span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span><span class="tk-t">kod-editörü</span></div>
-    <textarea id="tk-code" spellcheck="false">yazdır("Merhaba Dünya")</textarea>
+    <textarea id="tk-code" spellcheck="false">yas = 15
+eğer yas >= 18:
+    yazdır("Reşitsin")
+değilse:
+    yazdır("Reşit değilsin")</textarea>
     <div class="tk-row">
       <button id="tk-run">▶ Çalıştır</button>
       <button id="tk-clear" class="tk-ghost">Temizle</button>
@@ -13,8 +17,8 @@
   </div>
 </div>
 <p class="tk-note">
-  Demo yalnızca <code>yazdır()</code> komutunu çalıştırır.
-  Tüm özellikler için <a href="https://github.com/YusufX-sys/turkod-ide/releases" target="_blank" rel="noopener">tam sürümü indir</a>.
+  Demo; değişken atama, <code>eğer / değilse-eğer / değilse</code> koşulları ve <code>yazdır()</code> komutunu çalıştırır.
+  Tüm özellikler için <a href="/turkod-site/releases/">tam sürümü indir</a>.
 </p>
 
 <style>
@@ -39,9 +43,9 @@
   .tk-t { margin-left: 8px; font-size: 12px; color: #8b949e; font-family: var(--sl-font-mono); }
 
   textarea {
-    width: 100%; min-height: 120px; resize: vertical; border: 0; outline: none;
+    width: 100%; min-height: 160px; resize: vertical; border: 0; outline: none;
     background: transparent; color: #e6edf3; font-family: var(--sl-font-mono);
-    font-size: 14px; padding: 12px; box-sizing: border-box;
+    font-size: 14px; padding: 12px; box-sizing: border-box; tab-size: 4;
   }
   textarea:focus { background: rgba(99,102,241,.08); }
 
@@ -93,22 +97,245 @@
     }, 16);
   };
 
+  // ---- Mini TürKod yorumlayıcısı ----
+  // Söz dizimi:
+  //   değişken atama : "isim = değer"
+  //   koşul          : "eğer <koşul>:" / "değilse-eğer <koşul>:" / "değilse:"
+  //   yazdır         : "yazdır(<ifade>)"
+
+  const IDENT_START = /[a-zA-ZçğıöşüÇĞİÖŞÜ_]/;
+  const IDENT_PART = /[a-zA-Z0-9çğıöşüÇĞİÖŞÜ_]/;
+
+  function tokenize(s) {
+    const tokens = [];
+    let i = 0;
+    while (i < s.length) {
+      const c = s[i];
+      if (/\s/.test(c)) { i++; continue; }
+      if (c === '"' || c === "'") {
+        const quote = c; let j = i + 1; let str = '';
+        while (j < s.length && s[j] !== quote) { str += s[j]; j++; }
+        tokens.push({ type: 'str', value: str });
+        i = j + 1; continue;
+      }
+      if (/[0-9]/.test(c)) {
+        let j = i, num = '';
+        while (j < s.length && /[0-9.]/.test(s[j])) { num += s[j]; j++; }
+        tokens.push({ type: 'num', value: parseFloat(num) });
+        i = j; continue;
+      }
+      if (IDENT_START.test(c)) {
+        let j = i, id = '';
+        while (j < s.length && IDENT_PART.test(s[j])) { id += s[j]; j++; }
+        tokens.push({ type: 'ident', value: id });
+        i = j; continue;
+      }
+      const two = s.substr(i, 2);
+      if (['>=', '<=', '==', '!='].includes(two)) { tokens.push({ type: 'op', value: two }); i += 2; continue; }
+      if (c === '(') { tokens.push({ type: 'lparen' }); i++; continue; }
+      if (c === ')') { tokens.push({ type: 'rparen' }); i++; continue; }
+      if ('+-*/><'.includes(c)) { tokens.push({ type: 'op', value: c }); i++; continue; }
+      throw new Error('Beklenmeyen karakter: "' + c + '"');
+    }
+    return tokens;
+  }
+
+  function parseExpr(tokens) {
+    let pos = 0;
+    const peek = () => tokens[pos];
+    const next = () => tokens[pos++];
+
+    function parseOr() {
+      let node = parseAnd();
+      while (peek() && peek().type === 'ident' && peek().value === 'veya') {
+        next();
+        node = { op: 'veya', left: node, right: parseAnd() };
+      }
+      return node;
+    }
+    function parseAnd() {
+      let node = parseComparison();
+      while (peek() && peek().type === 'ident' && peek().value === 've') {
+        next();
+        node = { op: 've', left: node, right: parseComparison() };
+      }
+      return node;
+    }
+    function parseComparison() {
+      let node = parseAdd();
+      const t = peek();
+      if (t && t.type === 'op' && ['>', '<', '>=', '<=', '==', '!='].includes(t.value)) {
+        next();
+        node = { op: t.value, left: node, right: parseAdd() };
+      }
+      return node;
+    }
+    function parseAdd() {
+      let node = parseTerm();
+      while (peek() && peek().type === 'op' && (peek().value === '+' || peek().value === '-')) {
+        const op = next().value;
+        node = { op, left: node, right: parseTerm() };
+      }
+      return node;
+    }
+    function parseTerm() {
+      let node = parseFactor();
+      while (peek() && peek().type === 'op' && (peek().value === '*' || peek().value === '/')) {
+        const op = next().value;
+        node = { op, left: node, right: parseFactor() };
+      }
+      return node;
+    }
+    function parseFactor() {
+      const t = peek();
+      if (!t) throw new Error('Eksik ifade.');
+      if (t.type === 'num') { next(); return { type: 'num', value: t.value }; }
+      if (t.type === 'str') { next(); return { type: 'str', value: t.value }; }
+      if (t.type === 'op' && t.value === '-') { next(); return { op: 'neg', value: parseFactor() }; }
+      if (t.type === 'lparen') {
+        next();
+        const node = parseOr();
+        const close = next();
+        if (!close || close.type !== 'rparen') throw new Error('Parantez kapatılmamış.');
+        return node;
+      }
+      if (t.type === 'ident') { next(); return { type: 'var', name: t.value }; }
+      throw new Error('Beklenmeyen ifade.');
+    }
+
+    const result = parseOr();
+    if (pos !== tokens.length) throw new Error('İfade çözümlenemedi.');
+    return result;
+  }
+
+  function assertNum(v) { if (typeof v !== 'number') throw new Error('Bu işlem yalnızca sayılarla yapılabilir.'); }
+  function toBool(v) { return !!v; }
+  function fmt(v) {
+    if (typeof v === 'boolean') return v ? 'doğru' : 'yanlış';
+    return String(v);
+  }
+
+  function evaluate(node, vars) {
+    if (node.type === 'num' || node.type === 'str') return node.value;
+    if (node.type === 'var') {
+      if (!(node.name in vars)) throw new Error('"' + node.name + '" adında bir değişken tanımlanmadı.');
+      return vars[node.name];
+    }
+    if (node.op === 'neg') { const v = evaluate(node.value, vars); assertNum(v); return -v; }
+    const l = evaluate(node.left, vars);
+    const r = evaluate(node.right, vars);
+    switch (node.op) {
+      case '+': return (typeof l === 'string' || typeof r === 'string') ? (fmt(l) + fmt(r)) : (assertNum(l), assertNum(r), l + r);
+      case '-': assertNum(l); assertNum(r); return l - r;
+      case '*': assertNum(l); assertNum(r); return l * r;
+      case '/': assertNum(l); assertNum(r); if (r === 0) throw new Error('Sıfıra bölme hatası.'); return l / r;
+      case '>': assertNum(l); assertNum(r); return l > r;
+      case '<': assertNum(l); assertNum(r); return l < r;
+      case '>=': assertNum(l); assertNum(r); return l >= r;
+      case '<=': assertNum(l); assertNum(r); return l <= r;
+      case '==': return l === r;
+      case '!=': return l !== r;
+      case 've': return toBool(l) && toBool(r);
+      case 'veya': return toBool(l) || toBool(r);
+      default: throw new Error('Bilinmeyen işlem.');
+    }
+  }
+
+  function indentOf(rawLine) { return rawLine.length - rawLine.trimStart().length; }
+
+  function findBlockEnd(lines, start, baseIndent) {
+    let i = start;
+    while (i < lines.length) {
+      if (lines[i].trim() === '') { i++; continue; }
+      if (indentOf(lines[i]) <= baseIndent) break;
+      i++;
+    }
+    return i;
+  }
+
+  function runBlock(lines, start, end, vars, output) {
+    let i = start;
+    while (i < end) {
+      const raw = lines[i];
+      const trimmed = raw.trim();
+      if (trimmed === '') { i++; continue; }
+      const baseIndent = indentOf(raw);
+
+      if (trimmed.startsWith('eğer ') && trimmed.endsWith(':')) {
+        const condStr = trimmed.slice('eğer '.length, -1).trim();
+        const bodyStart = i + 1;
+        const bodyEnd = findBlockEnd(lines, bodyStart, baseIndent);
+        let branchTaken = false;
+        if (toBool(evaluate(parseExpr(tokenize(condStr)), vars))) {
+          runBlock(lines, bodyStart, bodyEnd, vars, output);
+          branchTaken = true;
+        }
+        i = bodyEnd;
+
+        while (i < end) {
+          if (lines[i].trim() === '') { i++; continue; }
+          if (indentOf(lines[i]) !== baseIndent) break;
+          const t2 = lines[i].trim();
+          if (t2.startsWith('değilse-eğer ') && t2.endsWith(':')) {
+            const elifCond = t2.slice('değilse-eğer '.length, -1).trim();
+            const elifStart = i + 1;
+            const elifEnd = findBlockEnd(lines, elifStart, baseIndent);
+            if (!branchTaken && toBool(evaluate(parseExpr(tokenize(elifCond)), vars))) {
+              runBlock(lines, elifStart, elifEnd, vars, output);
+              branchTaken = true;
+            }
+            i = elifEnd;
+            continue;
+          }
+          if (t2 === 'değilse:') {
+            const elseStart = i + 1;
+            const elseEnd = findBlockEnd(lines, elseStart, baseIndent);
+            if (!branchTaken) runBlock(lines, elseStart, elseEnd, vars, output);
+            i = elseEnd;
+          }
+          break;
+        }
+        continue;
+      }
+
+      if (trimmed.startsWith('yazdır(') && trimmed.endsWith(')')) {
+        const inner = trimmed.slice('yazdır('.length, -1);
+        const val = evaluate(parseExpr(tokenize(inner)), vars);
+        output.push({ text: fmt(val), cls: 'ok' });
+        i++; continue;
+      }
+
+      const assign = trimmed.match(/^([a-zA-ZçğıöşüÇĞİÖŞÜ_][\wçğıöşüÇĞİÖŞÜ]*)\s*=\s*(.+)$/);
+      if (assign) {
+        vars[assign[1]] = evaluate(parseExpr(tokenize(assign[2])), vars);
+        i++; continue;
+      }
+
+      throw new Error('Anlaşılamayan satır: "' + trimmed + '"');
+    }
+  }
+
   document.getElementById('tk-run').addEventListener('click', () => {
-    const src = code.value.trim();
+    const src = code.value;
     out.innerHTML = '';
     out.appendChild(cursor);
-    line('turkod> ' + src, 'cmd');
+    line('turkod> çalıştırılıyor...', 'dim');
+
     setTimeout(() => {
-      if (!src) { line('Hata: Çalıştırılacak kod yok.', 'warn'); return; }
-      const m = src.match(/^yazdır\(\s*(?:"([^"]*)"|'([^']*)')\s*\)$/);
-      if (m) {
-        line(m[1] !== undefined ? m[1] : m[2], 'ok', true);
+      const output = [];
+      if (src.trim() === '') {
+        output.push({ text: 'Hata: Çalıştırılacak kod yok.', cls: 'warn' });
       } else {
-        line('⚠ Bu komut demo ortamında desteklenmiyor.', 'warn');
-        line('Demo yalnızca yazdır() fonksiyonunu çalıştırır.', 'warn');
-        line('Tüm özelliklere erişmek için tam sürümü indirin:', 'dim');
-        line('https://github.com/YusufX-sys/turkod-ide/releases', 'cmd');
+        try {
+          runBlock(src.split('\n'), 0, src.split('\n').length, {}, output);
+        } catch (e) {
+          output.push({ text: '⚠ Hata: ' + e.message, cls: 'warn' });
+          output.push({ text: 'Tüm özelliklere erişmek için tam sürümü indirin.', cls: 'dim' });
+        }
       }
+      output.forEach((o, idx) => {
+        setTimeout(() => line(o.text, o.cls, true), idx * 420);
+      });
     }, 350);
   });
 
