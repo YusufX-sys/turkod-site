@@ -1,5 +1,4 @@
-﻿@'
----
+﻿---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { marked } from 'marked';
 
@@ -84,30 +83,46 @@ const prefixes = {
 </script>
 
 <style is:global>
-  .tk-releases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+  .tk-releases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; max-width: 100%; }
   .tk-release {
     padding: 1.5rem; border-radius: 12px;
     background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
     backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+    max-width: 100%; box-sizing: border-box; overflow: hidden;
   }
   .tk-release:hover { transform: translateY(-4px); border-color: rgba(34,211,238,.5); }
-  .tk-release-header { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; }
-  .tk-release-header h3 { margin: 0; color: #e6edf3; }
+  .tk-release-header { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; flex-wrap: wrap; }
+  .tk-release-header h3 { margin: 0; color: #e6edf3; word-break: break-word; }
   .tk-release-date { color: #8b949e; font-size: .875rem; }
-  .tk-release-body { color: #c9d1d9; font-size: .9rem; margin-bottom: 1rem; }
+
+  .tk-release-body {
+    color: #c9d1d9; font-size: .9rem; margin-bottom: 1rem;
+    max-width: 100%; overflow-wrap: anywhere; word-break: break-word;
+  }
   .tk-release-body h1, .tk-release-body h2, .tk-release-body h3 { color: #e6edf3; margin: .75rem 0 .4rem; font-size: 1rem; }
   .tk-release-body p { margin: .4rem 0; }
   .tk-release-body ul, .tk-release-body ol { margin: .4rem 0; padding-left: 1.2rem; }
   .tk-release-body li { margin: .2rem 0; }
-  .tk-release-body code { background: rgba(110,118,129,.25); padding: .1em .4em; border-radius: 4px; font-size: .85em; }
-  .tk-release-body a { color: #22d3ee; }
-  .tk-release-body img { max-width: 100%; border-radius: 8px; margin: .5rem 0; }
+  .tk-release-body code { background: rgba(110,118,129,.25); padding: .1em .4em; border-radius: 4px; font-size: .85em; word-break: break-word; }
+  .tk-release-body pre {
+    overflow-x: auto; max-width: 100%; padding: .75rem; border-radius: 8px;
+    background: rgba(13,17,23,.9); border: 1px solid rgba(129,140,248,.2);
+  }
+  .tk-release-body pre code { background: none; padding: 0; }
+  .tk-release-body a { color: #22d3ee; word-break: break-all; }
+  .tk-release-body img { max-width: 100%; height: auto; border-radius: 8px; margin: .5rem 0; }
+  .tk-release-body table {
+    display: block; max-width: 100%; overflow-x: auto;
+    border-collapse: collapse; white-space: nowrap;
+  }
+  .tk-release-body th, .tk-release-body td { padding: .4rem .6rem; border: 1px solid rgba(129,140,248,.25); }
+
   .tk-release-actions { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
   .tk-release-btn {
     display: inline-flex; align-items: center; gap: 6px;
     padding: .5rem 1rem; border-radius: 8px; text-decoration: none; font-size: .875rem;
     border: 1px solid rgba(129,140,248,.4); color: #e6edf3;
-    transition: all .3s ease;
+    transition: all .3s ease; white-space: nowrap;
   }
   .tk-release-btn-primary {
     background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
@@ -116,6 +131,12 @@ const prefixes = {
   .tk-release-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px -8px rgba(99,102,241,.5); }
   .tk-release-downloads {
     display: inline-flex; align-items: center; gap: 6px;
-    margin-left: auto; color: #8b949e; font-size: .85rem;
+    margin-left: auto; color: #8b949e; font-size: .85rem; white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .tk-release { padding: 1rem; }
+    .tk-release-actions { gap: .5rem; }
+    .tk-release-downloads { margin-left: 0; flex-basis: 100%; }
   }
 </style>

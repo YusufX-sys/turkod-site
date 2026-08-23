@@ -1,4 +1,4 @@
-﻿---
+---
 title: TürKod'a Hoş Geldiniz
 description: Yeni başlayanlar için tamamen Türkçe programlama öğrenme ortamı.
 tableOfContents: false
@@ -10,15 +10,14 @@ hero:
       link: /turkod-site/demo/
       icon: right-arrow
       variant: primary
-    - text: İndir
-      link: /turkod-site/releases/
-      icon: right-arrow
     - text: GitHub
       link: https://github.com/YusufX-sys/turkod-ide
       icon: external
 ---
-
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import WindowsDownloadButton from '../../components/WindowsDownloadButton.astro';
+
+<WindowsDownloadButton />
 
 <div class="tk-stats">
   <div class="tk-stat"><strong>%100</strong><span>Türkçe</span></div>
@@ -26,9 +25,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   <div class="tk-stat"><strong>5 dk</strong><span>İlk kodun</span></div>
   <div class="tk-stat"><strong>RSA</strong><span>İmzalı sürümler</span></div>
 </div>
-
 ## Neden TürKod?
-
 <CardGrid>
   <Card title="%100 Türkçe" icon="document">
     Menüler, hatalar, yardımlar — hepsi Türkçe. İngilizce bilmen gerekmez.
@@ -40,9 +37,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     Her sürüm imzalıdır. Reklam yok, gizli ücret yok.
   </Card>
 </CardGrid>
-
 ## 3 Adımda Başla
-
 <div class="tk-steps">
   <a class="tk-step" href="releases/">
     <span class="tk-num">1</span>
@@ -60,6 +55,3 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     <span class="tk-arrow">→</span>
   </a>
 </div>
-
-
-
