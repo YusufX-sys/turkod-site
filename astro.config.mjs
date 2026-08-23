@@ -1,5 +1,6 @@
-﻿import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   base: '/turkod-site/',
@@ -56,7 +57,6 @@ export default defineConfig({
         },
       ],
     }),
+    sitemap(),
   ],
 });
-
-
