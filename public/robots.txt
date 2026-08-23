@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://yusufx-sys.github.io/turkod-site/sitemap-index.xml
