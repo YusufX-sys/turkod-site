@@ -1,7 +1,10 @@
-<div class="tk-demo">
+﻿<div class="tk-demo">
   <div class="tk-pane">
     <div class="tk-bar"><span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span><span class="tk-t">kod-editörü</span></div>
-    <textarea id="tk-code" spellcheck="false">yas = 15
+    <textarea id="tk-code" spellcheck="false">isim = girdi_al("Adın ne? ")
+yazdır("Merhaba " + isim)
+
+yas = 15
 eğer yas >= 18:
     yazdır("Reşitsin")
 değilse:
@@ -13,12 +16,13 @@ değilse:
   </div>
   <div class="tk-pane">
     <div class="tk-bar"><span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span><span class="tk-t">terminal</span></div>
-    <div id="tk-out"><div class="tk-line dim">TürKod Demo v1.0 — hazır.</div><div id="tk-cursor" class="tk-cursor"></div></div>
+    <div id="tk-out"><div class="tk-line dim">TürKod Demo - Hazır</div><div id="tk-cursor" class="tk-cursor"></div></div>
   </div>
 </div>
 <p class="tk-note">
-  Demo; değişken atama, <code>eğer / değilse-eğer / değilse</code> koşulları ve <code>yazdır()</code> komutunu çalıştırır.
-  Tüm özellikler için <a href="/turkod-site/releases/">tam sürümü indir</a>.
+  Demo; değişkenler, koşullar, döngüler, fonksiyonlar, listeler, <code>girdi_al()</code> ve <code>yazdır()</code> komutlarını çalıştırır.
+  <code>girdi_al</code> girdiyi sağdaki terminalden ister.
+  Kütüphaneler ve tam özellikler için <a href="/turkod-site/releases/">tam sürümü indir</a>.
 </p>
 
 <style>
@@ -61,6 +65,7 @@ değilse:
   }
   #tk-run:hover { background-position: 200% center; transform: translateY(-2px); box-shadow: 0 0 26px rgba(217,70,239,.65); }
   #tk-run:active { transform: scale(.97); }
+  #tk-run:disabled { opacity: .5; cursor: wait; transform: none; }
 
   .tk-ghost { background: transparent; color: #8b949e; border: 1px solid rgba(129,140,248,.3); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
   .tk-ghost:hover { color: #e6edf3; border-color: #22d3ee; }
@@ -71,6 +76,13 @@ değilse:
   .tk-line.warn { color: #ffa657; animation: tk-shake .3s; }
   .tk-line.dim { color: #8b949e; }
   @keyframes tk-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+
+  .tk-input-line { display: flex; align-items: center; gap: 0; }
+  .tk-input {
+    flex: 1; background: transparent; border: 0; outline: none;
+    color: #e6edf3; font-family: var(--sl-font-mono); font-size: 14px;
+    caret-color: #7ee787;
+  }
 
   .tk-cursor { display: inline-block; width: 8px; height: 16px; background: #7ee787; animation: tk-blink 1s steps(1) infinite; }
   @keyframes tk-blink { 50% { opacity: 0; } }
@@ -83,6 +95,7 @@ değilse:
   const code = document.getElementById('tk-code');
   const out = document.getElementById('tk-out');
   const cursor = document.getElementById('tk-cursor');
+  const runBtn = document.getElementById('tk-run');
 
   const line = (text, cls, typed) => {
     const div = document.createElement('div');
@@ -97,14 +110,15 @@ değilse:
     }, 16);
   };
 
-  // ---- Mini TürKod yorumlayıcısı ----
-  // Söz dizimi:
-  //   değişken atama : "isim = değer"
-  //   koşul          : "eğer <koşul>:" / "değilse-eğer <koşul>:" / "değilse:"
-  //   yazdır         : "yazdır(<ifade>)"
-
   const IDENT_START = /[a-zA-ZçğıöşüÇĞİÖŞÜ_]/;
   const IDENT_PART = /[a-zA-Z0-9çğıöşüÇĞİÖŞÜ_]/;
+  const TR_ID = '[a-zA-ZçğıöşüÇĞİÖŞÜ_][a-zA-Z0-9çğıöşüÇĞİÖŞÜ_]*';
+
+  function TKBreak() {}
+  function TKCont() {}
+  function TKRet(value) { this.value = value; }
+
+  let pendingInput = null;
 
   function tokenize(s) {
     const tokens = [];
@@ -131,75 +145,133 @@ değilse:
         i = j; continue;
       }
       const two = s.substr(i, 2);
-      if (['>=', '<=', '==', '!='].includes(two)) { tokens.push({ type: 'op', value: two }); i += 2; continue; }
+      if (['>=', '<=', '==', '!=', '//', '**'].includes(two)) { tokens.push({ type: 'op', value: two }); i += 2; continue; }
+      if ('+-*/%><'.includes(c)) { tokens.push({ type: 'op', value: c }); i++; continue; }
       if (c === '(') { tokens.push({ type: 'lparen' }); i++; continue; }
       if (c === ')') { tokens.push({ type: 'rparen' }); i++; continue; }
-      if ('+-*/><'.includes(c)) { tokens.push({ type: 'op', value: c }); i++; continue; }
+      if (c === '[') { tokens.push({ type: 'lbracket' }); i++; continue; }
+      if (c === ']') { tokens.push({ type: 'rbracket' }); i++; continue; }
+      if (c === ',') { tokens.push({ type: 'comma' }); i++; continue; }
+      if (c === '.') { tokens.push({ type: 'dot' }); i++; continue; }
       throw new Error('Beklenmeyen karakter: "' + c + '"');
     }
     return tokens;
   }
 
-  function parseExpr(tokens) {
+  function splitTop(s) {
+    const parts = []; let depth = 0; let cur = ''; let q = null;
+    for (let i = 0; i < s.length; i++) {
+      const c = s[i];
+      if (q) { cur += c; if (c === q) q = null; continue; }
+      if (c === '"' || c === "'") { q = c; cur += c; continue; }
+      if ('([{'.includes(c)) depth++;
+      if (')]}'.includes(c)) depth--;
+      if (c === ',' && depth === 0) { parts.push(cur); cur = ''; continue; }
+      cur += c;
+    }
+    if (cur.trim() !== '') parts.push(cur);
+    return parts;
+  }
+
+  function parseExpr(src) {
+    const tokens = typeof src === 'string' ? tokenize(src) : src;
     let pos = 0;
     const peek = () => tokens[pos];
     const next = () => tokens[pos++];
 
-    function parseOr() {
-      let node = parseAnd();
-      while (peek() && peek().type === 'ident' && peek().value === 'veya') {
-        next();
-        node = { op: 'veya', left: node, right: parseAnd() };
+    function parseArgs() {
+      const args = [];
+      if (peek() && peek().type === 'rparen') { next(); return args; }
+      for (;;) {
+        args.push(parseOr());
+        const t = next();
+        if (!t) throw new Error('Parantez kapatılmamış.');
+        if (t.type === 'rparen') return args;
+        if (t.type !== 'comma') throw new Error('Virgül bekleniyor.');
       }
-      return node;
+    }
+    function parseOr() {
+      let n = parseAnd();
+      while (peek() && peek().type === 'ident' && peek().value === 'veya') { next(); n = { op: 'veya', left: n, right: parseAnd() }; }
+      return n;
     }
     function parseAnd() {
-      let node = parseComparison();
-      while (peek() && peek().type === 'ident' && peek().value === 've') {
-        next();
-        node = { op: 've', left: node, right: parseComparison() };
-      }
-      return node;
+      let n = parseComparison();
+      while (peek() && peek().type === 'ident' && peek().value === 've') { next(); n = { op: 've', left: n, right: parseComparison() }; }
+      return n;
     }
     function parseComparison() {
-      let node = parseAdd();
+      let n = parseAdd();
       const t = peek();
-      if (t && t.type === 'op' && ['>', '<', '>=', '<=', '==', '!='].includes(t.value)) {
-        next();
-        node = { op: t.value, left: node, right: parseAdd() };
-      }
-      return node;
+      if (t && t.type === 'op' && ['>', '<', '>=', '<=', '==', '!='].includes(t.value)) { next(); n = { op: t.value, left: n, right: parseAdd() }; }
+      return n;
     }
     function parseAdd() {
-      let node = parseTerm();
-      while (peek() && peek().type === 'op' && (peek().value === '+' || peek().value === '-')) {
-        const op = next().value;
-        node = { op, left: node, right: parseTerm() };
-      }
-      return node;
+      let n = parseTerm();
+      while (peek() && peek().type === 'op' && (peek().value === '+' || peek().value === '-')) { const op = next().value; n = { op, left: n, right: parseTerm() }; }
+      return n;
     }
     function parseTerm() {
-      let node = parseFactor();
-      while (peek() && peek().type === 'op' && (peek().value === '*' || peek().value === '/')) {
-        const op = next().value;
-        node = { op, left: node, right: parseFactor() };
-      }
-      return node;
+      let n = parseUnary();
+      while (peek() && peek().type === 'op' && ['*', '/', '//', '%'].includes(peek().value)) { const op = next().value; n = { op, left: n, right: parseUnary() }; }
+      return n;
     }
-    function parseFactor() {
+    function parseUnary() {
+      const t = peek();
+      if (t && t.type === 'op' && t.value === '-') { next(); return { op: 'neg', right: parseUnary() }; }
+      if (t && t.type === 'ident' && t.value === 'değil') { next(); return { op: 'değil', right: parseUnary() }; }
+      return parsePower();
+    }
+    function parsePower() {
+      let n = parsePostfix();
+      if (peek() && peek().type === 'op' && peek().value === '**') { next(); n = { op: '**', left: n, right: parseUnary() }; }
+      return n;
+    }
+    function parsePostfix() {
+      let n = parsePrimary();
+      while (peek() && peek().type === 'dot') {
+        next();
+        const nm = next();
+        if (!nm || nm.type !== 'ident') throw new Error('Metot adı bekleniyor.');
+        const p = next();
+        if (!p || p.type !== 'lparen') throw new Error('"' + nm.value + '" için parantez gerekli.');
+        n = { type: 'method', obj: n, name: nm.value, args: parseArgs() };
+      }
+      return n;
+    }
+    function parsePrimary() {
       const t = peek();
       if (!t) throw new Error('Eksik ifade.');
       if (t.type === 'num') { next(); return { type: 'num', value: t.value }; }
       if (t.type === 'str') { next(); return { type: 'str', value: t.value }; }
-      if (t.type === 'op' && t.value === '-') { next(); return { op: 'neg', value: parseFactor() }; }
       if (t.type === 'lparen') {
         next();
-        const node = parseOr();
-        const close = next();
-        if (!close || close.type !== 'rparen') throw new Error('Parantez kapatılmamış.');
-        return node;
+        const n = parseOr();
+        const c = next();
+        if (!c || c.type !== 'rparen') throw new Error('Parantez kapatılmamış.');
+        return n;
       }
-      if (t.type === 'ident') { next(); return { type: 'var', name: t.value }; }
+      if (t.type === 'lbracket') {
+        next();
+        const items = [];
+        if (peek() && peek().type === 'rbracket') { next(); return { type: 'list', items }; }
+        for (;;) {
+          items.push(parseOr());
+          const c = next();
+          if (!c) throw new Error('Köşeli parantez kapatılmamış.');
+          if (c.type === 'rbracket') return { type: 'list', items };
+          if (c.type !== 'comma') throw new Error('Virgül bekleniyor.');
+        }
+      }
+      if (t.type === 'ident') {
+        if (t.value === 'Doğru') { next(); return { type: 'lit', value: true }; }
+        if (t.value === 'Yanlış') { next(); return { type: 'lit', value: false }; }
+        if (t.value === 'Hiçlik') { next(); return { type: 'lit', value: null }; }
+        next();
+        const t2 = peek();
+        if (t2 && t2.type === 'lparen') { next(); return { type: 'call', name: t.value, args: parseArgs() }; }
+        return { type: 'var', name: t.value };
+      }
       throw new Error('Beklenmeyen ifade.');
     }
 
@@ -209,26 +281,132 @@ değilse:
   }
 
   function assertNum(v) { if (typeof v !== 'number') throw new Error('Bu işlem yalnızca sayılarla yapılabilir.'); }
-  function toBool(v) { return !!v; }
+  function toBool(v) {
+    if (v === null || v === undefined) return false;
+    if (typeof v === 'boolean') return v;
+    if (typeof v === 'number') return v !== 0;
+    if (typeof v === 'string') return v.length > 0;
+    if (Array.isArray(v)) return v.length > 0;
+    return true;
+  }
   function fmt(v) {
+    if (v === null || v === undefined) return 'Hiçlik';
     if (typeof v === 'boolean') return v ? 'doğru' : 'yanlış';
+    if (Array.isArray(v)) return '[' + v.map(fmtRepr).join(', ') + ']';
     return String(v);
   }
+  function fmtRepr(v) { if (typeof v === 'string') return '"' + v + '"'; return fmt(v); }
 
-  function evaluate(node, vars) {
-    if (node.type === 'num' || node.type === 'str') return node.value;
+  function buildRange(nums) {
+    let start = 0, stop = 0, step = 1;
+    if (nums.length === 1) stop = nums[0];
+    else if (nums.length >= 2) { start = nums[0]; stop = nums[1]; if (nums.length >= 3) step = nums[2]; }
+    if (step === 0) throw new Error('adım 0 olamaz.');
+    const res = [];
+    if (step > 0) { for (let v = start; v < stop; v += step) { res.push(v); if (res.length > 100000) throw new Error('aralık çok büyük.'); } }
+    else { for (let v = start; v > stop; v += step) { res.push(v); if (res.length > 100000) throw new Error('aralık çok büyük.'); } }
+    return res;
+  }
+
+  const BUILTIN = {
+    yazdır: (a, ctx) => { ctx.display(a.map(fmt).join(' '), 'ok'); return null; },
+    girdi_al: (a, ctx) => ctx.requestInput(a.map(fmt).join(' ')),
+    uzunluk: (a) => { const x = a[0]; if (typeof x === 'string' || Array.isArray(x)) return x.length; throw new Error('uzunluk() metin veya liste ister.'); },
+    tamsayı: (a) => { const x = a[0]; if (typeof x === 'number') return Math.trunc(x); if (typeof x === 'boolean') return x ? 1 : 0; const n = parseInt(String(x).trim(), 10); if (isNaN(n)) throw new Error('tamsayı() dönüştüremedi: ' + fmtRepr(String(x))); return n; },
+    ondalıklı: (a) => { const x = a[0]; if (typeof x === 'number') return x; const n = parseFloat(String(x).trim()); if (isNaN(n)) throw new Error('ondalıklı() dönüştüremedi.'); return n; },
+    metin: (a) => fmt(a[0]),
+    mantıksal: (a) => toBool(a[0]),
+    mutlak: (a) => { assertNum(a[0]); return Math.abs(a[0]); },
+    yuvarla: (a) => { assertNum(a[0]); return Math.round(a[0]); },
+    toplam: (a) => { const l = Array.isArray(a[0]) ? a[0] : a; let s = 0; for (const v of l) { assertNum(v); s += v; } return s; },
+    tip: (a) => { const x = a[0]; if (typeof x === 'string') return 'metin'; if (typeof x === 'number') return 'sayı'; if (typeof x === 'boolean') return 'mantıksal'; if (Array.isArray(x)) return 'liste'; return 'Hiçlik'; },
+    aralık: (a) => { const nums = a.map(x => { assertNum(x); return x; }); return buildRange(nums); },
+    en_büyük: (a) => { const l = (a.length === 1 && Array.isArray(a[0])) ? a[0] : a; let m = -Infinity; for (const v of l) { assertNum(v); if (v > m) m = v; } return m; },
+    en_küçük: (a) => { const l = (a.length === 1 && Array.isArray(a[0])) ? a[0] : a; let m = Infinity; for (const v of l) { assertNum(v); if (v < m) m = v; } return m; },
+  };
+
+  async function callFunc(name, args, vars, ctx) {
+    const v = vars[name];
+    if (typeof v === 'function') return await v.apply(null, args);
+    if (BUILTIN[name]) return await BUILTIN[name](args, ctx);
+    throw new Error('"' + name + '" adında bir fonksiyon yok.');
+  }
+
+  function callMethod(obj, name, args) {
+    if (Array.isArray(obj)) {
+      switch (name) {
+        case 'sona_ekle': obj.push(args[0]); return null;
+        case 'araya_ekle': assertNum(args[0]); obj.splice(args[0], 0, args[1]); return null;
+        case 'çıkar': return args.length ? obj.splice(args[0], 1)[0] : obj.pop();
+        case 'kaldır': { const i = obj.indexOf(args[0]); if (i < 0) throw new Error('Değer listede yok.'); obj.splice(i, 1); return null; }
+        case 'temizle': obj.length = 0; return null;
+        case 'sırala': obj.sort((a, b) => (typeof a === 'number' && typeof b === 'number') ? a - b : String(a).localeCompare(String(b), 'tr')); return null;
+        case 'tersine_çevir': obj.reverse(); return null;
+        case 'kopyala': return obj.slice();
+        case 'say': return obj.filter(x => x === args[0]).length;
+        case 'indeks': { const i = obj.indexOf(args[0]); if (i < 0) throw new Error('Değer listede yok.'); return i; }
+      }
+      throw new Error('Listede "' + name + '" metodu yok.');
+    }
+    if (typeof obj === 'string') {
+      switch (name) {
+        case 'büyük_harf': return obj.toLocaleUpperCase('tr');
+        case 'küçük_harf': return obj.toLocaleLowerCase('tr');
+        case 'böl': return args.length ? obj.split(fmt(args[0])) : obj.trim().split(/\s+/);
+        case 'bul': return obj.indexOf(fmt(args[0]));
+        case 'kırp': return obj.trim();
+        case 'başlangıç_mi': return obj.startsWith(fmt(args[0]));
+        case 'bitiş_mi': return obj.endsWith(fmt(args[0]));
+        case 'baş_harf_büyük': return obj.charAt(0).toLocaleUpperCase('tr') + obj.slice(1);
+        case 'başlık_yap': return obj.replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toLocaleUpperCase('tr'));
+        case 'harf_değiştir': {
+          let r = '';
+          for (const ch of obj) {
+            const up = ch.toLocaleUpperCase('tr');
+            r += ch === up ? ch.toLocaleLowerCase('tr') : up;
+          }
+          return r;
+        }
+      }
+      throw new Error('Metinde "' + name + '" metodu yok.');
+    }
+    throw new Error('Bu değerde metot çağrılamaz.');
+  }
+
+  async function evaluate(node, vars, ctx) {
+    if (node.type === 'num' || node.type === 'str' || node.type === 'lit') return node.value;
+    if (node.type === 'list') {
+      const res = [];
+      for (const it of node.items) res.push(await evaluate(it, vars, ctx));
+      return res;
+    }
     if (node.type === 'var') {
       if (!(node.name in vars)) throw new Error('"' + node.name + '" adında bir değişken tanımlanmadı.');
       return vars[node.name];
     }
-    if (node.op === 'neg') { const v = evaluate(node.value, vars); assertNum(v); return -v; }
-    const l = evaluate(node.left, vars);
-    const r = evaluate(node.right, vars);
+    if (node.type === 'call') {
+      const args = [];
+      for (const a of node.args) args.push(await evaluate(a, vars, ctx));
+      return await callFunc(node.name, args, vars, ctx);
+    }
+    if (node.type === 'method') {
+      const obj = await evaluate(node.obj, vars, ctx);
+      const args = [];
+      for (const a of node.args) args.push(await evaluate(a, vars, ctx));
+      return callMethod(obj, node.name, args);
+    }
+    if (node.op === 'neg') { const v = await evaluate(node.right, vars, ctx); assertNum(v); return -v; }
+    if (node.op === 'değil') return !toBool(await evaluate(node.right, vars, ctx));
+    const l = await evaluate(node.left, vars, ctx);
+    const r = await evaluate(node.right, vars, ctx);
     switch (node.op) {
-      case '+': return (typeof l === 'string' || typeof r === 'string') ? (fmt(l) + fmt(r)) : (assertNum(l), assertNum(r), l + r);
+      case '+': if (typeof l === 'string' || typeof r === 'string') return fmt(l) + fmt(r); if (Array.isArray(l) && Array.isArray(r)) return l.concat(r); assertNum(l); assertNum(r); return l + r;
       case '-': assertNum(l); assertNum(r); return l - r;
       case '*': assertNum(l); assertNum(r); return l * r;
       case '/': assertNum(l); assertNum(r); if (r === 0) throw new Error('Sıfıra bölme hatası.'); return l / r;
+      case '//': assertNum(l); assertNum(r); if (r === 0) throw new Error('Sıfıra bölme hatası.'); return Math.floor(l / r);
+      case '%': assertNum(l); assertNum(r); if (r === 0) throw new Error('Sıfıra bölme hatası.'); return l % r;
+      case '**': assertNum(l); assertNum(r); return Math.pow(l, r);
       case '>': assertNum(l); assertNum(r); return l > r;
       case '<': assertNum(l); assertNum(r); return l < r;
       case '>=': assertNum(l); assertNum(r); return l >= r;
@@ -253,7 +431,50 @@ değilse:
     return i;
   }
 
-  function runBlock(lines, start, end, vars, output) {
+  function makeCtx() {
+    return {
+      display: (t, c) => line(t, c, true),
+      requestInput: (msg) => new Promise((resolve, reject) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'tk-line tk-input-line';
+        
+        if (msg) {
+          const msgSpan = document.createElement('span');
+          msgSpan.className = 'tk-line cmd';
+          msgSpan.style.display = 'inline';
+          msgSpan.textContent = msg;
+          wrap.appendChild(msgSpan);
+        }
+        
+        const inp = document.createElement('input');
+        inp.className = 'tk-input';
+        inp.spellcheck = false;
+        wrap.appendChild(inp);
+        out.insertBefore(wrap, cursor);
+        inp.focus();
+        
+        pendingInput = {
+          cancel: () => {
+            wrap.remove();
+            pendingInput = null;
+            reject(new Error('iptal'));
+          }
+        };
+        
+        inp.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && pendingInput) {
+            const val = inp.value;
+            pendingInput = null;
+            wrap.remove();
+            line(msg + val, 'cmd', false);
+            resolve(val);
+          }
+        });
+      })
+    };
+  }
+
+  async function runBlock(lines, start, end, vars, ctx) {
     let i = start;
     while (i < end) {
       const raw = lines[i];
@@ -266,22 +487,21 @@ değilse:
         const bodyStart = i + 1;
         const bodyEnd = findBlockEnd(lines, bodyStart, baseIndent);
         let branchTaken = false;
-        if (toBool(evaluate(parseExpr(tokenize(condStr)), vars))) {
-          runBlock(lines, bodyStart, bodyEnd, vars, output);
+        if (toBool(await evaluate(parseExpr(condStr), vars, ctx))) {
+          await runBlock(lines, bodyStart, bodyEnd, vars, ctx);
           branchTaken = true;
         }
         i = bodyEnd;
-
         while (i < end) {
           if (lines[i].trim() === '') { i++; continue; }
           if (indentOf(lines[i]) !== baseIndent) break;
           const t2 = lines[i].trim();
-          if (t2.startsWith('değilse-eğer ') && t2.endsWith(':')) {
-            const elifCond = t2.slice('değilse-eğer '.length, -1).trim();
+          if ((t2.startsWith('değilse-eğer ') || t2.startsWith('değilse_eğer ')) && t2.endsWith(':')) {
+            const elifCond = t2.slice(t2.indexOf(' ') + 1, -1).trim();
             const elifStart = i + 1;
             const elifEnd = findBlockEnd(lines, elifStart, baseIndent);
-            if (!branchTaken && toBool(evaluate(parseExpr(tokenize(elifCond)), vars))) {
-              runBlock(lines, elifStart, elifEnd, vars, output);
+            if (!branchTaken && toBool(await evaluate(parseExpr(elifCond), vars, ctx))) {
+              await runBlock(lines, elifStart, elifEnd, vars, ctx);
               branchTaken = true;
             }
             i = elifEnd;
@@ -290,7 +510,7 @@ değilse:
           if (t2 === 'değilse:') {
             const elseStart = i + 1;
             const elseEnd = findBlockEnd(lines, elseStart, baseIndent);
-            if (!branchTaken) runBlock(lines, elseStart, elseEnd, vars, output);
+            if (!branchTaken) await runBlock(lines, elseStart, elseEnd, vars, ctx);
             i = elseEnd;
           }
           break;
@@ -298,51 +518,117 @@ değilse:
         continue;
       }
 
-      if (trimmed.startsWith('yazdır(') && trimmed.endsWith(')')) {
-        const inner = trimmed.slice('yazdır('.length, -1);
-        const val = evaluate(parseExpr(tokenize(inner)), vars);
-        output.push({ text: fmt(val), cls: 'ok' });
-        i++; continue;
+      let m = trimmed.match(new RegExp('^fonksiyon\\s+(' + TR_ID + ')\\s*\\(([^)]*)\\)\\s*:$'));
+      if (m) {
+        const fname = m[1];
+        const params = m[2].split(',').map(s => s.trim()).filter(s => s !== '');
+        const bodyStart = i + 1;
+        const bodyEnd = findBlockEnd(lines, bodyStart, baseIndent);
+        vars[fname] = async function () {
+          const scope = Object.create(vars);
+          for (let k = 0; k < params.length; k++) scope[params[k]] = arguments[k];
+          try {
+            await runBlock(lines, bodyStart, bodyEnd, scope, ctx);
+          } catch (e) {
+            if (e instanceof TKRet) return e.value;
+            throw e;
+          }
+          return null;
+        };
+        i = bodyEnd; continue;
       }
 
-      const assign = trimmed.match(/^([a-zA-ZçğıöşüÇĞİÖŞÜ_][\wçğıöşüÇĞİÖŞÜ]*)\s*=\s*(.+)$/);
+      if (trimmed === 'döndür' || trimmed.startsWith('döndür ')) {
+        const expr = trimmed.slice('döndür'.length).trim();
+        throw new TKRet(expr ? await evaluate(parseExpr(expr), vars, ctx) : null);
+      }
+      if (trimmed === 'kır') { throw new TKBreak(); }
+      if (trimmed === 'devam_et') { throw new TKCont(); }
+      if (trimmed === 'geç') { i++; continue; }
+
+      m = trimmed.match(new RegExp('^döngü\\s+(' + TR_ID + ')\\s+aralık\\s*\\(([^)]*)\\)\\s*:$'));
+      if (m) {
+        const varName = m[1];
+        const argNodes = m[2].trim() === '' ? [] : splitTop(m[2]).map(p => parseExpr(p.trim()));
+        const numsArr = [];
+        for (const n of argNodes) { const v = await evaluate(n, vars, ctx); assertNum(v); numsArr.push(v); }
+        const nums = buildRange(numsArr);
+        const bodyStart = i + 1;
+        const bodyEnd = findBlockEnd(lines, bodyStart, baseIndent);
+        for (let k = 0; k < nums.length; k++) {
+          vars[varName] = nums[k];
+          try {
+            await runBlock(lines, bodyStart, bodyEnd, vars, ctx);
+          } catch (e) {
+            if (e instanceof TKBreak) break;
+            if (e instanceof TKCont) continue;
+            throw e;
+          }
+        }
+        i = bodyEnd; continue;
+      }
+
+      if (trimmed.startsWith('döngü ') && trimmed.endsWith(':')) {
+        const condStr = trimmed.slice('döngü '.length, -1).trim();
+        const bodyStart = i + 1;
+        const bodyEnd = findBlockEnd(lines, bodyStart, baseIndent);
+        let iter = 0;
+        while (toBool(await evaluate(parseExpr(condStr), vars, ctx))) {
+          if (++iter > 100000) throw new Error('Döngü sınırı aşıldı (sonsuz döngü olabilir).');
+          try {
+            await runBlock(lines, bodyStart, bodyEnd, vars, ctx);
+          } catch (e) {
+            if (e instanceof TKBreak) break;
+            if (e instanceof TKCont) continue;
+            throw e;
+          }
+        }
+        i = bodyEnd; continue;
+      }
+
+      const assign = trimmed.match(new RegExp('^(' + TR_ID + ')\\s*=(?!=)\\s*(.+)$'));
       if (assign) {
-        vars[assign[1]] = evaluate(parseExpr(tokenize(assign[2])), vars);
+        vars[assign[1]] = await evaluate(parseExpr(assign[2]), vars, ctx);
         i++; continue;
       }
 
-      throw new Error('Anlaşılamayan satır: "' + trimmed + '"');
+      await evaluate(parseExpr(trimmed), vars, ctx);
+      i++; continue;
     }
   }
 
-  document.getElementById('tk-run').addEventListener('click', () => {
+  runBtn.addEventListener('click', async () => {
     const src = code.value;
     out.innerHTML = '';
     out.appendChild(cursor);
     line('turkod> çalıştırılıyor...', 'dim');
+    runBtn.disabled = true;
 
-    setTimeout(() => {
-      const output = [];
-      if (src.trim() === '') {
-        output.push({ text: 'Hata: Çalıştırılacak kod yok.', cls: 'warn' });
-      } else {
-        try {
-          runBlock(src.split('\n'), 0, src.split('\n').length, {}, output);
-        } catch (e) {
-          output.push({ text: '⚠ Hata: ' + e.message, cls: 'warn' });
-          output.push({ text: 'Tüm özelliklere erişmek için tam sürümü indirin.', cls: 'dim' });
+    setTimeout(async () => {
+      try {
+        if (src.trim() === '') throw new Error('Çalıştırılacak kod yok.');
+        await runBlock(src.split('\n'), 0, src.split('\n').length, {}, makeCtx());
+        line('turkod> tamamlandı.', 'dim');
+      } catch (e) {
+        if (e instanceof TKRet) line('⚠ Hata: döndür yalnızca fonksiyon içinde kullanılır.', 'warn');
+        else if (e instanceof TKBreak) line('⚠ Hata: kır yalnızca döngü içinde kullanılır.', 'warn');
+        else if (e instanceof TKCont) line('⚠ Hata: devam_et yalnızca döngü içinde kullanılır.', 'warn');
+        else if (e.message === 'iptal') line('turkod> iptal edildi.', 'dim');
+        else {
+          line('⚠ Hata: ' + e.message, 'warn');
+          line('Tüm özelliklere erişmek için tam sürümü indirin.', 'dim');
         }
       }
-      output.forEach((o, idx) => {
-        setTimeout(() => line(o.text, o.cls, true), idx * 420);
-      });
-    }, 350);
+      runBtn.disabled = false;
+    }, 200);
   });
 
   document.getElementById('tk-clear').addEventListener('click', () => {
+    if (pendingInput) pendingInput.cancel();
     code.value = '';
     out.innerHTML = '';
     out.appendChild(cursor);
     code.focus();
   });
 </script>
+
