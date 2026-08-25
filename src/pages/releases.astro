@@ -2,9 +2,19 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { marked } from 'marked';
 
-const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases')
-  .then(r => r.json())
-  .catch(() => []);
+const GH_TOKEN = import.meta.env.GH_RELEASES_TOKEN;
+
+const releases = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases', {
+  headers: GH_TOKEN ? { Authorization: `Bearer ${GH_TOKEN}` } : {}
+})
+  .then(r => {
+    if (!r.ok) throw new Error(`GitHub API ${r.status}: ${r.statusText}`);
+    return r.json();
+  })
+  .catch((e) => {
+    console.error('[releases.astro] fetch failed:', e.message);
+    return [];
+  });
 
 const sorted = Array.isArray(releases)
   ? releases.sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
