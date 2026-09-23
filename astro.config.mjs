@@ -29,6 +29,13 @@ export default defineConfig({
             { label: 'Sürüm Geçmişi', link: '/releases/' },
           ],
         },
+           {
+	  label: '🧭 Nasıl Kullanılır',
+	  items: [
+	    { label: 'Arayüz Turu', link: '/use/tour/' },
+	    { label: 'İlk Programını Çalıştır', link: '/use/first-run/' },
+	  ],
+	},
         {
           label: '📚 Dili Öğrenin',
           collapsed: false,

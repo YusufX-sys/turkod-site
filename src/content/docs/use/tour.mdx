@@ -1,0 +1,77 @@
+---
+title: Arayüz Turu
+description: TürKod IDE'nin her köşesi ne işe yarar? 2 dakikada tanış.
+---
+
+TürKod IDE'yi açtığında ekran dört bölgeye ayrılır: **solda gezgin**, **ortada editör ve terminal**, **sağda AI Asistan**, **üstte menü ve araç çubuğu**. Hadi hepsini tek tek gezelim 🚀
+
+<img class="tk-shot" src="/turkod-site/images/arayuz.png" alt="TürKod IDE arayüzü: solda gezgin, ortada editör ve terminal, sağda AI Asistan" />
+
+## 🍔 Menü çubuğu
+
+En üstte **Dosya, Düzenle, Görünüm, Çalıştır, Araçlar, Yardım** ve **Güncelleştirmeler** menüleri durur. Sağ üstteki ⚙️ dişli simgesi ise ayarlara açılan kapıdır. Programı güncel tutmak istersen Güncelleştirmeler menüsüne göz at.
+
+## 📁 Gezgin
+
+Sol taraftaki **GEZGİN** paneli, açtığın klasördeki dosyaları gösterir.
+
+- 📂 Başlıktaki klasör simgesiyle yeni bir klasör açarsın.
+- 🔄 Yenile simgesi, dışarıdan eklediğin dosyaları listeye getirir.
+- Bir dosyaya tıklayarak onu editörde açabilirsin.
+
+## 🔧 Araç çubuğu
+
+Menülere girmeden en sık kullanacağın işler burada, tek tıkla:
+
+| Simge | Ne yapar? |
+|---|---|
+| 📄 📂 💾 | Yeni dosya, dosya aç, kaydet (yanındaki simge: farklı kaydet) |
+| ▶️ (yeşil) | Kodunu **çalıştırır** |
+| 🔴 (kırmızı) | Çalışan programı **durdurur** |
+| 🎨 | Renk temasını değiştirir |
+| 🐞 ⏭ ⏩ | Hata ayıklama: kodu adım adım ilerletip nerede takıldığını görürsün |
+| ✨ | AI Asistan panelini açar |
+| 💻 | Terminal panelini açar |
+
+:::tip[İpucu]
+Bir kodun neden çalışmadığını anlamıyorsan önce 🐞 hata ayıklamayı dene, sonra AI Asistan'a sor. Çoğu zaman ikisinden biri işi çözer.
+:::
+
+## ✍️ Editör
+
+Kodunu ortadaki büyük alana yazarsın.
+
+- **Sekmeler:** Her dosya kendi sekmesinde açılır. TürKod dosyalarının uzantısı `.trpy`'dir. Henüz kaydetmediğin dosyanın adı `Untitled-1.trpy` gibi görünür. Sağdaki **+** ile yeni sekme açarsın.
+- **Satır numaraları** solda durur; hata mesajlarında hangi satırı aradığını bilirsin.
+- **Renkli yazım:** `yazdır` gibi komutlar, metinler ve değişkenler farklı renklerde görünür. Yanlış yazdığında renk değişimi seni uyarır.
+- **Minimap 🗺️:** Sağ kenardaki küçük harita kodunun kuşbakışı görüntüsüdür. Uzun dosyalarda hızlı gezinmene yarar.
+
+## 💻 Terminal
+
+Programını çalıştırdığında altta terminal açılır. Çıktılar ve sorular burada görünür.
+
+- `girdi_al()` bir soru sorduğunda cevabı **terminale yazıp Enter'a basarsın**.
+- Program bitince `koduyla çıktı` satırını görürsün. **0** kodu, her şeyin sorunsuz bittiği anlamına gelir ✅
+- En alttaki **Komut…** kutusuna terminal komutları yazabilirsin.
+- Sağ üstteki 🔍 simgeleri yazı boyutunu küçültür ve büyütür, 🗑️ ekranı temizler, ✖ paneli kapatır.
+
+## 🤖 AI Asistan
+
+Sağ paneldeki asistan, TürKod sözlüğünü bilen bir yardımcıdır. Bir şey takıldığında sohbet etmek için biçilmiş kaftan.
+
+- 💡 **Açıkla:** Kodunun ne yaptığını sade bir dille anlatır.
+- ⚡ **Optimize et:** Kodunu daha temiz ve verimli hale getirmek için öneriler sunar.
+- **Sor…** kutusuna kendi sorunu yazıp ➤ ile gönderebilirsin. Örneğin "Bu döngü neden bitmiyor?" gibi.
+- 🗑️ simgesi sohbeti temizler.
+
+## 📊 Durum çubuğu
+
+En alttaki ince çubuk küçük ama işe yarar bilgiler verir:
+
+- **✓ Sözdizimi doğru:** Kodunun yazım kurallarına uyup uymadığını gösterir.
+- **Satır, Sütun:** İmlecin tam olarak nerede olduğunu söyler.
+- **Dosya adı** ve **UTF-8:** Hangi dosyada olduğunu ve Türkçe karakterlerin (ç, ğ, ı, ö, ş, ü) sorunsuz kaydedildiğini gösterir.
+
+## Sırada ne var?
+
+Arayüzü tanıdığına göre artık kod yazma zamanı! 👉 [İlk programını çalıştır](/turkod-site/use/first-run/)

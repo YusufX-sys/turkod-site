@@ -1,0 +1,56 @@
+---
+title: İlk Programını Çalıştır
+description: TürKod IDE'de 5 adımda ilk programını yaz, çalıştır ve sonucu gör.
+---
+
+Sana adını soran ve seni selamlayan küçük bir program yazalım. Toplam süre: yaklaşık 1 dakika ⏱️
+
+## 1️⃣ Yeni dosya aç
+
+Araç çubuğundaki 📄 **yeni dosya** simgesine tıkla. Editörde `Untitled-1.trpy` adında boş bir sekme açılır.
+
+## 2️⃣ Kodu yaz
+
+Şu iki satırı editöre yaz (ya da kopyala):
+
+```
+isim = girdi_al("İsmin nedir?\nSen:")
+yazdır(f"Merhaba {isim}!")
+```
+
+Ne oldu burada?
+
+- `girdi_al(...)` ekrana bir soru yazar ve senin cevabını bekler. Cevap `isim` kutusuna girer 📦
+- `yazdır(...)` ekrana yazı basar.
+- Başındaki `f` harfi sihirlidir ✨ Tırnak içindeki `{isim}` yerine kutunun içindeki değeri yerleştirir.
+- `\n` yazıyı bir alt satıra geçirir.
+
+## 3️⃣ Kaydet
+
+💾 simgesine bas ve dosyana bir ad ver. Uzantısı `.trpy` olsun.
+
+## 4️⃣ Çalıştır
+
+Araç çubuğundaki yeşil ▶️ düğmesine bas. Altta terminal açılır ve program sorusunu sorar.
+
+## 5️⃣ Terminale cevap yaz
+
+`Sen:` yazan yere adını yaz ve Enter'a bas. Terminalde şunu görürsün:
+
+```
+İsmin nedir?
+Sen:> Yusuf
+Merhaba Yusuf!
+```
+
+Selam veren ilk programını yazdın, tebrikler! 🎉
+
+:::note[Canlı Demo'yla farkı]
+Bu sayfadaki örnek IDE içindir. Sitedeki [Canlı Demo](/turkod-site/demo/) `f"..."` yazımını desteklemez. Orada aynı işi `yazdır("Merhaba " + isim)` ile yapabilirsin.
+:::
+
+## Takıldın mı?
+
+- Program çalışmıyorsa altta durum çubuğundaki **Sözdizimi** yazısına ve terminaldeki hata mesajına bak.
+- Kodun ne yaptığını anlamak için sağdaki AI Asistan'da 💡 **Açıkla**'ya bas.
+- Yazım kurallarını öğrenmek için 👉 [Temel İfadeler](/turkod-site/learn/basics/)
