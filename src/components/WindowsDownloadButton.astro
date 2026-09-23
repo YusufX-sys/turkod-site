@@ -29,8 +29,11 @@
       const res = await fetch(`https://api.github.com/repos/${REPO}/releases/latest`);
       if (!res.ok) throw new Error('GitHub API isteği başarısız: ' + res.status);
       const data = await res.json();
-      const asset = (data.assets || []).find(a => a.name.toLowerCase().endsWith('.zip'));
-      insertButton(asset ? asset.browser_download_url : FALLBACK_URL);
+      const assets = data.assets || [];
+      const exeAsset = assets.find(a => a.name.toLowerCase().endsWith('.exe'));
+      const zipAsset = assets.find(a => a.name.toLowerCase().endsWith('.zip'));
+      const bestAsset = exeAsset || zipAsset;
+      insertButton(bestAsset ? bestAsset.browser_download_url : FALLBACK_URL);
     } catch (err) {
       console.warn('TürKod: en güncel sürüm bilgisi alınamadı, sürümler sayfasına yönlendiriliyor.', err);
       insertButton(FALLBACK_URL);
