@@ -1,6 +1,6 @@
 ﻿---
 title: Güvenlik
-description: TürKod dağıtım güvenliği ve doğrulama.
+description: TürKod imza doğrulama sistemi.
 ---
 
 Her TürKod sürümü RSA anahtarıyla, PSS + SHA-256 kullanılarak imzalanır.
@@ -11,17 +11,14 @@ Her TürKod sürümü RSA anahtarıyla, PSS + SHA-256 kullanılarak imzalanır.
 
 ## Doğrulama
 
-1. Repo'daki `build/` klasöründen `dogrula.py` ve `turkod_public.pem` dosyalarını indir.
-2. İndirdiğin TürKod sürüm klasörüne kopyala.
-3. Şu komutu çalıştır:
+Programın içinde doğrulama yapmak çok kolay:
 
-    python dogrula.py "TürKod IDE.exe"
+1. Programı aç.
+2. Üstteki **Yardım** butonuna tıkla.
+3. Dosyaların taranmasını bekle ve doğrula.
 
-4. `İmza geçerli` görürsen dosya güvenlidir. `İmza geçersiz` görürsen dosyayı kullanma ve resmî kanaldan tekrar indir.
+Eğer tüm dosyalar geçerli görünüyorsa, programın güvenlidir ve kullanmaya devam edebilirsin.
 
-Doğrulama için Python ve cryptography paketi gereklidir: `pip install cryptography`
-
-## Resmî Bağlantılar
-
-- **GitHub:** https://github.com/YusufX-sys/turkod-ide
-- **İndirme:** https://github.com/YusufX-sys/turkod-ide/releases
+:::tip[İpucu]
+Doğrulama başarısız olursa programı kapat ve resmî kanaldan tekrar indir.
+:::

@@ -25,72 +25,6 @@ değilse:
   Kütüphaneler ve tam özellikler için <a href="/turkod-site/releases/">tam sürümü indir</a>.
 </p>
 
-<style>
-  .tk-demo { display: grid; gap: 1rem; grid-template-columns: 1fr; margin: 1rem 0; }
-  @media (min-width: 720px) { .tk-demo { grid-template-columns: 1fr 1fr; } }
-
-  .tk-pane {
-    border: 1px solid transparent;
-    background:
-      linear-gradient(#0d1117, #0d1117) padding-box,
-      linear-gradient(120deg, #22d3ee, #6366f1, #e879f9) border-box;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px -12px rgba(99,102,241,.35);
-  }
-
-  .tk-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: rgba(22,27,34,.9); border-bottom: 1px solid rgba(129,140,248,.25); }
-  .tk-d { width: 10px; height: 10px; border-radius: 50%; animation: tk-pulse 2.4s infinite; }
-  .tk-d.y { animation-delay: .3s; } .tk-d.g { animation-delay: .6s; }
-  .r { background: #ff5f56; } .y { background: #ffbd2e; } .g { background: #27c93f; }
-  @keyframes tk-pulse { 50% { opacity: .5; } }
-  .tk-t { margin-left: 8px; font-size: 12px; color: #8b949e; font-family: var(--sl-font-mono); }
-
-  textarea {
-    width: 100%; min-height: 160px; resize: vertical; border: 0; outline: none;
-    background: transparent; color: #e6edf3; font-family: var(--sl-font-mono);
-    font-size: 14px; padding: 12px; box-sizing: border-box; tab-size: 4;
-  }
-  textarea:focus { background: rgba(99,102,241,.08); }
-
-  .tk-row { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid rgba(129,140,248,.25); }
-
-  #tk-run {
-    background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
-    background-size: 200% auto;
-    color: #fff; border: 0; border-radius: 8px; padding: 10px 18px;
-    font-weight: 700; cursor: pointer;
-    box-shadow: 0 0 16px rgba(99,102,241,.5);
-    transition: background-position .4s, transform .2s, box-shadow .2s;
-  }
-  #tk-run:hover { background-position: 200% center; transform: translateY(-2px); box-shadow: 0 0 26px rgba(217,70,239,.65); }
-  #tk-run:active { transform: scale(.97); }
-  #tk-run:disabled { opacity: .5; cursor: wait; transform: none; }
-
-  .tk-ghost { background: transparent; color: #8b949e; border: 1px solid rgba(129,140,248,.3); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
-  .tk-ghost:hover { color: #e6edf3; border-color: #22d3ee; }
-
-  #tk-out { min-height: 150px; padding: 12px; font-family: var(--sl-font-mono); font-size: 14px; color: #e6edf3; white-space: pre-wrap; }
-  .tk-line.cmd { color: #79c0ff; }
-  .tk-line.ok { color: #7ee787; text-shadow: 0 0 12px rgba(126,231,135,.5); }
-  .tk-line.warn { color: #ffa657; animation: tk-shake .3s; }
-  .tk-line.dim { color: #8b949e; }
-  @keyframes tk-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
-
-  .tk-input-line { display: flex; align-items: center; gap: 0; }
-  .tk-input {
-    flex: 1; background: transparent; border: 0; outline: none;
-    color: #e6edf3; font-family: var(--sl-font-mono); font-size: 14px;
-    caret-color: #7ee787;
-  }
-
-  .tk-cursor { display: inline-block; width: 8px; height: 16px; background: #7ee787; animation: tk-blink 1s steps(1) infinite; }
-  @keyframes tk-blink { 50% { opacity: 0; } }
-
-  .tk-note { font-size: 14px; color: #8b949e; }
-  .tk-note a { color: #22d3ee; }
-</style>
-
 <script>
   const code = document.getElementById('tk-code');
   const out = document.getElementById('tk-out');
@@ -631,4 +565,3 @@ değilse:
     code.focus();
   });
 </script>
-

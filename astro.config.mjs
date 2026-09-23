@@ -13,7 +13,6 @@ export default defineConfig({
       tableOfContents: false,
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
-        ThemeSelect: './src/components/EmptyTheme.astro',
         Footer: './src/components/Footer.astro',
       },
       locales: { root: { label: 'Türkçe', lang: 'tr' } },
