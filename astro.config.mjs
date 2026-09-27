@@ -29,24 +29,25 @@ export default defineConfig({
             { label: 'Sürüm Geçmişi', link: '/releases/' },
           ],
         },
-           {
-	  label: '🧭 Nasıl Kullanılır',
-	  items: [
-	    { label: 'Arayüz Turu', link: '/use/tour/' },
-	    { label: 'İlk Programını Çalıştır', link: '/use/first-run/' },
-	  ],
-	},
         {
-          label: '📚 Dili Öğrenin',
-          collapsed: false,
+          label: '🧭 Nasıl Kullanılır',
           items: [
-            { label: 'Temel İfadeler', link: '/learn/basics/' },
-            { label: 'Koşullar', link: '/learn/conditions/' },
-            { label: 'Varsayılan Kütüphaneler', link: '/learn/stdlib/' },
-            { label: 'Diğer Kütüphaneler', link: '/learn/extra-libs/' },
-            { label: 'Kendini Test Et', link: '/learn/quiz/' },
+            { label: 'Arayüz Turu', link: '/use/tour/' },
+            { label: 'İlk Programını Çalıştır', link: '/use/first-run/' },
           ],
         },
+        {
+	  label: '📚 Dili Öğrenin',
+	  items: [
+	    { label: 'Temel İfadeler', link: '/learn/basics/' },
+	    { label: 'Koşullar', link: '/learn/conditions/' },
+	    { label: 'Varsayılan Kütüphaneler', link: '/learn/stdlib/' },
+	    { label: 'Diğer Kütüphaneler', link: '/learn/extra-libs/' },
+	    { label: 'Kendini Test Et', link: '/learn/quiz/' },
+	    { label: 'Sözlük', link: '/learn/sozluk/' },
+	    { label: 'Sözdizimi Davranışları', link: '/learn/sozdizimi-davranislari/' },
+	  ],
+	},
         {
           label: '✨ Özellikler',
           items: [

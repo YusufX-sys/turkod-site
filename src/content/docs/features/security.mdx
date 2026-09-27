@@ -7,17 +7,21 @@ Her TürKod sürümü RSA anahtarıyla, PSS + SHA-256 kullanılarak imzalanır.
 
 ## Neden Önemli?
 
-İmza, indirdiğin dosyanın gerçekten TürKod ekibinden geldiğini kanıtlar. Dosya sonradan değiştirilirse imza tutmaz ve anlarsın.
+İmza, dosyanın yayıncının anahtarıyla imzalandığını ve sonradan değiştirilmediğini gösterir. Dosya değiştirilirse imza tutmaz ve fark edersin.
 
 ## Doğrulama
 
 Programın içinde doğrulama yapmak çok kolay:
 
 1. Programı aç.
-2. Üstteki **Yardım** butonuna tıkla.
-3. Dosyaların taranmasını bekle ve doğrula.
+2. Üstteki **Yardım** menüsüne tıkla.
+3. Dosyaların taranmasını bekle ve sonucu gör.
 
-Eğer tüm dosyalar geçerli görünüyorsa, programın güvenlidir ve kullanmaya devam edebilirsin.
+Tüm dosyalar geçerli görünüyorsa dosyaların imzayla eşleştiği anlamına gelir.
+
+:::note[Sınır]
+İmza, dosyanın **bozulmadığını ve değiştirilmediğini** gösterir; programın zararsız olduğunu tek başına garanti etmez. Program içi doğrulamayı, değiştirilmiş bir program da yanıltabilir. Bu yüzden dosyayı yalnızca resmî GitHub sürüm sayfasından indir.
+:::
 
 :::tip[İpucu]
 Doğrulama başarısız olursa programı kapat ve resmî kanaldan tekrar indir.
