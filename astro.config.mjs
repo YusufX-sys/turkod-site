@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'TürKod',
-      favicon: '/logo.png',
+      favicon: '/favicon.ico',
       customCss: ['./src/styles/custom.css'],
       tableOfContents: false,
       components: {
