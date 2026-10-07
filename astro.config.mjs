@@ -2,48 +2,22 @@
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 
-// Site, alan adının KÖKÜNDE yayınlanır (depo adı: YusufX-sys.github.io).
-// Google arama sonuçlarındaki logo ve "TürKod" site adı yalnızca kök adresten
-// okunur; /turkod-site/ gibi bir alt klasörde gösterilmez.
-const SITE = 'https://yusufx-sys.github.io';
-
-const yapisalVeri = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE}/#website`,
-      name: 'TürKod',
-      alternateName: ['TurKod', 'TürKod IDE'],
-      url: `${SITE}/`,
-      inLanguage: 'tr',
-      publisher: { '@id': `${SITE}/#organization` },
-    },
-    {
-      '@type': 'Organization',
-      '@id': `${SITE}/#organization`,
-      name: 'TürKod',
-      url: `${SITE}/`,
-      logo: `${SITE}/icon-512.png`,
-      sameAs: ['https://github.com/YusufX-sys/turkod-ide'],
-    },
-  ],
-};
-
 export default defineConfig({
-  site: SITE,
+  base: '/turkod-site/',
+  site: 'https://yusufx-sys.github.io',
   integrations: [
     starlight({
       title: 'TürKod',
       favicon: '/favicon.ico',
+      // head içindeki yollara base otomatik eklenmez; /turkod-site/ elle yazılır.
+      // Not: Google arama sonucundaki logoyu yusufx-sys.github.io/ ANA SAYFASINDAN
+      // alır (ayrı depo: YusufX-sys.github.io). Buradakiler tarayıcı sekmesi içindir.
       head: [
-        // Google: favicon 48 pikselin katı, taranabilir ve ana sayfada bağlı olmalı.
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/icon-48.png' } },
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icon-96.png' } },
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192.png' } },
-        { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' } },
-        { tag: 'meta', attrs: { property: 'og:image', content: `${SITE}/icon-512.png` } },
-        { tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(yapisalVeri) },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/turkod-site/icon-48.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/turkod-site/icon-96.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/turkod-site/icon-192.png' } },
+        { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/turkod-site/apple-touch-icon.png' } },
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://yusufx-sys.github.io/turkod-site/icon-512.png' } },
       ],
       customCss: ['./src/styles/custom.css'],
       tableOfContents: false,

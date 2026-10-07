@@ -3,9 +3,9 @@
 TürKod, Türkçe anahtar kelimelerle yazılan ve Python'a çevrilen bir programlama dilidir.
 
 ## Kritik Dokümantasyon
-- [Sözlük](https://yusufx-sys.github.io/learn/sozluk/): Tüm Türkçe anahtar kelime ve fonksiyonların Python karşılıkları.
-- [Sözdizimi Davranışları](https://yusufx-sys.github.io/learn/sozdizimi-davranislari/): Sözlükte yer almayan, bağlama göre değişen çeviri kuralları (döngü/için ayrımı, ise operatörü, rezerve kelime kısıtları). Bu sayfa okunmadan doğru kod üretilemez.
-- [Temel İfadeler](https://yusufx-sys.github.io/learn/basics/): Söz dizimine giriş.
+- [Sözlük](https://yusufx-sys.github.io/turkod-site/learn/sozluk/): Tüm Türkçe anahtar kelime ve fonksiyonların Python karşılıkları.
+- [Sözdizimi Davranışları](https://yusufx-sys.github.io/turkod-site/learn/sozdizimi-davranislari/): Sözlükte yer almayan, bağlama göre değişen çeviri kuralları (döngü/için ayrımı, ise operatörü, rezerve kelime kısıtları). Bu sayfa okunmadan doğru kod üretilemez.
+- [Temel İfadeler](https://yusufx-sys.github.io/turkod-site/learn/basics/): Söz dizimine giriş.
 
 ## Not
 Sözlükte olmayan bir kelime hata vermeden aynen Python koduna geçer ve NameError üretir.
