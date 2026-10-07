@@ -4,7 +4,7 @@ description: TürKod kurulumuyla birlikte gelen ek kütüphaneler.
 ---
 
 <div class="tk-learn-intro">
-<p>Bu kütüphaneler TürKod ile birlikte <strong>kurulu gelir</strong>; ek kurulum gerekmez. Türkçe sözdizimiyle oyun, veri ve web projeleri yapabilirsin.</p>
+<p><strong>py_oyun (pygame), ursina ve sympy</strong> TürKod ile birlikte kurulu gelir. Diğerlerini (pandas, matplotlib, numpy, flask vb.) IDE'nin terminalinde <code>pip yükle pandas</code> gibi bir komutla kurabilirsin. Türkçe sözdizimiyle oyun, veri ve web projeleri yapabilirsin.</p>
 </div>
 
 ## py_oyun (pygame) — 2B oyunlar
@@ -14,13 +14,14 @@ içe_aktar py_oyun
 py_oyun.oyun_başlat()
 ekran = py_oyun.ekran_oluştur((400, 300))
 py_oyun.pencere_başlığı("İlk Oyunum")
-döngü Doğru:
+çalışıyor = Doğru
+döngü çalışıyor:
     döngü olay içinde py_oyun.olayları_al():
         eğer olay.tip == py_oyun.çıkış_olayı:
-            py_oyun.oyun_kapat()
-            kır
+            çalışıyor = Yanlış
     py_oyun.dikdörtgen_çiz(ekran, (0, 128, 255), (50, 50, 100, 60))
     py_oyun.ekran_güncelle()
+py_oyun.oyun_kapat()
 ```
 
 :::tip[Şimdi dene]
@@ -31,8 +32,9 @@ döngü Doğru:
 
 ```
 içe_aktar ursina_kütüphanesi
-kutu = ursina_kütüphanesi.varlık(model = küp, ursina_renk = kırmızı, ölçek = 2)
-ursina_kütüphanesi.çalıştır_oyun()
+uygulama = ursina_kütüphanesi.başlat()
+kutu = ursina_kütüphanesi.varlık(model="cube", ursina_renk=ursina_kütüphanesi.renk.kırmızı, ölçek=2)
+ursina_kütüphanesi.çalıştır()
 ```
 
 ## Veri ve grafik (pandas, matplotlib)
@@ -64,11 +66,11 @@ matplotlib.pyplot.grafik_göster()
 | pytest | `pytest_kütüphanesi` | test |
 | coverage | `coverage_kütüphanesi` | kapsama analizi |
 | kivy | `kivy_uygulaması` | arayüz / mobil |
-| spacy | `spacy_yükle` | doğal dil işleme |
-| bs4 | `bs4_GuzelCorbalar` | HTML ayrıştırma |
-| openai | `openai_istemcisi` | yapay zeka |
-| polars | `polars_veri_cercesi` | hızlı veri |
-| streamlit | `streamlit_buton` | veri uygulamaları |
+| spacy | `spacy.yükle` | doğal dil işleme |
+| bs4 | `bs4.GüzelÇorbalar` | HTML ayrıştırma |
+| openai | `openai.istemcisi` | yapay zeka |
+| polars | `polars.veri_çerçevesi` | hızlı veri |
+| streamlit | `streamlit.buton` | veri uygulamaları |
 | sqlalchemy | `veritabanı_motoru_oluştur` | ORM |
 | requests | `yanıt_durum_kodu` | HTTP istekleri |
 
@@ -77,7 +79,7 @@ Sınıf adlarını doğrudan kullanmak için `den` kalıbını kullan: `içe_akt
 :::
 
 :::caution
-`tensorflow_kütüphanesi` ve `torch_kütüphanesi` sözlükte vardır ancak birlikte kurulu gelmez; kullanmak için ayrı kurman gerekir.
+Yukarıdaki tablodaki kütüphaneler (ve `tensorflow_kütüphanesi`, `torch_kütüphanesi`) sözlükte vardır ancak birlikte kurulu gelmez. Kullanmadan önce IDE terminalinde kur: `pip yükle numpy`. Kurulu paketleri `pip listele` ile görebilirsin.
 :::
 
 ## Mini Görev

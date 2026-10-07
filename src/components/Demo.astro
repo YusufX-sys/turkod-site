@@ -430,7 +430,8 @@ değilse:
           if (lines[i].trim() === '') { i++; continue; }
           if (indentOf(lines[i]) !== baseIndent) break;
           const t2 = lines[i].trim();
-          if ((t2.startsWith('değilse-eğer ') || t2.startsWith('değilse_eğer ')) && t2.endsWith(':')) {
+          // Yalnızca IDE'nin kabul ettiği yazım: "değilse-eğer" IDE'de sözdizimi hatası verir.
+          if (t2.startsWith('değilse_eğer ') && t2.endsWith(':')) {
             const elifCond = t2.slice(t2.indexOf(' ') + 1, -1).trim();
             const elifStart = i + 1;
             const elifEnd = findBlockEnd(lines, elifStart, baseIndent);
