@@ -2,7 +2,7 @@
 
 [TürKod](https://github.com/YusufX-sys/turkod-ide) projesinin resmi dokümantasyon sitesi. Astro ve Starlight ile oluşturulmuştur.
 
-🔗 Canlı site: https://yusufx-sys.github.io/turkod-site/
+🔗 Canlı site: https://yusufx-sys.github.io/
 
 ## TürKod Nedir?
 
@@ -36,7 +36,7 @@ Site `http://localhost:4321` adresinde açılır.
 
 ## Katkıda Bulunma
 
-Hata bildirimi veya öneri için [Issues](https://github.com/YusufX-sys/turkod-site/issues) sekmesini kullanabilirsiniz.
+Hata bildirimi veya öneri için [Issues](https://github.com/YusufX-sys/YusufX-sys.github.io/issues) sekmesini kullanabilirsiniz.
 
 ## Lisans
 
