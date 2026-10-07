@@ -1,0 +1,24 @@
+---
+title: Otomatik Güncelleme
+description: TürKod'un yeni sürümleri güvenle bulup kurması.
+---
+
+TürKod, açıldıktan birkaç saniye sonra arka planda yeni sürüm olup olmadığını denetler. İstediğin zaman **Güncelleştirmeler → Güncelleştirmeleri Denetle** ile de bakabilirsin.
+
+## Yeni sürüm olduğunda
+
+**Yeni sürüm yayınlandı** penceresi yeni ve kurulu sürüm numaralarını ve sürüm notlarını gösterir:
+
+- **Yükle** — güncelleme indirilir, açık dosyaların kaydedilir ve kurulum kendiliğinden yapılır.
+- **Atla** — bu sürüm bir daha sorulmaz (elle denetlersen yine görünür).
+
+Güncel sürümü kullanıyorsan **Programınız Güncel** mesajı çıkar.
+
+## Güvenlik
+
+Güncelleme yalnızca resmî GitHub sürüm sayfasından ve yalnızca HTTPS ile indirilir. Kurmadan önce iki denetim yapılır:
+
+1. Sürüm bilgisinin (`latest.json`) **dijital imzası** programın içindeki anahtarla doğrulanır.
+2. İndirilen kurulum dosyasının **SHA-256 özeti** imzalı bilgideki değerle karşılaştırılır.
+
+İkisinden biri tutmazsa güncelleme kurulmaz. Ayrıntılar için [Güvenlik](/turkod-site/features/security/) sayfasına bak.

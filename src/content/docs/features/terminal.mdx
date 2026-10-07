@@ -1,0 +1,36 @@
+---
+title: Terminal ve Paketler
+description: IDE terminali ve Türkçe pip komutlarıyla kütüphane kurma.
+---
+
+Alttaki **TERMİNAL** paneli (`Ctrl+J`) iki işe yarar: çalışan programınla konuşmak ve komut çalıştırmak.
+
+- Program çalışırken yazdıkların programa gider (`girdi_al()` cevapları).
+- Program çalışmıyorken **Komut...** kutusuna yazdıkların, proje klasöründe Windows komutu olarak çalıştırılır (`dir`, `cd` gibi).
+- Yazı boyutunu panel başlığındaki düğmelerle ya da `Ctrl`+fare tekerleğiyle değiştirebilir, **Temizle** ile ekranı silebilirsin.
+
+## Türkçe pip — kütüphane kurma
+
+Kütüphaneleri Türkçe komutlarla kurabilirsin. Sadece `pip` yazarsan Türkçe yardım çıkar.
+
+| Komut | Ne yapar? |
+| ----- | --------- |
+| `pip yükle pandas` | Kütüphaneyi kurar |
+| `pip güncelle pandas` | Kütüphaneyi günceller |
+| `pip sil pandas` | Kütüphaneyi kaldırır |
+| `pip listele` | Kurulu kütüphaneleri listeler |
+| `pip eskiler` | Güncellemesi olanları gösterir |
+| `pip bilgi pandas` | Kütüphanenin ayrıntılarını gösterir |
+| `pip ara pan` | Kurulu kütüphaneler içinde arar |
+| `pip sürüm` | pip sürümünü gösterir |
+
+- Eş anlamlılar da çalışır: `kur` = `yükle`, `kaldır` = `sil`, `liste` = `listele`, `göster` = `bilgi`.
+- Türkçe karaktersiz yazım da olur: `pip yukle numpy`.
+- Bir gereksinim dosyasındaki her şeyi kurmak için: `pip yükle -g gereksinimler.txt`
+- İngilizce komutlar (`pip install numpy`) da çalışmaya devam eder.
+
+Kurduğun kütüphaneler kullanıcı klasöründe (`%LOCALAPPDATA%\TurKod\pip_packages`) saklanır ve programlarında hemen kullanılabilir.
+
+:::tip[İpucu]
+Bir AI sağlayıcısının kütüphanesi eksikse AI Asistan sana hangi `pip yükle` komutunu yazman gerektiğini söyler.
+:::

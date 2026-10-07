@@ -52,6 +52,40 @@ mutlak(-7)
 yuvarla(3.7)
 ```
 
+## Sık kullanılan yerleşik fonksiyonlar
+
+| TürKod | Python | Örnek |
+| ------ | ------ | ----- |
+| `en_büyük` / `en_küçük` | max / min | `en_büyük([3, 9, 4])` → 9 |
+| `toplam` | sum | `toplam([1, 2, 3])` → 6 |
+| `sırala_builtin` | sorted | sıralanmış yeni liste verir |
+| `sıralı_numaralandır` | enumerate | sıra numarasıyla döngü |
+| `harita` | map | her elemana işlem uygular |
+| `süz` | filter | koşula uyanları seçer |
+| `izdusum` | zip | iki listeyi eşleştirir |
+| `hepsi` / `herhangi` | all / any | hepsi / en az biri doğru mu? |
+| `üssü` | pow | `üssü(2, 10)` → 1024 |
+| `tip` | type | değerin türünü verir |
+
+```
+meyveler = ["elma", "armut"]
+için sira, meyve içinde sıralı_numaralandır(meyveler, 1):
+    yazdır(sira, meyve)
+yazdır("a", "b", ayırıcı="-")
+yazdır("Yükleniyor", sonlandırıcı="...")
+```
+
+Çıktı:
+
+```
+1 elma
+2 armut
+a-b
+Yükleniyor...
+```
+
+`ayırıcı=` değerlerin arasına, `sonlandırıcı=` satırın sonuna ne konacağını belirler.
+
 ## Listeler
 
 ```
@@ -73,6 +107,16 @@ döngü sayac < 3:
     yazdır(sayac)
     sayac = sayac + 1
 ```
+
+Bir listenin elemanlarını sırayla gezmek için `için ... içinde` kullanılır:
+
+```
+meyveler = ["elma", "armut"]
+için meyve içinde meyveler:
+    yazdır(meyve)
+```
+
+Daha fazlası için [Veri Yapıları](/turkod-site/learn/data-structures/) sayfasına bak.
 
 - `kır` → döngüyü durdur (break)
 - `devam_et` → o adımı atla (continue)

@@ -1,0 +1,62 @@
+---
+title: Çalıştırma ve Hata Ayıklama
+description: Kodu çalıştırma, Türkçe hata mesajları ve adım adım hata ayıklayıcı.
+---
+
+## Kodu çalıştırma
+
+`Ctrl+R` ya da araç çubuğundaki yeşil ▶ düğmesi kodunu çalıştırır; kırmızı düğme durdurur.
+
+1. Kod önce denetlenir; sözdizimi hatası varsa `Satır N: ...` biçiminde gösterilir.
+2. TürKod kodu Python'a çevrilir.
+3. Program, TürKod ile birlikte gelen **kendi Python'u** ile çalışır; bilgisayarına ayrıca Python kurman gerekmez.
+
+`girdi_al()` bir soru sorduğunda cevabını alttaki terminale yazıp `Enter`'a basarsın.
+
+:::note[Çalışma klasörü]
+Programın her çalıştırmada geçici bir klasörde çalışır. Kalıcı bir dosya oluşturmak ya da okumak istiyorsan tam yol yaz (örn. `"C:/Users/ad/Belgeler/notlar.txt"`).
+:::
+
+## Türkçe çıktı ve hata mesajları
+
+- `Doğru`, `Yanlış` ve `Hiçlik` değerleri ekrana Türkçe yazılır (listelerin içinde de).
+- Hatalar Türkçe adı ve açıklamasıyla gösterilir:
+
+```
+==================================================
+[HATA]: Sıfıra Bölme Hatası
+Satır Numarası: 3
+Açıklama: bir sayı 0'a bölünemez!
+==================================================
+```
+
+- Program bir hata koduyla biterse `[Program N koduyla sonlandı]`, sen durdurursan `[Durduruldu]` yazar.
+
+## Hazır gelen kütüphaneler
+
+`kaplumbağa` (turtle), tkinter, `py_oyun` (pygame), ursina ve sympy kurulumla birlikte gelir. Diğer kütüphaneleri [Terminal](/turkod-site/features/terminal/) sayfasında anlatıldığı gibi `pip yükle` ile kurabilirsin.
+
+## Hata ayıklayıcı (Debug)
+
+Kodunu satır satır çalıştırıp değişkenlerin o anki değerlerini görebilirsin.
+
+**Durma noktası (breakpoint):** Bir satırın numarasına tıkla ya da imleç o satırdayken `F9`'a bas. Kaldırmak için tekrar tıkla; hepsini **Çalıştır → Tüm Breakpoint'leri Kaldır** ile silebilirsin.
+
+| Kısayol | Ne yapar? |
+| ------- | --------- |
+| `F5` | Hata ayıklamayı başlatır / devam ettirir |
+| `F10` | **Adım At** — sonraki satıra geçer |
+| `F11` | **İçine Gir** — çağrılan fonksiyonun içine girer |
+| `Shift+F11` | **Dışına Çık** — fonksiyondan çıkana kadar çalışır |
+| `F6` | **Duraklat** |
+| `Shift+F5` | **Debug Durdur** |
+
+Debug başlamadan `F10` veya `F11`'e basarsan program ilk satırda durarak başlar.
+
+**Debug paneli** nerede ve neden durulduğunu gösterir (Breakpoint, Adım, Başlangıç, Duraklatıldı). **Değişkenleri göster** ile üç bölüm açılır:
+
+- **YEREL DEĞİŞKENLER** — o anki fonksiyonun değişkenleri
+- **KÜRESEL DEĞİŞKENLER** — dosyanın genelindeki değişkenler
+- **ÇAĞRI YIĞINI** — hangi fonksiyonun hangisini çağırdığı
+
+Liste, sözlük ve nesneler açılarak içleri görülebilir. Çalışılan satır editörde vurgulanır.

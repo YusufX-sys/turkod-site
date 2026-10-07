@@ -1,0 +1,67 @@
+---
+title: Kod Editörü
+description: Otomatik tamamlama, canlı sözdizimi denetimi, katlama, bul/değiştir ve oturum geri yükleme.
+---
+
+TürKod'un editörü Türkçe kod yazmak için tasarlandı: komutları tanır, sen yazarken hataları gösterir ve kaldığın yerden devam etmeni sağlar.
+
+## Otomatik tamamlama
+
+Bir kelimenin ilk iki harfini yazıp kısa bir süre beklediğinde öneri listesi açılır.
+
+- 📌 işaretli öneriler **senin kodundaki** adlardır (değişkenler, fonksiyonlar).
+- 📚 işaretli öneriler **TürKod sözlüğündeki** kelimelerdir.
+- `↑` / `↓` ile seç, `Tab` ya da `Enter` ile kabul et, `Esc` ile kapat.
+
+Ayarlar'daki **Otomatik Tamamlama** seçeneğiyle kapatılabilir.
+
+## Canlı sözdizimi denetimi
+
+Yazmayı bıraktıktan kısa süre sonra kodun denetlenir ve sonuç alttaki durum çubuğunda görünür:
+
+- **✓ Sözdizimi doğru** — her şey yolunda.
+- Hata varsa satır numarasıyla birlikte Türkçe açıklaması.
+- **⚠** uyarıları — örneğin bir TürKod komutunu değişken adı olarak kullandığında.
+
+## Renkli yazım
+
+Komutlar, yerleşik fonksiyonlar, modül adları, metinler ve sayılar farklı renklerde gösterilir. Renkler seçili temaya göre değişir.
+
+## Kod katlama ve kılavuz çizgileri
+
+- Satır numaralarının yanındaki oklara tıklayarak bir bloğu (fonksiyon, döngü, koşul) **katlayıp açabilirsin**.
+- **Sütun Çizgileri**, iç içe blokların hizasını gösteren dikey çizgilerdir.
+- **Boşluk Göstergesi**, boşlukları nokta, sekmeleri ok olarak gösterir; girinti hatalarını bulmayı kolaylaştırır.
+
+## Bul / Değiştir
+
+- `Ctrl+F` **Bul**, `Ctrl+H` **Bul / Değiştir** kutusunu açar.
+- Kutu sürüklenebilir; **Önceki / Sonraki** ile eşleşmeler arasında gezersin, kaç eşleşme olduğu görünür.
+- **Değiştir** tek tek, **Tümünü Değiştir** hepsini birden değiştirir.
+- Önce bir kelime seçersen arama kutusu o kelimeyle dolar.
+
+## Yazmayı hızlandıran kısayollar
+
+| Kısayol | Ne yapar? |
+| ------- | --------- |
+| `Ctrl+/` | Satırı yorum yapar / yorumu kaldırır |
+| `Ctrl+Shift+D` | Satırı çoğaltır |
+| `Alt+↑` / `Alt+↓` | Satırı yukarı / aşağı taşır |
+| `Ctrl+Enter` | Altına boş satır ekler |
+| `Ctrl+Shift+Enter` | Üstüne boş satır ekler |
+| `Tab` / `Shift+Tab` | Girintiyi artırır / azaltır |
+| `Ctrl+=` / `Ctrl+-` | Yazıyı büyütür / küçültür (`Ctrl`+fare tekerleği de olur) |
+
+Parantez ve tırnaklar `( [ { " '` otomatik kapanır. Bir metni seçip `(` veya `"` yazarsan seçim parantez/tırnak içine alınır.
+
+## Sekmeler ve oturum
+
+- Her dosya ayrı sekmede açılır; sekmeleri sürükleyerek sıralayabilirsin.
+- Kaydedilmemiş sekmede işaret görünür; kapatırken **Vazgeç / Kapat / Kaydet** sorulur.
+- Programı kapatıp açtığında **açık dosyaların ve kaydedilmemiş yeni sekmelerin geri gelir**.
+- **Otomatik Kaydetme** açıksa adı olan dosyalar düzenli aralıklarla (varsayılan 30 sn) kaydedilir.
+- Kaydedilmemiş dosya varken programı kapatırsan **İptal / Kaydetmeden Çık / Kaydet ve Çık** sorulur.
+
+## Gezgin
+
+Soldaki **GEZGİN** paneli açtığın klasörü gösterir. `.trpy` (TürKod) ve `.py` (Python) dosyaları farklı renklerde görünür. Bir dosyaya tıklayınca editörde açılır.

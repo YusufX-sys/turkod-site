@@ -1,0 +1,118 @@
+---
+title: Metin İşlemleri
+description: Metinleri büyütme, bölme, birleştirme, arama ve biçimlendirme.
+---
+
+<div class="tk-learn-intro">
+<p>Metinler (string) tırnak içinde yazılır. Bu sayfada metinleri değiştiren Türkçe komutları öğrenirsin. Tırnak içindeki yazılar <strong>asla çevrilmez</strong>: <code>yazdır("eğer")</code> ekrana <code>eğer</code> yazar.</p>
+</div>
+
+| TürKod | Python | Ne yapar? |
+| ------ | ------ | --------- |
+| `büyük_harf` | upper | HEPSİNİ BÜYÜK yapar |
+| `küçük_harf` | lower | hepsini küçük yapar |
+| `başlık_yap` | title | Her Kelimenin İlk Harfi |
+| `baş_harf_büyük` | capitalize | İlk harfi büyük |
+| `kırp` | strip | baştaki/sondaki boşlukları siler |
+| `böl` | split | parçalara ayırır |
+| `birleştir` | join | parçaları birleştirir |
+| `yer_değiştir` | replace | bir parçayı değiştirir |
+| `bul` | find | yerini bulur (yoksa -1) |
+| `say` | count | kaç kez geçtiğini sayar |
+| `başlangıç_mi` | startswith | böyle mi başlıyor? |
+| `bitiş_mi` | endswith | böyle mi bitiyor? |
+| `rakam_mi` | isdigit | yalnızca rakam mı? |
+| `harf_mi` | isalpha | yalnızca harf mi? |
+| `biçimle` | format | yer tutucuları doldurur |
+| `sıfır_doldur` | zfill | başa sıfır ekler |
+
+## Büyük / küçük harf ve boşluk
+
+```
+ad = "  Ayşe Yılmaz  "
+yazdır(ad.kırp())
+yazdır(ad.kırp().büyük_harf())
+yazdır("merhaba dünya".başlık_yap())
+```
+
+Çıktı:
+
+```
+Ayşe Yılmaz
+AYŞE YILMAZ
+Merhaba Dünya
+```
+
+## Bölme ve birleştirme
+
+```
+cumle = "elma,armut,kiraz"
+meyveler = cumle.böl(",")
+yazdır(meyveler)
+yazdır(" - ".birleştir(meyveler))
+```
+
+Çıktı:
+
+```
+['elma', 'armut', 'kiraz']
+elma - armut - kiraz
+```
+
+## Arama ve değiştirme
+
+```
+c = "Ben kedi severim, kedi tatlıdır"
+yazdır(c.bul("kedi"), c.say("kedi"))
+yazdır(c.yer_değiştir("kedi", "köpek"))
+yazdır(c.başlangıç_mi("Ben"))
+```
+
+Çıktı:
+
+```
+4 2
+Ben köpek severim, köpek tatlıdır
+Doğru
+```
+
+## Biçimlendirme
+
+En kolay yol f-string'dir: tırnağın önüne `f` koy, değişkeni `{ }` içine yaz.
+
+```
+isim = "Ali"
+yas = 12
+yazdır(f"{isim} {yas} yaşında")
+yazdır("{} {} yaşında".biçimle(isim, yas))
+yazdır("7".sıfır_doldur(3))
+```
+
+Çıktı:
+
+```
+Ali 12 yaşında
+Ali 12 yaşında
+007
+```
+
+## Harflere ulaşma
+
+```
+kelime = "Merhaba"
+yazdır(kelime[0], kelime[-1])
+yazdır(kelime[0:3], kelime[::-1])
+yazdır(uzunluk(kelime))
+```
+
+Çıktı:
+
+```
+M a
+Mer abahreM
+7
+```
+
+## Mini Görev
+
+Kullanıcıdan adını al ve `büyük_harf` ile büyük harflerle, `uzunluk` ile kaç harf olduğunu yazdır.

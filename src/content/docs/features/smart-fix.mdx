@@ -1,0 +1,41 @@
+---
+title: Akıllı Düzeltme
+description: Kodundaki yazım, sözdizimi ve çalışma hatalarını bulup düzelten yerel motor.
+---
+
+**Akıllı Düzeltme**, kodundaki hataları bulup düzeltir ve ne yaptığını Türkçe bir raporla anlatır. Tamamen **bilgisayarında** çalışır; internete ya da bir yapay zekâ hizmetine bağlanmaz.
+
+Açmak için: **Araçlar → Düzelt** ya da araç çubuğundaki sihirli değnek simgesi.
+
+## Neleri düzeltir?
+
+- **Yazım hataları:** yanlış yazılmış TürKod kelimeleri, ayrı yazılmış anahtar kelimeler, sekme/boşluk karışıklığı.
+- **Sözdizimi hataları:** eksik `:`, yanlış girinti, kapanmamış parantez ve tırnaklar, eksik virgüller.
+- **Anlam hataları:** örneğin `girdi_al()` ile alınan metni sayı gibi kullanmak.
+- **Çalışma hataları:** tanımsız adlar, eksik `içe_aktar` satırları, metin + sayı toplama, eksik `kendisi` / `küresel`. Her düzeltme kod yeniden çalıştırılarak doğrulanır.
+- **Uyarılar:** sonsuz döngü riski, hiç çalışmayacak kod, kullanılmayan değişkenler.
+
+## Güvenlik: kodun çalıştırılsın mı?
+
+Düzeltmeyi doğrulamak için kod denenerek çalıştırılır. Kodun dosya silme, internete bağlanma, başka program çalıştırma gibi **riskli** işler yapabiliyorsa (örn. `os`, `shutil`, `subprocess`, `requests`, `eval`, yazma kipinde `open`) önce sorulur:
+
+- **Çalıştırmadan düzelt** (varsayılan) — yalnızca yazım ve sözdizimi hataları düzeltilir.
+- **Çalıştırarak düzelt** — çalışma hataları da bulunur.
+- **Vazgeç**
+
+Deneme çalıştırmaları geçici bir klasörde, zaman sınırıyla yapılır.
+
+## Rapor
+
+Düzeltme sırasında motorun ne düşündüğünü canlı izlersin. Bittiğinde **Akıllı Düzeltme Raporu** açılır:
+
+- Özet, **Kod sağlığı %** ve **Güven %**
+- **Yaptığım düzeltmeler** — her biri güven yüzdesi ve tıklanabilir **Satır N** bağlantısıyla
+- **Öneriler ve uyarılar**
+- **Kod farklarını göster** — orijinal ve düzeltilmiş kodu karşılaştırır
+
+Düğmeler: **Uygula** (editördeki kodu değiştirir), **Yeni Sekmede Aç**, **Reddet**.
+
+## Ayarlar
+
+**Ayarlar → Düzeltme** bölümünden deneme çalıştırmalarının zaman aşımı (varsayılan 5 sn), mesaj aralığı ve en fazla deneme sayısı (varsayılan 12) değiştirilebilir.

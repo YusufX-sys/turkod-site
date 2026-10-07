@@ -1,0 +1,111 @@
+---
+title: Sınıflar
+description: sınıf, kendisi, başlat_özel ve kalıtımla nesne yönelimli programlama.
+---
+
+<div class="tk-learn-intro">
+<p>Sınıf, kendi veri türünü oluşturmanı sağlar: bir <strong>kalıp</strong> çizersin, sonra o kalıptan istediğin kadar <strong>nesne</strong> üretirsin.</p>
+</div>
+
+| TürKod | Python |
+| ------ | ------ |
+| `sınıf` | class |
+| `kendisi` | self |
+| `başlat_özel` | `__init__` |
+| `metin_özel` | `__str__` |
+| `üst_sınıf` | super |
+| `nesne_mi` | isinstance |
+| `@özellik_adı` | @property |
+| `@durum_metodu` | @staticmethod |
+| `@sınıf_metodu` | @classmethod |
+
+## İlk sınıf
+
+```
+sınıf Ogrenci:
+    fonksiyon başlat_özel(kendisi, ad, puan):
+        kendisi.ad = ad
+        kendisi.puan = puan
+
+    fonksiyon gecti_mi(kendisi):
+        döndür kendisi.puan >= 50
+
+    fonksiyon metin_özel(kendisi):
+        döndür f"{kendisi.ad}: {kendisi.puan}"
+
+zeynep = Ogrenci("Zeynep", 95)
+yazdır(zeynep)
+yazdır(zeynep.gecti_mi())
+```
+
+Çıktı:
+
+```
+Zeynep: 95
+Doğru
+```
+
+- `başlat_özel` nesne oluşturulurken çalışır.
+- `kendisi`, nesnenin kendisini gösterir; her metodun ilk parametresidir.
+- `metin_özel`, nesne `yazdır` ile basıldığında ne görüneceğini belirler.
+
+## Kalıtım
+
+Bir sınıf başka bir sınıfın özelliklerini devralabilir. `üst_sınıf()` ile üstteki sınıfın metotlarına ulaşırsın.
+
+```
+sınıf Hayvan:
+    fonksiyon başlat_özel(kendisi, ad):
+        kendisi.ad = ad
+    fonksiyon tanit(kendisi):
+        döndür f"Ben {kendisi.ad}"
+
+sınıf Kopek(Hayvan):
+    fonksiyon başlat_özel(kendisi, ad, cins):
+        üst_sınıf().başlat_özel(ad)
+        kendisi.cins = cins
+    fonksiyon tanit(kendisi):
+        döndür üst_sınıf().tanit() + f", cinsim {kendisi.cins}"
+
+karabas = Kopek("Karabaş", "Kangal")
+yazdır(karabas.tanit())
+yazdır(nesne_mi(karabas, Hayvan))
+```
+
+Çıktı:
+
+```
+Ben Karabaş, cinsim Kangal
+Doğru
+```
+
+## Özellik (property)
+
+```
+sınıf Daire:
+    fonksiyon başlat_özel(kendisi, r):
+        kendisi.r = r
+
+    @özellik_adı
+    fonksiyon alan(kendisi):
+        döndür 3.14 * kendisi.r ** 2
+
+yazdır(Daire(2).alan)
+```
+
+Çıktı: `12.56`
+
+## Kendi hata sınıfın
+
+```
+sınıf BakiyeYetersiz(İstisna):
+    geç
+```
+
+:::tip[İpucu]
+İngilizce yazımlar da çalışır (`self`, `__init__`), ama bir dosyada tek bir yazımı kullanmak okumayı kolaylaştırır.
+:::
+
+## Mini Görev
+
+`Araba` adında bir sınıf yaz: `marka` ve `hiz` özellikleri olsun, `hizlan()` metodu hızı 10 artırsın.

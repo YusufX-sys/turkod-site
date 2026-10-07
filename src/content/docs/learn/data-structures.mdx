@@ -1,0 +1,157 @@
+---
+title: Veri Yapıları
+description: Listeler, sözlükler, kümeler ve demetlerle çalışma.
+---
+
+<div class="tk-learn-intro">
+<p>Birden çok değeri bir arada tutmak için dört yapı vardır: <strong>liste</strong> <code>[ ]</code>, <strong>sözlük</strong> <code>{"{ }"}</code>, <strong>küme</strong> ve <strong>demet</strong> <code>( )</code>. Bu sayfada hepsinin Türkçe komutlarını öğrenirsin.</p>
+</div>
+
+## Liste metotları
+
+| TürKod | Python | Ne yapar? |
+| ------ | ------ | --------- |
+| `sona_ekle` | append | sona ekler |
+| `araya_ekle` | insert | istenen sıraya ekler |
+| `genişlet` | extend | başka listeyi ekler |
+| `kaldır` | remove | değeri siler |
+| `çıkar` | pop | sıradakini çıkarıp verir |
+| `indeks` | index | değerin sırasını bulur |
+| `say` | count | kaç tane olduğunu sayar |
+| `sırala` | sort | sıralar |
+| `tersine_çevir` | reverse | ters çevirir |
+| `kopyala` | copy | kopyasını verir |
+| `temizle` | clear | hepsini siler |
+
+```
+meyveler = ["elma", "armut"]
+meyveler.araya_ekle(0, "kiraz")
+meyveler.genişlet(["muz", "elma"])
+meyveler.kaldır("armut")
+son = meyveler.çıkar()
+yazdır(son, meyveler)
+yazdır(meyveler.indeks("muz"), meyveler.say("elma"))
+```
+
+Çıktı:
+
+```
+elma ['kiraz', 'elma', 'muz']
+2 1
+```
+
+Büyükten küçüğe sıralamak için: `sayilar.sırala(tersine_çevir=Doğru)`
+
+## Dilimleme ve indeks
+
+Sıra numaraları **0'dan** başlar; eksi sayılar sondan sayar. Metinlerde de aynısı geçerlidir.
+
+```
+sayilar = [10, 20, 30, 40, 50]
+yazdır(sayilar[0], sayilar[-1])
+yazdır(sayilar[1:3], sayilar[:2], sayilar[::-1])
+```
+
+Çıktı:
+
+```
+10 50
+[20, 30] [10, 20] [50, 40, 30, 20, 10]
+```
+
+## Sözlükler
+
+Sözlük, değerleri bir **anahtarla** saklar.
+
+| TürKod | Python |
+| ------ | ------ |
+| `anahtarlar` | keys |
+| `değerler` | values |
+| `öğeler` | items |
+| `getir` | get |
+| `güncelle` | update |
+| `çıkar` | pop |
+| `sil_beyan` | del |
+
+```
+notlar = {"Ali": 85, "Ayşe": 92}
+notlar["Can"] = 70
+yazdır(notlar.getir("Veli", 0))
+için ad, puan içinde notlar.öğeler():
+    yazdır(ad, puan)
+sil_beyan notlar["Ali"]
+eğer "Ali" değil içinde notlar:
+    yazdır("Ali silindi")
+```
+
+Çıktı:
+
+```
+0
+Ali 85
+Ayşe 92
+Can 70
+Ali silindi
+```
+
+:::tip[İpucu]
+Sözlük anahtarlarını tırnak içinde yaz (`{"renk": "mavi"}`). Tırnaksız adlı değer olarak yazılan `renk=` gibi kelimeler sözlükte karşılığı varsa İngilizceye çevrilir.
+:::
+
+## Kümeler
+
+Küme, **tekrarsız** değerler tutar. Boş küme `küme()` ile oluşturulur (`{}` boş sözlüktür).
+
+| TürKod | Python |
+| ------ | ------ |
+| `ekle_küme` | add |
+| `at_küme` | discard |
+| `birleşim` | union |
+| `kesişim` | intersection |
+| `fark` | difference |
+| `alt_küme_mi` | issubset |
+
+```
+a = {1, 2, 3}
+b = {2, 3, 4}
+a.ekle_küme(5)
+yazdır(a.birleşim(b), a.kesişim(b), a.fark(b))
+```
+
+Çıktı: `{1, 2, 3, 4, 5} {2, 3} {1, 5}`
+
+## Demetler
+
+Demet, değiştirilemeyen bir listedir.
+
+```
+nokta = (3, 4)
+x, y = nokta
+renkler = ("kırmızı", "mavi", "kırmızı")
+yazdır(x, y, renkler.say("kırmızı"))
+```
+
+Çıktı: `3 4 2`
+
+## Kısa yoldan liste oluşturma
+
+Bir döngüyü tek satırda yazabilirsin:
+
+```
+sayilar = [1, 2, 3, 4, 5, 6]
+kareler = [x * x için x içinde sayilar]
+ciftler = [x için x içinde sayilar eğer x % 2 == 0]
+yazdır(kareler)
+yazdır(ciftler)
+```
+
+Çıktı:
+
+```
+[1, 4, 9, 16, 25, 36]
+[2, 4, 6]
+```
+
+## Mini Görev
+
+Bir sözlükte üç arkadaşının yaşını tut ve en büyük yaşı `en_büyük(yaslar.değerler())` ile bul.

@@ -1,0 +1,121 @@
+---
+title: Fonksiyonlar
+description: fonksiyon, döndür, isimsiz, küresel ile kendi komutlarını yaz.
+---
+
+<div class="tk-learn-intro">
+<p>Fonksiyonlar, bir işi <strong>bir kez yazıp tekrar tekrar kullanmanı</strong> sağlar. Bu sayfada fonksiyon tanımlamayı, değer döndürmeyi, varsayılan değerleri ve kısa (isimsiz) fonksiyonları öğrenirsin.</p>
+</div>
+
+| TürKod | Python |
+| ------ | ------ |
+| `fonksiyon` | def |
+| `döndür` | return |
+| `isimsiz` | lambda |
+| `küresel` | global |
+| `yerel_olmayan` | nonlocal |
+
+## Fonksiyon tanımlama
+
+```
+fonksiyon selamla(isim, selam="Merhaba"):
+    döndür f"{selam}, {isim}!"
+
+yazdır(selamla("Ayşe"))
+yazdır(selamla("Mehmet", selam="Günaydın"))
+```
+
+Çıktı:
+
+```
+Merhaba, Ayşe!
+Günaydın, Mehmet!
+```
+
+`selam="Merhaba"` bir **varsayılan değerdir**: o bilgiyi vermezsen bu değer kullanılır.
+
+## Birden çok değer döndürme
+
+```
+fonksiyon en_uçlar(sayılar):
+    döndür en_küçük(sayılar), en_büyük(sayılar)
+
+küçük, büyük = en_uçlar([4, 9, 1, 7])
+yazdır(küçük, büyük)
+```
+
+Çıktı: `1 9`
+
+## Değişken sayıda bilgi almak
+
+`*` istediğin kadar değeri bir demette, `**` ise adlı değerleri bir sözlükte toplar.
+
+```
+fonksiyon topla(*sayılar):
+    döndür toplam(sayılar)
+
+fonksiyon bilgi_ver(**bilgiler):
+    için anahtar, deger içinde bilgiler.öğeler():
+        yazdır(anahtar, "=", deger)
+
+yazdır(topla(1, 2, 3))
+bilgi_ver(ad="Ali", yas=12)
+```
+
+Çıktı:
+
+```
+6
+ad = Ali
+yas = 12
+```
+
+## isimsiz — tek satırlık fonksiyon
+
+```
+kare_al = isimsiz x: x * x
+yazdır(kare_al(7))
+```
+
+Çıktı: `49`
+
+## küresel ve yerel_olmayan
+
+Fonksiyon içinden dışarıdaki bir değişkeni değiştirmek için `küresel` kullanılır:
+
+```
+sayac = 0
+
+fonksiyon artir():
+    küresel sayac
+    sayac += 1
+
+artir()
+artir()
+yazdır(sayac)
+```
+
+Çıktı: `2`
+
+İç içe fonksiyonlarda bir üstteki fonksiyonun değişkeni için `yerel_olmayan` kullanılır.
+
+## Kendini çağıran fonksiyon
+
+```
+fonksiyon faktoriyel(n):
+    eğer n <= 1:
+        döndür 1
+    döndür n * faktoriyel(n - 1)
+
+yazdır(faktoriyel(5))
+```
+
+Çıktı: `120`
+
+:::caution[Dikkat]
+Parametre adı olarak `metin`, `liste`, `toplam`, `uzunluk` gibi TürKod komutlarını kullanma. Bir kelimeyi değişken ya da parametre yaptığında o dosyanın **tamamında** komut anlamını kaybeder.
+:::
+
+## Mini Görev
+
+İki sayı alıp büyük olanı döndüren `buyugu_bul` adında bir fonksiyon yaz.

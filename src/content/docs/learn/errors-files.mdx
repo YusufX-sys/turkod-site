@@ -1,0 +1,133 @@
+---
+title: Hatalar ve Dosyalar
+description: dene / hata_yakala ile hata yakalama, ile ... olarak ile dosya okuma ve yazma.
+---
+
+<div class="tk-learn-intro">
+<p>Program çalışırken bir hata olursa durmak zorunda değil: <strong>dene / hata_yakala</strong> ile hatayı yakalayıp ne yapılacağına sen karar verirsin. Bu sayfada ayrıca dosyalara yazmayı ve dosyadan okumayı öğrenirsin.</p>
+</div>
+
+| TürKod | Python |
+| ------ | ------ |
+| `dene` | try |
+| `hata_yakala` | except |
+| `değilse` | else |
+| `sonunda` | finally |
+| `hata_fırlat` | raise |
+| `olarak` | as |
+| `iddia_et` | assert |
+
+## Hata yakalama
+
+```
+fonksiyon bol(a, b):
+    dene:
+        sonuc = a / b
+    hata_yakala SıfıraBölmeHatası:
+        yazdır("Sıfıra bölünemez!")
+    değilse:
+        yazdır("Sonuç:", sonuc)
+    sonunda:
+        yazdır("işlem bitti")
+
+bol(10, 2)
+bol(1, 0)
+```
+
+Çıktı:
+
+```
+Sonuç: 5.0
+işlem bitti
+Sıfıra bölünemez!
+işlem bitti
+```
+
+- `değilse` bloğu yalnızca hata **olmazsa** çalışır.
+- `sonunda` bloğu her durumda çalışır.
+- Birden çok hatayı birlikte yakalamak için: `hata_yakala (DizinHatası, AnahtarHatası):`
+
+## Kullanıcı girdisini güvenle sayıya çevirme
+
+```
+dene:
+    yas = tamsayı("on iki")
+hata_yakala DeğerHatası:
+    yazdır("Lütfen rakamla yaz.")
+```
+
+Çıktı: `Lütfen rakamla yaz.`
+
+## Kendi hatanı fırlatma
+
+```
+fonksiyon yas_kontrol(yas):
+    eğer yas < 0:
+        hata_fırlat DeğerHatası("Yaş negatif olamaz")
+    döndür yas
+
+dene:
+    yas_kontrol(-5)
+hata_yakala DeğerHatası olarak hata:
+    yazdır(hata)
+```
+
+Çıktı: `Yaş negatif olamaz`
+
+## Hata adları
+
+| TürKod | Python | Ne zaman? |
+| ------ | ------ | --------- |
+| `İstisna` | Exception | her türlü hata |
+| `DeğerHatası` | ValueError | yanlış değer (`tamsayı("abc")`) |
+| `TürHatası` | TypeError | yanlış tür (`"a" + 5`) |
+| `DizinHatası` | IndexError | listede olmayan sıra |
+| `AnahtarHatası` | KeyError | sözlükte olmayan anahtar |
+| `İsimHatası` | NameError | tanımsız değişken |
+| `SıfıraBölmeHatası` | ZeroDivisionError | sıfıra bölme |
+| `DosyaBulunamadıHatası` | FileNotFoundError | olmayan dosya |
+| `ÖzellikHatası` | AttributeError | olmayan özellik/metot |
+
+:::note[Not]
+Yakalanmayan hatalar IDE'de Türkçe gösterilir (`[HATA]: Sıfıra Bölme Hatası`). `olarak hata` ile yakaladığın hatanın kendi mesajı ise İngilizce kalabilir.
+:::
+
+## Dosyaya yazma ve okuma
+
+`ile ... olarak` dosyayı açar ve iş bitince **kendiliğinden kapatır**.
+
+| TürKod | Python |
+| ------ | ------ |
+| `ile` | with |
+| `açık` | open |
+| `kodlama` | encoding |
+| `yaz` | write |
+| `oku` | read |
+| `satırları_oku` | readlines |
+
+```
+ile açık("notlar.txt", "w", kodlama="utf-8") olarak dosya:
+    dosya.yaz("Merhaba\n")
+    dosya.yaz("Dünya\n")
+
+ile açık("notlar.txt", "r", kodlama="utf-8") olarak dosya:
+    için satir içinde dosya:
+        yazdır(satir.kırp())
+```
+
+Çıktı:
+
+```
+Merhaba
+Dünya
+```
+
+Dosya kipleri: `"r"` oku, `"w"` sıfırdan yaz, `"a"` sonuna ekle.
+
+:::caution[Dikkat]
+Türkçe karakterlerin bozulmaması için her zaman `kodlama="utf-8"` yaz. Programın her çalıştırmada geçici bir klasörde çalışır; dosyanın kalıcı olması için tam yol kullan (örn. `"C:/Users/ad/Belgeler/notlar.txt"`).
+:::
+
+## Mini Görev
+
+Kullanıcıdan bir sayı al; sayı değilse `DeğerHatası` yakalayıp "Geçersiz sayı" yazdır.

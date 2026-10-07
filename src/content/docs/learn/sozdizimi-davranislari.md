@@ -94,6 +94,18 @@ Tek değişkenli `ise`, `== Doğru` karşılaştırmasına dönüşür (`eğer h
 
 Olumsuz kullanım da vardır: `eğer hazir değil ise:` satırı `if not hazir:` olur.
 
+:::caution[Metinle ve ifadelerle ise]
+`A B ise:` biçiminde **B yalnızca bir isim ya da pozitif bir sayı** olabilir. `eğer renk "mavi" ise:` veya `eğer yas >= 18 ise:` sözdizimi hatası verir. Metinle karşılaştırırken `ise`'yi araya yaz:
+
+```
+renk_secimi = "mavi"
+eğer renk_secimi ise "mavi":
+    yazdır("Mavi seçildi")
+```
+
+Emin değilsen `==` kullan; her durumda çalışır.
+:::
+
 ## Rezerve kelimeler
 
 Sözlükte karşılığı olan bir kelimeyi (`kalan`, `bul`, `durum`, `toplam` vb.) değişken adı olarak kullanabilirsin. Ancak bir kelimeye dosyanın herhangi bir yerinde değer atadığında, o dosyanın tamamında artık komut anlamı kalmaz. Örneğin `toplam = 0` yazdıktan sonra `toplam(liste)` artık `sum` olarak çevrilmez.
@@ -109,7 +121,44 @@ yazdır(kalan)
 1
 ```
 
-Güvenli olmayan kullanım: aynı kelimeyi korunmayan bir kalıpta (örn. liste/sözlük üreteci içinde) kullanmak beklenmedik çeviriye yol açabilir; bu tür kalıplardan kaçının.
+:::caution[Yerleşik fonksiyon adlarını değişken yapma]
+`liste`, `metin`, `sözlük`, `küme`, `toplam`, `uzunluk` gibi kelimeleri değişken ya da parametre adı yaparsan o kelime dosyanın **her yerinde** komut olmaktan çıkar. Örneğin bir fonksiyonun parametresine `metin` dersen, başka bir yerdeki `metin(5)` çağrısı çalışmaz. `metin_degeri`, `sayilar` gibi adlar seç.
+:::
+
+## Adlı değerler ve özellikler
+
+Fonksiyona `ad=değer` biçiminde verdiğin ya da `nesne.ad` biçiminde yazdığın kelimelerin **sözlükte karşılığı varsa** İngilizceye çevrilir:
+
+```
+bilgi = sözlük(renk="mavi")
+yazdır(bilgi)
+```
+
+Çıktı:
+
+```
+{'color': 'mavi'}
+```
+
+Kendi fonksiyonunun parametre adları ve `kendisi.renk` gibi sınıf özellikleri korunur. Sözlük anahtarlarını her zaman tırnakla yaz: `{"renk": "mavi"}`.
+
+## Eş anlamlı kelimeler
+
+Bazı işlerin birden çok yazımı vardır; hepsi aynı Python koduna dönüşür:
+
+| Önerilen | Diğer yazım | Python |
+| -------- | ----------- | ------ |
+| `için x içinde` | `döngü x içinde` | for x in |
+| `en_büyük` / `en_küçük` | `maksimum` / `minimum` | max / min |
+| `biçimle` | `biçimlendir` | format |
+| `kendisi`, `başlat_özel` | `self`, `__init__` | self, `__init__` |
+| `den matematik içe_aktar karekök` | `içe_aktar karekök den matematik` | from math import sqrt |
+
+Ters sıralama için `sırala(tersine_çevir=Doğru)` yazılır (`reverse=True`). Sıralama ölçütü `key=` İngilizce kalır: `isimler.sırala(key=uzunluk)`.
+
+## Türkçe karşılığı olmayanlar
+
+`match`/`case`, `ord()` ve `AssertionError`, `PermissionError`, `RecursionError` gibi bazı hata adlarının Türkçe karşılığı yoktur; bunları Python'daki gibi İngilizce yaz.
 
 ## Bilinmeyen kelime
 

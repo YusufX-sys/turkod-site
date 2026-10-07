@@ -1,0 +1,43 @@
+---
+title: AI Asistan
+description: OpenAI, Groq, Gemini veya Claude ile kodunu açıklatma, iyileştirme ve soru sorma.
+---
+
+Sağ paneldeki **AI Asistan**, kodunu açıklayabilir, iyileştirme önerebilir ve sorularını cevaplayabilir. Asistan **varsayılan olarak kapalıdır**; kullanmak için kendi API anahtarın gerekir.
+
+## Kurulum
+
+1. Bir sağlayıcıdan API anahtarı al (OpenAI, Groq, Google Gemini veya Anthropic Claude).
+2. **Ayarlar → AI Asistan** bölümünü aç.
+3. **AI Aktif**'i aç, **Sağlayıcı** ve **Model** seç, anahtarını **API Key** alanına yapıştır.
+4. **Kaydet ve Uygula**'ya bas.
+
+| Sağlayıcı | Modeller |
+| --------- | -------- |
+| OpenAI | gpt-4o-mini (varsayılan), gpt-4o, gpt-3.5-turbo |
+| Groq | llama-3.3-70b-versatile, llama-3.1-8b-instant ve diğerleri |
+| Gemini | gemini-2.0-flash, gemini-1.5-pro ve diğerleri |
+| Claude | claude-opus-5-5, claude-sonnet-5-5, claude-haiku-4-5 |
+
+OpenAI ve Groq için **Modelleri Güncelle** düğmesi güncel model listesini getirir.
+
+Gelişmiş ayarlar: **Sıcaklık** (0–2, cevapların ne kadar yaratıcı olacağı), **Max Token** (cevap uzunluğu) ve **Sistem Mesajı** (asistana verilen temel talimat).
+
+## Kullanım
+
+- **Açıkla** — açık dosyadaki kodun ne yaptığını anlatır.
+- **Optimize et** — kodu daha temiz ve verimli hale getirmek için öneri verir.
+- **Sor...** kutusu — kendi sorunu yaz; `Enter` gönderir, `Shift+Enter` yeni satır açar.
+
+Asistanın cevabındaki Python kodları **otomatik olarak TürKod'a çevrilir**. Her kod bloğunun yanındaki simgelerle kodu kopyalayabilir ya da uygulayabilirsin:
+
+- **Üzerine Yaz** — editördeki kodun yerine koyar
+- **İmlece Ekle** — imlecin olduğu yere ekler
+- **Yeni Sekme** — yeni bir sekmede açar
+
+## Gizlilik
+
+:::caution[Bilmen gerekenler]
+- **Açıkla** ve **Optimize et** açık dosyanın tamamını; **Sor** ise sorunla birlikte kodunun son kısmını seçtiğin sağlayıcıya gönderir.
+- API anahtarın bilgisayarında, kullanıcı klasöründeki `.turkod_ayarlar.json` dosyasında **şifrelenmeden** saklanır. Bu dosyayı kimseyle paylaşma.
+:::
