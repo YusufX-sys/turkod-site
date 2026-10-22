@@ -972,3 +972,10 @@ html::after {
     background: transparent;
   }
 }
+
+/* Ekran görüntüsü + açıklama (Ekran.astro) */
+.tk-figure { margin: 1.25rem 0; }
+.tk-figure { text-align: center; }
+.tk-figure a { display: inline-block; max-width: 100%; }
+.tk-figure .tk-shot { margin: 0 auto; width: auto; max-width: 100%; height: auto; }
+.tk-figure figcaption { margin-top: .5rem; font-size: .85rem; opacity: .75; text-align: center; }

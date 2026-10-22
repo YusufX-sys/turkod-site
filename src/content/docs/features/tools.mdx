@@ -1,39 +1,66 @@
 ---
 title: Araçlar
-description: TürKod ⇄ Python çeviri, kod arama çevirici, istatistikler, TODO listesi ve komut paleti.
+description: TürKod ⇄ Python çeviri, kod arama çevirici, istatistikler, TODO listesi, komut paleti ve bildirimler.
 ---
 
-**Araçlar** menüsündeki yardımcılar hem öğrenmeyi hem de kod yazmayı hızlandırır. Çoğuna alttaki durum çubuğundaki küçük simgelerden de ulaşabilirsin.
+import Ekran from '../../../components/Ekran.astro';
+import cevir from '../../../assets/ekran/cevir-python.webp';
+import arama from '../../../assets/ekran/kod-arama.webp';
+import istatistik from '../../../assets/ekran/kod-istatistikleri.webp';
+import todo from '../../../assets/ekran/todo-listesi.webp';
+import palet from '../../../assets/ekran/komut-paleti.webp';
+import cevirTr from '../../../assets/ekran/cevir-turkod.webp';
+import bildirimler from '../../../assets/ekran/bildirimler.webp';
+
+**Araçlar** menüsündeki yardımcılar hem öğrenmeyi hem de kod yazmayı hızlandırır. Kod İstatistikleri, TODO Listesi ve Kod Arama Çevirici'ye alttaki durum çubuğunun sağındaki küçük simgelerden de ulaşabilirsin.
 
 ## TürKod ⇄ Python Çevir
 
-Açık dosyanın dilini kendiliğinden anlar ve öbür dile çevirir:
+Araç çubuğundaki ⇄ simgesi ya da **Araçlar → TürKod ⇄ Python Çevir**. Açık dosyanın dilini kendiliğinden anlar ve öbür dile çevirir:
 
 - TürKod kodu → `cevrilmis.py` adlı yeni sekmede **Python**
 - Python kodu → `cevrilmis.trpy` adlı yeni sekmede **TürKod**
+
+Orijinal sekmen değişmez. Metinlerin (`"İsmin nedir?"`), senin verdiğin adların (`harf_notu`) ve kütüphane adlarının içi çevrilmez; yalnızca dilin kelimeleri çevrilir.
+
+<Ekran src={cevir} alt="Not hesaplayıcı kodunun Python'a çevrilmiş hali yeni cevrilmis.py sekmesinde" caption="TürKod → Python: fonksiyon → def, eğer → if, girdi_al → input, için … içinde → for … in" />
+
+Ters yönde, bir Python örneğini (`import random`, `def`, `for … in range`) çevirince:
+
+<Ekran src={cevirTr} alt="Python zar kodu TürKod'a çevrilmiş: içe_aktar rastgele, fonksiyon zar_at, rastgele.tamsayı, için i aralık(3), yazdır" caption="Python → TürKod: random → rastgele, randint → tamsayı, for i in range(3) → için i aralık(3)" />
 
 İnternetten bulduğun bir Python örneğini TürKod'a çevirip incelemek ya da yazdığın kodun Python karşılığını görmek için idealdir.
 
 ## Kod Arama Çevirici
 
-Bir kelimenin karşılığını hızlıca bulmak için: `print`, `def`, `while` gibi bir Python kelimesi ya da bir TürKod kelimesi yaz, **Çevir**'e bas. Kelime kelime karşılıklar ve tam çeviri gösterilir.
+Bir kelimenin karşılığını hızlıca bulmak için: `print`, `def`, `while` gibi bir Python kelimesi ya da bir TürKod kelimesi yaz, **Çevir**'e bas. Kelime kelime karşılıklar ve tam çeviri gösterilir. Bütün bir satırı da yazabilirsin.
+
+<Ekran src={arama} alt="Kod Arama: while True: print(len(name)) girildi; kelime karşılıkları ve tam çeviri" caption="while True: print(len(name)) → döngü Doğru: yazdır(uzunluk(varlık_adı))" />
 
 ## Kod İstatistikleri
 
-Açık dosya için: toplam satır, kod satırı, yorum satırı, boş satır, karakter sayısı, fonksiyon, sınıf ve değişken sayısı.
+Açık dosya için: toplam satır, kod satırı, yorum satırı, boş satır, karakter ve boşluksuz karakter sayısı, fonksiyon, sınıf ve değişken sayısı.
+
+<Ekran src={istatistik} alt="Kod İstatistikleri penceresi: Toplam Satır 15, Kod Satırı 13, Yorum Satırı 1 ..." />
 
 ## TODO Listesi
 
-Koduna `# TODO`, `# FIXME`, `# HACK`, `# XXX` veya `# BUG` ile başlayan yorumlar yazarsan hepsi bu listede toplanır. Bir öğeye tıklayınca o satıra gidilir.
+Koduna `# TODO`, `# FIXME`, `# HACK`, `# XXX` veya `# BUG` ile başlayan yorumlar yazarsan hepsi bu listede toplanır. Bir öğenin yanındaki ok simgesine tıklayınca o satıra gidilir.
 
 ```
-# TODO: puan hesaplamasını düzelt
+# TODO: 100 puan için A+ ekle
 ```
+
+<Ekran src={todo} alt="TODO / FIXME penceresi: '100 puan için A+ ekle — Satır 2'" />
 
 ## Komut Paleti
 
-`Ctrl+Shift+P` ile açılır. Bir komutun adını yazmaya başla; menülerdeki tüm komutlar kısayollarıyla birlikte listelenir. Kısayolu hatırlamadığın her şeyi buradan bulabilirsin.
+`Ctrl+Shift+P` ya da araç çubuğundaki 🎨 palet simgesiyle açılır. Bir komutun adını yazmaya başla; menülerdeki tüm komutlar kısayollarıyla birlikte listelenir. `↑` / `↓` ile seçip `Enter`'a bas. Kısayolu hatırlamadığın her şeyi buradan bulabilirsin.
+
+<Ekran src={palet} alt="Komut Paleti: Komut ara kutusu ve komut listesi" />
 
 ## Bildirim geçmişi
 
-Sağ altta beliren bildirimlerdeki **Bildirimler** düğmesi, son bildirimlerin tamamını gösteren paneli açar.
+Sağ altta beliren bildirimlerdeki 🔔 düğmesi, son bildirimlerin tamamını gösteren **Bildirimler** panelini açar. **Temizle** listeyi boşaltır.
+
+<Ekran src={bildirimler} alt="Bildirimler paneli: Python → TürKod çevrildi, Hata ayıklama durduruldu, Hata ayıklayıcı başladı; saatleriyle" />

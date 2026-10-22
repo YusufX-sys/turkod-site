@@ -1,0 +1,99 @@
+---
+title: Sorun Giderme ve SSS
+description: TürKod açılmıyor, program çalışmıyor, Türkçe karakter sorunu… Sık karşılaşılan durumlar ve çözümleri.
+---
+
+Bir şey ters gittiğinde önce bu sayfaya göz at. Burada çözümü yoksa [GitHub Issues](https://github.com/YusufX-sys/turkod-ide/issues) sayfasından ya da program içinden **Yardım → Hata Bildir / Öneri Gönder** ile bildirebilirsin.
+
+## Program açılmıyor
+
+### "Program başlatılıyor..." ekranında kalıyor ya da hata veriyor
+
+TürKod iki parçadan oluşur: gördüğün **arayüz** ve kodunu çalıştıran **arka plan programı**. Açılış ekranı, arka plan programı hazır olana kadar bekler. Başlatılamazsa ekranda turuncu bir uyarı ve iki düğme çıkar:
+
+- **Yeniden dene** — arka plan programını yeniden başlatmayı dener. Çoğu zaman bu yeterlidir.
+- **Yine de aç** — arayüzü açar; ancak çalıştırma, düzeltme gibi özellikler bağlantı kurulana kadar çalışmaz.
+
+Sorun sürerse ayrıntılar `%LOCALAPPDATA%\TurKod\backend.log` dosyasındadır. Hata bildirirken bu dosyayı eklemen işi çok hızlandırır.
+
+:::tip[Sık nedenler]
+- Antivirüs programı `turkod_backend.exe` dosyasını engellemiş ya da karantinaya almış olabilir. TürKod klasörünü antivirüste izinli listeye ekle.
+- Kurulum yarım kalmış olabilir. Programı kaldırıp [resmî sayfadan](/releases/) yeniden kur.
+:::
+
+### "Windows bilgisayarınızı korudu" uyarısı
+
+Bu, Windows'un az indirilen programlar için gösterdiği standart uyarıdır. Dosyayı resmî bağlantıdan indirdiysen **Ek bilgi → Yine de çalıştır**'a bas. Dosyanın değiştirilmediğinden emin olmak için [Güvenlik](/features/security/) sayfasına bak.
+
+### 32-bit Windows ya da Windows 7/8 kullanıyorum
+
+TürKod yalnızca **64-bit Windows 10 ve 11** üzerinde çalışır. Bkz. [Gereksinimler](/features/requirements/). Bu durumda kurulum yapmadan [Canlı Demo](/demo/) ile temel konuları deneyebilirsin.
+
+## Kod çalışmıyor
+
+### Durum çubuğunda kırmızı bir hata var
+
+Kod çalıştırılmadan önce denetlenir. Hata satır numarasıyla (örn. `Satır 1: ':' bekleniyor`) gösterilir ve satır editörde kırmızıyla işaretlenir. En sık nedenler:
+
+- Satır sonunda `:` unutulmuş (`eğer`, `için`, `döngü`, `fonksiyon`, `sınıf` satırlarında gerekir).
+- Parantez ya da tırnak kapanmamış.
+- Girinti (satır başındaki boşluk) hatalı.
+
+Araç çubuğundaki **Düzelt** (sihirli değnek) bunların çoğunu otomatik düzeltir 👉 [Akıllı Düzeltme](/features/smart-fix/)
+
+### "Tanımsız İsim Hatası" diyor
+
+Bir kelimeyi yanlış yazmış olabilirsin. Sözlükte olmayan bir kelime hata vermeden aynen geçer ve çalışırken **Tanımsız İsim Hatası (NameError)** üretir. Doğru yazımı [Sözlük](/learn/sozluk/) sayfasında ya da **Araçlar → Kod Arama Çevirici** ile bulabilirsin. Otomatik tamamlamanın 📚 önerileri de doğru yazımı gösterir.
+
+### Program bitmiyor / donmuş gibi
+
+- Program büyük ihtimalle senden **girdi bekliyordur**: terminalin en altındaki kutuda **Programa girdi…** yazıyorsa cevabını yazıp `Enter`'a bas.
+- Sonsuz döngüye girdiyse kırmızı ⏹️ **Durdur** düğmesine ya da terminalde `Ctrl+C`'ye bas.
+
+### Dosya okuyamıyorum / yazdığım dosya kayboldu
+
+Kaydedilmemiş bir sekme her çalıştırmada **geçici bir klasörde** çalışır. Önce dosyanı kaydet: kaydedilmiş dosyalar kendi klasörlerinde çalışır ve yanındaki dosyaları adlarıyla (`"notlar.txt"`) açabilir. Bkz. [Çalıştırma ve Hata Ayıklama](/features/run-debug/).
+
+### "Modül Bulunamadı Hatası"
+
+Kullandığın kütüphane kurulu değildir. Terminale `pip yükle kütüphane_adı` yaz. Bkz. [Terminal ve Paketler](/features/terminal/).
+
+## Ayarlar ve veriler
+
+### Ayarlarım nerede saklanıyor?
+
+| Ne? | Nerede? |
+|---|---|
+| Ayarlar, açık sekmeler (oturum), AI anahtarı | `%USERPROFILE%\.turkod_ayarlar.json` |
+| `pip yükle` ile kurulan kütüphaneler | `%LOCALAPPDATA%\TurKod\pip_packages` |
+| Günlük (log) dosyası | `%LOCALAPPDATA%\TurKod\backend.log` |
+
+Ayar dosyası bozulursa TürKod onu `.turkod_ayarlar.json.bozuk` adıyla yedekler ve varsayılan ayarlarla açılır.
+
+### Ayarları sıfırlamak istiyorum
+
+TürKod kapalıyken `%USERPROFILE%\.turkod_ayarlar.json` dosyasını sil. Program bir sonraki açılışta varsayılan ayarlarla başlar (açık sekmelerin ve AI anahtarın da silinir).
+
+### Arayüz turunu kaçırdım
+
+**Yardım → Arayüz Turu** ile istediğin zaman yeniden başlatabilirsin.
+
+## AI Asistan
+
+### Açıkla / Optimize et çalışmıyor
+
+- **Ayarlar → AI Asistan**'da **AI Aktif** açık mı, **API Key** girili mi kontrol et ve **Kaydet ve Uygula**'ya bas.
+- Sağlayıcının kütüphanesi eksikse asistan hangi `pip yükle` komutunu yazman gerektiğini söyler.
+- İnternet bağlantını ve sağlayıcı hesabındaki kotayı kontrol et.
+
+Ayrıntılar: [AI Asistan](/features/ai/)
+
+## Güncelleme
+
+### "Güncelleme denetlenemedi" diyor
+
+İnternet bağlantını kontrol et ve **Güncelleştirmeler → Güncelleştirmeleri Denetle** ile tekrar dene. Kurum ağlarında GitHub erişimi kısıtlı olabilir; bu durumda yeni sürümü [Sürüm Geçmişi](/releases/) sayfasından elle indirebilirsin.
+
+### Bir sürümü "Atla" dedim, geri getirmek istiyorum
+
+Atladığın sürüm otomatik denetimde sorulmaz ama **Güncelleştirmeleri Denetle** ile elle baktığında yine görünür.

@@ -1,26 +1,63 @@
 ﻿---
 title: Kurulum
-description: TürKod'u bilgisayarına kurma adımları.
+description: TürKod'u bilgisayarına kurma, güncelleme ve kaldırma adımları.
 ---
 
-Başlamadan önce bilgisayarının [gereksinimleri](/turkod-site/features/requirements/) karşıladığından emin ol (Windows 10/11, 64-bit).
+import Ekran from '../../components/Ekran.astro';
+import turIlk from '../../assets/ekran/tur-ilk-acilis.webp';
+
+Başlamadan önce bilgisayarının [gereksinimleri](/features/requirements/) karşıladığından emin ol (Windows 10/11, 64-bit). Python kurmana **gerek yok**; TürKod kendi Python'uyla birlikte gelir.
 
 ## Adım 1 — İndir
 
-[Sürüm Geçmişi](/turkod-site/releases/) sayfasına git ve en üstteki (en yeni) sürümü indir. Ana sayfadaki **Windows İçin İndir** düğmesi de seni en yeni sürüme götürür.
+[Sürüm Geçmişi](/releases/) sayfasına git ve en üstteki (en yeni) sürümü indir. Ana sayfadaki **Windows İçin İndir** düğmesi de seni doğrudan en yeni kurulum dosyasına götürür.
 
-## Adım 2 — Çalıştır
+## Adım 2 — Kurulum sihirbazını çalıştır
 
-İndirdiğin `TurKod-Setup-X.Y.Z.exe` kurulum dosyasını çift tıklayarak aç ve sihirbazdaki adımları izle. Kurulum yönetici izni istemez; program yalnızca senin kullanıcı hesabına kurulur. Başlat menüsüne **TürKod** kısayolu eklenir; istersen masaüstü kısayolu da oluşturabilirsin.
+İndirdiğin `TurKod-Setup-X.Y.Z.exe` dosyasını çift tıklayarak aç ve sihirbazdaki adımları izle.
+
+- Kurulum **yönetici izni istemez**; program yalnızca senin kullanıcı hesabına kurulur (genellikle `%LOCALAPPDATA%\Programs\TurKod`).
+- Başlat menüsünde **TürKod** klasörü oluşur. İçinde programın kendisi, **TürKod ile Kodlama Macerası (Kitap)** PDF'i ve **Lisans** bulunur.
+
+Sihirbaz sana üç isteğe bağlı seçenek sunar:
+
+| Seçenek | Ne işe yarar? |
+|---|---|
+| **Masaüstü kısayolu oluştur** | Masaüstüne TürKod simgesi koyar (varsayılan: kapalı) |
+| **.trpy dosyalarını TürKod ile ilişkilendir** | `.trpy` dosyasına çift tıklayınca program terminalde **çalışır**; sağ tıkta **Editör ile aç** seçeneği çıkar |
+| **TürKod'u PATH'e ekle** | Herhangi bir komut isteminde `turkod dosya.trpy` yazarak programı çalıştırabilirsin |
+
+Son iki seçeneği sonradan **Ayarlar → Sistem Entegrasyonu** bölümünden de açıp kapatabilirsin.
 
 ## Adım 3 — Başlat
 
-Programı aç ve ilk kodunu yaz. Nasıl yapılacağını [İlk Programını Çalıştır](/turkod-site/use/first-run/) sayfasında adım adım görebilirsin. Bu kadar! 🎉
+Programı aç. İlk açılışta kısa bir **arayüz turu** seni karşılar ve ekrandaki her bölümü tanıtır.
+
+<Ekran src={turIlk} alt="İlk açılışta çıkan 'TürKod IDE'ye hoş geldin!' tur penceresi" caption="İlk açılışta arayüz turu başlar." />
+
+Sonra ilk kodunu yaz: [İlk Programını Çalıştır](/use/first-run/) sayfası adım adım anlatıyor. Bu kadar! 🎉
 
 :::note[Windows uyarı verirse]
-Windows bazen "Windows bilgisayarınızı korudu" penceresi gösterir. Dosyayı yalnızca resmî bağlantıdan indirdiysen **Ek bilgi → Yine de çalıştır** seçeneğini kullanabilirsin. Emin olmak istersen [Güvenlik](/turkod-site/features/security/) sayfasındaki doğrulamayı yap.
+Windows bazen "Windows bilgisayarınızı korudu" penceresi gösterir. Dosyayı yalnızca resmî bağlantıdan indirdiysen **Ek bilgi → Yine de çalıştır** seçeneğini kullanabilirsin. Emin olmak istersen [Güvenlik](/features/security/) sayfasındaki doğrulamayı yap.
 :::
 
 :::caution[Dikkat]
 TürKod'u yalnızca yukarıdaki resmî bağlantıdan indir. Başka sitelerdeki dosyalar güvenli olmayabilir.
 :::
+
+## Güncelleme
+
+Yeni sürümü elle indirmene gerek yok: TürKod açılışta yeni sürümü kendisi denetler ve tek tıkla kurar. Bkz. [Otomatik Güncelleme](/features/updates/). Ayarların, açık sekmelerin ve kurduğun kütüphaneler güncellemede korunur.
+
+## Kaldırma
+
+**Windows Ayarları → Uygulamalar → Yüklü uygulamalar** listesinden **TürKod IDE**'yi bulup **Kaldır**'a bas. Kurulumun eklediği `.trpy` ilişkisi ve PATH kaydı da kaldırılır.
+
+Kaldırma işlemi kişisel verilerine dokunmaz. Tamamen temizlemek istersen şunları da elle silebilirsin:
+
+- `%USERPROFILE%\.turkod_ayarlar.json` — ayarların (AI API anahtarı dahil)
+- `%LOCALAPPDATA%\TurKod` — kurduğun kütüphaneler (`pip_packages`) ve günlük dosyaları
+
+## Sorun mu çıktı?
+
+Program açılmıyorsa ya da "Program başlatılıyor..." ekranında kalıyorsa 👉 [Sorun Giderme](/use/troubleshooting/)

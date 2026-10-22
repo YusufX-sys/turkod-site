@@ -3,54 +3,85 @@ title: İlk Programını Çalıştır
 description: TürKod IDE'de 5 adımda ilk programını yaz, çalıştır ve sonucu gör.
 ---
 
-Sana adını soran ve seni selamlayan küçük bir program yazalım. Toplam süre: yaklaşık 1 dakika ⏱️
+import Ekran from '../../../components/Ekran.astro';
+import editorKod from '../../../assets/ekran/editor-kod.webp';
+import girdi from '../../../assets/ekran/calistir-girdi.webp';
+import cikti from '../../../assets/ekran/calistir-cikti.webp';
 
-## 1️⃣ Yeni dosya aç
+Sana adını soran ve notlarını harfe çeviren küçük bir program yazalım. Toplam süre: yaklaşık 2 dakika ⏱️
 
-Araç çubuğundaki 📄 **yeni dosya** simgesine tıkla. Editörde `Untitled-1.trpy` adında boş bir sekme açılır.
+## 1️⃣ Yeni sekme aç
+
+Sekme çubuğunun sağındaki **+** düğmesine tıkla ya da `Ctrl+T`'ye bas. Editörde `Untitled-1.trpy` adında boş bir sekme açılır.
 
 ## 2️⃣ Kodu yaz
 
-Şu iki satırı editöre yaz (ya da kopyala):
+Şu satırları editöre yaz (ya da kopyalayıp yapıştır):
 
 ```
-isim = girdi_al("İsmin nedir?\nSen:")
-yazdır(f"Merhaba {isim}!")
+# Basit not hesaplayıcı
+fonksiyon harf_notu(puan):
+    eğer puan >= 85:
+        döndür "A"
+    değilse_eğer puan >= 70:
+        döndür "B"
+    değilse_eğer puan >= 50:
+        döndür "C"
+    değilse:
+        döndür "F"
+
+isim = girdi_al("İsmin nedir? ")
+notlar = [92, 74, 48]
+için n içinde notlar:
+    yazdır(f"{isim}: {n} puan -> {harf_notu(n)}")
 ```
+
+<Ekran src={editorKod} alt="Not hesaplayıcı kodu TürKod editöründe renkli olarak görünüyor" caption="Kod renklendirilir; durum çubuğunda ✓ Sözdizimi doğru yazar." />
 
 Ne oldu burada?
 
+- `fonksiyon harf_notu(puan):` bir puanı alıp harf notunu **döndüren** bir fonksiyon tanımlar.
+- `eğer / değilse_eğer / değilse` puana göre hangi harfin döneceğine karar verir.
 - `girdi_al(...)` ekrana bir soru yazar ve senin cevabını bekler. Cevap `isim` kutusuna girer 📦
-- `yazdır(...)` ekrana yazı basar.
-- Başındaki `f` harfi sihirlidir ✨ Tırnak içindeki `{isim}` yerine kutunun içindeki değeri yerleştirir.
-- `\n` yazıyı bir alt satıra geçirir.
+- `için n içinde notlar:` listedeki her not için alttaki satırı tekrarlar.
+- `yazdır(f"...")` içindeki `{isim}`, `{n}` ve `{harf_notu(n)}` yerine o anki değerleri yerleştirir ✨
 
-## 3️⃣ Kaydet
+:::note[Girinti önemli]
+Bloğun içindeki satırlar 4 boşlukla içeride olmalı. Satır sonuna `:` yazıp `Enter`'a bastığında editör girintiyi kendisi ekler.
+:::
 
-💾 simgesine bas ve dosyana bir ad ver. Uzantısı `.trpy` olsun.
+## 3️⃣ Kaydet (isteğe bağlı)
+
+💾 simgesine ya da `Ctrl+S`'ye bas ve dosyana bir ad ver; uzantı `.trpy` olur. Kaydetmeden de çalıştırabilirsin; kaydetmediğin sekmeler de program kapanıp açıldığında geri gelir.
 
 ## 4️⃣ Çalıştır
 
-Araç çubuğundaki yeşil ▶️ düğmesine bas. Altta terminal açılır ve program sorusunu sorar.
+Araç çubuğundaki yeşil ▶️ düğmesine ya da `Ctrl+R`'ye bas. Altta terminal açılır ve program sorusunu sorar.
+
+<Ekran src={girdi} alt="Terminal 'İsmin nedir?' sorusunu sormuş, cevap bekliyor" caption="Program cevabını bekliyor. En alttaki kutuda 'Programa girdi…' yazar." />
 
 ## 5️⃣ Terminale cevap yaz
 
-`Sen:` yazan yere adını yaz ve Enter'a bas. Terminalde şunu görürsün:
+En alttaki **Programa girdi…** kutusuna adını yaz ve `Enter`'a bas. Terminalde şunu görürsün:
 
 ```
-İsmin nedir?
-Sen:> Yusuf
-Merhaba Yusuf!
+İsmin nedir? Ayşe
+Ayşe: 92 puan -> A
+Ayşe: 74 puan -> B
+Ayşe: 48 puan -> F
 ```
 
-Selam veren ilk programını yazdın, tebrikler! 🎉
+<Ekran src={cikti} alt="Programın çıktısı terminalde görünüyor" caption="Program bitti: her not harfe çevrildi." />
+
+İlk programını yazdın, tebrikler! 🎉
 
 :::note[Canlı Demo'yla farkı]
-Bu sayfadaki örnek IDE içindir. Sitedeki [Canlı Demo](/turkod-site/demo/) `f"..."` yazımını desteklemez. Orada aynı işi `yazdır("Merhaba " + isim)` ile yapabilirsin.
+Sitedeki [Canlı Demo](/demo/) tarayıcıda çalışan basit bir yorumlayıcıdır ve `f"..."` yazımını desteklemez. Orada aynı işi `yazdır("Merhaba " + isim)` ile yapabilirsin.
 :::
 
 ## Takıldın mı?
 
-- Program çalışmıyorsa altta durum çubuğundaki **Sözdizimi** yazısına ve terminaldeki hata mesajına bak.
-- Kodun ne yaptığını anlamak için sağdaki AI Asistan'da 💡 **Açıkla**'ya bas.
-- Yazım kurallarını öğrenmek için 👉 [Temel İfadeler](/turkod-site/learn/basics/)
+- Program çalışmıyorsa durum çubuğundaki kırmızı hata yazısına ve terminaldeki Türkçe hata mesajına bak.
+- **Düzelt** (sihirli değnek) düğmesi eksik `:`, kapanmamış parantez gibi hataları senin yerine düzeltebilir 👉 [Akıllı Düzeltme](/features/smart-fix/)
+- Program çalışırken durdurmak için kırmızı ⏹️ düğmesine ya da terminalde `Ctrl+C`'ye bas.
+- Yazım kurallarını öğrenmek için 👉 [Temel İfadeler](/learn/basics/)

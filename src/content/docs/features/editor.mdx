@@ -1,17 +1,29 @@
 ---
 title: Kod Editörü
-description: Otomatik tamamlama, canlı sözdizimi denetimi, katlama, bul/değiştir ve oturum geri yükleme.
+description: Otomatik tamamlama, canlı sözdizimi denetimi, katlama, bul/değiştir, satıra git ve oturum geri yükleme.
 ---
 
+import Ekran from '../../../components/Ekran.astro';
+import editorKod from '../../../assets/ekran/editor-kod.webp';
+import tamamla from '../../../assets/ekran/otomatik-tamamlama.webp';
+import bul from '../../../assets/ekran/bul-degistir.webp';
+import hatali from '../../../assets/ekran/duzeltme-hatali-kod.webp';
+import uyari from '../../../assets/ekran/uyari-durum-cubugu.webp';
+import satiraGit from '../../../assets/ekran/satira-git.webp';
+
 TürKod'un editörü Türkçe kod yazmak için tasarlandı: komutları tanır, sen yazarken hataları gösterir ve kaldığın yerden devam etmeni sağlar.
+
+<Ekran src={editorKod} alt="TürKod editöründe renklendirilmiş kod, girinti kılavuzları, boşluk noktaları ve katlama okları" caption="Renkli yazım, boşluk göstergesi (noktalar), sütun çizgileri ve katlama okları (▼)" />
 
 ## Otomatik tamamlama
 
 Bir kelimenin ilk iki harfini yazıp kısa bir süre beklediğinde öneri listesi açılır.
 
-- 📌 işaretli öneriler **senin kodundaki** adlardır (değişkenler, fonksiyonlar).
-- 📚 işaretli öneriler **TürKod sözlüğündeki** kelimelerdir.
+- 📌 işaretli öneriler **senin kodundaki** adlardır (değişkenler, fonksiyonlar) ve listenin başında çıkar.
+- 📚 işaretli öneriler **TürKod sözlüğündeki** kelimelerdir (2.500'den fazla kelime).
 - `↑` / `↓` ile seç, `Tab` ya da `Enter` ile kabul et, `Esc` ile kapat.
+
+<Ekran src={tamamla} alt="'ha' yazınca açılan öneri listesi: üstte kendi fonksiyonun harf_notu, altında sözlük kelimeleri" caption="'ha' yazınca: önce kendi fonksiyonun, sonra sözlük kelimeleri" />
 
 Ayarlar'daki **Otomatik Tamamlama** seçeneğiyle kapatılabilir.
 
@@ -20,25 +32,46 @@ Ayarlar'daki **Otomatik Tamamlama** seçeneğiyle kapatılabilir.
 Yazmayı bıraktıktan kısa süre sonra kodun denetlenir ve sonuç alttaki durum çubuğunda görünür:
 
 - **✓ Sözdizimi doğru** — her şey yolunda.
-- Hata varsa satır numarasıyla birlikte Türkçe açıklaması.
-- **⚠** uyarıları — örneğin bir TürKod komutunu değişken adı olarak kullandığında.
+- Hata varsa kırmızı yazıyla satır numarası ve Türkçe açıklama (örn. `Satır 1: ':' bekleniyor`, `Satır 15: kapatılmamış f-string var`). Hatalı satır editörde kırmızıyla vurgulanır.
+- **⚠** uyarıları — örneğin bir TürKod komutunu değişken adı olarak kullandığında. Kod yine çalışır, ama o komutu artık kullanamazsın.
+
+<Ekran src={uyari} alt="toplam adında değişken tanımlanınca durum çubuğunda uyarı: toplam bir TürKod komutu (sum), ama değişken olarak tanımlanmış" caption="toplam aslında sum'ın Türkçesi olan bir komut; değişken adı yapınca uyarı çıkar." />
+
+<Ekran src={hatali} alt="Hatalı kod: birinci satır kırmızıyla işaretli, durum çubuğunda 'Satır 1: ':' bekleniyor' yazıyor" caption="Eksik ':' olan satır kırmızıyla işaretlenir; açıklaması alttaki durum çubuğunda yazar." />
 
 ## Renkli yazım
 
-Komutlar, yerleşik fonksiyonlar, modül adları, metinler ve sayılar farklı renklerde gösterilir. Renkler seçili temaya göre değişir.
+Komutlar, yerleşik fonksiyonlar, modül adları, metinler, sayılar ve yorumlar farklı renklerde gösterilir. Renkler seçili temaya göre değişir.
+
+## Akıllı girinti, parantez ve tırnaklar
+
+- `:` ile biten bir satırda `Enter`'a basınca alt satır otomatik olarak bir kademe içeriden başlar.
+- Parantez ve tırnaklar `( [ { " '` otomatik kapanır.
+- Bir metni seçip `(` veya `"` yazarsan seçim parantez/tırnak içine alınır. `Ctrl+"` seçimi doğrudan tırnağa alır.
+- Türkçe Q klavyede `AltGr` ile yazılan `| [ ] { }` karakterleri sorunsuz çalışır.
 
 ## Kod katlama ve kılavuz çizgileri
 
-- Satır numaralarının yanındaki oklara tıklayarak bir bloğu (fonksiyon, döngü, koşul) **katlayıp açabilirsin**.
+- Satır numaralarının yanındaki ▼ oklara tıklayarak bir bloğu (fonksiyon, döngü, koşul) **katlayıp açabilirsin**.
 - **Sütun Çizgileri**, iç içe blokların hizasını gösteren dikey çizgilerdir.
 - **Boşluk Göstergesi**, boşlukları nokta, sekmeleri ok olarak gösterir; girinti hatalarını bulmayı kolaylaştırır.
 
 ## Bul / Değiştir
 
 - `Ctrl+F` **Bul**, `Ctrl+H` **Bul / Değiştir** kutusunu açar.
-- Kutu sürüklenebilir; **Önceki / Sonraki** ile eşleşmeler arasında gezersin, kaç eşleşme olduğu görünür.
-- **Değiştir** tek tek, **Tümünü Değiştir** hepsini birden değiştirir.
+- Kutudaki düğmeler: **Aa** büyük/küçük harf duyarlı, **ab** tam kelime, **.\*** düzenli ifade (regex) araması.
+- ↑ / ↓ ile eşleşmeler arasında gezersin; kaç eşleşme olduğu altta yazar.
+- Değiştir satırındaki düğmeler: **Değiştir** (tek tek) ve **Tümünü Değiştir**.
+- Kutu başlığındaki ⠿ tutamaçtan sürüklenebilir; `Esc` kapatır.
 - Önce bir kelime seçersen arama kutusu o kelimeyle dolar.
+
+<Ekran src={bul} alt="Bul / Değiştir kutusu: 'puan' araması 5 eşleşme buldu" caption="Bul / Değiştir (Ctrl+H)" />
+
+## Satıra git
+
+`Ctrl+G` ile **Satıra Git** penceresi açılır; satır numarasını yazıp `Enter`'a basınca imleç o satıra gider. Hata mesajındaki satırı bulmanın en hızlı yolu.
+
+<Ekran src={satiraGit} alt="Satıra Git penceresi: Satır numarası (1 - 2)" />
 
 ## Yazmayı hızlandıran kısayollar
 
@@ -49,19 +82,21 @@ Komutlar, yerleşik fonksiyonlar, modül adları, metinler ve sayılar farklı r
 | `Alt+↑` / `Alt+↓` | Satırı yukarı / aşağı taşır |
 | `Ctrl+Enter` | Altına boş satır ekler |
 | `Ctrl+Shift+Enter` | Üstüne boş satır ekler |
+| `Ctrl+Shift+V` | Panodakini alt satıra yapıştırır |
 | `Tab` / `Shift+Tab` | Girintiyi artırır / azaltır |
 | `Ctrl+=` / `Ctrl+-` | Yazıyı büyütür / küçültür (`Ctrl`+fare tekerleği de olur) |
 
-Parantez ve tırnaklar `( [ { " '` otomatik kapanır. Bir metni seçip `(` veya `"` yazarsan seçim parantez/tırnak içine alınır.
+Tüm liste: [Klavye Kısayolları](/features/shortcuts/)
 
 ## Sekmeler ve oturum
 
-- Her dosya ayrı sekmede açılır; sekmeleri sürükleyerek sıralayabilirsin.
-- Kaydedilmemiş sekmede işaret görünür; kapatırken **Vazgeç / Kapat / Kaydet** sorulur.
-- Programı kapatıp açtığında **açık dosyaların ve kaydedilmemiş yeni sekmelerin geri gelir**.
-- **Otomatik Kaydetme** açıksa adı olan dosyalar düzenli aralıklarla (varsayılan 30 sn) kaydedilir.
+- Her dosya ayrı sekmede açılır; sekmeleri fareyle sürükleyerek ya da `Ctrl+Shift+PageUp/PageDown` ile sıralayabilirsin.
+- Kaydedilmemiş sekmede sarı nokta görünür; kapatırken **Vazgeç / Kapat / Kaydet** sorulur.
+- Programı kapatıp açtığında **açık dosyaların, kaydedilmemiş yeni sekmelerin, breakpoint'lerin ve çalıştırma argümanların geri gelir**.
+- **Dosya → Son Dosyalar** (`Ctrl+Shift+O`) yakın zamanda açtığın dosyaları listeler.
+- **Otomatik Kaydetme** açıksa adı olan dosyalar düzenli aralıklarla (varsayılan 30 sn, 5–600 sn arası ayarlanabilir) kaydedilir.
 - Kaydedilmemiş dosya varken programı kapatırsan **İptal / Kaydetmeden Çık / Kaydet ve Çık** sorulur.
 
 ## Gezgin
 
-Soldaki **GEZGİN** paneli açtığın klasörü gösterir. `.trpy` (TürKod) ve `.py` (Python) dosyaları farklı renklerde görünür. Bir dosyaya tıklayınca editörde açılır.
+Soldaki **GEZGİN** paneli açtığın klasörü gösterir. `.trpy` (TürKod) ve `.py` (Python) dosyaları farklı renklerde görünür. Bir dosyaya tıklayınca editörde açılır. Sağ tık menüsüyle yeni dosya/klasör oluşturabilir, yeniden adlandırabilir ya da silebilirsin (silinenler Geri Dönüşüm Kutusu'na gider). Ayrıntılar: [Arayüz Turu → Gezgin](/use/tour/#-gezgin)

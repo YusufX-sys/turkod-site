@@ -1,62 +1,141 @@
 ---
 title: Çalıştırma ve Hata Ayıklama
-description: Kodu çalıştırma, Türkçe hata mesajları ve adım adım hata ayıklayıcı.
+description: Kodu çalıştırma, programa girdi verme, Türkçe hata mesajları, argümanlar ve adım adım hata ayıklayıcı.
 ---
+
+import Ekran from '../../../components/Ekran.astro';
+import girdi from '../../../assets/ekran/calistir-girdi.webp';
+import argumanlar from '../../../assets/ekran/calistirma-argumanlari.webp';
+import bp from '../../../assets/ekran/debug-breakpoint.webp';
+import adim from '../../../assets/ekran/debug-adim.webp';
+import sifir from '../../../assets/ekran/hata-sifira-bolme.webp';
+import tanimsiz from '../../../assets/ekran/hata-tanimsiz-isim.webp';
+import kosullu from '../../../assets/ekran/kosullu-breakpoint.webp';
+import yerel from '../../../assets/ekran/debug-yerel.webp';
+import izleme from '../../../assets/ekran/debug-izleme.webp';
 
 ## Kodu çalıştırma
 
-`Ctrl+R` ya da araç çubuğundaki yeşil ▶ düğmesi kodunu çalıştırır; kırmızı düğme durdurur.
+`Ctrl+R` ya da araç çubuğundaki yeşil ▶ düğmesi kodunu çalıştırır; kırmızı ⏹ düğmesi durdurur.
 
-1. Kod önce denetlenir; sözdizimi hatası varsa `Satır N: ...` biçiminde gösterilir.
+1. Kod önce denetlenir; sözdizimi hatası varsa durum çubuğunda `Satır N: ...` biçiminde gösterilir.
 2. TürKod kodu Python'a çevrilir.
 3. Program, TürKod ile birlikte gelen **kendi Python'u** ile çalışır; bilgisayarına ayrıca Python kurman gerekmez.
 
-`girdi_al()` bir soru sorduğunda cevabını alttaki terminale yazıp `Enter`'a basarsın.
+## Programa girdi verme
 
-:::note[Çalışma klasörü]
-Programın her çalıştırmada geçici bir klasörde çalışır. Kalıcı bir dosya oluşturmak ya da okumak istiyorsan tam yol yaz (örn. `"C:/Users/ad/Belgeler/notlar.txt"`).
-:::
+`girdi_al()` bir soru sorduğunda terminalin en altındaki kutuda **Programa girdi… (Ctrl+C: durdur)** yazar. Cevabını bu kutuya yazıp `Enter`'a basarsın.
+
+<Ekran src={girdi} alt="Program girdi bekliyor; terminalin altındaki kutu 'Programa girdi… (Ctrl+C: durdur)' gösteriyor" />
+
+- Hiçbir metin seçili değilken terminalde `Ctrl+C`'ye basmak çalışan programı durdurur.
+- `↑` / `↓` daha önce yazdıklarını geri getirir.
+
+## Programın çalıştığı klasör
+
+| Sekme durumu | Program nerede çalışır? |
+|---|---|
+| **Kaydedilmiş dosya** | Dosyanın kendi klasöründe. Yanındaki dosyaları adıyla açabilir (`aç("notlar.txt")`), aynı klasördeki başka `.trpy` dosyalarını `içe_aktar` ile kullanabilirsin. |
+| **Kaydedilmemiş sekme** | Her çalıştırmada geçici bir klasörde. Kalıcı dosya okuyup yazmak için önce dosyayı kaydet ya da tam yol yaz. |
+
+## Çalıştırma argümanları
+
+Programın komut satırı argümanı bekliyorsa (`sys.argv`), **Çalıştır → Çalıştırma Argümanları…** ile her sekme için ayrı argüman verebilirsin. Argümanları boşlukla ayır; boşluk içeren argümanı tırnak içine al. Argümanlar sekmeyle birlikte kaydedilir.
+
+<Ekran src={argumanlar} alt="Çalıştırma Argümanları penceresi" />
 
 ## Türkçe çıktı ve hata mesajları
 
 - `Doğru`, `Yanlış` ve `Hiçlik` değerleri ekrana Türkçe yazılır (listelerin içinde de).
-- Hatalar Türkçe adı ve açıklamasıyla gösterilir:
+- pygame, Ursina, Panda3D gibi kütüphanelerin terminale yazdığı İngilizce bilgi/uyarı satırları da Türkçeleştirilir (`warning` → `Uyarı`, `error` → `Hata`). Senin `yazdır` ile yazdıkların olduğu gibi kalır.
+- Hatalar Türkçe adı, satır numarası ve açıklamasıyla gösterilir:
 
-```
-==================================================
-[HATA]: Sıfıra Bölme Hatası
-Satır Numarası: 3
-Açıklama: bir sayı 0'a bölünemez!
-==================================================
-```
+<Ekran src={sifir} alt="adet = 0 iken 60 / adet hesaplanınca terminalde Sıfıra Bölme Hatası, Satır Numarası 3, bir sayı 0'a bölünemez yazıyor" caption="Bir sayıyı 0'a bölmeye çalışınca" />
+
+- Yanlış yazılmış bir ad varsa TürKod doğru olanı önerir:
+
+<Ekran src={tanimsiz} alt="yazdır(notlarr) çalıştırılınca: notlarr adında bir değişken/fonksiyon tanımlı değil! Bunu mu demek istediniz: notlar?" caption="notlar yerine notlarr yazınca: Bunu mu demek istediniz: 'notlar'?" />
+
+:::tip[Türkçe karaktersiz yazım]
+Birçok TürKod kelimesi Türkçe karakter olmadan da tanınır: `yazdir` da `yazdır` gibi çalışır.
+:::
 
 - Program bir hata koduyla biterse `[Program N koduyla sonlandı]`, sen durdurursan `[Durduruldu]` yazar.
 
+### Sık görülen hata adları
+
+| Türkçe ad | Python karşılığı | Genellikle neden? |
+|---|---|---|
+| Sözdizimi (Yazım) Hatası | SyntaxError | Eksik `:`, parantez ya da tırnak |
+| Girinti Hatası | IndentationError | Satır başındaki boşluklar hatalı |
+| Tanımsız İsim Hatası | NameError | Yanlış yazılmış ya da tanımlanmamış ad |
+| Veri Tipi Hatası | TypeError | Metinle sayıyı toplamak gibi uyumsuz işlem |
+| Geçersiz Değer Hatası | ValueError | `tamsayı("abc")` gibi çevrilemeyen değer |
+| Sıfıra Bölme Hatası | ZeroDivisionError | Bir sayıyı 0'a bölmek |
+| Liste İndeks Hatası | IndexError | Listede olmayan sıraya erişmek |
+| Sözlük Anahtar Hatası | KeyError | Sözlükte olmayan anahtar |
+| Özellik / Metot Bulunamadı Hatası | AttributeError | Nesnede olmayan bir metodu çağırmak |
+| Modül Bulunamadı Hatası | ModuleNotFoundError | Kütüphane kurulu değil → `pip yükle` |
+| Dosya Bulunamadı Hatası | FileNotFoundError | Dosya yolu yanlış |
+| Sonsuz Özyineleme Hatası | RecursionError | Kendini durmadan çağıran fonksiyon |
+
+:::tip[Hata çözmenin kısa yolu]
+Hatalı koddayken **Düzelt** (sihirli değnek)'e bas: [Akıllı Düzeltme](/features/smart-fix/) bu hataların çoğunu bulup düzeltir ve nedenini anlatır.
+:::
+
 ## Hazır gelen kütüphaneler
 
-`kaplumbağa` (turtle), tkinter, `py_oyun` (pygame), ursina ve sympy kurulumla birlikte gelir. Diğer kütüphaneleri [Terminal](/turkod-site/features/terminal/) sayfasında anlatıldığı gibi `pip yükle` ile kurabilirsin.
+`kaplumbağa` (turtle), tkinter, `py_oyun` (pygame), Ursina ve SymPy kurulumla birlikte gelir. Diğer kütüphaneleri [Terminal](/features/terminal/) sayfasında anlatıldığı gibi `pip yükle` ile kurabilirsin.
 
 ## Hata ayıklayıcı (Debug)
 
 Kodunu satır satır çalıştırıp değişkenlerin o anki değerlerini görebilirsin.
 
-**Durma noktası (breakpoint):** Bir satırın numarasına tıkla ya da imleç o satırdayken `F9`'a bas. Kaldırmak için tekrar tıkla; hepsini **Çalıştır → Tüm Breakpoint'leri Kaldır** ile silebilirsin.
+### Durma noktası (breakpoint)
 
-| Kısayol | Ne yapar? |
-| ------- | --------- |
-| `F5` | Hata ayıklamayı başlatır / devam ettirir |
-| `F10` | **Adım At** — sonraki satıra geçer |
-| `F11` | **İçine Gir** — çağrılan fonksiyonun içine girer |
-| `Shift+F11` | **Dışına Çık** — fonksiyondan çıkana kadar çalışır |
-| `F6` | **Duraklat** |
-| `Shift+F5` | **Debug Durdur** |
+- Bir satırın numarasının soluna tıkla ya da imleç o satırdayken `F9`'a bas. Satırda kırmızı bir nokta belirir. Kaldırmak için tekrar tıkla.
+- **Koşullu breakpoint** (`Shift+F9`): Yalnızca bir koşul doğru olduğunda durur. Uzun döngülerde tam istediğin anı yakalamak için idealdir. Koşullu breakpoint'ler turuncu noktayla gösterilir.
+
+<Ekran src={kosullu} alt="Satır 4: Koşullu Breakpoint penceresine puan < 50 yazılmış" caption="harf_notu fonksiyonunun 4. satırına koşul: puan < 50" />
+
+- Hepsini **Çalıştır → Tüm Breakpoint'leri Kaldır** ile silebilirsin. Breakpoint'ler sekmeyle birlikte kaydedilir.
+
+### Debug'ı başlatma ve ilerleme
+
+`F5` ya da araç çubuğundaki 🐞 düğmesi debug'ı başlatır. Program ilk durma noktasına gelince durur; o satır editörde sarıyla vurgulanır ve editörün üstünde **debug paneli** açılır.
+
+<Ekran src={bp} alt="Program 13. satırdaki breakpoint'te durdu; debug panelinde küresel değişkenler görünüyor" caption="Breakpoint • Satır 13: program durdu, değişkenler panelde." />
+
+| Panel düğmesi | Kısayol | Ne yapar? |
+|---|---|---|
+| ▶ Devam | `F5` | Sonraki durma noktasına kadar çalışır |
+| ⏸ Duraklat | `F6` | Çalışan programı o anda durdurur |
+| ↷ Adım At | `F10` | Sonraki satıra geçer (fonksiyonun içine girmez) |
+| ↳ İçine Gir | `F11` | Çağrılan fonksiyonun içine girer |
+| ↵ Dışına Çık | `Shift+F11` | Fonksiyondan çıkana kadar çalışır |
+| ⏹ Durdur | `Shift+F5` | Hata ayıklamayı bitirir |
 
 Debug başlamadan `F10` veya `F11`'e basarsan program ilk satırda durarak başlar.
 
-**Debug paneli** nerede ve neden durulduğunu gösterir (Breakpoint, Adım, Başlangıç, Duraklatıldı). **Değişkenleri göster** ile üç bölüm açılır:
+### Panelde neler var?
 
-- **YEREL DEĞİŞKENLER** — o anki fonksiyonun değişkenleri
-- **KÜRESEL DEĞİŞKENLER** — dosyanın genelindeki değişkenler
-- **ÇAĞRI YIĞINI** — hangi fonksiyonun hangisini çağırdığı
+- **Başlık:** nerede ve neden durulduğu: **Breakpoint**, **Adım**, **Başlangıç**, **Duraklatıldı** ya da **Yakalanmamış hata**, ardından satır numarası. Program çalışırken **Çalışıyor…** yazar.
+- **YEREL DEĞİŞKENLER:** o anki fonksiyonun değişkenleri (bir fonksiyonun içindeyken).
+- **KÜRESEL DEĞİŞKENLER:** dosyanın genelindeki değişkenler. Her değişkenin yanında Türkçe türü yazar (`metin`, `liste (3)`, `fonksiyon`…). Liste, sözlük ve nesnelerin yanındaki ok ile içlerini açabilirsin.
+- **İfade kutusu:** `İfade (Enter: değerlendir)` kutusuna `puan * 2` gibi bir ifade yazıp `Enter`'a basarsan o anki değeri hesaplanır. 👁 düğmesiyle ifadeyi **İZLEME** listesine eklersin; her adımda değeri yenilenir.
+- **ÇAĞRI YIĞINI:** hangi fonksiyonun hangisini çağırdığı (örn. `harf_notu • satır 4`, onu çağıran `ana program • satır 16`). Bir satıra tıklayınca o seviyenin değişkenleri gösterilir.
+- Panelin sağ üstündeki ok paneli küçültür.
 
-Liste, sözlük ve nesneler açılarak içleri görülebilir. Çalışılan satır editörde vurgulanır.
+Yukarıdaki koşullu breakpoint ile çalıştırınca program 92 ve 74 puanlarında durmaz; yalnızca `puan` 48 olduğunda durur:
+
+<Ekran src={yerel} alt="Program harf_notu içinde 4. satırda durdu; YEREL DEĞİŞKENLER'de puan = 48, ÇAĞRI YIĞINI'nda harf_notu ve ana program" caption="Koşul sağlandı: puan = 48. Terminalde 92 ve 74 için çıktılar zaten yazılmış." />
+
+İfade kutusuna `puan + 10` yazıp 👁 düğmesine basınca ifade **İZLEME** listesine eklenir; her adımda yeniden hesaplanır:
+
+<Ekran src={izleme} alt="İZLEME bölümünde puan + 10 = 58" caption="İzleme: puan + 10 = 58" />
+
+<Ekran src={adim} alt="Adım atıldıktan sonra 14. satırda duruldu; notlar listesi değişkenlerde görünüyor" caption="F10 ile bir adım ilerledikten sonra: yeni değişken notlar listesi göründü." />
+
+:::note[Satır numaraları açık olmalı]
+Breakpoint koymak için satır numaralarına tıklanır. **Ayarlar → Satır Numaraları** kapalıyken fareyle breakpoint koyamazsın.
+:::

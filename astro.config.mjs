@@ -3,21 +3,26 @@ import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  base: '/turkod-site/',
-  site: 'https://yusufx-sys.github.io',
+  site: 'https://turkod.pages.dev',
   integrations: [
     starlight({
       title: 'TürKod',
       favicon: '/favicon.ico',
-      // head içindeki yollara base otomatik eklenmez; /turkod-site/ elle yazılır.
-      // Not: Google arama sonucundaki logoyu yusufx-sys.github.io/ ANA SAYFASINDAN
-      // alır (ayrı depo: YusufX-sys.github.io). Buradakiler tarayıcı sekmesi içindir.
+      // Site alan adının kökünde yayınlanır (Cloudflare Pages). Google arama
+      // sonucundaki logo ve site adı bu kök ana sayfadan okunur.
       head: [
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/turkod-site/icon-48.png' } },
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/turkod-site/icon-96.png' } },
-        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/turkod-site/icon-192.png' } },
-        { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/turkod-site/apple-touch-icon.png' } },
-        { tag: 'meta', attrs: { property: 'og:image', content: 'https://yusufx-sys.github.io/turkod-site/icon-512.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '48x48', href: '/icon-48.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/icon-96.png' } },
+        { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192.png' } },
+        { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' } },
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://turkod.pages.dev/icon-512.png' } },
+        { tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            { '@type': 'WebSite', '@id': 'https://turkod.pages.dev/#website', name: 'TürKod', alternateName: ['TurKod', 'TürKod IDE'], url: 'https://turkod.pages.dev/', inLanguage: 'tr' },
+            { '@type': 'Organization', '@id': 'https://turkod.pages.dev/#organization', name: 'TürKod', url: 'https://turkod.pages.dev/', logo: 'https://turkod.pages.dev/icon-512.png', sameAs: ['https://github.com/YusufX-sys/turkod-ide'] },
+          ],
+        }) },
       ],
       customCss: ['./src/styles/custom.css'],
       tableOfContents: false,
@@ -44,6 +49,8 @@ export default defineConfig({
           items: [
             { label: 'Arayüz Turu', link: '/use/tour/' },
             { label: 'İlk Programını Çalıştır', link: '/use/first-run/' },
+            { label: 'Menü Rehberi', link: '/use/menus/' },
+            { label: 'Sorun Giderme ve SSS', link: '/use/troubleshooting/' },
           ],
         },
         {

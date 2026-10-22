@@ -1,32 +1,99 @@
 ---
 title: Ayarlar ve Temalar
-description: Tema, yazı tipi, editör görünümü ve diğer ayarlar.
+description: Tema, yazı tipi, editör görünümü, terminal, arayüz turu, sistem entegrasyonu, AI ve düzeltme ayarları.
 ---
 
-Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan ulaşırsın. Ayarlar bir sekme olarak açılır; değişiklikleri **Kaydet ve Uygula** ile kaydedersin.
+import Ekran from '../../../components/Ekran.astro';
+import genel from '../../../assets/ekran/ayarlar-genel.webp';
+import temalar from '../../../assets/ekran/ayarlar-temalar.webp';
+import editor from '../../../assets/ekran/ayarlar-editor.webp';
+import turEnt from '../../../assets/ekran/ayarlar-tur-entegrasyon.webp';
+import ai from '../../../assets/ekran/ayarlar-ai.webp';
+import duzeltme from '../../../assets/ekran/ayarlar-duzeltme.webp';
 
-## Temalar
+Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan ulaşırsın. Ayarlar editörde **Ayarlar** adlı bir sekme olarak açılır; değişiklikleri sağ üstteki **Kaydet ve Uygula** ile kaydedersin.
+
+## Genel
+
+<Ekran src={genel} alt="Ayarlar sekmesi, Genel bölümü: Tema, Yazı Boyutu, Yazı Tipi, Otomatik Tamamlama" />
+
+| Ayar | Varsayılan | Açıklama |
+| ---- | ---------- | -------- |
+| Tema | Modern Koyu | Arayüz ve kod renkleri |
+| Yazı Boyutu (8–32) | 14 | Editör yazı boyutu. `Ctrl`+fare tekerleğiyle de değişir |
+| Yazı Tipi | Consolas | Bilgisayarında kurulu yazı tiplerinden biri (liste kendiliğinden okunur) |
+| Otomatik Tamamlama | Açık | Yazarken öneri listesi |
+| Otomatik Kaydetme | Kapalı | Açınca **Otomatik kaydetme aralığı** (5–600 sn, varsayılan 30) seçilir |
+
+### Temalar
 
 Üç tema vardır: **Modern Koyu** (varsayılan), **Koyu** ve **Açık**. Tema, editördeki kod renklerini de değiştirir.
 
-## Ayarlar
+<Ekran src={temalar} alt="Tema açılır listesi: Modern Koyu, Koyu, Açık" />
 
-| Bölüm | Ayar | Varsayılan |
-| ----- | ---- | ---------- |
-| Genel | Tema | Modern Koyu |
-| Genel | Yazı Boyutu (8–32) | 14 |
-| Genel | Yazı Tipi (bilgisayarındaki fontlar) | Consolas |
-| Genel | Otomatik Tamamlama | Açık |
-| Genel | Otomatik Kaydetme | Kapalı |
-| Editör Görünümü | Satır Numaraları | Açık |
-| Editör Görünümü | Kelime Kaydırma | Kapalı |
-| Editör Görünümü | Boşluk Göstergesi | Açık |
-| Editör Görünümü | Sütun Çizgileri | Açık |
-| Editör Görünümü | Minimap | Kapalı |
-| Terminal | Terminal Yazı Boyutu | 13 |
+## Editör Görünümü
 
-**AI Asistan** ayarları için [AI Asistan](/turkod-site/features/ai/), **Düzeltme** ayarları için [Akıllı Düzeltme](/turkod-site/features/smart-fix/) sayfasına bak.
+<Ekran src={editor} alt="Editör Görünümü ayarları: Satır Numaraları, Kelime Kaydırma, Boşluk Göstergesi, Sütun Çizgileri, Minimap" />
+
+| Ayar | Varsayılan | Açıklama |
+| ---- | ---------- | -------- |
+| Satır Numaraları | Açık | Breakpoint ve katlama için gerekir |
+| Kelime Kaydırma (Word Wrap) | Kapalı | Uzun satırları ekrana sığacak şekilde alta kaydırır |
+| Boşluk Göstergesi | Açık | Boşlukları nokta, sekmeleri ok olarak gösterir |
+| Sütun Çizgileri | Açık | Bloklar arasındaki hizayı gösteren dikey çizgiler |
+| Minimap | Kapalı | Sağ kenarda kodun küçük haritası |
+
+## Terminal
+
+| Ayar | Varsayılan |
+| ---- | ---------- |
+| Terminal Yazı Boyutu (8–28) | 13 |
+
+İmleci terminal üzerine getirip `Ctrl` + fare tekerleğiyle de boyutu değiştirebilirsin.
+
+## Arayüz Turu ve Sistem Entegrasyonu
+
+<Ekran src={turEnt} alt="Arayüz Turu ve Sistem Entegrasyonu ayarları" />
+
+- **Her açılışta göster** — açıksa ekranı tanıtan tur her açılışta başlar; kapalıyken yalnızca ilk açılışta gösterilir.
+- **Turu şimdi başlat** — turu hemen açar.
+- **.trpy dosyalarını TürKod ile ilişkilendir** — `.trpy` dosyasına çift tıklayınca program çalışır; sağ tıkta **Editör ile aç** çıkar.
+- **TürKod'u PATH'e ekle** — komut isteminde `turkod dosya.trpy` komutu kullanılabilir hale gelir.
+
+Sistem Entegrasyonu ayarları yalnızca kendi kullanıcı hesabının kayıt defterini değiştirir, yönetici izni istemez ve yalnızca kurulmuş TürKod'da kullanılabilir. Aynı seçenekler [kurulum](/install/) sırasında da sorulur.
+
+## AI Asistan
+
+<Ekran src={ai} alt="AI Asistan ayarları: AI Aktif, Sağlayıcı, Model, API Key, Sıcaklık, Max Token" />
+
+| Ayar | Varsayılan |
+| ---- | ---------- |
+| AI Aktif | Kapalı |
+| Sağlayıcı | OpenAI |
+| Model | gpt-4o-mini |
+| API Key | (boş) |
+| Sıcaklık (0–2) | 0.70 |
+| Max Token | 4096 |
+| Sistem Mesajı | Asistanın temel talimatı |
+
+Sağ üstteki **Modelleri Güncelle** düğmesi OpenAI ve Groq için güncel model listesini getirir. Ayrıntılar: [AI Asistan](/features/ai/)
+
+## Düzeltme
+
+<Ekran src={duzeltme} alt="Düzeltme ayarları: Zaman Aşımı 5, Mesaj Aralığı 100, Maksimum Döngü Sayısı 12" />
+
+| Ayar | Varsayılan | Açıklama |
+| ---- | ---------- | -------- |
+| Zaman Aşımı (saniye) | 5 | Bir deneme çalıştırmasının en uzun süresi |
+| Mesaj Aralığı | 100 | Canlı "düşünce" mesajları arasındaki bekleme. Etiket "karakter" dese de değer milisaniyedir (en fazla 250); 0 en hızlısıdır |
+| Maksimum Döngü Sayısı | 12 | En fazla kaç düzeltme denemesi yapılacağı |
+
+Gelişmiş düzeltme her zaman etkindir. Ayrıntılar: [Akıllı Düzeltme](/features/smart-fix/)
+
+## Ayarlar nerede saklanır?
+
+Tüm ayarlar, açık sekmeler ve panel düzeni `%USERPROFILE%\.turkod_ayarlar.json` dosyasında saklanır. Dosya bozulursa `.bozuk` uzantısıyla yedeklenir ve varsayılanlarla devam edilir. İki TürKod penceresi aynı anda açıkken de ayarlar birbirini ezmeden birleştirilir.
 
 :::note[Satır numaraları]
-Durma noktası (breakpoint) koymak ve kod katlamak için satır numaralarına tıklanır. **Satır Numaraları** kapalıyken bu iki özellik kullanılamaz.
+Durma noktası (breakpoint) koymak ve kod katlamak için satır numaralarına tıklanır. **Satır Numaraları** kapalıyken bu iki özellik fareyle kullanılamaz.
 :::

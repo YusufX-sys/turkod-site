@@ -3,7 +3,7 @@ title: Klavye Kısayolları
 description: TürKod IDE'deki tüm klavye kısayolları.
 ---
 
-Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komut kısayoluyla birlikte listelenir.
+Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komut kısayoluyla birlikte listelenir. Fareyi araç çubuğundaki bir simgenin üzerinde beklettiğinde de kısayolu görünür.
 
 ## Dosya
 
@@ -11,21 +11,29 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | ------- | ----- |
 | `Ctrl+T` | Yeni Sekme |
 | `Ctrl+O` | Dosya Aç |
+| `Ctrl+Shift+O` | Son Dosyalar |
 | `Ctrl+S` | Kaydet |
+| `Ctrl+W` | Sekmeyi Kapat |
 
 ## Düzenleme
 
 | Kısayol | Komut |
 | ------- | ----- |
+| `Ctrl+Z` / `Ctrl+Y` | Geri Al / Yinele |
+| `Ctrl+X` / `Ctrl+C` / `Ctrl+V` | Kes / Kopyala / Yapıştır |
+| `Ctrl+A` | Tümünü Seç |
+| `Ctrl+G` | Satıra Git… |
 | `Ctrl+F` | Bul |
 | `Ctrl+H` | Bul / Değiştir |
+| `Esc` | Bul kutusunu kapat |
 | `Ctrl+/` | Yorum Aç/Kapat |
 | `Ctrl+Shift+D` | Satırı Çoğalt |
 | `Alt+↑` / `Alt+↓` | Satırı Yukarı / Aşağı Taşı |
 | `Ctrl+Enter` / `Ctrl+Shift+Enter` | Alta / üste boş satır |
 | `Ctrl+Shift+V` | Alt satıra yapıştır |
+| `Ctrl+"` | Seçimi tırnak içine al |
 | `Tab` / `Shift+Tab` | Girinti artır / azalt |
-| `Ctrl+=` / `Ctrl+-` | Yazıyı büyüt / küçült |
+| `Ctrl+=` / `Ctrl+-` | Yazıyı büyüt / küçült (`Ctrl`+fare tekerleği de olur) |
 
 ## Görünüm
 
@@ -41,12 +49,22 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | ------- | ----- |
 | `Ctrl+R` | Çalıştır |
 | `F9` | Breakpoint Aç/Kapat |
+| `Shift+F9` | Koşullu Breakpoint… |
 | `F5` | Debug Başlat / Devam |
 | `F10` | Adım At |
 | `F11` | İçine Gir |
 | `Shift+F11` | Dışına Çık |
 | `F6` | Duraklat |
 | `Shift+F5` | Debug Durdur |
+
+## Terminal
+
+| Kısayol | Ne yapar? |
+| ------- | --------- |
+| `Enter` | Yazdığını programa gönderir ya da komutu çalıştırır |
+| `↑` / `↓` | Önceki komutlar / girdiler |
+| `Ctrl+C` (seçim yokken) | Çalışan programı durdurur |
+| `Ctrl` + fare tekerleği | Terminal yazısını büyütür / küçültür |
 
 ## Otomatik tamamlama
 
@@ -55,3 +73,14 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | `↑` / `↓` | Öneriler arasında gezin |
 | `Tab` / `Enter` | Öneriyi kabul et |
 | `Esc` | Listeyi kapat |
+
+## AI Asistan ve arayüz turu
+
+| Kısayol | Ne yapar? |
+| ------- | --------- |
+| `Enter` / `Shift+Enter` | AI'ya gönder / yeni satır |
+| `→` veya `Enter` / `←` / `Esc` | Turda ileri / geri / turu kapat |
+
+:::tip[Türkçe Q klavye]
+`AltGr` ile yazılan `| [ ] { }` gibi karakterler kısayol sanılmaz; editörde normal yazılır.
+:::

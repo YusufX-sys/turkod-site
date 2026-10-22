@@ -1,79 +1,121 @@
 ---
 title: Arayüz Turu
-description: TürKod IDE'nin her köşesi ne işe yarar? 2 dakikada tanış.
+description: TürKod IDE'nin her köşesi ne işe yarar? Ekran görüntüleriyle 5 dakikada tanış.
 ---
 
-import arayuz from '../../../assets/arayuz.png';
+import Ekran from '../../../components/Ekran.astro';
+import anaEkran from '../../../assets/ekran/ana-ekran.webp';
+import tur01 from '../../../assets/ekran/tur-01.webp';
+import tur04 from '../../../assets/ekran/tur-04.webp';
+import gezginSagTik from '../../../assets/ekran/gezgin-sag-tik.webp';
+import kaydedilmemis from '../../../assets/ekran/kaydedilmemis-sekme.webp';
 
-TürKod IDE'yi açtığında ekran dört bölgeye ayrılır: **solda gezgin**, **ortada editör ve terminal**, **sağda AI Asistan**, **üstte menü ve araç çubuğu**. Hadi hepsini tek tek gezelim 🚀
+TürKod IDE'yi açtığında ekran beş bölgeye ayrılır: **üstte menü ve araç çubuğu**, **solda Gezgin**, **ortada editör ve terminal**, **sağda AI Asistan**, **en altta durum çubuğu**. Hadi hepsini tek tek gezelim 🚀
 
-<img class="tk-shot" src={arayuz.src} alt="TürKod IDE arayüzü: solda gezgin, ortada editör ve terminal, sağda AI Asistan" />
+<Ekran src={anaEkran} alt="TürKod IDE ana ekranı: solda Gezgin, ortada editör ve terminal, sağda AI Asistan" caption="Bir programı çalıştırdıktan sonra TürKod IDE" />
+
+## 🎓 Program içi tur
+
+İlk açılışta TürKod sana ekranı kendisi tanıtır. 13 adımlık tur her bölümü sırayla vurgular ve ne işe yaradığını anlatır.
+
+<Ekran src={tur01} alt="Arayüz turunun ilk adımı: TürKod IDE'ye hoş geldin penceresi" caption="Turun ilk adımı. → / Enter ileri, ← geri, Esc turu kapatır." />
+
+- **İleri / Geri** düğmeleriyle ya da `→` `←` tuşlarıyla gezinirsin. `Esc` veya **Turu atla** turu kapatır.
+- **Her açılışta göster** kutusunu işaretlersen tur her açılışta yeniden başlar.
+- Turu istediğin zaman **Yardım → Arayüz Turu** ya da **Ayarlar → Arayüz Turu → Turu şimdi başlat** ile tekrar açabilirsin.
+
+<Ekran src={tur04} alt="Turun dördüncü adımı Çalıştır ve Durdur düğmelerini vurguluyor" caption="Tur, anlattığı düğmeyi parlak bir çerçeveyle gösterir." />
+
+Turun adımları: Menü çubuğu · Araç çubuğu · Çalıştır ve Durdur · Akıllı düzeltme · Hata ayıklayıcı · Gezgin · Sekmeler · Editör · Terminal · AI Asistan · Durum çubuğu · Ayarlar · Hazırsın!
 
 ## 📋 Menü çubuğu
 
-En üstte **Dosya, Düzenle, Görünüm, Çalıştır, Araçlar, Yardım** ve **Güncelleştirmeler** menüleri durur. Sağ üstteki ⚙️ dişli simgesi ise ayarlara açılan kapıdır. Programı güncel tutmak istersen Güncelleştirmeler menüsüne göz at.
-
-## 📁 Gezgin
-
-Sol taraftaki **GEZGİN** paneli, açtığın klasördeki dosyaları gösterir.
-
-- 📂 Başlıktaki klasör simgesiyle yeni bir klasör açarsın.
-- 🔄 Yenile simgesi, dışarıdan eklediğin dosyaları listeye getirir.
-- Bir dosyaya tıklayarak onu editörde açabilirsin.
+En üstte **Dosya, Düzenle, Görünüm, Çalıştır, Araçlar, Öğren, Yardım** ve **Güncelleştirmeler** menüleri durur. Sağ üstteki ⚙️ dişli simgesi **Ayarlar**'ı açar. Her menünün içinde ne olduğunu ekran görüntüleriyle [Menü Rehberi](/use/menus/) sayfasında görebilirsin.
 
 ## 🔧 Araç çubuğu
 
-Menülere girmeden en sık kullanacağın işler burada, tek tıkla:
+Menülere girmeden en sık kullanacağın işler burada. Fareyi bir simgenin üzerinde beklettiğinde adı ve kısayolu görünür. Soldan sağa:
 
-| Simge | Ne yapar? |
-|---|---|
-| 📄 📂 💾 | Yeni dosya, dosya aç, kaydet (yanındaki simge: farklı kaydet) |
-| ▶️ (yeşil) | Kodunu **çalıştırır** |
-| 🔴 (kırmızı) | Çalışan programı **durdurur** |
-| 🎨 | Renk temasını değiştirir |
-| 🐞 ⏭ ⏩ | Hata ayıklama: kodu adım adım ilerletip nerede takıldığını görürsün |
-| ✨ | AI Asistan panelini açar |
-| 💻 | Terminal panelini açar |
+| Simge | Ne yapar? | Kısayol |
+|---|---|---|
+| 📄 (mavi sayfa) | **Dosya Aç** | `Ctrl+O` |
+| 📂 (sarı klasör) | **Klasör Aç**: Gezgin'de gösterilecek klasörü seçer | — |
+| 💾 | **Kaydet** | `Ctrl+S` |
+| 💾 (kalemli) | **Farklı Kaydet** | — |
+| ▶️ (yeşil) | **Çalıştır** | `Ctrl+R` |
+| ⏹️ (kırmızı) | **Durdur**: çalışan programı sonlandırır | — |
+| ⇄ | **TürKod ⇄ Python Çevir** | — |
+| Sihirli değnek | **Düzelt**: [Akıllı Düzeltme](/features/smart-fix/) | — |
+| 🔍 | **Bul / Değiştir** | `Ctrl+H` |
+| 🎨 (palet) | **Komut Paleti**: tüm komutları aranabilir listede gösterir | `Ctrl+Shift+P` |
+| 🐞 (kırmızı böcek) | **Debug Başlat / Devam** | `F5` |
+| ↷ | **Adım At** | `F10` |
+| ⏩ | **Devam** | — |
+| ⊗ | **Debug Durdur** | `Shift+F5` |
+| ▦ (sarı) | **Gezgin Aç/Kapat** | — |
+| ✨ | **AI Panel Aç/Kapat** | — |
+| 🖥️ | **Terminal Aç/Kapat** | `Ctrl+J` |
 
 :::tip[İpucu]
-Bir kodun neden çalışmadığını anlamıyorsan önce 🐞 hata ayıklamayı dene, sonra AI Asistan'a sor. Çoğu zaman ikisinden biri işi çözer.
+Bir kodun neden çalışmadığını anlamıyorsan önce **Düzelt** (sihirli değnek)'i dene; olmazsa 🐞 hata ayıklayıcıyla satır satır ilerle. Çoğu zaman ikisinden biri işi çözer.
 :::
 
-## ✍️ Editör
+## 📁 Gezgin
+
+Sol taraftaki **GEZGİN** paneli açtığın klasördeki dosyaları gösterir. Başlığındaki dört simge: **Yeni Dosya**, **Yeni Klasör**, **Klasör Aç**, **Yenile**.
+
+- Bir dosyaya tıklayınca editörde açılır. `.trpy` (TürKod) dosyaları yeşil simgeyle görünür.
+- Klasörlerin yanındaki oka tıklayarak içini açıp kapatırsın.
+- Sağ tıkladığında **Yeni Dosya, Yeni Klasör, Yeniden Adlandır, Sil, Yenile** seçenekleri çıkar. Yeni dosyanın varsayılan adı `yeni.trpy`'dir.
+- **Sil** onay ister ve dosyayı kalıcı olarak silmez; **Geri Dönüşüm Kutusu**'na taşır.
+
+<Ekran src={gezginSagTik} alt="Gezgin panelinde sağ tık menüsü: Yeni Dosya, Yeni Klasör, Yeniden Adlandır, Sil, Yenile" caption="Gezgin'de sağ tık menüsü" />
+
+## ✍️ Editör ve sekmeler
 
 Kodunu ortadaki büyük alana yazarsın.
 
-- **Sekmeler:** Her dosya kendi sekmesinde açılır. TürKod dosyalarının uzantısı `.trpy`'dir. Henüz kaydetmediğin dosyanın adı `Untitled-1.trpy` gibi görünür. Sağdaki **+** ile yeni sekme açarsın.
-- **Satır numaraları** solda durur; hata mesajlarında hangi satırı aradığını bilirsin.
-- **Renkli yazım:** `yazdır` gibi komutlar, metinler ve değişkenler farklı renklerde görünür. Yanlış yazdığında renk değişimi seni uyarır.
-- **Minimap 🗺️:** Sağ kenardaki küçük harita kodunun kuşbakışı görüntüsüdür. Uzun dosyalarda hızlı gezinmene yarar.
+- **Sekmeler:** Her dosya kendi sekmesinde açılır. Henüz kaydetmediğin dosyanın adı `Untitled-1.trpy` gibi görünür. Sağdaki **+** (ya da `Ctrl+T`) yeni sekme açar, `Ctrl+W` aktif sekmeyi kapatır.
+- **Kaydedilmemiş değişiklik** olan sekmede sarı bir nokta görünür. Böyle bir sekmeyi kapatırken **Vazgeç / Kapat / Kaydet** sorulur.
+- **Satır numaraları** solda durur. Numaranın soluna tıklayarak [breakpoint](/features/run-debug/) koyarsın; bloğun yanındaki ▼ okuyla bloğu katlarsın.
+- **Renkli yazım:** komutlar, metinler, sayılar ve fonksiyon adları farklı renklerde görünür.
+- **Minimap 🗺️:** Ayarlar'dan açılabilen, sağ kenardaki küçük kod haritası.
+
+<Ekran src={kaydedilmemis} alt="Kaydedilmemiş bir sekme kapatılırken çıkan Vazgeç, Kapat, Kaydet sorusu" caption="Kaydedilmemiş bir sekmeyi kapatırken" />
+
+Editörün tüm özellikleri için 👉 [Kod Editörü](/features/editor/)
 
 ## 💻 Terminal
 
-Programını çalıştırdığında altta terminal açılır. Çıktılar ve sorular burada görünür.
+Programını çalıştırdığında altta **TERMİNAL** paneli açılır. Çıktılar ve sorular burada görünür.
 
-- `girdi_al()` bir soru sorduğunda cevabı **terminale yazıp Enter'a basarsın**.
+- `girdi_al()` bir soru sorduğunda cevabı **en alttaki kutuya yazıp Enter'a basarsın**.
 - Program sorunsuz biterse ek bir satır çıkmaz ✅. Bir hatayla biterse `[Program N koduyla sonlandı]`, sen durdurursan `[Durduruldu]` yazar.
-- En alttaki **Komut…** kutusuna terminal komutları yazabilirsin.
-- Sağ üstteki 🔍 simgeleri yazı boyutunu küçültür ve büyütür, 🗑️ ekranı temizler, ✖ paneli kapatır.
+- Program çalışmıyorken alttaki **Komut…** kutusuna terminal komutları ve [Türkçe pip komutları](/features/terminal/) yazabilirsin. `↑` / `↓` önceki komutları getirir.
+- Başlıktaki düğmeler: **Yazıyı Küçült**, **Yazıyı Büyüt**, **Tüm çıktıyı kopyala**, **Temizle**, **Kapat**.
 
 ## 🤖 AI Asistan
 
-Sağ paneldeki asistan, TürKod sözlüğünü bilen bir yardımcıdır. Bir şey takıldığında sohbet etmek için biçilmiş kaftan.
+Sağ paneldeki asistan, TürKod sözlüğünü bilen bir yardımcıdır. Kullanmak için önce kendi API anahtarınla [etkinleştirmen](/features/ai/) gerekir.
 
 - 💡 **Açıkla:** Kodunun ne yaptığını sade bir dille anlatır.
 - ⚡ **Optimize et:** Kodunu daha temiz ve verimli hale getirmek için öneriler sunar.
-- **Sor…** kutusuna kendi sorunu yazıp ➤ ile gönderebilirsin. Örneğin "Bu döngü neden bitmiyor?" gibi.
+- **Sor…** kutusuna kendi sorunu yazıp `Enter` ile gönderirsin (`Shift+Enter` yeni satır).
 - 🗑️ simgesi sohbeti temizler.
 
 ## 📊 Durum çubuğu
 
 En alttaki ince çubuk küçük ama işe yarar bilgiler verir:
 
-- **✓ Sözdizimi doğru:** Kodunun yazım kurallarına uyup uymadığını gösterir.
-- **Satır, Sütun:** İmlecin tam olarak nerede olduğunu söyler.
-- **Dosya adı** ve **UTF-8:** Hangi dosyada olduğunu ve Türkçe karakterlerin (ç, ğ, ı, ö, ş, ü) sorunsuz kaydedildiğini gösterir.
+- **✓ Sözdizimi doğru** ya da kırmızı bir hata (örneğin `Satır 1: ':' bekleniyor`): kodun yazım kurallarına uyup uymadığını gösterir.
+- **Satır, Sütun:** İmlecin nerede olduğunu söyler.
+- **Dosya adı** (dosya açık değilse **Dosya Yok**) ve **UTF-8**.
+- Sağdaki küçük simgeler: **Kod İstatistikleri**, **TODO Listesi**, **Kod Arama Çevirici** ve **Hakkında / İmza** pencerelerini tek tıkla açar.
+
+## 🔔 Bildirimler
+
+Kaydetme, çeviri gibi işlemlerden sonra sağ altta kısa bir bildirim belirir. Bildirimdeki 🔔 simgesi son bildirimlerin tamamını gösteren paneli açar.
 
 ## Sırada ne var?
 
-Arayüzü tanıdığına göre artık kod yazma zamanı! 👉 [İlk programını çalıştır](/turkod-site/use/first-run/)
+Arayüzü tanıdığına göre artık kod yazma zamanı! 👉 [İlk programını çalıştır](/use/first-run/)

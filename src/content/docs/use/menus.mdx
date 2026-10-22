@@ -1,0 +1,123 @@
+---
+title: Menü Rehberi
+description: TürKod IDE'deki sekiz menünün her komutu, kısayolu ve ne işe yaradığı — ekran görüntüleriyle.
+---
+
+import Ekran from '../../../components/Ekran.astro';
+import mDosya from '../../../assets/ekran/menu-dosya.webp';
+import mDuzenle from '../../../assets/ekran/menu-duzenle.webp';
+import mGorunum from '../../../assets/ekran/menu-gorunum.webp';
+import mCalistir from '../../../assets/ekran/menu-calistir.webp';
+import mAraclar from '../../../assets/ekran/menu-araclar.webp';
+import mOgren from '../../../assets/ekran/menu-ogren.webp';
+import mYardim from '../../../assets/ekran/menu-yardim.webp';
+import mGuncel from '../../../assets/ekran/menu-guncellestirmeler.webp';
+import palet from '../../../assets/ekran/komut-paleti.webp';
+import lisans from '../../../assets/ekran/lisans.webp';
+
+Menü çubuğunda sekiz menü vardır. Bu sayfada her birinin içindeki komutları sırayla bulabilirsin. Kısayolu olan komutların kısayolu menüde de yazar.
+
+:::tip[Kısayolu hatırlamıyor musun?]
+`Ctrl+Shift+P` ile **Komut Paleti**'ni aç ve komutun adını yazmaya başla. Menülerdeki her komut burada kısayoluyla birlikte listelenir.
+:::
+
+<Ekran src={palet} alt="Komut Paleti: Komut ara kutusu ve kısayollarıyla komut listesi" caption="Komut Paleti (Ctrl+Shift+P)" />
+
+## Dosya
+
+<Ekran src={mDosya} alt="Dosya menüsü" />
+
+| Komut | Kısayol | Ne yapar? |
+|---|---|---|
+| Yeni Sekme | `Ctrl+T` | Boş bir `Untitled-N.trpy` sekmesi açar |
+| Dosya Aç | `Ctrl+O` | Bilgisayarından bir dosya seçip açar |
+| Son Dosyalar | `Ctrl+Shift+O` | Yakın zamanda açtığın dosyaları listeler |
+| Klasör Aç | — | Gezgin'de gösterilecek proje klasörünü seçer |
+| Kaydet | `Ctrl+S` | Dosyayı kaydeder; adı yoksa ad sorar |
+| Sekmeyi Kapat | `Ctrl+W` | Aktif sekmeyi kapatır |
+| Farklı Kaydet | — | Dosyayı yeni bir adla/konuma kaydeder |
+
+## Düzenle
+
+<Ekran src={mDuzenle} alt="Düzenle menüsü: Geri Al, Yinele, Kes, Kopyala, Yapıştır, Tümünü Seç, Satıra Git, Bul, Bul / Değiştir, Yorum Aç/Kapat, Satırı Çoğalt, Satırı Yukarı/Aşağı Taşı" />
+
+| Komut | Kısayol |
+|---|---|
+| Geri Al / Yinele | `Ctrl+Z` / `Ctrl+Y` |
+| Kes / Kopyala / Yapıştır | `Ctrl+X` / `Ctrl+C` / `Ctrl+V` |
+| Tümünü Seç | `Ctrl+A` |
+| Satıra Git… | `Ctrl+G` |
+| Bul | `Ctrl+F` |
+| Bul / Değiştir | `Ctrl+H` |
+| Yorum Aç/Kapat | `Ctrl+/` |
+| Satırı Çoğalt | `Ctrl+Shift+D` |
+| Satırı Yukarı / Aşağı Taşı | `Alt+↑` / `Alt+↓` |
+
+## Görünüm
+
+<Ekran src={mGorunum} alt="Görünüm menüsü" />
+
+| Komut | Kısayol |
+|---|---|
+| Gezgin Aç/Kapat | — |
+| AI Panel Aç/Kapat | — |
+| Terminal Aç/Kapat | `Ctrl+J` |
+| Sekmeyi Sola / Sağa Taşı | `Ctrl+Shift+PageUp` / `Ctrl+Shift+PageDown` |
+| Komut Paleti | `Ctrl+Shift+P` |
+| Ayarlar | — |
+
+Panellerin açık/kapalı durumu ve boyutları kaydedilir; programı yeniden açtığında aynı düzeni bulursun.
+
+## Çalıştır
+
+<Ekran src={mCalistir} alt="Çalıştır menüsü: Çalıştır, Durdur, Breakpoint, Koşullu Breakpoint, Çalıştırma Argümanları, Debug komutları" />
+
+| Komut | Kısayol | Ne yapar? |
+|---|---|---|
+| Çalıştır | `Ctrl+R` | Kodu çalıştırır |
+| Durdur | — | Çalışan programı sonlandırır |
+| Breakpoint Aç/Kapat | `F9` | İmlecin olduğu satıra durma noktası koyar/kaldırır |
+| Koşullu Breakpoint… | `Shift+F9` | Yalnızca bir koşul doğruyken duran nokta (örn. `i == 5`) |
+| Çalıştırma Argümanları… | — | Programa verilecek komut satırı argümanları |
+| Tüm Breakpoint'leri Kaldır | — | Bütün durma noktalarını siler |
+| Debug Başlat / Devam | `F5` | Hata ayıklamayı başlatır ya da devam ettirir |
+| Adım At / İçine Gir / Dışına Çık | `F10` / `F11` / `Shift+F11` | Satır satır ilerleme |
+| Devam | — | Bir sonraki durma noktasına kadar çalıştırır |
+| Duraklat | `F6` | Çalışan programı o anda durdurur |
+| Debug Durdur | `Shift+F5` | Hata ayıklamayı bitirir |
+
+Ayrıntılar: [Çalıştırma ve Hata Ayıklama](/features/run-debug/)
+
+## Araçlar
+
+<Ekran src={mAraclar} alt="Araçlar menüsü: TürKod ⇄ Python Çevir, Düzelt, Kod İstatistikleri, TODO Listesi, Kod Arama Çevirici" />
+
+- **TürKod ⇄ Python Çevir** — açık dosyayı öbür dile çevirip yeni sekmede açar.
+- **Düzelt** — [Akıllı Düzeltme](/features/smart-fix/) motorunu çalıştırır.
+- **Kod İstatistikleri**, **TODO Listesi**, **Kod Arama Çevirici** — bkz. [Araçlar](/features/tools/).
+
+## Öğren
+
+<Ekran src={mOgren} alt="Öğren menüsü: TürKod ile Kodlama Macerası (Kitap) ve Dokümantasyon Sitesi" />
+
+- **TürKod ile Kodlama Macerası (Kitap)** — kurulumla gelen PDF kitabı açar. Kitaba Başlat menüsündeki **TürKod** klasöründen de ulaşabilirsin.
+- **Dokümantasyon Sitesi** — şu an okuduğun siteyi tarayıcıda açar.
+
+## Yardım
+
+<Ekran src={mYardim} alt="Yardım menüsü: Arayüz Turu, GitHub Sayfası, Hata Bildir / Öneri Gönder, İletişim, Lisanslar, Hakkında / İmza" />
+
+- **Arayüz Turu** — ekranı adım adım tanıtan turu başlatır ([Arayüz Turu](/use/tour/)).
+- **GitHub Sayfası** — projenin GitHub sayfasını açar.
+- **Hata Bildir / Öneri Gönder** — GitHub Issues sayfasını açar.
+- **İletişim** — geliştiriciye e-posta yazmak için e-posta programını açar.
+- **Lisanslar** — TürKod'un MIT lisansını ve **Diğer açık kaynak lisansları**'nı gösterir.
+- **Hakkında / İmza** — sürüm numarasını, bağlantıları ve [imza doğrulamasını](/features/security/) gösterir.
+
+<Ekran src={lisans} alt="TürKod IDE Lisansı penceresi: MIT lisans metni" caption="Yardım → Lisanslar" />
+
+## Güncelleştirmeler
+
+<Ekran src={mGuncel} alt="Güncelleştirmeler menüsü: Güncelleştirmeleri Denetle" />
+
+- **Güncelleştirmeleri Denetle** — yeni sürüm olup olmadığına hemen bakar. Ayrıntılar: [Otomatik Güncelleme](/features/updates/).
