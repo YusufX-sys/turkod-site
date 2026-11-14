@@ -1,0 +1,806 @@
+[
+  {
+    "soru": "break ne",
+    "beklenen": "kir"
+  },
+  {
+    "soru": "degisken ne ise yarar",
+    "beklenen": "degisken"
+  },
+  {
+    "soru": "canım sıkılıyor bana bir görev ver",
+    "beklenen": "sohbet-sikildim"
+  },
+  {
+    "soru": "değiştirilemeyen liste var mı",
+    "beklenen": "demet"
+  },
+  {
+    "soru": "aferin sana çok zekisin",
+    "beklenen": "sohbet-aferin"
+  },
+  {
+    "soru": "strip ne demek",
+    "beklenen": "metin-kirp"
+  },
+  {
+    "soru": "listedeki her eleman icin islem yapmak",
+    "beklenen": "icin-for"
+  },
+  {
+    "soru": "algoritma nedir",
+    "beklenen": "algoritma"
+  },
+  {
+    "soru": "bana bir bilmece sor",
+    "beklenen": "sohbet-bilmece"
+  },
+  {
+    "soru": "fonksiyona bilgi göndermek, parametre nedir",
+    "beklenen": "parametre"
+  },
+  {
+    "soru": "komut isteminde turkod yazinca taninmiyor, path ayari",
+    "beklenen": "site-komut-satiri"
+  },
+  {
+    "soru": "turkod pythondan farkli mi",
+    "beklenen": "turkod-python-farki"
+  },
+  {
+    "soru": "kaplumbaga nasil kullanilir",
+    "beklenen": "kaplumbaga"
+  },
+  {
+    "soru": "turkod ile mysql veritabanına baglanmak icin hangi baglanti dizesini kullanmaliyim",
+    "beklenen": null
+  },
+  {
+    "soru": "unexpected indent",
+    "beklenen": "hata-beklenmeyen-girinti"
+  },
+  {
+    "soru": "koşul doğru olduğu sürece tekrar eden döngü",
+    "beklenen": "dongu-while"
+  },
+  {
+    "soru": "qwerty123",
+    "beklenen": null
+  },
+  {
+    "soru": "bir kelimenin metinde kaç kere geçtiğini bulma",
+    "beklenen": "metin-ara"
+  },
+  {
+    "soru": "try except türkçesi",
+    "beklenen": "hata-yakalama"
+  },
+  {
+    "soru": "karanlık mod nasıl açılır",
+    "beklenen": "site-tema"
+  },
+  {
+    "soru": "en sevdiğin programlama dili hangisi",
+    "beklenen": "sohbet-sevdigin-dil"
+  },
+  {
+    "soru": "listeye eleman nasıl eklerim",
+    "beklenen": "liste-ekle"
+  },
+  {
+    "soru": "class ve nesne ne demek",
+    "beklenen": "sinif"
+  },
+  {
+    "soru": "jjjjjjjj",
+    "beklenen": null
+  },
+  {
+    "soru": "txt dosyası oluşturup içine kaydetmek",
+    "beklenen": "dosya-yaz"
+  },
+  {
+    "soru": "kodu calistirma tusu hangisi",
+    "beklenen": "site-calistir"
+  },
+  {
+    "soru": "liste nedir",
+    "beklenen": "liste"
+  },
+  {
+    "soru": "dosyadaki satirlari tek tek okumak",
+    "beklenen": "dosya-oku"
+  },
+  {
+    "soru": "5! nasıl bulunur kodla",
+    "beklenen": "faktoriyel"
+  },
+  {
+    "soru": "bir kelimenin kaç harf olduğunu nasıl bulurum",
+    "beklenen": "uzunluk"
+  },
+  {
+    "soru": "fonksiyonu çağırırken bir değer eksik hatası",
+    "beklenen": "hata-eksik-deger"
+  },
+  {
+    "soru": "tırnak kapanmamış hatası",
+    "beklenen": "hata-tirnak"
+  },
+  {
+    "soru": "and or not türkçede",
+    "beklenen": "ve-veya-degil"
+  },
+  {
+    "soru": "tşk ederim çok yardımcı oldun",
+    "beklenen": "site-tesekkur"
+  },
+  {
+    "soru": "breakpoint nasıl konur",
+    "beklenen": "kesme-noktasi"
+  },
+  {
+    "soru": "tek satırlık isimsiz fonksiyon",
+    "beklenen": "isimsiz"
+  },
+  {
+    "soru": "turkod virüs mü, antivirüs uyarı verdi",
+    "beklenen": "site-guvenlik"
+  },
+  {
+    "soru": "programı kurmak için ne yapmam lazım, adım adım anlatır mısın",
+    "beklenen": "site-kurulum"
+  },
+  {
+    "soru": "yeni bir kütüphane indirmek için pip install yazabilir miyim",
+    "beklenen": "site-pip"
+  },
+  {
+    "soru": "girinti nedir",
+    "beklenen": "girinti"
+  },
+  {
+    "soru": "ic ice if yazilir mi",
+    "beklenen": "ic-ice-eger"
+  },
+  {
+    "soru": "input komutu turkcede nedir",
+    "beklenen": "girdi-al"
+  },
+  {
+    "soru": "türkod ile bluetooth üzerinden arduino kartına bağlanıp motor kontrol edebilir miyim",
+    "beklenen": null
+  },
+  {
+    "soru": "default parametre nasil yazilir",
+    "beklenen": "varsayilan-deger"
+  },
+  {
+    "soru": "modül bulunamadı hatası alıyorum kütüphane yok diyor",
+    "beklenen": "hata-modul-bulunamadi"
+  },
+  {
+    "soru": "indirmeden internetten deneyebilir miyim",
+    "beklenen": "site-demo"
+  },
+  {
+    "soru": "syntax nedir",
+    "beklenen": "sozdizimi"
+  },
+  {
+    "soru": "print turkcede ne",
+    "beklenen": "yazdir"
+  },
+  {
+    "soru": "turkod chatgpt gibi bir yapay zekaya bağlanabiliyor mu",
+    "beklenen": "site-yapay-zeka"
+  },
+  {
+    "soru": "yarın yağmur yağacak mı",
+    "beklenen": "sohbet-hava"
+  },
+  {
+    "soru": "kaç yaşında kodlamaya başlanır",
+    "beklenen": "hangi-yas"
+  },
+  {
+    "soru": "join türkçesi, listeyi tek metin yapmak",
+    "beklenen": "metin-birlestirme"
+  },
+  {
+    "soru": "return ne işe yarar",
+    "beklenen": "dondur"
+  },
+  {
+    "soru": "IDE içindeki asistanı nasıl açarım",
+    "beklenen": "site-kodi-program"
+  },
+  {
+    "soru": "sayilari buyukten kucuge dizmek",
+    "beklenen": "liste-sirala"
+  },
+  {
+    "soru": "islem onceligi var mi kodda",
+    "beklenen": "aritmetik"
+  },
+  {
+    "soru": "metni sayıya nasıl çeviririm",
+    "beklenen": "tur-donusturme"
+  },
+  {
+    "soru": "turkod nasıl silinir",
+    "beklenen": "site-kaldir"
+  },
+  {
+    "soru": "kodlama nedir bana basitçe anlatır mısın",
+    "beklenen": "programlama-nedir"
+  },
+  {
+    "soru": "upper lower turkcede ne",
+    "beklenen": "buyuk-kucuk-harf"
+  },
+  {
+    "soru": "dictionary nasil kullanilir, anahtar deger",
+    "beklenen": "sozluk"
+  },
+  {
+    "soru": "ursina nedir",
+    "beklenen": "ursina"
+  },
+  {
+    "soru": "ide ne demek",
+    "beklenen": "ide-nedir"
+  },
+  {
+    "soru": "neler yapabilirsin",
+    "beklenen": "sohbet-ne-yapabilirsin"
+  },
+  {
+    "soru": ".trpy ne demek",
+    "beklenen": "site-trpy"
+  },
+  {
+    "soru": "düğmeli pencere nasıl yaparım",
+    "beklenen": "tkinter"
+  },
+  {
+    "soru": "2 boyutlu oyun penceresi açmak",
+    "beklenen": "pygame"
+  },
+  {
+    "soru": "'return' outside function",
+    "beklenen": "hata-dondur-disarida"
+  },
+  {
+    "soru": "2x+3=7 denkleminde x kaçtır",
+    "beklenen": null
+  },
+  {
+    "soru": "turkod hangi işletim sistemlerini destekliyor, windows 7 olur mu",
+    "beklenen": "site-gereksinim"
+  },
+  {
+    "soru": "sozlukte olmayan anahtari isteyince hata aliyorum",
+    "beklenen": "hata-sozluk-anahtar"
+  },
+  {
+    "soru": "FileNotFoundError",
+    "beklenen": "hata-dosya-bulunamadi"
+  },
+  {
+    "soru": "turkodu son sürüme nasıl yükseltirim",
+    "beklenen": "site-guncelleme"
+  },
+  {
+    "soru": "turkoddan sonra gerçek pythona nasıl geçerim",
+    "beklenen": "python-a-gecis"
+  },
+  {
+    "soru": "listedeki en büyük sayıyı bulmak",
+    "beklenen": "en-buyuk-kucuk"
+  },
+  {
+    "soru": "telefonumun şarjı çabuk bitiyor",
+    "beklenen": null
+  },
+  {
+    "soru": "listedeki tekrar eden elemanları nasıl atarım",
+    "beklenen": "kume"
+  },
+  {
+    "soru": "f metinde süslü parantez kapanmadı hatası",
+    "beklenen": "hata-kapatilmamis-fmetin"
+  },
+  {
+    "soru": "const gibi hiç değişmeyen bir değer yapabilir miyim",
+    "beklenen": "sabit"
+  },
+  {
+    "soru": "in operatörü türkçesi",
+    "beklenen": "icinde"
+  },
+  {
+    "soru": "fonksiyon kendi kendini çağırabilir mi",
+    "beklenen": "ozyineleme"
+  },
+  {
+    "soru": "asal sayı bulan program",
+    "beklenen": "asal-sayi"
+  },
+  {
+    "soru": "seni kim yaptı",
+    "beklenen": "sohbet-kim-yapti"
+  },
+  {
+    "soru": "türkod'un sözlüğüne kendi kelimemi programın içinden nasıl kalıcı eklerim, json formatı ne",
+    "beklenen": null
+  },
+  {
+    "soru": "expected an indented block hatası",
+    "beklenen": "hata-girintili-blok"
+  },
+  {
+    "soru": "dict items keys values türkçesi",
+    "beklenen": "sozluk-gez"
+  },
+  {
+    "soru": "listeyi ters çevirme",
+    "beklenen": "tersine-cevir"
+  },
+  {
+    "soru": "NameError aldım",
+    "beklenen": "hata-tanimsiz-isim"
+  },
+  {
+    "soru": "linux'ta apt-get nasıl kullanılır",
+    "beklenen": null
+  },
+  {
+    "soru": "yazı ile sayıyı + ile birleştirince hata",
+    "beklenen": "hata-metin-sayi"
+  },
+  {
+    "soru": "def türkçede ne, kendi komutumu yapmak istiyorum",
+    "beklenen": "fonksiyon"
+  },
+  {
+    "soru": "turkce karakter olmadan yazsam calisir mi",
+    "beklenen": "site-turkce-harfsiz"
+  },
+  {
+    "soru": "listenin bir kısmını almak",
+    "beklenen": "dilimleme"
+  },
+  {
+    "soru": "karekök nasıl alınır",
+    "beklenen": "matematik"
+  },
+  {
+    "soru": "degiskene hangi isimleri verebilirim, rakamla baslar mi",
+    "beklenen": "degisken-adlandirma"
+  },
+  {
+    "soru": "asdfgh",
+    "beklenen": null
+  },
+  {
+    "soru": "metindeki bir kelimeyi başkasıyla değiştirmek",
+    "beklenen": "metin-degistir"
+  },
+  {
+    "soru": "ilk kodumu yazmak istiyorum nasil baslarim",
+    "beklenen": "site-ilk-program"
+  },
+  {
+    "soru": "3.3 sürümünde ne değişti",
+    "beklenen": "site-yenilikler"
+  },
+  {
+    "soru": "hiclik nedir",
+    "beklenen": "hiclik"
+  },
+  {
+    "soru": "tek eşittir ile çift eşittir farkı",
+    "beklenen": "hata-esittir"
+  },
+  {
+    "soru": "bir işi tekrar tekrar yaptırmak için ne kullanırım",
+    "beklenen": "dongu-nedir"
+  },
+  {
+    "soru": "tam sayi ne demek",
+    "beklenen": "tamsayi"
+  },
+  {
+    "soru": "pop ve remove türkçede ne",
+    "beklenen": "liste-cikar"
+  },
+  {
+    "soru": "string nedir",
+    "beklenen": "metin-turu"
+  },
+  {
+    "soru": "nasılsın",
+    "beklenen": "sohbet-nasilsin"
+  },
+  {
+    "soru": "IndexError list index out of range",
+    "beklenen": "hata-liste-indeks"
+  },
+  {
+    "soru": "continue türkçesi",
+    "beklenen": "devam-et"
+  },
+  {
+    "soru": "programda bir bug buldum nereye bildireyim",
+    "beklenen": "site-hata-bildir"
+  },
+  {
+    "soru": "nesne oluşturulurken ilk çalışan metot",
+    "beklenen": "baslat-ozel"
+  },
+  {
+    "soru": "kodlama macerası kitabını nereden okurum",
+    "beklenen": "site-kitap"
+  },
+  {
+    "soru": "sayı tahmin oyunu yapmak istiyorum",
+    "beklenen": "sayi-tahmin"
+  },
+  {
+    "soru": "'break' outside loop",
+    "beklenen": "hata-kir-disarida"
+  },
+  {
+    "soru": "iyi bir programci olmak icin ne yapmaliyim",
+    "beklenen": "kodlama-ipuclari"
+  },
+  {
+    "soru": "if satırının sonuna ne koymam gerekiyordu, iki nokta unuttum galiba",
+    "beklenen": "hata-iki-nokta"
+  },
+  {
+    "soru": "bir sorunum var ama ne olduğunu anlamadım, nereye bakayım",
+    "beklenen": "site-sorun"
+  },
+  {
+    "soru": "kaç yaşındasın",
+    "beklenen": "sohbet-yas"
+  },
+  {
+    "soru": "basit bir calculator yapalım",
+    "beklenen": "hesap-makinesi"
+  },
+  {
+    "soru": "girinti seviyesi uyuşmuyor diyor",
+    "beklenen": "hata-girinti-uyusmuyor"
+  },
+  {
+    "soru": "üçten fazla seçenek olunca if'ten sonra ne yazıyorum",
+    "beklenen": "degilse-eger"
+  },
+  {
+    "soru": "turkod çevrimdışı çalışıyor mu, internetim yok",
+    "beklenen": "site-internet"
+  },
+  {
+    "soru": "3,5 yazınca yanlış sonuç çıkıyor",
+    "beklenen": "hata-ondalik-virgul"
+  },
+  {
+    "soru": "su anki saati gosteren kod",
+    "beklenen": "tarih-saat"
+  },
+  {
+    "soru": "programım bitmiyor hep çalışıyor",
+    "beklenen": "hata-program-bitmiyor"
+  },
+  {
+    "soru": "büyük harfle yazınca komut tanınmıyor",
+    "beklenen": "hata-buyuk-kucuk-harf"
+  },
+  {
+    "soru": "özellik bulunamadı hatası, listeye ekle yazdım",
+    "beklenen": "hata-ozellik"
+  },
+  {
+    "soru": "sayının tek mi çift mi olduğunu bulma",
+    "beklenen": "cift-tek"
+  },
+  {
+    "soru": "bubble sort nasıl çalışır",
+    "beklenen": "siralama-algoritmasi"
+  },
+  {
+    "soru": "görüşürüz",
+    "beklenen": "sohbet-gorusuruz"
+  },
+  {
+    "soru": "rastgele sayı nasıl üretilir",
+    "beklenen": "rastgele"
+  },
+  {
+    "soru": "kendisi kelimesi neden her metodun başında",
+    "beklenen": "kendisi"
+  },
+  {
+    "soru": "yarınki sınavım iptal olur mu",
+    "beklenen": null
+  },
+  {
+    "soru": "boş blok bırakmak istiyorum ne yazmalıyım",
+    "beklenen": "gec"
+  },
+  {
+    "soru": "küsuratlı sayılar nasıl yazılır kodda",
+    "beklenen": "ondalikli"
+  },
+  {
+    "soru": "listenin ortalaması nasıl hesaplanır",
+    "beklenen": "toplam-ortalama"
+  },
+  {
+    "soru": "okuldan verilen proje ödevini benim yerime yazar misin",
+    "beklenen": "sohbet-odev"
+  },
+  {
+    "soru": "'int' object is not iterable",
+    "beklenen": "hata-gezilemez"
+  },
+  {
+    "soru": "UnboundLocalError",
+    "beklenen": "hata-yerel-degisken"
+  },
+  {
+    "soru": "sihirli değnek düğmesi ne işe yarıyor",
+    "beklenen": "site-akilli-duzelt"
+  },
+  {
+    "soru": "f string nasıl kullanılır",
+    "beklenen": "f-metin"
+  },
+  {
+    "soru": "aralik(5) neden 5'i yazmıyor",
+    "beklenen": "aralik"
+  },
+  {
+    "soru": "sen yapay zeka mısın",
+    "beklenen": "sohbet-yapay-zeka-misin"
+  },
+  {
+    "soru": "3 boyutlu oyun yapmak istiyorum mümkün mü",
+    "beklenen": "site-oyun"
+  },
+  {
+    "soru": "ZeroDivisionError",
+    "beklenen": "hata-sifira-bolme"
+  },
+  {
+    "soru": "kullanıcının girdiği yaşı 18 ile karşılaştıramıyorum hata veriyor",
+    "beklenen": "hata-girdi-karsilastirma"
+  },
+  {
+    "soru": "excelde düşeyara nasıl yapılır",
+    "beklenen": null
+  },
+  {
+    "soru": "klavye kısayolları neler",
+    "beklenen": "site-kisayol"
+  },
+  {
+    "soru": "exe nasil yapilir",
+    "beklenen": "site-exe"
+  },
+  {
+    "soru": "yeni başlayan biri için hangisi daha iyi turkod mu python mu",
+    "beklenen": "python-mi-turkod-mu"
+  },
+  {
+    "soru": "sen kimsin",
+    "beklenen": "site-kodi"
+  },
+  {
+    "soru": "en iyi pizza tarifi",
+    "beklenen": null
+  },
+  {
+    "soru": "fonksiyonum kendini durmadan çağırıyor hata",
+    "beklenen": "hata-sonsuz-ozyineleme"
+  },
+  {
+    "soru": "çok zorlanıyorum hiçbir şey anlamıyorum",
+    "beklenen": "sohbet-zorlaniyorum"
+  },
+  {
+    "soru": "ğüşiöç",
+    "beklenen": null
+  },
+  {
+    "soru": "listede bir sayıyı aramanın en hızlı yolu",
+    "beklenen": "arama-algoritmasi"
+  },
+  {
+    "soru": "merhabaa",
+    "beklenen": "site-selam"
+  },
+  {
+    "soru": "sleep komutu türkçesi",
+    "beklenen": "zaman-bekle"
+  },
+  {
+    "soru": "inheritance, bir sınıf başka sınıftan miras alabilir mi",
+    "beklenen": "kalitim"
+  },
+  {
+    "soru": "instagram şifremi unuttum",
+    "beklenen": null
+  },
+  {
+    "soru": "enumerate türkçesi",
+    "beklenen": "sirali-numaralandir"
+  },
+  {
+    "soru": "bana bir şaka yap",
+    "beklenen": "sohbet-saka"
+  },
+  {
+    "soru": "sonsuz döngü nasıl yapılır",
+    "beklenen": "sonsuz-dongu"
+  },
+  {
+    "soru": "sitede hangi konularda ders var",
+    "beklenen": "site-dersler"
+  },
+  {
+    "soru": "turkod paralı mı",
+    "beklenen": "site-ucret"
+  },
+  {
+    "soru": "yerel ve küresel değişken farkı",
+    "beklenen": "kapsam"
+  },
+  {
+    "soru": "derleyici nedir",
+    "beklenen": "derleyici-yorumlayici"
+  },
+  {
+    "soru": "carpim tablosu yapmak icin dongu icinde dongu",
+    "beklenen": "ic-ice-dongu"
+  },
+  {
+    "soru": "cümleyi kelimelere ayırmak",
+    "beklenen": "metin-bol"
+  },
+  {
+    "soru": "en sevdiğin renk ne",
+    "beklenen": "sohbet-renk"
+  },
+  {
+    "soru": "ternary operator türkodda var mı",
+    "beklenen": "uclu-ifade"
+  },
+  {
+    "soru": "dene yazdım ama hata veriyor, altına ne gelmeli",
+    "beklenen": "hata-dene-yalniz"
+  },
+  {
+    "soru": "python dili nedir neden bu kadar popüler",
+    "beklenen": "python-nedir"
+  },
+  {
+    "soru": "import türkçede nasıl yazılır",
+    "beklenen": "modul"
+  },
+  {
+    "soru": "veri tipleri nelerdir",
+    "beklenen": "veri-turleri"
+  },
+  {
+    "soru": "bir sayının karesini almak, 2 üzeri 10",
+    "beklenen": "us-alma"
+  },
+  {
+    "soru": "raise nedir",
+    "beklenen": "hata-firlat"
+  },
+  {
+    "soru": "aralık'a girdiden gelen sayıyı verince hata",
+    "beklenen": "hata-tamsayi-yorumlanamiyor"
+  },
+  {
+    "soru": "list comprehension türkodda",
+    "beklenen": "liste-ureteci"
+  },
+  {
+    "soru": "mod alma nasıl yapılır",
+    "beklenen": "tam-bolme-kalan"
+  },
+  {
+    "soru": "projeye nasıl katkıda bulunabilirim",
+    "beklenen": "site-katki"
+  },
+  {
+    "soru": "kodumu satır satır çalıştırıp değişkenleri görmek istiyorum",
+    "beklenen": "hata-ayiklama"
+  },
+  {
+    "soru": "tek satır kodu hızlıca deneyebileceğim bir yer var mı, repl gibi",
+    "beklenen": "site-kabuk"
+  },
+  {
+    "soru": "eşit değil nasıl yazılır",
+    "beklenen": "karsilastirma"
+  },
+  {
+    "soru": "ataturk hangi yil dogdu",
+    "beklenen": null
+  },
+  {
+    "soru": "+= ne demek",
+    "beklenen": "artirma"
+  },
+  {
+    "soru": "türkçe kod yazılan bu şey tam olarak ne",
+    "beklenen": "turkod-nedir"
+  },
+  {
+    "soru": "yorum satırı nasıl yazılır",
+    "beklenen": "yorum"
+  },
+  {
+    "soru": "sozdizimi hatasi aliyorum kodum kirmizi yaniyor",
+    "beklenen": "hata-sozdizimi"
+  },
+  {
+    "soru": "true false'un türkçesi ne",
+    "beklenen": "mantiksal"
+  },
+  {
+    "soru": "seni cok sevdim kodi",
+    "beklenen": "sohbet-seviyorum"
+  },
+  {
+    "soru": "object is not callable",
+    "beklenen": "hata-cagrilamaz"
+  },
+  {
+    "soru": "yazdır alt satıra geçmesin istiyorum",
+    "beklenen": "yazdir-ayirici"
+  },
+  {
+    "soru": "bug ne demek",
+    "beklenen": "bug-nedir"
+  },
+  {
+    "soru": "index nedir, sondaki elemana nasıl ulaşırım",
+    "beklenen": "indeks"
+  },
+  {
+    "soru": "kullanıcı harf yazınca tamsayı() hata veriyor",
+    "beklenen": "hata-gecersiz-deger"
+  },
+  {
+    "soru": "ise kelimesi ne işe yarar",
+    "beklenen": "ise"
+  },
+  {
+    "soru": "bütün türkçe komutların listesi nerede",
+    "beklenen": "site-sozluk"
+  },
+  {
+    "soru": "eger komutu nasil kullanilir",
+    "beklenen": "eger"
+  },
+  {
+    "soru": "fibonaci nasil yazilir",
+    "beklenen": "fibonacci"
+  },
+  {
+    "soru": "turkodu kim yaptı",
+    "beklenen": "site-gelistirici"
+  },
+  {
+    "soru": "'(' was never closed ne demek",
+    "beklenen": "hata-parantez"
+  }
+]

@@ -12,7 +12,8 @@
 - **Dili Öğrenin:** dersler, testler ve 2970 kelimelik TürKod ⇄ Python sözlüğü
 - **Özellikler:** Kodi, yapay zekâ, Akıllı Düzelt, EXE'ye Dönüştür, terminal ve daha fazlası
 - **Site içi Kodi:** sorularını sitenin bilgi tabanından ve sözlükten cevaplayan yardımcı robot
-  (yapay zekâ kullanmaz, internete veri göndermez)
+  (yapay zekâ kullanmaz). İsteğe bağlı Vikipedi araması varsayılan olarak kapalıdır; açılınca
+  da her aramadan önce izin ister. Eşleştirme başarısı `node scripts/kodi-dene.ts` ile ölçülür.
 
 ## Geliştirme
 

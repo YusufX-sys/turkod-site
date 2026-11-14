@@ -1,7 +1,8 @@
 ---
 // Sitedeki Kodi. Görünüşü TürKod programındaki Kodi'nin aynısı (robot çizimi
 // src/data/kodi-ciz.ts, balon programdaki _KodiBalonu'nun ölçüleri). Yapay zekâ
-// KULLANMAZ: bilgi tabanı, sözlük ve site aramasıyla cevap verir.
+// KULLANMAZ: bilgi tabanı, sözlük ve site aramasıyla cevap verir. İsteğe bağlı Vikipedi araması
+// varsayılan kapalıdır; açıkken de her aramadan önce kullanıcıya sorar.
 // Sohbet, açık/kapalı durumu ve Kodi'nin yeri sayfalar arasında korunur.
 ---
 <div class="tkk-robot-kutu" data-kodi-robot-kutu>
@@ -19,6 +20,11 @@
       <span class="tkk-ad">Kodi</span>
       <span class="tkk-nokta" title="Kodi bu sitede hazır bilgilerle cevap veriyor"></span>
       <span class="tkk-bosluk"></span>
+      <button type="button" class="tkk-dugme tkk-internet" data-kodi-internet aria-pressed="false"
+              title="İnternette arama kapalı. Açarsan Kodi bulamadığı soruları Vikipedi'de aramayı önerir (her seferinde sorar)."
+              aria-label="İnternette arama (Vikipedi)">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 6h-2.95a15.6 15.6 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8ZM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96ZM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26Zm.81 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.07 16Zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.6 15.6 0 0 0 8.02 8ZM12 19.96A14.1 14.1 0 0 1 10.09 16h3.82A14.1 14.1 0 0 1 12 19.96ZM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4Zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56ZM16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38Z" fill="currentColor"/></svg>
+      </button>
       <button type="button" class="tkk-dugme" data-kodi-yeni title="Yeni sohbet" aria-label="Yeni sohbet">
         <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35Z" fill="currentColor"/></svg>
       </button>
@@ -38,11 +44,20 @@
 
 <script>
   import { BILGI } from '../data/kodi-bilgi';
-  import { DOLGU, sadelestir, sozlukDizini, yerelCevap, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import { DOLGU, baglamliCevap, sadelestir, sozlukDizini, takipMi, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
   import { kodiCiz, type KodiIfadesi } from '../data/kodi-ciz';
 
   type Baglanti = { t: string; u: string };
-  type Mesaj = { kim: 'kodi' | 'sen'; metin: string; kod?: string; linkler?: Baglanti[] };
+  type Mesaj = {
+    kim: 'kodi' | 'sen'; metin: string; kod?: string; linkler?: Baglanti[];
+    /** Kodi'nin "Vikipedi'de arayayım mı?" sorusu: aranacak soru, (takip sorusunda) bakılacak madde, cevap. */
+    vikiSoru?: { soru: string; baslik?: string; cevap?: 'evet' | 'hayir' };
+    /** Kullanıcının "Evet, ara" cevabı: sayfa değişirse arama buradan sürer. */
+    vikiAra?: string;
+    vikiBaslik?: string;
+  };
+  /** Sohbetin son konusu: bilgi tabanındaki bir madde ya da bir Vikipedi maddesi (takip soruları için). */
+  type Konu = { tur: 'bilgi'; soru: string; id?: string } | { tur: 'viki'; baslik: string; soru: string };
   type Durum = {
     acik: boolean;
     mesajlar: Mesaj[];
@@ -51,6 +66,9 @@
     taslak: string;
     kaydirma: number;
     ipucu: boolean;
+    /** İnternette (Vikipedi) arama düğmesi; varsayılan kapalı. */
+    internet: boolean;
+    konu: Konu | null;
   };
 
   const GITHUB = 'https://github.com/YusufX-sys/turkod-ide';
@@ -61,7 +79,7 @@
   const ROBOT_Y = 109;
 
   // ------------------------------------------------------------------ durum
-  const bos = (): Durum => ({ acik: false, mesajlar: [], soruldu: false, konum: null, taslak: '', kaydirma: 0, ipucu: false });
+  const bos = (): Durum => ({ acik: false, mesajlar: [], soruldu: false, konum: null, taslak: '', kaydirma: 0, ipucu: false, internet: false, konu: null });
   let durum: Durum = bos();
   try {
     const k = sessionStorage.getItem(ANAHTAR);
@@ -229,6 +247,20 @@
         }
         p.appendChild(sat);
       }
+      // "Vikipedi'de arayayım mı?" sorusunun düğmeleri (cevaplanınca kaybolur).
+      if (m.vikiSoru && !m.vikiSoru.cevap) {
+        const sat = document.createElement('div');
+        sat.className = 'tkk-secenekler';
+        for (const [yazi, cevap] of [['Evet, ara', 'evet'], ['Hayır', 'hayir']] as const) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = yazi;
+          if (cevap === 'evet') b.className = 'tkk-evet';
+          b.addEventListener('click', () => vikiCevapla(m, cevap));
+          sat.appendChild(b);
+        }
+        p.appendChild(sat);
+      }
       return p;
     };
 
@@ -254,8 +286,8 @@
     };
 
     /** Kodi'nin yeni sözü: önce duruma yazılır (sayfa değişse de kaybolmaz), sonra harf harf görünür. */
-    const kodiSoyler = async (c: KodiCevap) => {
-      const m: Mesaj = { kim: 'kodi', metin: c.metin, kod: c.kod, linkler: c.linkler };
+    const kodiSoyler = async (c: KodiCevap & { vikiSoru?: Mesaj['vikiSoru'] }) => {
+      const m: Mesaj = { kim: 'kodi', metin: c.metin, kod: c.kod, linkler: c.linkler, vikiSoru: c.vikiSoru };
       durum.mesajlar.push(m); kaydet();
       const p = mesajCiz(m);
       const yazi = p.querySelector<HTMLElement>('.tkk-metin')!;
@@ -329,20 +361,178 @@
       }
     };
 
+    // ---------------------------------------------------------------- Vikipedi (isteğe bağlı)
+    // Yalnızca düğme açıkken ve kullanıcı her seferinde "Evet" derse aranır. Ücretsiz, anahtarsız
+    // Vikipedi servisi kullanılır; soru Vikipedi'ye gönderilir (düğmenin açıklamasında yazar).
+    const VIKI = 'https://tr.wikipedia.org';
+    // Vikipedi araması soru değil anahtar sözcük ister: bu soru sözcükleri de atılır.
+    const SORU_SOZCUKLERI = new Set(['neresi', 'nerede', 'kimdir', 'kim', 'kimin', 'hangisi', 'nelerdir', 'calisir', 'calisiyor',
+      'yapar', 'yapilir', 'olan', 'olur', 'mudur', 'midir', 'nedir', 'ne', 'nasil', 'kac', 'tane', 'hakkinda', 'bilgi', 'ver', 'anlatir', 'misin']);
+    type VikiCevap = KodiCevap & { baslik?: string };
+    // "Türkiye'nin başkenti neresi" -> ["Türkiye", "başkenti"]: kesmeden sonraki ek, dolgu ve soru sözcükleri atılır.
+    const aramaSozcukleri = (soru: string) => soru.replace(/['’][\p{L}]+/gu, '').replace(/[^\p{L}\p{N}\s-]/gu, ' ').split(/\s+/)
+      .filter((w) => w.length > 1 && !DOLGU.has(sadelestir(w)) && !SORU_SOZCUKLERI.has(sadelestir(w))
+        && !['bu', 'bunu', 'bunun', 'o', 'onu', 'onun', 'orasi', 'oranin'].includes(sadelestir(w))).slice(0, 4);
+    const VIKI_NOT = "\n\n(Bu bilgi Vikipedi'den; benim hazır bilgim değil.)";
+    const ULASILAMADI: VikiCevap = { metin: "Vikipedi'ye şu an ulaşamadım. İnternet bağlantını kontrol edip biraz sonra yeniden dener misin?" };
+
+    /**
+     * Takip sorusu: bilinen bir maddenin TAM metninde, soruyla en çok örtüşen cümle bulunur.
+     * "Türkiye" + "peki başkenti nedir" -> "... başkenti Ankara ..." cümlesi.
+     */
+    const maddedeAra = async (baslik: string, soru: string): Promise<VikiCevap | null> => {
+      const sozcukler = aramaSozcukleri(soru);
+      if (!sozcukler.length) return null;
+      const kok = (w: string) => { const s = sadelestir(w); return s.slice(0, Math.min(5, s.length)); };
+      const istenen = [...new Set(sozcukler.map(kok))];
+      try {
+        const r = await fetch(`${VIKI}/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&origin=*&titles=${encodeURIComponent(baslik)}`);
+        const sayfa: any = Object.values((await r.json())?.query?.pages ?? {})[0];
+        const metin = String(sayfa?.extract ?? '');
+        if (!metin) return null;
+        // Başlık satırları (== ... ==) atlanır; cümlelere bölünür.
+        const cumleler = metin.split('\n').filter((s) => s.trim() && !/^=+.*=+$/.test(s.trim()))
+          .flatMap((p) => p.match(/[^.!?]+(?:[.!?]+|$)/g) ?? []).map((c) => c.trim()).filter((c) => c.length > 20);
+        let en = -1, enPuan = 0;
+        cumleler.forEach((c, i) => {
+          const s = sadelestir(c).split(' ');
+          const puan = istenen.filter((k) => s.some((w) => w.startsWith(k))).length;
+          if (puan > enPuan) { enPuan = puan; en = i; }
+        });
+        if (en < 0) return null;
+        let bulunan = cumleler[en];
+        if (bulunan.length < 90 && cumleler[en + 1]) bulunan += ' ' + cumleler[en + 1];
+        return {
+          metin: `Vikipedi'deki "${sayfa.title}" maddesinde şunu buldum:\n\n${bulunan}${VIKI_NOT}`,
+          linkler: [{ t: `Vikipedi: ${sayfa.title}`, u: `${VIKI}/wiki/${encodeURIComponent(String(sayfa.title).replace(/ /g, '_'))}` }],
+          baslik: sayfa.title,
+        };
+      } catch {
+        return ULASILAMADI;
+      }
+    };
+
+    const vikipedideAra = async (soru: string): Promise<VikiCevap | null> => {
+      const sozcukler = aramaSozcukleri(soru);
+      if (!sozcukler.length) return null;
+      // Birkaç sorgu birlikte denenir: tamamı, baştan kısaltılmışları ve tek tek sözcükler.
+      const sorgular = [sozcukler.join(' ')];
+      for (let n = sozcukler.length - 1; n >= 2; n--) sorgular.push(sozcukler.slice(0, n).join(' '));
+      if (sozcukler.length > 1) sorgular.push(...sozcukler);
+      const kok = (w: string) => sadelestir(w).slice(0, Math.min(5, sadelestir(w).length));
+      const istenen = sozcukler.map(kok);
+      try {
+        const listeler = await Promise.all([...new Set(sorgular)].map(async (q) => {
+          const a = await fetch(`${VIKI}/w/api.php?action=query&list=search&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(q)}`);
+          return ((await a.json())?.query?.search ?? []) as { title: string }[];
+        }));
+        // Aday puanı: başlıkta geçen soru sözcüğü sayısı (çok iyi), arama sırası ve başlığın kısalığı.
+        const adaylar = new Map<string, { eslesen: number; sira: number; uzunluk: number }>();
+        for (const liste of listeler) liste.forEach((s, sira) => {
+          const baslik = sadelestir(s.title).split(' ');
+          const eslesen = istenen.filter((k) => baslik.some((b) => b.startsWith(k))).length;
+          const onceki = adaylar.get(s.title);
+          if (!onceki || sira < onceki.sira) adaylar.set(s.title, { eslesen, sira, uzunluk: baslik.length });
+        });
+        const sirali = [...adaylar.entries()]
+          .sort(([, a], [, b]) => b.eslesen - a.eslesen || a.sira - b.sira || a.uzunluk - b.uzunluk)
+          .filter(([, a]) => a.eslesen > 0);
+        for (const [baslik] of sirali.slice(0, 5)) {
+          const r = await fetch(`${VIKI}/api/rest_v1/page/summary/${encodeURIComponent(baslik.replace(/ /g, '_'))}`);
+          if (!r.ok) continue;
+          const o = await r.json();
+          if (o.type === 'disambiguation' || !o.extract) continue;  // anlam ayrımı sayfaları atlanır
+          // En fazla 3 cümle / 420 harf
+          const cumleler = String(o.extract).match(/[^.!?]+[.!?]+(\s|$)/g) ?? [String(o.extract)];
+          let ozet = '';
+          for (const c of cumleler) { if ((ozet + c).length > 420 && ozet) break; ozet += c; }
+          return {
+            metin: `Vikipedi'de "${o.title}" maddesini buldum:\n\n${ozet.trim()}${VIKI_NOT}`,
+            linkler: [{ t: `Vikipedi: ${o.title}`, u: o.content_urls?.desktop?.page ?? `${VIKI}/wiki/${encodeURIComponent(o.title)}` }],
+            baslik: o.title,
+          };
+        }
+        return null;
+      } catch {
+        return ULASILAMADI;
+      }
+    };
+
+    const vikiAramasiYap = async (soru: string, baslik?: string) => {
+      mesgul = true;
+      giris.placeholder = 'Kodi Vikipedi\'de arıyor…';
+      balon.dataset.bekliyor = '1';
+      const bitir = dusunuyor();
+      // Takip sorusu: önce bilinen maddenin içinde; bulunamazsa "madde + soru" ile genel arama.
+      const aramaYap = async () => (baslik ? (await maddedeAra(baslik, soru)) ?? (await vikipedideAra(`${baslik} ${soru}`)) : vikipedideAra(soru));
+      const [sonuc] = await Promise.all([aramaYap(), bekle(500)]);
+      bitir();
+      if (sonuc?.baslik) { durum.konu = { tur: 'viki', baslik: sonuc.baslik, soru }; kaydet(); }
+      await kodiSoyler(sonuc ?? { metin: "Vikipedi'de de buna uygun bir madde bulamadım. Sorunu başka kelimelerle yazmayı dener misin?" });
+      giris.placeholder = "Kodi'ye bir şey sor…";
+      delete balon.dataset.bekliyor;
+      mesgul = false;
+    };
+
+    const vikiCevapla = (m: Mesaj, cevap: 'evet' | 'hayir') => {
+      if (mesgul || !m.vikiSoru || m.vikiSoru.cevap) return;
+      m.vikiSoru.cevap = cevap;
+      const yanit: Mesaj = cevap === 'evet'
+        ? { kim: 'sen', metin: 'Evet, ara', vikiAra: m.vikiSoru.soru, vikiBaslik: m.vikiSoru.baslik }
+        : { kim: 'sen', metin: 'Hayır' };
+      durum.mesajlar.push(yanit); kaydet();
+      akis.querySelectorAll('.tkk-secenekler').forEach((e) => e.remove());
+      akis.appendChild(mesajCiz(yanit)); asagi();
+      if (cevap === 'evet') vikiAramasiYap(m.vikiSoru.soru, m.vikiSoru.baslik);
+      else kodiSoyler({ metin: 'Peki, aramıyorum. Başka bir şey sormak istersen buradayım!' });
+    };
+
     const cevapla = async (soru: string) => {
       mesgul = true;
       giris.placeholder = 'Kodi cevaplıyor…';
       balon.dataset.bekliyor = '1';
       const bitir = dusunuyor();
       const [dizin] = await Promise.all([sozlukAl(), bekle(600)]);
-      let cevap: KodiCevap | null = yerelCevap(soru, BILGI, dizin);
+      const konu = durum.konu;
+      const t = takipMi(soru);
+      const yerel = baglamliCevap(soru, konu?.tur === 'bilgi' ? { soru: konu.soru, id: konu.id } : null, BILGI, dizin);
+      let cevap: (KodiCevap & { vikiSoru?: Mesaj['vikiSoru'] }) | null = yerel;
+      if (yerel) {
+        // Bağlamdan gelen cevapta konu aynı kalır ("liste" -> "peki sırala" -> "ya ters?" hep listeyle ilgili).
+        durum.konu = { tur: 'bilgi', soru: yerel.baglamdan && konu?.tur === 'bilgi' ? konu.soru : soru, id: yerel.id };
+        kaydet();
+      }
+      // Önceki konu bir Vikipedi maddesiyse ve soru onun devamıysa ("Peki başkenti nedir") o maddede aranır.
+      if (konu?.tur === 'viki' && t.takip && (!yerel || t.gonderme)) {
+        cevap = durum.internet
+          ? {
+              metin: `Bunu az önceki "${konu.baslik}" maddesinde arayayım mı? (Sorun Vikipedi'ye gönderilir.)`,
+              vikiSoru: { soru, baslik: konu.baslik },
+            }
+          : {
+              metin: `Az önce Vikipedi'deki "${konu.baslik}" maddesine bakmıştık. Orada aramam için yukarıdaki dünya düğmesiyle internette aramayı açman gerekiyor.`,
+            };
+      }
       if (!cevap) {
         const sonuclar = await ara(soru);
-        if (sonuclar.length) cevap = { metin: 'Bunu sitede şu sayfalarda buldum, bir bakar mısın?', linkler: sonuclar };
+        if (durum.internet) {
+          // İnternet açık: aramadan önce her seferinde izin istenir.
+          cevap = {
+            metin: (sonuclar.length
+              ? 'Hazır bilgilerimde yok ama sitede şu sayfalar ilgili olabilir.'
+              : 'Bunu hazır bilgilerimde ve sitede bulamadım.')
+              + " Vikipedi'de arayayım mı? (Sorun Vikipedi'ye gönderilir.)",
+            linkler: sonuclar.length ? sonuclar : undefined,
+            vikiSoru: { soru },
+          };
+        } else if (sonuclar.length) {
+          cevap = { metin: 'Bunu sitede şu sayfalarda buldum, bir bakar mısın?', linkler: sonuclar };
+        }
       }
       bitir();
       await kodiSoyler(cevap ?? {
-        metin: 'Hmm, bunu tam anlayamadım. Sorunu biraz farklı yazar mısın? Örneğin "liste nedir?" ya da "yazdır ne demek?" diye sorabilirsin.',
+        metin: 'Hmm, bunu tam anlayamadım. Sorunu biraz farklı yazar mısın? Örneğin "liste nedir?" ya da "yazdır ne demek?" diye sorabilirsin. '
+          + "İstersen yukarıdaki dünya düğmesiyle internette (Vikipedi'de) aramayı da açabilirsin.",
         linkler: [{ t: 'Sorun Giderme ve SSS', u: '/use/troubleshooting/' }, { t: "GitHub'da sor", u: `${GITHUB}/issues/new/choose` }],
       });
       giris.placeholder = "Kodi'ye bir şey sor…";
@@ -353,6 +543,9 @@
     const sor = (soru: string) => {
       if (mesgul) return;
       akis.querySelector('.tkk-hazir')?.remove();
+      // Yeni soru sorulunca cevaplanmamış "Vikipedi'de arayayım mı?" sorusu kapanır.
+      for (const x of durum.mesajlar) if (x.vikiSoru && !x.vikiSoru.cevap) x.vikiSoru.cevap = 'hayir';
+      akis.querySelectorAll('.tkk-secenekler').forEach((e) => e.remove());
       durum.soruldu = true;
       const m: Mesaj = { kim: 'sen', metin: soru };
       durum.mesajlar.push(m); kaydet();
@@ -361,7 +554,7 @@
     };
 
     const selamla = async () => {
-      durum.mesajlar = []; durum.soruldu = false; kaydet();
+      durum.mesajlar = []; durum.soruldu = false; durum.konu = null; kaydet();
       akis.innerHTML = '';
       elSalla();
       await kodiSoyler({ metin: SELAM });
@@ -384,6 +577,25 @@
       durum.acik = false; kaydet();
     };
     const degistir = () => (balon.hidden ? ac() : kapat());
+
+    // İnternet (Vikipedi) düğmesi: varsayılan kapalı; oturum boyunca hatırlanır.
+    const internetDugme = balon.querySelector<HTMLButtonElement>('[data-kodi-internet]')!;
+    const internetGoster = () => {
+      internetDugme.setAttribute('aria-pressed', String(durum.internet));
+      internetDugme.title = durum.internet
+        ? "İnternette arama açık: Kodi bulamadığı soruları Vikipedi'de aramayı önerir, aramadan önce sana sorar. Kapatmak için tıkla."
+        : "İnternette arama kapalı. Açarsan Kodi bulamadığı soruları Vikipedi'de aramayı önerir (her seferinde sorar).";
+    };
+    internetGoster();
+    internetDugme.addEventListener('click', () => {
+      if (mesgul) return;
+      durum.internet = !durum.internet; kaydet(); internetGoster();
+      kodiSoyler({
+        metin: durum.internet
+          ? "İnternette arama açık! Hazır bilgilerimde bir şey bulamazsam Vikipedi'de aramayı önereceğim, ama aramadan önce hep sana soracağım."
+          : 'İnternette arama kapandı. Artık yalnızca kendi bilgilerimle ve bu sitede arayarak cevap vereceğim.',
+      });
+    });
 
     balon.querySelector('[data-kodi-kapat]')!.addEventListener('click', kapat);
     balon.querySelector('[data-kodi-yeni]')!.addEventListener('click', () => { if (!mesgul) selamla(); });
@@ -410,7 +622,10 @@
       akis.scrollTop = durum.kaydirma || akis.scrollHeight;
       // Soru sorulup cevap gelmeden sayfa değiştiyse cevap burada tamamlanır.
       const son = durum.mesajlar[durum.mesajlar.length - 1];
-      if (son?.kim === 'sen') cevapla(son.metin);
+      if (son?.kim === 'sen') {
+        if (son.vikiAra) vikiAramasiYap(son.vikiAra, son.vikiBaslik);
+        else if (son.metin !== 'Hayır') cevapla(son.metin);
+      }
     }
 
     // İlk ziyarette birkaç saniye sonra küçük bir selam (oturumda bir kez).
@@ -477,6 +692,17 @@
   }
   .tkk-dugme:hover { color: var(--tkk-yazi); background: rgba(124, 92, 245, .14); }
   .tkk-dugme svg { width: 18px; height: 18px; }
+  /* İnternet (Vikipedi) düğmesi: açıkken camgöbeği ve parlak */
+  .tkk-internet[aria-pressed='true'] { color: #22d3ee; background: rgba(34, 211, 238, .14); box-shadow: inset 0 0 0 1px rgba(34, 211, 238, .45); }
+  .tkk-internet[aria-pressed='true']:hover { color: #67e8f9; background: rgba(34, 211, 238, .22); }
+  .tkk-secenekler { display: flex; gap: 6px; margin-top: 8px; }
+  .tkk-secenekler button {
+    padding: 5px 12px; border-radius: 8px; cursor: pointer; font: inherit; font-size: 12.5px; font-weight: 600;
+    color: var(--tkk-yazi); background: rgba(124, 92, 245, .10); border: 1px solid rgba(124, 92, 245, .45);
+  }
+  .tkk-secenekler button:hover { background: rgba(124, 92, 245, .2); }
+  .tkk-secenekler .tkk-evet { color: #fff; border-color: transparent; background: linear-gradient(90deg, #0ea5c6, #7c5cf5); }
+  .tkk-secenekler .tkk-evet:hover { filter: brightness(1.1); background: linear-gradient(90deg, #0ea5c6, #7c5cf5); }
 
   .tkk-akis { flex: 1; min-height: 60px; overflow-y: auto; padding: 6px 14px 4px; scrollbar-width: thin; }
   .tkk-kodi-sozu { padding: 4px 0; font-size: 13.5px; line-height: 1.5; }

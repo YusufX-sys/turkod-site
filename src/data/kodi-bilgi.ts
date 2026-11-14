@@ -306,7 +306,7 @@ export const BILGI: KodiBilgi[] = [
   {
     id: "degisken-adlandirma",
     tur: "kavram",
-    anahtarlar: ["degisken adi", "degisken adlandirma", "degisken ismi", "adlandirma kurallari", "isim verme", "ad verme"],
+    anahtarlar: ["degisken adi", "degisken adlandirma", "degisken ismi", "adlandirma kurallari", "isim verme", "ad verme", "ad koy", "adini koy", "isim koy", "nasil adlandir"],
     cevap: "Değişken adları harfle ya da _ ile başlar; içinde harf, rakam ve _ olabilir ama boşluk olamaz. Büyük-küçük harf fark eder: yas ile Yas farklıdır. toplam, liste, metin gibi TürKod komutlarını ad olarak kullanma; o dosyada komut anlamını kaybederler.",
     kod: "ogrenci_adi = \"Can\"\nyas2 = 10\n# 2yas = 10 olmaz: ad rakamla başlayamaz\nyazdır(ogrenci_adi, yas2)",
     linkler: [{ t: "Sözdizimi Davranışları", u: "/learn/sozdizimi-davranislari/" }],
@@ -530,7 +530,7 @@ export const BILGI: KodiBilgi[] = [
   {
     id: "kir",
     tur: "kavram",
-    anahtarlar: ["kir komutu", "kir ne", "break", "donguden cik", "donguden nasil cik", "donguyu durdur", "donguyu bitir", "donguyu kir"],
+    anahtarlar: ["kir komutu", "kir ne", "break", "donguden cik", "donguden nasil cik", "donguyu durdur", "donguyu bitir", "donguyu kir", "donguyu kes", "yarida kes", "erken bitir"],
     cevap: "kır, döngüyü hemen bitirir (Python'da break). Aradığını bulduğunda ya da kullanıcı çık dediğinde döngüden çıkmak için kullanılır.",
     kod: "için i içinde aralık(1, 100):\n    eğer i == 5:\n        kır\n    yazdır(i)\nyazdır(\"Döngüden çıktım!\")",
     linkler: [{ t: "Temel İfadeler", u: "/learn/basics/" }],
@@ -714,7 +714,7 @@ export const BILGI: KodiBilgi[] = [
   {
     id: "sozluk-gez",
     tur: "kavram",
-    anahtarlar: ["sozlukte dongu", "sozlugu gez", "ogeler", "anahtarlar", "degerler", "items", "keys", "values"],
+    anahtarlar: ["sozlukte dongu", "sozlugu gez", "sozlukte gez", "sozlugu dolas", "sozlukte dolas", "ogeler", "anahtarlar", "degerler", "items", "keys", "values"],
     cevap: "Bir sözlüğü dolaşırken öğeler() hem anahtarı hem değeri, anahtarlar() yalnızca anahtarları, değerler() yalnızca değerleri verir.",
     kod: "yaslar = {\"Ali\": 12, \"Ece\": 11}\niçin ad, yas içinde yaslar.öğeler():\n    yazdır(ad, yas)\nyazdır(en_büyük(yaslar.değerler()))",
     linkler: [{ t: "Veri Yapıları", u: "/learn/data-structures/" }],
@@ -754,7 +754,7 @@ export const BILGI: KodiBilgi[] = [
   {
     id: "metin-bol",
     tur: "kavram",
-    anahtarlar: ["metni bol", "metni parcala", "kelimelere ayir", "split", "bol komutu", "virgulle ayir"],
+    anahtarlar: ["metni bol", "metin bol", "metni parcala", "metni bolmek", "parcalara ayir", "kelimelere ayir", "split", "bol komutu", "virgulle ayir"],
     cevap: "böl(), bir metni parçalara ayırıp liste yapar. Parantezin içine neye göre ayıracağını yazarsın; boş bırakırsan boşluklardan böler.",
     kod: "cumle = \"elma,armut,kiraz\"\nyazdır(cumle.böl(\",\"))\nyazdır(\"Bugün hava çok güzel\".böl())",
     linkler: [{ t: "Metin İşlemleri", u: "/learn/strings/" }],
