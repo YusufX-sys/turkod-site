@@ -1,41 +1,33 @@
 ---
 title: AI Asistan
-description: OpenAI, Groq, Gemini veya Claude ile kodunu açıklatma, iyileştirme ve soru sorma.
+description: Bulut ya da yerel bir yapay zekâ modeliyle kodunu açıklatma, iyileştirme ve soru sorma.
 ---
 
 import Ekran from '../../../components/Ekran.astro';
-import aiAyar from '../../../assets/ekran/ayarlar-ai.webp';
 import aiAcikla from '../../../assets/ekran/ai-acikla.webp';
 import aiSor from '../../../assets/ekran/ai-sor.webp';
 import aiUygula from '../../../assets/ekran/ai-uygula.webp';
 import aiOptimize from '../../../assets/ekran/ai-optimize.webp';
 
-Sağ paneldeki **AI Asistan**, kodunu açıklayabilir, iyileştirme önerebilir ve sorularını cevaplayabilir. Asistan **varsayılan olarak kapalıdır**; kullanmak için kendi API anahtarın gerekir.
+Sağ paneldeki **AI Asistan**, kodunu açıklayabilir, iyileştirme önerebilir ve sorularını cevaplayabilir. Asistan **varsayılan olarak kapalıdır**; kullanmak için bir yapay zekâ modeli bağlaman gerekir: ya kendi API anahtarınla bir sağlayıcı ya da bilgisayarında çalışan ücretsiz bir yerel model.
 
 ## Kurulum
 
-1. Bir sağlayıcıdan API anahtarı al (OpenAI, Groq, Google Gemini veya Anthropic Claude).
-2. **Ayarlar → AI Asistan** bölümünü aç.
-3. **AI Aktif**'i aç, **Sağlayıcı** ve **Model** seç, anahtarını **API Key** alanına yapıştır.
-4. **Kaydet ve Uygula**'ya bas.
+1. **Ayarlar → Yapay Zekâ: Modeller → Sağlayıcı bağla** bölümünde bir sağlayıcı seç (220'den fazla sağlayıcı arasından: Groq, OpenAI, Google, Anthropic, Mistral, DeepSeek, OpenRouter ...).
+2. API anahtarını yapıştır, **Bağlantıyı Test Et** ile dene, sonra **Bağla ve modelleri seç**'e basıp kullanmak istediğin modelleri işaretle.
+3. **Ayarlar → Yapay Zekâ: Görevler** bölümünde **AI Paneli sohbet** ve **Kod açıklama / optimize** satırlarından modelini seç. Seçim hemen kaydedilir.
 
-<Ekran src={aiAyar} alt="Ayarlar sekmesinde AI Asistan bölümü: AI Aktif, Sağlayıcı, Model, API Key, Sıcaklık, Max Token" caption="Ayarlar → AI Asistan" />
+İnternetsiz ve ücretsiz bir yol istersen paneldeki **Ücretsiz yerel model kur** düğmesiyle bilgisayarına küçük bir model indirebilirsin. Sağlayıcı bağlama, yerel modeller ve görev atama ayrıntılarıyla [Yapay Zekâ Modelleri](/features/local-models/) sayfasında.
 
-| Sağlayıcı | Modeller |
-| --------- | -------- |
-| OpenAI | gpt-4o-mini (varsayılan), gpt-4o, gpt-3.5-turbo |
-| Groq | llama-3.3-70b-versatile, llama-3.1-8b-instant, deepseek-r1-distill-llama-70b, qwen-2.5-coder-32b, gemma2-9b-it |
-| Gemini | gemini-2.0-flash, gemini-2.0-flash-lite, gemini-1.5-flash, gemini-1.5-pro |
-| Claude | claude-opus-5-5, claude-sonnet-5-5, claude-haiku-4-5 |
+:::tip[Hızlı başlangıç]
+Hiç yapay zekâ bağlı değilken [Kodi](/features/kodi/)'nin balonundaki **Kurulum rehberi** ücretsiz bir Groq anahtarı almanı ve bağlamanı adım adım gösterir.
+:::
 
-OpenAI ve Groq için **Modelleri Güncelle** düğmesi güncel model listesini getirir.
-
-Gelişmiş ayarlar: **Sıcaklık** (0–2, varsayılan 0.7; cevapların ne kadar yaratıcı olacağı), **Max Token** (cevap uzunluğu, varsayılan 4096) ve **Sistem Mesajı** (asistana verilen temel talimat).
+Ortak ayarlar (**Sıcaklık**, **En Fazla Token**, **Sistem Mesajı**) **Ayarlar → Yapay Zekâ: Modeller** bölümündedir.
 
 ## Kullanım
 
-Asistan sağ paneldedir; kapalıysa araç çubuğundaki ✨ simgesiyle ya da **Görünüm → AI Panel Aç/Kapat** ile açarsın.
-
+Asistan sağ paneldedir; kapalıysa en üst satırın sağındaki AI Asistan düğmesiyle ya da **Görünüm → AI Panelini Aç/Kapat** ile açarsın. Panelin üstündeki küçük kart hangi modelin çalıştığını renkli bir durum noktasıyla gösterir; tıklarsan Ayarlar açılır.
 
 - **Açıkla** — açık dosyadaki kodun ne yaptığını anlatır.
 
@@ -46,10 +38,12 @@ Asistan sağ paneldedir; kapalıysa araç çubuğundaki ✨ simgesiyle ya da **G
 <Ekran src={aiOptimize} alt="Optimize et cevabı: girdi doğrulama, hata yönetimi, okunabilirlik önerileri ve optimize edilmiş TürKod kodu" caption="Aynı kodda Optimize et: asistan neyi neden değiştirdiğini maddeler hâlinde anlatır, ardından yeni kodu verir." />
 
 - **Sor...** kutusu — kendi sorunu yaz; `Enter` gönderir, `Shift+Enter` yeni satır açar.
+- **Beyin** düğmesi — düşünebilen modellerde düşünmeyi açar ya da kapatır. Açıkken model cevaplamadan önce düşünür; düşüncesini cevabın üstündeki açılıp kapanan bölümde okuyabilirsin.
+- **Temizle** (çöp kutusu) — sohbeti siler.
 
 <Ekran src={aiSor} alt="Kullanıcı 'harf_notu fonksiyonuna 95 ve üstü için A+ notu ekler misin?' diye soruyor; AI TürKod kodu ile cevap veriyor" caption="Soru: “harf_notu fonksiyonuna 95 ve üstü için A+ notu ekler misin?” — cevaptaki kod doğrudan TürKod olarak gelir." />
 
-Asistanın cevabındaki Python kodları **otomatik olarak TürKod'a çevrilir**. Her kod bloğunun yanındaki simgelerle kodu kopyalayabilir ya da uygulayabilirsin:
+Cevaplardaki başlık, liste, tablo ve kod blokları düzgün biçimde görünür. Asistanın cevabındaki Python kodları **otomatik olarak TürKod'a çevrilir**; açıklamalarda da dilin adı TürKod olarak geçer. Uzun cevaplar **En Fazla Token** sınırında yarıda kalmaz, devamı kendiliğinden alınır. Her kod bloğunun yanındaki simgelerle kodu kopyalayabilir ya da uygulayabilirsin:
 
 - **Üzerine Yaz** — editördeki kodun yerine koyar
 - **İmlece Ekle** — imlecin olduğu yere ekler
@@ -57,13 +51,13 @@ Asistanın cevabındaki Python kodları **otomatik olarak TürKod'a çevrilir**.
 
 <Ekran src={aiUygula} alt="Kodu Uygula penceresi: Üzerine Yaz, İmlece Ekle, Yeni Sekme, Vazgeç" caption="Kod bloğunun sağ üstündeki uygula simgesine basınca" />
 
-Seçtiğin sağlayıcının Python kütüphanesi yalnızca o sağlayıcıyı kullandığında yüklenir. Kütüphane eksikse asistan hangi `pip yükle` komutunu yazacağını söyler.
+Bir şey ters giderse cevabın altında **Yeniden dene**, **AI ayarları** ve **Yerel model kur** düğmeleri çıkar. Bir modelin kullanım hakkı dolarsa istek bağlı başka bir modele gider; cevabı hangi modelin verdiği yazar.
 
-AI etkinken [Akıllı Düzeltme](/features/smart-fix/) de yerel motorun çözemediği hatalar için son çare olarak asistana danışabilir.
+Program hatayla biterse terminaldeki **Hatayı AI ile açıkla** düğmesi hatayı yapay zekâya anlattırır (**Hata açıklama** görevine model atanmış olmalı). **Akıllı Düzelt (AI aşaması)** görevine model atadıysan [Akıllı Düzeltme](/features/smart-fix/) de yerel motorun çözemediği hatalar için son çare olarak yapay zekâya danışır.
 
 ## Gizlilik
 
 :::caution[Bilmen gerekenler]
-- **Açıkla** ve **Optimize et** açık dosyanın tamamını; **Sor** ise sorunla birlikte kodunun son kısmını seçtiğin sağlayıcıya gönderir.
-- API anahtarın bilgisayarında, kullanıcı klasöründeki `.turkod_ayarlar.json` dosyasında **şifrelenmeden** saklanır. Bu dosyayı kimseyle paylaşma.
+- **Açıkla** ve **Optimize et** açık dosyayı; **Sor** ise sorunla birlikte kodunun son kısmını seçtiğin sağlayıcıya gönderir. Yerel bir model kullanıyorsan hiçbir şey bilgisayarından çıkmaz.
+- API anahtarların bilgisayarında, kullanıcı klasöründeki `.turkod_ayarlar.json` dosyasında **Windows'un şifrelemesiyle** saklanır; yalnızca senin Windows kullanıcı hesabın açabilir. Yine de anahtarlarını kimseyle paylaşma.
 :::

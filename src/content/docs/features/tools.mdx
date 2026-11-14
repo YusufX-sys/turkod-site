@@ -1,6 +1,6 @@
 ---
 title: Araçlar
-description: TürKod ⇄ Python çeviri, kod arama çevirici, istatistikler, TODO listesi, komut paleti ve bildirimler.
+description: TürKod ⇄ Python çeviri, kod arama çevirici, istatistikler, Yapılacaklar Listesi, komut paleti, PDF görüntüleyici, tarayıcı, eklentiler ve bildirimler.
 ---
 
 import Ekran from '../../../components/Ekran.astro';
@@ -12,11 +12,11 @@ import palet from '../../../assets/ekran/komut-paleti.webp';
 import cevirTr from '../../../assets/ekran/cevir-turkod.webp';
 import bildirimler from '../../../assets/ekran/bildirimler.webp';
 
-**Araçlar** menüsündeki yardımcılar hem öğrenmeyi hem de kod yazmayı hızlandırır. Kod İstatistikleri, TODO Listesi ve Kod Arama Çevirici'ye alttaki durum çubuğunun sağındaki küçük simgelerden de ulaşabilirsin.
+**Araçlar** menüsündeki yardımcılar hem öğrenmeyi hem de kod yazmayı hızlandırır. Kod İstatistikleri, Yapılacaklar Listesi ve Kod Arama Çevirici'ye alttaki durum çubuğunun sağındaki küçük simgelerden de ulaşabilirsin.
 
 ## TürKod ⇄ Python Çevir
 
-Araç çubuğundaki ⇄ simgesi ya da **Araçlar → TürKod ⇄ Python Çevir**. Açık dosyanın dilini kendiliğinden anlar ve öbür dile çevirir:
+Araç çubuğundaki mor **Çevir** düğmesi ya da **Araçlar → TürKod ⇄ Python Çevir**. Açık dosyanın dilini kendiliğinden anlar ve öbür dile çevirir:
 
 - TürKod kodu → `cevrilmis.py` adlı yeni sekmede **Python**
 - Python kodu → `cevrilmis.trpy` adlı yeni sekmede **TürKod**
@@ -43,19 +43,19 @@ Açık dosya için: toplam satır, kod satırı, yorum satırı, boş satır, ka
 
 <Ekran src={istatistik} alt="Kod İstatistikleri penceresi: Toplam Satır 15, Kod Satırı 13, Yorum Satırı 1 ..." />
 
-## TODO Listesi
+## Yapılacaklar Listesi
 
-Koduna `# TODO`, `# FIXME`, `# HACK`, `# XXX` veya `# BUG` ile başlayan yorumlar yazarsan hepsi bu listede toplanır. Bir öğenin yanındaki ok simgesine tıklayınca o satıra gidilir.
+Koduna `# YAPILACAK:` ya da `# DÜZELT:` gibi notlar yazarsan hepsi bu listede toplanır. Türkçe işaretler yalnızca BÜYÜK harfle yazıldığında tanınır; böylece "burada işlem yapılacak" gibi sıradan yorumlar not sayılmaz. İngilizce `TODO`, `FIXME`, `HACK`, `XXX` ve `BUG` da olur. Bir öğenin yanındaki düğmeye tıklayınca o satıra gidilir.
 
 ```
-# TODO: 100 puan için A+ ekle
+# YAPILACAK: 100 puan için A+ ekle
 ```
 
 <Ekran src={todo} alt="TODO / FIXME penceresi: '100 puan için A+ ekle — Satır 2'" />
 
 ## Komut Paleti
 
-`Ctrl+Shift+P` ya da araç çubuğundaki 🎨 palet simgesiyle açılır. Bir komutun adını yazmaya başla; menülerdeki tüm komutlar kısayollarıyla birlikte listelenir. `↑` / `↓` ile seçip `Enter`'a bas. Kısayolu hatırlamadığın her şeyi buradan bulabilirsin.
+`Ctrl+Shift+P` ile ya da en üst satırın ortasındaki **Komut ara…** kutusuna tıklayarak açılır. Bir komutun adını yazmaya başla; menülerdeki tüm komutlar kısayollarıyla birlikte listelenir. `↑` / `↓` ile seçip `Enter`'a bas. Kısayolu hatırlamadığın her şeyi buradan bulabilirsin.
 
 <Ekran src={palet} alt="Komut Paleti: Komut ara kutusu ve komut listesi" />
 
@@ -64,3 +64,34 @@ Koduna `# TODO`, `# FIXME`, `# HACK`, `# XXX` veya `# BUG` ile başlayan yorumla
 Sağ altta beliren bildirimlerdeki 🔔 düğmesi, son bildirimlerin tamamını gösteren **Bildirimler** panelini açar. **Temizle** listeyi boşaltır.
 
 <Ekran src={bildirimler} alt="Bildirimler paneli: Python → TürKod çevrildi, Hata ayıklama durduruldu, Hata ayıklayıcı başladı; saatleriyle" />
+
+## PDF görüntüleyici
+
+Gezgin'de bir PDF dosyasına tıklarsan TürKod onu yeni bir sekmede sayfa sayfa açar. Gezgin'de PDF dosyaları kırmızı simgeyle görünür. **TürKod ile Kodlama Macerası** kitabı da (Öğren menüsü, sol şeritteki kitap düğmesi, karşılama ekranı) bu sekmede açılır.
+
+| Ne yapmak istiyorsun? | Nasıl? |
+| --------------------- | ------ |
+| Sayfa değiştirmek | Üstteki oklar, `PageUp` / `PageDown` ya da fare tekerleği |
+| Bir sayfaya atlamak | Sayfa kutusuna numarayı yaz, `Enter`'a bas (`Home` / `End`: ilk / son sayfa) |
+| Hızla gezinmek | Sağdaki tutamacı sürükle; üstünde o anki sayfa yazar |
+| Yakınlaştırmak / uzaklaştırmak | Büyüteç düğmeleri, `Ctrl` + fare tekerleği, `Ctrl+=` / `Ctrl+-` |
+| Genişliğe sığdırmak | Çerçeve düğmesi ya da `Ctrl+0` |
+| Bütün sayfayı görmek | En sağdaki dikdörtgen düğme |
+
+PDF yalnızca okunur; içine yazamazsın.
+
+## Tarayıcı
+
+Sol şeritteki dünya düğmesi ya da **Görünüm → Tarayıcı** TürKod'un içinde bir tarayıcı sekmesi açar. Üstte geri, ileri, yenile ve Google düğmeleri ile adres çubuğu var: bir adres ya da aramak istediğini yazıp `Enter`'a bas. Sayfadayken de `Ctrl+Shift+P`, `F1` gibi TürKod kısayolları çalışır; kopyala, yapıştır gibi tuşlar sayfada kalır. Başka sekmedeyken tarayıcı bekletilir, sekme kapatılınca tamamen kapanır.
+
+[Kodi](/features/kodi/) de bu tarayıcıyı yönetebilir: site açar, arar, sayfayı okur, bağlantılara tıklar.
+
+## Eklenti Özellikleri
+
+Sol şeritteki yapboz düğmesi (ya da `Ctrl+Shift+X`) **Eklenti Özellikleri** panelini açar. En üstte **Yerel AI Modelleri** kartı ([Yapay Zekâ Modelleri](/features/local-models/)), altında eklentiler durur. **Etkinleştir** ile açar, **Devre dışı bırak** ile kapatırsın.
+
+- **Kod Parçacıkları** — hazır kod kalıpları (sayı tahmin oyunu, dosya okuma/yazma, sınıf, hata yakalama ...); kendi kalıplarını da eklersin (`Ctrl+Shift+J`).
+- **Odak Zamanlayıcı** — durum çubuğunda 25 dakikalık çalışma, ardından 5 dakika mola.
+- **Markdown Önizleme** — `.md` not dosyalarını başlıkları, listeleri ve tablolarıyla gösterir.
+- **Karalama Defteri** — kendini kaydeden bir not defteri.
+- **Günün Görevi** — her gün yeni bir programlama görevi ve ipucu.

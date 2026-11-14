@@ -13,7 +13,7 @@ import satiraGit from '../../../assets/ekran/satira-git.webp';
 
 TürKod'un editörü Türkçe kod yazmak için tasarlandı: komutları tanır, sen yazarken hataları gösterir ve kaldığın yerden devam etmeni sağlar.
 
-<Ekran src={editorKod} alt="TürKod editöründe renklendirilmiş kod, girinti kılavuzları, boşluk noktaları ve katlama okları" caption="Renkli yazım, boşluk göstergesi (noktalar), sütun çizgileri ve katlama okları (▼)" />
+<Ekran src={editorKod} alt="TürKod editöründe renklendirilmiş kod, girinti kılavuzları, boşluk noktaları ve katlama okları" caption="Renkli yazım, boşluk göstergesi (noktalar), girinti kılavuzları ve katlama okları (▼)" />
 
 ## Otomatik tamamlama
 
@@ -26,6 +26,10 @@ Bir kelimenin ilk iki harfini yazıp kısa bir süre beklediğinde öneri listes
 <Ekran src={tamamla} alt="'ha' yazınca açılan öneri listesi: üstte kendi fonksiyonun harf_notu, altında sözlük kelimeleri" caption="'ha' yazınca: önce kendi fonksiyonun, sonra sözlük kelimeleri" />
 
 Ayarlar'daki **Otomatik Tamamlama** seçeneğiyle kapatılabilir.
+
+### Hayalet kod
+
+Ayarlar'da bir yapay zekâ modelini **Otomatik tamamlama (hayalet kod)** görevine atarsan, yazmayı bıraktığında imlecin arkasında gri, eğik yazıyla bir öneri belirir. `Tab` tamamını, `Ctrl+→` bir kelimesini kabul eder; `Esc` kapatır; `Ctrl+Shift+Boşluk` beklemeden öneri ister. Öneri her zaman TürKod olarak gelir. Ayrıntılar: [Yapay Zekâ Modelleri](/features/local-models/#hayalet-kod)
 
 ## Canlı sözdizimi denetimi
 
@@ -53,7 +57,7 @@ Komutlar, yerleşik fonksiyonlar, modül adları, metinler, sayılar ve yorumlar
 ## Kod katlama ve kılavuz çizgileri
 
 - Satır numaralarının yanındaki ▼ oklara tıklayarak bir bloğu (fonksiyon, döngü, koşul) **katlayıp açabilirsin**.
-- **Sütun Çizgileri**, iç içe blokların hizasını gösteren dikey çizgilerdir.
+- **Girinti Kılavuzları**, iç içe blokların hizasını gösteren dikey çizgilerdir.
 - **Boşluk Göstergesi**, boşlukları nokta, sekmeleri ok olarak gösterir; girinti hatalarını bulmayı kolaylaştırır.
 
 ## Bul / Değiştir
@@ -69,7 +73,7 @@ Komutlar, yerleşik fonksiyonlar, modül adları, metinler, sayılar ve yorumlar
 
 ## Satıra git
 
-`Ctrl+G` ile **Satıra Git** penceresi açılır; satır numarasını yazıp `Enter`'a basınca imleç o satıra gider. Hata mesajındaki satırı bulmanın en hızlı yolu.
+`Ctrl+G` ile **Satıra Git** penceresi açılır; satır numarasını yazıp `Enter`'a basınca imleç o satıra gider ve satır ekranın ortasına gelir. Hata mesajındaki satırı bulmanın en hızlı yolu.
 
 <Ekran src={satiraGit} alt="Satıra Git penceresi: Satır numarası (1 - 2)" />
 
@@ -95,8 +99,9 @@ Tüm liste: [Klavye Kısayolları](/features/shortcuts/)
 - Programı kapatıp açtığında **açık dosyaların, kaydedilmemiş yeni sekmelerin, breakpoint'lerin ve çalıştırma argümanların geri gelir**.
 - **Dosya → Son Dosyalar** (`Ctrl+Shift+O`) yakın zamanda açtığın dosyaları listeler.
 - **Otomatik Kaydetme** açıksa adı olan dosyalar düzenli aralıklarla (varsayılan 30 sn, 5–600 sn arası ayarlanabilir) kaydedilir.
-- Kaydedilmemiş dosya varken programı kapatırsan **İptal / Kaydetmeden Çık / Kaydet ve Çık** sorulur.
+- Kaydedilmemiş dosya varken programı kapatırsan **Vazgeç / Kaydetmeden Çık / Kaydet ve Çık** sorulur.
+- Hiç dosya açık değilken **karşılama ekranı** çıkar: Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku, Arayüz Turu ve Komut Paleti kartları, son açılan dosyalar ve **Günün İpucu**.
 
 ## Gezgin
 
-Soldaki **GEZGİN** paneli açtığın klasörü gösterir. `.trpy` (TürKod) ve `.py` (Python) dosyaları farklı renklerde görünür. Bir dosyaya tıklayınca editörde açılır. Sağ tık menüsüyle yeni dosya/klasör oluşturabilir, yeniden adlandırabilir ya da silebilirsin (silinenler Geri Dönüşüm Kutusu'na gider). Ayrıntılar: [Arayüz Turu → Gezgin](/use/tour/#-gezgin)
+Soldaki **GEZGİN** paneli açtığın klasörü gösterir; klasörün adı başlıkta yazar. Dosyalar türlerine göre simgelerle (kod, not, resim, PDF, EXE ...) görünür. Bir dosyaya tıklayınca editörde açılır; PDF dosyaları ayrı bir sekmede sayfa sayfa açılır. Sağ tık menüsüyle yeni dosya/klasör oluşturabilir, yeniden adlandırabilir ya da silebilirsin (silinenler Geri Dönüşüm Kutusu'na gider; USB bellek gibi Geri Dönüşüm Kutusu olmayan yerlerde önce sorulur). Klasör açılmamışsa panelde **Klasör Aç** düğmesi çıkar. Ayrıntılar: [Arayüz Turu → Gezgin](/use/tour/#-gezgin)

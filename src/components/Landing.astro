@@ -1,0 +1,517 @@
+---
+// Ana sayfanın hero altındaki bölümleri. Sitenin mevcut görsel kimliğini
+// (camgöbeği → çivit → eflatun gradyan, cam efektli kartlar) kullanır.
+import { Image } from 'astro:assets';
+import genelEkran from '../assets/v33/genel-ekran.webp';
+import kodiCevap from '../assets/v33/kodi-cevap.webp';
+import kodiEylem from '../assets/v33/kodi-eylem.webp';
+import exePaneli from '../assets/v33/exe-paneli.webp';
+import yerelAi from '../assets/v33/yerel-ai.webp';
+import tarayiciKodi from '../assets/v33/tarayici-kodi.webp';
+import pdfSekmesi from '../assets/v33/pdf-sekmesi.webp';
+import akilliDuzelt from '../assets/v33/akilli-duzelt.webp';
+import hataAyiklayici from '../assets/v33/hata-ayiklayici.webp';
+
+const REPO = 'https://github.com/YusufX-sys/turkod-ide';
+
+const ozellikler = [
+  { renk: 'cyan', baslik: '%100 Türkçe dil', metin: '3000\'e yakın Türkçe karşılık: döngüler, fonksiyonlar, sınıflar, kaplumbağa, tkinter, pygame ve daha fazlası. Türkçe harfsiz yazım da çalışır.', link: '/learn/basics/', ikon: 'M4 6h16M4 12h10M4 18h7' },
+  { renk: 'violet', baslik: 'Kodi, yapay zekâ arkadaşın', metin: 'Soruna cevap verir, hatanı bulur, kod yazar, menüleri senin için açar. Sesli konuşur, masaüstüne bile çıkar.', link: '/features/kodi/', ikon: 'M8 10h.01M16 10h.01M9 15c1.5 1 4.5 1 6 0M6 5h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z' },
+  { renk: 'pink', baslik: 'Hayalet kod ve Akıllı Düzelt', metin: 'Yazarken satır içi öneriler gelir, Tab ile kabul edersin. Akıllı Düzelt hataları önce dener, sonra düzeltir.', link: '/features/smart-fix/', ikon: 'M12 3l1.9 4.6L19 9l-4 3.4 1.2 5.1L12 15l-4.2 2.5L9 12.4 5 9l5.1-1.4Z' },
+  { renk: 'green', baslik: 'Yerel ve bulut yapay zekâ', metin: '220\'den fazla sağlayıcı ya da internetsiz çalışan yerel modeller. Ekran kartın varsa onu kullanır.', link: '/features/local-models/', ikon: 'M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2M7 5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z' },
+  { renk: 'amber', baslik: 'EXE\'ye Dönüştür', metin: 'Oyununu tek bir .exe yap; TürKod kurulu olmayan arkadaşının bilgisayarında da çift tıklayınca çalışsın.', link: '/features/exe/', ikon: 'M12 3v12m0 0-4-4m4 4 4-4M5 21h14' },
+  { renk: 'cyan', baslik: 'Gerçek hata ayıklayıcı', metin: 'Kesme noktaları, koşullu kesme noktası, izleme ifadeleri ve çağrı yığını. Programını adım adım izle.', link: '/features/run-debug/', ikon: 'M12 8v4l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z' },
+  { renk: 'violet', baslik: 'Kitap programın içinde', metin: '"TürKod ile Kodlama Macerası" kitabı programla gelir; kendi PDF görüntüleyicisinde, yeni bir sekmede açılır.', link: '/whats-new/', ikon: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Zm0 16a2 2 0 0 1 2-2h13' },
+  { renk: 'pink', baslik: 'Terminal ve komut satırı', metin: 'Her sekmenin kendi terminali, TürKod Kabuğu ve turkod komutu: --cevir, --duzelt, --anlam, exe_yap...', link: '/features/terminal/', ikon: 'M4 17l6-5-6-5M12 19h8' },
+  { renk: 'green', baslik: 'İmzalı ve açık kaynak', metin: 'Uygulama, kaynak kod ve güncellemeler RSA ile imzalanır. Kodun tamamı MIT lisansıyla GitHub\'da.', link: '/features/security/', ikon: 'M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6Z M9 12l2 2 4-4' },
+];
+
+const galeri = [
+  { id: 'exe', ad: 'EXE\'ye Dönüştür', resim: exePaneli, aciklama: 'Seçenekleri tikle seç, alttaki komut canlı değişsin. Programın tek bir .exe dosyası olur.' },
+  { id: 'yerel', ad: 'Yerel Yapay Zekâ', resim: yerelAi, aciklama: 'Bilgisayarına uygun modeller önerilir; tek tıkla indirip internetsiz kullanırsın.' },
+  { id: 'tarayici', ad: 'Tarayıcı', resim: tarayiciKodi, aciklama: 'TürKod\'un içinde bir tarayıcı. Kodi sayfaları açar, okur, senin için tıklar.' },
+  { id: 'pdf', ad: 'PDF ve Kitap', resim: pdfSekmesi, aciklama: 'PDF dosyaları ve kitap yeni bir sekmede açılır; yakınlaştır, sayfa atla, hızlıca gez.' },
+  { id: 'duzelt', ad: 'Akıllı Düzelt', resim: akilliDuzelt, aciklama: 'Hatalı kodu önce dener, düzeltmeyi gösterir; ne değiştiğini adım adım anlatır.' },
+  { id: 'debug', ad: 'Hata Ayıklayıcı', resim: hataAyiklayici, aciklama: 'Kesme noktasında dur, değişkenlerin değerine bak, satır satır ilerle.' },
+];
+---
+
+<section class="tk-l tk-showcase" aria-label="TürKod IDE ekran görüntüsü">
+  <div class="tk-window">
+    <div class="tk-window-bar">
+      <span class="tk-d r"></span><span class="tk-d y"></span><span class="tk-d g"></span>
+      <span class="tk-window-title">TürKod IDE 3.3</span>
+    </div>
+    <Image src={genelEkran} alt="TürKod IDE: gezgin, kod editörü, terminal ve AI Asistan paneli" loading="eager" widths={[720, 1080, 1424]} sizes="(max-width: 1100px) 100vw, 1100px" />
+  </div>
+  <div class="tk-float-kodi" aria-hidden="true">
+    <Image src={kodiCevap} alt="" widths={[260, 489]} sizes="260px" />
+  </div>
+</section>
+
+<section class="tk-l tk-metrics" aria-label="Kısaca TürKod">
+  <div class="tk-metric"><strong>%100</strong><span>Türkçe arayüz ve hata mesajları</span></div>
+  <div class="tk-metric"><strong>~3000</strong><span>Türkçe kelime karşılığı</span></div>
+  <div class="tk-metric"><strong>220+</strong><span>yapay zekâ sağlayıcısı</span></div>
+  <div class="tk-metric"><strong>MIT</strong><span>ücretsiz ve açık kaynak</span></div>
+</section>
+
+<section class="tk-l tk-section">
+  <div class="tk-section-head">
+    <span class="tk-eyebrow">Nasıl çalışır?</span>
+    <h2>Python'un gücü, Türkçenin kolaylığı</h2>
+    <p>Sen Türkçe yazarsın, TürKod arka planda gerçek Python'a çevirip çalıştırır. Hazır olduğunda aynı kodun Python hâlini tek tıkla görürsün.</p>
+  </div>
+  <div class="tk-compare">
+    <div class="tk-code-card tk-code-tr">
+      <div class="tk-code-head"><span class="tk-dot-tr"></span>tahmin_oyunu.trpy <em>TürKod</em></div>
+<pre><code><span class="k">içe_aktar</span> rastgele
+
+gizli_sayı = rastgele.<span class="f">tamsayı</span>(<span class="n">1</span>, <span class="n">10</span>)
+hak = <span class="n">3</span>
+
+<span class="k">döngü</span> hak &gt; <span class="n">0</span>:
+    tahmin = <span class="f">tamsayı</span>(<span class="f">girdi_al</span>(<span class="s">"Tahminin: "</span>))
+    <span class="k">eğer</span> tahmin == gizli_sayı:
+        <span class="f">yazdır</span>(<span class="s">"Bildin! Tebrikler!"</span>)
+        <span class="k">kır</span>
+    <span class="k">değilse</span>:
+        <span class="f">yazdır</span>(<span class="s">"Tekrar dene."</span>)
+    hak = hak - <span class="n">1</span></code></pre>
+    </div>
+    <div class="tk-compare-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <div class="tk-code-card tk-code-py">
+      <div class="tk-code-head"><span class="tk-dot-py"></span>Python karşılığı <em>otomatik</em></div>
+<pre><code><span class="k">import</span> random
+
+gizli_sayı = random.<span class="f">randint</span>(<span class="n">1</span>, <span class="n">10</span>)
+hak = <span class="n">3</span>
+
+<span class="k">while</span> hak &gt; <span class="n">0</span>:
+    tahmin = <span class="f">int</span>(<span class="f">input</span>(<span class="s">"Tahminin: "</span>))
+    <span class="k">if</span> tahmin == gizli_sayı:
+        <span class="f">print</span>(<span class="s">"Bildin! Tebrikler!"</span>)
+        <span class="k">break</span>
+    <span class="k">else</span>:
+        <span class="f">print</span>(<span class="s">"Tekrar dene."</span>)
+    hak = hak - <span class="n">1</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="tk-l tk-section">
+  <div class="tk-section-head">
+    <span class="tk-eyebrow">Özellikler</span>
+    <h2>Öğrenmek için ihtiyacın olan her şey</h2>
+    <p>Yeni başlayan biri için sade, büyüdükçe seninle büyüyecek kadar güçlü.</p>
+  </div>
+  <div class="tk-features">
+    {ozellikler.map((o) => (
+      <a class={`tk-feature tk-c-${o.renk}`} href={o.link}>
+        <span class="tk-feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={o.ikon} /></svg>
+        </span>
+        <strong>{o.baslik}</strong>
+        <span class="tk-feature-text">{o.metin}</span>
+        <span class="tk-feature-more">Daha fazla <span aria-hidden="true">→</span></span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section class="tk-l tk-section tk-kodi">
+  <div class="tk-kodi-text">
+    <span class="tk-eyebrow tk-eyebrow-violet">Yeni · TürKod 3.3</span>
+    <h2>Tanış: <span class="tk-grad-text">Kodi</span></h2>
+    <p>Kitaptaki robot Kodi artık programın içinde. F1'e bas, kayarak gelsin; sorunu yaz ya da söyle.</p>
+    <ul class="tk-checks">
+      <li><b>Hatanı bulur</b> ve hangi satırda olduğunu söyler, düzeltilmiş kodu verir.</li>
+      <li><b>Senin için yapar:</b> panel açar, dosya açar, kod yazar, ayar değiştirir; önemli işlerden önce izin ister.</li>
+      <li><b>Sesli konuşur:</b> mikrofona söyle, cevabı Türkçe sesle dinle.</li>
+      <li><b>Masaüstüne çıkar</b> ve öteki pencerelerin üstünde seni bekler.</li>
+      <li><b>Gizliliğe saygılı:</b> şifre, adres gibi özel bilgileri hatırlamaz; yetkilerini sen seçersin.</li>
+    </ul>
+    <a class="tk-btn-grad" href="/features/kodi/">Kodi'yi tanı <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="tk-kodi-visual">
+    <Image src={kodiEylem} alt="Kodi'nin konuşma balonu: kod yazmadan önce izin istiyor" widths={[360, 489]} sizes="(max-width: 800px) 90vw, 420px" />
+  </div>
+</section>
+
+<section class="tk-l tk-section">
+  <div class="tk-section-head">
+    <span class="tk-eyebrow">Yakından bak</span>
+    <h2>Programın içinde bir tur</h2>
+  </div>
+  <div class="tk-tabs" data-tk-tabs>
+    <div class="tk-tablist" role="tablist" aria-label="Ekran görüntüleri">
+      {galeri.map((g, i) => (
+        <button type="button" role="tab" id={`tk-tab-${g.id}`} aria-controls={`tk-panel-${g.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{g.ad}</button>
+      ))}
+    </div>
+    {galeri.map((g, i) => (
+      <div class="tk-tabpanel" role="tabpanel" id={`tk-panel-${g.id}`} aria-labelledby={`tk-tab-${g.id}`} hidden={i !== 0}>
+        <p>{g.aciklama}</p>
+        <div class="tk-tab-frame">
+          <Image src={g.resim} alt={g.ad} widths={[640, 1000]} sizes="(max-width: 1000px) 100vw, 1000px" />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="tk-l tk-section">
+  <div class="tk-section-head">
+    <span class="tk-eyebrow">Hemen başla</span>
+    <h2>3 adımda ilk programın</h2>
+  </div>
+  <div class="tk-steps">
+    <a class="tk-step" href="/releases/">
+      <span class="tk-num">1</span>
+      <span class="tk-step-body"><strong>İndir</strong><small>Sürüm Geçmişi sayfasından en yeni sürümü al</small></span>
+      <span class="tk-arrow">→</span>
+    </a>
+    <a class="tk-step" href="/install/">
+      <span class="tk-num">2</span>
+      <span class="tk-step-body"><strong>Kur</strong><small>Yönetici izni gerekmez, ekrandaki adımları izle</small></span>
+      <span class="tk-arrow">→</span>
+    </a>
+    <a class="tk-step" href="/use/first-run/">
+      <span class="tk-num">3</span>
+      <span class="tk-step-body"><strong>İlk kodunu yaz</strong><small>Ctrl+R'ye bas, programın çalışsın</small></span>
+      <span class="tk-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="tk-l tk-section tk-oss">
+  <div class="tk-oss-text">
+    <span class="tk-eyebrow">Açık kaynak</span>
+    <h2>Herkes için, herkesle birlikte</h2>
+    <p>TürKod'un bütün kodu MIT lisansıyla GitHub'da. Hata bildirebilir, sözlüğe yeni bir Türkçe karşılık önerebilir ya da doğrudan kod gönderebilirsin.</p>
+    <div class="tk-oss-actions">
+      <a class="tk-btn-grad" href={REPO} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>
+        GitHub'da incele
+      </a>
+      <a class="tk-btn-line" href="/contribute/">Katkıda bulun</a>
+      <a class="tk-btn-line" href={`${REPO}/issues/new/choose`} target="_blank" rel="noopener">Hata bildir</a>
+    </div>
+  </div>
+  <div class="tk-oss-card">
+    <div class="tk-oss-row"><span>Lisans</span><b>MIT</b></div>
+    <div class="tk-oss-row"><span>İmza</span><b>RSA-PSS · SHA-256</b></div>
+    <div class="tk-oss-row"><span>Platform</span><b>Windows 10 / 11</b></div>
+    <div class="tk-oss-row"><span>Teknoloji</span><b>Flutter · Python</b></div>
+    <div class="tk-oss-verify">
+      <small>Kaynak kodun imzasını kendin doğrula:</small>
+      <code>python kaynak_imzala.py --dogrula</code>
+    </div>
+  </div>
+</section>
+
+<section class="tk-l tk-cta">
+  <h2>Kodlamaya bugün, kendi dilinde başla.</h2>
+  <p>Ücretsiz, reklamsız, kurulumu iki dakika.</p>
+  <div class="tk-cta-actions">
+    <a class="tk-btn-grad tk-btn-big" href="/releases/" data-tk-download>Windows için indir</a>
+    <a class="tk-btn-line tk-btn-big" href="/demo/">Tarayıcıda dene</a>
+  </div>
+</section>
+
+<script>
+  // Sekmeler (klavye ile de gezilebilir)
+  document.querySelectorAll<HTMLElement>('[data-tk-tabs]').forEach((kutu) => {
+    const sekmeler = Array.from(kutu.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+    const sec = (i: number) => {
+      sekmeler.forEach((s, j) => {
+        const secili = i === j;
+        s.setAttribute('aria-selected', String(secili));
+        s.tabIndex = secili ? 0 : -1;
+        const panel = document.getElementById(s.getAttribute('aria-controls') || '');
+        if (panel) panel.hidden = !secili;
+      });
+    };
+    sekmeler.forEach((s, i) => {
+      s.addEventListener('click', () => sec(i));
+      s.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const y = (i + (e.key === 'ArrowRight' ? 1 : -1) + sekmeler.length) % sekmeler.length;
+        sec(y); sekmeler[y].focus();
+      });
+    });
+  });
+
+  // "Windows için indir" düğmesini doğrudan en yeni kurulum dosyasına bağla
+  (async () => {
+    const dugmeler = document.querySelectorAll<HTMLAnchorElement>('[data-tk-download]');
+    if (!dugmeler.length) return;
+    try {
+      const r = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases/latest');
+      if (!r.ok) return;
+      const veri = await r.json();
+      const exe = (veri.assets || []).find((a: { name: string }) => a.name.toLowerCase().endsWith('.exe'));
+      if (exe) dugmeler.forEach((d) => (d.href = exe.browser_download_url));
+    } catch { /* sürümler sayfasında kalır */ }
+  })();
+</script>
+
+<style is:global>
+  /* ---------- Tema değişkenleri ---------- */
+  :root[data-theme='dark'] {
+    --tkl-surface: rgba(13, 17, 23, .72);
+    --tkl-surface-solid: #0d1117;
+    --tkl-border: rgba(129, 140, 248, .22);
+    --tkl-heading: #f0f4fa;
+    --tkl-text: #b8c2cf;
+    --tkl-muted: #8b949e;
+    --tkl-glow: rgba(99, 102, 241, .45);
+    --tkl-code: #0b1020;
+  }
+  :root[data-theme='light'] {
+    --tkl-surface: rgba(255, 255, 255, .85);
+    --tkl-surface-solid: #ffffff;
+    --tkl-border: rgba(99, 102, 241, .18);
+    --tkl-heading: #111827;
+    --tkl-text: #4b5563;
+    --tkl-muted: #6b7280;
+    --tkl-glow: rgba(99, 102, 241, .22);
+    --tkl-code: #0f172a;
+  }
+
+  .tk-l { max-width: 72rem; margin-inline: auto; }
+  .tk-l h2 { color: var(--tkl-heading); }
+  .tk-grad-text {
+    background: var(--tk-grad); background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: tk-shine 6s linear infinite;
+  }
+  :root[data-theme='light'] .tk-grad-text { background-image: var(--tk-grad-light); }
+
+  /* ---------- Bölüm başlıkları ---------- */
+  .tk-section { margin-top: 6rem !important; }
+  .tk-section-head { text-align: center; max-width: 42rem; margin: 0 auto 2.5rem; }
+  .tk-section-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.15; margin: .5rem 0 0; letter-spacing: -.02em; }
+  .tk-section-head p { color: var(--tkl-text); margin-top: .9rem; font-size: 1.05rem; }
+  .tk-eyebrow {
+    display: inline-block; padding: .3rem .8rem; border-radius: 999px;
+    font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: #22d3ee; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .3);
+  }
+  .tk-eyebrow-violet { color: #c084fc; background: rgba(192, 132, 252, .1); border-color: rgba(192, 132, 252, .35); }
+  :root[data-theme='light'] .tk-eyebrow { color: #0e7490; background: rgba(8, 145, 178, .08); border-color: rgba(8, 145, 178, .25); }
+  :root[data-theme='light'] .tk-eyebrow-violet { color: #7e22ce; background: rgba(126, 34, 206, .07); border-color: rgba(126, 34, 206, .25); }
+
+  /* ---------- Gradyan düğmeler ---------- */
+  .tk-btn-grad, .tk-btn-line {
+    display: inline-flex; align-items: center; gap: .55rem; padding: .8rem 1.4rem;
+    border-radius: 999px; font-weight: 700; text-decoration: none !important; white-space: nowrap;
+    transition: transform .25s, box-shadow .25s, background-position .4s, border-color .25s;
+  }
+  .tk-btn-grad svg { width: 1.15em; height: 1.15em; }
+  .tk-btn-grad {
+    color: #fff !important; background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef, #6366f1);
+    background-size: 200% auto; box-shadow: 0 0 24px var(--tkl-glow);
+  }
+  .tk-btn-grad:hover { background-position: 100% center; transform: translateY(-3px); box-shadow: 0 0 36px rgba(217, 70, 239, .55); }
+  .tk-btn-line { color: var(--tkl-heading) !important; border: 1px solid var(--tkl-border); background: var(--tkl-surface); }
+  .tk-btn-line:hover { transform: translateY(-3px); border-color: #22d3ee; }
+  .tk-btn-big { padding: 1rem 1.8rem; font-size: 1.05rem; }
+
+  /* ---------- Ekran vitrini ---------- */
+  .tk-showcase { position: relative; margin-top: 1rem !important; padding-bottom: 2rem; }
+  .tk-showcase::before {
+    content: ""; position: absolute; inset: 8% 6% 4%; z-index: -1; filter: blur(70px); opacity: .55;
+    background: linear-gradient(120deg, #06b6d4, #6366f1, #d946ef);
+  }
+  :root[data-theme='light'] .tk-showcase::before { opacity: .25; }
+  .tk-window {
+    border-radius: 16px; overflow: hidden; border: 1px solid transparent;
+    background:
+      linear-gradient(#0d1117, #0d1117) padding-box,
+      linear-gradient(140deg, rgba(34,211,238,.7), rgba(99,102,241,.5), rgba(232,121,249,.7)) border-box;
+    box-shadow: 0 40px 100px -30px rgba(0, 0, 0, .7);
+  }
+  .tk-window-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #111827; border-bottom: 1px solid rgba(129,140,248,.25); }
+  .tk-window-title { margin-left: auto; margin-right: auto; padding-right: 50px; font-size: .78rem; color: #8b949e; font-family: var(--sl-font-mono); }
+  .tk-window img { display: block; width: 100%; height: auto; }
+  .tk-float-kodi {
+    position: absolute; right: -2.5rem; bottom: -1rem; width: 230px;
+    border-radius: 14px; overflow: hidden; border: 1px solid rgba(192,132,252,.45);
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,.75), 0 0 40px rgba(192,132,252,.25);
+    animation: tk-float 6s ease-in-out infinite;
+  }
+  .tk-float-kodi img { display: block; width: 100%; height: auto; }
+  @keyframes tk-float { 50% { transform: translateY(-10px); } }
+  @media (max-width: 1180px) { .tk-float-kodi { right: .5rem; width: 190px; } }
+  @media (max-width: 760px) { .tk-float-kodi { display: none; } }
+
+  /* ---------- Rakamlar ---------- */
+  .tk-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem !important; }
+  @media (max-width: 760px) { .tk-metrics { grid-template-columns: repeat(2, 1fr); } }
+  .tk-metric {
+    text-align: center; padding: 1.3rem .8rem; border-radius: 16px; background: var(--tkl-surface);
+    border: 1px solid var(--tkl-border); backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+  }
+  .tk-metric:hover { transform: translateY(-4px); border-color: rgba(34, 211, 238, .5); }
+  .tk-metric strong {
+    display: block; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -.02em;
+    background: var(--tk-grad); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: tk-shine 6s linear infinite;
+  }
+  :root[data-theme='light'] .tk-metric strong { background-image: var(--tk-grad-light); }
+  .tk-metric span { color: var(--tkl-muted); font-size: .88rem; }
+
+  /* ---------- Kod karşılaştırma ---------- */
+  .tk-compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; }
+  @media (max-width: 860px) {
+    .tk-compare { grid-template-columns: 1fr; }
+    .tk-compare-arrow { transform: rotate(90deg); justify-self: center; }
+  }
+  .tk-code-card {
+    border-radius: 16px; overflow: hidden; background: var(--tkl-code); border: 1px solid transparent;
+    background:
+      linear-gradient(var(--tkl-code), var(--tkl-code)) padding-box,
+      linear-gradient(140deg, rgba(34,211,238,.55), rgba(99,102,241,.3), rgba(232,121,249,.55)) border-box;
+    box-shadow: 0 20px 50px -24px var(--tkl-glow);
+  }
+  .tk-code-py { opacity: .92; background:
+      linear-gradient(var(--tkl-code), var(--tkl-code)) padding-box,
+      linear-gradient(140deg, rgba(148,163,184,.35), rgba(148,163,184,.15)) border-box; }
+  .tk-code-head {
+    display: flex; align-items: center; gap: .55rem; padding: .7rem 1rem; font-size: .8rem;
+    color: #9aa4b2; font-family: var(--sl-font-mono); border-bottom: 1px solid rgba(148,163,184,.15);
+  }
+  .tk-code-head em { margin-left: auto; font-style: normal; font-family: var(--sl-font); font-weight: 700; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: #22d3ee; }
+  .tk-code-py .tk-code-head em { color: #9aa4b2; }
+  .tk-dot-tr, .tk-dot-py { width: 9px; height: 9px; border-radius: 50%; background: #e11d48; box-shadow: 0 0 10px #e11d48; }
+  .tk-dot-py { background: #facc15; box-shadow: 0 0 10px rgba(250,204,21,.6); }
+  .tk-code-card pre {
+    margin: 0 !important; padding: 1.1rem 1.2rem !important; background: transparent !important; border: 0 !important;
+    box-shadow: none !important; overflow-x: auto; font-size: .86rem; line-height: 1.7; color: #e2e8f0;
+  }
+  .tk-code-card pre::before { content: none !important; }
+  .tk-code-card .k { color: #c084fc; font-weight: 600; }
+  .tk-code-card .f { color: #67e8f9; }
+  .tk-code-card .s { color: #86efac; }
+  .tk-code-card .n { color: #fbbf24; }
+  .tk-compare-arrow { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(135deg, #06b6d4, #6366f1, #d946ef); box-shadow: 0 0 20px var(--tkl-glow); }
+  .tk-compare-arrow svg { width: 22px; height: 22px; }
+
+  /* ---------- Özellik kartları ---------- */
+  .tk-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+  @media (max-width: 960px) { .tk-features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .tk-features { grid-template-columns: 1fr; } }
+  .tk-feature {
+    --c: #22d3ee; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: .55rem;
+    padding: 1.4rem; border-radius: 16px; text-decoration: none !important; border: 1px solid transparent;
+    background:
+      linear-gradient(var(--tkl-surface-solid), var(--tkl-surface-solid)) padding-box,
+      linear-gradient(140deg, color-mix(in srgb, var(--c) 55%, transparent), rgba(99,102,241,.18), color-mix(in srgb, var(--c) 25%, transparent)) border-box;
+    transition: transform .3s, box-shadow .3s;
+  }
+  .tk-feature::before {
+    content: ""; position: absolute; top: 0; left: -80%; width: 60%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.08), transparent);
+    transform: skewX(-20deg); transition: left .7s ease;
+  }
+  .tk-feature:hover::before { left: 130%; }
+  .tk-feature:hover { transform: translateY(-6px); box-shadow: 0 18px 50px -18px color-mix(in srgb, var(--c) 60%, transparent); }
+  .tk-c-cyan { --c: #22d3ee; } .tk-c-violet { --c: #a78bfa; } .tk-c-pink { --c: #f472b6; }
+  .tk-c-green { --c: #34d399; } .tk-c-amber { --c: #fbbf24; }
+  :root[data-theme='light'] .tk-c-cyan { --c: #0891b2; } :root[data-theme='light'] .tk-c-violet { --c: #7c3aed; }
+  :root[data-theme='light'] .tk-c-pink { --c: #db2777; } :root[data-theme='light'] .tk-c-green { --c: #059669; }
+  :root[data-theme='light'] .tk-c-amber { --c: #d97706; }
+  .tk-feature-icon {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: var(--c);
+    background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
+  }
+  .tk-feature-icon svg { width: 22px; height: 22px; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c) 60%, transparent)); }
+  .tk-feature strong { color: var(--tkl-heading); font-size: 1.08rem; margin-top: .3rem; }
+  .tk-feature-text { color: var(--tkl-text); font-size: .93rem; line-height: 1.55; }
+  .tk-feature-more { margin-top: auto; padding-top: .4rem; font-size: .85rem; font-weight: 600; color: var(--c); }
+
+  /* ---------- Kodi ---------- */
+  .tk-kodi {
+    display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; padding: 3rem;
+    border-radius: 24px; border: 1px solid rgba(192,132,252,.3);
+    background: radial-gradient(600px circle at 85% 30%, rgba(192,132,252,.18), transparent 60%), var(--tkl-surface);
+  }
+  @media (max-width: 860px) { .tk-kodi { grid-template-columns: 1fr; padding: 1.75rem; gap: 2rem; } }
+  .tk-kodi h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin: .7rem 0 .4rem; letter-spacing: -.02em; }
+  .tk-kodi p { color: var(--tkl-text); font-size: 1.05rem; }
+  .tk-checks { list-style: none; padding: 0 !important; margin: 1.3rem 0 1.8rem !important; display: grid; gap: .7rem; }
+  .tk-checks li { position: relative; padding-left: 1.9rem; color: var(--tkl-text); margin: 0 !important; }
+  .tk-checks li::before {
+    content: "✓"; position: absolute; left: 0; top: .1rem; width: 1.25rem; height: 1.25rem; border-radius: 50%;
+    display: grid; place-items: center; font-size: .72rem; font-weight: 800; color: #fff;
+    background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  }
+  .tk-checks b { color: var(--tkl-heading); }
+  .tk-kodi-visual { display: flex; justify-content: center; }
+  .tk-kodi-visual img {
+    width: 100%; max-width: 420px; height: auto; border-radius: 18px; border: 1px solid rgba(192,132,252,.4);
+    box-shadow: 0 30px 70px -25px rgba(139, 92, 246, .55); animation: tk-float 7s ease-in-out infinite;
+  }
+
+  /* ---------- Sekmeli galeri ---------- */
+  .tk-tablist { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 1.25rem; }
+  .tk-tablist button {
+    font: inherit; font-size: .92rem; font-weight: 600; cursor: pointer; padding: .55rem 1.1rem; border-radius: 999px;
+    color: var(--tkl-text); background: var(--tkl-surface); border: 1px solid var(--tkl-border); transition: all .25s;
+  }
+  .tk-tablist button:hover { color: var(--tkl-heading); border-color: #22d3ee; }
+  .tk-tablist button[aria-selected='true'] {
+    color: #fff; border-color: transparent; background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
+    box-shadow: 0 0 20px var(--tkl-glow);
+  }
+  .tk-tabpanel > p { text-align: center; color: var(--tkl-text); margin: 0 auto 1.2rem; max-width: 40rem; }
+  .tk-tab-frame {
+    display: flex; justify-content: center; padding: 1.5rem; border-radius: 20px; border: 1px solid var(--tkl-border);
+    background: radial-gradient(700px circle at 50% 0%, rgba(99,102,241,.16), transparent 70%), var(--tkl-surface);
+  }
+  .tk-tab-frame img { max-width: 100%; max-height: 560px; width: auto; height: auto; border-radius: 12px; box-shadow: 0 24px 60px -24px rgba(0,0,0,.6); }
+
+  /* ---------- Adımlar (açık temada da) ---------- */
+  .tk-l .tk-steps { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin: 0; }
+  @media (max-width: 800px) { .tk-l .tk-steps { grid-template-columns: 1fr; } }
+
+  /* ---------- Açık kaynak ---------- */
+  .tk-oss { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2.5rem; align-items: center; }
+  @media (max-width: 860px) { .tk-oss { grid-template-columns: 1fr; } }
+  .tk-oss h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: .7rem 0 .4rem; letter-spacing: -.02em; }
+  .tk-oss p { color: var(--tkl-text); font-size: 1.05rem; }
+  .tk-oss-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+  .tk-oss-card {
+    padding: 1.5rem; border-radius: 18px; border: 1px solid transparent;
+    background:
+      linear-gradient(var(--tkl-surface-solid), var(--tkl-surface-solid)) padding-box,
+      linear-gradient(140deg, rgba(34,211,238,.5), rgba(99,102,241,.25), rgba(52,211,153,.5)) border-box;
+  }
+  .tk-oss-row { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px dashed var(--tkl-border); margin: 0 !important; }
+  .tk-oss-row span { color: var(--tkl-muted); }
+  .tk-oss-row b { color: var(--tkl-heading); text-align: right; }
+  .tk-oss-verify { margin-top: 1rem !important; display: grid; gap: .45rem; }
+  .tk-oss-verify small { color: var(--tkl-muted); }
+  .tk-oss-verify code { display: block; padding: .6rem .8rem; border-radius: 10px; background: var(--tkl-code); color: #86efac; font-size: .82rem; overflow-x: auto; white-space: nowrap; }
+
+  /* ---------- Son çağrı ---------- */
+  .tk-cta {
+    margin-top: 6rem !important; margin-bottom: 2rem; text-align: center; padding: 3.5rem 1.5rem; border-radius: 24px;
+    border: 1px solid transparent;
+    background:
+      radial-gradient(600px circle at 20% 0%, rgba(34,211,238,.18), transparent 60%) padding-box,
+      radial-gradient(600px circle at 80% 100%, rgba(217,70,239,.18), transparent 60%) padding-box,
+      linear-gradient(var(--tkl-surface-solid), var(--tkl-surface-solid)) padding-box,
+      linear-gradient(120deg, rgba(34,211,238,.6), rgba(99,102,241,.4), rgba(232,121,249,.6)) border-box;
+  }
+  .tk-cta h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin: 0; letter-spacing: -.02em; }
+  .tk-cta p { color: var(--tkl-text); margin: .7rem 0 1.8rem; }
+  .tk-cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .8rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tk-float-kodi, .tk-kodi-visual img, .tk-grad-text, .tk-metric strong { animation: none; }
+  }
+</style>

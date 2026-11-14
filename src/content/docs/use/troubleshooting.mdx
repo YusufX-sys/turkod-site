@@ -47,7 +47,7 @@ Bir kelimeyi yanlış yazmış olabilirsin. Sözlükte olmayan bir kelime hata v
 
 ### Program bitmiyor / donmuş gibi
 
-- Program büyük ihtimalle senden **girdi bekliyordur**: terminalin en altındaki kutuda **Programa girdi…** yazıyorsa cevabını yazıp `Enter`'a bas.
+- Program büyük ihtimalle senden **girdi bekliyordur**: terminalin en altındaki kutuda **Programa / kabuğa girdi…** yazıyorsa cevabını yazıp `Enter`'a bas.
 - Sonsuz döngüye girdiyse kırmızı ⏹️ **Durdur** düğmesine ya da terminalde `Ctrl+C`'ye bas.
 
 ### Dosya okuyamıyorum / yazdığım dosya kayboldu
@@ -64,7 +64,9 @@ Kullandığın kütüphane kurulu değildir. Terminale `pip yükle kütüphane_a
 
 | Ne? | Nerede? |
 |---|---|
-| Ayarlar, açık sekmeler (oturum), AI anahtarı | `%USERPROFILE%\.turkod_ayarlar.json` |
+| Ayarlar, açık sekmeler (oturum), şifrelenmiş AI anahtarları | `%USERPROFILE%\.turkod_ayarlar.json` |
+| Kodi'nin sohbetleri ve hafıza notları | `%USERPROFILE%\.turkod` |
+| İndirilen yerel AI modelleri (varsayılan) | `%LOCALAPPDATA%\TurKod\yerel_ai\modeller` |
 | `pip yükle` ile kurulan kütüphaneler | `%LOCALAPPDATA%\TurKod\pip_packages` |
 | Günlük (log) dosyası | `%LOCALAPPDATA%\TurKod\backend.log` |
 
@@ -72,7 +74,7 @@ Ayar dosyası bozulursa TürKod onu `.turkod_ayarlar.json.bozuk` adıyla yedekle
 
 ### Ayarları sıfırlamak istiyorum
 
-TürKod kapalıyken `%USERPROFILE%\.turkod_ayarlar.json` dosyasını sil. Program bir sonraki açılışta varsayılan ayarlarla başlar (açık sekmelerin ve AI anahtarın da silinir).
+TürKod kapalıyken `%USERPROFILE%\.turkod_ayarlar.json` dosyasını sil. Program bir sonraki açılışta varsayılan ayarlarla başlar (açık sekmelerin ve AI anahtarların da silinir).
 
 ### Arayüz turunu kaçırdım
 
@@ -80,13 +82,14 @@ TürKod kapalıyken `%USERPROFILE%\.turkod_ayarlar.json` dosyasını sil. Progra
 
 ## AI Asistan
 
-### Açıkla / Optimize et çalışmıyor
+### Açıkla / Optimize et ya da Kodi çalışmıyor
 
-- **Ayarlar → AI Asistan**'da **AI Aktif** açık mı, **API Key** girili mi kontrol et ve **Kaydet ve Uygula**'ya bas.
-- Sağlayıcının kütüphanesi eksikse asistan hangi `pip yükle` komutunu yazman gerektiğini söyler.
-- İnternet bağlantını ve sağlayıcı hesabındaki kotayı kontrol et.
+- **Ayarlar → Yapay Zekâ: Görevler**'de ilgili göreve (**AI Paneli sohbet**, **Kod açıklama / optimize**, **Kodi**) bir model atanmış mı kontrol et. Model atanmamış görev kapalıdır.
+- **Ayarlar → Yapay Zekâ: Modeller**'deki **Mevcut modeller** listesi API anahtarı eksik olan modeli uyarır. **Bağlantıyı Test Et** ile anahtarını dene.
+- İnternet bağlantını ve sağlayıcı hesabındaki kotayı kontrol et. Birkaç model bağlarsan, birinin hakkı dolunca istek kendiliğinden ötekine gider.
+- İnternetsiz çalışmak istersen bilgisayarına bir [yerel model](/features/local-models/) kurabilirsin.
 
-Ayrıntılar: [AI Asistan](/features/ai/)
+Ayrıntılar: [AI Asistan](/features/ai/), [Yapay Zekâ Modelleri](/features/local-models/)
 
 ## Güncelleme
 

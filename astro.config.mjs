@@ -16,6 +16,8 @@ export default defineConfig({
         { tag: 'link', attrs: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192.png' } },
         { tag: 'link', attrs: { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' } },
         { tag: 'meta', attrs: { property: 'og:image', content: 'https://turkod.pages.dev/icon-512.png' } },
+        { tag: 'meta', attrs: { name: 'theme-color', content: '#070b16' } },
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary' } },
         { tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify({
           '@context': 'https://schema.org',
           '@graph': [
@@ -24,11 +26,14 @@ export default defineConfig({
           ],
         }) },
       ],
-      customCss: ['./src/styles/custom.css'],
+      customCss: ['./src/styles/custom.css', './src/styles/belgeler.css'],
       tableOfContents: false,
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
         Footer: './src/components/Footer.astro',
+        Hero: './src/components/Hero.astro',
+        Sidebar: './src/components/Sidebar.astro',
+        PageTitle: './src/components/PageTitle.astro',
       },
       locales: { root: { label: 'Türkçe', lang: 'tr' } },
       social: [
@@ -36,16 +41,17 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: '🚀 Başlangıç',
+          label: 'Başlangıç',
           items: [
             { label: 'Giriş', link: '/getting-started/' },
             { label: 'Kurulum', link: '/install/' },
             { label: 'Canlı Demo', link: '/demo/' },
+            { label: '3.3 Yenilikleri', link: '/whats-new/', badge: { text: 'Yeni', variant: 'tip' } },
             { label: 'Sürüm Geçmişi', link: '/releases/' },
           ],
         },
         {
-          label: '🧭 Nasıl Kullanılır',
+          label: 'Nasıl Kullanılır',
           items: [
             { label: 'Arayüz Turu', link: '/use/tour/' },
             { label: 'İlk Programını Çalıştır', link: '/use/first-run/' },
@@ -54,7 +60,7 @@ export default defineConfig({
           ],
         },
         {
-	  label: '📚 Dili Öğrenin',
+	  label: 'Dili Öğrenin',
 	  items: [
 	    { label: 'Temel İfadeler', link: '/learn/basics/' },
 	    { label: 'Koşullar', link: '/learn/conditions/' },
@@ -71,13 +77,16 @@ export default defineConfig({
 	  ],
 	},
         {
-          label: '✨ Özellikler',
+          label: 'Özellikler',
           items: [
             { label: 'Arayüz', link: '/features/ui/' },
             { label: 'Kod Editörü', link: '/features/editor/' },
             { label: 'Çalıştırma ve Hata Ayıklama', link: '/features/run-debug/' },
             { label: 'Akıllı Düzeltme', link: '/features/smart-fix/' },
+            { label: 'Kodi', link: '/features/kodi/' },
             { label: 'AI Asistan', link: '/features/ai/' },
+            { label: 'Yapay Zekâ Modelleri', link: '/features/local-models/' },
+            { label: "EXE'ye Dönüştür", link: '/features/exe/' },
             { label: 'Araçlar', link: '/features/tools/' },
             { label: 'Terminal ve Paketler', link: '/features/terminal/' },
             { label: 'Ayarlar ve Temalar', link: '/features/settings/' },
@@ -88,8 +97,9 @@ export default defineConfig({
           ],
         },
         {
-          label: '🛠️ Geliştirici',
+          label: 'Geliştirici',
           items: [
+            { label: 'Katkıda Bulun', link: '/contribute/' },
             { label: 'Hakkımda', link: '/about/' },
           ],
         },

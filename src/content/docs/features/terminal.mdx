@@ -9,10 +9,19 @@ import pipBilgi from '../../../assets/ekran/terminal-pip-bilgi.webp';
 
 Alttaki **TERMİNAL** paneli (`Ctrl+J`) iki işe yarar: çalışan programınla konuşmak ve komut çalıştırmak.
 
-- Program çalışırken alttaki kutuda **Programa girdi…** yazar; yazdıkların programa gider (`girdi_al()` cevapları). `Ctrl+C` (seçim yokken) programı durdurur.
-- Program çalışmıyorken kutuda **Komut…** yazar; yazdıkların proje klasöründe Windows komutu olarak çalıştırılır (`dir`, `cd` gibi).
-- `↑` / `↓` önceki komutları geri getirir.
-- Başlıktaki düğmeler: **Yazıyı Küçült**, **Yazıyı Büyüt** (ya da `Ctrl`+fare tekerleği), **Tüm çıktıyı kopyala**, **Temizle**, **Kapat**.
+- Program çalışırken alttaki kutuda **Programa / kabuğa girdi…** yazar; yazdıkların programa gider (`girdi_al()` cevapları). `Ctrl+C` (seçim yokken) programı durdurur.
+- Program çalışmıyorken kutuda **Komut…** yazar; yazdıkların Windows komutu olarak çalıştırılır (`dir`, `cd` gibi). `turkod ...` komutları da burada çalışır (aşağıya bak).
+- `↑` / `↓` son 100 komutu geri getirir.
+- Başlıktaki düğmeler: **TürKod Kabuğu** (program çalışmıyorken; kabuğu terminalin içinde açar), **ayrı pencerede aç**, **Hatayı AI ile açıkla** (program hatayla bitince), **Yazıyı Küçült**, **Yazıyı Büyüt** (ya da `Ctrl`+fare tekerleği), **Tüm çıktıyı kopyala**, **Temizle**, **Kapat**.
+
+## Her sekmenin kendi terminali
+
+Her sekmenin ayrı bir terminali vardır. Çıktı, `↑` ile geri getirdiğin komut geçmişi ve `cd` ile girdiğin klasör yalnızca o sekmeye aittir.
+
+- Başka bir sekmeye geçince o sekmenin terminali daha önce açıldıysa o görünür; açılmadıysa terminal paneli kapanır. Geri döndüğünde eski terminal her şeyiyle yerinde bekler.
+- `Ctrl+J` yalnızca açık sekmenin terminalini açıp kapatır.
+- Ayarlar sekmesinin terminali yoktur.
+- Aynı anda tek bir program çalışabilir. Program başka bir sekmede çalışıyorsa terminal başlığında hangi sekmede çalıştığı yazar; bu terminale yazdıkların o programa gitmez, komut olarak çalışır. Başka sekmede **Çalıştır**'a basarsan eski program durdurulur.
 
 ## Türkçe pip — kütüphane kurma
 
@@ -47,10 +56,6 @@ Kütüphaneleri Türkçe komutlarla kurabilirsin. Sadece `pip` yazarsan Türkçe
 
 Kurduğun kütüphaneler kullanıcı klasöründe (`%LOCALAPPDATA%\TurKod\pip_packages`) saklanır, güncellemelerde korunur ve programlarında hemen kullanılabilir.
 
-:::tip[İpucu]
-Bir AI sağlayıcısının kütüphanesi eksikse AI Asistan sana hangi `pip yükle` komutunu yazman gerektiğini söyler.
-:::
-
 ## turkod komutu (komut satırı)
 
 Kurulumda **TürKod'u PATH'e ekle** seçeneğini işaretlediysen (ya da sonradan **Ayarlar → Sistem Entegrasyonu**'ndan açtıysan), herhangi bir komut isteminde TürKod programlarını doğrudan çalıştırabilirsin:
@@ -59,4 +64,32 @@ Kurulumda **TürKod'u PATH'e ekle** seçeneğini işaretlediysen (ya da sonradan
 turkod oyun.trpy
 ```
 
-`.trpy` dosya ilişkisi açıksa Dosya Gezgini'nde bir `.trpy` dosyasına **çift tıklamak** da onu bir terminal penceresinde çalıştırır. Düzenlemek için sağ tıkla → **Editör ile aç**.
+IDE terminaline yazılan `turkod ...` komutları da IDE'nin içinde çalışır; bunun için PATH ayarı gerekmez. `turkod --yardim` bütün komutları listeler. En kullanışlıları:
+
+| Komut | Ne yapar? |
+| ----- | --------- |
+| `turkod dosya.trpy` | Dosyayı çalıştırır |
+| `turkod --kontrol dosya.trpy` | Yazım hatası var mı diye bakar |
+| `turkod --duzelt dosya.trpy` | Akıllı Düzelt uygular (`--yaz` eklersen dosyaya kaydeder) |
+| `turkod --bicimlendir dosya.trpy` | Kodu toparlar (`--yaz` ile kaydeder) |
+| `turkod --python dosya.trpy` | Kodun Python hâlini gösterir |
+| `turkod --turkod dosya.py` | Python dosyasını TürKod'a çevirir |
+| `turkod --cevir "yazdır(1)"` | Tek bir satırı çevirir |
+| `turkod --anlam yazdır` | Bir kelimenin çocuk dostu açıklamasını verir |
+| `turkod --dersler` | Kabuktaki dersleri listeler |
+| `turkod kabuk` | TürKod Kabuğu'nu açar |
+| `turkod exe_yap dosya.trpy` | Programı EXE yapar; bkz. [EXE'ye Dönüştür](/features/exe/) |
+| `turkod kaynak oyun.exe` | Bir TürKod EXE'sinin kodunu gösterir |
+| `turkod logo` | TürKod logosunu harflerle bütün terminale çizer |
+| `turkod --surum` | Sürümü gösterir |
+
+`.trpy` dosya ilişkisi açıksa Dosya Gezgini'nde bir `.trpy` dosyasına **çift tıklamak** da onu küçük bir TürKod penceresinde çalıştırır. Düzenlemek için sağ tıkla → **Editör ile aç**.
+
+## TürKod Kabuğu ve TürKod Terminali
+
+**TürKod Kabuğu**, tek satırlık kodları hemen denediğin bir oyun alanıdır. Sol şeritteki kabuk düğmesi, `Ctrl+Shift+K` ya da terminal başlığındaki **TürKod Kabuğu** düğmesiyle açılır. Aynı kabuk, Başlat menüsünde ayrı bir program olarak da durur: **TürKod Terminali**.
+
+- `TürKod>` yazısının yanına bir satır yaz, `Enter`'a bas; sonuç hemen gelir. Bloklar (`eğer`, `için` ...) boş bir satır gelene kadar devam eder.
+- 10 ders içerir: `dersler` listeler, `ders 3` üçüncü dersi gösterir, `dene 3` örneğini çalıştırır.
+- `anlam yazdır` bir kelimenin anlamını söyler; Python kelimesi yazarsan (`print`) TürKod karşılığını bulur.
+- `yardım` bütün kabuk komutlarını listeler.

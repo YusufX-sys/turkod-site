@@ -12,7 +12,7 @@ import dusunce from '../../../assets/ekran/duzeltme-dusunce.webp';
 
 **Akıllı Düzeltme**, kodundaki hataları bulup düzeltir ve ne yaptığını Türkçe bir raporla anlatır. Tamamen **bilgisayarında** çalışır; internete ya da bir yapay zekâ hizmetine bağlanmaz.
 
-Açmak için: araç çubuğundaki sihirli değnek simgesi ya da **Araçlar → Düzelt**.
+Açmak için: araç çubuğundaki sarı **Düzelt** (sihirli değnek) düğmesi ya da **Araçlar → Düzelt**. Komut satırında `turkod --duzelt dosya.trpy` da aynı işi yapar.
 
 ## Örnek
 
@@ -45,7 +45,7 @@ Düzeltme yedi aşamada yapılır: okuma → ön temizlik → sözdizimi → anl
 - **Gözden geçirme (yalnızca uyarı):** sonsuz döngü riski, hiç çalışmayacak kod, yanlış sayıda argüman, kullanılmayan değişkenler.
 
 :::note[AI açıksa]
-[AI Asistan](/features/ai/) etkin ve API anahtarı girilmişse, yerel motorun çözemediği hatalar için son çare olarak yapay zekâya da danışılır. AI kapalıysa her şey yerelde kalır.
+**Ayarlar → Yapay Zekâ: Görevler**'de **Akıllı Düzelt (AI aşaması)** görevine bir model atadıysan, yerel motorun çözemediği hatalar için son çare olarak yapay zekâya da danışılır. Bu aşama AI Paneli'ndeki sohbet geçmişine dokunmaz. Göreve model atanmamışsa ya da bir [yerel model](/features/local-models/) atanmışsa her şey bilgisayarında kalır.
 :::
 
 ## Güvenlik: kodun çalıştırılsın mı?

@@ -24,7 +24,7 @@ import izleme from '../../../assets/ekran/debug-izleme.webp';
 
 ## Programa girdi verme
 
-`girdi_al()` bir soru sorduğunda terminalin en altındaki kutuda **Programa girdi… (Ctrl+C: durdur)** yazar. Cevabını bu kutuya yazıp `Enter`'a basarsın.
+`girdi_al()` bir soru sorduğunda terminalin en altındaki kutuda **Programa / kabuğa girdi… (Ctrl+C: durdur)** yazar. Cevabını bu kutuya yazıp `Enter`'a basarsın.
 
 <Ekran src={girdi} alt="Program girdi bekliyor; terminalin altındaki kutu 'Programa girdi… (Ctrl+C: durdur)' gösteriyor" />
 
@@ -60,7 +60,7 @@ Programın komut satırı argümanı bekliyorsa (`sys.argv`), **Çalıştır →
 Birçok TürKod kelimesi Türkçe karakter olmadan da tanınır: `yazdir` da `yazdır` gibi çalışır.
 :::
 
-- Program bir hata koduyla biterse `[Program N koduyla sonlandı]`, sen durdurursan `[Durduruldu]` yazar.
+- Program bir hata koduyla biterse `[Program N koduyla sonlandı]`, sen durdurursan yalnızca `[Durduruldu]` yazar. Hatayla biten programda terminaldeki **Hatayı AI ile açıkla** düğmesi hatayı yapay zekâya anlattırır.
 
 ### Sık görülen hata adları
 
@@ -91,18 +91,18 @@ Hatalı koddayken **Düzelt** (sihirli değnek)'e bas: [Akıllı Düzeltme](/fea
 
 Kodunu satır satır çalıştırıp değişkenlerin o anki değerlerini görebilirsin.
 
-### Durma noktası (breakpoint)
+### Kesme noktası (durma noktası)
 
 - Bir satırın numarasının soluna tıkla ya da imleç o satırdayken `F9`'a bas. Satırda kırmızı bir nokta belirir. Kaldırmak için tekrar tıkla.
-- **Koşullu breakpoint** (`Shift+F9`): Yalnızca bir koşul doğru olduğunda durur. Uzun döngülerde tam istediğin anı yakalamak için idealdir. Koşullu breakpoint'ler turuncu noktayla gösterilir.
+- **Koşullu kesme noktası** (`Shift+F9` ya da satır numarasına sağ tıklama): Yalnızca bir koşul doğru olduğunda durur. Uzun döngülerde tam istediğin anı yakalamak için idealdir. Aynı penceredeki **Kaçıncı geçişte durulsun?** kutusuna bir sayı yazarsan program o satıra o kadarıncı gelişinde durur. Koşullu kesme noktaları turuncu noktayla gösterilir.
 
 <Ekran src={kosullu} alt="Satır 4: Koşullu Breakpoint penceresine puan < 50 yazılmış" caption="harf_notu fonksiyonunun 4. satırına koşul: puan < 50" />
 
-- Hepsini **Çalıştır → Tüm Breakpoint'leri Kaldır** ile silebilirsin. Breakpoint'ler sekmeyle birlikte kaydedilir.
+- Hepsini **Çalıştır → Tüm Kesme Noktalarını Kaldır** ile silebilirsin. Kesme noktaları sekmeyle birlikte kaydedilir.
 
-### Debug'ı başlatma ve ilerleme
+### Hata ayıklamayı başlatma ve ilerleme
 
-`F5` ya da araç çubuğundaki 🐞 düğmesi debug'ı başlatır. Program ilk durma noktasına gelince durur; o satır editörde sarıyla vurgulanır ve editörün üstünde **debug paneli** açılır.
+`F5` ya da araç çubuğundaki turuncu **Hata Ayıkla** (uğur böceği) düğmesi hata ayıklamayı başlatır. Program ilk kesme noktasına gelince durur; o satır editörde sarıyla vurgulanır ve **hata ayıklama paneli** açılır. Adım At, İçine Gir, Dışına Çık ve Durdur düğmeleri hata ayıklarken araç çubuğunda da belirir.
 
 <Ekran src={bp} alt="Program 13. satırdaki breakpoint'te durdu; debug panelinde küresel değişkenler görünüyor" caption="Breakpoint • Satır 13: program durdu, değişkenler panelde." />
 
@@ -115,18 +115,19 @@ Kodunu satır satır çalıştırıp değişkenlerin o anki değerlerini görebi
 | ↵ Dışına Çık | `Shift+F11` | Fonksiyondan çıkana kadar çalışır |
 | ⏹ Durdur | `Shift+F5` | Hata ayıklamayı bitirir |
 
-Debug başlamadan `F10` veya `F11`'e basarsan program ilk satırda durarak başlar.
+Hata ayıklama başlamadan `F10` veya `F11`'e basarsan program ilk satırda durarak başlar. `Ctrl+F10` (**İmlece Kadar Çalıştır**) imlecin olduğu satıra kadar çalıştırıp bekler.
 
 ### Panelde neler var?
 
-- **Başlık:** nerede ve neden durulduğu: **Breakpoint**, **Adım**, **Başlangıç**, **Duraklatıldı** ya da **Yakalanmamış hata**, ardından satır numarası. Program çalışırken **Çalışıyor…** yazar.
+- **Başlık:** nerede ve neden durulduğu: **Kesme noktası**, **Adım**, **Başlangıç**, **Duraklatıldı** ya da **Yakalanmamış hata**, ardından satır numarası. Program çalışırken **Çalışıyor…** yazar.
 - **YEREL DEĞİŞKENLER:** o anki fonksiyonun değişkenleri (bir fonksiyonun içindeyken).
 - **KÜRESEL DEĞİŞKENLER:** dosyanın genelindeki değişkenler. Her değişkenin yanında Türkçe türü yazar (`metin`, `liste (3)`, `fonksiyon`…). Liste, sözlük ve nesnelerin yanındaki ok ile içlerini açabilirsin.
 - **İfade kutusu:** `İfade (Enter: değerlendir)` kutusuna `puan * 2` gibi bir ifade yazıp `Enter`'a basarsan o anki değeri hesaplanır. 👁 düğmesiyle ifadeyi **İZLEME** listesine eklersin; her adımda değeri yenilenir.
 - **ÇAĞRI YIĞINI:** hangi fonksiyonun hangisini çağırdığı (örn. `harf_notu • satır 4`, onu çağıran `ana program • satır 16`). Bir satıra tıklayınca o seviyenin değişkenleri gösterilir.
+- Bir değişkenin yanındaki kalem simgesiyle (**Değeri değiştir**) program dururken ona yeni bir değer verebilirsin.
 - Panelin sağ üstündeki ok paneli küçültür.
 
-Yukarıdaki koşullu breakpoint ile çalıştırınca program 92 ve 74 puanlarında durmaz; yalnızca `puan` 48 olduğunda durur:
+Yukarıdaki koşullu kesme noktası ile çalıştırınca program 92 ve 74 puanlarında durmaz; yalnızca `puan` 48 olduğunda durur:
 
 <Ekran src={yerel} alt="Program harf_notu içinde 4. satırda durdu; YEREL DEĞİŞKENLER'de puan = 48, ÇAĞRI YIĞINI'nda harf_notu ve ana program" caption="Koşul sağlandı: puan = 48. Terminalde 92 ve 74 için çıktılar zaten yazılmış." />
 
@@ -137,5 +138,5 @@ Yukarıdaki koşullu breakpoint ile çalıştırınca program 92 ve 74 puanları
 <Ekran src={adim} alt="Adım atıldıktan sonra 14. satırda duruldu; notlar listesi değişkenlerde görünüyor" caption="F10 ile bir adım ilerledikten sonra: yeni değişken notlar listesi göründü." />
 
 :::note[Satır numaraları açık olmalı]
-Breakpoint koymak için satır numaralarına tıklanır. **Ayarlar → Satır Numaraları** kapalıyken fareyle breakpoint koyamazsın.
+Kesme noktası koymak için satır numaralarına tıklanır. **Ayarlar → Satır Numaraları** kapalıyken fareyle kesme noktası koyamazsın.
 :::

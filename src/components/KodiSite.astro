@@ -1,0 +1,529 @@
+---
+// Sitedeki Kodi. Görünüşü TürKod programındaki Kodi'nin aynısı (robot çizimi
+// src/data/kodi-ciz.ts, balon programdaki _KodiBalonu'nun ölçüleri). Yapay zekâ
+// KULLANMAZ: bilgi tabanı, sözlük ve site aramasıyla cevap verir.
+// Sohbet, açık/kapalı durumu ve Kodi'nin yeri sayfalar arasında korunur.
+---
+<div class="tkk-robot-kutu" data-kodi-robot-kutu>
+  <div class="tkk-ipucu" hidden data-kodi-ipucu>Bir sorun mu var? Bana sor!</div>
+  <canvas class="tkk-robot" data-kodi-robot role="button" tabindex="0" aria-label="Kodi ile konuş (sürükleyerek taşıyabilirsin)" aria-expanded="false"></canvas>
+</div>
+
+<section class="tkk-balon" role="dialog" aria-label="Kodi" hidden data-kodi-balon>
+  <svg class="tkk-kuyruk" data-kodi-kuyruk width="24" height="12" viewBox="0 0 24 12" aria-hidden="true">
+    <path class="tkk-kuyruk-zemin" d="M0 0 Q16 4 22 11 Q16 2 20 0 Z" />
+    <path class="tkk-kuyruk-kenar" d="M0 0.7 Q16 4 22 11 Q16 2 20 0.7" />
+  </svg>
+  <div class="tkk-kutu">
+    <div class="tkk-baslik">
+      <span class="tkk-ad">Kodi</span>
+      <span class="tkk-nokta" title="Kodi bu sitede hazır bilgilerle cevap veriyor"></span>
+      <span class="tkk-bosluk"></span>
+      <button type="button" class="tkk-dugme" data-kodi-yeni title="Yeni sohbet" aria-label="Yeni sohbet">
+        <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35Z" fill="currentColor"/></svg>
+      </button>
+      <button type="button" class="tkk-dugme" data-kodi-kapat title="Kapat" aria-label="Kapat">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12Z" fill="currentColor"/></svg>
+      </button>
+    </div>
+    <div class="tkk-akis" data-kodi-akis aria-live="polite"></div>
+    <form class="tkk-giris" data-kodi-form>
+      <input type="text" data-kodi-giris placeholder="Kodi'ye bir şey sor…" autocomplete="off" maxlength="200" aria-label="Kodi'ye sor" />
+      <button type="submit" class="tkk-gonder" title="Gönder (Enter)" aria-label="Gönder">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  import { BILGI } from '../data/kodi-bilgi';
+  import { DOLGU, sadelestir, sozlukDizini, yerelCevap, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import { kodiCiz, type KodiIfadesi } from '../data/kodi-ciz';
+
+  type Baglanti = { t: string; u: string };
+  type Mesaj = { kim: 'kodi' | 'sen'; metin: string; kod?: string; linkler?: Baglanti[] };
+  type Durum = {
+    acik: boolean;
+    mesajlar: Mesaj[];
+    soruldu: boolean;
+    konum: { x: number; y: number } | null;
+    taslak: string;
+    kaydirma: number;
+    ipucu: boolean;
+  };
+
+  const GITHUB = 'https://github.com/YusufX-sys/turkod-ide';
+  const SELAM = "Merhaba, ben Kodi! TürKod'u ya da kodlamayı merak ettiğin ne varsa sorabilirsin: değişkenler, döngüler, hatalar, sözlükteki kelimeler... Hadi bakalım!";
+  const HAZIR_SORULAR = ['Değişken nedir?', 'Döngü nasıl yazılır?', 'yazdır ne demek?', "TürKod'u nasıl kurarım?", 'Bana bir şaka yap!'];
+  const ANAHTAR = 'tk-kodi-durum';
+  const ROBOT_G = 84;
+  const ROBOT_Y = 109;
+
+  // ------------------------------------------------------------------ durum
+  const bos = (): Durum => ({ acik: false, mesajlar: [], soruldu: false, konum: null, taslak: '', kaydirma: 0, ipucu: false });
+  let durum: Durum = bos();
+  try {
+    const k = sessionStorage.getItem(ANAHTAR);
+    if (k) durum = { ...bos(), ...JSON.parse(k) };
+  } catch { /* depolama yoksa her sayfa yeni başlar */ }
+  const kaydet = () => {
+    try { sessionStorage.setItem(ANAHTAR, JSON.stringify(durum)); } catch { /* yok say */ }
+  };
+
+  // Sözlük verisi (≈100 KB) yalnızca ilk soruda indirilir.
+  let sozluk: Promise<SozlukDizini | null> | null = null;
+  const sozlukAl = () =>
+    (sozluk ??= fetch('/kodi-sozluk.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((v) => (v?.k ? sozlukDizini(v.k) : null))
+      .catch(() => null));
+
+  const robotKutu = document.querySelector<HTMLElement>('[data-kodi-robot-kutu]');
+  const balon = document.querySelector<HTMLElement>('[data-kodi-balon]');
+
+  if (robotKutu && balon) {
+    // Alt bilgi bulanıklık efektli <main> içinde; 'fixed' ekrana göre çalışsın diye body'ye taşınır.
+    document.body.append(robotKutu, balon);
+    const tuval = robotKutu.querySelector<HTMLCanvasElement>('[data-kodi-robot]')!;
+    const ipucu = robotKutu.querySelector<HTMLElement>('[data-kodi-ipucu]')!;
+    const kuyruk = balon.querySelector<SVGElement>('[data-kodi-kuyruk]')!;
+    const akis = balon.querySelector<HTMLElement>('[data-kodi-akis]')!;
+    const form = balon.querySelector<HTMLFormElement>('[data-kodi-form]')!;
+    const giris = balon.querySelector<HTMLInputElement>('[data-kodi-giris]')!;
+    const azHareket = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let mesgul = false;
+
+    // ---------------------------------------------------------------- robot
+    let ifade: KodiIfadesi = 'mutlu';
+    let elSallaBitis = 0;
+    let goz = 1;
+    let kirpBaslangic = -1;
+    let sonrakiKirp = performance.now() + 2500;
+    const ctx = tuval.getContext('2d')!;
+    const tuvalBoyutla = () => {
+      const o = Math.min(window.devicePixelRatio || 1, 3);
+      tuval.width = Math.round(ROBOT_G * o);
+      tuval.height = Math.round(ROBOT_Y * o);
+      ctx.setTransform(o, 0, 0, o, 0, 0);
+    };
+    tuvalBoyutla();
+    let sonKare = 0;
+    const ciz = (an: number) => {
+      // Programdaki gibi: hareket varken ~24, boştayken ~12 kare/sn.
+      const etkin = ifade !== 'mutlu' || an < elSallaBitis;
+      if (an - sonKare >= (etkin ? 42 : 83) || azHareket) {
+        sonKare = an;
+        if (!azHareket) {
+          if (kirpBaslangic < 0 && an > sonrakiKirp) kirpBaslangic = an;
+          if (kirpBaslangic >= 0) {
+            const g = (an - kirpBaslangic) / 180;
+            goz = g >= 1 ? 1 : Math.abs(1 - 2 * g);
+            if (g >= 1) { kirpBaslangic = -1; sonrakiKirp = an + 2200 + Math.random() * 3800; }
+          }
+        }
+        kodiCiz(ctx, ROBOT_G, ROBOT_Y, {
+          ifade,
+          t: azHareket ? 0 : (an % 2600) / 2600,
+          goz,
+          agiz: ifade === 'konusuyor' ? 0.5 + 0.5 * Math.sin(an / 55) : 0,
+          elSalla: an < elSallaBitis,
+        });
+      }
+      if (!azHareket) requestAnimationFrame(ciz);
+    };
+    requestAnimationFrame(ciz);
+    window.addEventListener('resize', () => { tuvalBoyutla(); yerlestir(); });
+    const elSalla = (ms = 1800) => { elSallaBitis = performance.now() + ms; };
+
+    // ---------------------------------------------------------------- yerleşim
+    const KENAR = 12;
+    const robotKonumu = () => {
+      const g = window.innerWidth, y = window.innerHeight;
+      const k = durum.konum ?? { x: g - ROBOT_G - 18, y: y - ROBOT_Y - 10 };
+      return { x: Math.min(Math.max(k.x, 4), g - ROBOT_G - 4), y: Math.min(Math.max(k.y, 4), y - ROBOT_Y - 4) };
+    };
+    const yerlestir = () => {
+      const r = robotKonumu();
+      robotKutu.style.left = `${r.x}px`;
+      robotKutu.style.top = `${r.y}px`;
+      if (balon.hidden) return;
+      const gen = Math.min(370, window.innerWidth - 2 * KENAR);
+      balon.style.width = `${gen}px`;
+      const merkez = r.x + ROBOT_G / 2;
+      const ustBosluk = r.y - KENAR - 8;
+      const altBosluk = window.innerHeight - (r.y + ROBOT_Y) - KENAR - 8;
+      const ustte = ustBosluk >= Math.min(320, altBosluk) ;
+      const enFazla = Math.min(560, ustte ? ustBosluk : altBosluk);
+      balon.style.maxHeight = `${Math.max(220, enFazla)}px`;
+      const sol = Math.min(Math.max(merkez - gen + 46, KENAR), window.innerWidth - gen - KENAR);
+      balon.style.left = `${sol}px`;
+      const yuk = balon.offsetHeight;
+      balon.style.top = ustte ? `${Math.max(KENAR, r.y + 6 - yuk)}px` : `${r.y + ROBOT_Y - 6}px`;
+      balon.classList.toggle('tkk-altta', !ustte);
+      // Kuyruk Kodi'nin başını gösterir (programdaki kuyrukX).
+      const kx = Math.min(Math.max(merkez - sol, 24), gen - 24);
+      kuyruk.style.left = `${kx - 12}px`;
+    };
+    new ResizeObserver(() => yerlestir()).observe(balon);
+
+    // ---------------------------------------------------------------- sürükleme
+    // Programdaki gibi: Kodi'ye basıp sürükle; yerini hatırlar; çift tıklayınca köşesine döner.
+    let surukle: { dx: number; dy: number; x0: number; y0: number; oynadi: boolean } | null = null;
+    tuval.addEventListener('pointerdown', (e) => {
+      const r = robotKonumu();
+      surukle = { dx: e.clientX - r.x, dy: e.clientY - r.y, x0: e.clientX, y0: e.clientY, oynadi: false };
+      tuval.setPointerCapture(e.pointerId);
+    });
+    tuval.addEventListener('pointermove', (e) => {
+      if (!surukle) return;
+      if (!surukle.oynadi && Math.hypot(e.clientX - surukle.x0, e.clientY - surukle.y0) < 5) return;
+      surukle.oynadi = true;
+      robotKutu.classList.add('tkk-tasiniyor');
+      durum.konum = { x: e.clientX - surukle.dx, y: e.clientY - surukle.dy };
+      yerlestir();
+    });
+    tuval.addEventListener('pointerup', () => {
+      const s = surukle; surukle = null;
+      robotKutu.classList.remove('tkk-tasiniyor');
+      if (!s) return;
+      if (s.oynadi) { durum.konum = robotKonumu(); kaydet(); } else degistir();
+    });
+    tuval.addEventListener('dblclick', () => { durum.konum = null; kaydet(); yerlestir(); });
+    tuval.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); degistir(); } });
+
+    // ---------------------------------------------------------------- mesajlar
+    const bekle = (ms: number) => new Promise((r) => setTimeout(r, azHareket ? 0 : ms));
+    const asagi = () => { akis.scrollTop = akis.scrollHeight; };
+
+    const mesajCiz = (m: Mesaj): HTMLElement => {
+      const p = document.createElement('div');
+      p.className = m.kim === 'kodi' ? 'tkk-kodi-sozu' : 'tkk-senin-sozun';
+      const yazi = document.createElement('div');
+      yazi.className = 'tkk-metin';
+      yazi.textContent = m.metin;
+      p.appendChild(yazi);
+      if (m.kod) {
+        const pre = document.createElement('pre');
+        pre.className = 'tkk-kod';
+        const code = document.createElement('code');
+        code.textContent = m.kod;
+        const kopya = document.createElement('button');
+        kopya.type = 'button'; kopya.className = 'tkk-kopya'; kopya.textContent = 'Kopyala';
+        kopya.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(m.kod!); kopya.textContent = 'Kopyalandı!'; }
+          catch { kopya.textContent = 'Kopyalanamadı'; }
+          setTimeout(() => (kopya.textContent = 'Kopyala'), 1600);
+        });
+        pre.append(code, kopya);
+        p.appendChild(pre);
+      }
+      if (m.linkler?.length) {
+        const sat = document.createElement('div');
+        sat.className = 'tkk-linkler';
+        for (const l of m.linkler) {
+          const a = document.createElement('a');
+          a.href = l.u; a.textContent = l.t;
+          if (l.u.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+          sat.appendChild(a);
+        }
+        p.appendChild(sat);
+      }
+      return p;
+    };
+
+    const hazirSorular = () => {
+      const sat = document.createElement('div');
+      sat.className = 'tkk-hazir';
+      for (const s of HAZIR_SORULAR) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 14H5.17L4 17.17V4h16v12Z" fill="currentColor"/></svg>';
+        b.append(s);
+        b.addEventListener('click', () => sor(s));
+        sat.appendChild(b);
+      }
+      akis.appendChild(sat);
+    };
+
+    /** Bütün sohbeti durumdan, animasyonsuz yeniden çizer (sayfa değişince). */
+    const hepsiniCiz = () => {
+      akis.innerHTML = '';
+      for (const m of durum.mesajlar) akis.appendChild(mesajCiz(m));
+      if (!durum.soruldu && durum.mesajlar.length) hazirSorular();
+    };
+
+    /** Kodi'nin yeni sözü: önce duruma yazılır (sayfa değişse de kaybolmaz), sonra harf harf görünür. */
+    const kodiSoyler = async (c: KodiCevap) => {
+      const m: Mesaj = { kim: 'kodi', metin: c.metin, kod: c.kod, linkler: c.linkler };
+      durum.mesajlar.push(m); kaydet();
+      const p = mesajCiz(m);
+      const yazi = p.querySelector<HTMLElement>('.tkk-metin')!;
+      const ekler = [...p.children].slice(1) as HTMLElement[];
+      ekler.forEach((e) => (e.hidden = true));
+      akis.appendChild(p);
+      ifade = 'konusuyor';
+      const harfler = Array.from(c.metin);
+      for (let i = 0; i <= harfler.length && !azHareket; i += 2) {
+        yazi.textContent = harfler.slice(0, i).join('') + '▍';
+        if (i % 16 === 0) asagi();
+        await bekle(16);
+      }
+      yazi.textContent = c.metin;
+      ekler.forEach((e) => (e.hidden = false));
+      ifade = 'mutlu';
+      asagi();
+    };
+
+    const dusunuyor = () => {
+      const p = document.createElement('div');
+      p.className = 'tkk-dusunuyor';
+      p.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 21h-1l1-7H7.5c-.88 0-.33-.75-.31-.78C8.48 10.94 10.42 7.54 13.01 3h1l-1 7h3.51c.4 0 .62.19.4.66C12.97 17.55 11 21 11 21Z" fill="currentColor"/></svg><span></span>';
+      const yazi = p.querySelector('span')!;
+      akis.appendChild(p); asagi();
+      ifade = 'dusunceli';
+      const metin = 'Hemen bakıyorum';
+      let i = 0;
+      const z = setInterval(() => {
+        i++;
+        yazi.textContent = i <= metin.length ? metin.slice(0, i) : metin + '.'.repeat(1 + (Math.floor((i - metin.length) / 6) % 3));
+      }, 60);
+      return () => { clearInterval(z); p.remove(); ifade = 'mutlu'; };
+    };
+
+    // ---------------------------------------------------------------- cevap bulma
+    let pagefind: any = null;
+    const ara = async (soru: string): Promise<Baglanti[]> => {
+      try {
+        if (!pagefind) {
+          const yol = '/pagefind/pagefind.js';
+          pagefind = await import(/* @vite-ignore */ yol);
+          await pagefind.options?.({ excerptLength: 12 });
+        }
+        // Dizin bütün sözcüklerin geçtiği sayfaları bulur: dolgu sözcükler atılır, sonuç yoksa sorgu kısaltılır.
+        const sozcukler = soru.toLocaleLowerCase('tr-TR').replace(/[^\p{L}\p{N}_ ]/gu, ' ').split(/\s+/)
+          .filter((w) => w.length > 1 && !DOLGU.has(sadelestir(w)));
+        const denemeler = [soru, sozcukler.join(' ')];
+        for (let n = sozcukler.length - 1; n >= 2; n--) denemeler.push(sozcukler.slice(0, n).join(' '));
+        denemeler.push(...[...sozcukler].sort((a, b) => b.length - a.length));
+        for (const d of [...new Set(denemeler)].filter(Boolean)) {
+          const r = await pagefind.search(d);
+          if (!r?.results?.length) continue;
+          const veri = await Promise.all(r.results.slice(0, 6).map((x: any) => x.data()));
+          // Yalnızca soruyla gerçekten örtüşen (en az 4 harf ortak başlangıçlı) sonuçlar kalır.
+          const aranan = d.split(/\s+/).map(sadelestir).filter(Boolean);
+          const uygun = veri.filter((v: any) =>
+            [...String(v.excerpt || '').matchAll(/<mark>(.*?)<\/mark>/g)].some((m) => {
+              const x = sadelestir(m[1]);
+              return x.length >= 3 && aranan.some((w) => {
+                let n = 0; while (n < x.length && n < w.length && x[n] === w[n]) n++;
+                return n >= Math.min(w.length, 4);
+              });
+            }));
+          if (!uygun.length) continue;
+          return uygun.slice(0, 3).map((v: any) => ({ t: v.meta?.title || v.url, u: v.url }));
+        }
+        return [];
+      } catch {
+        return [];
+      }
+    };
+
+    const cevapla = async (soru: string) => {
+      mesgul = true;
+      giris.placeholder = 'Kodi cevaplıyor…';
+      balon.dataset.bekliyor = '1';
+      const bitir = dusunuyor();
+      const [dizin] = await Promise.all([sozlukAl(), bekle(600)]);
+      let cevap: KodiCevap | null = yerelCevap(soru, BILGI, dizin);
+      if (!cevap) {
+        const sonuclar = await ara(soru);
+        if (sonuclar.length) cevap = { metin: 'Bunu sitede şu sayfalarda buldum, bir bakar mısın?', linkler: sonuclar };
+      }
+      bitir();
+      await kodiSoyler(cevap ?? {
+        metin: 'Hmm, bunu tam anlayamadım. Sorunu biraz farklı yazar mısın? Örneğin "liste nedir?" ya da "yazdır ne demek?" diye sorabilirsin.',
+        linkler: [{ t: 'Sorun Giderme ve SSS', u: '/use/troubleshooting/' }, { t: "GitHub'da sor", u: `${GITHUB}/issues/new/choose` }],
+      });
+      giris.placeholder = "Kodi'ye bir şey sor…";
+      delete balon.dataset.bekliyor;
+      mesgul = false;
+    };
+
+    const sor = (soru: string) => {
+      if (mesgul) return;
+      akis.querySelector('.tkk-hazir')?.remove();
+      durum.soruldu = true;
+      const m: Mesaj = { kim: 'sen', metin: soru };
+      durum.mesajlar.push(m); kaydet();
+      akis.appendChild(mesajCiz(m)); asagi();
+      cevapla(soru);
+    };
+
+    const selamla = async () => {
+      durum.mesajlar = []; durum.soruldu = false; kaydet();
+      akis.innerHTML = '';
+      elSalla();
+      await kodiSoyler({ metin: SELAM });
+      if (!durum.soruldu) { hazirSorular(); asagi(); }
+    };
+
+    // ---------------------------------------------------------------- aç / kapat
+    const ac = (ilkYukleme = false) => {
+      balon.hidden = false; ipucu.hidden = true;
+      if (ilkYukleme) balon.classList.add('tkk-sessiz');
+      tuval.setAttribute('aria-expanded', 'true');
+      durum.acik = true; kaydet();
+      yerlestir();
+      if (!durum.mesajlar.length) selamla();
+      if (!ilkYukleme) setTimeout(() => giris.focus(), 50);
+    };
+    const kapat = () => {
+      balon.hidden = true; balon.classList.remove('tkk-sessiz');
+      tuval.setAttribute('aria-expanded', 'false');
+      durum.acik = false; kaydet();
+    };
+    const degistir = () => (balon.hidden ? ac() : kapat());
+
+    balon.querySelector('[data-kodi-kapat]')!.addEventListener('click', kapat);
+    balon.querySelector('[data-kodi-yeni]')!.addEventListener('click', () => { if (!mesgul) selamla(); });
+    ipucu.addEventListener('click', () => ac());
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !balon.hidden) kapat(); });
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const s = giris.value.trim();
+      if (!s || mesgul) return;
+      giris.value = ''; durum.taslak = ''; kaydet();
+      sor(s);
+    });
+    giris.addEventListener('input', () => { durum.taslak = giris.value; });
+    akis.addEventListener('scroll', () => { durum.kaydirma = akis.scrollTop; });
+    // Sayfadan ayrılırken taslak ve kaydırma yeri de saklanır.
+    window.addEventListener('pagehide', kaydet);
+
+    // ---------------------------------------------------------------- önceki sayfadan devam
+    yerlestir();
+    hepsiniCiz();
+    giris.value = durum.taslak || '';
+    if (durum.acik) {
+      ac(true);
+      akis.scrollTop = durum.kaydirma || akis.scrollHeight;
+      // Soru sorulup cevap gelmeden sayfa değiştiyse cevap burada tamamlanır.
+      const son = durum.mesajlar[durum.mesajlar.length - 1];
+      if (son?.kim === 'sen') cevapla(son.metin);
+    }
+
+    // İlk ziyarette birkaç saniye sonra küçük bir selam (oturumda bir kez).
+    if (!durum.ipucu && !durum.acik) {
+      setTimeout(() => {
+        if (!balon.hidden || durum.ipucu) return;
+        durum.ipucu = true; kaydet();
+        ipucu.hidden = false; elSalla();
+        setTimeout(() => { ipucu.hidden = true; }, 7000);
+      }, 6000);
+    }
+  }
+</script>
+
+<style is:global>
+  /* Programdaki koyu ve açık temanın renkleri (main.dart tema tanımları). */
+  :root[data-theme='dark'] {
+    --tkk-zemin: #202e46; --tkk-kenar: rgba(59, 130, 246, .45); --tkk-yazi: #e5e7eb;
+    --tkk-soluk: rgba(229, 231, 235, .6); --tkk-cizgi: #243248; --tkk-ad: #b9a6ff; --tkk-golge: rgba(0, 0, 0, .45);
+    --tkk-giris: #0b1220;
+  }
+  :root[data-theme='light'] {
+    --tkk-zemin: #ffffff; --tkk-kenar: rgba(37, 99, 235, .35); --tkk-yazi: #111827;
+    --tkk-soluk: rgba(17, 24, 39, .6); --tkk-cizgi: #e0e0e0; --tkk-ad: #5b3fd9; --tkk-golge: rgba(0, 0, 0, .16);
+    --tkk-giris: #ffffff;
+  }
+
+  /* Robot */
+  .tkk-robot-kutu { position: fixed; z-index: 61; width: 84px; height: 109px; left: calc(100vw - 110px); top: calc(100vh - 125px); }
+  .tkk-robot { width: 84px; height: 109px; display: block; cursor: grab; touch-action: none; user-select: none; }
+  .tkk-tasiniyor .tkk-robot { cursor: grabbing; }
+  .tkk-robot:focus-visible { outline: 2px solid #7c5cf5; outline-offset: 2px; border-radius: 12px; }
+  .tkk-ipucu {
+    position: absolute; right: 30px; bottom: 100%; margin-bottom: 2px; white-space: nowrap; cursor: pointer;
+    padding: 7px 12px; border-radius: 14px 14px 4px 14px; font-size: 13px; font-weight: 600; color: var(--tkk-yazi);
+    background: var(--tkk-zemin); border: 1.4px solid var(--tkk-kenar); box-shadow: 0 6px 18px var(--tkk-golge);
+    animation: tkk-gel .3s ease-out;
+  }
+
+  /* Balon (programdaki _KodiBalonu) */
+  .tkk-balon { position: fixed; z-index: 60; display: flex; flex-direction: column; padding-bottom: 10px; animation: tkk-gel .25s ease-out; }
+  .tkk-balon[hidden] { display: none; }
+  .tkk-balon.tkk-sessiz { animation: none; }
+  .tkk-balon.tkk-altta { padding-bottom: 0; padding-top: 10px; }
+  @keyframes tkk-gel { from { opacity: 0; transform: translateY(8px); } }
+  .tkk-kuyruk { position: absolute; bottom: -1px; overflow: visible; }
+  .tkk-altta .tkk-kuyruk { bottom: auto; top: -1px; transform: scaleY(-1); }
+  .tkk-kuyruk-zemin { fill: var(--tkk-zemin); }
+  .tkk-kuyruk-kenar { fill: none; stroke: var(--tkk-kenar); stroke-width: 1.4; }
+  .tkk-kutu {
+    position: relative; display: flex; flex-direction: column; min-height: 0; flex: 1;
+    background: var(--tkk-zemin); border: 1.4px solid var(--tkk-kenar); border-radius: 18px;
+    box-shadow: 0 6px 18px var(--tkk-golge); color: var(--tkk-yazi);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+  .tkk-baslik { display: flex; align-items: center; padding: 8px 6px 0 14px; }
+  .tkk-ad { font-size: 13px; font-weight: 800; color: var(--tkk-ad); }
+  .tkk-nokta { width: 6px; height: 6px; margin-left: 6px; border-radius: 50%; background: #22c55e; }
+  [data-bekliyor] .tkk-nokta { background: #f59e0b; }
+  .tkk-bosluk { flex: 1; }
+  .tkk-dugme {
+    width: 30px; height: 30px; display: grid; place-items: center; border: 0; border-radius: 8px; cursor: pointer;
+    color: var(--tkk-soluk); background: transparent;
+  }
+  .tkk-dugme:hover { color: var(--tkk-yazi); background: rgba(124, 92, 245, .14); }
+  .tkk-dugme svg { width: 18px; height: 18px; }
+
+  .tkk-akis { flex: 1; min-height: 60px; overflow-y: auto; padding: 6px 14px 4px; scrollbar-width: thin; }
+  .tkk-kodi-sozu { padding: 4px 0; font-size: 13.5px; line-height: 1.5; }
+  .tkk-metin { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .tkk-senin-sozun { display: flex; justify-content: flex-end; margin: 4px 0 4px 36px; }
+  .tkk-senin-sozun .tkk-metin {
+    padding: 7px 11px; font-size: 13px; border-radius: 14px 14px 4px 14px; background: rgba(124, 92, 245, .16);
+  }
+  .tkk-kod {
+    position: relative; margin: 8px 0 0 !important; padding: 10px 12px !important; border-radius: 10px; white-space: pre;
+    overflow-x: auto; background: #0b1220 !important; border: 1px solid #243248 !important; box-shadow: none !important;
+    font-size: 12.5px; line-height: 1.55; color: #e5e7eb;
+  }
+  .tkk-kod::before { content: none !important; }
+  .tkk-kod code { font-family: Consolas, 'Cascadia Mono', var(--sl-font-mono); background: none !important; padding: 0 !important; color: inherit; border: 0 !important; }
+  .tkk-kopya {
+    position: absolute; top: 6px; right: 6px; font: inherit; font-size: 11px; padding: 2px 7px; border-radius: 6px;
+    cursor: pointer; color: #94a3b8; background: rgba(255, 255, 255, .06); border: 1px solid #334155;
+  }
+  .tkk-kopya:hover { color: #fff; border-color: #7c5cf5; }
+  .tkk-linkler { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; }
+  .tkk-linkler a { font-size: 13px; color: #3b82f6; text-decoration: underline; text-underline-offset: 2px; }
+  :root[data-theme='dark'] .tkk-linkler a { color: #60a5fa; }
+  .tkk-hazir { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 0 2px; }
+  .tkk-hazir button {
+    display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 8px; cursor: pointer;
+    font: inherit; font-size: 12px; color: var(--tkk-yazi);
+    background: rgba(124, 92, 245, .10); border: 1px solid rgba(124, 92, 245, .45);
+  }
+  .tkk-hazir button:hover { background: rgba(124, 92, 245, .2); }
+  .tkk-hazir svg { width: 14px; height: 14px; color: #7c5cf5; }
+  .tkk-dusunuyor { display: flex; align-items: center; gap: 6px; padding: 4px 0; font-size: 13px; font-style: italic; color: var(--tkk-soluk); }
+  .tkk-dusunuyor svg { width: 16px; height: 16px; color: #0ea5c6; }
+
+  .tkk-giris { display: flex; align-items: center; gap: 4px; padding: 6px 10px 10px; }
+  .tkk-giris input {
+    flex: 1; min-width: 0; font: inherit; font-size: 13px; padding: 9px 12px; border-radius: 14px; outline: none;
+    color: var(--tkk-yazi); background: var(--tkk-giris); border: 1px solid var(--tkk-cizgi);
+  }
+  .tkk-giris input::placeholder { color: var(--tkk-soluk); font-size: 12.5px; }
+  .tkk-giris input:focus { border: 1.5px solid #7c5cf5; padding: 8.5px 11.5px; }
+  .tkk-gonder {
+    flex: none; width: 34px; height: 34px; display: grid; place-items: center; border: 0; border-radius: 50%;
+    cursor: pointer; color: #fff; background: #7c5cf5;
+  }
+  .tkk-gonder:hover { background: #6d4ef0; }
+  .tkk-gonder svg { width: 17px; height: 17px; }
+
+  @media (prefers-reduced-motion: reduce) { .tkk-balon, .tkk-ipucu { animation: none; } }
+</style>

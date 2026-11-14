@@ -1,0 +1,24 @@
+---
+// Sayfa başlığının üstünde, sayfanın bulunduğu bölümün adı (ör. "Dili Öğrenin").
+const route = Astro.locals.starlightRoute;
+const title = route.entry.data.title;
+
+type Giris = { type: string; label: string; isCurrent?: boolean; entries?: Giris[] };
+const icerir = (g: Giris): boolean =>
+  g.type === 'link' ? !!g.isCurrent : (g.entries ?? []).some(icerir);
+const grup = (route.sidebar as Giris[]).find((g) => g.type === 'group' && icerir(g));
+const bolum = grup?.label?.replace(/^[^\p{L}]+/u, '').trim();
+---
+{bolum && <p class="tk-eyebrow" aria-hidden="true"><span></span>{bolum}</p>}
+<h1 id="_top" class="tk-page-title">{title}</h1>
+
+<style>
+  h1 {
+    margin-top: .35rem;
+    font-size: var(--sl-text-h1);
+    line-height: var(--sl-line-height-headings);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--sl-color-white);
+  }
+</style>

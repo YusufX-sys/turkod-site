@@ -1,6 +1,6 @@
 ---
 title: Ayarlar ve Temalar
-description: Tema, yazı tipi, editör görünümü, terminal, arayüz turu, sistem entegrasyonu, AI ve düzeltme ayarları.
+description: Tema, yazı tipi, editör görünümü, terminal, arayüz turu, sistem entegrasyonu, Kodi, yapay zekâ ve düzeltme ayarları.
 ---
 
 import Ekran from '../../../components/Ekran.astro';
@@ -8,10 +8,9 @@ import genel from '../../../assets/ekran/ayarlar-genel.webp';
 import temalar from '../../../assets/ekran/ayarlar-temalar.webp';
 import editor from '../../../assets/ekran/ayarlar-editor.webp';
 import turEnt from '../../../assets/ekran/ayarlar-tur-entegrasyon.webp';
-import ai from '../../../assets/ekran/ayarlar-ai.webp';
 import duzeltme from '../../../assets/ekran/ayarlar-duzeltme.webp';
 
-Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan ulaşırsın. Ayarlar editörde **Ayarlar** adlı bir sekme olarak açılır; değişiklikleri sağ üstteki **Kaydet ve Uygula** ile kaydedersin.
+Ayarlara sol şeridin en altındaki ⚙️ dişli düğmesinden ya da **Görünüm → Ayarlar**'dan ulaşırsın. Ayarlar editörde **Ayarlar** adlı bir sekme olarak açılır. Bazı ayarlar üstteki **Kaydet ve Uygula** düğmesine basınca etkinleşir (tema, yazı, otomatik tamamlama ve kaydetme, satır numaraları, kelime kaydırma, boşluk göstergesi, terminal yazısı, yapay zekâ ortak ayarları, Düzeltme); diğerleri (ör. Mini Harita, girinti, yapay zekâ görev atamaları) seçer seçmez uygulanır. Bir ayar kaydedilemezse uyarı çıkar.
 
 ## Genel
 
@@ -27,7 +26,7 @@ Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan u
 
 ### Temalar
 
-Üç tema vardır: **Modern Koyu** (varsayılan), **Koyu** ve **Açık**. Tema, editördeki kod renklerini de değiştirir.
+Dört tema vardır: **Modern Koyu** (varsayılan), **Koyu**, **Açık** ve **Yüksek Kontrast**. Tema, editördeki kod renklerini de değiştirir.
 
 <Ekran src={temalar} alt="Tema açılır listesi: Modern Koyu, Koyu, Açık" />
 
@@ -37,11 +36,16 @@ Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan u
 
 | Ayar | Varsayılan | Açıklama |
 | ---- | ---------- | -------- |
-| Satır Numaraları | Açık | Breakpoint ve katlama için gerekir |
+| Satır Numaraları | Açık | Kesme noktası ve katlama için gerekir |
 | Kelime Kaydırma (Word Wrap) | Kapalı | Uzun satırları ekrana sığacak şekilde alta kaydırır |
 | Boşluk Göstergesi | Açık | Boşlukları nokta, sekmeleri ok olarak gösterir |
-| Sütun Çizgileri | Açık | Bloklar arasındaki hizayı gösteren dikey çizgiler |
-| Minimap | Kapalı | Sağ kenarda kodun küçük haritası |
+| Girinti Kılavuzları | Açık | Girinti basamaklarını gösteren ince dikey çizgiler |
+| Mini Harita | Kapalı | Sağ kenarda kodun kuş bakışı haritası |
+| Girinti genişliği | 4 | Bir girinti kaç boşluk olsun: 2, 4 ya da 8. **Kodu Biçimlendir** de buna uyar |
+| Kaydederken biçimlendir | Kapalı | Her kayıtta kodun girintilerini ve boşluklarını toparlar |
+| Girintiyi dosyadan algıla | Açık | Açık dosya farklı bir girinti kullanıyorsa ona uyulur |
+
+Bu bölümdeki **Klavye Kısayolları…** düğmesi kısayolları değiştirmeni sağlar; bkz. [Klavye Kısayolları](/features/shortcuts/).
 
 ## Terminal
 
@@ -62,21 +66,44 @@ Ayarlara sağ üstteki ⚙️ simgesinden ya da **Görünüm → Ayarlar**'dan u
 
 Sistem Entegrasyonu ayarları yalnızca kendi kullanıcı hesabının kayıt defterini değiştirir, yönetici izni istemez ve yalnızca kurulmuş TürKod'da kullanılabilir. Aynı seçenekler [kurulum](/install/) sırasında da sorulur.
 
-## AI Asistan
+## Kodi
 
-<Ekran src={ai} alt="AI Asistan ayarları: AI Aktif, Sağlayıcı, Model, API Key, Sıcaklık, Max Token" />
+[Kodi](/features/kodi/)'nin neleri yapabileceği burada seçilir. Bu bölümü yalnızca sen değiştirebilirsin; Kodi dokunamaz.
 
 | Ayar | Varsayılan |
 | ---- | ---------- |
-| AI Aktif | Kapalı |
-| Sağlayıcı | OpenAI |
-| Model | gpt-4o-mini |
-| API Key | (boş) |
+| Ayarları değiştirebilsin | Açık |
+| Eklentileri açıp kapatabilsin | Açık |
+| Program komutlarını çalıştırabilsin | Açık |
+| Tarayıcıyı yönetebilsin | Açık |
+| Her işten önce izin istesin | Kapalı |
+| Sohbet kaydedilsin | Açık |
+| Kodi beni hatırlasın | Açık |
+| Mesajla birlikte görüntü gönder | Kapalı |
+
+**Hafızayı yönet…**, **Bütün sohbetleri sil** ve **API kurulum rehberi** düğmeleri de bu bölümdedir.
+
+## Yapay Zekâ: Görevler
+
+Yapay zekânın her işine (otomatik tamamlama, AI Paneli sohbet, kod açıklama / optimize, hata açıklama, Akıllı Düzelt, Kodi) ayrı bir model atanır; seçim hemen kaydedilir, model atanmamış görev kapalıdır. Aynı bölümde:
+
+| Ayar | Varsayılan | Açıklama |
+| ---- | ---------- | -------- |
+| Model düşünsün (akıl yürütme) | Kapalı | Düşünebilen modeller cevaplamadan önce düşünür. AI Asistan'daki beyin düğmesiyle aynıdır |
+| Otomatik tamamlama gecikmesi | 300 ms | Hayalet kod önerisinin ne kadar bekledikten sonra geleceği |
+| Çok satırlı otomatik tamamlama | Açık | Hayalet kod birkaç satırlık öneri verebilir |
+
+## Yapay Zekâ: Modeller
+
+**Sağlayıcı bağla** bölümünde bir sağlayıcı seçip API anahtarını girersin; **Bağlantıyı Test Et** ve **Bağla ve modelleri seç** düğmeleri buradadır. **Mevcut modeller** listesi bağlı bütün modelleri gösterir. Bütün modeller için ortak ayarlar:
+
+| Ayar | Varsayılan |
+| ---- | ---------- |
 | Sıcaklık (0–2) | 0.70 |
-| Max Token | 4096 |
+| En Fazla Token | 4096 |
 | Sistem Mesajı | Asistanın temel talimatı |
 
-Sağ üstteki **Modelleri Güncelle** düğmesi OpenAI ve Groq için güncel model listesini getirir. Ayrıntılar: [AI Asistan](/features/ai/)
+Ayrıntılar: [Yapay Zekâ Modelleri](/features/local-models/), [AI Asistan](/features/ai/)
 
 ## Düzeltme
 
@@ -92,8 +119,8 @@ Gelişmiş düzeltme her zaman etkindir. Ayrıntılar: [Akıllı Düzeltme](/fea
 
 ## Ayarlar nerede saklanır?
 
-Tüm ayarlar, açık sekmeler ve panel düzeni `%USERPROFILE%\.turkod_ayarlar.json` dosyasında saklanır. Dosya bozulursa `.bozuk` uzantısıyla yedeklenir ve varsayılanlarla devam edilir. İki TürKod penceresi aynı anda açıkken de ayarlar birbirini ezmeden birleştirilir.
+Tüm ayarlar, açık sekmeler ve panel düzeni `%USERPROFILE%\.turkod_ayarlar.json` dosyasında saklanır. API anahtarları bu dosyada Windows'un şifrelemesiyle durur; yalnızca senin Windows kullanıcı hesabın açabilir. Dosya bozulursa `.bozuk` uzantısıyla yedeklenir ve varsayılanlarla devam edilir. İki TürKod penceresi aynı anda açıkken de ayarlar birbirini ezmeden birleştirilir.
 
 :::note[Satır numaraları]
-Durma noktası (breakpoint) koymak ve kod katlamak için satır numaralarına tıklanır. **Satır Numaraları** kapalıyken bu iki özellik fareyle kullanılamaz.
+Kesme noktası (durma noktası) koymak ve kod katlamak için satır numaralarına tıklanır. **Satır Numaraları** kapalıyken bu iki özellik fareyle kullanılamaz.
 :::

@@ -1,0 +1,109 @@
+---
+title: Katkıda Bulun
+description: TürKod açık kaynaklıdır. Hata bildirme, sözlük önerme, koda katkı verme, testler, imza doğrulama ve güvenlik açığı bildirme.
+---
+
+import { Aside, Steps, LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
+
+TürKod, **MIT lisanslı açık kaynak** bir projedir. Bütün kaynak kodu GitHub'da: inceleyebilir, değiştirebilir, öğrenebilir ve katkıda bulunabilirsin. Proje, kodlamaya yeni başlayanların Türkçe öğrenebilmesi için var; her katkı bu amaca hizmet eder.
+
+<LinkCard title="GitHub deposu" description="github.com/YusufX-sys/turkod-ide" href="https://github.com/YusufX-sys/turkod-ide" />
+
+## Nasıl katkı verebilirim?
+
+<CardGrid>
+  <Card title="Hata bildir">
+    Beklendiği gibi çalışmayan bir şey mi gördün? **Hata bildirimi** şablonunu kullan. Hatayı üreten küçük bir `.trpy` örneği çok işe yarar.
+  </Card>
+  <Card title="Sözlük öner">
+    Eksik, yanlış ya da daha iyi olabilecek bir Türkçe karşılık mı var? **Sözlük önerisi** şablonunu kullan.
+  </Card>
+  <Card title="Özellik öner">
+    Neye ihtiyaç duyduğunu **Özellik isteği** şablonuyla anlat.
+  </Card>
+  <Card title="Kod ya da belge gönder">
+    Aşağıdaki adımlarla bir Pull Request aç. Sözlüğe tek bir kelime eklemek bile değerli.
+  </Card>
+</CardGrid>
+
+Şablonların hepsi [GitHub'daki yeni issue sayfasında](https://github.com/YusufX-sys/turkod-ide/issues/new/choose). Program içinden **Yardım → Hata Bildir / Öneri Gönder** de GitHub Issues sayfasını açar.
+
+## Geliştirme ortamı
+
+<Steps>
+
+1. Depoyu fork'la ve klonla.
+
+2. Gereksinimler: Windows 10/11, Python 3.12, Flutter SDK (stable) ve Visual Studio 2022 "Desktop development with C++".
+
+3. Python paketlerini kur:
+
+   ```
+   python -m pip install -r requirements.txt
+   ```
+
+4. Ayrıntılı derleme adımları depodaki `TurKod-v3.3.0/nasıl-build-edilir.txt` dosyasında.
+
+</Steps>
+
+## Testler
+
+Göndermeden önce testleri çalıştır:
+
+```
+cd TurKod-v3.3.0
+python -m unittest discover -s tests
+python tools\tablo_tutarlilik.py
+```
+
+Yeni bir özellik ya da hata düzeltmesi için mümkünse test ekle. Sözlük (`turkod_ide/TurKod_Sozluk.txt`) ya da ilgili tablolar değiştiğinde `tools/tablo_tutarlilik.py` temiz geçmelidir.
+
+## Değişiklik yaparken
+
+- **Sözlük:** Karşılıklar çocukların anlayacağı, doğal Türkçe olmalı. Eski adları silme; geriye dönük uyumluluk için koru.
+- **Satır sonları ve kodlama:** Dosyaların mevcut satır sonlarını (LF/CRLF) ve UTF-8 kodlamasını koru.
+- **Kullanıcıya görünen metinler** Türkçe olmalı. Menü, kısayol ya da ayar değişirse kitap da güncellenmelidir.
+- **İmzalı klasör:** `turkod_ide/` altındaki bir dosyayı değiştirmek imzayı geçersiz kılar; bu beklenen bir durumdur, imzayı yayın sırasında proje sahibi yeniler. Pull Request'inde manifest dosyalarına dokunma.
+
+### Pull Request süreci
+
+1. `main` dalından yeni bir dal aç (ör. `duzeltme/kaplumbaga-baslik`).
+2. Küçük ve odaklı değişiklikler gönder; bir PR tek bir konuyu çözsün.
+3. PR şablonundaki kontrol listesini doldur.
+4. İnceleme sonrası istenen değişiklikleri aynı dala gönder.
+
+Ayrıntılar: [CONTRIBUTING.md](https://github.com/YusufX-sys/turkod-ide/blob/main/CONTRIBUTING.md)
+
+## İmzayı doğrulamak
+
+TürKod; uygulama dosyalarını, kaynak kodu ve güncelleme bildirimlerini RSA-PSS (SHA-256) ile imzalar. Kaynak kodun imzasını **özel anahtar olmadan**, yalnızca ortak anahtarla doğrulayabilirsin:
+
+```
+cd TurKod-v3.3.0
+python kaynak_imzala.py --dogrula
+```
+
+Kurulu programda doğrulama için bkz. [Güvenlik](/features/security/).
+
+## Güvenlik açığı bildirmek
+
+<Aside type="caution" title="Herkese açık issue açma">
+Güvenlik açıklarını lütfen herkese açık bir issue olarak bildirme.
+</Aside>
+
+- **Tercih edilen yol:** GitHub'daki **Security → Report a vulnerability** düğmesiyle gizli bir bildirim gönder.
+- **Ya da e-posta:** yusuftndgn.2@gmail.com (konu satırına "TürKod güvenlik" yaz).
+
+Bildiriminde etkilenen TürKod ve Windows sürümünü, sorunun açıklamasını ve olası etkisini, varsa yeniden üretme adımlarını yaz. Güvenlik düzeltmeleri yalnızca en son sürüme (3.3.x) yapılır.
+
+Ayrıntılar: [SECURITY.md](https://github.com/YusufX-sys/turkod-ide/blob/main/SECURITY.md)
+
+## Davranış kuralları
+
+TürKod yeni başlayanlar ve özellikle çocuklar için yapılmış bir proje. Bu yüzden topluluğun herkes için güvenli, nazik ve kapsayıcı olmasını istiyoruz: nazik ve sabırlı ol, "basit" soruları küçümseme, eleştiriyi kişiye değil koda yönelt. Projeye katılan herkes davranış kurallarına uymayı kabul eder.
+
+Ayrıntılar: [CODE_OF_CONDUCT.md](https://github.com/YusufX-sys/turkod-ide/blob/main/CODE_OF_CONDUCT.md)
+
+## Lisans
+
+TürKod [MIT Lisansı](https://github.com/YusufX-sys/turkod-ide/blob/main/LICENSE) ile yayımlanır. Gönderdiğin katkılar da aynı lisans altında yayımlanır.

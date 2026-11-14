@@ -1,0 +1,163 @@
+---
+title: Kodi
+description: TürKod'un yardımcı robotu Kodi ile konuşma, ona iş yaptırma, yetkileri, hafızası, sesli sohbet ve gizlilik.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Ekran from '../../../components/Ekran.astro';
+import kodiCevap from '../../../assets/v33/kodi-cevap.webp';
+import kodiEylem from '../../../assets/v33/kodi-eylem.webp';
+import kodiMasaustu from '../../../assets/v33/kodi-masaustu.webp';
+import tarayiciKodi from '../../../assets/v33/tarayici-kodi.webp';
+
+**Kodi**, "TürKod ile Kodlama Macerası" kitabında sana yol gösteren robot. TürKod 3.3 ile Kodi programın içine de taşındı: programla ilgili her şeyi bilir, sorularını cevaplar ve istersen senin için iş yapar.
+
+<Ekran src={kodiCevap} alt="Kodi'nin konuşma balonu: 'Programımı nasıl EXE yaparım?' sorusuna dört adımlık cevap ve bir TürKod kod örneği" caption="Kodi, programla ilgili bir soruyu cevaplıyor." />
+
+## Kodi'yi çağırmak
+
+Üç yolu var:
+
+- Sol şeritteki **Kodi** (robot yüzlü) düğmesine bas.
+- `F1`'e bas.
+- **Yardım → Kodi ile Konuş**'u seç.
+
+Kodi editörün sağ alt köşesine kayarak gelir, el sallar ve "Merhaba, ben Kodi!" diye selam verir. Aynı düğmeyle ya da balondaki **X** ile kayarak gider.
+
+- Sorunu balonun altındaki kutuya yazıp `Enter`'a bas. Selamdan sonra çıkan **hazır soru düğmelerine** basman da yeter.
+- Kodi cevabı harf harf yazar; beklemek istemezsen balona tıkla, cevabın tamamı hemen görünür.
+- Cevap beklerken gönder düğmesi **Vazgeç** olur.
+- Balondaki **ampul** düğmesi düşünmeyi açar ya da kapatır: açıkken daha dikkatli ama daha yavaş cevap verir.
+- Kodi'yi üstüne basıp sürükleyerek istediğin yere taşıyabilirsin; yerini hatırlar, çift tıklarsan eski köşesine döner.
+- Balonun köşesindeki tutamaçla balonu daraltıp genişletebilirsin; boyutu da hatırlanır.
+
+<Aside type="note" title="Yapay zekâ gerekir">
+Kodi'nin konuşabilmesi için bir yapay zekâ modeli bağlı olmalı. Bağlı değilken yalnızca "terminali aç", "temayı açık yap" gibi kısa işleri yapar ve balonda **Kurulum rehberi** düğmesini gösterir. Aşağıdaki [Kurulum rehberi](#kurulum-rehberi) bölümüne bak.
+</Aside>
+
+## Neler sorabilirsin?
+
+Kodi programın her menüsünü, düğmesini ve ayarını, kitabı, TürKod'u kimin yaptığını ve GitHub sayfasını bilir. Programla ilgili emin olmadığı bir şeyi önce kendi kılavuzundan okur. Kod örneklerini her zaman TürKod ile yazar.
+
+- "Programımı nasıl EXE yaparım?"
+- "Hatamı bulur musun?" Kodi kodunu, terminaldeki çıktıyı ve hatayı görür; hatanın hangi satırda olduğunu söyler ve düzeltilmiş kodu verir.
+- Editörde bir parça seçip "Bunu açıklar mısın?" diyebilirsin; seçtiğini görür.
+- "Kitapta döngüler nerede?" Kitabı o sayfada açar.
+
+Cevaplardaki kısa kod örneklerinin sağ üstündeki düğmelerle kodu tek tıkla yeni sekmede açabilir ya da imlecin olduğu yere ekleyebilirsin.
+
+## Senin için iş yapar
+
+Kodi yalnızca konuşmaz, söylediğini yapar. Bir cümlede birkaç iş istersen hepsini sırayla yapar.
+
+| Ne dersin? | Kodi ne yapar? |
+| ---------- | -------------- |
+| "Terminali aç" | Paneli açar ya da kapatır (Gezgin, Eklentiler, AI Asistan, Terminal) |
+| "notlar.md dosyasını aç" | Dosyayı açar ya da o sekmeye geçer |
+| "40. satıra git", "yazdır nerede geçiyor?" | O satıra götürür, ifadeyi arayıp bulur |
+| "Temayı açık yap", "yazıyı büyüt" | Ayarı hemen değiştirir |
+| "EXE panelini aç", "kısayolları göster" | Menülerdeki komutu çalıştırır |
+| "Kod Parçacıklarını etkinleştir" | Eklentiyi açar |
+| "Bana 1'den 5'e sayan bir program yaz" | Kodu yazar; önce **Yeni sekmede aç mı, İmlece ekle mi?** diye sorar |
+
+<Ekran src={kodiEylem} alt="Kodi 'Terminal açıldı' notunu düşmüş ve 'Bu kodu (2 satır) senin için yazayım mı?' diye Yeni sekmede aç ve İmlece ekle seçeneklerini sunuyor" caption="Kod yazmadan önce Kodi izin ister." />
+
+- Uzun programları sohbete dökmez: izin verince kod editöre harf harf akarak yazılır. `Ctrl+Z` yazdığının hepsini bir kerede geri alır.
+- Çalıştırmak, kaydetmek, düzeltmek gibi işlerden önce **İzin ver / Vazgeç** diye sorar.
+- Yaptığı her işin altına küçük bir not düşer (ör. "Terminal açıldı").
+- Program yazdırınca kodu arka planda AI Asistan'a yazdırır, kodu denetler, hatalıysa düzelttirir ve TürKod'a çevirir.
+
+### IDE içindeki tarayıcıda
+
+Kodi, TürKod'un içindeki tarayıcıyı da yönetir: site açar, Google'da arar, sayfayı okur, mor imleciyle bağlantılara tıklar, kutulara yazar ve sayfayı kaydırır. Açılan sayfaya bakıp istediğin iş bitene kadar kendiliğinden devam eder.
+
+<Ekran src={tarayiciKodi} alt="TürKod'un tarayıcı sekmesinde projenin GitHub sayfası açık; Kodi'nin balonunda 'Google'da arandı' ve tıklanan bağlantı notları" caption="Kodi Google'da arayıp projenin GitHub sayfasını açtı." />
+
+Şifre kutularına yazmaz; satın alma, ödeme, silme gibi düğmelere basmadan önce izin ister.
+
+## Kodi'nin yetkileri
+
+**Ayarlar → Kodi** bölümünden Kodi'nin neleri yapabileceğini sen seçersin:
+
+| Seçenek | Anlamı |
+| ------- | ------ |
+| **Ayarları değiştirebilsin** | Tema, yazı boyutu, editör seçenekleri, yapay zekâ görevlerinin modelleri |
+| **Eklentileri açıp kapatabilsin** | Kod Parçacıkları, Odak Zamanlayıcı, Karalama Defteri ... |
+| **Program komutlarını çalıştırabilsin** | Menülerdeki her komut. Çalıştırmak, kaydetmek gibi işlerden önce yine izin ister |
+| **Tarayıcıyı yönetebilsin** | IDE içindeki tarayıcıda site açar, arar, tıklar, yazar |
+| **Her işten önce izin istesin** | Panel açmak gibi küçük işlerde bile önce sorar (varsayılan: kapalı) |
+
+Bu bölümü yalnızca sen değiştirebilirsin; Kodi, istesen bile dokunamaz. API anahtarlarını ve kısayolları da Kodi hiçbir zaman değiştiremez. Bir yetki kapalıyken o işi istersen Kodi yapamayacağını ve nereden açılabileceğini söyler.
+
+## Sohbetler
+
+Kodi her çağrılışında ve **Yeni sohbet** düğmesine basınca yeni bir sohbete başlar. Eski sohbetler kaybolmaz:
+
+- Balondaki **Sohbetler** düğmesi bütün sohbetleri tarihleri ve mesaj sayılarıyla listeler; en yenisi en üstte.
+- Bir sohbete tıklarsan açılır, kaldığın yerden sürdürürsün. Çöp kutusu düğmesi sohbeti siler.
+
+## Hafıza
+
+Kendinden bir şey söylersen ya da "bunu hatırla" dersen Kodi not alır ve balonda "Hatırladım: ..." yazar. Sonraki sohbetlerde de bilir. "Şunu unut" dersen notu siler.
+
+- Şifre, adres, telefon numarası, e-posta gibi özel bilgileri hatırlamaz.
+- **Ayarlar → Kodi**'de **Sohbet kaydedilsin** ve **Kodi beni hatırlasın** seçenekleri ile **Hafızayı yönet…** ve **Bütün sohbetleri sil** düğmeleri vardır.
+
+## Ekran görüntüsü göndermek
+
+Balondaki kamera düğmesine her basışta sırayla şunlardan birine geçer: görüntü gönderilmez (her zaman böyle başlar), TürKod penceresinin görüntüsü, bütün ekranın görüntüsü. Aynı ayar **Ayarlar → Kodi → Mesajla birlikte görüntü gönder** satırındadır. Görüntü göremeyen modellerde Kodi bunu söyler.
+
+## Sesli konuşma
+
+- **Mikrofon:** Balonun altındaki mikrofon düğmesine basıp sorunu söyle. Sen susunca Kodi söylediğini yazıya çevirir ve cevaplar. Dinlerken gözleri kocaman açılır, yanında ses dalgaları çıkar.
+- **Sesli cevap:** Hoparlör düğmesi açıkken Kodi cevaplarını Türkçe sesle okur. Kodları okumaz, "Kodu balona yazdım" der.
+- **Canlı sohbet:** Telefonda konuşur gibi; sen konuşursun, Kodi cevaplar, sonra yine dinler. Üç kez üst üste sessiz kalırsan kendiliğinden durur.
+
+<Aside type="note" title="Büyükler için">
+Konuşmayı yazıya çevirmek için Ayarlar'da bir **Groq** ya da **OpenAI** anahtarı gerekir; söylenen ses yazıya çevrilmek için o sağlayıcıya gönderilir. Kodi'nin sesi Windows'un Türkçe konuşma sesidir ve internet istemez. Mikrofonun Windows'ta açık olmalı.
+</Aside>
+
+## Masaüstünde Kodi
+
+Kodi'yi TürKod penceresinin dışına sürükle ya da balondaki **Masaüstüne çık** düğmesine bas: Kodi masaüstüne çıkar ve öteki pencerelerin üstünde durur.
+
+<Ekran src={kodiMasaustu} alt="Kodi pencerenin kenarına sürüklenmiş, üstünde 'Bırak, masaüstüne çıkayım!' yazıyor; balonda hazır soru düğmeleri" caption="Kenardan taşınca: 'Bırak, masaüstüne çıkayım!'" />
+
+- Masaüstünde de balonu ve bütün özellikleri aynıdır; dosya açmak, kod yazmak gibi işleri yine TürKod'da yapar.
+- Nereye sürüklersen orada kalır.
+- **TürKod'a dön** düğmesi ya da çift tıklama onu sohbetiyle birlikte geri getirir.
+
+## Hangi yapay zekâyla konuşur?
+
+Kodi'nin modeli **Ayarlar → Yapay Zekâ: Görevler** bölümündeki **Kodi (yardımcı robot)** satırından seçilir. **Otomatik** bırakılırsa her zaman AI Paneli sohbetinin modelini kullanır; satırda hangi model olduğu yazar. Bir modelin kullanım hakkı dolarsa Kodi hata göstermeden bağlı başka bir modelle devam eder; hepsinin hakkı dolduysa ne zaman yine konuşabileceğini söyler.
+
+Model bağlamayı [Yapay Zekâ Modelleri](/features/local-models/) sayfası anlatıyor.
+
+## Kurulum rehberi
+
+Hiç yapay zekâ bağlı değilse Kodi'nin balonunda **Kurulum rehberi** düğmesi çıkar. Rehber, ücretsiz bir **Groq** anahtarı almanı adım adım gösterir:
+
+<Steps>
+
+1. **Kurulum rehberi**'ne bas. TürKod'un tarayıcısında Groq'un anahtar sayfası açılır, yanında rehber durur.
+
+2. Groq'a giriş yap ya da hesap aç (çocuklar bunu bir büyüğüyle birlikte yapmalı).
+
+3. **Create API Key** düğmesine bas; Kodi bu düğmeyi mor imleciyle gösterir. Çıkan anahtarı (`gsk_` ile başlar) kopyala. Groq onu yalnızca bir kez gösterir.
+
+4. Anahtarı rehberdeki kutuya yapıştır ve **Bağla**'ya bas. Kodi anahtarı dener, modeli kendisi seçer ve ayarlar.
+
+</Steps>
+
+Rehberi sonradan tarayıcının sağ üstündeki anahtar düğmesinden ya da **Ayarlar → Kodi → API kurulum rehberi**'nden de açabilirsin. Anahtar yanlışsa ayarlarına dokunulmaz, ne olduğu söylenir.
+
+<Aside type="caution" title="API anahtarı bir şifredir">
+Kimseyle paylaşma, ekran görüntüsünde gösterme. Yanlışlıkla paylaşırsan Groq'taki **API Keys** sayfasından silip yenisini oluştur.
+</Aside>
+
+## Gizlilik
+
+- Kodi'ye yazdıkların ve sorunun anlaşılması için gereken bağlam (kodun, seçtiğin parça, terminal çıktısı) seçtiğin **yapay zekâ sağlayıcısına** gönderilir. Yerel bir model seçtiysen hiçbir şey bilgisayarından çıkmaz.
+- Ekran görüntüsü gönderme her zaman kapalı başlar. Ekranında özel bir şey varken görüntü göndermeyi kapat.
+- Sohbetler ve hafıza notları yalnızca bu bilgisayarda, kullanıcı klasöründeki `.turkod` klasöründe saklanır. **Ayarlar → Kodi**'den kapatılabilir ya da silinebilir.
+- Kodi şifre, adres, telefon gibi özel bilgileri hatırlamaz.

@@ -17,7 +17,7 @@ Başlamadan önce bilgisayarının [gereksinimleri](/features/requirements/) kar
 İndirdiğin `TurKod-Setup-X.Y.Z.exe` dosyasını çift tıklayarak aç ve sihirbazdaki adımları izle.
 
 - Kurulum **yönetici izni istemez**; program yalnızca senin kullanıcı hesabına kurulur (genellikle `%LOCALAPPDATA%\Programs\TurKod`).
-- Başlat menüsünde **TürKod** klasörü oluşur. İçinde programın kendisi, **TürKod ile Kodlama Macerası (Kitap)** PDF'i ve **Lisans** bulunur.
+- Başlat menüsünde **TürKod** klasörü oluşur. İçinde programın kendisi, komut satırı programı **TürKod Terminali**, **TürKod ile Kodlama Macerası (Kitap)** PDF'i ve **Lisans** bulunur.
 
 Sihirbaz sana üç isteğe bağlı seçenek sunar:
 
@@ -35,7 +35,7 @@ Programı aç. İlk açılışta kısa bir **arayüz turu** seni karşılar ve e
 
 <Ekran src={turIlk} alt="İlk açılışta çıkan 'TürKod IDE'ye hoş geldin!' tur penceresi" caption="İlk açılışta arayüz turu başlar." />
 
-Sonra ilk kodunu yaz: [İlk Programını Çalıştır](/use/first-run/) sayfası adım adım anlatıyor. Bu kadar! 🎉
+Tur bitince, hiç dosya açık değilken bir **karşılama ekranı** görürsün: Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku gibi kartlarla nereden başlayacağını seçersin. Sonra ilk kodunu yaz: [İlk Programını Çalıştır](/use/first-run/) sayfası adım adım anlatıyor. Bu kadar! 🎉
 
 :::note[Windows uyarı verirse]
 Windows bazen "Windows bilgisayarınızı korudu" penceresi gösterir. Dosyayı yalnızca resmî bağlantıdan indirdiysen **Ek bilgi → Yine de çalıştır** seçeneğini kullanabilirsin. Emin olmak istersen [Güvenlik](/features/security/) sayfasındaki doğrulamayı yap.
@@ -55,8 +55,9 @@ Yeni sürümü elle indirmene gerek yok: TürKod açılışta yeni sürümü ken
 
 Kaldırma işlemi kişisel verilerine dokunmaz. Tamamen temizlemek istersen şunları da elle silebilirsin:
 
-- `%USERPROFILE%\.turkod_ayarlar.json` — ayarların (AI API anahtarı dahil)
-- `%LOCALAPPDATA%\TurKod` — kurduğun kütüphaneler (`pip_packages`) ve günlük dosyaları
+- `%USERPROFILE%\.turkod_ayarlar.json` — ayarların (şifrelenmiş AI API anahtarları dahil)
+- `%USERPROFILE%\.turkod` — Kodi'nin sohbetleri ve hafıza notları
+- `%LOCALAPPDATA%\TurKod` — kurduğun kütüphaneler (`pip_packages`), indirdiğin yerel AI modelleri (`yerel_ai`) ve günlük dosyaları
 
 ## Sorun mu çıktı?
 

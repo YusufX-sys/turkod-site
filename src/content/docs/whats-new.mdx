@@ -1,0 +1,148 @@
+---
+title: '3.3 Yenilikleri: Kodi Artık Yanında'
+description: TürKod IDE 3.3.0 sürümünde gelen yenilikler ve önemli düzeltmelerin derli toplu özeti.
+---
+
+import { LinkCard, CardGrid, Card } from '@astrojs/starlight/components';
+import Ekran from '../../components/Ekran.astro';
+import genelEkran from '../../assets/v33/genel-ekran.webp';
+import kodiCevap from '../../assets/v33/kodi-cevap.webp';
+import karsilama from '../../assets/v33/karsilama.webp';
+import pdfSekmesi from '../../assets/v33/pdf-sekmesi.webp';
+import panelTasima from '../../assets/v33/panel-tasima.webp';
+
+TürKod IDE **3.3.0**, programın şimdiye kadarki en büyük güncellemesi. Kitaptaki robot arkadaşımız Kodi artık programın içinde, yapay zekâ ayarları baştan yazıldı, programlarını EXE'ye dönüştürebiliyorsun ve bütün ekran yenilendi. Bu sayfada öne çıkanları bulacaksın.
+
+<Ekran src={genelEkran} alt="TürKod IDE 3.3 ana ekranı: solda şerit ve Gezgin, ortada renkli araç çubuğu, editör ve terminal, sağda AI Asistan" caption="3.3'ün yenilenen ekranı" />
+
+## Kodi programda
+
+Kitaptaki robot **Kodi** artık programın içinde de seninle. Sol şeritteki Kodi düğmesine, `F1`'e ya da **Yardım → Kodi ile Konuş**'a basınca kayarak gelir.
+
+- Programın her menüsünü, düğmesini ve ayarını bilir; sıcak, günlük bir Türkçeyle konuşur ve kod örneklerini hep TürKod ile verir.
+- Senin için iş yapar: panel açar, dosyaya ya da satıra gider, kod yazar, menü komutlarını çalıştırır, ayar değiştirir. Kod yazmadan, çalıştırmadan ya da kaydetmeden önce izin ister.
+- Kodunu, seçtiğin parçayı ve terminaldeki hataları görür: "Hatamı bulur musun?" dersen hangi satırda ne olduğunu söyler.
+- Sohbetlerini saklar, istersen seni hatırlar, sesli konuşabilir ve masaüstüne çıkabilir.
+- Hiç yapay zekâ bağlı değilse **Kurulum rehberi** ile ücretsiz bir Groq anahtarı almanı adım adım gösterir.
+
+<Ekran src={kodiCevap} alt="Kodi'nin konuşma balonunda 'Programımı nasıl EXE yaparım?' sorusuna adım adım cevap ve TürKod kod örneği" caption="Kodi bir soruyu cevaplıyor." />
+
+Ayrıntılar: [Kodi](/features/kodi/)
+
+## Yapay Zekâ ve Yerel Modeller
+
+- **Çoklu sağlayıcı:** Ayarlar'da istediğin kadar sağlayıcıyı kendi API anahtarıyla bağlayabilirsin. 220'den fazla sağlayıcının listesi internetten güncel olarak gelir; LM Studio, llama.cpp sunucusu ve OpenAI uyumlu özel adresler de olur.
+- **Anahtarlar şifreli:** API anahtarları Windows'un şifrelemesiyle saklanır.
+- **Görev başına model:** Otomatik tamamlama, AI Paneli sohbeti, kod açıklama, hata açıklama, Akıllı Düzelt ve Kodi için ayrı ayrı model seçebilirsin.
+- **Yedek model:** Bir modelin kullanım hakkı dolunca ya da sunucusuna ulaşılamayınca istek beklemeden bağlı başka bir modele gider; cevabı hangi modelin verdiği yazar.
+- **Yerel modeller:** llama.cpp motoru tek tıkla kurulur. Bilgisayarına uygun hafif ve büyük modeller önerilir; indirince internetsiz ve ücretsiz çalışırlar. NVIDIA ekran kartın varsa ondan yararlanılır.
+- **Düşünme denetimi:** Düşünebilen modellerde akıl yürütme açılıp kapatılabilir; açıkken düşünce, açılıp kapanan bir balonda görünür.
+- **AI Paneli:** Cevaplardaki başlık, liste, tablo ve kod blokları düzgün görünür; uzun cevaplar yarıda kesilmez.
+
+Ayrıntılar: [Yapay Zekâ Modelleri](/features/local-models/), [AI Asistan](/features/ai/)
+
+## Hayalet Kod
+
+Bir yapay zekâ modelini **Otomatik tamamlama (hayalet kod)** görevine atarsan, yazmayı bıraktığında imlecin arkasında gri bir öneri belirir. Öneri her zaman TürKod'a çevrilir ve senin verdiğin adlar korunur.
+
+| Tuş | Ne yapar? |
+| --- | --------- |
+| `Tab` | Önerinin tamamını kabul eder |
+| `Ctrl+→` | Önerinin bir kelimesini kabul eder |
+| `Esc` | Öneriyi kapatır |
+| `Ctrl+Shift+Boşluk` | Beklemeden öneri ister |
+
+## Yenilenen Arayüz
+
+Bütün ekran daha derli toplu ve tutarlı:
+
+- **Üst satır:** menülerin yanında ortada **Komut ara…** kutusu, sağda Gezgin, Terminal ve AI Asistan panellerini açıp kapatan düğmeler.
+- **Araç çubuğu** editörün üstünde ortalandı; düğmeler renkli ve üç gruba ayrıldı: dosya düğmeleri; yeşil Çalıştır, kırmızı Durdur, turuncu Hata Ayıkla; mor Çevir, sarı Düzelt, pembe Bul. Adım düğmeleri yalnızca hata ayıklarken görünür.
+- **Sol şerit:** Gezgin, Dosyalarda Ara, Eklenti Özellikleri, Kitap, Tarayıcı ve Kodi düğmeleri; altta TürKod Kabuğu ve Ayarlar.
+- **Gezgin** dosyaları türlerine göre simgelerle gösterir; durum çubuğunun solunda programın durumu yazar (Hazır, Program çalışıyor, Hata ayıklanıyor).
+- **Yüksek Kontrast** dahil bütün temalarda renkler okunaklı; kod renkleri artık temaya göre değişiyor.
+
+### Karşılama ekranı
+
+Hiç dosya açık değilken boş sayfa yerine karşılama ekranı çıkar: Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku, Arayüz Turu ve Komut Paleti kartları, son açılan dosyalar ve her gün yeni bir **Günün İpucu**.
+
+<Ekran src={karsilama} alt="Karşılama ekranı: Başla kartları ve Son Dosyalar listesi" caption="Karşılama ekranı" />
+
+### Panelleri taşıma
+
+Gezgin, editör ve AI Asistan birbirleriyle yer değiştirebilir. Bir panelin başlığını tutup başka bölgenin üstüne sürükle ya da sağ üstteki **Panel düzeni** düğmesinden hazır bir düzen seç. **Görünüm → Panel Düzenini Sıfırla** her şeyi ilk hâline döndürür.
+
+<Ekran src={panelTasima} alt="Gezgin paneli editörün üstüne sürükleniyor; editör mavi çerçeveyle vurgulanmış ve 'Editör ile yer değiştir' yazıyor" caption="Panel başlığını sürükleyerek yer değiştirme" />
+
+## EXE'ye Dönüştür
+
+Programını, TürKod kurulu olmayan her Windows bilgisayarda çift tıklanınca çalışan bir EXE dosyasına dönüştürebilirsin: **Çalıştır → EXE'ye Dönüştür…**. Aynı iş terminalde `turkod exe_yap oyun.trpy` komutuyla da yapılır. İstersen EXE'nin TürKod koduna sonradan bakılabilir.
+
+Ayrıntılar: [EXE'ye Dönüştür](/features/exe/)
+
+## Tarayıcı ve PDF
+
+- **IDE içinde tarayıcı:** Sol şeritteki dünya düğmesi ya da **Görünüm → Tarayıcı** TürKod'un içinde bir tarayıcı sekmesi açar. Kodi de bu tarayıcıyı kullanabilir: site açar, Google'da arar, sayfayı okur, bağlantılara tıklar. Şifre kutularına yazmaz; satın alma, ödeme, silme gibi düğmelerden önce izin ister.
+- **PDF görüntüleyici:** PDF dosyaları yeni bir sekmede sayfa sayfa açılır; yakınlaştırma, genişliğe sığdırma, sayfaya atlama ve hızlı gezinme tutamacı var. **TürKod ile Kodlama Macerası** kitabı da artık programın içinde yeni bir sekmede açılıyor.
+
+<Ekran src={pdfSekmesi} alt="TürKod ile Kodlama Macerası kitabı TürKod içinde bir PDF sekmesinde açık" caption="Kitap, programın içindeki PDF sekmesinde" />
+
+## Terminal ve Komut Satırı
+
+- **Her sekmenin kendi terminali:** Çıktı, komut geçmişi ve `cd` klasörü sekmeye özel. Bir sekmede yazdığın komut artık başka sekmede çalışan programa girdi olarak gitmiyor.
+- **TürKod Terminali:** Başlat menüsünde ayrı bir program. Dersler, `anlam` komutu (bir kelimenin çocuk dostu açıklaması) ve TürKod kodunu satır satır çalıştırma içerir. IDE terminalinde de açılır.
+- **Yeni komutlar:** `turkod --duzelt`, `--kontrol`, `--bicimlendir`, `--cevir`, `--python`, `--turkod`, `--anlam` ve `--dersler`.
+- Programların pencereleri (kaplumbağa, tkinter, pygame, ursina) görev çubuğunda Python logosu yerine TürKod simgesiyle görünür.
+
+Ayrıntılar: [Terminal ve Paketler](/features/terminal/)
+
+## Dil ve Sözlük
+
+- 340'tan fazla yeni Türkçe karşılık: tkinter iletişim kutuları ve dosya seçme pencereleri, tuval çizimleri, `math`, `random`, `os`, `datetime`, `json`, `re`, `pathlib` gibi modüllerdeki eksikler, sınıf işlemleri.
+- 24 modül Türkçe adını aldı; örneğin `vad` (csv), `işleçler`, `metin_sarma`.
+- **Kaplumbağa:** Çizimi bitiren komut artık `kaplumbağa.tamamla()`. Eski `çıkışta_bekle` de çalışmaya devam ediyor.
+- **Tırnak içinde Türkçe değerler:** Renkler ve seçenekler Türkçe yazılabiliyor. `"Açık Mavi"`, `"açık_mavi"`, `"acik mavi"` hepsi tanınır.
+- **Klasörlü modüller:** Alt klasördeki `.trpy` dosyaları da içe aktarılabiliyor (`içe_aktar araçlar.sayılar`).
+- **Özel adlar Python gibi:** `__başlat__`, `__isim__`, `__topla__` ... Eski `başlat_özel` yazımı da çalışır.
+
+```
+içe_aktar kaplumbağa
+
+kaplumbağa.şekil("kaplumbağa")
+kaplumbağa.hız("en_hızlı")
+kaplumbağa.kalem_rengi("açık mavi")
+kaplumbağa.çember(50)
+kaplumbağa.tamamla()
+```
+
+Kitaba da programın her menüsünü, düğmesini ve ayarını Kodi'nin diliyle anlatan 75 sayfalık **TürKod IDE Tam Kılavuzu** bölümü eklendi.
+
+## Önemli Düzeltmeler
+
+<CardGrid>
+  <Card title="Dosyalar ve sekmeler">
+    Otomatik kaydetme silinen dosyayı yeniden oluşturmuyor; Farklı Kaydet artık kaydedilmemiş sekmeyi sormadan kapatmıyor; sekme değiştirince imleç yerinde kalıyor. Gezgin, USB bellek ve ağ sürücülerinde silmeden önce soruyor.
+  </Card>
+  <Card title="Python'dan çeviri">
+    Türkçe harfli sayaçlı döngüler, `super()`, f-metinlerin içindeki ifadeler ve İngilizce kalan renk adları artık doğru çevriliyor.
+  </Card>
+  <Card title="Akıllı Düzelt">
+    Yanlış yazılan modül adını (`matematk`) düzeltiyor, f-metin içindeki yazım hatalarını buluyor ve doğru kodu bozmuyor.
+  </Card>
+  <Card title="Hata mesajları">
+    Python'un yeni sürümündeki hatalar da Türkçe; büyük harfle yazılan komutlarda ve yanlış yazılan modül adlarında doğru ad öneriliyor; sütun numarası doğru gösteriliyor.
+  </Card>
+  <Card title="Editör ve ayarlar">
+    Kodu Biçimlendir ayarlardaki girinti genişliğine uyuyor; "Sütun Çizgileri" ayarının adı artık **Girinti Kılavuzları**; durum çubuğunda sütun 1'den başlıyor.
+  </Card>
+  <Card title="Türkçe her yerde">
+    TODO Listesi'nin adı **Yapılacaklar Listesi** oldu ve `# YAPILACAK:` notlarını da topluyor; dosya hataları ve sağ tık menüsü Türkçe; "İptal" yerine her yerde "Vazgeç".
+  </Card>
+</CardGrid>
+
+## Açık kaynak
+
+Proje artık katkıya hazır: katkı rehberi, güvenlik politikası, davranış kuralları ve hata, özellik ve sözlük önerisi şablonları eklendi.
+
+<LinkCard title="Katkıda Bulun" description="Hata bildirmek, sözlük önermek ya da koda katkı vermek için" href="/contribute/" />
+<LinkCard title="Sürüm Geçmişi" description="Bütün sürümler ve indirme bağlantıları" href="/releases/" />

@@ -1,0 +1,90 @@
+---
+title: EXE'ye Dönüştür
+description: TürKod programını, TürKod kurulu olmayan bilgisayarlarda çift tıklanınca çalışan bir EXE dosyasına dönüştürme.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Ekran from '../../../components/Ekran.astro';
+import exePaneli from '../../../assets/v33/exe-paneli.webp';
+
+Bir oyun yaptın ve arkadaşına göstermek istiyorsun ama onun bilgisayarında TürKod yok. Sorun değil: TürKod programını bir **EXE** dosyasına dönüştürebilir. EXE, Windows'ta çift tıklanınca çalışan dosyadır; içine programın ve onu çalıştıracak her şey konur.
+
+## Menüden
+
+<Steps>
+
+1. Programını kaydet.
+
+2. **Çalıştır → EXE'ye Dönüştür…** menüsünü aç.
+
+3. EXE'ye bir ad ver, kaydedileceği klasörü seç ve programın nasıl açılacağını işaretle.
+
+4. **EXE'ye Dönüştür** düğmesine bas. Komut sekmenin terminalinde çalışır; birkaç dakika sonra EXE hazırdır.
+
+</Steps>
+
+<Ekran src={exePaneli} alt="EXE'ye Dönüştür paneli: EXE'nin adı, kaydedileceği klasör, Program nasıl açılsın seçenekleri ve Kaynak koduna bakılabilsin kutusu" caption="Çalıştır → EXE'ye Dönüştür…" />
+
+## Seçenekler
+
+Paneldeki her seçeneğin bir komut karşılığı vardır. Bir tik attığında panelin en altındaki **Çalışacak komut** kutusu da kendiliğinden değişir.
+
+| Seçenek | Komuttaki hâli | Ne yapar? |
+| ------- | -------------- | --------- |
+| EXE'nin adı | `--ad "Oyunum"` | Boş bırakırsan kod dosyasının adı kullanılır |
+| Kaydedileceği klasör | `--kayit-yeri "C:\Oyunlar"` | Boşsa EXE kod dosyasının yanına konur |
+| TürKod terminalinde | `--turkod-terminali` | Koyu TürKod terminal penceresinde açılır; hatalar Türkçe ve renklidir (varsayılan) |
+| Windows konsolunda | `--windows-konsolu` | Klasik siyah Windows komut penceresinde çalışır |
+| Terminal olmadan | `--terminalsiz` | Yalnızca programın kendi penceresi görünür (oyunlar, kaplumbağa çizimleri, pencereli uygulamalar) |
+| Kaynak koduna bakılabilsin | `--kaynak-acik` | EXE'nin içindeki TürKod koduna sonradan bakılabilir |
+| Tek dosya yerine klasör yap | `--klasorlu` | Program daha hızlı açılır, ama başka bilgisayara bütün klasör kopyalanmalı |
+| Program bitince pencere kapanmasın | `--sonda-bekle` | Windows konsolu, program bitince `Enter`'a basılana kadar açık kalır |
+| Simge | `--simge simge.ico` | EXE'nin simgesi |
+| Dosya ekle | `--dosya-ekle resimler` | Programın kullandığı resim, ses gibi dosyaları EXE'nin içine koyar (birden çok kez yazılabilir) |
+
+<Aside type="caution" title="girdi_al kullanıyorsan">
+Programın `girdi_al` ile soru soruyorsa **Terminal olmadan**'ı seçme: cevabın yazılacağı yer olmaz. TürKod bu durumda seni uyarır.
+</Aside>
+
+## Komutla: turkod exe_yap
+
+Aynı işi IDE terminalinde, TürKod Terminali'nde ya da (PATH'e eklediysen) herhangi bir komut isteminde tek komutla yapabilirsin. TürKod Kabuğu'nda baştaki `turkod` kelimesini yazmasan da olur.
+
+```
+turkod exe_yap sayi_tahmin.trpy --ad "Sayı Tahmin Oyunu" --kaynak-acik
+```
+
+```
+[EXE] sayi_tahmin.trpy -> Sayı Tahmin Oyunu.exe
+[EXE] Paketleniyor; bu işlem birkaç dakika sürebilir...
+[EXE] Hazır!
+```
+
+Bütün seçenekleri görmek için:
+
+```
+turkod exe_yap --yardim
+```
+
+## EXE'nin kaynak kodunu görmek
+
+**Kaynak koduna bakılabilsin** (`--kaynak-acik`) işaretliyse EXE'nin içindeki TürKod kodunu üç yoldan görebilirsin:
+
+- EXE'nin TürKod terminali penceresindeki **Kaynak kodu** düğmesi,
+- **Çalıştır → EXE'nin Kaynak Kodunu Aç…** (kod yeni bir sekmede açılır),
+- terminalde `turkod kaynak` komutu:
+
+```
+turkod kaynak "Sayı Tahmin Oyunu.exe"
+```
+
+Sonuna `--kaydet` eklersen kod bir `.trpy` dosyasına kaydedilir. Kaynağına bakarken EXE çalıştırılmaz.
+
+Seçenek işaretli değilse EXE "Bu programın kaynak kodu gizli" der: içine yalnızca kodunun derlenmiş hâli konur.
+
+## Bilmen gerekenler
+
+- **İlk seferde internet gerekir:** EXE yapma aracı (PyInstaller) ilk kullanımda kendiliğinden indirilip kurulur; bu yüzden ilk EXE biraz daha uzun sürer.
+- **Dosyaları eklemeyi unutma:** Programın resim ya da ses kullanıyorsa onları `--dosya-ekle` ile EXE'ye koy; yoksa arkadaşının bilgisayarında bulunamazlar. Kodunda adı geçen ama eklenmemiş dosyalar için TürKod `[UYARI]` satırı yazar.
+- **Her şey Türkçe:** Derleme sırasındaki iletiler, EXE'deki hata izleri ve kütüphanelerin (pygame, ursina) İngilizce iletileri Türkçe görünür.
+- **Eski EXE korunur:** Yarıda kesilen bir derleme eski EXE'yi bozmaz. TürKod aynı adlı bir klasörün ya da başka bir EXE'nin üzerine yazmaz, seni uyarır.

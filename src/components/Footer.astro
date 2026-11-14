@@ -1,15 +1,81 @@
 ﻿---
+// Starlight'ın kendi alt bilgisi (önceki / sonraki sayfa, düzenleme bağlantısı)
+// korunur; altına sitenin alt bilgisi eklenir.
+import Default from '@astrojs/starlight/components/Footer.astro';
+import KodiSite from './KodiSite.astro';
+
+const REPO = 'https://github.com/YusufX-sys/turkod-ide';
+const isSplash = Astro.locals.starlightRoute?.entry?.data?.template === 'splash';
 ---
+{!isSplash && <Default><slot /></Default>}
+
+<KodiSite />
+
 <footer class="tk-footer">
-  <p>© 2026 Yusuf Tandoğan - Tüm Hakları Saklıdır.</p>
+  <div class="tk-footer-grid">
+    <div class="tk-footer-brand">
+      <a href="/" class="tk-footer-logo">
+        <img src="/icon-96.png" alt="" width="36" height="36" />
+        <span>TürKod</span>
+      </a>
+      <p>Kodlamayı ana dilinde öğren. Türkçe komutlarla Python yazdıran, yapay zekâ destekli, ücretsiz ve açık kaynak geliştirme ortamı.</p>
+    </div>
+    <nav aria-label="Başlangıç">
+      <h4>Başlangıç</h4>
+      <a href="/getting-started/">Giriş</a>
+      <a href="/install/">Kurulum</a>
+      <a href="/demo/">Canlı Demo</a>
+      <a href="/whats-new/">3.3 Yenilikleri</a>
+      <a href="/releases/">Sürüm Geçmişi</a>
+    </nav>
+    <nav aria-label="Öğren">
+      <h4>Öğren</h4>
+      <a href="/learn/basics/">Temel İfadeler</a>
+      <a href="/learn/sozluk/">Sözlük</a>
+      <a href="/features/kodi/">Kodi</a>
+      <a href="/use/troubleshooting/">Sorun Giderme</a>
+    </nav>
+    <nav aria-label="Topluluk">
+      <h4>Topluluk</h4>
+      <a href={REPO} target="_blank" rel="noopener">GitHub</a>
+      <a href="/contribute/">Katkıda Bulun</a>
+      <a href={`${REPO}/issues/new/choose`} target="_blank" rel="noopener">Hata Bildir</a>
+      <a href="/about/">Hakkımda</a>
+    </nav>
+  </div>
+  <div class="tk-footer-bottom">
+    <p>© 2026 Yusuf Tandoğan · <a href={`${REPO}/blob/main/LICENSE`} target="_blank" rel="noopener">MIT Lisansı</a> ile açık kaynak</p>
+    <p class="tk-footer-made">Türkiye'de, öğrenciler için yapıldı.</p>
+  </div>
 </footer>
 
 <style>
   .tk-footer {
-    padding: 2rem 1rem; text-align: center; margin-top: 3rem;
+    margin-top: 4rem; padding: 2.5rem 1rem 1.5rem;
     border-top: 1px solid rgba(129,140,248,.2);
   }
-  .tk-footer p {
-    margin: 0; color: #8b949e; font-size: .85rem; letter-spacing: .02em;
+  .tk-footer-grid {
+    display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem;
+    max-width: 72rem; margin: 0 auto;
   }
+  @media (max-width: 800px) { .tk-footer-grid { grid-template-columns: 1fr 1fr; } .tk-footer-brand { grid-column: 1 / -1; } }
+  .tk-footer-logo { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; }
+  .tk-footer-logo img { border-radius: 10px; box-shadow: 0 0 14px rgba(99,102,241,.55); }
+  .tk-footer-logo span {
+    font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em;
+    background: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tk-footer-brand p { margin: .8rem 0 0; color: var(--sl-color-gray-3); font-size: .9rem; max-width: 22rem; line-height: 1.6; }
+  .tk-footer nav { display: flex; flex-direction: column; gap: .45rem; }
+  .tk-footer h4 { margin: 0 0 .3rem; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sl-color-white); }
+  .tk-footer nav a { color: var(--sl-color-gray-3); text-decoration: none; font-size: .9rem; transition: color .2s; }
+  .tk-footer nav a:hover { color: #22d3ee; }
+  :root[data-theme='light'] .tk-footer nav a:hover { color: #4f46e5; }
+  .tk-footer-bottom {
+    max-width: 72rem; margin: 2rem auto 0; padding-top: 1.2rem; border-top: 1px solid rgba(129,140,248,.15);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem;
+  }
+  .tk-footer-bottom p { margin: 0; color: var(--sl-color-gray-3); font-size: .82rem; }
+  .tk-footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 </style>

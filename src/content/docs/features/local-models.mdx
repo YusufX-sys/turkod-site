@@ -1,0 +1,131 @@
+---
+title: Yapay Zekâ Modelleri
+description: Sağlayıcı bağlama, görev başına model atama, bilgisayarında çalışan yerel modeller, düşünme denetimi ve hayalet kod.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+import Ekran from '../../../components/Ekran.astro';
+import yerelAi from '../../../assets/v33/yerel-ai.webp';
+
+TürKod'un yapay zekâ özellikleri ([AI Asistan](/features/ai/), [Kodi](/features/kodi/), hayalet kod, Akıllı Düzelt'in yapay zekâ aşaması) iki tür modelle çalışır:
+
+- **Bulut modelleri:** Bir sağlayıcının (Groq, OpenAI, Google, Anthropic ...) internetteki modelleri. Kendi API anahtarın gerekir.
+- **Yerel modeller:** Bilgisayarına indirdiğin küçük modeller. İnternetsiz ve ücretsiz çalışır; kodun bilgisayarından hiç çıkmaz.
+
+Bütün ayarlar **Ayarlar** sekmesinde, **Yapay Zekâ: Görevler** ve **Yapay Zekâ: Modeller** bölümlerindedir.
+
+## Sağlayıcı bağlamak
+
+**Ayarlar → Yapay Zekâ: Modeller → Sağlayıcı bağla** bölümünde istediğin kadar sağlayıcıyı kendi API anahtarıyla bağlayabilirsin. Sağlayıcı listesi (220'den fazla) internetten, models.dev kataloğundan güncel olarak gelir. LM Studio, bilgisayardaki bir llama.cpp sunucusu ve OpenAI uyumlu özel bir adres de olur.
+
+<Steps>
+
+1. **Sağlayıcı** kutusuna adını yazıp listeden seç (ör. `groq`).
+
+2. API anahtarını **API Anahtarı** kutusuna yapıştır. **Anahtar / belgeler sayfasını aç** bağlantısı sağlayıcının anahtar sayfasını açar.
+
+3. **Bağlantıyı Test Et** ile anahtarı dene.
+
+4. **Bağla ve modelleri seç**'e bas. Açılan pencere sağlayıcının modellerini o anki hâliyle getirir; arayabilir, birden çok model seçebilir, listede olmayan bir model adını da ekleyebilirsin.
+
+</Steps>
+
+- **Bağlantıyı kes**, sağlayıcının anahtarını, modellerini ve görev atamalarını kaldırır.
+- **Mevcut modeller** listesi her modelin nerede çalıştığını (yerel / yerel sunucu / bulut) ve hangi görevlerde kullanıldığını gösterir; API anahtarı eksikse uyarır.
+- **Tüm modeller için ortak ayarlar:** **Sıcaklık** (0–2; yükseldikçe cevaplar daha yaratıcı), **En Fazla Token** (cevap uzunluğu) ve **Sistem Mesajı**.
+
+<Aside type="tip" title="Ücretsiz başlangıç">
+Groq'un ücretsiz hesabı her gün belirli sayıda soru hakkı verir; Kodi ve AI Asistan için yeter. Kodi'nin [kurulum rehberi](/features/kodi/#kurulum-rehberi) anahtarı almayı ve bağlamayı adım adım gösterir.
+</Aside>
+
+API anahtarları bilgisayarında, Windows'un şifrelemesiyle saklanır; yalnızca senin Windows kullanıcı hesabın açabilir.
+
+### Hakkı dolan model
+
+Sağlayıcının hız sınırına takılınca, kısa bir bekleme yetiyorsa istek kendiliğinden bir kez daha denenir. Bir modelin kullanım hakkı dolunca ya da sunucusuna ulaşılamayınca istek beklemeden bağlı başka bir modele gider; hakkı dolan model, hakkı yenilenene kadar denenmez. Cevabı hangi modelin verdiği yazar. Bu Kodi, AI Paneli ve Akıllı Düzelt için geçerlidir. Bu yüzden birkaç model işaretlemek işe yarar (Groq'ta her modelin hakkı ayrıdır).
+
+## Görev başına model atama
+
+Yapay zekânın her işi ayrı bir görevdir ve her göreve ayrı bir model atanabilir. **Ayarlar → Yapay Zekâ: Görevler** bölümünde her satırdan bir model seçersin; seçim hemen kaydedilir. Model atanmamış görev kapalıdır.
+
+| Görev | Nerede kullanılır? |
+| ----- | ------------------ |
+| Otomatik tamamlama (hayalet kod) | Editördeki gri öneriler |
+| AI Paneli sohbet | Sağdaki AI Asistan'daki sorular |
+| Kod açıklama / optimize | AI Asistan'daki **Açıkla** ve **Optimize et** düğmeleri |
+| Hata açıklama | Terminaldeki **Hatayı AI ile açıkla** düğmesi |
+| Akıllı Düzelt (AI aşaması) | Düzelticinin kendi başına çözemediği hatalar |
+| Kodi (yardımcı robot) | Kodi'nin konuşma balonu. **Otomatik**'te AI Paneli sohbet modelini kullanır |
+
+Modeller listede "Sağlayıcı • Model" biçiminde görünür, örneğin "Groq • openai/gpt-oss-20b" ya da "TürKod Yerel • model.gguf". Eski sürümlerdeki tek sağlayıcılı ayarlar ilk açılışta kendiliğinden bu düzene taşınır.
+
+## Düşünme denetimi
+
+Bazı modeller cevap vermeden önce düşünür (akıl yürütür). **Ayarlar → Yapay Zekâ: Görevler**'deki **Model düşünsün (akıl yürütme)** seçeneği bunu açıp kapatır; AI Asistan'daki **beyin** düğmesi de aynı işi yapar. Kapalıyken cevap daha hızlı gelir. Açıkken modelin düşüncesi cevabın üstünde, açılıp kapanan bir balonda görünür.
+
+## Yerel modeller
+
+Yerel modelleri **Araçlar → Yerel AI Modelleri…** ya da sol şeritteki **Eklenti Özellikleri → Model Yöneticisi** ile yönetirsin. Hiç model yokken AI Asistan'daki **Ücretsiz yerel model kur** düğmesi de buraya getirir.
+
+<Ekran src={yerelAi} alt="Yerel AI Modelleri penceresinde Önerilen sekmesi: hafif modeller, parametre, disk boyutu ve bağlam bilgisiyle; her birinin yanında İndir düğmesi" caption="Önerilen modeller: her birinin boyutu, bağlamı ve işlemcide mi ekran kartında mı çalışacağı yazar." />
+
+Pencerede neler var?
+
+- **Donanım:** bilgisayarının belleğini, işlemcisini ve ekran kartını gösterir.
+- **Motor:** modelleri çalıştıran llama.cpp motoru **Motoru kur** ile tek tıkla kurulur, **Kaldır** ile silinir.
+- **Önerilen:** RAM, ekran kartı belleği, disk alanı ve sürücü türüne (SSD/HDD) göre Hugging Face'ten seçilmiş **hafif** ve **büyük** modeller.
+- **İndirilenler:** **AI Panelinde kullan**, **Görev ata (Ayarlar)** ve **Sil** düğmeleri.
+- **Tüm modeller / Ara:** Hugging Face'te GGUF modelleri arar; **Yalnızca uygun olanlar** süzgeci bilgisayarına uymayanları gizler.
+
+### Ekran kartı mı, işlemci mi?
+
+NVIDIA ekran kartın ve CUDA 12.1 ya da üstünü destekleyen bir sürücün varsa modeller ekran kartında çalışır ve çok daha hızlıdır; gereken CUDA kitaplıkları da kendiliğinden kurulur. Yoksa işlemcide çalışır. AMD ve Intel ekran kartlarında neden hızlandırılamadığı açıklanır. Ekran kartı sürümü çalışmazsa nedeni yazar ve yeniden denemek için düğme çıkar.
+
+### İndirme
+
+- İndirme takılırsa ya da koparsa kaldığı yerden sürer; iptal edilen indirmenin yarım dosyası silinir.
+- İndirdiğin hafif model otomatik tamamlamaya, büyük model sohbete kendiliğinden atanır (boştaysa).
+- Her modelin ne kadar uzun metni aklında tutabildiği (bağlam) gösterilir. **Kodi için uygun** rozeti, Kodi'yle konuşabilecek kadar geniş bağlamı olan modelleri işaretler.
+
+### Model klasörü
+
+Modeller varsayılan olarak `%LOCALAPPDATA%\TurKod\yerel_ai\modeller` klasörüne iner. **Depolama** bölümünden başka bir sürücüye taşıyabilir (her sürücünün boş yeri gösterilir), yolu elle düzenleyebilir ya da **Varsayılana çevir** ile sıfırlayabilirsin.
+
+### İlk yerel modelini kur
+
+<Steps>
+
+1. **Araçlar → Yerel AI Modelleri…** penceresini aç.
+
+2. Motor kurulu değilse **Motoru kur**'a bas ve bitmesini bekle.
+
+3. **Önerilen** sekmesinde en hafif modelin yanındaki **İndir**'e bas.
+
+4. İndirme bitince **İndirilenler** sekmesinde **AI Panelinde kullan**'a bas.
+
+5. Sağdaki AI Asistan'a "Merhaba!" yaz. İlk cevap biraz gecikebilir; model yükleniyor.
+
+</Steps>
+
+<Aside type="note" title="Büyükler için">
+Arama ve öneri listesi uygunsuz içerikli modelleri kendiliğinden gizler. Yerel model sunucusu yalnızca bu bilgisayardan erişilebilir ve program kapanınca durur. Yerel modeller hiçbir veriyi internete göndermez.
+</Aside>
+
+## Hayalet kod
+
+**Otomatik tamamlama (hayalet kod)** görevine bir model atadıysan, yazmayı bıraktığında imlecin arkasında gri, eğik yazıyla bir öneri belirir.
+
+| Tuş | Ne yapar? |
+| --- | --------- |
+| `Tab` | Önerinin tamamını kabul eder |
+| `Ctrl+→` | Önerinin yalnızca bir kelimesini kabul eder |
+| `Esc` | Öneriyi kapatır |
+| `Ctrl+Shift+Boşluk` | Beklemeden hemen öneri ister (**Düzenle → AI Önerisi İste**) |
+
+- Yerel modelde kod "ortadan doldurma" (FIM) yöntemiyle, bulut modelinde sohbet yoluyla tamamlanır. Öneri her zaman TürKod'a çevrilir; senin verdiğin adlar korunur.
+- Kelimenin ortasında öneri istenmez; orası normal öneri listesinin işi. Satır bittiyse öneri alt satırdan, doğru girintiyle başlar.
+- **Ayarlar → Yapay Zekâ: Görevler**'de önerinin ne kadar bekledikten sonra geleceği (**Otomatik tamamlama gecikmesi**) ve **Çok satırlı otomatik tamamlama** ayarlanır.
+
+<Aside type="tip">
+Hayalet kod için küçük ve hızlı bir model (ör. önerilen hafif yerel modellerden biri) en iyisidir; sohbet için daha büyük bir model seçebilirsin.
+</Aside>

@@ -1,0 +1,221 @@
+---
+// Ana sayfa hero'su: animasyonla değişen başlık, zengin düğmeler, güven satırı.
+// Starlight'ın Hero bileşeninin yerine geçer (yalnızca hero'su olan sayfada kullanılır).
+// Starlight sayfa başlığına bu kimlikle bağlanır (içindekiler, "başa dön").
+const PAGE_TITLE_ID = '_top';
+
+const { data } = Astro.locals.starlightRoute.entry;
+const tagline = data.hero?.tagline;
+
+// "Kodlamayı ___ öğren." cümlesinde sırayla yazılıp silinen sözcükler.
+const kelimeler = ['Türkçe', 'oyun yaparak', "Kodi'yle", 'adım adım', 'ücretsiz'];
+const REPO = 'https://github.com/YusufX-sys/turkod-ide';
+---
+
+<div class="hero tk-hero">
+  <a class="tk-hero-pill" href="/whats-new/">
+    <span class="tk-hero-pill-new">3.3</span>
+    <span>Türkçe Konuşan Kodlama Ortamı</span>
+    <span class="tk-hero-pill-arrow" aria-hidden="true">→</span>
+  </a>
+
+  <h1 id={PAGE_TITLE_ID} data-page-title class="tk-hero-title" aria-label={`Kodlamayı ${kelimeler[0]} öğren`}>
+    <span class="tk-hero-line1" aria-hidden="true">Kodlamayı</span>{' '}
+    <span class="tk-rotator-wrap" aria-hidden="true">
+      <span class="tk-rotator" data-tk-rotator data-words={JSON.stringify(kelimeler)}>{kelimeler[0]}</span><span class="tk-caret"></span>
+    </span>{' '}
+    <span aria-hidden="true">öğren.</span>
+  </h1>
+
+  {tagline && <p class="tagline tk-hero-tagline" set:html={tagline} />}
+
+  <div class="actions tk-hero-actions">
+    <a class="tk-hbtn tk-hbtn-main" href="/demo/">
+      <span class="tk-hbtn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14Z"/></svg></span>
+      <span class="tk-hbtn-text"><b>Demo'yu Dene</b><small>Tarayıcıda, kurulumsuz</small></span>
+    </a>
+    <a class="tk-hbtn tk-hbtn-glass" href="/getting-started/">
+      <span class="tk-hbtn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v15H6.5A2.5 2.5 0 0 0 4 20.5 2.5 2.5 0 0 0 6.5 23H19v-5"/><path d="M8 7h7M8 11h5"/></svg></span>
+      <span class="tk-hbtn-text"><b>Belgeleri İncele</b><small>Kurulum ve dersler</small></span>
+    </a>
+    <a class="tk-hbtn tk-hbtn-glass" href={REPO} target="_blank" rel="noopener">
+      <span class="tk-hbtn-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></span>
+      <span class="tk-hbtn-text"><b>GitHub</b><small>Açık kaynak · MIT</small></span>
+      <span class="tk-hbtn-ext" aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  <ul class="tk-hero-trust">
+    <li>Ücretsiz</li>
+    <li>Türkçe</li>
+    <li>Açık kaynak</li>
+    <li>Windows 10 / 11</li>
+  </ul>
+</div>
+
+<script>
+  // Daktilo efekti: sözcüğü harf harf yazar, bekler, siler, sonrakine geçer.
+  const el = document.querySelector<HTMLElement>('[data-tk-rotator]');
+  const azHareket = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (el) {
+    const kelimeler: string[] = JSON.parse(el.dataset.words || '[]');
+    const baslik = el.closest('h1');
+    let i = 0;
+    const bekle = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    const dongu = async () => {
+      if (azHareket) {
+        // Hareket istemeyenler için yalnızca yumuşak geçiş.
+        for (;;) {
+          await bekle(2600);
+          i = (i + 1) % kelimeler.length;
+          el.style.opacity = '0';
+          await bekle(250);
+          el.textContent = kelimeler[i];
+          el.style.opacity = '1';
+          baslik?.setAttribute('aria-label', `Kodlamayı ${kelimeler[i]} öğren`);
+        }
+      }
+      for (;;) {
+        await bekle(2200);
+        const eski = kelimeler[i];
+        for (let n = eski.length; n >= 0; n--) { el.textContent = eski.slice(0, n); await bekle(45); }
+        i = (i + 1) % kelimeler.length;
+        el.dataset.renk = String(i % 3);
+        const yeni = kelimeler[i];
+        await bekle(180);
+        for (let n = 1; n <= yeni.length; n++) { el.textContent = yeni.slice(0, n); await bekle(85); }
+        baslik?.setAttribute('aria-label', `Kodlamayı ${yeni} öğren`);
+      }
+    };
+    dongu();
+  }
+</script>
+
+<style is:global>
+  [data-has-hero] .tk-hero {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: clamp(2.5rem, 6vw, 5rem) 0 1.5rem; gap: 1.4rem; position: relative;
+  }
+  /* Arkada yavaşça dönen renk halesi */
+  [data-has-hero] .tk-hero::before {
+    content: ""; position: absolute; z-index: -1; top: 10%; left: 50%; width: min(760px, 90vw); aspect-ratio: 1.6;
+    transform: translateX(-50%); border-radius: 50%; filter: blur(80px); opacity: .35;
+    background: conic-gradient(from 0deg, #06b6d4, #6366f1, #d946ef, #06b6d4);
+    animation: tk-hale 18s linear infinite;
+  }
+  :root[data-theme='light'] [data-has-hero] .tk-hero::before { opacity: .18; }
+  @keyframes tk-hale { to { transform: translateX(-50%) rotate(360deg); } }
+
+  /* Üstteki hap */
+  .tk-hero-pill {
+    display: inline-flex; align-items: center; gap: .6rem; padding: .35rem .9rem .35rem .4rem;
+    border-radius: 999px; text-decoration: none !important; font-size: .9rem; font-weight: 600;
+    color: var(--sl-color-white) !important; border: 1px solid transparent;
+    background:
+      linear-gradient(var(--tk-pill-bg), var(--tk-pill-bg)) padding-box,
+      linear-gradient(90deg, #22d3ee, #818cf8, #e879f9) border-box;
+    transition: transform .25s, box-shadow .25s;
+  }
+  :root[data-theme='dark'] { --tk-pill-bg: rgba(13, 17, 23, .85); }
+  :root[data-theme='light'] { --tk-pill-bg: rgba(255, 255, 255, .92); }
+  .tk-hero-pill:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(129, 140, 248, .45); }
+  .tk-hero-pill-new {
+    padding: .15rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 800; color: #fff;
+    background: linear-gradient(90deg, #06b6d4, #6366f1, #d946ef);
+  }
+  .tk-hero-pill-arrow { transition: transform .25s; }
+  .tk-hero-pill:hover .tk-hero-pill-arrow { transform: translateX(4px); }
+
+  /* Başlık */
+  [data-has-hero] .hero h1.tk-hero-title {
+    margin: 0; font-size: clamp(2.4rem, 6.2vw, 4.6rem) !important; line-height: 1.08; font-weight: 800;
+    letter-spacing: -.035em;
+    background: none !important; animation: none !important; color: var(--sl-color-white) !important;
+    -webkit-text-fill-color: currentColor;
+  }
+  .tk-hero-line1 { display: block; }
+  .tk-rotator-wrap { display: inline-block; white-space: nowrap; }
+  .tk-rotator {
+    display: inline-block; min-width: .5ch; padding-bottom: .06em; transition: opacity .25s;
+    background: linear-gradient(90deg, #22d3ee, #818cf8, #e879f9, #22d3ee); background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    animation: tk-shine 4s linear infinite;
+  }
+  .tk-rotator[data-renk='1'] { background-image: linear-gradient(90deg, #e879f9, #f472b6, #fbbf24, #e879f9); }
+  .tk-rotator[data-renk='2'] { background-image: linear-gradient(90deg, #34d399, #22d3ee, #818cf8, #34d399); }
+  :root[data-theme='light'] .tk-rotator { background-image: linear-gradient(90deg, #0891b2, #6366f1, #c026d3, #0891b2); }
+  :root[data-theme='light'] .tk-rotator[data-renk='1'] { background-image: linear-gradient(90deg, #c026d3, #db2777, #d97706, #c026d3); }
+  :root[data-theme='light'] .tk-rotator[data-renk='2'] { background-image: linear-gradient(90deg, #059669, #0891b2, #6366f1, #059669); }
+  .tk-caret {
+    display: inline-block; width: .08em; height: .9em; margin-left: .06em; vertical-align: -.08em; border-radius: 2px;
+    background: linear-gradient(#22d3ee, #e879f9); box-shadow: 0 0 12px rgba(34, 211, 238, .8);
+    animation: tk-caret 1s steps(1) infinite;
+  }
+  @keyframes tk-caret { 50% { opacity: 0; } }
+
+  .tk-hero-tagline { margin: 0 !important; max-width: 38rem; font-size: clamp(1.05rem, 2vw, 1.3rem) !important; line-height: 1.6; color: var(--sl-color-gray-2); }
+
+  /* Düğmeler */
+  [data-has-hero] .tk-hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; margin-top: .2rem; }
+  .tk-hbtn {
+    position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: .8rem;
+    padding: .7rem 1.3rem .7rem .7rem; border-radius: 16px; text-decoration: none !important; text-align: left;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .tk-hbtn::after {
+    content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .28), transparent); transform: skewX(-20deg);
+    transition: left .7s ease;
+  }
+  .tk-hbtn:hover::after { left: 130%; }
+  .tk-hbtn:hover { transform: translateY(-3px); }
+  .tk-hbtn-icon {
+    flex: none; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+  }
+  .tk-hbtn-icon svg { width: 22px; height: 22px; }
+  .tk-hbtn-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .tk-hbtn-text b { font-size: 1.02rem; }
+  .tk-hbtn-text small { font-size: .78rem; opacity: .8; margin-top: .15rem; }
+  .tk-hbtn-ext { margin-left: .2rem; opacity: .7; }
+
+  .tk-hbtn-main {
+    color: #fff !important; background: linear-gradient(110deg, #06b6d4, #6366f1, #d946ef, #6366f1, #06b6d4);
+    background-size: 250% auto; animation: tk-shine 8s linear infinite;
+    box-shadow: 0 10px 34px -8px rgba(99, 102, 241, .7), 0 0 0 1px rgba(255, 255, 255, .12) inset;
+  }
+  .tk-hbtn-main:hover { box-shadow: 0 16px 44px -8px rgba(217, 70, 239, .75), 0 0 0 1px rgba(255, 255, 255, .2) inset; }
+  .tk-hbtn-main .tk-hbtn-icon { background: rgba(255, 255, 255, .2); box-shadow: 0 0 0 1px rgba(255, 255, 255, .25) inset; }
+  .tk-hbtn-main .tk-hbtn-icon svg { animation: tk-nabiz 2.2s ease-in-out infinite; }
+  @keyframes tk-nabiz { 50% { transform: scale(1.18); } }
+
+  .tk-hbtn-glass {
+    color: var(--sl-color-white) !important; border: 1px solid transparent; backdrop-filter: blur(10px);
+    background:
+      linear-gradient(var(--tk-pill-bg), var(--tk-pill-bg)) padding-box,
+      linear-gradient(140deg, rgba(34, 211, 238, .55), rgba(99, 102, 241, .25), rgba(232, 121, 249, .55)) border-box;
+  }
+  .tk-hbtn-glass:hover { box-shadow: 0 14px 36px -12px rgba(99, 102, 241, .6); }
+  .tk-hbtn-glass .tk-hbtn-icon { color: #22d3ee; background: rgba(34, 211, 238, .1); box-shadow: 0 0 0 1px rgba(34, 211, 238, .3) inset; }
+  .tk-hbtn-glass + .tk-hbtn-glass .tk-hbtn-icon { color: #e879f9; background: rgba(232, 121, 249, .1); box-shadow: 0 0 0 1px rgba(232, 121, 249, .3) inset; }
+  :root[data-theme='light'] .tk-hbtn-glass .tk-hbtn-icon { color: #0891b2; }
+  :root[data-theme='light'] .tk-hbtn-glass + .tk-hbtn-glass .tk-hbtn-icon { color: #a21caf; }
+  .tk-hbtn-glass small { color: var(--sl-color-gray-3); opacity: 1; }
+
+  /* Güven satırı */
+  .tk-hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 1.3rem; list-style: none; padding: 0 !important; margin: 0 !important; }
+  .tk-hero-trust li { margin: 0 !important; display: inline-flex; align-items: center; gap: .4rem; font-size: .88rem; color: var(--sl-color-gray-3); }
+  .tk-hero-trust li::before {
+    content: "✓"; width: 1.1rem; height: 1.1rem; border-radius: 50%; display: grid; place-items: center;
+    font-size: .65rem; font-weight: 800; color: #fff; background: linear-gradient(135deg, #10b981, #06b6d4);
+  }
+
+  /* Windows indirme düğmesi hero içinde, başlığın altında */
+  [data-has-hero] .tk-hero .tk-win-download { margin: .2rem auto 0; }
+
+  @media (max-width: 560px) {
+    .tk-hbtn { width: 100%; max-width: 340px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-has-hero] .tk-hero::before, .tk-hbtn-main, .tk-hbtn-main .tk-hbtn-icon svg, .tk-rotator { animation: none; }
+  }
+</style>

@@ -1,11 +1,26 @@
 # TürKod
 
-TürKod, Türkçe anahtar kelimelerle yazılan ve Python'a çevrilen bir programlama dilidir.
+TürKod, Türkçe anahtar kelimelerle yazılan ve Python'a çevrilen bir programlama dilidir. TürKod IDE (güncel sürüm 3.3.0), Windows 10/11 (64-bit) için ücretsiz ve MIT lisanslı açık kaynak bir geliştirme ortamıdır. Kaynak kodu: https://github.com/YusufX-sys/turkod-ide
 
 ## Kritik Dokümantasyon
 - [Sözlük](https://turkod.pages.dev/learn/sozluk/): Tüm Türkçe anahtar kelime ve fonksiyonların Python karşılıkları.
 - [Sözdizimi Davranışları](https://turkod.pages.dev/learn/sozdizimi-davranislari/): Sözlükte yer almayan, bağlama göre değişen çeviri kuralları (döngü/için ayrımı, ise operatörü, rezerve kelime kısıtları). Bu sayfa okunmadan doğru kod üretilemez.
 - [Temel İfadeler](https://turkod.pages.dev/learn/basics/): Söz dizimine giriş.
+
+## TürKod IDE 3.3
+- [3.3 Yenilikleri](https://turkod.pages.dev/whats-new/): 3.3.0 sürümündeki yenilikler ve önemli düzeltmelerin özeti.
+- [Kodi](https://turkod.pages.dev/features/kodi/): IDE içindeki yardımcı robot (F1). Programı bilir, soruları cevaplar, panel açma, kod yazma, menü komutu çalıştırma gibi işler yapar; yetkileri Ayarlar → Kodi'den seçilir.
+- [Yapay Zekâ Modelleri](https://turkod.pages.dev/features/local-models/): 220'den fazla sağlayıcı bağlama, görev başına model atama, llama.cpp ile yerel modeller, düşünme denetimi, hayalet kod (Tab / Ctrl+→ / Esc / Ctrl+Shift+Boşluk).
+- [EXE'ye Dönüştür](https://turkod.pages.dev/features/exe/): Çalıştır → EXE'ye Dönüştür… ya da `turkod exe_yap dosya.trpy --seçenek`; kaynağa bakmak için `turkod kaynak program.exe`.
+- [Terminal ve Paketler](https://turkod.pages.dev/features/terminal/): Her sekmenin kendi terminali, Türkçe pip komutları (`pip yükle`), `turkod --kontrol/--duzelt/--bicimlendir/--python/--turkod/--cevir/--anlam/--dersler` komutları, TürKod Kabuğu.
+- [Klavye Kısayolları](https://turkod.pages.dev/features/shortcuts/): Varsayılan kısayolların tamamı.
+- [Katkıda Bulun](https://turkod.pages.dev/contribute/): Hata/sözlük önerisi şablonları, testler, imza doğrulama, güvenlik açığı bildirme.
+
+## Dil notları (3.3)
+- Kaplumbağa çizimini bitiren komut `kaplumbağa.tamamla()` (Python'daki `turtle.done()`); eski `çıkışta_bekle` de çalışır.
+- Tırnak içindeki renk ve seçenek değerleri Türkçe yazılabilir: `kalem_rengi("mavi")`, `hız("en_hızlı")`, `"açık mavi"`.
+- Özel adlar Python gibi iki alt çizgiyle yazılır: `__başlat__`, `__isim__`, `__topla__`.
+- Alt klasördeki modüller içe aktarılabilir: `içe_aktar araçlar.sayılar`.
 
 ## Not
 Sözlükte olmayan bir kelime hata vermeden aynen Python koduna geçer ve NameError üretir.

@@ -1,0 +1,65 @@
+---
+// Starlight'ın kendi sol paneli korunur; üstüne küçük bir karşılama kartı eklenir.
+// Bölüm simgeleri ve görünüm src/styles/belgeler.css içinde.
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import { sonSurum } from '../data/son-surum';
+
+// "İndir" doğrudan en güncel EXE'yi indirir. Adres derlemede alınır, sayfa
+// açılınca tarayıcıda da yenilenir (site yeniden derlenmeden çıkan sürüm için).
+const son = await sonSurum();
+const ipucu = son.dogrudan
+  ? `TürKod ${son.surum} kurulumunu indir (Windows)`
+  : 'En güncel TürKod sürümü';
+---
+<div class="tk-sb-card">
+  <a href="/" class="tk-sb-brand">
+    <img src="/icon-96.png" alt="" width="34" height="34" />
+    <span class="tk-sb-brand-text">
+      <strong>TürKod Belgeleri</strong>
+      <small>Sürüm 3.3 · Türkçe kodlama</small>
+    </span>
+  </a>
+  <div class="tk-sb-actions">
+    <a href={son.url} class="tk-sb-btn tk-sb-btn-primary" data-tk-son-exe title={ipucu} rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      İndir
+    </a>
+    <a href="/demo/" class="tk-sb-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>
+      Canlı Demo
+    </a>
+  </div>
+</div>
+<Default><slot /></Default>
+
+<script>
+  // Site derlendikten sonra yeni sürüm çıktıysa bağlantıyı güncelle. Sonuç oturum
+  // boyunca saklanır: sayfadan sayfaya geçerken GitHub'a tekrar sorulmaz.
+  const ANAHTAR = 'tk-son-exe';
+  const uygula = (url: string, surum: string) => {
+    document.querySelectorAll<HTMLAnchorElement>('a[data-tk-son-exe]').forEach((a) => {
+      a.href = url;
+      if (surum) a.title = `TürKod ${surum} kurulumunu indir (Windows)`;
+    });
+  };
+  (async () => {
+    try {
+      const kayitli = sessionStorage.getItem(ANAHTAR);
+      if (kayitli) {
+        const { url, surum } = JSON.parse(kayitli);
+        if (url) return uygula(url, surum);
+      }
+    } catch {}
+    try {
+      const r = await fetch('https://api.github.com/repos/YusufX-sys/turkod-ide/releases/latest');
+      if (!r.ok) return;
+      const veri = await r.json();
+      const dosyalar: { name: string; browser_download_url: string }[] = veri.assets ?? [];
+      const dosya = dosyalar.find((a) => /\.exe$/i.test(a.name)) ?? dosyalar.find((a) => /\.zip$/i.test(a.name));
+      if (!dosya) return;
+      const surum = String(veri.tag_name ?? '').replace(/^v/i, '');
+      uygula(dosya.browser_download_url, surum);
+      try { sessionStorage.setItem(ANAHTAR, JSON.stringify({ url: dosya.browser_download_url, surum })); } catch {}
+    } catch {}
+  })();
+</script>

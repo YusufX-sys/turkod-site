@@ -3,7 +3,11 @@ title: Klavye Kısayolları
 description: TürKod IDE'deki tüm klavye kısayolları.
 ---
 
-Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komut kısayoluyla birlikte listelenir. Fareyi araç çubuğundaki bir simgenin üzerinde beklettiğinde de kısayolu görünür.
+Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komut kısayoluyla birlikte listelenir. Fareyi araç çubuğundaki bir düğmenin üzerinde beklettiğinde de kısayolu görünür. Menülerde kısayollar Türkçe yazılır (ör. `Ctrl+Alt+Aşağı`, `Ctrl+Shift+Boşluk`).
+
+:::tip[Kısayolları değiştir]
+**Görünüm → Klavye Kısayolları…** (ya da Ayarlar'daki düğme) bütün komutları kısayollarıyla listeler. Bir komutun yanındaki kaleme bas, istediğin tuş birleşimine bas ve **Ata** de. Tuş başka bir komutta kullanılıyorsa uyarı çıkar. **Varsayılana döndür** tek komutu, **Tümünü Sıfırla** hepsini eski hâline getirir. Yeni kısayol menülerde ve düğme ipuçlarında da görünür. Aşağıdaki tablolar varsayılan kısayolları gösterir.
+:::
 
 ## Dosya
 
@@ -13,6 +17,7 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | `Ctrl+O` | Dosya Aç |
 | `Ctrl+Shift+O` | Son Dosyalar |
 | `Ctrl+S` | Kaydet |
+| `Ctrl+Shift+S` | Tümünü Kaydet |
 | `Ctrl+W` | Sekmeyi Kapat |
 
 ## Düzenleme
@@ -25,7 +30,14 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | `Ctrl+G` | Satıra Git… |
 | `Ctrl+F` | Bul |
 | `Ctrl+H` | Bul / Değiştir |
-| `Esc` | Bul kutusunu kapat |
+| `Ctrl+Shift+F` | Dosyalarda Ara |
+| `F12` | Tanıma Git |
+| `F2` | Adı Değiştir… |
+| `Shift+Alt+F` | Kodu Biçimlendir |
+| `Ctrl+Alt+↓` / `Ctrl+Alt+↑` | Alta / Üste İmleç Ekle |
+| `Ctrl+D` | Sonraki Eşleşmeyi Seçime Ekle |
+| `Ctrl+Shift+L` | Tüm Eşleşmeleri Seç |
+| `Esc` | Bul kutusunu ya da fazla imleçleri kapat |
 | `Ctrl+/` | Yorum Aç/Kapat |
 | `Ctrl+Shift+D` | Satırı Çoğalt |
 | `Alt+↑` / `Alt+↓` | Satırı Yukarı / Aşağı Taşı |
@@ -34,13 +46,20 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | `Ctrl+"` | Seçimi tırnak içine al |
 | `Tab` / `Shift+Tab` | Girinti artır / azalt |
 | `Ctrl+=` / `Ctrl+-` | Yazıyı büyüt / küçült (`Ctrl`+fare tekerleği de olur) |
+| `Ctrl+Shift+Boşluk` | AI Önerisi İste (hayalet kod) |
+
+Yorum, satır çoğaltma, satır taşıma, çoklu imleç, `F2` ve `F12` gibi kısayollar yalnızca imleç editördeyken çalışır.
 
 ## Görünüm
 
 | Kısayol | Komut |
 | ------- | ----- |
 | `Ctrl+J` | Terminal Aç/Kapat |
+| `Ctrl+Shift+M` | Sorunlar |
+| `Ctrl+\` | Editörü Böl (Yan Yana) |
 | `Ctrl+Shift+P` | Komut Paleti |
+| `Ctrl+Shift+X` | Eklenti Özellikleri |
+| `Ctrl+Shift+V` | Markdown Önizleme (yalnızca `.md` dosyasında; eklenti açıksa) |
 | `Ctrl+Shift+PageUp` / `PageDown` | Sekmeyi Sola / Sağa Taşı |
 
 ## Çalıştırma ve hata ayıklama
@@ -48,14 +67,23 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | Kısayol | Komut |
 | ------- | ----- |
 | `Ctrl+R` | Çalıştır |
-| `F9` | Breakpoint Aç/Kapat |
-| `Shift+F9` | Koşullu Breakpoint… |
-| `F5` | Debug Başlat / Devam |
+| `F9` | Kesme Noktası Aç/Kapat |
+| `Shift+F9` | Koşullu Kesme Noktası… |
+| `F5` | Hata Ayıklamayı Başlat / Devam |
 | `F10` | Adım At |
 | `F11` | İçine Gir |
 | `Shift+F11` | Dışına Çık |
+| `Ctrl+F10` | İmlece Kadar Çalıştır |
 | `F6` | Duraklat |
-| `Shift+F5` | Debug Durdur |
+| `Shift+F5` | Hata Ayıklamayı Durdur |
+
+## Araçlar ve yardım
+
+| Kısayol | Komut |
+| ------- | ----- |
+| `Ctrl+Shift+K` | TürKod Kabuğu |
+| `Ctrl+Shift+J` | Kod Parçacıkları (eklenti açıksa) |
+| `F1` | Kodi ile Konuş |
 
 ## Terminal
 
@@ -66,21 +94,35 @@ Kısayolu hatırlamıyorsan `Ctrl+Shift+P` ile **Komut Paleti**'ni aç: her komu
 | `Ctrl+C` (seçim yokken) | Çalışan programı durdurur |
 | `Ctrl` + fare tekerleği | Terminal yazısını büyütür / küçültür |
 
-## Otomatik tamamlama
+## Otomatik tamamlama ve hayalet kod
 
 | Kısayol | Ne yapar? |
 | ------- | --------- |
 | `↑` / `↓` | Öneriler arasında gezin |
 | `Tab` / `Enter` | Öneriyi kabul et |
 | `Esc` | Listeyi kapat |
+| `Tab` | Hayalet kod önerisinin tamamını kabul et |
+| `Ctrl+→` | Hayalet kod önerisinin bir kelimesini kabul et |
+| `Esc` | Hayalet kod önerisini kapat |
+| `Ctrl+Shift+Boşluk` | Beklemeden hayalet kod önerisi iste |
 
-## AI Asistan ve arayüz turu
+## PDF sekmesi
+
+| Kısayol | Ne yapar? |
+| ------- | --------- |
+| `PageUp` / `PageDown` | Önceki / sonraki sayfa |
+| `Home` / `End` | İlk / son sayfa |
+| `Ctrl+=` / `Ctrl+-` | Yakınlaştır / uzaklaştır (`Ctrl`+fare tekerleği de olur) |
+| `Ctrl+0` | Genişliğe sığdır |
+
+## AI Asistan, Kodi ve arayüz turu
 
 | Kısayol | Ne yapar? |
 | ------- | --------- |
 | `Enter` / `Shift+Enter` | AI'ya gönder / yeni satır |
+| `Enter` | Kodi'ye gönder |
 | `→` veya `Enter` / `←` / `Esc` | Turda ileri / geri / turu kapat |
 
 :::tip[Türkçe Q klavye]
-`AltGr` ile yazılan `| [ ] { }` gibi karakterler kısayol sanılmaz; editörde normal yazılır.
+`AltGr` ile yazılan `| [ ] { } \` gibi karakterler kısayol sanılmaz; editörde normal yazılır. Türk klavyesinde `Ctrl+/` yerine `Ctrl+Shift+7` ya da sayı tuşlarındaki `/` da olur.
 :::

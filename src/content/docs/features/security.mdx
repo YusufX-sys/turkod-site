@@ -26,3 +26,14 @@ Tüm dosyalar geçerli görünüyorsa dosyaların imzayla eşleştiği anlamına
 :::tip[İpucu]
 Doğrulama başarısız olursa programı kapat ve resmî kanaldan tekrar indir.
 :::
+
+## Kaynak kodu doğrulamak
+
+TürKod açık kaynaklıdır. GitHub'daki kaynak kodun imzasını özel anahtar olmadan, yalnızca ortak anahtarla doğrulayabilirsin:
+
+```
+cd TurKod-v3.3.0
+python kaynak_imzala.py --dogrula
+```
+
+Bir güvenlik açığı bulursan lütfen herkese açık issue açma; nasıl bildireceğin [Katkıda Bulun](/contribute/#güvenlik-açığı-bildirmek) sayfasında.
