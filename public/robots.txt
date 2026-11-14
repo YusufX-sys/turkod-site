@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://turkod.pages.dev/sitemap-index.xml
+Sitemap: https://turkod.pages.dev/sitemap.xml
