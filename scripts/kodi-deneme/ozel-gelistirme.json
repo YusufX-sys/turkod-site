@@ -1,0 +1,302 @@
+[
+  {
+    "soru": "Odak zamanlayıcı kaç dakika çalışma süresi verip kaç dakika mola veriyor?",
+    "sayfa": "/features/tools/",
+    "baslik": "Eklenti Özellikleri"
+  },
+  {
+    "soru": "programda kac tane tema var, yuksek kontrastli olan da var mi",
+    "sayfa": "/features/settings/",
+    "baslik": "Temalar"
+  },
+  {
+    "soru": "İndirdiğim yapay zeka modelleri C sürücüsünü dolduruyor, başka bir diske taşıyabilir miyim?",
+    "sayfa": "/features/local-models/",
+    "baslik": "Model klasörü"
+  },
+  {
+    "soru": "Kodi editöre uzun bir program yazdı, yazdığı her şeyi tek seferde geri almanın yolu var mı?",
+    "sayfa": "/features/kodi/",
+    "baslik": "Senin için iş yapar"
+  },
+  {
+    "soru": "TürKod bilgisayarda hangi klasöre kuruluyor, Program Files'a mı?",
+    "sayfa": "/install/",
+    "baslik": "Adım 2 — Kurulum sihirbazını çalıştır"
+  },
+  {
+    "soru": "Fonksiyonun içinden dışarıdaki sayaç değişkenini artırmak istiyorum, ne eklemem gerekiyor?",
+    "sayfa": "/learn/functions/",
+    "baslik": "küresel ve yerel_olmayan"
+  },
+  {
+    "soru": "Programın resmi indirme (releases) sayfasının adresi nedir?",
+    "sayfa": "/getting-started/",
+    "baslik": "🔗 Resmî Bağlantılar"
+  },
+  {
+    "soru": "Bir sayı listesinin ortalamasını hazır bir kütüphaneyle nasıl hesaplarım?",
+    "sayfa": "/learn/stdlib/",
+    "baslik": "istatistik"
+  },
+  {
+    "soru": "Gri öneri neden bir kelimeyi yazarken ortasında hiç çıkmıyor?",
+    "sayfa": "/features/local-models/",
+    "baslik": "Hayalet kod"
+  },
+  {
+    "soru": "Sol taraftaki yapboz düğmesinin üstünde küçük bir sayı var, o neyi gösteriyor?",
+    "sayfa": "/use/tour/",
+    "baslik": "🧭 Sol şerit"
+  },
+  {
+    "soru": "İki TürKod penceresi aynı anda açıkken ayarlar birbirinin üstüne yazılıp kayboluyor mu?",
+    "sayfa": "/features/settings/",
+    "baslik": "Ayarlar nerede saklanır?"
+  },
+  {
+    "soru": "Şu anki tarih ve saati ekrana yazdırmak için ne içe aktarmalıyım?",
+    "sayfa": "/learn/stdlib/",
+    "baslik": "tarih_saat"
+  },
+  {
+    "soru": "Belgeler sitesini programın içinden hangi menüyle açabilirim?",
+    "sayfa": "/use/menus/",
+    "baslik": "Öğren"
+  },
+  {
+    "soru": "pygame penceresinin başlığını değiştirmek için TürKod'da hangi komutu kullanıyorum?",
+    "sayfa": "/learn/extra-libs/",
+    "baslik": "py_oyun (pygame) — 2B oyunlar"
+  },
+  {
+    "soru": "Exe'ye çevirme işini yarıda kesersem önceden yaptığım exe dosyası bozulur mu?",
+    "sayfa": "/features/exe/",
+    "baslik": "Bilmen gerekenler"
+  },
+  {
+    "soru": "Programım kullanıcıdan girdi_al ile cevap istiyor, terminal penceresi olmayan exe yapsam sorun olur mu?",
+    "sayfa": "/features/exe/",
+    "baslik": "Seçenekler"
+  },
+  {
+    "soru": "Sayının başına sıfır ekleyip 7'yi 007 gibi göstermek mümkün mü?",
+    "sayfa": "/learn/strings/",
+    "baslik": "Biçimlendirme"
+  },
+  {
+    "soru": "Sözlükte olmayan bir anahtarı istediğimde hata yerine 0 gelmesini nasıl sağlarım?",
+    "sayfa": "/learn/data-structures/",
+    "baslik": "Sözlükler"
+  },
+  {
+    "soru": "olarak hata ile yakaladigim hatanin mesaji neden ingilizce cikiyor",
+    "sayfa": "/learn/errors-files/",
+    "baslik": "Hata adları"
+  },
+  {
+    "soru": "Programım sys.argv ile argüman bekliyor, içinde boşluk olan bir argümanı nasıl vereceğim?",
+    "sayfa": "/features/run-debug/",
+    "baslik": "Çalıştırma argümanları"
+  },
+  {
+    "soru": "TürKod'un arayüzü hangi teknolojiyle yapılmış, Flutter mı kullanılıyor?",
+    "sayfa": "/about/",
+    "baslik": "🛠️ Teknoloji Yığını"
+  },
+  {
+    "soru": "eğer değilse yapısını tek satırda yazmak mümkün mü, yaşa göre çocuk ya da yetişkin yazdırmak gibi?",
+    "sayfa": "/learn/conditions/",
+    "baslik": "Tek satırda koşul (üçlü ifade)"
+  },
+  {
+    "soru": "Kodiye mesajla beraber bütün ekranı değil sadece TürKod penceresinin görüntüsünü yollayabilir miyim?",
+    "sayfa": "/features/kodi/",
+    "baslik": "Ekran görüntüsü göndermek"
+  },
+  {
+    "soru": "Akıllı düzeltmenin önerdiği kodu kendi kodumu bozmadan ayrı bir yerde görebilir miyim?",
+    "sayfa": "/features/smart-fix/",
+    "baslik": "Rapor"
+  },
+  {
+    "soru": "Gezgin ile AI panelinin ikisini birden ekranın soluna almak mümkün mü?",
+    "sayfa": "/use/tour/",
+    "baslik": "🔀 Panelleri taşıma"
+  },
+  {
+    "soru": "Program kurulduktan sonra diskte yaklaşık kaç MB yer kaplıyor?",
+    "sayfa": "/features/requirements/",
+    "baslik": "Sistem Gereksinimleri"
+  },
+  {
+    "soru": "Fonksiyonun bir parametresi verilmediğinde kendiliğinden bir değer almasını nasıl sağlarım?",
+    "sayfa": "/learn/functions/",
+    "baslik": "Fonksiyon tanımlama"
+  },
+  {
+    "soru": "Alt sınıfın başlatma metodunda üstteki sınıfın başlatma metodunu nasıl çağırırım?",
+    "sayfa": "/learn/classes/",
+    "baslik": "Kalıtım"
+  },
+  {
+    "soru": "eğer renk \"mavi\" ise yazınca sözdizimi hatası alıyorum, metinle ise nasıl kullanılıyor?",
+    "sayfa": "/learn/sozdizimi-davranislari/",
+    "baslik": "ise"
+  },
+  {
+    "soru": "Güncelleme indirilemedi uyarısı alırsam şu anki programım bozulur mu?",
+    "sayfa": "/features/updates/",
+    "baslik": "Kurulum sırasında"
+  },
+  {
+    "soru": "ursina ile ekrana kirmizi bir kup koymak icin kod nasil yaziliyor",
+    "sayfa": "/learn/extra-libs/",
+    "baslik": "ursina — 3B oyun motoru"
+  },
+  {
+    "soru": "Okulun ağında güncelleme denetlenemedi diyor, başka nasıl güncelleyebilirim?",
+    "sayfa": "/use/troubleshooting/",
+    "baslik": "\"Güncelleme denetlenemedi\" diyor"
+  },
+  {
+    "soru": "Hakkında / İmza penceresinde her şey geçerli çıktı, bu programın kesinlikle zararsız olduğu anlamına mı gelir?",
+    "sayfa": "/features/security/",
+    "baslik": "Doğrulama"
+  },
+  {
+    "soru": "kabukta 3. dersin ornek kodunu calistirmak icin hangi komutu yaziyorum",
+    "sayfa": "/features/terminal/",
+    "baslik": "TürKod Kabuğu ve TürKod Terminali"
+  },
+  {
+    "soru": "turkod_ide klasöründeki bir dosyaya dokununca imza bozuluyor, pull request'te bunu benim düzeltmem gerekiyor mu?",
+    "sayfa": "/contribute/",
+    "baslik": "Değişiklik yaparken"
+  },
+  {
+    "soru": "değilse eğer diye ayrı ayrı yazdım, düzeltici bunu birleştirir mi?",
+    "sayfa": "/features/smart-fix/",
+    "baslik": "Neleri düzeltir?"
+  },
+  {
+    "soru": "Daha önce atladıgım bir sürümü sonradan yüklemek istesem ne yapmalıym?",
+    "sayfa": "/use/troubleshooting/",
+    "baslik": "Bir sürümü \"Atla\" dedim, geri getirmek istiyorum"
+  },
+  {
+    "soru": "Satır çoğaltma ya da yorum yapma kısayolları terminale tıklamışken neden çalışmıyor?",
+    "sayfa": "/features/shortcuts/",
+    "baslik": "Düzenleme"
+  },
+  {
+    "soru": "Virgülle ayrılmış bir yazıyı parçalara bölüp listeye çevirmek istiyorum, nasıl yaparım?",
+    "sayfa": "/learn/strings/",
+    "baslik": "Bölme ve birleştirme"
+  },
+  {
+    "soru": "Programın çıktısında True yerine Doğru yazıyor, bir listenin içindeyken de böyle mi görünüyor?",
+    "sayfa": "/features/run-debug/",
+    "baslik": "Türkçe çıktı ve hata mesajları"
+  },
+  {
+    "soru": "TürKod'u Windows'tan kaldırınca ayarlarım ve indirdiğim kütüphaneler de otomatik siliniyor mu?",
+    "sayfa": "/install/",
+    "baslik": "Kaldırma"
+  },
+  {
+    "soru": "Kod istatistikleri yorum satırı ve boş satır sayısını da gösteriyor mu?",
+    "sayfa": "/features/tools/",
+    "baslik": "Kod İstatistikleri"
+  },
+  {
+    "soru": "Geliştiriciye e-posta yazmak için programın menüsünde bir seçenek var mı?",
+    "sayfa": "/use/menus/",
+    "baslik": "Yardım"
+  },
+  {
+    "soru": "Kod önerileri listesinde bazı satırların başında raptiye işareti var, o ne anlama geliyor?",
+    "sayfa": "/features/editor/",
+    "baslik": "Otomatik tamamlama"
+  },
+  {
+    "soru": "Kaplumbağa çizimini bitiren komutun yeni adı ne, eski çıkışta_bekle hâlâ çalışıyor mu?",
+    "sayfa": "/whats-new/",
+    "baslik": "Dil ve Sözlük"
+  },
+  {
+    "soru": "alt klasordeki bir trpy dosyasini ice aktarmak mumkun mu",
+    "sayfa": "/whats-new/",
+    "baslik": "Dil ve Sözlük"
+  },
+  {
+    "soru": "Indirilen guncelleme dosyasinin sahte olmadigini program nasil anliyor",
+    "sayfa": "/features/updates/",
+    "baslik": "Güvenlik"
+  },
+  {
+    "soru": "pythondaki is kelimesinin turkod karsiligi nedir",
+    "sayfa": "/learn/conditions/",
+    "baslik": "Karşılaştırma ve Mantık"
+  },
+  {
+    "soru": "Listedeki çift sayıları tek satırlık bir ifadeyle yeni bir listeye nasıl alırım?",
+    "sayfa": "/learn/data-structures/",
+    "baslik": "Kısa yoldan liste oluşturma"
+  },
+  {
+    "soru": "Sor kutusuna bir şey yazınca yapay zekaya kodumun hepsi mi gidiyor yoksa bir kısmı mı?",
+    "sayfa": "/features/ai/",
+    "baslik": "Gizlilik"
+  },
+  {
+    "soru": "Elimdeki bir .py dosyasını komut satırından TürKod koduna çevirmek için ne yazmalıyım?",
+    "sayfa": "/features/terminal/",
+    "baslik": "turkod komutu (komut satırı)"
+  },
+  {
+    "soru": "yazdirirken iki degerin arasina bosluk yerine tire koymak istiyorum nasil yaparim",
+    "sayfa": "/learn/basics/",
+    "baslik": "Sık kullanılan yerleşik fonksiyonlar"
+  },
+  {
+    "soru": "f-string'in süslü parantezlerinin içine yazdığım TürKod kelimeleri de çevriliyor mu?",
+    "sayfa": "/learn/sozdizimi-davranislari/",
+    "baslik": "f-string"
+  },
+  {
+    "soru": "Yaş negatif girilirse kendim bir hata oluşturup fırlatmak istiyorum, nasıl yazılır?",
+    "sayfa": "/learn/errors-files/",
+    "baslik": "Kendi hatanı fırlatma"
+  },
+  {
+    "soru": "Ctrl+G ile bir satıra atlayınca o satır ekranın en üstünde mi kalıyor yoksa ortada mı?",
+    "sayfa": "/features/editor/",
+    "baslik": "Satıra git"
+  },
+  {
+    "soru": "Bölme yaparken sonucun küsuratsız tam sayı çıkması için hangi işareti kullanmalıyım?",
+    "sayfa": "/learn/basics/",
+    "baslik": "Değişkenler ve Matematik"
+  },
+  {
+    "soru": "Asistanın yazdığı kodu editördeki kodumu silmeden imlecin olduğu yere koyabilir miyim?",
+    "sayfa": "/features/ai/",
+    "baslik": "Kullanım"
+  },
+  {
+    "soru": "Sözlük dosyasını değiştirdim, PR göndermeden önce hangi tutarlılık betiğini çalıştırmalıyım?",
+    "sayfa": "/contribute/",
+    "baslik": "Testler"
+  },
+  {
+    "soru": "Bir metodu parantez kullanmadan, değişken gibi okuyabilmek için başına ne yazmalıyım?",
+    "sayfa": "/learn/classes/",
+    "baslik": "Özellik (property)"
+  },
+  {
+    "soru": "turkod ileride paralı olacak mi, premium surumu falan var mi",
+    "sayfa": "/about/",
+    "baslik": "🎨 Proje Hedefleri"
+  }
+]

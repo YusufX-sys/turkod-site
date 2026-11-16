@@ -44,7 +44,7 @@
 
 <script>
   import { BILGI } from '../data/kodi-bilgi';
-  import { DOLGU, baglamliCevap, sadelestir, sozlukDizini, takipMi, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import { DOLGU, baglamliCevap, bolumDizini, sadelestir, sozlukDizini, takipMi, type BolumDizini, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
   import { kodiCiz, type KodiIfadesi } from '../data/kodi-ciz';
 
   type Baglanti = { t: string; u: string };
@@ -96,6 +96,13 @@
       .then((r) => (r.ok ? r.json() : null))
       .then((v) => (v?.k ? sozlukDizini(v.k) : null))
       .catch(() => null));
+  // Belge bölümleri (derlemede üretilir, ≈120 KB): Kodi ayrıntılı soruları buradan cevaplar.
+  let bolumler: Promise<BolumDizini | null> | null = null;
+  const bolumAl = () =>
+    (bolumler ??= fetch('/kodi-bolumler.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((v) => (v?.b?.length ? bolumDizini(v.b) : null))
+      .catch(() => null));
 
   const robotKutu = document.querySelector<HTMLElement>('[data-kodi-robot-kutu]');
   const balon = document.querySelector<HTMLElement>('[data-kodi-balon]');
@@ -126,12 +133,17 @@
       ctx.setTransform(o, 0, 0, o, 0, 0);
     };
     tuvalBoyutla();
-    let sonKare = 0;
+    // Programdaki gibi: hareket varken ~24, boştayken ~12 kare/sn. Döngü yalnızca çizim zamanı
+    // gelince uyanır (eskiden her ekran karesinde, saniyede 60 kez uyanıyordu) ve sekme gizliyken durur.
+    let zamanlayiciKodi: ReturnType<typeof setTimeout> | null = null;
+    const sonrakiKare = () => {
+      if (azHareket || document.hidden || zamanlayiciKodi) return;
+      const etkin = ifade !== 'mutlu' || performance.now() < elSallaBitis;
+      zamanlayiciKodi = setTimeout(() => { zamanlayiciKodi = null; requestAnimationFrame(ciz); }, etkin ? 42 : 83);
+    };
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) sonrakiKare(); });
     const ciz = (an: number) => {
-      // Programdaki gibi: hareket varken ~24, boştayken ~12 kare/sn.
-      const etkin = ifade !== 'mutlu' || an < elSallaBitis;
-      if (an - sonKare >= (etkin ? 42 : 83) || azHareket) {
-        sonKare = an;
+      {
         if (!azHareket) {
           if (kirpBaslangic < 0 && an > sonrakiKirp) kirpBaslangic = an;
           if (kirpBaslangic >= 0) {
@@ -148,7 +160,7 @@
           elSalla: an < elSallaBitis,
         });
       }
-      if (!azHareket) requestAnimationFrame(ciz);
+      sonrakiKare();
     };
     requestAnimationFrame(ciz);
     window.addEventListener('resize', () => { tuvalBoyutla(); yerlestir(); });
@@ -183,7 +195,13 @@
       const kx = Math.min(Math.max(merkez - sol, 24), gen - 24);
       kuyruk.style.left = `${kx - 12}px`;
     };
-    new ResizeObserver(() => yerlestir()).observe(balon);
+    // Balon büyüdükçe yeri kare başına en fazla bir kez hesaplanır (yazma efektinde her harfte değil).
+    let yerlestirBekliyor = false;
+    new ResizeObserver(() => {
+      if (yerlestirBekliyor) return;
+      yerlestirBekliyor = true;
+      requestAnimationFrame(() => { yerlestirBekliyor = false; yerlestir(); });
+    }).observe(balon);
 
     // ---------------------------------------------------------------- sürükleme
     // Programdaki gibi: Kodi'ye basıp sürükle; yerini hatırlar; çift tıklayınca köşesine döner.
@@ -295,11 +313,19 @@
       ekler.forEach((e) => (e.hidden = true));
       akis.appendChild(p);
       ifade = 'konusuyor';
+      // Harf harf yazma: saniyede ~120 harf (eskisiyle aynı hız), ama ekran saniyede 30 kez güncellenir.
       const harfler = Array.from(c.metin);
-      for (let i = 0; i <= harfler.length && !azHareket; i += 2) {
-        yazi.textContent = harfler.slice(0, i).join('') + '▍';
-        if (i % 16 === 0) asagi();
-        await bekle(16);
+      const baslangic = performance.now();
+      let gosterilen = -1;
+      while (!azHareket) {
+        const i = Math.min(harfler.length, Math.floor((performance.now() - baslangic) * 0.12));
+        if (i !== gosterilen) {
+          yazi.textContent = harfler.slice(0, i).join('') + '▍';
+          if (Math.floor(i / 16) !== Math.floor(gosterilen / 16)) asagi();
+          gosterilen = i;
+        }
+        if (i >= harfler.length) break;
+        await bekle(33);
       }
       yazi.textContent = c.metin;
       ekler.forEach((e) => (e.hidden = false));
@@ -492,10 +518,10 @@
       giris.placeholder = 'Kodi cevaplıyor…';
       balon.dataset.bekliyor = '1';
       const bitir = dusunuyor();
-      const [dizin] = await Promise.all([sozlukAl(), bekle(600)]);
+      const [dizin, bdz] = await Promise.all([sozlukAl(), bolumAl(), bekle(600)]);
       const konu = durum.konu;
       const t = takipMi(soru);
-      const yerel = baglamliCevap(soru, konu?.tur === 'bilgi' ? { soru: konu.soru, id: konu.id } : null, BILGI, dizin);
+      const yerel = baglamliCevap(soru, konu?.tur === 'bilgi' ? { soru: konu.soru, id: konu.id } : null, BILGI, dizin, bdz);
       let cevap: (KodiCevap & { vikiSoru?: Mesaj['vikiSoru'] }) | null = yerel;
       if (yerel) {
         // Bağlamdan gelen cevapta konu aynı kalır ("liste" -> "peki sırala" -> "ya ters?" hep listeyle ilgili).

@@ -11,9 +11,11 @@
 - **Nasıl Kullanılır:** arayüz turu, ilk program, menüler, sorun giderme
 - **Dili Öğrenin:** dersler, testler ve 2970 kelimelik TürKod ⇄ Python sözlüğü
 - **Özellikler:** Kodi, yapay zekâ, Akıllı Düzelt, EXE'ye Dönüştür, terminal ve daha fazlası
-- **Site içi Kodi:** sorularını sitenin bilgi tabanından ve sözlükten cevaplayan yardımcı robot
-  (yapay zekâ kullanmaz). İsteğe bağlı Vikipedi araması varsayılan olarak kapalıdır; açılınca
-  da her aramadan önce izin ister. Eşleştirme başarısı `node scripts/kodi-dene.ts` ile ölçülür.
+- **Canlı Demo:** TürKod kodunu tarayıcıda, programın **gerçek çeviricisiyle** çalıştırır
+  (Pyodide ile tarayıcıda Python; hata mesajları programdakiyle aynı).
+- **Site içi Kodi:** sorularını hazır bilgi tabanından, sözlükten ve sitedeki bütün belge
+  bölümlerinden cevaplayan yardımcı robot (yapay zekâ kullanmaz). Takip sorularını anlar.
+  İsteğe bağlı Vikipedi araması varsayılan olarak kapalıdır; açılınca da her aramadan önce izin ister.
 
 ## Geliştirme
 
@@ -48,6 +50,31 @@ değişkeni tanımlanabilir.
 ├── astro.config.mjs
 └── package.json
 ```
+
+## Canlı Demo'yu güncelleme
+
+Demo, `public/demo/turkod_ide.zip` içindeki çeviriciyi kullanır. TürKod'un çeviricisi ya da
+sözlüğü değişince paketi yeniden üret:
+
+```bash
+python scripts/demo-paket-uret.py "<TurKod-v3.3.0 klasörünün yolu>"
+```
+
+## Kodi'yi geliştirme
+
+- Hazır cevaplar: `src/data/kodi-bilgi.ts`; eşleştirme motoru: `src/data/kodi-motor.ts`.
+- Belge bölümleri her derlemede kendiliğinden üretilir (`src/integrations/kodi-bolumler.mjs` ->
+  `dist/kodi-bolumler.json`); belgeye yazılan her ayrıntıyı Kodi de bilir.
+- Başarıyı ölç (önce `npm run build`):
+
+```bash
+node scripts/kodi-dene.ts hepsi                 # bütün deneme listelerinin oranları
+node scripts/kodi-dene.ts soru "döngü nasıl"    # tek soru: en iyi adaylar
+node scripts/kodi-ornek.ts "döngü nasıl"        # Kodi'nin vereceği cevabın metni
+node scripts/kodi-ayarla.ts                     # ağırlıkları geliştirme listelerinde yeniden ayarla
+```
+
+Deneme listeleri `scripts/kodi-deneme/` içindedir; `*gizli*` listelere bakarak ayar yapma.
 
 ## Sözlüğü güncelleme
 

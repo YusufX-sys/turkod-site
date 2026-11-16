@@ -79,3 +79,52 @@ const isSplash = Astro.locals.starlightRoute?.entry?.data?.template === 'splash'
   .tk-footer-bottom p { margin: 0; color: var(--sl-color-gray-3); font-size: .82rem; }
   .tk-footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 </style>
+
+<script>
+  // Performans: sitenin sürekli dönen süs animasyonları (dalgalar, parlamalar, hale, süzülme, nabız ...)
+  // tarayıcıya saniyede 60 kare çizdiriyordu; zayıf ekran kartlarında bu, işlemciyi %30'a kadar
+  // meşgul ediyordu. Bu animasyonlar duraklatılır ve tek bir saatle saniyede 30 kare ilerletilir:
+  // yol, hız ve hızlanma eğrileri aynı kalır, tarayıcı yalnızca yarısı kadar kare çizer.
+  // Ekranda görünmeyenler hiç ilerletilmez (ekrana girince kaldığı yerden sürer); sekme gizliyken
+  // saat zaten durur.
+  const KARE_SURESI = 1000 / 30;
+  const surucu = () => {
+    const kayitlar: { a: Animation; bas: number; hedef: Element }[] = [];
+    for (const a of document.getAnimations()) {
+      const efekt = a.effect as KeyframeEffect | null;
+      const hedef = efekt?.target;
+      if (!efekt || !hedef || efekt.getTiming().iterations !== Infinity) continue;
+      if (hedef.closest('[data-kodi-robot-kutu], [data-kodi-balon]')) continue;
+      kayitlar.push({ a, bas: Number(a.currentTime) || 0, hedef });
+      a.pause();
+    }
+    if (!kayitlar.length) return;
+
+    // Görünmeyenler (arka plan html/body hep görünür sayılır)
+    const gorunmez = new Set<Element>();
+    if ('IntersectionObserver' in window) {
+      const gozcu = new IntersectionObserver((olaylar) => {
+        for (const o of olaylar) o.isIntersecting ? gorunmez.delete(o.target) : gorunmez.add(o.target);
+      }, { rootMargin: '120px 0px' });
+      new Set(kayitlar.map((k) => k.hedef)).forEach((h) => {
+        if (h !== document.documentElement && h !== document.body) gozcu.observe(h);
+      });
+    }
+
+    const t0 = performance.now();
+    let son = 0;
+    const tik = (an: number) => {
+      if (an - son >= KARE_SURESI - 1) {
+        son = an;
+        const gecen = an - t0;
+        for (const k of kayitlar) if (!gorunmez.has(k.hedef)) k.a.currentTime = k.bas + gecen;
+      }
+      requestAnimationFrame(tik);
+    };
+    requestAnimationFrame(tik);
+  };
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (document.readyState === 'complete') surucu();
+    else window.addEventListener('load', surucu, { once: true });
+  }
+</script>

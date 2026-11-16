@@ -53,7 +53,7 @@
 [data-has-hero] .hero h1 {
   background: var(--tk-grad); background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: tk-shine 5s linear infinite;
+  animation: tk-shine 5s steps(150) infinite;
 }
 
 .right-sidebar { width: 9rem !important; }
@@ -121,13 +121,11 @@
     linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px);
 }
 
-:root[data-theme='dark'] header {
-  backdrop-filter: blur(12px); background: rgba(7,11,22,.8) !important;
+:root[data-theme='dark'] header { background: rgba(7,11,22,.8) !important;
   border-bottom: 1px solid rgba(129,140,248,.2);
 }
 :root[data-theme='dark'] main {
-  position: relative; background: rgba(13,17,23,.6);
-  backdrop-filter: blur(12px); border: 1px solid rgba(129,140,248,.15); border-radius: 12px;
+  position: relative; background: rgba(13,17,23,.6); border: 1px solid rgba(129,140,248,.15); border-radius: 12px;
 }
 
 :root[data-theme='dark'] .sl-markdown-content a:not([class]) {
@@ -164,15 +162,14 @@
 
 :root[data-theme='dark'] .tk-stat {
   text-align: center; padding: 18px 10px; border-radius: 14px;
-  background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
-  backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+  background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25); transition: transform .3s, border-color .3s;
 }
 :root[data-theme='dark'] .tk-stat:hover { transform: translateY(-4px); border-color: rgba(34,211,238,.5); }
 :root[data-theme='dark'] .tk-stat strong {
   display: block; font-size: 26px;
   background: var(--tk-grad); background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: tk-shine 6s linear infinite;
+  animation: tk-shine 6s steps(90) infinite;
 }
 :root[data-theme='dark'] .tk-stat span { color: #8b949e; font-size: 13px; }
 
@@ -314,8 +311,7 @@
 :root[data-theme='dark'] .tk-releases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; max-width: 100%; }
 :root[data-theme='dark'] .tk-release {
   padding: 1.5rem; border-radius: 12px;
-  background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25);
-  backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+  background: rgba(13,17,23,.7); border: 1px solid rgba(129,140,248,.25); transition: transform .3s, border-color .3s;
 }
 :root[data-theme='dark'] .tk-release:hover { transform: translateY(-4px); border-color: rgba(34,211,238,.5); }
 :root[data-theme='dark'] .tk-release-header { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; flex-wrap: wrap; }
@@ -432,13 +428,11 @@
   opacity: .5;
 }
 
-:root[data-theme='light'] header {
-  backdrop-filter: blur(12px); background: rgba(240,243,249,.85) !important;
+:root[data-theme='light'] header { background: rgba(240,243,249,.85) !important;
   border-bottom: 1px solid rgba(99,102,241,.15);
 }
 :root[data-theme='light'] main {
-  position: relative; background: rgba(255,255,255,.75);
-  backdrop-filter: blur(12px); border: 1px solid rgba(99,102,241,.12); border-radius: 12px;
+  position: relative; background: rgba(255,255,255,.75); border: 1px solid rgba(99,102,241,.12); border-radius: 12px;
   box-shadow: 0 4px 24px -12px rgba(99,102,241,.08);
 }
 
@@ -482,8 +476,7 @@
 
 :root[data-theme='light'] .tk-stat {
   text-align: center; padding: 18px 10px; border-radius: 14px;
-  background: rgba(255,255,255,.85); border: 1px solid rgba(99,102,241,.15);
-  backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s;
+  background: rgba(255,255,255,.85); border: 1px solid rgba(99,102,241,.15); transition: transform .3s, border-color .3s, box-shadow .3s;
   box-shadow: 0 2px 12px -6px rgba(99,102,241,.1);
 }
 :root[data-theme='light'] .tk-stat:hover {
@@ -494,7 +487,7 @@
   display: block; font-size: 26px;
   background: var(--tk-grad-light); background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: tk-shine 6s linear infinite;
+  animation: tk-shine 6s steps(90) infinite;
 }
 :root[data-theme='light'] .tk-stat span { color: #6b7280; font-size: 13px; }
 
@@ -650,8 +643,7 @@
 :root[data-theme='light'] .tk-releases { display: grid; gap: 1.5rem; grid-template-columns: 1fr; max-width: 100%; }
 :root[data-theme='light'] .tk-release {
   padding: 1.5rem; border-radius: 12px;
-  background: rgba(255,255,255,.85); border: 1px solid rgba(99,102,241,.15);
-  backdrop-filter: blur(8px); transition: transform .3s, border-color .3s, box-shadow .3s;
+  background: rgba(255,255,255,.85); border: 1px solid rgba(99,102,241,.15); transition: transform .3s, border-color .3s, box-shadow .3s;
   box-shadow: 0 2px 16px -8px rgba(99,102,241,.1);
 }
 :root[data-theme='light'] .tk-release:hover {
@@ -905,12 +897,12 @@ html::after {
 html::before {
   height: 57vh;
   background-image: var(--wave-back-img);
-  animation: tk-wave 15s linear infinite;
+  animation: tk-wave 15s steps(450) infinite;
 }
 html::after {
   height: 39vh;
   background-image: var(--wave-front-img);
-  animation: tk-wave 9s linear infinite reverse;
+  animation: tk-wave 9s steps(270) infinite reverse;
 }
 @keyframes tk-wave { to { transform: translateX(-50%); } }
 

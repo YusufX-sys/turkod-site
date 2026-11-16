@@ -1,10 +1,12 @@
 ﻿import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import kodiBolumleri from './src/integrations/kodi-bolumler.mjs';
 
 export default defineConfig({
   site: 'https://turkod.pages.dev',
   integrations: [
+    kodiBolumleri(), // Kodi'nin belge bilgisi: dist/kodi-bolumler.json
     starlight({
       title: 'TürKod',
       favicon: '/favicon.ico',

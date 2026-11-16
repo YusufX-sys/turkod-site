@@ -286,7 +286,7 @@ hak = <span class="n">3</span>
   .tk-grad-text {
     background: var(--tk-grad); background-size: 200% auto;
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: tk-shine 6s linear infinite;
+    animation: tk-shine 6s steps(180) infinite;
   }
   :root[data-theme='light'] .tk-grad-text { background-image: var(--tk-grad-light); }
 
@@ -353,13 +353,13 @@ hak = <span class="n">3</span>
   @media (max-width: 760px) { .tk-metrics { grid-template-columns: repeat(2, 1fr); } }
   .tk-metric {
     text-align: center; padding: 1.3rem .8rem; border-radius: 16px; background: var(--tkl-surface);
-    border: 1px solid var(--tkl-border); backdrop-filter: blur(8px); transition: transform .3s, border-color .3s;
+    border: 1px solid var(--tkl-border); transition: transform .3s, border-color .3s;
   }
   .tk-metric:hover { transform: translateY(-4px); border-color: rgba(34, 211, 238, .5); }
   .tk-metric strong {
     display: block; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -.02em;
     background: var(--tk-grad); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: tk-shine 6s linear infinite;
+    animation: tk-shine 6s steps(90) infinite;
   }
   :root[data-theme='light'] .tk-metric strong { background-image: var(--tk-grad-light); }
   .tk-metric span { color: var(--tkl-muted); font-size: .88rem; }

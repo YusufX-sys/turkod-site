@@ -1,0 +1,297 @@
+[
+  {
+    "soru": "Python'daki lambda'yı TürKod'da nasıl yazarım?",
+    "sayfa": "/learn/functions/",
+    "baslik": "isimsiz — tek satırlık fonksiyon"
+  },
+  {
+    "soru": "Güvenlik açığını e-postayla bildireceksem konu kısmına ne yazayım?",
+    "sayfa": "/contribute/",
+    "baslik": "Güvenlik açığı bildirmek"
+  },
+  {
+    "soru": "Bilgisayarımın 64 bit olup olmadığını Windows'ta nereden kontrol ederim?",
+    "sayfa": "/features/requirements/",
+    "baslik": "Sistem Türünü Nasıl Kontrol Edersin?"
+  },
+  {
+    "soru": "Düzeltici girdi_al ile aldığım değeri neden kendisi tamsayıya çevirmedi de bana bıraktı?",
+    "sayfa": "/features/smart-fix/",
+    "baslik": "Örnek"
+  },
+  {
+    "soru": "duzenli ifadeler yani regex icin hangi kutuphaneyi ice aktarmaliyim",
+    "sayfa": "/learn/stdlib/",
+    "baslik": "Diğer hazır kütüphaneler"
+  },
+  {
+    "soru": "Türk klavyede Ctrl+/ basamıyorum, yorum satırı yapmak için başka bir tuş kombinasyonu var mı?",
+    "sayfa": "/features/shortcuts/",
+    "baslik": "AI Asistan, Kodi ve arayüz turu"
+  },
+  {
+    "soru": "Bakiye yetersiz gibi kendime özel bir hata türü tanımlamak istiyorum, nasıl yapılır?",
+    "sayfa": "/learn/classes/",
+    "baslik": "Kendi hata sınıfın"
+  },
+  {
+    "soru": "Kurulum sihirbazında masaüstüne simge koyma seçeneği kendiliğinden işaretli geliyor mu?",
+    "sayfa": "/install/",
+    "baslik": "Adım 2 — Kurulum sihirbazını çalıştır"
+  },
+  {
+    "soru": "imza dogrulamasi basarisiz cikarsa ne yapmam lazim",
+    "sayfa": "/features/security/",
+    "baslik": "Doğrulama"
+  },
+  {
+    "soru": "Açılışta turuncu bir uyarı çıktı, Yine de aç dersem kodumu çalıştırabilir miyim?",
+    "sayfa": "/use/troubleshooting/",
+    "baslik": "\"Program başlatılıyor...\" ekranında kalıyor ya da hata veriyor"
+  },
+  {
+    "soru": "Kullanıcının girdiği adın başındaki ve sonundaki boşlukları nasıl temizlerim?",
+    "sayfa": "/learn/strings/",
+    "baslik": "Büyük / küçük harf ve boşluk"
+  },
+  {
+    "soru": "Bir exe'nin içindeki kodu açıp bakarken o program da çalışmaya başlar mı?",
+    "sayfa": "/features/exe/",
+    "baslik": "EXE'nin kaynak kodunu görmek"
+  },
+  {
+    "soru": "Güncellemeyi yükle dedikten sonra ekranda hangi aşamalar görünüyor, program kendiliğinden tekrar açılıyor mu?",
+    "sayfa": "/features/updates/",
+    "baslik": "Kurulum sırasında"
+  },
+  {
+    "soru": "Dosyalardan biri sonradan değiştirilirse imza sayesinde bunu nasıl fark ederim?",
+    "sayfa": "/features/security/",
+    "baslik": "Neden Önemli?"
+  },
+  {
+    "soru": "Ayarları tamamen fabrika haline döndürmek istiyorum, hangi dosyayı silmeliyim?",
+    "sayfa": "/use/troubleshooting/",
+    "baslik": "Ayarları sıfırlamak istiyorum"
+  },
+  {
+    "soru": "matplotlib ile basit bir çizgi grafiği çizip ekranda göstermek için hangi Türkçe komutlar var?",
+    "sayfa": "/learn/extra-libs/",
+    "baslik": "Veri ve grafik (pandas, matplotlib)"
+  },
+  {
+    "soru": "İki listeyi eleman eleman eşleştiren Python'daki zip'in TürKod karşılığı ne?",
+    "sayfa": "/learn/basics/",
+    "baslik": "Sık kullanılan yerleşik fonksiyonlar"
+  },
+  {
+    "soru": "F2 ile bir değişkenin adını değiştirince tırnak içindeki aynı kelime de değişiyor mu?",
+    "sayfa": "/use/menus/",
+    "baslik": "Düzenle"
+  },
+  {
+    "soru": "Kodumda küçük harfle 'yapılacak' yazdığım yorumlar neden yapılacaklar listesinde görünmüyor?",
+    "sayfa": "/features/tools/",
+    "baslik": "Yapılacaklar Listesi"
+  },
+  {
+    "soru": "AI asistanından cevap alırken bir şeyler ters giderse altında hangi düğmeler çıkıyor?",
+    "sayfa": "/features/ai/",
+    "baslik": "Kullanım"
+  },
+  {
+    "soru": "Fonksiyonuma kaç sayı gelecegini bilmiyorum, istedigi kadar sayi alabilen bir fonksiyon yazabilir miyim",
+    "sayfa": "/learn/functions/",
+    "baslik": "Değişken sayıda bilgi almak"
+  },
+  {
+    "soru": "AMD ekran kartim var, yerel modeller ekran kartinda hizli calisir mi?",
+    "sayfa": "/features/local-models/",
+    "baslik": "Ekran kartı mı, işlemci mi?"
+  },
+  {
+    "soru": "Nesneyi yazdır ile basınca kendi belirlediğim bir yazının görünmesi için sınıfa hangi metodu eklemeliyim?",
+    "sayfa": "/learn/classes/",
+    "baslik": "İlk sınıf"
+  },
+  {
+    "soru": "Bir sekmede program çalışırken başka sekmede Çalıştır'a basarsam ilk program ne olur?",
+    "sayfa": "/features/terminal/",
+    "baslik": "Her sekmenin kendi terminali"
+  },
+  {
+    "soru": "Bir değişkenin hala Hiçlik olup olmadığını koşulda nasıl kontrol ederim?",
+    "sayfa": "/learn/conditions/",
+    "baslik": "Doğru / Yanlış / Hiçlik"
+  },
+  {
+    "soru": "Yerel model inerken internetim koptu, dosya baştan mı inecek?",
+    "sayfa": "/features/local-models/",
+    "baslik": "İndirme"
+  },
+  {
+    "soru": "EXE yaparken tek dosya yerine klasörlü seçeneğini işaretlersem ne kazanırım ne kaybederim?",
+    "sayfa": "/features/exe/",
+    "baslik": "Seçenekler"
+  },
+  {
+    "soru": "Bir kelimeyi seçili tutup çift tırnak tuşuna basarsam kelime silinir mi?",
+    "sayfa": "/features/editor/",
+    "baslik": "Akıllı girinti, parantez ve tırnaklar"
+  },
+  {
+    "soru": "Listeyi sıralarken key= kısmını da Türkçe yazabilir miyim?",
+    "sayfa": "/learn/sozdizimi-davranislari/",
+    "baslik": "Eş anlamlı kelimeler"
+  },
+  {
+    "soru": "Kaplumbağa ya da pygame penceresi görev çubuğunda Python logosuyla mı görünüyor?",
+    "sayfa": "/whats-new/",
+    "baslik": "Terminal ve Komut Satırı"
+  },
+  {
+    "soru": "TürKod öğretmenlerin sınıfta ders anlatırken kullanması için de uygun mu?",
+    "sayfa": "/getting-started/",
+    "baslik": "👥 Hedef Kitle"
+  },
+  {
+    "soru": "Python'a çevirince değişken adlarım ve tırnak içindeki yazılarım da İngilizceye çevriliyor mu?",
+    "sayfa": "/features/tools/",
+    "baslik": "TürKod ⇄ Python Çevir"
+  },
+  {
+    "soru": "İlk program örneğini sitedeki canlı demoda denedim ama f\"...\" kısmı çalışmadı, neden?",
+    "sayfa": "/use/first-run/",
+    "baslik": "5️⃣ Terminale cevap yaz"
+  },
+  {
+    "soru": "Hata ayıklarken program durmuşken bir değişkene elle başka değer verebilir miyim?",
+    "sayfa": "/features/run-debug/",
+    "baslik": "Panelde neler var?"
+  },
+  {
+    "soru": "Döngü 50. kez o satıra geldiğinde programın durmasını istiyorum, bunu nasıl ayarlarım?",
+    "sayfa": "/features/run-debug/",
+    "baslik": "Kesme noktası (durma noktası)"
+  },
+  {
+    "soru": "Akıllı Düzelt zaten doğru olan kodumu bozuyor muydu, bu düzeltildi mi?",
+    "sayfa": "/whats-new/",
+    "baslik": "Önemli Düzeltmeler"
+  },
+  {
+    "soru": "Demet ile liste arasındaki fark ne, demetin elemanını sonradan değiştirebilir miyim?",
+    "sayfa": "/learn/data-structures/",
+    "baslik": "Demetler"
+  },
+  {
+    "soru": "flask TürKod ile birlikte kurulu geliyor mu yoksa ayrıca kurmam mı lazım?",
+    "sayfa": "/learn/extra-libs/",
+    "baslik": "Desteklenen diğer kütüphaneler"
+  },
+  {
+    "soru": "Bir elemanın listede olmadığını kontrol etmek için koşulu nasıl yazarım?",
+    "sayfa": "/learn/conditions/",
+    "baslik": "içinde ile üyelik kontrolü"
+  },
+  {
+    "soru": "match case yapısının Türkçesi var mı, yoksa İngilizce mi yazmam gerekiyor?",
+    "sayfa": "/learn/sozdizimi-davranislari/",
+    "baslik": "Türkçe karşılığı olmayanlar"
+  },
+  {
+    "soru": "arama kutusunda sadece tam kelime eslesmesi ya da regex ile arama yapabilir miyim",
+    "sayfa": "/features/editor/",
+    "baslik": "Bul / Değiştir"
+  },
+  {
+    "soru": "Durum çubuğundaki kırmızı hata yazısına tıklarsam ne açılıyor?",
+    "sayfa": "/use/tour/",
+    "baslik": "📊 Durum çubuğu"
+  },
+  {
+    "soru": "pip ile kurduğum kütüphaneler TürKod güncellenince silinir mi, bilgisayarda nerede duruyor?",
+    "sayfa": "/features/terminal/",
+    "baslik": "Türkçe pip — kütüphane kurma"
+  },
+  {
+    "soru": "Döngüde o adımı atlayıp bir sonrakine geçmek için hangi kelimeyi yazıyoruz?",
+    "sayfa": "/learn/basics/",
+    "baslik": "Döngüler"
+  },
+  {
+    "soru": "Öğrenme sayfalarını hangi sırayla okumalıyım, koşullardan sonra ne geliyor?",
+    "sayfa": "/getting-started/",
+    "baslik": "🗺️ Öğrenme Yolu"
+  },
+  {
+    "soru": "Metin içinde bir kelimenin kaçıncı sırada başladığını nasıl bulurum?",
+    "sayfa": "/learn/strings/",
+    "baslik": "Arama ve değiştirme"
+  },
+  {
+    "soru": "Düzeltme ayarlarındaki Mesaj Aralığı karakter diyor ama aslında neyi ölçüyor, en fazla kaç olabilir?",
+    "sayfa": "/features/settings/",
+    "baslik": "Düzeltme"
+  },
+  {
+    "soru": "Kodi ile sesli sohbetteyken hiçbir şey söylemezsem sohbet ne zaman kendiliğinden kapanıyor?",
+    "sayfa": "/features/kodi/",
+    "baslik": "Sesli konuşma"
+  },
+  {
+    "soru": "Projeyi kendi bilgisayarımda derlemek istiyorum, Visual Studio'nun hangi iş yükü kurulu olmalı?",
+    "sayfa": "/contribute/",
+    "baslik": "Geliştirme ortamı"
+  },
+  {
+    "soru": "Tarayıcıdaki denemede kodu çalıştırınca çıktı hangi tarafta görünüyor?",
+    "sayfa": "/demo/",
+    "baslik": "Nasıl Kullanılır?"
+  },
+  {
+    "soru": "Girintiyi 4 değil 2 boşluk yapmak istiyorum, böyle bir ayar var mı?",
+    "sayfa": "/features/settings/",
+    "baslik": "Editör Görünümü"
+  },
+  {
+    "soru": "1 ile 10 arasında rastgele bir tam sayı üretmek için hangi komutu kullanıyorum?",
+    "sayfa": "/learn/stdlib/",
+    "baslik": "rastgele"
+  },
+  {
+    "soru": "Kodi'yi TürKod penceresinin dışına sürükleyince ne oluyor, oradayken dosya açabiliyor mu?",
+    "sayfa": "/features/kodi/",
+    "baslik": "Masaüstünde Kodi"
+  },
+  {
+    "soru": "Pencere daralınca araç çubuğundaki düğmelerin yazıları kayboldu, bu normal mi?",
+    "sayfa": "/use/tour/",
+    "baslik": "🔧 Araç çubuğu"
+  },
+  {
+    "soru": "Dosyaya yazarken eski içeriği silmeden sonuna eklemek için hangi kipi kullanmalıyım?",
+    "sayfa": "/learn/errors-files/",
+    "baslik": "Dosyaya yazma ve okuma"
+  },
+  {
+    "soru": "dene bloğunda hata çıkmazsa çalışacak ayrı bir kısım yazabilir miyim?",
+    "sayfa": "/learn/errors-files/",
+    "baslik": "Hata yakalama"
+  },
+  {
+    "soru": "Bu proje neden çıktı, İngilizce hata mesajlarıyla derdi ne?",
+    "sayfa": "/about/",
+    "baslik": "🎯 Motivasyon"
+  },
+  {
+    "soru": "Düzelt'e bastım, kodum os modülünü kullanıyor diye bir soru çıktı; varsayılan seçenek ne yapıyor?",
+    "sayfa": "/features/smart-fix/",
+    "baslik": "Güvenlik: kodun çalıştırılsın mı?"
+  },
+  {
+    "soru": "bos kume olusturmak icin {} yazsam olur mu",
+    "sayfa": "/learn/data-structures/",
+    "baslik": "Kümeler"
+  }
+]

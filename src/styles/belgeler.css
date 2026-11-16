@@ -52,8 +52,6 @@
 @media (min-width: 50rem) {
   :root[data-theme] .sidebar-pane {
     background: var(--tk-sb-bg);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
     border-inline-end: 1px solid var(--tk-sb-border);
   }
   :root[data-theme] .sidebar-content { background: transparent; padding-top: 1rem; }
@@ -154,7 +152,7 @@
   font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
   background: var(--tk-grad); background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: tk-shine 6s linear infinite;
+  animation: tk-shine 6s steps(90) infinite;
 }
 :root[data-theme='light'] .tk-eyebrow { background-image: var(--tk-grad-light); }
 .tk-eyebrow span {
