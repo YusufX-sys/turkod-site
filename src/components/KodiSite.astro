@@ -43,9 +43,15 @@
 </section>
 
 <script>
-  import { BILGI } from '../data/kodi-bilgi';
-  import { DOLGU, baglamliCevap, bolumDizini, sadelestir, sozlukDizini, takipMi, type BolumDizini, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import { DOLGU, baglamliCevap, bolumDizini, katla, sadelestir, sozlukDizini, takipMi, type BolumDizini, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import type { HesapBaglami } from '../data/kodi-hesap';
   import { kodiCiz, type KodiIfadesi } from '../data/kodi-ciz';
+
+  // Bilgi tabanı (≈470 madde) ve hesap motoru büyük: her sayfada değil, Kodi açılınca arka planda yüklenir.
+  let bilgiMod: Promise<typeof import('../data/kodi-bilgi')> | null = null;
+  const bilgiAl = () => (bilgiMod ??= import('../data/kodi-bilgi'));
+  let hesapMod: Promise<typeof import('../data/kodi-hesap')> | null = null;
+  const hesapAl = () => (hesapMod ??= import('../data/kodi-hesap'));
 
   type Baglanti = { t: string; u: string };
   type Mesaj = {
@@ -69,17 +75,21 @@
     /** İnternette (Vikipedi) arama düğmesi; varsayılan kapalı. */
     internet: boolean;
     konu: Konu | null;
+    /** Son hesap (takip soruları için: "peki 2 ile çarparsam?", "kodunu göster") */
+    hesap: HesapBaglami | null;
   };
 
   const GITHUB = 'https://github.com/YusufX-sys/turkod-ide';
-  const SELAM = "Merhaba, ben Kodi! TürKod'u ya da kodlamayı merak ettiğin ne varsa sorabilirsin: değişkenler, döngüler, hatalar, sözlükteki kelimeler... Hadi bakalım!";
-  const HAZIR_SORULAR = ['Değişken nedir?', 'Döngü nasıl yazılır?', 'yazdır ne demek?', "TürKod'u nasıl kurarım?", 'Bana bir şaka yap!'];
+  const SELAM = "Merhaba, ben Kodi! TürKod'u ya da kodlamayı merak ettiğin ne varsa sorabilirsin: değişkenler, döngüler, hatalar, sözlükteki kelimeler... "
+    + 'Matematik problemlerini de kod yazıp çalıştırarak çözerim. Hadi bakalım!';
+  const HAZIR_SORULAR = ['Değişken nedir?', 'Döngü nasıl yazılır?', 'yazdır ne demek?', '3x + 5 = 20 ise x kaç?',
+    "Ali'nin 5 elması var, 3 tane daha aldı. Kaç elması oldu?", "TürKod'u nasıl kurarım?", 'Bana bir şaka yap!'];
   const ANAHTAR = 'tk-kodi-durum';
   const ROBOT_G = 84;
   const ROBOT_Y = 109;
 
   // ------------------------------------------------------------------ durum
-  const bos = (): Durum => ({ acik: false, mesajlar: [], soruldu: false, konum: null, taslak: '', kaydirma: 0, ipucu: false, internet: false, konu: null });
+  const bos = (): Durum => ({ acik: false, mesajlar: [], soruldu: false, konum: null, taslak: '', kaydirma: 0, ipucu: false, internet: false, konu: null, hesap: null });
   let durum: Durum = bos();
   try {
     const k = sessionStorage.getItem(ANAHTAR);
@@ -251,8 +261,19 @@
           catch { kopya.textContent = 'Kopyalanamadı'; }
           setTimeout(() => (kopya.textContent = 'Kopyala'), 1600);
         });
-        pre.append(code, kopya);
-        p.appendChild(pre);
+        // Çalıştır: kod gerçek TürKod çeviricisiyle (Canlı Demo'nun motoru) burada çalışır
+        const calistirD = document.createElement('button');
+        calistirD.type = 'button'; calistirD.className = 'tkk-calistir'; calistirD.textContent = '▶ Çalıştır';
+        calistirD.title = "Bu kodu gerçek TürKod çeviricisiyle burada çalıştır";
+        const cikti = document.createElement('div');
+        cikti.className = 'tkk-cikti'; cikti.hidden = true;
+        cikti.setAttribute('aria-live', 'polite');
+        calistirD.addEventListener('click', () => kodCalistir(m.kod!, cikti, calistirD));
+        const dugmeler = document.createElement('div');
+        dugmeler.className = 'tkk-kod-dugmeler';
+        dugmeler.append(calistirD, kopya);
+        pre.append(code, dugmeler);
+        p.append(pre, cikti);
       }
       if (m.linkler?.length) {
         const sat = document.createElement('div');
@@ -309,7 +330,8 @@
       durum.mesajlar.push(m); kaydet();
       const p = mesajCiz(m);
       const yazi = p.querySelector<HTMLElement>('.tkk-metin')!;
-      const ekler = [...p.children].slice(1) as HTMLElement[];
+      // Yazma bitince görünecek ekler (zaten gizli olan çalıştırma çıktısı gizli kalır)
+      const ekler = ([...p.children].slice(1) as HTMLElement[]).filter((e) => !e.hidden);
       ekler.forEach((e) => (e.hidden = true));
       akis.appendChild(p);
       ifade = 'konusuyor';
@@ -347,6 +369,98 @@
         yazi.textContent = i <= metin.length ? metin.slice(0, i) : metin + '.'.repeat(1 + (Math.floor((i - metin.length) / 6) % 3));
       }, 60);
       return () => { clearInterval(z); p.remove(); ifade = 'mutlu'; };
+    };
+
+    // ---------------------------------------------------------------- kodu çalıştır
+    // Kodi'nin gösterdiği kod, Canlı Demo'nun işçisiyle (Pyodide + programdaki TürKod çeviricisi) çalışır:
+    // sayfa donmaz, sonsuz döngü 10 saniyede durdurulur, girdi_al için kutunun altında bir giriş açılır.
+    const SURE_SINIRI = 10000;
+    let isci: Worker | null = null;
+    let aktif: { durdur: (neden?: string) => void } | null = null;
+    const isciKapat = () => { isci?.terminate(); isci = null; };
+
+    const kodCalistir = (kod: string, cikti: HTMLElement, dugme: HTMLButtonElement) => {
+      if (aktif) {
+        const ayniDugme = !!dugme.dataset.calisiyor;
+        aktif.durdur('Durduruldu.');
+        if (ayniDugme) return;                            // çalışan kodun düğmesi: yalnızca durdur
+      }
+      cikti.hidden = false;
+      cikti.innerHTML = '';
+      const yazi = document.createElement('pre');
+      yazi.className = 'tkk-cikti-yazi';
+      const durumSatiri = document.createElement('div');
+      durumSatiri.className = 'tkk-cikti-durum';
+      durumSatiri.textContent = 'TürKod hazırlanıyor…';
+      cikti.append(yazi, durumSatiri);
+      dugme.dataset.calisiyor = '1';
+      dugme.textContent = '■ Durdur';
+      const girdiler: string[] = [];
+      const tohum = Math.floor(Math.random() * 1e6);
+      let yazilan = 0, gosterilen = 0;
+      let zaman: ReturnType<typeof setTimeout> | null = null;
+      const zamanDurdur = () => { if (zaman) clearTimeout(zaman); zaman = null; };
+      const bitir = (metin: string, tur: 'tamam' | 'uyari' = 'tamam') => {
+        zamanDurdur();
+        durumSatiri.textContent = metin;
+        durumSatiri.dataset.tur = tur;
+        delete dugme.dataset.calisiyor;
+        dugme.textContent = '▶ Yeniden çalıştır';
+        cikti.querySelector('.tkk-girdi')?.remove();
+        if (aktif === kontrol) aktif = null;
+        asagi();
+      };
+      const kontrol = { durdur: (neden = 'Durduruldu.') => { isciKapat(); bitir(neden, 'uyari'); } };
+      aktif = kontrol;
+
+      const w = (isci ??= new Worker('/demo/demo-isci.js'));
+      w.onmessage = (e: MessageEvent) => {
+        if (aktif !== kontrol) return;
+        const m = e.data;
+        if (m.tur === 'durum') durumSatiri.textContent = m.metin;
+        else if (m.tur === 'hazir') {
+          durumSatiri.textContent = 'Çalışıyor…';
+          zamanDurdur();
+          zaman = setTimeout(() => kontrol.durdur('Kod 10 saniyede bitmedi ve durduruldu (sonsuz döngü olabilir).'), SURE_SINIRI);
+        } else if (m.tur === 'yaz') {
+          // girdi_al sonrası program baştan çalışır: daha önce gösterilen kısım atlanır
+          const metin: string = m.metin;
+          const bas = Math.max(0, gosterilen - yazilan);
+          yazilan += metin.length;
+          if (bas < metin.length) { yazi.textContent += metin.slice(bas); gosterilen = yazilan; asagi(); }
+        } else if (m.tur === 'girdi') {
+          zamanDurdur();
+          durumSatiri.textContent = 'Kod senden bir girdi bekliyor:';
+          const f = document.createElement('form');
+          f.className = 'tkk-girdi';
+          const g = document.createElement('input');
+          g.type = 'text'; g.placeholder = 'Yaz ve Enter\'a bas'; g.setAttribute('aria-label', m.istem || 'Girdi');
+          f.append(g);
+          f.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const deger = g.value;
+            girdiler.push(deger);
+            yazi.textContent += deger + '\n';
+            gosterilen += deger.length + 1;
+            f.remove();
+            durumSatiri.textContent = 'Çalışıyor…';
+            yazilan = 0;
+            w.postMessage({ tur: 'calistir', kod, girdiler, tohum });
+          });
+          cikti.append(f);
+          asagi();
+          g.focus();
+        } else if (m.tur === 'bitti') {
+          if (!yazi.textContent) yazi.textContent = '(Kod bir şey yazdırmadı.)';
+          bitir(m.kod === 0 ? '✓ Tamamlandı (gerçek TürKod çeviricisiyle çalıştı).' : `Kod ${m.kod} koduyla sonlandı.`, m.kod === 0 ? 'tamam' : 'uyari');
+        } else if (m.tur === 'hata') {
+          isciKapat();
+          bitir('Çalıştırılamadı: ' + m.metin + ' İnternet bağlantını kontrol edip yeniden dene.', 'uyari');
+        }
+      };
+      w.onerror = () => { isciKapat(); bitir('Çalıştırıcı başlatılamadı. Sayfayı yenileyip yeniden dene.', 'uyari'); };
+      w.postMessage({ tur: 'calistir', kod, girdiler, tohum });
+      asagi();
     };
 
     // ---------------------------------------------------------------- cevap bulma
@@ -518,11 +632,31 @@
       giris.placeholder = 'Kodi cevaplıyor…';
       balon.dataset.bekliyor = '1';
       const bitir = dusunuyor();
-      const [dizin, bdz] = await Promise.all([sozlukAl(), bolumAl(), bekle(600)]);
+      const [dizin, bdz, { BILGI }, { hesapCevabi, hesapSorusuGibi }] = await Promise.all([sozlukAl(), bolumAl(), bilgiAl(), hesapAl(), bekle(600)]);
+      // Matematik: Kodi soruyu TürKod koduna çevirip arkada çalıştırır (değişken adları sözlükteki kelimelerle çakışmaz)
+      let hesap = null;
+      try { hesap = hesapCevabi(soru, durum.hesap, (ad) => !!dizin?.tr.has(katla(ad))); } catch { hesap = null; }
+      if (hesap) {
+        durum.hesap = hesap.baglam; durum.konu = null; kaydet();
+        bitir();
+        await kodiSoyler({ metin: hesap.metin, kod: hesap.kod });
+        giris.placeholder = "Kodi'ye bir şey sor…";
+        delete balon.dataset.bekliyor;
+        mesgul = false;
+        return;
+      }
+      durum.hesap = null;
       const konu = durum.konu;
       const t = takipMi(soru);
-      const yerel = baglamliCevap(soru, konu?.tur === 'bilgi' ? { soru: konu.soru, id: konu.id } : null, BILGI, dizin, bdz);
+      const yerel = hesapSorusuGibi(soru) ? null : baglamliCevap(soru, konu?.tur === 'bilgi' ? { soru: konu.soru, id: konu.id } : null, BILGI, dizin, bdz);
       let cevap: (KodiCevap & { vikiSoru?: Mesaj['vikiSoru'] }) | null = yerel;
+      if (!yerel && hesapSorusuGibi(soru)) {
+        cevap = {
+          metin: 'Bunu bir hesap sorusu olarak anladım ama tam çözemedim. İşlemi açıkça yazarsan hemen hesaplarım, örneğin:\n'
+            + '• 12 * 7 + 5  • 144\'ün karekökü  • 3x + 5 = 20\n'
+            + "Sözel problemlerde her bilgiyi ayrı bir cümleyle yazmak da işime yarar: \"Ali'nin 5 elması var. 3 tane daha aldı. Kaç elması oldu?\"",
+        };
+      }
       if (yerel) {
         // Bağlamdan gelen cevapta konu aynı kalır ("liste" -> "peki sırala" -> "ya ters?" hep listeyle ilgili).
         durum.konu = { tur: 'bilgi', soru: yerel.baglamdan && konu?.tur === 'bilgi' ? konu.soru : soru, id: yerel.id };
@@ -580,7 +714,8 @@
     };
 
     const selamla = async () => {
-      durum.mesajlar = []; durum.soruldu = false; durum.konu = null; kaydet();
+      durum.mesajlar = []; durum.soruldu = false; durum.konu = null; durum.hesap = null; kaydet();
+      aktif?.durdur();
       akis.innerHTML = '';
       elSalla();
       await kodiSoyler({ metin: SELAM });
@@ -590,6 +725,8 @@
     // ---------------------------------------------------------------- aç / kapat
     const ac = (ilkYukleme = false) => {
       balon.hidden = false; ipucu.hidden = true;
+      // İlk soru beklemesin: bilgi tabanı ve hesap motoru şimdiden indirilmeye başlar
+      void bilgiAl(); void hesapAl();
       if (ilkYukleme) balon.classList.add('tkk-sessiz');
       tuval.setAttribute('aria-expanded', 'true');
       durum.acik = true; kaydet();
@@ -738,17 +875,37 @@
     padding: 7px 11px; font-size: 13px; border-radius: 14px 14px 4px 14px; background: rgba(124, 92, 245, .16);
   }
   .tkk-kod {
-    position: relative; margin: 8px 0 0 !important; padding: 10px 12px !important; border-radius: 10px; white-space: pre;
+    position: relative; margin: 8px 0 0 !important; padding: 32px 12px 10px !important; border-radius: 10px; white-space: pre;
     overflow-x: auto; background: #0b1220 !important; border: 1px solid #243248 !important; box-shadow: none !important;
     font-size: 12.5px; line-height: 1.55; color: #e5e7eb;
   }
   .tkk-kod::before { content: none !important; }
   .tkk-kod code { font-family: Consolas, 'Cascadia Mono', var(--sl-font-mono); background: none !important; padding: 0 !important; color: inherit; border: 0 !important; }
-  .tkk-kopya {
-    position: absolute; top: 6px; right: 6px; font: inherit; font-size: 11px; padding: 2px 7px; border-radius: 6px;
-    cursor: pointer; color: #94a3b8; background: rgba(255, 255, 255, .06); border: 1px solid #334155;
+  .tkk-kod-dugmeler { position: absolute; top: 6px; right: 6px; display: flex; gap: 4px; }
+  .tkk-kopya, .tkk-calistir {
+    font: inherit; font-size: 11px; padding: 2px 7px; border-radius: 6px;
+    cursor: pointer; color: #94a3b8; background: rgba(15, 23, 42, .85); border: 1px solid #334155;
   }
-  .tkk-kopya:hover { color: #fff; border-color: #7c5cf5; }
+  .tkk-kopya:hover, .tkk-calistir:hover { color: #fff; border-color: #7c5cf5; }
+  .tkk-calistir { color: #86efac; border-color: rgba(34, 197, 94, .45); }
+  .tkk-calistir[data-calisiyor] { color: #fca5a5; border-color: rgba(239, 68, 68, .5); }
+  /* Çalıştırma çıktısı (terminal görünümü) */
+  .tkk-cikti {
+    margin-top: 4px; padding: 8px 10px; border-radius: 10px; background: #050a14; border: 1px solid #243248;
+    font-family: Consolas, 'Cascadia Mono', var(--sl-font-mono); font-size: 12px; color: #d1fae5;
+  }
+  .tkk-cikti[hidden] { display: none; }
+  .tkk-cikti-yazi { margin: 0 !important; padding: 0 !important; background: none !important; border: 0 !important; white-space: pre-wrap;
+    overflow-wrap: anywhere; max-height: 180px; overflow-y: auto; color: inherit; font: inherit; }
+  .tkk-cikti-yazi:empty { display: none; }
+  .tkk-cikti-durum { margin-top: 4px; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11.5px; color: #94a3b8; }
+  .tkk-cikti-durum[data-tur='tamam'] { color: #4ade80; }
+  .tkk-cikti-durum[data-tur='uyari'] { color: #fbbf24; }
+  .tkk-girdi { margin-top: 6px; }
+  .tkk-girdi input {
+    width: 100%; box-sizing: border-box; font: inherit; padding: 5px 8px; border-radius: 6px; outline: none;
+    color: #e5e7eb; background: #0b1220; border: 1px solid #7c5cf5;
+  }
   .tkk-linkler { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; }
   .tkk-linkler a { font-size: 13px; color: #3b82f6; text-decoration: underline; text-underline-offset: 2px; }
   :root[data-theme='dark'] .tkk-linkler a { color: #60a5fa; }

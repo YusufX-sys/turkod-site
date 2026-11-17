@@ -1,0 +1,282 @@
+[
+  {
+    "soru": "slm kodi",
+    "beklenen": "site-selam"
+  },
+  {
+    "soru": "nasılsın",
+    "beklenen": "sohbet-nasilsin"
+  },
+  {
+    "soru": "ben de iyiyim",
+    "beklenen": "sohbet-iyiyim"
+  },
+  {
+    "soru": "ben 12 yaşındayım kodlama öğrenebilir miyim",
+    "beklenen": "hangi-yas"
+  },
+  {
+    "soru": "nereden başlamalıyım",
+    "beklenen": "site-ilk-program"
+  },
+  {
+    "soru": "turkodu bilgisayara nasıl kurarım",
+    "beklenen": "site-kurulum"
+  },
+  {
+    "soru": "peki macte çalışır mı",
+    "beklenen": "site-gereksinim"
+  },
+  {
+    "soru": "tamam windows var bende",
+    "beklenen": "site-gereksinim"
+  },
+  {
+    "soru": "kurdum açtım şimdi ne yapıcam",
+    "beklenen": "site-ilk-program"
+  },
+  {
+    "soru": "yazdır ne demek",
+    "beklenen": "yazdır"
+  },
+  {
+    "soru": "ekrana adımı yazdırmak istiyorum",
+    "beklenen": "yazdir"
+  },
+  {
+    "soru": "peki kullanıcıdan adını nasıl alırım",
+    "beklenen": "girdi-al"
+  },
+  {
+    "soru": "girdi_al ile aldığım sayıyı 2 ile çarpınca 55 yazıyor neden",
+    "beklenen": "hata-sayi-metin-gibi"
+  },
+  {
+    "soru": "anladım tamsayı ile çeviriyorum",
+    "beklenen": "tur-donusturme"
+  },
+  {
+    "soru": "değişken nedir",
+    "beklenen": "degisken"
+  },
+  {
+    "soru": "değişken adına boşluk koyabilir miyim",
+    "beklenen": "degisken-adlandirma"
+  },
+  {
+    "soru": "eğer nasıl kullanılır",
+    "beklenen": "eger"
+  },
+  {
+    "soru": "peki iki koşulu birlikte nasıl yazarım",
+    "beklenen": "ve-veya-degil"
+  },
+  {
+    "soru": "eğer x = 5: yazınca hata veriyor",
+    "beklenen": "hata-esittir"
+  },
+  {
+    "soru": "döngü nedir",
+    "beklenen": "dongu-nedir"
+  },
+  {
+    "soru": "ya for?",
+    "beklenen": "icin-for"
+  },
+  {
+    "soru": "1den 10a kadar sayıları yazdıran kod",
+    "beklenen": "aralik"
+  },
+  {
+    "soru": "çarpım tablosu yapmak istiyorum",
+    "beklenen": "carpim-tablosu"
+  },
+  {
+    "soru": "döngüm hiç bitmiyor bilgisayar dondu",
+    "beklenen": "hata-program-bitmiyor"
+  },
+  {
+    "soru": "nasıl durdururum",
+    "beklenen": "site-durdur"
+  },
+  {
+    "soru": "liste nedir",
+    "beklenen": "liste"
+  },
+  {
+    "soru": "peki nasıl sıralarım",
+    "beklenen": "liste-sirala"
+  },
+  {
+    "soru": "büyükten küçüğe nasıl",
+    "beklenen": "tersine_çevir=Doğru"
+  },
+  {
+    "soru": "listedeki en büyük sayıyı nasıl bulurum",
+    "beklenen": "en-buyuk-kucuk"
+  },
+  {
+    "soru": "listede bir eleman var mı diye nasıl bakarım",
+    "beklenen": "icinde"
+  },
+  {
+    "soru": "listenin elemanlarını toplamak istiyorum",
+    "beklenen": "toplam-ortalama"
+  },
+  {
+    "soru": "listeden rastgele bir eleman seçme",
+    "beklenen": "rastgele"
+  },
+  {
+    "soru": "IndexError list index out of range",
+    "beklenen": "hata-liste-indeks"
+  },
+  {
+    "soru": "fonksiyon nasıl yazılır",
+    "beklenen": "fonksiyon"
+  },
+  {
+    "soru": "döndür ne işe yarar",
+    "beklenen": "dondur"
+  },
+  {
+    "soru": "bir sayının asal olup olmadığını bulan fonksiyon",
+    "beklenen": "asal-sayi"
+  },
+  {
+    "soru": "97 asal mı",
+    "beklenen": "hesap"
+  },
+  {
+    "soru": "peki kodunu göster",
+    "beklenen": "hesap"
+  },
+  {
+    "soru": "metni ters çevirme",
+    "beklenen": "metin-ters-cevir"
+  },
+  {
+    "soru": "bir kelime palindrom mu nasıl anlarım",
+    "beklenen": "palindrom"
+  },
+  {
+    "soru": "bir metinde kaç tane a harfi var nasıl sayarım",
+    "beklenen": "harf-sayma"
+  },
+  {
+    "soru": "metni büyük harfe çevirme",
+    "beklenen": "buyuk-kucuk-harf"
+  },
+  {
+    "soru": "sayı tahmin oyunu yapmak istiyorum",
+    "beklenen": "sayi-tahmin"
+  },
+  {
+    "soru": "taş kağıt makas oyunu",
+    "beklenen": "tas-kagit-makas"
+  },
+  {
+    "soru": "kaplumbağa ile kare çizme",
+    "beklenen": "kaplumbaga"
+  },
+  {
+    "soru": "kaplumbağa penceresi hemen kapanıyor",
+    "beklenen": "hata-pencere-kapaniyor"
+  },
+  {
+    "soru": "pencereye buton nasıl eklerim",
+    "beklenen": "tkinter"
+  },
+  {
+    "soru": "oyun yapmak istiyorum",
+    "beklenen": "sohbet-oyun-baslangic"
+  },
+  {
+    "soru": "sözlük ne işe yarar",
+    "beklenen": "sozluk"
+  },
+  {
+    "soru": "dosyaya nasıl yazarım",
+    "beklenen": "dosya-yaz"
+  },
+  {
+    "soru": "programımı arkadaşıma nasıl gönderirim",
+    "beklenen": "site-exe"
+  },
+  {
+    "soru": "exe yapınca antivirüs uyarı veriyor",
+    "beklenen": "site-antivirus-engel"
+  },
+  {
+    "soru": "Ali'nin 12 kalemi var, 5 tanesini kardeşine verdi. Kaç kalemi kaldı?",
+    "beklenen": "hesap"
+  },
+  {
+    "soru": "peki 3 tane daha alırsa?",
+    "beklenen": "Cevap: 10"
+  },
+  {
+    "soru": "bir şaka yap",
+    "beklenen": "sohbet-saka"
+  },
+  {
+    "soru": "bir tane daha",
+    "beklenen": "sohbet-saka"
+  },
+  {
+    "soru": "hahaha",
+    "beklenen": "sohbet-hahaha"
+  },
+  {
+    "soru": "sen chatgpt misin",
+    "beklenen": "sohbet-yapay-zeka-misin"
+  },
+  {
+    "soru": "aptal robot",
+    "beklenen": "sohbet-kaba"
+  },
+  {
+    "soru": "özür dilerim",
+    "beklenen": "sohbet-ozur"
+  },
+  {
+    "soru": "ödevimi yapar mısın",
+    "beklenen": "sohbet-odev"
+  },
+  {
+    "soru": "türkiyenin başkenti neresi",
+    "beklenen": "yok"
+  },
+  {
+    "soru": "asdfgh",
+    "beklenen": "sohbet-anlamsiz"
+  },
+  {
+    "soru": "python öğrenmek için turkod iyi mi",
+    "beklenen": "python-mi-turkod-mu"
+  },
+  {
+    "soru": "yazılımcı olmak istiyorum",
+    "beklenen": "sohbet-yazilimci-olmak"
+  },
+  {
+    "soru": "kodlama ile para kazanılır mı",
+    "beklenen": "sohbet-para"
+  },
+  {
+    "soru": "turkod ücretli mi",
+    "beklenen": "site-ucret"
+  },
+  {
+    "soru": "internetsiz çalışır mı",
+    "beklenen": "site-internet"
+  },
+  {
+    "soru": "teşekkürler kodi çok yardımcı oldun",
+    "beklenen": "site-tesekkur"
+  },
+  {
+    "soru": "görüşürüz",
+    "beklenen": "sohbet-gorusuruz"
+  }
+]

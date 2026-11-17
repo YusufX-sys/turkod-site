@@ -1,0 +1,5142 @@
+[
+ {
+  "soru": "turkodu nasil indiririm",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "TürKod'u nereden indirebilirim?",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "windows 7 de calisir mi",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "Windows 11'de sorunsuz çalışıyor mu?",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "mac icin var mi",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "Mac'te kullanabilir miyim? MacBook Air'im var",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "telefonda calisiyo mu",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "android telefondan kullanabilir miyim",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "ipad de olur mu",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "tablette çalışır mı",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "indirme bitmiyor takılı kaldı",
+  "beklenen": "site-indirme-sorun",
+  "liste": "a"
+ },
+ {
+  "soru": "abi indirirken hata veriyor ne yapayım",
+  "beklenen": "site-indirme-sorun",
+  "liste": "a"
+ },
+ {
+  "soru": "indirdim ama acilmiyor",
+  "beklenen": "site-acilis-sorunu",
+  "liste": "a"
+ },
+ {
+  "soru": "antivirus virus var diyor guvenli mi",
+  "beklenen": "site-guvenlik",
+  "liste": "a"
+ },
+ {
+  "soru": "SmartScreen 'Windows bilgisayarınızı korudu' yazıyor ne yapmalıyım",
+  "beklenen": "site-smartscreen",
+  "liste": "a"
+ },
+ {
+  "soru": "Kaspersky engelledi",
+  "beklenen": "site-antivirus-engel",
+  "liste": "a"
+ },
+ {
+  "soru": "ucretsiz mi",
+  "beklenen": "site-ucret",
+  "liste": "a"
+ },
+ {
+  "soru": "TürKod ücretli mi, kredi kartı gerekiyor mu?",
+  "beklenen": "site-ucret",
+  "liste": "a"
+ },
+ {
+  "soru": "ticari projede kullanabilir miyim",
+  "beklenen": "site-ticari",
+  "liste": "a"
+ },
+ {
+  "soru": "guncelleme nasil yapilir",
+  "beklenen": "site-guncelleme",
+  "liste": "a"
+ },
+ {
+  "soru": "yeni sürüm çıktı mı nasıl öğrenirim",
+  "beklenen": "site-guncelleme",
+  "liste": "a"
+ },
+ {
+  "soru": "otomatik güncelleniyor mu yoksa elle mi yapıyorum",
+  "beklenen": "site-guncelleme",
+  "liste": "a"
+ },
+ {
+  "soru": "turkodu nasil kaldirabilirim",
+  "beklenen": "site-kaldir",
+  "liste": "a"
+ },
+ {
+  "soru": "sistem gereksinimleri neler",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "2 GB RAM'li eski laptopta çalışır mı",
+  "beklenen": "site-disk-ram",
+  "liste": "a"
+ },
+ {
+  "soru": "kac mb yer kapliyor",
+  "beklenen": "site-disk-ram",
+  "liste": "a"
+ },
+ {
+  "soru": "Python'u ayrıca kurmam gerekiyor mu?",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "yönetici izni istiyor, vermem gerekir mi",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "kurulum sirasinda hangi klasoru secmeliyim",
+  "beklenen": "site-kurulum-adimlari",
+  "liste": "a"
+ },
+ {
+  "soru": "taşınabilir sürüm var mı flash bellekte kullanacağım",
+  "beklenen": "site-tasinabilir",
+  "liste": "a"
+ },
+ {
+  "soru": "32 bit bilgisayarda calisir mi",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "kurulum dosyasi kac mb",
+  "beklenen": "site-disk-ram",
+  "liste": "a"
+ },
+ {
+  "soru": "indirme linki calismiyor 404 veriyor",
+  "beklenen": "site-indirme-sorun",
+  "liste": "a"
+ },
+ {
+  "soru": "ZIP olarak mı iniyor yoksa setup mı",
+  "beklenen": "site-surum-gecmisi",
+  "liste": "a"
+ },
+ {
+  "soru": "bilgisayarimi yeniden baslatmam gerekiyor mu kurulumdan sonra",
+  "beklenen": "site-kurulum-adimlari",
+  "liste": "a"
+ },
+ {
+  "soru": "eski sürümü nereden indirebilirim",
+  "beklenen": "site-surum-gecmisi",
+  "liste": "a"
+ },
+ {
+  "soru": "Masaüstüne kısayol oluşmadı",
+  "beklenen": "site-kurulum-adimlari",
+  "liste": "a"
+ },
+ {
+  "soru": "turkod acilirken siyah ekran geliyor",
+  "beklenen": "site-acilis-sorunu",
+  "liste": "a"
+ },
+ {
+  "soru": "program ilk acilista cok yavas",
+  "beklenen": "site-acilis-sorunu",
+  "liste": "a"
+ },
+ {
+  "soru": "Türkçe kullanıcı adım var, kurulum hata veriyor olabilir mi",
+  "beklenen": "site-acilis-sorunu",
+  "liste": "a"
+ },
+ {
+  "soru": "karanlık mod var mı gözlerim yoruluyor",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "yazi boyutunu nasil buyuturum",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "Yazılar çok küçük, büyütebilir miyim?",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "kısayollar neler",
+  "beklenen": "site-kisayol",
+  "liste": "a"
+ },
+ {
+  "soru": "f5 mi f9 mu calistirmak icin",
+  "beklenen": "site-kisayol",
+  "liste": "a"
+ },
+ {
+  "soru": "kodu nasil durdururum sonsuz donguye girdi",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "program donup kaldı dongu bitmiyor ne yapayim",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "otomatik tamamlama var mı",
+  "beklenen": "site-otomatik-tamamlama",
+  "liste": "a"
+ },
+ {
+  "soru": "terminal nerede",
+  "beklenen": "site-terminal-panel",
+  "liste": "a"
+ },
+ {
+  "soru": "Terminal penceresini nasıl açarım?",
+  "beklenen": "site-terminal-panel",
+  "liste": "a"
+ },
+ {
+  "soru": "dosyayi nasil kaydederim",
+  "beklenen": "site-kaydet",
+  "liste": "a"
+ },
+ {
+  "soru": "ctrl s calismiyor",
+  "beklenen": "site-kaydet",
+  "liste": "a"
+ },
+ {
+  "soru": "proje nasil acilir",
+  "beklenen": "site-dosya-ac",
+  "liste": "a"
+ },
+ {
+  "soru": "önceki programımı tekrar açmak istiyorum",
+  "beklenen": "site-dosya-ac",
+  "liste": "a"
+ },
+ {
+  "soru": "yeni dosya nasil olusturulur",
+  "beklenen": "site-yeni-dosya",
+  "liste": "a"
+ },
+ {
+  "soru": "birden fazla dosya aynı anda açabilir miyim",
+  "beklenen": "site-sekmeler",
+  "liste": "a"
+ },
+ {
+  "soru": "hata ayiklama nedir",
+  "beklenen": "hata-ayiklama",
+  "liste": "a"
+ },
+ {
+  "soru": "kesme noktasi nasil koyulur",
+  "beklenen": "site-kesme-noktasi",
+  "liste": "a"
+ },
+ {
+  "soru": "breakpoint koydum ama durmuyor",
+  "beklenen": "site-kesme-noktasi",
+  "liste": "a"
+ },
+ {
+  "soru": "satır satır çalıştırmak istiyorum adım adım ilerleme var mı",
+  "beklenen": "site-adim-adim",
+  "liste": "a"
+ },
+ {
+  "soru": "degisken degerlerini nasil gorurum",
+  "beklenen": "site-degisken-izle",
+  "liste": "a"
+ },
+ {
+  "soru": "akilli duzelt hatami duzeltti ama yanlis duzeltti",
+  "beklenen": "site-duzelt-yanlis",
+  "liste": "a"
+ },
+ {
+  "soru": "hata mesajlari neden turkce",
+  "beklenen": "site-hata-turkce",
+  "liste": "a"
+ },
+ {
+  "soru": "Hata mesajını anlamıyorum, ne demek bu?",
+  "beklenen": "site-hata-anlamadim",
+  "liste": "a"
+ },
+ {
+  "soru": "girdi_al calismiyor klavyeden yazamiyorum",
+  "beklenen": "site-girdi-kutusu",
+  "liste": "a"
+ },
+ {
+  "soru": "ekrani temizleme nasil yapilir",
+  "beklenen": "site-terminal-panel",
+  "liste": "a"
+ },
+ {
+  "soru": "satır numaraları gözükmüyor",
+  "beklenen": "site-satir-numarasi",
+  "liste": "a"
+ },
+ {
+  "soru": "kod renklendirme yok mu",
+  "beklenen": "site-renkli-yazim",
+  "liste": "a"
+ },
+ {
+  "soru": "girinti hatasi aliyorum tab mi bosluk mu",
+  "beklenen": "site-girinti-tab",
+  "liste": "a"
+ },
+ {
+  "soru": "yorum satiri nasil yazilir",
+  "beklenen": "yorum",
+  "liste": "a"
+ },
+ {
+  "soru": "birden fazla satırı aynı anda yoruma alabilir miyim",
+  "beklenen": "site-yorum-kisayol",
+  "liste": "a"
+ },
+ {
+  "soru": "geri al ctrl z calisiyor mu",
+  "beklenen": "site-geri-al",
+  "liste": "a"
+ },
+ {
+  "soru": "ara ve degistir var mi",
+  "beklenen": "site-bul-degistir",
+  "liste": "a"
+ },
+ {
+  "soru": "yazı tipini değiştirebilir miyim",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "ayarlar menusu nerede",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "calistir tusuna basiyorum bir sey olmuyor",
+  "beklenen": "site-calistir-olmuyor",
+  "liste": "a"
+ },
+ {
+  "soru": "Program çalışırken çıktı çok geç geliyor",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "turkod turkce karakterleri bozuk gosteriyor ı ş ğ yerine soru isareti cikiyor",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "TürKod'da fare ile kod sürükleyip bırakabilir miyim",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "otomatik kaydetme var mı bilgisayar kapanırsa kaybolur mu",
+  "beklenen": "site-otomatik-kaydet",
+  "liste": "a"
+ },
+ {
+  "soru": "pencereyi tam ekran yapabilir miyim",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "exe nasil yapilir",
+  "beklenen": "site-exe",
+  "liste": "a"
+ },
+ {
+  "soru": "yazdigim programi exe yapip arkadasima gondermek istiyorum",
+  "beklenen": "site-exe",
+  "liste": "a"
+ },
+ {
+  "soru": "EXE yapınca arkadaşımın bilgisayarında Python olmadan çalışır mı?",
+  "beklenen": "site-exe",
+  "liste": "a"
+ },
+ {
+  "soru": "exe yaparken hata aldim",
+  "beklenen": "site-exe-hata",
+  "liste": "a"
+ },
+ {
+  "soru": "exe dosyası çok büyük çıktı neden",
+  "beklenen": "site-exe-boyut",
+  "liste": "a"
+ },
+ {
+  "soru": "exe'ye ikon ekleyebilir miyim",
+  "beklenen": "site-exe-secenekler",
+  "liste": "a"
+ },
+ {
+  "soru": "exe nereye kaydediliyor",
+  "beklenen": "site-exe-secenekler",
+  "liste": "a"
+ },
+ {
+  "soru": "mac icin exe yapilir mi",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "exe yapınca konsol penceresi gizlenebilir mi",
+  "beklenen": "site-exe-secenekler",
+  "liste": "a"
+ },
+ {
+  "soru": "PyInstaller mi kullanıyor exe yaparken",
+  "beklenen": "site-exe-pyinstaller",
+  "liste": "a"
+ },
+ {
+  "soru": "exe acilip hemen kapaniyor",
+  "beklenen": "site-exe-kapaniyor",
+  "liste": "a"
+ },
+ {
+  "soru": "oyun yaptım exe yapıp satabilir miyim",
+  "beklenen": "site-ticari",
+  "liste": "a"
+ },
+ {
+  "soru": "exe yapmadan arkadaşıma kodu nasıl gönderirim",
+  "beklenen": "site-dosya-paylas",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zeka nasil baglanir",
+  "beklenen": "site-yz-baglama",
+  "liste": "a"
+ },
+ {
+  "soru": "groq api key nereden alinir",
+  "beklenen": "site-groq",
+  "liste": "a"
+ },
+ {
+  "soru": "Groq ücretsiz mi",
+  "beklenen": "site-groq",
+  "liste": "a"
+ },
+ {
+  "soru": "api anahtarimi nereye yaziyorum",
+  "beklenen": "site-yz-baglama",
+  "liste": "a"
+ },
+ {
+  "soru": "API anahtarım güvende mi, başkasına gider mi?",
+  "beklenen": "site-yz-gizlilik",
+  "liste": "a"
+ },
+ {
+  "soru": "internetsiz yapay zeka kullanabilir miyim",
+  "beklenen": "site-yerel-model",
+  "liste": "a"
+ },
+ {
+  "soru": "yerel model kurmak için ne kadar RAM lazım",
+  "beklenen": "site-yerel-model",
+  "liste": "a"
+ },
+ {
+  "soru": "Ollama ile çalışır mı",
+  "beklenen": "site-yz-saglayici",
+  "liste": "a"
+ },
+ {
+  "soru": "chatgpt baglayabilir miyim",
+  "beklenen": "site-yz-saglayici",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zeka kodumu yazıyor mu yoksa sadece yardım mı ediyor",
+  "beklenen": "site-yz-ne-yapar",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zeka cevap vermiyor hata veriyor",
+  "beklenen": "site-yz-calismiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "groq limit doldu diyor ne yapacagim",
+  "beklenen": "site-yz-limit",
+  "liste": "a"
+ },
+ {
+  "soru": "hangi yapay zeka modeli en iyi",
+  "beklenen": "site-yz-model-secimi",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zekayi kapatabilir miyim",
+  "beklenen": "site-yz-kapat",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zeka ödevimi yapar mı",
+  "beklenen": "sohbet-odev",
+  "liste": "a"
+ },
+ {
+  "soru": "model indirme cok yavas",
+  "beklenen": "site-model-indirme",
+  "liste": "a"
+ },
+ {
+  "soru": "yapay zeka verilerimi kaydediyor mu",
+  "beklenen": "site-yz-gizlilik",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi yapay zeka mi",
+  "beklenen": "site-kodi-yz",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi nasil calisiyor",
+  "beklenen": "site-kodi-program",
+  "liste": "a"
+ },
+ {
+  "soru": "Kodi'ye programın içinden nasıl ulaşırım",
+  "beklenen": "site-kodi-program",
+  "liste": "a"
+ },
+ {
+  "soru": "F1 basinca ne oluyor",
+  "beklenen": "site-kodi-program",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi her seyi biliyor mu",
+  "beklenen": "site-kodi-bilmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "Kodi'nin bilmediği soru olursa ne yapıyor?",
+  "beklenen": "site-kodi-bilmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi internete bagli mi",
+  "beklenen": "site-kodi-bilmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "selam",
+  "beklenen": "site-selam",
+  "liste": "a"
+ },
+ {
+  "soru": "merhaba kodi nasılsın",
+  "beklenen": "sohbet-nasilsin",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi ismin nereden geliyor",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "seni kim yaptı",
+  "beklenen": "sohbet-kim-yapti",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi cevap vermiyor",
+  "beklenen": "site-yz-calismiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "Kodi yanlış cevap verdi",
+  "beklenen": "site-geri-bildirim-site",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi'yi kapatabilir miyim",
+  "beklenen": "site-kodi-kapat",
+  "liste": "a"
+ },
+ {
+  "soru": "Kodi'nin görünümünü değiştirebilir miyim",
+  "beklenen": "site-kodi-gorunum",
+  "liste": "a"
+ },
+ {
+  "soru": "kodiyle konusmalarim kaydediliyor mu",
+  "beklenen": "site-kodi-gizlilik",
+  "liste": "a"
+ },
+ {
+  "soru": "hava durumu nasıl",
+  "beklenen": "sohbet-hava",
+  "liste": "a"
+ },
+ {
+  "soru": "2+2 kaç",
+  "beklenen": "hesap",
+  "liste": "a"
+ },
+ {
+  "soru": "kodi vikipedi'den mi arıyor",
+  "beklenen": "site-kodi-bilmiyor",
+  "liste": "a"
+ },
+ {
+  "soru": "Kodi nasıl daha akıllı olur",
+  "beklenen": "site-geri-bildirim-site",
+  "liste": "a"
+ },
+ {
+  "soru": "canli demo nedir",
+  "beklenen": "site-demo",
+  "liste": "a"
+ },
+ {
+  "soru": "Canlı Demo'da kod nasıl çalıştırılıyor?",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "Canlı Demo çok geç yükleniyor",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "canli demo icin internet gerekiyor mu",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "Pyodide ne demek",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "canli demoda girdi_al calisiyor mu",
+  "beklenen": "site-demo-sinirlar",
+  "liste": "a"
+ },
+ {
+  "soru": "Canlı Demo telefonda açılıyor mu",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "canli demoda kutuphane import edebilir miyim",
+  "beklenen": "site-demo-sinirlar",
+  "liste": "a"
+ },
+ {
+  "soru": "sözlük nerede",
+  "beklenen": "site-sozluk",
+  "liste": "a"
+ },
+ {
+  "soru": "Sözlük sayfasında ne var?",
+  "beklenen": "site-sozluk",
+  "liste": "a"
+ },
+ {
+  "soru": "while'ın Türkçesi ne",
+  "beklenen": "dongu-while",
+  "liste": "a"
+ },
+ {
+  "soru": "eger yerine ne yaziliyor",
+  "beklenen": "eger",
+  "liste": "a"
+ },
+ {
+  "soru": "yazdır mı yazdir mi hangisi doğru",
+  "beklenen": "site-turkce-harfsiz",
+  "liste": "a"
+ },
+ {
+  "soru": "for dongusu turkcede nasil yazilir",
+  "beklenen": "icin-for",
+  "liste": "a"
+ },
+ {
+  "soru": "sinif nasil tanimlanir turkodda",
+  "beklenen": "sinif",
+  "liste": "a"
+ },
+ {
+  "soru": "def yerine ne yazıyoruz",
+  "beklenen": "fonksiyon",
+  "liste": "a"
+ },
+ {
+  "soru": "liste.sona_ekle ne yapıyor",
+  "beklenen": "liste-ekle",
+  "liste": "a"
+ },
+ {
+  "soru": "dersler nerede",
+  "beklenen": "site-dersler",
+  "liste": "a"
+ },
+ {
+  "soru": "Hangi dersler var sitede?",
+  "beklenen": "site-dersler",
+  "liste": "a"
+ },
+ {
+  "soru": "ilk programi nasil yazarim",
+  "beklenen": "site-ilk-program",
+  "liste": "a"
+ },
+ {
+  "soru": "merhaba dunya programi",
+  "beklenen": "site-ilk-program",
+  "liste": "a"
+ },
+ {
+  "soru": "sürüm geçmişi nerede",
+  "beklenen": "site-surum-gecmisi",
+  "liste": "a"
+ },
+ {
+  "soru": "son surumde neler yeni",
+  "beklenen": "site-yenilikler",
+  "liste": "a"
+ },
+ {
+  "soru": "Katkı sağlamak istiyorum nasıl yapabilirim",
+  "beklenen": "site-katki",
+  "liste": "a"
+ },
+ {
+  "soru": "güvenlik sayfasında ne yazıyor",
+  "beklenen": "site-guvenlik",
+  "liste": "a"
+ },
+ {
+  "soru": "sitede arama var mi",
+  "beklenen": "site-sitede-arama",
+  "liste": "a"
+ },
+ {
+  "soru": "site mobilde duzgun gorunmuyor",
+  "beklenen": "site-geri-bildirim-site",
+  "liste": "a"
+ },
+ {
+  "soru": "kisayollar sayfasi nerde",
+  "beklenen": "site-kisayol",
+  "liste": "a"
+ },
+ {
+  "soru": "okulda kullanabilir miyiz",
+  "beklenen": "site-okul",
+  "liste": "a"
+ },
+ {
+  "soru": "Ben öğretmenim, sınıfta TürKod kullanmak istiyorum, nasıl başlarım?",
+  "beklenen": "site-okul",
+  "liste": "a"
+ },
+ {
+  "soru": "okul bilgisayarlarina kurmak icin yonetici izni lazim mi",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "ogrencilerin ilerlemesini gorebilir miyim",
+  "beklenen": "site-okul-materyal",
+  "liste": "a"
+ },
+ {
+  "soru": "MEB müfredatına uygun mu",
+  "beklenen": "site-okul-materyal",
+  "liste": "a"
+ },
+ {
+  "soru": "hangi yas icin uygun",
+  "beklenen": "site-yas",
+  "liste": "a"
+ },
+ {
+  "soru": "5. sınıf öğrencisi kullanabilir mi",
+  "beklenen": "site-yas",
+  "liste": "a"
+ },
+ {
+  "soru": "cocugum 8 yasinda ona uygun mu",
+  "beklenen": "site-yas",
+  "liste": "a"
+ },
+ {
+  "soru": "ders plani var mi ogretmenler icin",
+  "beklenen": "site-okul-materyal",
+  "liste": "a"
+ },
+ {
+  "soru": "sınıfta projeksiyonla gösterirken yazı büyütebilir miyim",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "okulda internet kisitli canli demo acilir mi",
+  "beklenen": "site-internet",
+  "liste": "a"
+ },
+ {
+  "soru": "Ödev olarak verebileceğim alıştırmalar var mı?",
+  "beklenen": "site-okul-materyal",
+  "liste": "a"
+ },
+ {
+  "soru": "okul kulubunde kullanacagiz kac kisi kullanabilir",
+  "beklenen": "site-okul",
+  "liste": "a"
+ },
+ {
+  "soru": "hocam bunu scratch yerine kullanabilir miyiz",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "Öğrenciler yazdıkları kodu nasıl teslim eder?",
+  "beklenen": "site-dosya-paylas",
+  "liste": "a"
+ },
+ {
+  "soru": "Python ogrenmek icin turkod yeterli mi",
+  "beklenen": "site-turkod-python",
+  "liste": "a"
+ },
+ {
+  "soru": "turkod python ile uyumlu mu",
+  "beklenen": "site-turkod-python",
+  "liste": "a"
+ },
+ {
+  "soru": "TürKod'da yazdığım kod normal Python'a çevrilebiliyor mu?",
+  "beklenen": "site-python-cevir",
+  "liste": "a"
+ },
+ {
+  "soru": "python kodunu turkoda nasil cevirebilirim",
+  "beklenen": "site-python-cevir",
+  "liste": "a"
+ },
+ {
+  "soru": "normal python kodu yapistirsam calisir mi",
+  "beklenen": "site-python-cevir",
+  "liste": "a"
+ },
+ {
+  "soru": "pip ile kutuphane nasil kurulur",
+  "beklenen": "site-pip",
+  "liste": "a"
+ },
+ {
+  "soru": "pip install turkod icinde calisiyor mu",
+  "beklenen": "site-pip",
+  "liste": "a"
+ },
+ {
+  "soru": "numpy kurabilir miyim",
+  "beklenen": "site-pip",
+  "liste": "a"
+ },
+ {
+  "soru": "pygame ile oyun yapabilir miyim",
+  "beklenen": "site-oyun",
+  "liste": "a"
+ },
+ {
+  "soru": "matplotlib grafik cizdirebilir miyim",
+  "beklenen": "site-veri-grafik",
+  "liste": "a"
+ },
+ {
+  "soru": "import yerine Türkçe karşılığı var mı",
+  "beklenen": "modul",
+  "liste": "a"
+ },
+ {
+  "soru": "türkçe karakter sorunu yaşıyorum dosya okurken",
+  "beklenen": "site-utf8",
+  "liste": "a"
+ },
+ {
+  "soru": "UTF-8 hatasi aliyorum",
+  "beklenen": "site-utf8",
+  "liste": "a"
+ },
+ {
+  "soru": "degisken adinda turkce harf kullanabilir miyim",
+  "beklenen": "degisken-adlandirma",
+  "liste": "a"
+ },
+ {
+  "soru": "verilerim buluta mı yükleniyor",
+  "beklenen": "site-veri-gizlilik",
+  "liste": "a"
+ },
+ {
+  "soru": "hata bildirmek istiyorum nereye yazayim",
+  "beklenen": "site-hata-bildir",
+  "liste": "a"
+ },
+ {
+  "soru": "Geri bildirim nasıl gönderirim",
+  "beklenen": "site-hata-bildir",
+  "liste": "a"
+ },
+ {
+  "soru": "bir buldum yazılım hatası, kime söylemeliyim",
+  "beklenen": "site-hata-bildir",
+  "liste": "a"
+ },
+ {
+  "soru": "gelistirici kim",
+  "beklenen": "site-gelistirici",
+  "liste": "a"
+ },
+ {
+  "soru": "TürKod'u kim yaptı?",
+  "beklenen": "site-gelistirici",
+  "liste": "a"
+ },
+ {
+  "soru": "acik kaynak mi",
+  "beklenen": "site-katki",
+  "liste": "a"
+ },
+ {
+  "soru": "kaynak kodu github'da mı",
+  "beklenen": "site-katki",
+  "liste": "a"
+ },
+ {
+  "soru": "hangi dillerde kullanilabiliyor sadece turkce mi",
+  "beklenen": "site-dil",
+  "liste": "a"
+ },
+ {
+  "soru": "Azerbaycan Türkçesi destekleniyor mu",
+  "beklenen": "site-dil",
+  "liste": "a"
+ },
+ {
+  "soru": "İngilizce arayüz seçeneği var mı?",
+  "beklenen": "site-dil",
+  "liste": "a"
+ },
+ {
+  "soru": "turkod neden yapildi",
+  "beklenen": "site-neden-yapildi",
+  "liste": "a"
+ },
+ {
+  "soru": "turkod ne ise yarar",
+  "beklenen": "turkod-nedir",
+  "liste": "a"
+ },
+ {
+  "soru": "bu program virüslü mü, bilgisayarıma zarar verir mi",
+  "beklenen": "site-guvenlik",
+  "liste": "a"
+ },
+ {
+  "soru": "internet olmadan kullanabilir miyim",
+  "beklenen": "site-internet",
+  "liste": "a"
+ },
+ {
+  "soru": "hangi internet hizi lazim",
+  "beklenen": "site-internet",
+  "liste": "a"
+ },
+ {
+  "soru": "web sitesi yapabilir miyim turkodla",
+  "beklenen": "site-web-projesi",
+  "liste": "a"
+ },
+ {
+  "soru": "bilgisayarım yavaşlıyor program açıkken",
+  "beklenen": "site-yavaslama",
+  "liste": "a"
+ },
+ {
+  "soru": "program neden bu kadar RAM yiyor",
+  "beklenen": "site-yavaslama",
+  "liste": "a"
+ },
+ {
+  "soru": "proxy arkasında çalışır mı",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "parola veya kişisel bilgi topluyor mu",
+  "beklenen": "site-veri-gizlilik",
+  "liste": "a"
+ },
+ {
+  "soru": "turkod sertifikasi veya belgesi veriyor mu",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "discord veya topluluk grubu var mi",
+  "beklenen": "site-topluluk",
+  "liste": "a"
+ },
+ {
+  "soru": "ders videosu var mı youtube'da",
+  "beklenen": "site-topluluk",
+  "liste": "a"
+ },
+ {
+  "soru": "merhaba ben yeni basliyorum",
+  "beklenen": "site-ilk-program",
+  "liste": "a"
+ },
+ {
+  "soru": "Bu program çok kötü hiçbir şey çalışmıyor",
+  "beklenen": "site-sorun",
+  "liste": "a"
+ },
+ {
+  "soru": "yardim",
+  "beklenen": "sohbet-ne-yapabilirsin",
+  "liste": "a"
+ },
+ {
+  "soru": "nasıl kullanılır",
+  "beklenen": "site-nasil-kullanilir",
+  "liste": "a"
+ },
+ {
+  "soru": "bir sorunum var",
+  "beklenen": "site-sorun",
+  "liste": "a"
+ },
+ {
+  "soru": "ders",
+  "beklenen": "site-dersler",
+  "liste": "a"
+ },
+ {
+  "soru": "kurulum",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "indir",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "peki mac'te de çalışır mı",
+  "onceki": "TürKod'u nereden indirebilirim?",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "o zaman hangi windows lazim",
+  "onceki": "windows 7 de calisir mi",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "peki yine de calistirayim mi",
+  "onceki": "antivirus virus var diyor guvenli mi",
+  "beklenen": "site-smartscreen",
+  "liste": "a"
+ },
+ {
+  "soru": "eski dosyalarım silinir mi o zaman",
+  "onceki": "guncelleme nasil yapilir",
+  "beklenen": "site-guncelleme",
+  "liste": "a"
+ },
+ {
+  "soru": "peki canlı demo telefonda olur mu",
+  "onceki": "telefonda calisiyo mu",
+  "beklenen": "site-demo-nasil",
+  "liste": "a"
+ },
+ {
+  "soru": "kendi renklerimi seçebilir miyim",
+  "onceki": "tema nasil degistirilir",
+  "beklenen": "site-tema",
+  "liste": "a"
+ },
+ {
+  "soru": "nasıl başlatıyorum bunu",
+  "onceki": "hata ayiklama nedir",
+  "beklenen": "site-adim-adim",
+  "liste": "a"
+ },
+ {
+  "soru": "kaldırmak için ne yapacağım",
+  "onceki": "kesme noktasi nasil koyulur",
+  "beklenen": "site-kesme-noktasi",
+  "liste": "a"
+ },
+ {
+  "soru": "orada pip çalışır mı",
+  "onceki": "terminal nerede",
+  "beklenen": "site-pip",
+  "liste": "a"
+ },
+ {
+  "soru": "nerede duruyor peki",
+  "onceki": "dosyayi nasil kaydederim",
+  "beklenen": "site-kaydet",
+  "liste": "a"
+ },
+ {
+  "soru": "ya hata verirse",
+  "onceki": "exe nasil yapilir",
+  "beklenen": "site-exe-hata",
+  "liste": "a"
+ },
+ {
+  "soru": "tamam yaptım ama antivirüs sildi",
+  "onceki": "exe nasil yapilir",
+  "beklenen": "site-antivirus-engel",
+  "liste": "a"
+ },
+ {
+  "soru": "mac'li arkadaşım için de olur mu",
+  "onceki": "EXE yapınca arkadaşımın bilgisayarında Python olmadan çalışır mı?",
+  "beklenen": "site-gereksinim",
+  "liste": "a"
+ },
+ {
+  "soru": "anahtarı nereden alıcam",
+  "onceki": "yapay zeka nasil baglanir",
+  "beklenen": "site-groq",
+  "liste": "a"
+ },
+ {
+  "soru": "ücretsiz kalıyor mu hep",
+  "onceki": "Groq nedir, nasıl bağlarım?",
+  "beklenen": "site-groq",
+  "liste": "a"
+ },
+ {
+  "soru": "hangisini indirmeliyim",
+  "onceki": "yerel model nedir",
+  "beklenen": "site-yerel-model",
+  "liste": "a"
+ },
+ {
+  "soru": "o zaman nasıl cevap veriyor",
+  "onceki": "kodi yapay zeka mi",
+  "beklenen": "site-kodi-yz",
+  "liste": "a"
+ },
+ {
+  "soru": "laptopta F1 çalışmıyor",
+  "onceki": "F1 basinca ne oluyor",
+  "beklenen": "site-kodi-program",
+  "liste": "a"
+ },
+ {
+  "soru": "nasıl bildiririm",
+  "onceki": "Kodi yanlış cevap verdi",
+  "beklenen": "site-geri-bildirim-site",
+  "liste": "a"
+ },
+ {
+  "soru": "internet gerekiyor mu",
+  "onceki": "canli demo nedir",
+  "beklenen": "site-internet",
+  "liste": "a"
+ },
+ {
+  "soru": "yazdıklarım kaydediliyor mu",
+  "onceki": "Canlı Demo'da kod nasıl çalıştırılıyor?",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "yazdir'in python karşılığı ne",
+  "onceki": "sözlük nerede",
+  "beklenen": "sozluk",
+  "liste": "a"
+ },
+ {
+  "soru": "ilk derste ne öğreneceğim",
+  "onceki": "hic bilmiyorum nereden baslamaliyim",
+  "beklenen": "site-ilk-ders",
+  "liste": "a"
+ },
+ {
+  "soru": "kurulum için yönetici şifresi lazım mı",
+  "onceki": "okulda kullanabilir miyiz",
+  "beklenen": "site-kurulum",
+  "liste": "a"
+ },
+ {
+  "soru": "yazdırabilir miyim",
+  "onceki": "ders plani var mi ogretmenler icin",
+  "beklenen": null,
+  "liste": "a"
+ },
+ {
+  "soru": "yani sonra normal python'a geçebilirim",
+  "onceki": "turkod python ile uyumlu mu",
+  "beklenen": "site-turkod-python",
+  "liste": "a"
+ },
+ {
+  "soru": "hangi kütüphaneler çalışıyor",
+  "onceki": "pip ile kutuphane nasil kurulur",
+  "beklenen": "site-kutuphaneler",
+  "liste": "a"
+ },
+ {
+  "soru": "nasıl katkı verebilirim",
+  "onceki": "acik kaynak mi",
+  "beklenen": "site-katki",
+  "liste": "a"
+ },
+ {
+  "soru": "ona nasıl ulaşırım",
+  "onceki": "gelistirici kim",
+  "beklenen": "site-gelistirici",
+  "liste": "a"
+ },
+ {
+  "soru": "ekran görüntüsü de ekleyebilir miyim",
+  "onceki": "hata bildirmek istiyorum nereye yazayim",
+  "beklenen": "site-hata-bildir",
+  "liste": "a"
+ },
+ {
+  "soru": "merhaba",
+  "beklenen": "site-selam",
+  "liste": "d"
+ },
+ {
+  "soru": "slm kodi",
+  "beklenen": "site-selam",
+  "liste": "d"
+ },
+ {
+  "soru": "selam nasilsin",
+  "beklenen": "sohbet-nasilsin",
+  "liste": "d"
+ },
+ {
+  "soru": "nbr",
+  "beklenen": "sohbet-nasilsin",
+  "liste": "d"
+ },
+ {
+  "soru": "Merhaba Kodi! Nasılsın?",
+  "beklenen": "sohbet-nasilsin",
+  "liste": "d"
+ },
+ {
+  "soru": "gunaydin",
+  "beklenen": "site-selam",
+  "liste": "d"
+ },
+ {
+  "soru": "iyi geceler kodi",
+  "beklenen": "sohbet-gorusuruz",
+  "liste": "d"
+ },
+ {
+  "soru": "kaç yaşındasın",
+  "beklenen": "sohbet-yas",
+  "liste": "d"
+ },
+ {
+  "soru": "kac yasindasin kodi",
+  "beklenen": "sohbet-yas",
+  "liste": "d"
+ },
+ {
+  "soru": "nerelisin",
+  "beklenen": "sohbet-nerelisin",
+  "liste": "d"
+ },
+ {
+  "soru": "en sevdigin yemek ne",
+  "beklenen": "sohbet-yemek",
+  "liste": "d"
+ },
+ {
+  "soru": "en sevdiğin renk ne?",
+  "beklenen": "sohbet-renk",
+  "liste": "d"
+ },
+ {
+  "soru": "en sevdigin oyun hangisi",
+  "beklenen": "sohbet-sevdigin-oyun",
+  "liste": "d"
+ },
+ {
+  "soru": "bana bir şaka yap",
+  "beklenen": "sohbet-saka",
+  "liste": "d"
+ },
+ {
+  "soru": "bilmece sor",
+  "beklenen": "sohbet-bilmece",
+  "liste": "d"
+ },
+ {
+  "soru": "sikildim",
+  "beklenen": "sohbet-sikildim",
+  "liste": "d"
+ },
+ {
+  "soru": "çok sıkıldım ne yapayım",
+  "beklenen": "sohbet-sikildim",
+  "liste": "d"
+ },
+ {
+  "soru": "uzgunum",
+  "beklenen": "sohbet-uzgun",
+  "liste": "d"
+ },
+ {
+  "soru": "bugün çok üzgünüm :(",
+  "beklenen": "sohbet-uzgun",
+  "liste": "d"
+ },
+ {
+  "soru": "aferin sana",
+  "beklenen": "sohbet-aferin",
+  "liste": "d"
+ },
+ {
+  "soru": "tesekkurler kodi",
+  "beklenen": "site-tesekkur",
+  "liste": "d"
+ },
+ {
+  "soru": "tşk",
+  "beklenen": "site-tesekkur",
+  "liste": "d"
+ },
+ {
+  "soru": "hoşça kal",
+  "beklenen": "sohbet-gorusuruz",
+  "liste": "d"
+ },
+ {
+  "soru": "görüşürüz kodi",
+  "beklenen": "sohbet-gorusuruz",
+  "liste": "d"
+ },
+ {
+  "soru": "sen yapay zeka misin",
+  "beklenen": "sohbet-yapay-zeka-misin",
+  "liste": "d"
+ },
+ {
+  "soru": "sen chatgpt misin",
+  "beklenen": "sohbet-yapay-zeka-misin",
+  "liste": "d"
+ },
+ {
+  "soru": "seni kim yapti",
+  "beklenen": "sohbet-kim-yapti",
+  "liste": "d"
+ },
+ {
+  "soru": "arkadasim olur musun",
+  "beklenen": "sohbet-seviyorum",
+  "liste": "d"
+ },
+ {
+  "soru": "beni seviyor musun",
+  "beklenen": "sohbet-beni-seviyor-musun",
+  "liste": "d"
+ },
+ {
+  "soru": "adin neden kodi",
+  "beklenen": "sohbet-kodi-adi",
+  "liste": "d"
+ },
+ {
+  "soru": "sen robot musun",
+  "beklenen": "sohbet-yapay-zeka-misin",
+  "liste": "d"
+ },
+ {
+  "soru": "uyudun mu",
+  "beklenen": "sohbet-uyku",
+  "liste": "d"
+ },
+ {
+  "soru": "yemek yer misin",
+  "beklenen": "sohbet-yemek",
+  "liste": "d"
+ },
+ {
+  "soru": "kardeşin var mı",
+  "beklenen": "sohbet-kardes",
+  "liste": "d"
+ },
+ {
+  "soru": "en sevdigin hayvan ne",
+  "beklenen": "sohbet-sevdigin-hayvan",
+  "liste": "d"
+ },
+ {
+  "soru": "en sevdiğin ders ne",
+  "beklenen": "sohbet-sevdigin-ders",
+  "liste": "d"
+ },
+ {
+  "soru": "okula gidiyor musun",
+  "beklenen": "sohbet-okul",
+  "liste": "d"
+ },
+ {
+  "soru": "ben ali 10 yasindayim",
+  "beklenen": "sohbet-tanisma",
+  "liste": "d"
+ },
+ {
+  "soru": "benim adim Zeynep",
+  "beklenen": "sohbet-tanisma",
+  "liste": "d"
+ },
+ {
+  "soru": "benim adimi biliyor musun",
+  "beklenen": "sohbet-ismimi-biliyor",
+  "liste": "d"
+ },
+ {
+  "soru": "korkuyor musun",
+  "beklenen": "sohbet-korkuyor-musun",
+  "liste": "d"
+ },
+ {
+  "soru": "rüya görür müsün",
+  "beklenen": "sohbet-ruya",
+  "liste": "d"
+ },
+ {
+  "soru": "en iyi arkadaşın kim",
+  "beklenen": "sohbet-en-iyi-arkadas",
+  "liste": "d"
+ },
+ {
+  "soru": "futbol sever misin",
+  "beklenen": "sohbet-futbol",
+  "liste": "d"
+ },
+ {
+  "soru": "mutlu musun",
+  "beklenen": "sohbet-robot-duygu",
+  "liste": "d"
+ },
+ {
+  "soru": "bugün okulda kavga ettim",
+  "beklenen": "sohbet-okul-sorun",
+  "liste": "d"
+ },
+ {
+  "soru": "sinavim var heyecanlıyım",
+  "beklenen": "sohbet-sinav-heyecan",
+  "liste": "d"
+ },
+ {
+  "soru": "doğum günüm bugün! 🎂",
+  "beklenen": "sohbet-dogum-gunu",
+  "liste": "d"
+ },
+ {
+  "soru": "sen çok tatlısın",
+  "beklenen": "sohbet-tatlisin",
+  "liste": "d"
+ },
+ {
+  "soru": "seni çok seviyorum kodi ❤️",
+  "beklenen": "sohbet-seviyorum",
+  "liste": "d"
+ },
+ {
+  "soru": "şarkı söyle",
+  "beklenen": "sohbet-sarki",
+  "liste": "d"
+ },
+ {
+  "soru": "hadi oyun oynayalım",
+  "beklenen": "sohbet-oyun-oyna",
+  "liste": "d"
+ },
+ {
+  "soru": "sence ben zeki miyim",
+  "beklenen": "sohbet-zeki-miyim",
+  "liste": "d"
+ },
+ {
+  "soru": "ne yapiyosun",
+  "beklenen": "sohbet-nasilsin",
+  "liste": "d"
+ },
+ {
+  "soru": "sen kızmısın erkekmi",
+  "beklenen": "sohbet-cinsiyet",
+  "liste": "d"
+ },
+ {
+  "soru": "bir tane daha",
+  "onceki": "bana bir şaka yap",
+  "beklenen": "sohbet-saka",
+  "liste": "d"
+ },
+ {
+  "soru": "bilemedim cevap ne",
+  "onceki": "bilmece sor",
+  "beklenen": "sohbet-bilemedim",
+  "liste": "d"
+ },
+ {
+  "soru": "ben de iyiyim sen?",
+  "onceki": "nasılsın",
+  "beklenen": "sohbet-iyiyim",
+  "liste": "d"
+ },
+ {
+  "soru": "neden o kadar",
+  "onceki": "kaç yaşındasın",
+  "beklenen": "sohbet-yas",
+  "liste": "d"
+ },
+ {
+  "soru": "neden",
+  "onceki": "en sevdiğin renk ne",
+  "beklenen": "sohbet-renk",
+  "liste": "d"
+ },
+ {
+  "soru": "başka bir şey öner",
+  "onceki": "sıkıldım",
+  "beklenen": "sohbet-sikildim",
+  "liste": "d"
+ },
+ {
+  "soru": "bilmiyorum sadece üzgünüm",
+  "onceki": "üzgünüm",
+  "beklenen": "sohbet-uzgun",
+  "liste": "d"
+ },
+ {
+  "soru": "peki o kim",
+  "onceki": "seni kim yaptı",
+  "beklenen": "sohbet-kim-yapti",
+  "liste": "d"
+ },
+ {
+  "soru": "güzel isim",
+  "onceki": "adın neden kodi",
+  "beklenen": "sohbet-guzel-isim",
+  "liste": "d"
+ },
+ {
+  "soru": "daha uzun olsun",
+  "onceki": "bana şiir yaz",
+  "beklenen": "sohbet-siir",
+  "liste": "d"
+ },
+ {
+  "soru": "aptal robot",
+  "beklenen": "sohbet-kaba",
+  "liste": "d"
+ },
+ {
+  "soru": "sen bir şey bilmiyosun",
+  "beklenen": "sohbet-ise-yaramaz",
+  "liste": "d"
+ },
+ {
+  "soru": "sus be",
+  "beklenen": "sohbet-sus",
+  "liste": "d"
+ },
+ {
+  "soru": "çok kötüsün",
+  "beklenen": "sohbet-ise-yaramaz",
+  "liste": "d"
+ },
+ {
+  "soru": "salak robot",
+  "beklenen": "sohbet-kaba",
+  "liste": "d"
+ },
+ {
+  "soru": "seni sileceğim",
+  "beklenen": "sohbet-silecegim",
+  "liste": "d"
+ },
+ {
+  "soru": "hiçbir işe yaramıyosun",
+  "beklenen": "sohbet-ise-yaramaz",
+  "liste": "d"
+ },
+ {
+  "soru": "asdasd",
+  "beklenen": "sohbet-anlamsiz",
+  "liste": "d"
+ },
+ {
+  "soru": "?",
+  "beklenen": "sohbet-soru-isareti",
+  "liste": "d"
+ },
+ {
+  "soru": "hmm",
+  "beklenen": "sohbet-hmm",
+  "liste": "d"
+ },
+ {
+  "soru": "ok",
+  "beklenen": "sohbet-tamam",
+  "liste": "d"
+ },
+ {
+  "soru": "evet",
+  "beklenen": "sohbet-evet",
+  "liste": "d"
+ },
+ {
+  "soru": "hayır",
+  "beklenen": "sohbet-hayir",
+  "liste": "d"
+ },
+ {
+  "soru": "😂😂😂",
+  "beklenen": "sohbet-hahaha",
+  "liste": "d"
+ },
+ {
+  "soru": "qwertyuıop",
+  "beklenen": "sohbet-anlamsiz",
+  "liste": "d"
+ },
+ {
+  "soru": "12 çarpı 5 kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "345+678",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "1000-387",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "25x4",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "144 bölü 12",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "7 kere 8 kac eder",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "3/4 + 1/2",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "2/5 ile 3/10 un toplamı kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "1/2 x 2/3",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "200 ün yüzde 15 i kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "80 in %25 i",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "yuzde 20 indirimli 150 TL lik ayakkabi kac TL olur",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "2 üssü 10",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "5 uzeri 3 kac",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "144 ün karekökü",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "karekok 225",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "x + 7 = 15 ise x kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "3x - 5 = 20 denklemini çöz",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "2x+3=4x-9 x kac",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Ali'nin yaşı Veli'nin yaşının 2 katı. İkisinin yaşları toplamı 36 ise Ali kaç yaşındadır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Annem 35 yaşında ben 9. Kaç yıl sonra annem benim yaşımın 3 katı olur?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Ahmet'in 50 lirası var. 3 tane 12 liralık defter alırsa kaç lirası kalır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "bir kitap 45 TL. 4 kitap alip 200 TL verirsem para ustu kac TL olur",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir araç saatte 80 km hızla 3 saat giderse kaç km yol alır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "240 km yolu 4 saatte giden aracın hızı kaçtır",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "120 km yolu saatte 60 km hızla kaç saatte gider",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "56 cevizi 7 kişiye eşit paylaştırırsak herkese kaç tane düşer",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir işi Ali 6 günde, Veli 3 günde yapıyor. Birlikte kaç günde yaparlar?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir havuzu A musluğu 4 saatte, B musluğu 12 saatte dolduruyor. İkisi birlikte açılırsa havuz kaç saatte dolar?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir sınıftaki öğrencilerin 2/5 i kız. Sınıfta 10 kız varsa sınıf mevcudu kaçtır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "bir sayinin 3/4 u 27 ise sayi kactir",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Elmaların 1/3 ü çürük. 45 elma varsa kaç tanesi sağlam?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "İki sayının toplamı 30, farkı 6. Sayılar kaçtır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir kalem ile bir silgi 8 TL, 2 kalem ile 1 silgi 13 TL. Kalem kaç TL?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "kenarlari 8 ve 5 cm olan dikdortgenin alani ve cevresi kac",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Kenarı 7 cm olan karenin çevresi kaçtır",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "yaricapi 3 cm olan dairenin alani kac (pi=3 al)",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Taban 10 cm yükseklik 6 cm olan üçgenin alanı kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "4, 8, 15, 23 sayılarının ortalaması kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "zar atilinca 6 gelme olasiligi kac",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Torbada 3 kırmızı 5 mavi top var. Rastgele çekilen topun kırmızı olma olasılığı kaçtır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Saat 3:45 ten 2 saat 30 dakika sonra saat kaç olur",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "saat 14:20 ile 17:05 arasi kac dakika",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "3 saat kaç dakika",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "5 km kaç metre",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "2,5 kg kac gram",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "360 saniye kaç dakika",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "3 litre kaç mililitre",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "17 asal mı",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "1 den 30 a kadar asal sayılar neler",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "12 ile 18 in EBOB u kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "EKOK(6, 8)",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "24 ün bölenleri neler",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "7 faktöriyel kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "(-3) x (-4)",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "3 + 4 x 2 kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "15 bölü 4 ondalık olarak kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "100 den 7 yi 13 kez çıkarırsam ne kalır",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "ÖDEV: Bir manav sabah 120 kg elma getirdi. Öğlene kadar elmaların 3/8 ini sattı, akşama kadar da kalanın yarısını sattı. Geriye kaç kg elma kaldı? lütfen çöz kodi",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "arkadasimla 24 bilye var. bana arkadasimdan 4 fazla dusuyor. kac bilyem var",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir bakkal 5 kg şekeri 90 TL ye alıp kilosunu 24 TL den satıyor. Tamamı satılırsa kaç TL kâr eder?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Bir bisikletçi 15 km yolu 45 dakikada gidiyor. Saatteki hızı kaç km?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki bunu 3e bölersem",
+  "onceki": "12 çarpı 5 kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "bir de 100 çıkar",
+  "onceki": "345+678",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "sonucu karesini al",
+  "onceki": "144 bölü 12",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki 2 üssü 11",
+  "onceki": "2 üssü 10",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "bunun yarısı kaç",
+  "onceki": "25x4",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki yüzde 30 u",
+  "onceki": "200 ün yüzde 15 i kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki x+7=20 olsaydı",
+  "onceki": "x + 7 = 15 ise x kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki Veli kaç yaşında",
+  "onceki": "Ali'nin yaşı Veli'nin yaşının 2 katı. İkisinin yaşları toplamı 36 ise Ali kaç yaşındadır?",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki 6 saatte giderse kaç km yol alır",
+  "onceki": "240 km yolu 4 saatte giden aracın hızı kaçtır",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "aynisini 9 ile carp",
+  "onceki": "7 kere 8 kac eder",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "sonucu ondalık yaz",
+  "onceki": "3/4 + 1/2",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "peki 256 nın",
+  "onceki": "karekok 225",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "alanı kaç",
+  "onceki": "Kenarı 7 cm olan karenin çevresi kaçtır",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "21 peki",
+  "onceki": "17 asal mı",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "4,5 saat olsa",
+  "onceki": "3 saat kaç dakika",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "12 km",
+  "onceki": "5 km kaç metre",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "ya 50 si",
+  "onceki": "80 in %25 i",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "EKOK u da bul",
+  "onceki": "12 ile 18 in EBOB u kaç",
+  "beklenen": "hesap",
+  "liste": "d"
+ },
+ {
+  "soru": "Türkiye'nin başkenti neresi",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "hava nasıl",
+  "beklenen": "sohbet-hava",
+  "liste": "d"
+ },
+ {
+  "soru": "bugun gunlerden ne",
+  "beklenen": "sohbet-tarih",
+  "liste": "d"
+ },
+ {
+  "soru": "saat kaç",
+  "beklenen": "sohbet-saat",
+  "liste": "d"
+ },
+ {
+  "soru": "bugünün tarihi ne",
+  "beklenen": "sohbet-tarih",
+  "liste": "d"
+ },
+ {
+  "soru": "minecraftta nasıl ev yapılır",
+  "beklenen": "sohbet-minecraft",
+  "liste": "d"
+ },
+ {
+  "soru": "Roblox nasıl oynanır",
+  "beklenen": "sohbet-roblox",
+  "liste": "d"
+ },
+ {
+  "soru": "minecraft hile var mı",
+  "beklenen": "sohbet-hile",
+  "liste": "d"
+ },
+ {
+  "soru": "roblox da robux nasil kazanilir",
+  "beklenen": "sohbet-roblox",
+  "liste": "d"
+ },
+ {
+  "soru": "youtube kanalı nasıl açılır",
+  "beklenen": "sohbet-sosyal-medya",
+  "liste": "d"
+ },
+ {
+  "soru": "bana oyun öner",
+  "beklenen": "sohbet-oyun-oner",
+  "liste": "d"
+ },
+ {
+  "soru": "hangi oyunu oynayayım",
+  "beklenen": "sohbet-oyun-oner",
+  "liste": "d"
+ },
+ {
+  "soru": "yapay zeka nasıl çalışır",
+  "beklenen": "sohbet-yz-nasil",
+  "liste": "d"
+ },
+ {
+  "soru": "bilgisayar nasıl çalışır",
+  "beklenen": "sohbet-bilgisayar-nasil",
+  "liste": "d"
+ },
+ {
+  "soru": "internet nedir",
+  "beklenen": "sohbet-internet-nedir",
+  "liste": "d"
+ },
+ {
+  "soru": "wifi nasil calisir",
+  "beklenen": "sohbet-internet-nedir",
+  "liste": "d"
+ },
+ {
+  "soru": "hacker nasıl olunur",
+  "beklenen": "sohbet-hack",
+  "liste": "d"
+ },
+ {
+  "soru": "bana hackerlik öğret",
+  "beklenen": "sohbet-hack",
+  "liste": "d"
+ },
+ {
+  "soru": "siteye virüs atmak istiyorum",
+  "beklenen": "sohbet-virus",
+  "liste": "d"
+ },
+ {
+  "soru": "arkadaşımın instagram şifresini nasıl bulurum",
+  "beklenen": "sohbet-sifre-calma",
+  "liste": "d"
+ },
+ {
+  "soru": "ödevimi yap",
+  "beklenen": "sohbet-odev",
+  "liste": "d"
+ },
+ {
+  "soru": "Türkçe ödevim var 'Yazın Tatil' konulu kompozisyon yaz",
+  "beklenen": "sohbet-odev-diger",
+  "liste": "d"
+ },
+ {
+  "soru": "fen ödevim var güneş sistemini anlat",
+  "beklenen": "sohbet-odev-diger",
+  "liste": "d"
+ },
+ {
+  "soru": "'I love you' ne demek",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "elma ingilizcede ne",
+  "beklenen": "sohbet-ingilizce",
+  "liste": "d"
+ },
+ {
+  "soru": "Merhaba nasılsın cümlesini İngilizceye çevir",
+  "beklenen": "sohbet-ingilizce",
+  "liste": "d"
+ },
+ {
+  "soru": "Atatürk kimdir",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "dünyanın en büyük hayvanı ne",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "ay dünyadan ne kadar uzak",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "dinozorlar neden yok oldu",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "fenerbahçe kaç kere şampiyon oldu",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "en guzel cizgi film hangisi",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "tiktok nasil indirilir",
+  "beklenen": "sohbet-sosyal-medya",
+  "liste": "d"
+ },
+ {
+  "soru": "telefonum donuyor ne yapmalıyım",
+  "beklenen": "sohbet-telefon-sorun",
+  "liste": "d"
+ },
+ {
+  "soru": "ps5 mi xbox mı daha iyi",
+  "beklenen": "sohbet-diger-oyunlar",
+  "liste": "d"
+ },
+ {
+  "soru": "Fortnite nasıl oynanır",
+  "beklenen": "sohbet-diger-oyunlar",
+  "liste": "d"
+ },
+ {
+  "soru": "Brawl Stars en iyi karakter hangisi",
+  "beklenen": "sohbet-diger-oyunlar",
+  "liste": "d"
+ },
+ {
+  "soru": "yarın yağmur yağacak mı",
+  "beklenen": "sohbet-hava",
+  "liste": "d"
+ },
+ {
+  "soru": "bana pizza sipariş eder misin",
+  "beklenen": "sohbet-siparis",
+  "liste": "d"
+ },
+ {
+  "soru": "kodi sen google musun",
+  "beklenen": "sohbet-google",
+  "liste": "d"
+ },
+ {
+  "soru": "dünya yuvarlak mı",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "BANA SINAV CEVAPLARINI VER",
+  "beklenen": "sohbet-kopya",
+  "liste": "d"
+ },
+ {
+  "soru": "Ankara'nın nüfusu kaç",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "telefonumdan oyun nasil hacklenir",
+  "beklenen": "sohbet-hile",
+  "liste": "d"
+ },
+ {
+  "soru": "nüfusu kaç",
+  "onceki": "Türkiye'nin başkenti neresi",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "peki kale nasıl yapılır",
+  "onceki": "minecraftta nasıl ev yapılır",
+  "beklenen": "sohbet-minecraft",
+  "liste": "d"
+ },
+ {
+  "soru": "daha eski bir oyun olsun",
+  "onceki": "bana oyun öner",
+  "beklenen": "sohbet-oyun-oner",
+  "liste": "d"
+ },
+ {
+  "soru": "peki armut",
+  "onceki": "elma ingilizcede ne",
+  "beklenen": "sohbet-ingilizce",
+  "liste": "d"
+ },
+ {
+  "soru": "peki iyi hacker nasıl olunur",
+  "onceki": "hacker nasıl olunur",
+  "beklenen": "sohbet-hack",
+  "liste": "d"
+ },
+ {
+  "soru": "kim buldu",
+  "onceki": "internet nedir",
+  "beklenen": null,
+  "liste": "d"
+ },
+ {
+  "soru": "kodlama zor mu",
+  "beklenen": "sohbet-kodlama-zor-mu",
+  "liste": "d"
+ },
+ {
+  "soru": "kodlama zormu cok korkuyorum",
+  "beklenen": "sohbet-kodlama-zor-mu",
+  "liste": "d"
+ },
+ {
+  "soru": "kaç yaşında başlanır",
+  "beklenen": "hangi-yas",
+  "liste": "d"
+ },
+ {
+  "soru": "ben 8 yaşındayım kodlama öğrenebilir miyim",
+  "beklenen": "hangi-yas",
+  "liste": "d"
+ },
+ {
+  "soru": "ne kadar sürede öğrenirim",
+  "beklenen": "sohbet-ne-kadar-surer",
+  "liste": "d"
+ },
+ {
+  "soru": "yazılımcı olmak istiyorum",
+  "beklenen": "sohbet-yazilimci-olmak",
+  "liste": "d"
+ },
+ {
+  "soru": "büyüyünce yazılımcı olacağım",
+  "beklenen": "sohbet-yazilimci-olmak",
+  "liste": "d"
+ },
+ {
+  "soru": "hangi dili öğrenmeliyim",
+  "beklenen": "sohbet-hangi-dili-ogren",
+  "liste": "d"
+ },
+ {
+  "soru": "python mu turkod mu",
+  "beklenen": "python-mi-turkod-mu",
+  "liste": "d"
+ },
+ {
+  "soru": "turkod ile python arasindaki fark ne",
+  "beklenen": "turkod-python-farki",
+  "liste": "d"
+ },
+ {
+  "soru": "oyun yapmak istiyorum nereden başlarım",
+  "beklenen": "sohbet-oyun-baslangic",
+  "liste": "d"
+ },
+ {
+  "soru": "kodlama ile para kazanılır mı",
+  "beklenen": "sohbet-para",
+  "liste": "d"
+ },
+ {
+  "soru": "yazilimci ne kadar maas alir",
+  "beklenen": "sohbet-para",
+  "liste": "d"
+ },
+ {
+  "soru": "unuttum tekrar anlat",
+  "beklenen": "sohbet-unuttum",
+  "liste": "d"
+ },
+ {
+  "soru": "yazdirma nasil yapiliyordu",
+  "beklenen": "yazdir",
+  "liste": "d"
+ },
+ {
+  "soru": "döngü nedir",
+  "beklenen": "dongu-nedir",
+  "liste": "d"
+ },
+ {
+  "soru": "degisken nedir",
+  "beklenen": "degisken",
+  "liste": "d"
+ },
+ {
+  "soru": "if ne işe yarar",
+  "beklenen": "eger",
+  "liste": "d"
+ },
+ {
+  "soru": "hata alıyorum ne yapmalıyım",
+  "beklenen": "site-sorun",
+  "liste": "d"
+ },
+ {
+  "soru": "programım çalışmıyor",
+  "beklenen": "site-sorun",
+  "liste": "d"
+ },
+ {
+  "soru": "kodlama öğrenmek için bilgisayar şart mı",
+  "beklenen": "site-gereksinim",
+  "liste": "d"
+ },
+ {
+  "soru": "telefonla kodlama yapılır mı",
+  "beklenen": "site-gereksinim",
+  "liste": "d"
+ },
+ {
+  "soru": "kodlamayı bırakmak istiyorum çok zor",
+  "beklenen": "sohbet-birakma",
+  "liste": "d"
+ },
+ {
+  "soru": "bugün ilk kodumu yazdım!",
+  "beklenen": "sohbet-ilk-kod-yazdim",
+  "liste": "d"
+ },
+ {
+  "soru": "nasıl daha iyi kodlama yapabilirim",
+  "beklenen": "kodlama-ipuclari",
+  "liste": "d"
+ },
+ {
+  "soru": "kod ezberlemek gerekiyor mu",
+  "beklenen": "sohbet-ezber",
+  "liste": "d"
+ },
+ {
+  "soru": "matematik iyi olmam lazım mı",
+  "beklenen": "sohbet-matematik-gerekli",
+  "liste": "d"
+ },
+ {
+  "soru": "İngilizce bilmeden kodlama olur mu",
+  "beklenen": "sohbet-ingilizce-gerekli",
+  "liste": "d"
+ },
+ {
+  "soru": "robot yapmak istiyorum",
+  "beklenen": "sohbet-robot-yapmak",
+  "liste": "d"
+ },
+ {
+  "soru": "uygulama nasıl yapılır",
+  "beklenen": "sohbet-uygulama",
+  "liste": "d"
+ },
+ {
+  "soru": "kendi oyunumu yapabilir miyim",
+  "beklenen": "site-oyun",
+  "liste": "d"
+ },
+ {
+  "soru": "günde kaç saat çalışayım",
+  "beklenen": "sohbet-gunde-kac-saat",
+  "liste": "d"
+ },
+ {
+  "soru": "hangi seviyedeyim",
+  "beklenen": "sohbet-seviye",
+  "liste": "d"
+ },
+ {
+  "soru": "kodlamada en önemli şey ne",
+  "beklenen": "kodlama-ipuclari",
+  "liste": "d"
+ },
+ {
+  "soru": "peki nasıl kolaylaştırırım",
+  "onceki": "kodlama zor mu",
+  "beklenen": "kodlama-ipuclari",
+  "liste": "d"
+ },
+ {
+  "soru": "nereden başlayayım",
+  "onceki": "yazılımcı olmak istiyorum",
+  "beklenen": "site-ilk-program",
+  "liste": "d"
+ },
+ {
+  "soru": "bir örnek verir misin",
+  "onceki": "döngü nedir",
+  "beklenen": "dongu-nedir",
+  "liste": "d"
+ },
+ {
+  "soru": "anlamadım",
+  "onceki": "degisken nedir",
+  "beklenen": "sohbet-zorlaniyorum",
+  "liste": "d"
+ },
+ {
+  "soru": "peki JavaScript",
+  "onceki": "hangi dili öğrenmeliyim",
+  "beklenen": "sohbet-hangi-dili-ogren",
+  "liste": "d"
+ },
+ {
+  "soru": "peki ilk adım ne",
+  "onceki": "oyun yapmak istiyorum",
+  "beklenen": "sohbet-oyun-baslangic",
+  "liste": "d"
+ },
+ {
+  "soru": "degisken nedir",
+  "beklenen": "degisken",
+  "liste": "b"
+ },
+ {
+  "soru": "değişkene nasıl değer atarım",
+  "beklenen": "degisken",
+  "liste": "b"
+ },
+ {
+  "soru": "iki degiskenin degerini nasil yer degistiririm",
+  "beklenen": "degisken-takas",
+  "liste": "b"
+ },
+ {
+  "soru": "tamsayı ile ondalık sayı farkı ne",
+  "beklenen": "veri-turleri",
+  "liste": "b"
+ },
+ {
+  "soru": "sayiyi metne nasil cevirebilirim",
+  "beklenen": "tur-donusturme",
+  "liste": "b"
+ },
+ {
+  "soru": "girdi_al ile aldığım sayıyı toplayamıyorum neden",
+  "beklenen": "girdi-sayi-toplama",
+  "liste": "b"
+ },
+ {
+  "soru": "a, b = 1, 2 ne demek",
+  "beklenen": "coklu-atama",
+  "liste": "b"
+ },
+ {
+  "soru": "boş değer nasıl tanımlanır",
+  "beklenen": "hiclik",
+  "liste": "b"
+ },
+ {
+  "soru": "kullanıcıdan isim alıp ekrana yazdıran bir kod yaz",
+  "beklenen": "girdi-al",
+  "liste": "b"
+ },
+ {
+  "soru": "ayni anda birden fazla degisken tanimlama",
+  "beklenen": "coklu-atama",
+  "liste": "b"
+ },
+ {
+  "soru": "sayi degiskenini 1 arttirmak istiyorum",
+  "beklenen": "artirma",
+  "liste": "b"
+ },
+ {
+  "soru": "tamsayi() hata veriyor ne yapmaliyim",
+  "beklenen": "hata-gecersiz-deger",
+  "liste": "b"
+ },
+ {
+  "soru": "metni boşluklara göre parçalara ayırma",
+  "beklenen": "metin-bol",
+  "liste": "b"
+ },
+ {
+  "soru": "bir metindeki a harflerini saymak istiyorum",
+  "beklenen": "harf-sayma",
+  "liste": "b"
+ },
+ {
+  "soru": "tum harfleri buyuk harf yapmak",
+  "beklenen": "buyuk-kucuk-harf",
+  "liste": "b"
+ },
+ {
+  "soru": "küçük harfe çevirme nasıl",
+  "beklenen": "buyuk-kucuk-harf",
+  "liste": "b"
+ },
+ {
+  "soru": "f-metin nasıl kullanılır",
+  "beklenen": "f-metin",
+  "liste": "b"
+ },
+ {
+  "soru": "bana kullanıcının girdiği kelimeyi ters çeviren bir kod yaz",
+  "beklenen": "metin-ters-cevir",
+  "liste": "b"
+ },
+ {
+  "soru": "metnin ilk harfini büyütme",
+  "beklenen": "buyuk-kucuk-harf",
+  "liste": "b"
+ },
+ {
+  "soru": "metindeki bir harfi baska harfle degistirme",
+  "beklenen": "metin-degistir",
+  "liste": "b"
+ },
+ {
+  "soru": "metnin ilk 3 harfini alma",
+  "beklenen": "dilimleme",
+  "liste": "b"
+ },
+ {
+  "soru": "sesli harfleri sayan program",
+  "beklenen": "sesli-harf-sayma",
+  "liste": "b"
+ },
+ {
+  "soru": "yazdirirken alt satira gecmek",
+  "beklenen": "yeni-satir",
+  "liste": "b"
+ },
+ {
+  "soru": "tirnak isareti iceren metin yazdirma",
+  "beklenen": "tirnak-icinde-tirnak",
+  "liste": "b"
+ },
+ {
+  "soru": "metin tekrar ettirme 10 kere",
+  "beklenen": "metin-tekrar",
+  "liste": "b"
+ },
+ {
+  "soru": "metin mi sayi mi nasil anlarim",
+  "beklenen": "metin-mi-sayi-mi",
+  "liste": "b"
+ },
+ {
+  "soru": "kelimeyi harf harf yazdir",
+  "beklenen": "harf-harf-gez",
+  "liste": "b"
+ },
+ {
+  "soru": "metindeki rakamlari bulma",
+  "beklenen": "metinde-rakam-bul",
+  "liste": "b"
+ },
+ {
+  "soru": "virgullerle ayrilmis metni listeye cevirme",
+  "beklenen": "metin-bol",
+  "liste": "b"
+ },
+ {
+  "soru": "liste sıralama",
+  "beklenen": "liste-sirala",
+  "liste": "b"
+ },
+ {
+  "soru": "listeye eleman nasil eklenir",
+  "beklenen": "liste-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "listedeki en büyük sayıyı bulma",
+  "beklenen": "en-buyuk-kucuk",
+  "liste": "b"
+ },
+ {
+  "soru": "liste ortalaması hesaplama",
+  "beklenen": "toplam-ortalama",
+  "liste": "b"
+ },
+ {
+  "soru": "iç içe liste nedir",
+  "beklenen": "ic-ice-liste",
+  "liste": "b"
+ },
+ {
+  "soru": "listede eleman arama",
+  "beklenen": "icinde",
+  "liste": "b"
+ },
+ {
+  "soru": "listede bir eleman kaç kere geçiyor",
+  "beklenen": "liste-say",
+  "liste": "b"
+ },
+ {
+  "soru": "listenin uzunlugu",
+  "beklenen": "uzunluk",
+  "liste": "b"
+ },
+ {
+  "soru": "listenin son elemanı",
+  "beklenen": "indeks",
+  "liste": "b"
+ },
+ {
+  "soru": "liste dilimleme nasil yapilir",
+  "beklenen": "dilimleme",
+  "liste": "b"
+ },
+ {
+  "soru": "liste bosaltma",
+  "beklenen": "liste-temizle",
+  "liste": "b"
+ },
+ {
+  "soru": "listenin belirli bir yerine eleman ekleme",
+  "beklenen": "liste-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "listeyi buyukten kucuge siralama",
+  "beklenen": "liste-sirala",
+  "liste": "b"
+ },
+ {
+  "soru": "listeden tekrar eden elemanlari silme",
+  "beklenen": "kume",
+  "liste": "b"
+ },
+ {
+  "soru": "liste elemanlarini tek tek yazdirma",
+  "beklenen": "icin-for",
+  "liste": "b"
+ },
+ {
+  "soru": "listenin icindeki sayilari 2 ile carp",
+  "beklenen": "liste-ureteci",
+  "liste": "b"
+ },
+ {
+  "soru": "bos liste nasil olusturulur",
+  "beklenen": "liste",
+  "liste": "b"
+ },
+ {
+  "soru": "listede indeks nasil bulunur",
+  "beklenen": "eleman-indeksi-bul",
+  "liste": "b"
+ },
+ {
+  "soru": "liste anlama nedir tek satirda liste olusturma",
+  "beklenen": "liste-ureteci",
+  "liste": "b"
+ },
+ {
+  "soru": "sözlük nedir",
+  "beklenen": "sozluk",
+  "liste": "b"
+ },
+ {
+  "soru": "sözlükten değer okuma",
+  "beklenen": "sozluk",
+  "liste": "b"
+ },
+ {
+  "soru": "sözlükte anahtar var mı kontrol etme",
+  "beklenen": "sozluk-anahtar-var-mi",
+  "liste": "b"
+ },
+ {
+  "soru": "sözlükten eleman silme",
+  "beklenen": "sozluk-sil",
+  "liste": "b"
+ },
+ {
+  "soru": "sözlüğün tüm anahtarlarını listeleme",
+  "beklenen": "sozluk-gez",
+  "liste": "b"
+ },
+ {
+  "soru": "kumeye eleman ekleme",
+  "beklenen": "kume-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "demet nedir",
+  "beklenen": "demet",
+  "liste": "b"
+ },
+ {
+  "soru": "demet ile liste arasindaki fark ne",
+  "beklenen": "demet",
+  "liste": "b"
+ },
+ {
+  "soru": "küme neden tekrar eden elemanları siliyor",
+  "beklenen": "kume",
+  "liste": "b"
+ },
+ {
+  "soru": "sozlukte olmayan anahtari okuyunca hata aliyorum",
+  "beklenen": "hata-sozluk-anahtar",
+  "liste": "b"
+ },
+ {
+  "soru": "ogrenci adlari ve notlarini tutan sozluk yap",
+  "beklenen": "ogrenci-not-sozlugu",
+  "liste": "b"
+ },
+ {
+  "soru": "iki sozlugu birlestirme",
+  "beklenen": "sozluk-birlestir",
+  "liste": "b"
+ },
+ {
+  "soru": "liste mi sözlük mü ne zaman hangisi",
+  "beklenen": "liste-mi-sozluk-mu",
+  "liste": "b"
+ },
+ {
+  "soru": "eger degilse nasil kullanilir",
+  "beklenen": "eger",
+  "liste": "b"
+ },
+ {
+  "soru": "değilse_eğer ne zaman kullanılır",
+  "beklenen": "degilse-eger",
+  "liste": "b"
+ },
+ {
+  "soru": "ve ile veya farki",
+  "beklenen": "ve-veya-degil",
+  "liste": "b"
+ },
+ {
+  "soru": "eğer yazdım ama hata veriyor",
+  "beklenen": "eger-hata-kontrol",
+  "liste": "b"
+ },
+ {
+  "soru": "kosulda esit mi diye bakmak icin kac esittir kullanilir",
+  "beklenen": "hata-esittir",
+  "liste": "b"
+ },
+ {
+  "soru": "girinti hatasi aliyorum eger icinde",
+  "beklenen": "hata-girintili-blok",
+  "liste": "b"
+ },
+ {
+  "soru": "bana yaşa göre mesaj veren bir kod yaz",
+  "beklenen": "yasa-gore-mesaj",
+  "liste": "b"
+ },
+ {
+  "soru": "icinde operatoru ile liste kontrolu",
+  "beklenen": "icinde",
+  "liste": "b"
+ },
+ {
+  "soru": "kullanıcı şifreyi doğru girdi mi kontrol",
+  "beklenen": "sifre-kontrol",
+  "liste": "b"
+ },
+ {
+  "soru": "iç içe eğer kullanılır mı",
+  "beklenen": "ic-ice-eger",
+  "liste": "b"
+ },
+ {
+  "soru": "sayinin pozitif negatif sifir olmasi",
+  "beklenen": "pozitif-negatif-sifir",
+  "liste": "b"
+ },
+ {
+  "soru": "döngü nedir",
+  "beklenen": "dongu-nedir",
+  "liste": "b"
+ },
+ {
+  "soru": "aralık ne işe yarar",
+  "beklenen": "aralik",
+  "liste": "b"
+ },
+ {
+  "soru": "sonsuz dongu nasil yapilir",
+  "beklenen": "sonsuz-dongu",
+  "liste": "b"
+ },
+ {
+  "soru": "donguyu durdurmak icin ne kullanilir",
+  "beklenen": "kir",
+  "liste": "b"
+ },
+ {
+  "soru": "ic ice dongu ornegi",
+  "beklenen": "ic-ice-dongu",
+  "liste": "b"
+ },
+ {
+  "soru": "döngü ile 1den 100e kadar toplama",
+  "beklenen": "dongu-toplam",
+  "liste": "b"
+ },
+ {
+  "soru": "dongu sayaci nasil tutulur",
+  "beklenen": "dongu-sayac",
+  "liste": "b"
+ },
+ {
+  "soru": "geriye dogru sayma dongusu",
+  "beklenen": "geri-sayim-dongu",
+  "liste": "b"
+ },
+ {
+  "soru": "listenin elemanlarini dongu ile gezme",
+  "beklenen": "icin-for",
+  "liste": "b"
+ },
+ {
+  "soru": "while true ne demek",
+  "beklenen": "sonsuz-dongu",
+  "liste": "b"
+ },
+ {
+  "soru": "donguden cikamiyorum program donuyor",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "b"
+ },
+ {
+  "soru": "for ile while arasindaki fark",
+  "beklenen": "for-while-fark",
+  "liste": "b"
+ },
+ {
+  "soru": "döngüyü 10 kere tekrarla",
+  "beklenen": "n-kere-tekrarla",
+  "liste": "b"
+ },
+ {
+  "soru": "ekrana 100 kere merhaba yazdirma",
+  "beklenen": "n-kere-tekrarla",
+  "liste": "b"
+ },
+ {
+  "soru": "aralik fonksiyonu 0dan mi baslar",
+  "beklenen": "aralik",
+  "liste": "b"
+ },
+ {
+  "soru": "donguyle carpim hesaplama",
+  "beklenen": "dongu-carpim",
+  "liste": "b"
+ },
+ {
+  "soru": "fonksiyona parametre gönderme",
+  "beklenen": "parametre",
+  "liste": "b"
+ },
+ {
+  "soru": "döndür ne işe yarar",
+  "beklenen": "dondur",
+  "liste": "b"
+ },
+ {
+  "soru": "varsayılan parametre değeri",
+  "beklenen": "varsayilan-deger",
+  "liste": "b"
+ },
+ {
+  "soru": "*args nedir",
+  "beklenen": "args-kwargs",
+  "liste": "b"
+ },
+ {
+  "soru": "lambda nedir",
+  "beklenen": "isimsiz",
+  "liste": "b"
+ },
+ {
+  "soru": "fonksiyon icinde degisken disarida gorunmuyor",
+  "beklenen": "kapsam",
+  "liste": "b"
+ },
+ {
+  "soru": "global degisken nasil kullanilir",
+  "beklenen": "kapsam",
+  "liste": "b"
+ },
+ {
+  "soru": "iki sayiyi toplayan fonksiyon yaz",
+  "beklenen": "fonksiyon-ornekleri",
+  "liste": "b"
+ },
+ {
+  "soru": "isimli parametre nasil kullanilir",
+  "beklenen": "isimli-parametre",
+  "liste": "b"
+ },
+ {
+  "soru": "fonksiyonun icinde fonksiyon olur mu",
+  "beklenen": "ic-ice-fonksiyon",
+  "liste": "b"
+ },
+ {
+  "soru": "kare alan fonksiyon",
+  "beklenen": "fonksiyon-ornekleri",
+  "liste": "b"
+ },
+ {
+  "soru": "fonksiyon neden gerekli",
+  "beklenen": "fonksiyon",
+  "liste": "b"
+ },
+ {
+  "soru": "sınıf nedir",
+  "beklenen": "sinif",
+  "liste": "b"
+ },
+ {
+  "soru": "kendisi ne demek",
+  "beklenen": "kendisi",
+  "liste": "b"
+ },
+ {
+  "soru": "sınıfta kurucu fonksiyon nasıl yazılır",
+  "beklenen": "baslat-ozel",
+  "liste": "b"
+ },
+ {
+  "soru": "bir siniftan nesne nasil uretilir",
+  "beklenen": "sinif",
+  "liste": "b"
+ },
+ {
+  "soru": "sınıfa metot ekleme",
+  "beklenen": "sinif-metot",
+  "liste": "b"
+ },
+ {
+  "soru": "sinif ozelligini disaridan degistirme",
+  "beklenen": "nesne-ozellik-degistir",
+  "liste": "b"
+ },
+ {
+  "soru": "nesne ile sinif arasindaki fark ne",
+  "beklenen": "sinif",
+  "liste": "b"
+ },
+ {
+  "soru": "miras alan siniftan ust sinifin fonksiyonunu cagirma",
+  "beklenen": "kalitim",
+  "liste": "b"
+ },
+ {
+  "soru": "dosya nasıl okunur",
+  "beklenen": "dosya-oku",
+  "liste": "b"
+ },
+ {
+  "soru": "dosyaya yazi yazma",
+  "beklenen": "dosya-yaz",
+  "liste": "b"
+ },
+ {
+  "soru": "dosyaya ekleme yapmak icin ne kullanilir",
+  "beklenen": "dosyaya-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "dosya bulunamadi hatasi",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "b"
+ },
+ {
+  "soru": "dosya var mi yok mu kontrol",
+  "beklenen": "dosya-var-mi",
+  "liste": "b"
+ },
+ {
+  "soru": "json nedir",
+  "beklenen": "json-dosya",
+  "liste": "b"
+ },
+ {
+  "soru": "json dosyasi okuma",
+  "beklenen": "json-dosya",
+  "liste": "b"
+ },
+ {
+  "soru": "notlari dosyaya kaydeden program yaz",
+  "beklenen": "dosya-yaz",
+  "liste": "b"
+ },
+ {
+  "soru": "dosya acarken turkce karakterler bozuk cikiyor",
+  "beklenen": "site-utf8",
+  "liste": "b"
+ },
+ {
+  "soru": "modül nedir",
+  "beklenen": "modul",
+  "liste": "b"
+ },
+ {
+  "soru": "matematik modulunde neler var",
+  "beklenen": "matematik",
+  "liste": "b"
+ },
+ {
+  "soru": "karekök alma",
+  "beklenen": "matematik",
+  "liste": "b"
+ },
+ {
+  "soru": "1 ile 100 arasi rastgele sayi",
+  "beklenen": "rastgele",
+  "liste": "b"
+ },
+ {
+  "soru": "zaman modulu ile bekleme",
+  "beklenen": "zaman-bekle",
+  "liste": "b"
+ },
+ {
+  "soru": "programi 3 saniye bekletme",
+  "beklenen": "zaman-bekle",
+  "liste": "b"
+ },
+ {
+  "soru": "saat kac nasil yazdirilir",
+  "beklenen": "tarih-saat",
+  "liste": "b"
+ },
+ {
+  "soru": "kütüphane nasil kurulur",
+  "beklenen": "site-pip",
+  "liste": "b"
+ },
+ {
+  "soru": "pi sayisini nasil kullanirim",
+  "beklenen": "matematik",
+  "liste": "b"
+ },
+ {
+  "soru": "sayiyi yukari yuvarlama",
+  "beklenen": "matematik",
+  "liste": "b"
+ },
+ {
+  "soru": "virgulden sonra 2 basamak gosterme",
+  "beklenen": "iki-basamak-goster",
+  "liste": "b"
+ },
+ {
+  "soru": "mutlak deger",
+  "beklenen": "matematik",
+  "liste": "b"
+ },
+ {
+  "soru": "kendi modülümü nasıl yazarım",
+  "beklenen": "kendi-modul",
+  "liste": "b"
+ },
+ {
+  "soru": "dene hata_yakala nedir",
+  "beklenen": "hata-yakalama",
+  "liste": "b"
+ },
+ {
+  "soru": "sifira bolme hatasi nasil engellenir",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "b"
+ },
+ {
+  "soru": "yas hesaplama icin tarih kullanimi",
+  "beklenen": "yas-hesapla",
+  "liste": "b"
+ },
+ {
+  "soru": "faktöriyel hesaplama",
+  "beklenen": "faktoriyel",
+  "liste": "b"
+ },
+ {
+  "soru": "fibonacci dizisi nasil yazilir",
+  "beklenen": "fibonacci",
+  "liste": "b"
+ },
+ {
+  "soru": "sayı tahmin oyunu yapmak istiyorum",
+  "beklenen": "sayi-tahmin",
+  "liste": "b"
+ },
+ {
+  "soru": "hesap makinesi kodu",
+  "beklenen": "hesap-makinesi",
+  "liste": "b"
+ },
+ {
+  "soru": "carpim tablosu yazdirma",
+  "beklenen": "carpim-tablosu",
+  "liste": "b"
+ },
+ {
+  "soru": "sifre uretici program",
+  "beklenen": "sifre-uretici",
+  "liste": "b"
+ },
+ {
+  "soru": "kabarcik siralama algoritmasi",
+  "beklenen": "siralama-algoritmasi",
+  "liste": "b"
+ },
+ {
+  "soru": "bir sayinin basamaklarini toplama",
+  "beklenen": "basamak-toplam",
+  "liste": "b"
+ },
+ {
+  "soru": "armstrong sayisi bulma",
+  "beklenen": "armstrong-sayi",
+  "liste": "b"
+ },
+ {
+  "soru": "1 den n ye kadar toplam formulu olmadan",
+  "beklenen": "dongu-toplam",
+  "liste": "b"
+ },
+ {
+  "soru": "listedeki en buyuk sayiyi donguyle bulma",
+  "beklenen": "en-buyuk-kucuk",
+  "liste": "b"
+ },
+ {
+  "soru": "not ortalamasi hesaplayan program",
+  "beklenen": "toplam-ortalama",
+  "liste": "b"
+ },
+ {
+  "soru": "adam asmaca oyunu",
+  "beklenen": "adam-asmaca",
+  "liste": "b"
+ },
+ {
+  "soru": "zar atma simulasyonu",
+  "beklenen": "rastgele",
+  "liste": "b"
+ },
+ {
+  "soru": "bana ters yildiz piramidi yapan kod yaz",
+  "beklenen": "yildiz-piramidi",
+  "liste": "b"
+ },
+ {
+  "soru": "dolar kuru hesaplayici basit program",
+  "beklenen": "kur-hesaplayici",
+  "liste": "b"
+ },
+ {
+  "soru": "rastgele sifre 8 karakter",
+  "beklenen": "sifre-uretici",
+  "liste": "b"
+ },
+ {
+  "soru": "kaplumbağa ile kare çizme",
+  "beklenen": "kaplumbaga",
+  "liste": "b"
+ },
+ {
+  "soru": "kaplumbaga nasil kullanilir",
+  "beklenen": "kaplumbaga",
+  "liste": "b"
+ },
+ {
+  "soru": "kaplumbaga rengini degistirme",
+  "beklenen": "kaplumbaga-renk",
+  "liste": "b"
+ },
+ {
+  "soru": "yildiz cizen kod",
+  "beklenen": "kaplumbaga-yildiz",
+  "liste": "b"
+ },
+ {
+  "soru": "kalemi kaldirma ve indirme",
+  "beklenen": "kaplumbaga-kalem",
+  "liste": "b"
+ },
+ {
+  "soru": "pencere nasıl açılır",
+  "beklenen": "tkinter",
+  "liste": "b"
+ },
+ {
+  "soru": "pencereye buton ekleme",
+  "beklenen": "tkinter-dugme",
+  "liste": "b"
+ },
+ {
+  "soru": "pencerede yazi kutusu",
+  "beklenen": "tkinter-giris",
+  "liste": "b"
+ },
+ {
+  "soru": "oyun nasıl yapılır",
+  "beklenen": "site-oyun",
+  "liste": "b"
+ },
+ {
+  "soru": "pygame ile ekran acma",
+  "beklenen": "pygame",
+  "liste": "b"
+ },
+ {
+  "soru": "oyuna ses ekleme",
+  "beklenen": "ses-cal",
+  "liste": "b"
+ },
+ {
+  "soru": "ses dosyasi calma",
+  "beklenen": "ses-cal",
+  "liste": "b"
+ },
+ {
+  "soru": "ekranda top sektirme oyunu",
+  "beklenen": "top-sektirme",
+  "liste": "b"
+ },
+ {
+  "soru": "kaplumbaga ile ev ciz",
+  "beklenen": "kaplumbaga-ev",
+  "liste": "b"
+ },
+ {
+  "soru": "fare tiklamasini yakalama",
+  "beklenen": "fare-tiklama",
+  "liste": "b"
+ },
+ {
+  "soru": "pencere basligini degistirme",
+  "beklenen": "tkinter-pencere-ayar",
+  "liste": "b"
+ },
+ {
+  "soru": "pencere boyutunu ayarlama",
+  "beklenen": "tkinter-pencere-ayar",
+  "liste": "b"
+ },
+ {
+  "soru": "append nasil yazilir TürKod'da",
+  "beklenen": "liste-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "input TürKod'da ne",
+  "beklenen": "girdi-al",
+  "liste": "b"
+ },
+ {
+  "soru": "while'ın karşılığı",
+  "beklenen": "dongu-while",
+  "liste": "b"
+ },
+ {
+  "soru": "try except TürKod'da nasıl yazılır",
+  "beklenen": "hata-yakalama",
+  "liste": "b"
+ },
+ {
+  "soru": "print nasıl yazılır",
+  "beklenen": "yazdir",
+  "liste": "b"
+ },
+ {
+  "soru": "range'in Türkçesi ne",
+  "beklenen": "aralik",
+  "liste": "b"
+ },
+ {
+  "soru": "def karşılığı",
+  "beklenen": "sozluk",
+  "liste": "b"
+ },
+ {
+  "soru": "class kelimesinin karşılığı",
+  "beklenen": "sozluk",
+  "liste": "b"
+ },
+ {
+  "soru": "import TürKod'da",
+  "beklenen": "modul",
+  "liste": "b"
+ },
+ {
+  "soru": "break TürKod'da",
+  "beklenen": "kir",
+  "liste": "b"
+ },
+ {
+  "soru": "int str float TurKod karsiliklari",
+  "beklenen": "tur-karsiliklari",
+  "liste": "b"
+ },
+ {
+  "soru": "pop TürKod'da ne",
+  "beklenen": "liste-cikar",
+  "liste": "b"
+ },
+ {
+  "soru": "dict'in TürKod'daki adı",
+  "beklenen": "sozluk",
+  "liste": "b"
+ },
+ {
+  "soru": "and or not karsiliklari",
+  "beklenen": "ve-veya-degil",
+  "liste": "b"
+ },
+ {
+  "soru": "sona_ekle ne demek",
+  "beklenen": "liste-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "döndür ne demek",
+  "beklenen": "dondur",
+  "liste": "b"
+ },
+ {
+  "soru": "girdi_al ne demek",
+  "beklenen": "girdi-al",
+  "liste": "b"
+ },
+ {
+  "soru": "hata_yakala ne demek",
+  "beklenen": "hata-yakalama",
+  "liste": "b"
+ },
+ {
+  "soru": "sirala nedir",
+  "beklenen": "liste-sirala",
+  "liste": "b"
+ },
+ {
+  "soru": "tamsayi ne demek",
+  "beklenen": "tamsayi",
+  "liste": "b"
+ },
+ {
+  "soru": "ondalik ne demek",
+  "beklenen": "ondalikli",
+  "liste": "b"
+ },
+ {
+  "soru": "değilse ne anlama geliyor",
+  "beklenen": "eger",
+  "liste": "b"
+ },
+ {
+  "soru": "devam_et ne demek",
+  "beklenen": "devam-et",
+  "liste": "b"
+ },
+ {
+  "soru": "kume ne demek",
+  "beklenen": "kume",
+  "liste": "b"
+ },
+ {
+  "soru": "sonra ne ise yarar",
+  "beklenen": null,
+  "liste": "b"
+ },
+ {
+  "soru": "TürKod'da yorum satırı nasıl yazılır",
+  "beklenen": "yorum",
+  "liste": "b"
+ },
+ {
+  "soru": "girinti ne demek",
+  "beklenen": "girinti",
+  "liste": "b"
+ },
+ {
+  "soru": "kod duzeni nasil olmali",
+  "beklenen": "girinti",
+  "liste": "b"
+ },
+ {
+  "soru": "hata mesajini nasil okurum",
+  "beklenen": "site-hata-anlamadim",
+  "liste": "b"
+ },
+ {
+  "soru": "sozdizimi hatasi ne demek",
+  "beklenen": "hata-sozdizimi",
+  "liste": "b"
+ },
+ {
+  "soru": "programlama nedir",
+  "beklenen": "programlama-nedir",
+  "liste": "b"
+ },
+ {
+  "soru": "algoritma nedir",
+  "beklenen": "algoritma",
+  "liste": "b"
+ },
+ {
+  "soru": "ilk programimi nasil yazarim",
+  "beklenen": "site-ilk-program",
+  "liste": "b"
+ },
+ {
+  "soru": "ne yapabilirim bu ortamda",
+  "beklenen": "sohbet-ne-yapabilirsin",
+  "liste": "b"
+ },
+ {
+  "soru": "bir programi nasil kaydederim",
+  "beklenen": "site-kaydet",
+  "liste": "b"
+ },
+ {
+  "soru": "hata ayiklama nasil yapilir",
+  "beklenen": "hata-ayiklama",
+  "liste": "b"
+ },
+ {
+  "soru": "yazdir ile print ayni sey mi",
+  "beklenen": "yazdir",
+  "liste": "b"
+ },
+ {
+  "soru": "NameError ne demek",
+  "beklenen": "hata-tanimsiz-isim",
+  "liste": "b"
+ },
+ {
+  "soru": "kodu calistirma tusu nerede",
+  "beklenen": "site-calistir",
+  "liste": "b"
+ },
+ {
+  "soru": "kod yazarken turkce karakter kullanabilir miyim",
+  "beklenen": "site-turkce-harfsiz",
+  "liste": "b"
+ },
+ {
+  "soru": "iki nokta ust uste neden koyuyoruz",
+  "beklenen": "iki-nokta-nedir",
+  "liste": "b"
+ },
+ {
+  "soru": "parantez acik kaldi hatasi",
+  "beklenen": "hata-parantez",
+  "liste": "b"
+ },
+ {
+  "soru": "Kodi sen kimsin",
+  "beklenen": "site-kodi",
+  "liste": "b"
+ },
+ {
+  "soru": "peki içinden eleman nasıl silerim",
+  "onceki": "liste nedir",
+  "beklenen": "liste-cikar",
+  "liste": "b"
+ },
+ {
+  "soru": "bunu sıralayabilir miyim",
+  "onceki": "liste nedir",
+  "beklenen": "liste-sirala",
+  "liste": "b"
+ },
+ {
+  "soru": "peki sonsuza kadar donerse ne olur",
+  "onceki": "döngü nedir",
+  "beklenen": "sonsuz-dongu",
+  "liste": "b"
+ },
+ {
+  "soru": "peki donguyu nasil durdururum",
+  "onceki": "döngü nedir",
+  "beklenen": "kir",
+  "liste": "b"
+ },
+ {
+  "soru": "parametre ne demek o zaman",
+  "onceki": "fonksiyon nedir",
+  "beklenen": "parametre",
+  "liste": "b"
+ },
+ {
+  "soru": "peki bir ornek verir misin",
+  "onceki": "fonksiyon nedir",
+  "beklenen": "fonksiyon",
+  "liste": "b"
+ },
+ {
+  "soru": "peki nesne ne",
+  "onceki": "sınıf nedir",
+  "beklenen": "sinif",
+  "liste": "b"
+ },
+ {
+  "soru": "bir ornek gosterir misin",
+  "onceki": "sinif nedir",
+  "beklenen": "sinif",
+  "liste": "b"
+ },
+ {
+  "soru": "peki rengini nasil degistiririm",
+  "onceki": "kaplumbaga ile kare cizme",
+  "beklenen": "kaplumbaga-renk",
+  "liste": "b"
+ },
+ {
+  "soru": "ucgen nasil cizilir",
+  "onceki": "kaplumbaga ile kare cizme",
+  "beklenen": "kaplumbaga-ucgen",
+  "liste": "b"
+ },
+ {
+  "soru": "onu nasil hizlandiririm",
+  "onceki": "kaplumbağa nedir",
+  "beklenen": "kaplumbaga-hiz",
+  "liste": "b"
+ },
+ {
+  "soru": "içine buton koymak istiyorum",
+  "onceki": "pencere nasıl açılır",
+  "beklenen": "tkinter-dugme",
+  "liste": "b"
+ },
+ {
+  "soru": "peki butona basinca ne olacak",
+  "onceki": "pencere nasıl açılır",
+  "beklenen": "tkinter-dugme",
+  "liste": "b"
+ },
+ {
+  "soru": "peki yazmak icin",
+  "onceki": "dosya nasıl okunur",
+  "beklenen": "dosya-yaz",
+  "liste": "b"
+ },
+ {
+  "soru": "ustune yazmadan eklemek istiyorum",
+  "onceki": "dosyaya yazi yazma",
+  "beklenen": "dosyaya-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "peki yeni eleman nasıl eklenir",
+  "onceki": "sözlük nedir",
+  "beklenen": "sozluk-ekle-guncelle",
+  "liste": "b"
+ },
+ {
+  "soru": "peki icindekileri nasil yazdiririm",
+  "onceki": "sozluk nedir",
+  "beklenen": "sozluk-gez",
+  "liste": "b"
+ },
+ {
+  "soru": "listeden farki ne",
+  "onceki": "kume nedir",
+  "beklenen": "kume-liste-fark",
+  "liste": "b"
+ },
+ {
+  "soru": "peki harflerini nasil sayarim",
+  "onceki": "metin nedir",
+  "beklenen": "harf-sayma",
+  "liste": "b"
+ },
+ {
+  "soru": "peki kelime kelime ters cevirmek istersem",
+  "onceki": "metni tersten yazdirma",
+  "beklenen": "kelimeleri-ters-cevir",
+  "liste": "b"
+ },
+ {
+  "soru": "peki 1 ile 6 arasinda olsun",
+  "onceki": "rastgele sayı üretme",
+  "beklenen": "rastgele",
+  "liste": "b"
+ },
+ {
+  "soru": "listeden de secebilir miyim",
+  "onceki": "rastgele sayi nasil uretilir",
+  "beklenen": "rastgele",
+  "liste": "b"
+ },
+ {
+  "soru": "peki hangi hatayi yakaladigimi nasil anlarim",
+  "onceki": "hata yakalama nedir",
+  "beklenen": "hata-yakala-tur",
+  "liste": "b"
+ },
+ {
+  "soru": "her hatayi yakalar mi",
+  "onceki": "dene hata_yakala nedir",
+  "beklenen": "hata-yakala-tur",
+  "liste": "b"
+ },
+ {
+  "soru": "daha hizli yapilabilir mi",
+  "onceki": "asal sayı bulan program",
+  "beklenen": "asal-sayi-hizli",
+  "liste": "b"
+ },
+ {
+  "soru": "peki kodunu yazar misin",
+  "onceki": "fibonacci nedir",
+  "beklenen": "fibonacci",
+  "liste": "b"
+ },
+ {
+  "soru": "ozyinelemeyle nasil olur",
+  "onceki": "faktöriyel hesaplama",
+  "beklenen": "ozyineleme",
+  "liste": "b"
+ },
+ {
+  "soru": "kac hak verebilirim",
+  "onceki": "sayı tahmin oyunu yapmak istiyorum",
+  "beklenen": "sayi-tahmin-hak",
+  "liste": "b"
+ },
+ {
+  "soru": "tahmin yuksek mi dusuk mu diye ipucu versin",
+  "onceki": "sayi tahmin oyunu",
+  "beklenen": "sayi-tahmin-hak",
+  "liste": "b"
+ },
+ {
+  "soru": "bolme sifira gelirse ne olacak",
+  "onceki": "hesap makinesi kodu",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "b"
+ },
+ {
+  "soru": "peki silmek icin",
+  "onceki": "append TürKod'da ne",
+  "beklenen": "liste-cikar",
+  "liste": "b"
+ },
+ {
+  "soru": "peki for icin",
+  "onceki": "while TürKod'da nasıl",
+  "beklenen": "icin-for",
+  "liste": "b"
+ },
+ {
+  "soru": "peki basa eklemek icin ne var",
+  "onceki": "sona_ekle ne demek",
+  "beklenen": "liste-ekle",
+  "liste": "b"
+ },
+ {
+  "soru": "icine kac tane sayi yazilir",
+  "onceki": "aralık ne demek",
+  "beklenen": "aralik",
+  "liste": "b"
+ },
+ {
+  "soru": "peki degilse",
+  "onceki": "eğer nasıl yazılır",
+  "beklenen": "eger",
+  "liste": "b"
+ },
+ {
+  "soru": "ya iki sart varsa",
+  "onceki": "eger nedir",
+  "beklenen": "ve-veya-degil",
+  "liste": "b"
+ },
+ {
+  "soru": "kac bosluk koymaliyim",
+  "onceki": "girinti ne demek",
+  "beklenen": "girinti",
+  "liste": "b"
+ },
+ {
+  "soru": "birden fazla satir yorum olur mu",
+  "onceki": "yorum satiri nasil yazilir",
+  "beklenen": "site-yorum-kisayol",
+  "liste": "b"
+ },
+ {
+  "soru": "peki siralamada nasil kullanirim",
+  "onceki": "lambda nedir",
+  "beklenen": "isimsiz",
+  "liste": "b"
+ },
+ {
+  "soru": "sayi almak istiyorum",
+  "onceki": "girdi_al ne işe yarar",
+  "beklenen": "girdi-al",
+  "liste": "b"
+ },
+ {
+  "soru": "TanımsızİsimHatası: 'x' tanımlı değil ne demek",
+  "beklenen": "hata-tanimsiz-isim",
+  "liste": "c"
+ },
+ {
+  "soru": "sozdizimihatasi aliyorum ne yapmaliyim",
+  "beklenen": "hata-sozdizimi",
+  "liste": "c"
+ },
+ {
+  "soru": "IndentationError: expected an indented block after 'if' statement on line 3",
+  "beklenen": "hata-girintili-blok",
+  "liste": "c"
+ },
+ {
+  "soru": "TürHatası: metin ile tamsayı birleştirilemez. yardım edin lütfen",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "TypeError: can only concatenate str (not \"int\") to str",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "DeğerHatası: tamsayı() için geçersiz değer yazıyor",
+  "beklenen": "hata-gecersiz-deger",
+  "liste": "c"
+ },
+ {
+  "soru": "ValueError: invalid literal for int() with base 10: 'abc'",
+  "beklenen": "hata-gecersiz-deger",
+  "liste": "c"
+ },
+ {
+  "soru": "AnahtarHatası: 'isim' alıyorum sözlükte var ama",
+  "beklenen": "hata-sozluk-anahtar",
+  "liste": "c"
+ },
+ {
+  "soru": "KeyError nedir? sozlukte anahtar bulamiyor",
+  "beklenen": "hata-sozluk-anahtar",
+  "liste": "c"
+ },
+ {
+  "soru": "SıfıraBölmeHatası neden çıkıyor, ben sıfır yazmadım ki",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "c"
+ },
+ {
+  "soru": "ZeroDivisionError: division by zero",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "c"
+ },
+ {
+  "soru": "ModuleNotFoundError: No module named 'numpy'",
+  "beklenen": "hata-modul-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "ÖzellikHatası: 'liste' nesnesinin 'ekle' özelliği yok",
+  "beklenen": "hata-ozellik",
+  "liste": "c"
+ },
+ {
+  "soru": "DosyaBulunamadıHatası: notlar.txt diyor ama dosya masaüstünde",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "FileNotFoundError: [Errno 2] No such file or directory: 'veri.txt'",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "RecursionError: maximum recursion depth exceeded",
+  "beklenen": "hata-sonsuz-ozyineleme",
+  "liste": "c"
+ },
+ {
+  "soru": "UnboundLocalError: local variable 'toplam' referenced before assignment",
+  "beklenen": "hata-yerel-degisken",
+  "liste": "c"
+ },
+ {
+  "soru": "EOFError: EOF when reading a line",
+  "beklenen": "hata-eof",
+  "liste": "c"
+ },
+ {
+  "soru": "EOFError neden çıkıyor girdi_al kullanınca",
+  "beklenen": "hata-eof",
+  "liste": "c"
+ },
+ {
+  "soru": "KeyboardInterrupt yazdı bir anda",
+  "beklenen": "hata-klavye-kesintisi",
+  "liste": "c"
+ },
+ {
+  "soru": "OverflowError: int too large to convert to float",
+  "beklenen": "hata-sayi-tasma",
+  "liste": "c"
+ },
+ {
+  "soru": "PermissionError: [Errno 13] Permission denied: 'C:\\\\'",
+  "beklenen": "hata-izin",
+  "liste": "c"
+ },
+ {
+  "soru": "UnicodeDecodeError: 'charmap' codec can't decode byte 0x9d",
+  "beklenen": "hata-karakter-kodlama",
+  "liste": "c"
+ },
+ {
+  "soru": "TabError: inconsistent use of tabs and spaces in indentation",
+  "beklenen": "hata-sekme-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "TabError ne demek, ben tab'a basmadım ki",
+  "beklenen": "hata-sekme-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "SyntaxError: unterminated string literal (detected at line 1)",
+  "beklenen": "hata-tirnak",
+  "liste": "c"
+ },
+ {
+  "soru": "SözdizimiHatası: '(' kapatılmadı",
+  "beklenen": "hata-parantez",
+  "liste": "c"
+ },
+ {
+  "soru": "SözdizimiHatası: beklenmeyen ':' var diyor",
+  "beklenen": "hata-beklenmeyen-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "Traceback (most recent call last): File \"<stdin>\", line 1, in <module> NameError: name 'yazdir' is not defined",
+  "beklenen": "hata-normal-python",
+  "liste": "c"
+ },
+ {
+  "soru": "Hata mesajini okuyamiyorum cok uzun, nereye bakmam lazim",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "Traceback yazıyor ve bir sürü satır var, korktum",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "TürHatası: 'tamsayı' nesnesi çağrılabilir değil",
+  "beklenen": "hata-cagrilamaz",
+  "liste": "c"
+ },
+ {
+  "soru": "TypeError: 'int' object is not callable",
+  "beklenen": "hata-cagrilamaz",
+  "liste": "c"
+ },
+ {
+  "soru": "TürHatası: yazdır() 2 konumsal argüman bekliyordu ama 3 verildi",
+  "beklenen": "hata-eksik-deger",
+  "liste": "c"
+ },
+ {
+  "soru": "TypeError: topla() missing 1 required positional argument: 'b'",
+  "beklenen": "hata-eksik-deger",
+  "liste": "c"
+ },
+ {
+  "soru": "TypeError: 'str' object does not support item assignment",
+  "beklenen": "hata-metin-degistirilemez",
+  "liste": "c"
+ },
+ {
+  "soru": "TürHatası: 'NoneType' nesnesi alt simgelenemez",
+  "beklenen": "hata-hiclik-nesne",
+  "liste": "c"
+ },
+ {
+  "soru": "TypeError: unsupported operand type(s) for +: 'int' and 'str'",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "DeğerHatası: çok fazla değer açılamıyor (3 bekleniyordu)",
+  "beklenen": "hata-acilamiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "ValueError: math domain error",
+  "beklenen": "hata-matematik-alan",
+  "liste": "c"
+ },
+ {
+  "soru": "ValueError: could not convert string to float: '3,14'",
+  "beklenen": "hata-ondalik-virgul",
+  "liste": "c"
+ },
+ {
+  "soru": "AttributeError: module 'random' has no attribute 'randint2'",
+  "beklenen": "hata-ozellik",
+  "liste": "c"
+ },
+ {
+  "soru": "AttributeError: 'NoneType' object has no attribute 'append'",
+  "beklenen": "hata-hiclik-nesne",
+  "liste": "c"
+ },
+ {
+  "soru": "ÖzellikHatası: 'NoneType' nesnesinin 'sona_ekle' özelliği yok",
+  "beklenen": "hata-hiclik-nesne",
+  "liste": "c"
+ },
+ {
+  "soru": "RuntimeError: dictionary changed size during iteration",
+  "beklenen": "hata-dongude-degistirme",
+  "liste": "c"
+ },
+ {
+  "soru": "MemoryError verdi program kapandı",
+  "beklenen": "hata-bellek",
+  "liste": "c"
+ },
+ {
+  "soru": "AssertionError çıktı ne demek",
+  "beklenen": "hata-iddia",
+  "liste": "c"
+ },
+ {
+  "soru": "SyntaxError: cannot assign to function call here. Maybe you meant '==' instead of '='?",
+  "beklenen": "hata-esittir",
+  "liste": "c"
+ },
+ {
+  "soru": "SyntaxError: expected ':'",
+  "beklenen": "hata-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "GirintiHatası: girinti dış seviyelerle eşleşmiyor",
+  "beklenen": "hata-girinti-uyusmuyor",
+  "liste": "c"
+ },
+ {
+  "soru": "IndentationError: unexpected indent",
+  "beklenen": "hata-beklenmeyen-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "beklenmeyen girinti hatası alıyorum ilk satırda bile",
+  "beklenen": "hata-beklenmeyen-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "AnahtarHatası: 0 çıkıyor sözlük kullanmıyorum bile",
+  "beklenen": "hata-sozluk-anahtar",
+  "liste": "c"
+ },
+ {
+  "soru": "İndeksHatası: metin indeksi aralık dışında",
+  "beklenen": "hata-liste-indeks",
+  "liste": "c"
+ },
+ {
+  "soru": "ModülBulunamadıHatası: 'kaplumbaga' adlı modül bulunamadı",
+  "beklenen": "hata-modul-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "hata veriyor ama kirmizi yazi cikiyor sadece, ingilizce bilmiyorum",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "UnicodeEncodeError: 'charmap' codec can't encode character '\\u011f'",
+  "beklenen": "hata-karakter-kodlama",
+  "liste": "c"
+ },
+ {
+  "soru": "IsADirectoryError ne demek",
+  "beklenen": "hata-dizin",
+  "liste": "c"
+ },
+ {
+  "soru": "NotImplementedError çıktı",
+  "beklenen": "hata-yazilmamis-ozellik",
+  "liste": "c"
+ },
+ {
+  "soru": "NameError: name 'girdi_al' is not defined",
+  "beklenen": "hata-tanimsiz-isim",
+  "liste": "c"
+ },
+ {
+  "soru": "TanımsızİsimHatası: 'topla' tanımlı değil ama fonksiyonu yazdım",
+  "beklenen": "hata-tanimsiz-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "TanımsızİsimHatası: 'i' tanımlı değil, döngüden sonra kullanınca",
+  "beklenen": "hata-tanimsiz-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "hata: 'return' outside function",
+  "beklenen": "hata-dondur-disarida",
+  "liste": "c"
+ },
+ {
+  "soru": "SyntaxError: 'break' outside loop",
+  "beklenen": "hata-kir-disarida",
+  "liste": "c"
+ },
+ {
+  "soru": "SözdizimiHatası: 'döndür' fonksiyon dışında",
+  "beklenen": "hata-dondur-disarida",
+  "liste": "c"
+ },
+ {
+  "soru": "kodum çalışmıyor ne yapacağım",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "program acilip kapaniyor hemen",
+  "beklenen": "hata-program-hemen-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "program açılıp kapanıyor, hata da göstermiyor",
+  "beklenen": "hata-program-hemen-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "ekrana bir şey yazmıyor, boş kalıyor",
+  "beklenen": "hata-cikti-yok",
+  "liste": "c"
+ },
+ {
+  "soru": "calistir diyorum ekranda hicbisey cikmiyo",
+  "beklenen": "hata-cikti-yok",
+  "liste": "c"
+ },
+ {
+  "soru": "dongu bitmiyor bilgisayar kasti",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "sayı yerine metin geliyor, neden?",
+  "beklenen": "hata-sayi-metin-gibi",
+  "liste": "c"
+ },
+ {
+  "soru": "if hep yanlış giriyor, eğer bloğuna hiç girmiyor",
+  "beklenen": "hata-kosul-yanlis-sonuc",
+  "liste": "c"
+ },
+ {
+  "soru": "egerin icine hic girmiyor hep degilse calisiyor",
+  "beklenen": "hata-kosul-yanlis-sonuc",
+  "liste": "c"
+ },
+ {
+  "soru": "liste boş çıkıyor halbuki eleman ekledim",
+  "beklenen": "hata-liste-bos-cikiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "girdi_al ile iki sayi aliyorum toplayinca 55 yaziyor 10 degil",
+  "beklenen": "hata-sayi-metin-gibi",
+  "liste": "c"
+ },
+ {
+  "soru": "türkçe karakter bozuk çıkıyor, ş yerine garip işaret var",
+  "beklenen": "site-utf8",
+  "liste": "c"
+ },
+ {
+  "soru": "turkce karakterler soru isareti cikiyor ekranda",
+  "beklenen": "site-utf8",
+  "liste": "c"
+ },
+ {
+  "soru": "kaplumbağa penceresi hemen kapanıyor",
+  "beklenen": "hata-pencere-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "pygame penceresi acilip kapaniyor ne yapmaliyim",
+  "beklenen": "hata-pencere-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "dosya bulunamadı diyor ama dosya yanımda",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "kütüphane yüklenmiyor, pip çalışmıyor",
+  "beklenen": "site-pip",
+  "liste": "c"
+ },
+ {
+  "soru": "pip install pygame yazdim 'pip taninmiyor' diyor",
+  "beklenen": "site-pip",
+  "liste": "c"
+ },
+ {
+  "soru": "kodum çok yavaş çalışıyor",
+  "beklenen": "hata-kod-yavas",
+  "liste": "c"
+ },
+ {
+  "soru": "program donuyor, pencere yanıt vermiyor",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "dün çalışıyordu bugün çalışmıyor, hiçbir şey değiştirmedim",
+  "beklenen": "hata-dun-calisiyordu",
+  "liste": "c"
+ },
+ {
+  "soru": "arkadaşımın kodu aynısı ama onunki çalışıyor",
+  "beklenen": "hata-kopyalanan-kod",
+  "liste": "c"
+ },
+ {
+  "soru": "kodu kopyaladım yapıştırdım ama hata verdi",
+  "beklenen": "hata-kopyalanan-kod",
+  "liste": "c"
+ },
+ {
+  "soru": "çıktı iki kere yazılıyor neden",
+  "beklenen": "hata-cikti-iki-kere",
+  "liste": "c"
+ },
+ {
+  "soru": "cikti hep alt alta yaziyor yan yana istiyorum",
+  "beklenen": "yazdir-ayirici",
+  "liste": "c"
+ },
+ {
+  "soru": "değişken değeri değişmiyor, döngüde hep aynı kalıyor",
+  "beklenen": "hata-degisken-degismiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "fonksiyon çağırıyorum ama bir şey olmuyor",
+  "beklenen": "hata-cikti-yok",
+  "liste": "c"
+ },
+ {
+  "soru": "fonksiyonum None yazdırıyor, döndür koydum",
+  "beklenen": "hata-fonksiyon-hiclik",
+  "liste": "c"
+ },
+ {
+  "soru": "fonksiyon None donduruyor neden",
+  "beklenen": "hata-fonksiyon-hiclik",
+  "liste": "c"
+ },
+ {
+  "soru": "program benden girdi istemeden bitiyor",
+  "beklenen": "hata-girdi-soru-cikmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "karşılaştırma yapıyorum ama 5 > 10 doğru çıkıyor",
+  "beklenen": "hata-kosul-yanlis-sonuc",
+  "liste": "c"
+ },
+ {
+  "soru": "girdi_al ile aldigim sayi 10 dan buyuk mu diye bakinca hata veriyor",
+  "beklenen": "hata-girdi-karsilastirma",
+  "liste": "c"
+ },
+ {
+  "soru": "oyunum donuyor, while true ile yaptım",
+  "beklenen": "sonsuz-dongu",
+  "liste": "c"
+ },
+ {
+  "soru": "zar atma programım hep aynı sayıyı veriyor",
+  "beklenen": "hata-rastgele-ayni",
+  "liste": "c"
+ },
+ {
+  "soru": "rastgele sayı hep aynı geliyor",
+  "beklenen": "hata-rastgele-ayni",
+  "liste": "c"
+ },
+ {
+  "soru": "çıktıda 'None' yazıyor istemediğim",
+  "beklenen": "hata-fonksiyon-hiclik",
+  "liste": "c"
+ },
+ {
+  "soru": "print edince ekranda tirnak isaretleri de cikiyor",
+  "beklenen": "hata-yazdirinca-tirnak",
+  "liste": "c"
+ },
+ {
+  "soru": "ondalıklı sayı çok uzun çıkıyor 0.30000000000000004",
+  "beklenen": "hata-ondalik-hassasiyet",
+  "liste": "c"
+ },
+ {
+  "soru": "0.1 + 0.2 neden 0.3 etmiyor",
+  "beklenen": "hata-ondalik-hassasiyet",
+  "liste": "c"
+ },
+ {
+  "soru": "3 / 2 yapınca 1.5 çıkıyor ben 1 istiyorum",
+  "beklenen": "tam-bolme-kalan",
+  "liste": "c"
+ },
+ {
+  "soru": "dosya okuyunca Türkçe harfler bozuk",
+  "beklenen": "site-utf8",
+  "liste": "c"
+ },
+ {
+  "soru": "for dongusu bir kere calisiyor sadece",
+  "beklenen": "hata-dongu-az-donuyor",
+  "liste": "c"
+ },
+ {
+  "soru": "döngü hiç çalışmıyor",
+  "beklenen": "hata-dongu-az-donuyor",
+  "liste": "c"
+ },
+ {
+  "soru": "içinde listesindeki sayıları toplayamıyorum, hep son sayı çıkıyor",
+  "beklenen": "hata-degisken-degismiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "metin birleştirme çalışmıyor, aralarda boşluk yok",
+  "beklenen": "metin-birlestirme",
+  "liste": "c"
+ },
+ {
+  "soru": "değişkenin değeri fonksiyonun içinde değişmiyor dışarıda eski kalıyor",
+  "beklenen": "kapsam",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer x = 5: yazınca hata veriyor",
+  "beklenen": "hata-esittir",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır('yaşım ' + 12) hata",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "for i in range(10) yazdım olmadı",
+  "beklenen": "hata-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır(\"Merhaba) yazdım hata verdi",
+  "beklenen": "hata-tirnak",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer x > 5\\n    yazdır('büyük')\\nhata verdi",
+  "beklenen": "hata-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "degilse yazdim ama hata verdi: egerse mi olmali",
+  "beklenen": "hata-degilse-yanlis",
+  "liste": "c"
+ },
+ {
+  "soru": "döngü x < 10:\\n    yazdır(x)\\nsonsuza gidiyor",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "fonksiyon topla(a, b)\\n    döndür a + b\\nnerede hata",
+  "beklenen": "hata-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "fonksiyon topla(a, b):\\ndöndür a + b  bu çalışmadı",
+  "beklenen": "hata-girintili-blok",
+  "liste": "c"
+ },
+ {
+  "soru": "liste.sona_ekle(5) yazdım ama liste tanımlı değil diyor",
+  "beklenen": "hata-tanimsiz-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır(liste[3]) hata veriyor liste 3 elemanlı",
+  "beklenen": "hata-liste-indeks",
+  "liste": "c"
+ },
+ {
+  "soru": "a = 10\\nb = 0\\nyazdır(a / b)\\nne yapmalıyım",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır('Toplam: ', toplam) çalışıyor ama yazdır('Toplam: ' + toplam) hata veriyor, niye",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "x == 5 yerine x = 5 yazınca ne oluyor",
+  "beklenen": "hata-esittir",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer x == 5 and y == 3: olmuyor",
+  "beklenen": "ve-veya-degil",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer x > 5 ve x < 10: yazdım hata verdi, ve mi yazmalıyım",
+  "beklenen": "ve-veya-degil",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer isim == 'ali' veya 'veli': hep doğru çıkıyor",
+  "beklenen": "hata-veya-hep-dogru",
+  "liste": "c"
+ },
+ {
+  "soru": "for i in aralık(5) yazdım, iki nokta unuttum mu",
+  "beklenen": "hata-iki-nokta",
+  "liste": "c"
+ },
+ {
+  "soru": "için i içinde aralık(1, 5): yazdır(i) 5'i yazmıyor",
+  "beklenen": "aralik",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdir(\"merhaba\") yazdim yazdir taninmiyor",
+  "beklenen": "hata-normal-python",
+  "liste": "c"
+ },
+ {
+  "soru": "Yazdır('a') büyük harfle yazınca hata mı veriyor",
+  "beklenen": "hata-buyuk-kucuk-harf",
+  "liste": "c"
+ },
+ {
+  "soru": "yaş = tamsayı(girdi_al('Yaş: '))\\nyazdır('Yaşın ' + yaş)\\nhata",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "sayi = tamsayi(girdi_al('Sayı: ')) ve ben harf girince program çöküyor",
+  "beklenen": "hata-harf-girilince",
+  "liste": "c"
+ },
+ {
+  "soru": "x = '5'\\ny = 3\\nyazdır(x * y)\\n555 çıktı",
+  "beklenen": "hata-sayi-metin-gibi",
+  "liste": "c"
+ },
+ {
+  "soru": "print('merhaba') çalışmıyor yazdır mı yazmam gerek",
+  "beklenen": "hata-ingilizce-komut",
+  "liste": "c"
+ },
+ {
+  "soru": "import random yazınca hata veriyor Türkçesi var mı",
+  "beklenen": "hata-ingilizce-komut",
+  "liste": "c"
+ },
+ {
+  "soru": "içe_aktar rastgele yazdım ModülBulunamadı dedi",
+  "beklenen": "hata-modul-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "while True: yazdım break nasıl yazılıyor",
+  "beklenen": "sonsuz-dongu",
+  "liste": "c"
+ },
+ {
+  "soru": "döngü doğru:\\n    yazdır('a')\\nbunu nasıl durdururum",
+  "beklenen": "sonsuz-dongu",
+  "liste": "c"
+ },
+ {
+  "soru": "sözlük.get kullanmak lazım dediler nasıl yapılır",
+  "beklenen": "hata-sozluk-anahtar",
+  "liste": "c"
+ },
+ {
+  "soru": "x = [1,2,3]\\nfor i in x:\\n    x.remove(i)\\nbazı sayılar silinmiyor",
+  "beklenen": "hata-dongude-degistirme",
+  "liste": "c"
+ },
+ {
+  "soru": "def f(n): return f(n-1) yazdım ve RecursionError geldi",
+  "beklenen": "hata-sonsuz-ozyineleme",
+  "liste": "c"
+ },
+ {
+  "soru": "faktöriyel fonksiyonum ÖzyinelemeHatası veriyor, durma koşulu nereye",
+  "beklenen": "hata-sonsuz-ozyineleme",
+  "liste": "c"
+ },
+ {
+  "soru": "toplam = 0\\ndef ekle():\\n    toplam += 1\\nUnboundLocalError",
+  "beklenen": "hata-yerel-degisken",
+  "liste": "c"
+ },
+ {
+  "soru": "f'Merhaba {isim}' yazdım ama süslü parantez aynen çıkıyor",
+  "beklenen": "f-metin",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır('a' 'b') virgül koymayınca ne oluyor",
+  "beklenen": "hata-virgul-eksik",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır(5 +) hata",
+  "beklenen": "hata-sozdizimi",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır('Merhaba'))  fazladan parantez hata verir mi",
+  "beklenen": "hata-parantez",
+  "liste": "c"
+ },
+ {
+  "soru": "x = input() yazdım hata verdi sanırım girdi_al olacak",
+  "beklenen": "hata-ingilizce-komut",
+  "liste": "c"
+ },
+ {
+  "soru": "liste[1:3] 3. elemanı almıyor neden",
+  "beklenen": "dilimleme",
+  "liste": "c"
+ },
+ {
+  "soru": "'merhaba'[0] = 'M' yazınca hata veriyor",
+  "beklenen": "hata-metin-degistirilemez",
+  "liste": "c"
+ },
+ {
+  "soru": "tuple'a eleman ekleyemiyorum",
+  "beklenen": "hata-demet-degismez",
+  "liste": "c"
+ },
+ {
+  "soru": "x = 5\\nif x > 3:\\n  yazdır('a')\\n    yazdır('b')\\nhata var",
+  "beklenen": "hata-beklenmeyen-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "for i in range(5):\\n    print(i)\\n   print('bitti')\\ngirinti hatası",
+  "beklenen": "hata-girinti-uyusmuyor",
+  "liste": "c"
+ },
+ {
+  "soru": "for i in range(len(liste)+1): hata veriyor",
+  "beklenen": "hata-liste-sonu-asma",
+  "liste": "c"
+ },
+ {
+  "soru": "açık('dosya.txt') yazdım ama okuyamıyor",
+  "beklenen": "dosya-oku",
+  "liste": "c"
+ },
+ {
+  "soru": "with open('a.txt') as f: ... FileNotFoundError, dosyayı nereye koymalıyım",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "open('not.txt', 'w') ile yazdım ama dosyayı bulamıyorum",
+  "beklenen": "hata-yazilan-dosya-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "import turtle\\nt = turtle.Turtle()\\nt.forward(100)\\npencere hemen kapanıyor",
+  "beklenen": "hata-pencere-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "kaplumbağa ile kare çizmek istiyorum ama çizgi eğri çıkıyor",
+  "beklenen": "kaplumbaga",
+  "liste": "c"
+ },
+ {
+  "soru": "isim = girdi_al('Adın? ') yazdım ama ekranda soru çıkmıyor",
+  "beklenen": "hata-girdi-soru-cikmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "girdi_al('Adın? ') çalışıyor ama cevap yazarken ekrana bir şey çıkmıyor",
+  "beklenen": "hata-girdi-soru-cikmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "print(\"a\" * 3) aaa yazıyor, neden hata vermedi",
+  "beklenen": "hata-sayi-metin-gibi",
+  "liste": "c"
+ },
+ {
+  "soru": "x = 5 yazıp yazdır(X) yazdım hata verdi",
+  "beklenen": "hata-buyuk-kucuk-harf",
+  "liste": "c"
+ },
+ {
+  "soru": "değişken adına boşluk koyunca hata veriyor: ilk sayı = 5",
+  "beklenen": "degisken-adlandirma",
+  "liste": "c"
+ },
+ {
+  "soru": "class yazdim ama self ne bilmiyorum hata verdi",
+  "beklenen": "kendisi",
+  "liste": "c"
+ },
+ {
+  "soru": "hata ayıklama nasıl yapılır",
+  "beklenen": "hata-ayiklama",
+  "liste": "c"
+ },
+ {
+  "soru": "debug nasil yapilir bilmiyorum",
+  "beklenen": "hata-ayiklama",
+  "liste": "c"
+ },
+ {
+  "soru": "kesme noktası nedir nasıl koyarım",
+  "beklenen": "kesme-noktasi",
+  "liste": "c"
+ },
+ {
+  "soru": "kodu satır satır nasıl çalıştırırım",
+  "beklenen": "hata-ayiklama",
+  "liste": "c"
+ },
+ {
+  "soru": "değişkenin değerini çalışırken nasıl görürüm",
+  "beklenen": "site-degisken-izle",
+  "liste": "c"
+ },
+ {
+  "soru": "hatayı nasıl bulurum, kodum uzun",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır ile hata ayıklamak doğru mu",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "hatanın hangi satırda olduğunu nasıl anlarım",
+  "beklenen": "hata-satir-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "dene ve hariç ile hata yakalama nasıl yazılıyor",
+  "beklenen": "hata-yakalama",
+  "liste": "c"
+ },
+ {
+  "soru": "hata aldığımda kodun hepsini silmeden nasıl bulurum",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "sonsuz döngüyü durdurmak için hangi tuşa basılır",
+  "beklenen": "sonsuz-dongu",
+  "liste": "c"
+ },
+ {
+  "soru": "program donarsa nasil kapatirim kodlar kaybolur mu",
+  "beklenen": "hata-donunca-kod-kaybolur",
+  "liste": "c"
+ },
+ {
+  "soru": "kodumun hangi kısmı yavaş nasıl anlarım",
+  "beklenen": "hata-kod-yavas",
+  "liste": "c"
+ },
+ {
+  "soru": "hata ayıklayıcı (debugger) var mı bu sitede",
+  "beklenen": "hata-ayiklama",
+  "liste": "c"
+ },
+ {
+  "soru": "degiskenleri izleme penceresi var mi",
+  "beklenen": "site-degisken-izle",
+  "liste": "c"
+ },
+ {
+  "soru": "hatayı çözmek için ne yapmalıyım adım adım anlat",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "kodumu test etmek için küçük parçalara mı bölmeliyim",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "hata mesajını Google'a mı yazmalıyım",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "type() yerine Türkçesi var mı, değişkenin türünü öğrenmek istiyorum",
+  "beklenen": "veri-turleri",
+  "liste": "c"
+ },
+ {
+  "soru": "hata verince program kapanmasın istiyorum",
+  "beklenen": "hata-yakalama",
+  "liste": "c"
+ },
+ {
+  "soru": "hatayı tam olarak nerede aldığımı gösteren bir şey var mı",
+  "beklenen": "hata-satir-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "Kodi sen hata mesajlarını açıklayabilir misin",
+  "beklenen": "hata-kodi-aciklar",
+  "liste": "c"
+ },
+ {
+  "soru": "hata mesajı Türkçe olunca daha mı kolay oluyor, İngilizce Python'da nasıl olur",
+  "beklenen": "hata-turkce-ingilizce-ayni",
+  "liste": "c"
+ },
+ {
+  "soru": "Türkçe kodla normal Python arasındaki fark ne, hatalar aynı mı",
+  "beklenen": "hata-turkce-ingilizce-ayni",
+  "liste": "c"
+ },
+ {
+  "soru": "sürekli hata alıyorum, programlamayı bırakmak istiyorum",
+  "beklenen": "hata-herkes-yapar",
+  "liste": "c"
+ },
+ {
+  "soru": "ben programci olamam herkes hata yapiyor mu",
+  "beklenen": "hata-herkes-yapar",
+  "liste": "c"
+ },
+ {
+  "soru": "hata yapmak normal mi",
+  "beklenen": "hata-herkes-yapar",
+  "liste": "c"
+ },
+ {
+  "soru": "öğretmenim kodumda hata var dedi ama göstermedi",
+  "beklenen": "hata-karakter-kodlama",
+  "liste": "c"
+ },
+ {
+  "soru": "bilgisayarım eski, TürKod çok yavaş açılıyor",
+  "beklenen": "site-gereksinim",
+  "liste": "c"
+ },
+ {
+  "soru": "tarayicida calismiyor sayfa donuyor",
+  "beklenen": "site-demo",
+  "liste": "c"
+ },
+ {
+  "soru": "Telefondan kod yazınca tuşlar kayboluyor, hata alıyorum",
+  "beklenen": "site-gereksinim",
+  "liste": "c"
+ },
+ {
+  "soru": "örnekler bölümündeki kod bile hata veriyor",
+  "beklenen": "hata-kopyalanan-kod",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdığım kod kayboldu, hata verince sayfa yenilendi",
+  "beklenen": "hata-donunca-kod-kaybolur",
+  "liste": "c"
+ },
+ {
+  "soru": "Canlı Demo'da kodum çalışmıyor ama bilgisayarda çalışıyor",
+  "beklenen": "site-demo",
+  "liste": "c"
+ },
+ {
+  "soru": "hata mesajlarının listesi var mı",
+  "beklenen": "hata-en-sik-gorulen",
+  "liste": "c"
+ },
+ {
+  "soru": "en sık yapılan hatalar neler",
+  "beklenen": "hata-en-sik-gorulen",
+  "liste": "c"
+ },
+ {
+  "soru": "yeni başlayan biri olarak hangi hatalarla karşılaşırım",
+  "beklenen": "hata-en-sik-gorulen",
+  "liste": "c"
+ },
+ {
+  "soru": "hocam kod yazdim ama ne hata veriyor anlamadim ingilizce yaziyor",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "NEDEN ÇALIŞMIYOR BU SAÇMA PROGRAM",
+  "beklenen": "hata-herkes-yapar",
+  "liste": "c"
+ },
+ {
+  "soru": "hata hata hata her seferinde hata",
+  "beklenen": "hata-herkes-yapar",
+  "liste": "c"
+ },
+ {
+  "soru": "yardim edin odevim yarin teslim kod calismiyor",
+  "beklenen": "hata-genel-adimlar",
+  "liste": "c"
+ },
+ {
+  "soru": "çözemedim bi bakar mısın",
+  "beklenen": "hata-kodi-aciklar",
+  "liste": "c"
+ },
+ {
+  "soru": "hata var",
+  "beklenen": "hata-kodi-aciklar",
+  "liste": "c"
+ },
+ {
+  "soru": "ne hatasi bu",
+  "beklenen": "hata-kodi-aciklar",
+  "liste": "c"
+ },
+ {
+  "soru": "kırmızı yazılar çıktı",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "kodum calisiyo ama sonuc yanlis cikiyo",
+  "beklenen": "hata-sonuc-yanlis",
+  "liste": "c"
+ },
+ {
+  "soru": "çıkan sonuç yanlış ama hata yok, neden olabilir",
+  "beklenen": "hata-sonuc-yanlis",
+  "liste": "c"
+ },
+ {
+  "soru": "hata yok ama istediğim şeyi yapmıyor",
+  "beklenen": "hata-sonuc-yanlis",
+  "liste": "c"
+ },
+ {
+  "soru": "girdi_al'a harf girilirse programın çökmemesi için ne yapmalı",
+  "beklenen": "hata-harf-girilince",
+  "liste": "c"
+ },
+ {
+  "soru": "liste boşsa indeks hatası almamak için nasıl kontrol ederim",
+  "beklenen": "hata-liste-sonu-asma",
+  "liste": "c"
+ },
+ {
+  "soru": "peki kaç boşluk koymalıyım",
+  "onceki": "girinti hatası alıyorum",
+  "beklenen": "girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "değişkeni nerede tanımlamam lazım",
+  "onceki": "TanımsızİsimHatası alıyorum",
+  "beklenen": "hata-tanimsiz-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "tamsayı() nasıl kullanılıyor",
+  "onceki": "sayı yerine metin geliyor",
+  "beklenen": "tamsayi",
+  "liste": "c"
+ },
+ {
+  "soru": "peki hangi tusa basip durdururum",
+  "onceki": "dongu bitmiyor",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "hata mesajını yapıştırsam bakar mısın",
+  "onceki": "kodum çalışmıyor",
+  "beklenen": "hata-kodi-aciklar",
+  "liste": "c"
+ },
+ {
+  "soru": "yani virgül mü koyacağım artı yerine",
+  "onceki": "TürHatası alıyorum, metin ile tamsayı birleştirilemiyor",
+  "beklenen": "hata-metin-sayi",
+  "liste": "c"
+ },
+ {
+  "soru": "nasıl koyuyorum onu, tıklayınca mı",
+  "onceki": "kesme noktası nedir",
+  "beklenen": "kesme-noktasi",
+  "liste": "c"
+ },
+ {
+  "soru": "hangi satirda oldugunu nasil bulurum",
+  "onceki": "sozdizimi hatasi aliyorum",
+  "beklenen": "hata-satir-nerede",
+  "liste": "c"
+ },
+ {
+  "soru": "sona_ekle'yi döngünün içine mi koymalıyım",
+  "onceki": "liste boş çıkıyor",
+  "beklenen": "hata-liste-bos-cikiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "== ile = arasındaki fark ne",
+  "onceki": "if hep yanlış giriyor",
+  "beklenen": "hata-esittir",
+  "liste": "c"
+ },
+ {
+  "soru": "liste uzunluğunu nasıl öğrenirim",
+  "onceki": "IndexError alıyorum",
+  "beklenen": "uzunluk",
+  "liste": "c"
+ },
+ {
+  "soru": "dosya yolunu nasıl yazarım",
+  "onceki": "dosya bulunamadı hatası",
+  "beklenen": "hata-dosya-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "kapanmaması için ne ekleyeyim",
+  "onceki": "pencere hemen kapanıyor",
+  "beklenen": "hata-pencere-kapaniyor",
+  "liste": "c"
+ },
+ {
+  "soru": "adım adım çalıştırmak için hangi düğmeye basılıyor",
+  "onceki": "hata ayıklama nasıl yapılır",
+  "beklenen": "hata-ayiklama",
+  "liste": "c"
+ },
+ {
+  "soru": "dosyayi hangi kodlamayla kaydetmeliyim",
+  "onceki": "turkce karakter bozuk cikiyor",
+  "beklenen": "site-utf8",
+  "liste": "c"
+ },
+ {
+  "soru": "ondalıklı sayı girilirse ne yapmalıyım",
+  "onceki": "girdi_al ile toplama yapamıyorum",
+  "beklenen": "hata-sayi-metin-gibi",
+  "liste": "c"
+ },
+ {
+  "soru": "durma koşulu ne demek",
+  "onceki": "ÖzyinelemeHatası alıyorum",
+  "beklenen": "ozyineleme",
+  "liste": "c"
+ },
+ {
+  "soru": "peki hangi satır yavaş nasıl anlarım",
+  "onceki": "kodum çok yavaş",
+  "beklenen": "hata-kod-yavas",
+  "liste": "c"
+ },
+ {
+  "soru": "anahtar var mı diye nasıl kontrol edilir",
+  "onceki": "AnahtarHatası aldım",
+  "beklenen": "sozluk-anahtar-var-mi",
+  "liste": "c"
+ },
+ {
+  "soru": "eğer ile mi kontrol etmeliyim",
+  "onceki": "SıfıraBölmeHatası",
+  "beklenen": "hata-sifira-bolme",
+  "liste": "c"
+ },
+ {
+  "soru": "modülü nereden yüklerim",
+  "onceki": "modül bulunamadı hatası",
+  "beklenen": "hata-modul-bulunamadi",
+  "liste": "c"
+ },
+ {
+  "soru": "o zaman iki tane eşittir mi koyuyorum",
+  "onceki": "eğer x = 5 hata veriyor",
+  "beklenen": "hata-esittir",
+  "liste": "c"
+ },
+ {
+  "soru": "döndür nereye yazılır",
+  "onceki": "fonksiyonum None yazdırıyor",
+  "beklenen": "dondur",
+  "liste": "c"
+ },
+ {
+  "soru": "donunca yazdigim kod kaybolur mu",
+  "onceki": "program donuyor",
+  "beklenen": "hata-donunca-kod-kaybolur",
+  "liste": "c"
+ },
+ {
+  "soru": "hangi hatayı yakalayacağımı nasıl bilirim",
+  "onceki": "try except nedir",
+  "beklenen": "hata-yakalanacak-ad",
+  "liste": "c"
+ },
+ {
+  "soru": "kullanıcı harf girerse ne yapayım",
+  "onceki": "ValueError alıyorum",
+  "beklenen": "hata-harf-girilince",
+  "liste": "c"
+ },
+ {
+  "soru": "sayaci arttirmayi unuttum mu acaba",
+  "onceki": "dongu bitmiyor",
+  "beklenen": "hata-program-bitmiyor",
+  "liste": "c"
+ },
+ {
+  "soru": "hangi özellikler var nereden bakarım",
+  "onceki": "AttributeError aldım",
+  "beklenen": "hata-ozellik",
+  "liste": "c"
+ },
+ {
+  "soru": "sonuncu satır mı önemli",
+  "onceki": "hata mesajı çok uzun",
+  "beklenen": "hata-mesaji-okuma",
+  "liste": "c"
+ },
+ {
+  "soru": "tab yerine boşluk kullanmak için ayar var mı",
+  "onceki": "TabError",
+  "beklenen": "hata-sekme-girinti",
+  "liste": "c"
+ },
+ {
+  "soru": "yazdır komutunu kullanınca satır sonunda fazladan boşluk kalıyor, neden",
+  "beklenen": "yazdir-ayirici",
+  "liste": "c"
+ },
+ {
+  "soru": "EOFError aldım ama girdi_al kullanmıyorum bile, başka neden olabilir",
+  "beklenen": "hata-eof",
+  "liste": "c"
+ },
+ {
+  "soru": "cok uzun bir program yazdim hata cikmiyo ama bitmiyo da, nerde takildigini nasil anlarim",
+  "beklenen": "hata-takildigi-yer",
+  "liste": "c"
+ }
+]

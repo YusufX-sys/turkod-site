@@ -65,7 +65,7 @@
   },
   {
     "soru": "qwerty123",
-    "beklenen": null
+    "beklenen": "sohbet-anlamsiz"
   },
   {
     "soru": "bir kelimenin metinde kaç kere geçtiğini bulma",
@@ -93,7 +93,7 @@
   },
   {
     "soru": "jjjjjjjj",
-    "beklenen": null
+    "beklenen": "sohbet-anlamsiz"
   },
   {
     "soru": "txt dosyası oluşturup içine kaydetmek",
@@ -301,7 +301,7 @@
   },
   {
     "soru": "telefonumun şarjı çabuk bitiyor",
-    "beklenen": null
+    "beklenen": "sohbet-telefon-sorun"
   },
   {
     "soru": "listedeki tekrar eden elemanları nasıl atarım",
@@ -381,7 +381,7 @@
   },
   {
     "soru": "asdfgh",
-    "beklenen": null
+    "beklenen": "sohbet-anlamsiz"
   },
   {
     "soru": "metindeki bir kelimeyi başkasıyla değiştirmek",

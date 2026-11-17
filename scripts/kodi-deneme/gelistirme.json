@@ -605,7 +605,7 @@
   },
   {
     "soru": "minecraft nasıl indirilir",
-    "beklenen": null
+    "beklenen": "sohbet-minecraft"
   },
   {
     "soru": "Türkiye'nin başkenti neresi",
@@ -649,7 +649,7 @@
   },
   {
     "soru": "kodi şarkı söyler misin",
-    "beklenen": null
+    "beklenen": "sohbet-sarki"
   },
   {
     "soru": "programlama ne demek",

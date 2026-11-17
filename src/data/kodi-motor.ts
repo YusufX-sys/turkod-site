@@ -24,19 +24,37 @@ export const DOLGU = new Set([
   'kullanirim', 'istiyorum', 'anlat', 'goster', 'soyle', 'yardim', 'demek', 'demektir', 'ise', 'yarar', 'isi', 'karsiligi',
   'karsilik', 'turkcesi', 'turkce', 'python', 'pythonda', 'turkod', 'turkodda', 'komut', 'komutu', 'kelime', 'kelimesi',
   'fonksiyonu', 'anlami', 'anlamina', 'gelir', 'geliyor', 'kodu', 'yazilir', 'yazarim',
-  'peki', 'hani', 'ayrica', 'sonra', 'tamam',
+  'peki', 'hani', 'ayrica', 'sonra', 'tamam', 'bende', 'benden', 'sende', 'senden', 'bizde', 'bizim',
 ]);
 
 // ---------------------------------------------------------------- bilgi tabanı
 
-type Hazir = { b: KodiBilgi; tekler: string[]; ifadeler: string[] };
+/**
+ * tamlar: "=" ile başlayan anahtarlar ("=evet", "=kodi"). Yalnızca mesajın TAMAMI buysa eşleşir;
+ * "tamam ama döngü nasıl yazılır" gibi uzun cümlelerde kısa sohbet sözcükleri karışmasın diye.
+ */
+type Hazir = { b: KodiBilgi; tekler: string[]; ifadeler: string[]; tamlar: string[] };
 let hazirlik: Hazir[] | null = null;
 
 const hazirla = (bilgi: KodiBilgi[]): Hazir[] =>
   (hazirlik ??= bilgi.map((b) => {
-    const sade = [...new Set(b.anahtarlar.map(sadelestir).filter(Boolean))];
-    return { b, tekler: sade.filter((a) => !a.includes(' ')), ifadeler: sade.filter((a) => a.includes(' ')) };
+    const tamlar = b.anahtarlar.filter((a) => a.startsWith('=')).map((a) => sadelestir(a.slice(1))).filter(Boolean);
+    const sade = [...new Set(b.anahtarlar.filter((a) => !a.startsWith('=')).map(sadelestir).filter(Boolean))];
+    return { b, tekler: sade.filter((a) => !a.includes(' ')), ifadeler: sade.filter((a) => a.includes(' ')), tamlar };
   }));
+
+/** Yalnızca işaret ya da emojiden oluşan mesajlar anlamlı sözcüklere çevrilir ("?" -> "soru isareti", "😂" -> "haha"). */
+const ISARET: [RegExp, string][] = [
+  [/^[?¿]+$/, 'soru isareti'], [/^[!.]+$/, 'hmm'],
+  [/^[😂🤣😆😄😁😅😹]+$/u, 'haha'], [/^[😢😭😞😔☹️🙁😿]+$/u, 'uzgunum'], [/^[😡🤬😠]+$/u, 'sinirliyim'],
+  [/^[👍👌✅]+$/u, 'tamam'], [/^[❤️💖💕😍🥰😘]+$/u, 'seni seviyorum'], [/^[👋]+$/u, 'merhaba'], [/^[🤔]+$/u, 'hmm'],
+];
+export function isaretleriCevir(soru: string): string {
+  const t = soru.trim().replace(/\s+/g, '').replace(/️/g, '');
+  if (!t || /[\p{L}\p{N}]/u.test(t)) return soru;
+  for (const [re, s] of ISARET) if (re.test(t)) return s;
+  return soru;
+}
 
 /** Ortak başlangıç uzunluğu. */
 const onEk = (a: string, b: string) => {
@@ -100,9 +118,9 @@ function uzaklik(a: string, b: string, sinir: number): number {
 }
 
 /** Ayarlanabilir ağırlıklar (scripts/kodi-dene.ts ile ölçülerek seçildi). */
-export const AGIRLIK = { anahtar: 3, id: 2, cevap: 1, ek: 0.7, kalip: 0.2, k1: 1.2, b: 0.4 };
+export const AGIRLIK = { anahtar: 3, id: 2, cevap: 1, ek: 0.7, kalip: 0.2, k1: 1.2, b: 0.4, tam: 8 };
 
-type Belge = { b: KodiBilgi; tf: Map<string, number>; uzunluk: number; tekler: string[]; ifadeler: string[] };
+type Belge = { b: KodiBilgi; tf: Map<string, number>; uzunluk: number; tekler: string[]; ifadeler: string[]; tamlar: string[] };
 type Dizin = { belgeler: Belge[]; df: Map<string, number>; ortUzunluk: number; sozcukler: string[] };
 let dizin: Dizin | null = null;
 let dizinKaynak: KodiBilgi[] | null = null;
@@ -116,16 +134,16 @@ const dizinTerimleri = (s: string) => sadelestir(s).split(' ').filter((w) => w.l
 export function dizinKur(bilgi: KodiBilgi[]): Dizin {
   if (dizin && dizinKaynak === bilgi) return dizin;
   const df = new Map<string, number>();
-  const belgeler = hazirla(bilgi).map(({ b, tekler, ifadeler }) => {
+  const belgeler = hazirla(bilgi).map(({ b, tekler, ifadeler, tamlar }) => {
     const tf = new Map<string, number>();
     const ekle = (w: string, agirlik: number) => tf.set(w, (tf.get(w) ?? 0) + agirlik);
-    for (const a of b.anahtarlar) for (const w of dizinTerimleri(a)) ekle(w, AGIRLIK.anahtar);
+    for (const a of b.anahtarlar) if (!a.startsWith('=')) for (const w of dizinTerimleri(a)) ekle(w, AGIRLIK.anahtar);
     for (const w of dizinTerimleri(b.id.replace(/-/g, ' '))) ekle(w, AGIRLIK.id);
     for (const w of terimler(b.cevap)) ekle(w, AGIRLIK.cevap);
     for (const w of tf.keys()) df.set(w, (df.get(w) ?? 0) + 1);
     let uzunluk = 0;
     for (const v of tf.values()) uzunluk += v;
-    return { b, tf, uzunluk, tekler, ifadeler };
+    return { b, tf, uzunluk, tekler, ifadeler, tamlar };
   });
   const ortUzunluk = belgeler.reduce((s, x) => s + x.uzunluk, 0) / belgeler.length;
   dizinKaynak = bilgi;
@@ -154,20 +172,23 @@ export function eslesenTerimler(w: string, d: { sozcukler: string[] }): string[]
 /** Soru sözcükleri: dolgu atılır, eş anlamlı ve (varsa) sözlükteki TürKod karşılığıyla genişletilir. */
 const ES_ANAHTARLAR = Object.keys(ES_ANLAM);
 
-function soruTerimleri(soru: string, sozluk?: SozlukDizini | null): { asil: string[]; ek: string[] } {
-  const temiz = soru.replace(/['’][\p{L}]+/gu, '');
+/** ekKaynak[i]: ek[i]'nin hangi soru sözcüğünden geldiği ("update" -> "guncelle" eşleşirse "update" karşılanmış sayılır). */
+function soruTerimleri(soru: string, sozluk?: SozlukDizini | null): { asil: string[]; ek: string[]; ekKaynak: string[] } {
+  // Kesmeden sonraki ek atılır ("print'in" -> "print"), ama tırnak içindeki ad kalır ("'NoneType'")
+  const temiz = soru.replace(/(?<=[\p{L}\p{N}])['’][\p{L}]+/gu, '');
   let asil = terimler(temiz);
   // Soru yalnızca dolgu sözcüklerinden oluşuyorsa ("turkod nedir", "python ne") onlar kullanılır.
   if (!asil.length) asil = sadelestir(temiz).split(' ').filter((w) => w.length > 1 && !['ne', 'nedir', 'nasil', 'mi', 'mu'].includes(w));
-  const ek: string[] = [];
+  const ek: string[] = [], ekKaynak: string[] = [];
+  const ekle = (l: string[], w: string) => { for (const e of l) if (!asil.includes(e)) { ek.push(e); ekKaynak.push(w); } };
   for (const w of asil) {
     // Eş anlamlı da ekli hâliyle bulunur: "yaziyi" -> yazi, "yuklerim" -> yukle
-    for (const anahtar of ES_ANAHTARLAR) if (anahtar === w || (anahtar.length >= 5 && kokUyar(anahtar, w))) for (const e of ES_ANLAM[anahtar]) ek.push(...terimler(e));
+    for (const anahtar of ES_ANAHTARLAR) if (anahtar === w || (anahtar.length >= 5 && kokUyar(anahtar, w))) for (const e of ES_ANLAM[anahtar]) ekle(terimler(e), w);
     // Python adı ("set", "range", "append") -> TürKod karşılığı ("küme", "aralık", "sona_ekle")
     const py = sozluk?.py.get(w);
-    if (py && w.length >= 3) ek.push(...terimler(py[0].replace(/_/g, ' ')));
+    if (py && w.length >= 3) ekle(terimler(py[0].replace(/_/g, ' ')), w);
   }
-  return { asil, ek: ek.filter((e) => !asil.includes(e)) };
+  return { asil, ek, ekKaynak };
 }
 
 /** Bütün kayıtları puana göre sıralar. */
@@ -175,19 +196,20 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
   const s = sadelestir(soru);
   if (!s) return [];
   const d = dizinKur(bilgi);
-  const { asil, ek } = soruTerimleri(soru, sozluk);
+  const { asil, ek, ekKaynak } = soruTerimleri(soru, sozluk);
   if (!asil.length && !ek.length) return [];
   const N = d.belgeler.length, k1 = AGIRLIK.k1, bb = AGIRLIK.b;
-  // Her soru sözcüğünün bağlandığı dizin terimleri (bir kez hesaplanır).
-  const baglar = [...asil.map((w) => ({ w, t: eslesenTerimler(w, d), agirlik: 1, asilMi: true })),
-                  ...ek.map((w) => ({ w, t: eslesenTerimler(w, d), agirlik: AGIRLIK.ek, asilMi: false }))];
+  // Her soru sözcüğünün bağlandığı dizin terimleri (bir kez hesaplanır). kaynak: kapsamda sayılacak soru sözcüğü.
+  const baglar = [...asil.map((w) => ({ w, t: eslesenTerimler(w, d), agirlik: 1, asilMi: true, kaynak: w })),
+                  ...ek.map((w, i) => ({ w, t: eslesenTerimler(w, d), agirlik: AGIRLIK.ek, asilMi: false, kaynak: ekKaynak[i] }))];
   const sozcukler = s.split(' ');
   const cerceve = ` ${s} `;
   const sonuc: Eslesme[] = [];
   for (const belge of d.belgeler) {
     // 1) BM25: her soru sözcüğü için belgede en iyi uyan terimin katkısı
-    let bm = 0, karsilanan = 0;
-    for (const { t, agirlik, asilMi } of baglar) {
+    let bm = 0;
+    const karsilananlar = new Set<string>();
+    for (const { t, agirlik, kaynak } of baglar) {
       let en = 0;
       for (const terim of t) {
         const f = belge.tf.get(terim);
@@ -195,7 +217,7 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
         const idf = Math.log(1 + (N - (d.df.get(terim) ?? 0) + 0.5) / ((d.df.get(terim) ?? 0) + 0.5));
         en = Math.max(en, idf * (f * (k1 + 1)) / (f + k1 * (1 - bb + (bb * belge.uzunluk) / d.ortUzunluk)));
       }
-      if (en > 0 && asilMi) karsilanan++;
+      if (en > 0) karsilananlar.add(kaynak);
       bm += en * agirlik;
     }
     // 2) Anahtar kalıpları (eski motor): çok sözcüklü kalıp sırayla geçerse güçlü işaret
@@ -208,8 +230,11 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
       else if (cerceve.includes(` ${ifade} `)) kalip += ifade.length * 1.5;
     }
     for (const a of belge.tekler) if (sozcukler.some((w) => sozcukUyar(a, w))) kalip += a.length;
+    // Soru, bir anahtarın kendisiyse ("dongu nedir", "hahaha") en güçlü işarettir
+    const tamEslesme = belge.ifadeler.includes(s) || belge.tekler.includes(s) || belge.tamlar.includes(s);
+    if (tamEslesme) kalip += AGIRLIK.tam / AGIRLIK.kalip;
     const puan = bm + kalip * AGIRLIK.kalip;
-    if (puan > 0) sonuc.push({ bilgi: belge.b, puan, kapsam: asil.length ? karsilanan / asil.length : 0 });
+    if (puan > 0) sonuc.push({ bilgi: belge.b, puan, kapsam: tamEslesme ? 1 : asil.length ? karsilananlar.size / asil.length : 0 });
   }
   return sonuc.sort((a, b) => b.puan - a.puan);
 }
@@ -370,7 +395,7 @@ const adaylar = (soru: string) =>
 export function sozlukCevabi(soru: string, d: SozlukDizini): KodiCevap | null {
   const kaliptaMi = SOZLUK_KALIBI.test(soru);
   // Kesme işaretinden sonrası ek: "print'in" -> "print"
-  const temiz = soru.replace(/['’][\p{L}]+/gu, '');
+  const temiz = soru.replace(/(?<=[\p{L}\p{N}])['’][\p{L}]+/gu, '');
   const kelimeler = adaylar(temiz).filter((w) => !DOLGU.has(sadelestir(w)));
   // Kalıp yoksa yalnızca tek kelimelik sorularda ("yazdır", "print") sözlüğe bakılır.
   if (!kaliptaMi && kelimeler.length !== 1) return null;
@@ -432,28 +457,57 @@ export type OncekiKonu = { soru: string; id?: string };
 export function baglamliCevap(soru: string, onceki: OncekiKonu | null, bilgi: KodiBilgi[], d: SozlukDizini | null,
   bd?: BolumDizini | null)
   : (KodiCevap & { id?: string; baglamdan?: boolean }) | null {
+  if (onceki?.id) {
+    const b = bilgi.find((x) => x.id === onceki.id);
+    const sade = sadelestir(soru);
+    if (b?.cevaplar?.length && TEKRAR.test(sade) && sade.split(' ').length <= 6) return { ...maddeCevabi(b), baglamdan: true };
+  }
   const tek = yerelCevap(soru, bilgi, d, bd);
   if (!onceki) return tek;
   const { takip, gonderme } = takipMi(soru);
   if (!takip) return tek;
+  // Önceki sorudan yalnızca anlamlı sözcükler alınır ("nedir" gibi kalıplar birleşik soruyu sözlük sorusu sanmasın).
+  const oncekiKonu = sadelestir(onceki.soru).split(' ').filter((w) => w.length > 1 && !DOLGU.has(w)).join(' ');
+  const birlikte = yerelCevap(`${oncekiKonu} ${sadelestir(soru)}`, bilgi, d, bd);
+  // Konuya sadık kal: birleşik sorunun maddesi konuyu ADINDA taşıyorsa ("liste" -> liste-cikar, "metin" -> metin-bol)
+  // ve tek başına bulunan taşımıyorsa ("peki bölmek" -> aritmetik), takip sorusu o konunun devamıdır.
+  const konuKokleri = oncekiKonu.split(' ').filter((w) => w.length >= 4).map((w) => w.slice(0, 4));
+  const konudan = (id?: string) => !!id && !id.startsWith('bolum:') && konuKokleri.some((k) => id.split('-').some((x) => x.startsWith(k)));
+  if (birlikte?.id && birlikte.id !== onceki.id && konudan(birlikte.id) && !konudan(tek?.id)) return { ...birlikte, baglamdan: true };
   if (tek && !gonderme) {
     // Tek başına güçlü bir eşleşme varsa (ör. "peki döngü nedir") konu değişmiştir.
     const es = bilgiBul(soru, bilgi, d);
     if (es && es.kapsam >= 0.99) return tek;
   }
-  // Önceki sorudan yalnızca anlamlı sözcükler alınır ("nedir" gibi kalıplar birleşik soruyu sözlük sorusu sanmasın).
-  const oncekiKonu = sadelestir(onceki.soru).split(' ').filter((w) => w.length > 1 && !DOLGU.has(w)).join(' ');
-  const birlikte = yerelCevap(`${oncekiKonu} ${sadelestir(soru)}`, bilgi, d, bd);
   // Birleşik soru aynı cevaba dönüyorsa ve tek başına bir cevap varsa, yeni bilgi verilir.
   if (birlikte && birlikte.id && birlikte.id === onceki.id && tek && tek.id !== onceki.id) return tek;
   if (birlikte) return { ...birlikte, baglamdan: true };
   return tek;
 }
 
+/** Alternatifli maddelerde (şaka, bilmece...) her soruluşta sıradaki cevap verilir. */
+const siradaki = new Map<string, number>();
+export function maddeCevabi(b: KodiBilgi): KodiCevap & { id: string } {
+  let metin = b.cevap;
+  if (b.cevaplar?.length) {
+    const hepsi = [b.cevap, ...b.cevaplar];
+    const i = siradaki.get(b.id) ?? 0;
+    metin = hepsi[i % hepsi.length];
+    siradaki.set(b.id, i + 1);
+  }
+  return { id: b.id, metin, kod: b.kod, linkler: b.linkler };
+}
+/** Sıra başa alınır (deneme araçları ve yeni sohbet için). */
+export const siraSifirla = () => siradaki.clear();
+
+/** "bir tane daha", "başka", "yine": önceki maddenin sıradaki cevabı istenir. */
+const TEKRAR = /^(?:peki\s+|hadi\s+|ya\s+)?(?:bir\s+(?:tane\s+)?daha|bi\s+(?:tane\s+)?daha|baska(?:\s+bir)?(?:\s+tane)?|daha\s+(?:var\s+mi|anlat|soyle|yap)|yine|tekrar|bir\s+daha|devam|bir\s+tane\s+daha)\b/;
+
 export const SOZLUK_ONCELIK = { kalip: 9, normal: 6 };
 
 export function yerelCevap(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | null, bd?: BolumDizini | null)
   : (KodiCevap & { id?: string }) | null {
+  soru = isaretleriCevir(soru);
   const r = hazirCevap(soru, bilgi, d);
   if (!bd) return r;
   // Belge bölümleri: hazır cevap yoksa ya da bir bölüm belirgin biçimde daha iyi eşleşiyorsa.
@@ -471,12 +525,13 @@ export function yerelCevap(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | n
 /** Hazır bilgi + sözlükten cevap (belge bölümleri olmadan). */
 function hazirCevap(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | null): (KodiCevap & { id?: string }) | null {
   const es = bilgiBul(soru, bilgi, d);
-  const kayit = (b: KodiBilgi) => ({ id: b.id, metin: b.cevap, kod: b.kod, linkler: b.linkler });
+  const kayit = maddeCevabi;
   const kavram = es && es.bilgi.tur === 'kavram';
   const sz = d ? sozlukCevabi(soru, d) : null;
   if (SOZLUK_KALIBI.test(soru)) {
     // "döngü nedir", "set nedir" -> örnekli kavram anlatımı; "print'in Türkçesi" -> sözlük.
-    if (kavram && es.puan >= SOZLUK_ONCELIK.kalip) return kayit(es.bilgi);
+    // "döngü nedir", "TabError ne demek": örnekli kavram ya da hata maddesi sözlük cevabından zengindir
+    if ((kavram || es?.bilgi.tur === 'hata') && es && es.puan >= SOZLUK_ONCELIK.kalip) return kayit(es.bilgi);
     if (sz) return sz;
     return es ? kayit(es.bilgi) : null;
   }
