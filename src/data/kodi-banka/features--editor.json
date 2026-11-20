@@ -1,0 +1,230 @@
+{
+  "sayfa": "/features/editor/",
+  "bolumler": {
+    "": {
+      "baslik": "Kod Editörü",
+      "s": [
+        "TürKod'un kod editörü neler yapabiliyor",
+        "editörün özellikleri neler",
+        "kod yazdığım ekran bana nasıl yardım ediyor",
+        "editördeki noktalar ne işe yarıyor",
+        "satır numaralarının yanındaki küçük oklar ne",
+        "yazarken hatamı gösteriyor mu",
+        "turkod editoru ne ise yarar",
+        "kod yazma alanı tanıtım",
+        "kodlar neden renkli görünüyor ve o dikey çizgiler ne",
+        "TürKod editörü Türkçe komutları tanıyor mu",
+        "programı kapatınca kaldığım yerden devam edebilir miyim editörde",
+        "öğrencilerime TürKod'un kod yazma penceresini tanıtacağım, hangi özellikleri var kısaca anlatır mısın",
+        "editor ozellikleri turkod"
+      ],
+      "c": "TürKod'un editörü Türkçe kod yazmak için tasarlandı: komutları tanır, sen yazarken hataları gösterir ve kaldığın yerden devam etmeni sağlar. Ayrıca renkli yazım, boşlukları gösteren noktalar, girinti kılavuz çizgileri ve blokları katlamak için ▼ okları vardır."
+    },
+    "otomatik-tamamlama": {
+      "baslik": "Otomatik tamamlama",
+      "s": [
+        "otomatik tamamlama nasıl çalışıyor",
+        "yazarken çıkan öneri listesi nedir",
+        "kelimenin başını yazınca açılan liste ne",
+        "önerilerin yanındaki raptiye ve kitap işareti ne demek",
+        "📌 ve 📚 simgeleri ne anlama geliyor",
+        "öneriyi nasıl kabul ederim",
+        "öneri listesini nasıl kapatırım",
+        "yazarken sürekli çıkan öneri kutusunu kapatmak istiyorum",
+        "otomatik tamamlamayı kapatma",
+        "kendi değişken adlarım öneride çıkıyor mu",
+        "oneriler cikmiyo kac harf yazmam lazim",
+        "otomatik tamamlama kapatma ayarlar",
+        "autocomplete turkodda var mı",
+        "ha yazınca önce kendi fonksiyonum mu yoksa sözlükteki kelimeler mi çıkıyor, sıralama nasıl"
+      ],
+      "c": "Bir kelimenin ilk iki harfini yazıp kısa bir süre beklersen öneri listesi açılır. 📌 işaretliler senin kodundaki adlardır ve başta çıkar, 📚 işaretliler TürKod sözlüğündeki 2.500'den fazla kelimedendir. ↑ / ↓ ile seçer, Tab ya da Enter ile kabul eder, Esc ile kapatırsın. İstersen Ayarlar'daki Otomatik Tamamlama seçeneğiyle tamamen kapatabilirsin."
+    },
+    "hayalet-kod": {
+      "baslik": "Hayalet kod",
+      "s": [
+        "hayalet kod nedir",
+        "imlecin arkasında çıkan gri eğik yazı ne",
+        "yapay zeka kod önerisi nasıl açılır",
+        "gri öneriyi nasıl kabul ederim",
+        "hayalet koddan sadece bir kelime almak istiyorum",
+        "beklemeden yapay zekadan öneri nasıl isterim",
+        "Ctrl+Shift+Boşluk ne işe yarar",
+        "hayalet kodu nasıl kapatırım",
+        "yapay zeka bana python mu önerir türkod mu",
+        "ai kod tamamlama turkod",
+        "hayalet kod cikmiyo ne yapmam lazim",
+        "copilot gibi bir özellik var mı TürKod'da",
+        "yazmayı bırakınca kodumun devamını tahmin eden bir şey görmek istiyorum, Ayarlar'da ne yapmalıyım"
+      ],
+      "c": "Ayarlar'da bir yapay zekâ modelini Otomatik tamamlama (hayalet kod) görevine atarsan, yazmayı bıraktığında imlecin arkasında gri, eğik bir öneri belirir. Tab tamamını, Ctrl+→ bir kelimesini kabul eder, Esc kapatır; Ctrl+Shift+Boşluk ile beklemeden öneri isteyebilirsin. Öneri her zaman TürKod olarak gelir."
+    },
+    "canlı-sözdizimi-denetimi": {
+      "baslik": "Canlı sözdizimi denetimi",
+      "s": [
+        "canlı sözdizimi denetimi nedir",
+        "alttaki durum çubuğunda Sözdizimi doğru yazıyor, ne demek",
+        "satırım kırmızı oldu neden",
+        "Satır 1: ':' bekleniyor hatası ne demek",
+        "kodumdaki yazım hatasını nerede görürüm",
+        "sarı ⚠ uyarısı ne anlama geliyor",
+        "toplam diye değişken yapınca uyarı çıktı neden",
+        "bir TürKod komutunu değişken adı yaparsam ne olur",
+        "kapatılmamış f-string var hatası",
+        "kod calismadan hatayi gosteriyo mu",
+        "syntax hatası kontrolü turkod",
+        "uyarı çıkınca kodum yine çalışır mı",
+        "kod yazarken hata kontrolü ne zaman yapılıyor, yazmayı bırakınca mı her tuşta mı"
+      ],
+      "c": "Yazmayı bıraktıktan kısa süre sonra kodun denetlenir ve sonuç alttaki durum çubuğunda görünür. Her şey yolundaysa ✓ Sözdizimi doğru yazar; hata varsa kırmızıyla satır numarası ve Türkçe açıklama çıkar, hatalı satır da kırmızı vurgulanır. ⚠ uyarısı örneğin toplam gibi bir komutu değişken adı yaptığında çıkar; kod yine çalışır ama o komutu artık kullanamazsın."
+    },
+    "renkli-yazım": {
+      "baslik": "Renkli yazım",
+      "s": [
+        "kodlar neden farklı renklerde",
+        "renkli yazım nedir",
+        "kelimelerin renkleri ne anlama geliyor",
+        "yorumlar ve metinler neden başka renkte",
+        "syntax highlighting turkod",
+        "renkleri değiştirebilir miyim",
+        "tema değiştirince kod renkleri değişir mi",
+        "kodum neden rengarenk görünüyor",
+        "renkli yazim nasil calisiyo",
+        "sayılar ve komutlar aynı renk mi",
+        "editörde hangi şeyler ayrı renkle gösteriliyor, örneğin modül adları da mı"
+      ],
+      "c": "Komutlar, yerleşik fonksiyonlar, modül adları, metinler, sayılar ve yorumlar editörde farklı renklerle gösterilir; böylece kodunu daha kolay okursun. Renkler seçtiğin temaya göre değişir."
+    },
+    "akıllı-girinti-parantez-ve-tırnaklar": {
+      "baslik": "Akıllı girinti, parantez ve tırnaklar",
+      "s": [
+        "iki nokta ile biten satırda Enter'a basınca neden içeriden başlıyor",
+        "otomatik girinti nasıl çalışıyor",
+        "parantez açınca kendiliğinden kapanıyor, neden",
+        "tırnak açınca ikinci tırnak kendi geliyor",
+        "seçtiğim yazıyı tırnak içine nasıl alırım",
+        "Ctrl+\" ne işe yarar",
+        "bir kelimeyi seçip parantez yazınca ne olur",
+        "Türkçe Q klavyede köşeli parantez yazabiliyor muyum",
+        "AltGr ile süslü parantez yazamıyorum",
+        "parantezler otomatik kapaniyo nasil",
+        "auto indent ve auto close bracket var mı",
+        "eğer satırından sonra alt satır kendiliğinden içeride başlıyor, bu normal mi"
+      ],
+      "c": "Evet, : ile biten bir satırda Enter'a basınca alt satır kendiliğinden bir kademe içeriden başlar. ( [ { \" ' karakterleri otomatik kapanır; bir metni seçip ( veya \" yazarsan seçim parantez ya da tırnak içine alınır, Ctrl+\" ise seçimi doğrudan tırnağa alır. Türkçe Q klavyede AltGr ile yazılan | [ ] { } da sorunsuz çalışır."
+    },
+    "kod-katlama-ve-kılavuz-çizgileri": {
+      "baslik": "Kod katlama ve kılavuz çizgileri",
+      "s": [
+        "kod katlama nasıl yapılır",
+        "bir fonksiyonu nasıl gizleyip açarım",
+        "satır numaralarının yanındaki ▼ oklar ne",
+        "uzun bir döngüyü kapatıp küçültmek istiyorum",
+        "kodun içindeki dikey çizgiler ne",
+        "girinti kılavuzları ne işe yarar",
+        "boşluk göstergesi nedir",
+        "editörde noktalar ve oklar görünüyor neden",
+        "girinti hatamı bulamıyorum, boşlukları nasıl görürüm",
+        "kod katlama turkod",
+        "bosluklar nokta olarak gorunuyo",
+        "sekme ile boşluğu birbirinden nasıl ayırt ederim",
+        "iç içe bloklarda hangi satır hangi bloğa ait anlamak zor, yardımcı bir şey var mı"
+      ],
+      "c": "Satır numaralarının yanındaki ▼ oklara tıklayarak bir fonksiyonu, döngüyü ya da koşulu katlayıp açabilirsin. Girinti Kılavuzları iç içe blokların hizasını gösteren dikey çizgilerdir. Boşluk Göstergesi de boşlukları nokta, sekmeleri ok olarak gösterir; böylece girinti hatalarını daha kolay bulursun."
+    },
+    "bul--değiştir": {
+      "baslik": "Bul / Değiştir",
+      "s": [
+        "kodda kelime nasıl aranır",
+        "bul değiştir nasıl açılır",
+        "Ctrl+F ve Ctrl+H farkı ne",
+        "bir kelimeyi hepsini birden nasıl değiştiririm",
+        "arama kutusundaki Aa, ab ve .* düğmeleri ne",
+        "büyük küçük harfe duyarlı arama",
+        "regex ile arama yapabilir miyim",
+        "sadece tam kelimeyi bulmak istiyorum",
+        "kaç tane eşleşme var nereden görürüm",
+        "arama kutusu kodumun üstünü kapatıyor, taşıyabilir miyim",
+        "tumunu degistir nerde",
+        "find and replace turkod",
+        "değişken adını kodun her yerinde değiştirmek istiyorum, bul değiştir kutusunda tek tek mi tümünü mü seçmeliyim"
+      ],
+      "c": "Ctrl+F Bul, Ctrl+H Bul / Değiştir kutusunu açar. Aa büyük/küçük harf duyarlı, ab tam kelime, .* düzenli ifade araması yapar; ↑ / ↓ ile eşleşmeler arasında gezersin ve kaç eşleşme olduğu altta yazar. Değiştir tek tek, Tümünü Değiştir hepsini birden değiştirir. Kutuyu ⠿ tutamaçtan sürükleyebilir, Esc ile kapatabilirsin."
+    },
+    "satıra-git": {
+      "baslik": "Satıra git",
+      "s": [
+        "belirli bir satıra nasıl giderim",
+        "Ctrl+G ne yapar",
+        "hata mesajında satır 42 yazıyor, oraya nasıl hızlıca giderim",
+        "satır numarasıyla atlama",
+        "uzun kodda 150. satırı bulmak istiyorum",
+        "satira git kisayolu",
+        "go to line turkod",
+        "satıra gidince ekranın neresinde görünür",
+        "hatalı satırı bulmanın en hızlı yolu ne",
+        "satir numarasi yazip gitme",
+        "kodum çok uzun ve aşağı kaydırarak hatalı satırı aramaktan yoruldum, kısa bir yol var mı"
+      ],
+      "c": "Ctrl+G ile Satıra Git penceresini aç, satır numarasını yaz ve Enter'a bas; imleç o satıra gider ve satır ekranın ortasına gelir. Hata mesajındaki satırı bulmanın en hızlı yolu budur."
+    },
+    "yazmayı-hızlandıran-kısayollar": {
+      "baslik": "Yazmayı hızlandıran kısayollar",
+      "s": [
+        "satırı yoruma çevirme kısayolu",
+        "Ctrl+/ ne yapar",
+        "satırı nasıl çoğaltırım",
+        "satırı yukarı aşağı taşıma",
+        "altına boş satır ekleme kısayolu",
+        "yazıyı nasıl büyütürüm editörde",
+        "harfler çok küçük, büyütmek istiyorum",
+        "girintiyi azaltmak için ne yapmalıyım",
+        "Ctrl+Shift+V ne işe yarar",
+        "kisayollar listesi editor",
+        "satir kopyalama kisayolu",
+        "editörde işimi hızlandıracak klavye kısayolları neler, mesela yorum yapma ve satır taşıma",
+        "comment out shortcut turkod"
+      ],
+      "c": "Ctrl+/ satırı yorum yapar ya da yorumu kaldırır, Ctrl+Shift+D satırı çoğaltır, Alt+↑ / Alt+↓ satırı taşır. Ctrl+Enter altına, Ctrl+Shift+Enter üstüne boş satır ekler; Ctrl+Shift+V panodakini alt satıra yapıştırır. Tab / Shift+Tab girintiyi artırır ya da azaltır, Ctrl+= / Ctrl+- (veya Ctrl+fare tekerleği) yazıyı büyütür ya da küçültür."
+    },
+    "sekmeler-ve-oturum": {
+      "baslik": "Sekmeler ve oturum",
+      "s": [
+        "sekmelerin sırasını nasıl değiştiririm",
+        "sekmedeki sarı nokta ne demek",
+        "programı kapatıp açınca dosyalarım geri geliyor mu",
+        "kaydetmediğim yeni sekme kaybolur mu",
+        "son açtığım dosyaları nerede bulurum",
+        "otomatik kaydetme var mı",
+        "otomatik kaydetme kaç saniyede bir kaydediyor",
+        "kaydetmeden kapatırsam ne olur",
+        "hiç dosya açık değilken çıkan ekran ne",
+        "karşılama ekranında neler var",
+        "breakpointlerim kapatıp açınca kalıyor mu",
+        "sekmeler kaydolmuyo program kapaninca",
+        "auto save süresini değiştirebilir miyim",
+        "bilgisayarı kapatmadan önce TürKod'u kaydetmeden kapattım, açık dosyalarım ve yarım kodlarım ne olur"
+      ],
+      "c": "Her dosya ayrı sekmede açılır; sekmeleri sürükleyerek ya da Ctrl+Shift+PageUp/PageDown ile sıralarsın. Kaydedilmemiş sekmede sarı nokta görünür. Programı kapatıp açınca açık dosyaların, kaydedilmemiş yeni sekmelerin, breakpoint'lerin ve çalıştırma argümanların geri gelir. Otomatik Kaydetme açıksa adı olan dosyalar varsayılan 30 sn'de bir (5–600 sn arası ayarlanabilir) kaydedilir."
+    },
+    "gezgin": {
+      "baslik": "Gezgin",
+      "s": [
+        "soldaki GEZGİN paneli ne işe yarar",
+        "klasörümdeki dosyaları nasıl görürüm",
+        "gezginde yeni dosya nasıl oluşturulur",
+        "gezginde dosya adını nasıl değiştiririm",
+        "gezginden sildiğim dosya nereye gidiyor",
+        "USB bellekteki dosyayı silince ne olur",
+        "gezginde PDF'e tıklayınca ne oluyor",
+        "gezgin boş, Klasör Aç düğmesi çıkıyor",
+        "proje klasörumu solda gormek istiyorum",
+        "dosya simgeleri neden farklı",
+        "file explorer turkod",
+        "gezginde sag tik ne yapiyo",
+        "yanlışlıkla gezginden bir dosya sildim, geri getirebilir miyim yoksa tamamen mi gitti"
+      ],
+      "c": "Soldaki GEZGİN paneli açtığın klasörü gösterir; dosyalar türlerine göre simgelerle görünür ve tıklayınca editörde açılır, PDF'ler ayrı sekmede sayfa sayfa açılır. Sağ tık menüsüyle yeni dosya/klasör oluşturabilir, yeniden adlandırabilir ya da silebilirsin. Silinenler Geri Dönüşüm Kutusu'na gider; USB bellek gibi Geri Dönüşüm Kutusu olmayan yerlerde önce sorulur. Klasör açılmamışsa Klasör Aç düğmesi çıkar."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "sayfa": "/features/requirements/",
+  "bolumler": {
+    "": {
+      "baslik": "Gereksinimler",
+      "s": [
+        "turkod için ne gerekiyor",
+        "kurmadan önce neye bakmalıyım",
+        "turkod gereksinimleri",
+        "bilgisayarım turkodu çalıştırır mı",
+        "turkod hangi bilgisayarlarda calisir",
+        "kurulum oncesi kontrol",
+        "system requirements turkod",
+        "TürKod'u kurmadan önce bilgisayarımın uygun olup olmadığını nasıl anlarım?",
+        "minimum gereksinim nedir"
+      ],
+      "c": "TürKod’u kurmadan önce bilgisayarının gereksinimleri karşıladığından emin ol: 64-bit Windows 10 ya da 11 gerekir. Python, yönetici izni ya da ekran kartı gerekmez."
+    },
+    "sistem-gereksinimleri": {
+      "baslik": "Sistem Gereksinimleri",
+      "s": [
+        "turkod windows 7'de çalışır mı",
+        "32 bit bilgisayara kurulur mu",
+        "python kurmam gerekiyor mu",
+        "yönetici izni gerekiyor mu",
+        "ne kadar disk alanı lazım",
+        "internet olmadan kod yazabilir miyim",
+        "ekran kartı şart mı",
+        "mac veya linux'ta çalışır mı",
+        "turkod kac mb",
+        "windows 8.1 destekleniyor mu",
+        "hangi python surumu ile geliyor",
+        "Okuldaki bilgisayarlarda yönetici şifresi yok ve internet çoğu zaman kesik; TürKod'u kurup kod yazabilir miyiz?",
+        "internet ne zaman gerekiyor",
+        "Kurulum dosyası ne kadar, kurulduktan sonra diskte ne kadar yer kaplıyor?"
+      ],
+      "c": "TürKod yalnızca 64-bit (x64) Windows 10 veya 11 için dağıtılır; Windows 8.1 ve eskisi ile 32-bit sistemler desteklenmez. Python gerekmez, kendi Python 3.12 ortamıyla gelir. Yönetici izni de gerekmez. Kurulum dosyası yaklaşık 150 MB, kurulunca yaklaşık 550 MB. Kod yazmak ve çalıştırmak için internet gerekmez; güncelleme, pip yükle ve bulut yapay zekâ için gerekir."
+    },
+    "sistem-türünü-nasıl-kontrol-edersin": {
+      "baslik": "Sistem Türünü Nasıl Kontrol Edersin?",
+      "s": [
+        "bilgisayarım 64 bit mi nasıl anlarım",
+        "sistem türünü nereden görürüm",
+        "32 bit mi 64 bit mi kontrol etme",
+        "x64 tabanlı işlemci ne demek",
+        "windows hakkında sayfası nerede",
+        "64 bitmi nasil bakilir",
+        "sistem turu nerede yaziyor",
+        "check if windows is 64-bit",
+        "TürKod sadece 64-bit diyor ama benim bilgisayarım hangisi bilmiyorum, Windows'ta bunu nereden kontrol ederim?",
+        "ayarlar sistem hakkinda",
+        "gereksinimleri karsiliyorum simdi ne yapayim"
+      ],
+      "c": "Ayarlar uygulamasını aç ve Sistem > Hakkında bölümüne git. Sistem türü satırında “64-bit işletim sistemi, x64 tabanlı işlemci” yazıyorsa hazırsın. Gereksinimleri karşılıyorsan Kurulum sayfasından TürKod’u indirip ilk kodunu yazabilirsin."
+    }
+  }
+}

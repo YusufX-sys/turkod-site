@@ -1,0 +1,102 @@
+{
+  "sayfa": "/features/terminal/",
+  "bolumler": {
+    "": {
+      "baslik": "Terminal ve Paketler",
+      "s": [
+        "terminal nasıl açılır",
+        "alttaki terminal paneli ne işe yarar",
+        "girdi_al sorusuna cevabı nereye yazıyorum",
+        "programım cevap bekliyor nereye yazacağım",
+        "çalışan programı terminalden nasıl durdururum",
+        "terminalde dir cd gibi komutlar çalışır mı",
+        "eski yazdığım komutları nasıl geri getiririm",
+        "terminal çıktısını nasıl kopyalarım",
+        "terminali temizleme",
+        "terminal yazısı çok küçük büyütebilir miyim",
+        "hatayı AI ile açıkla düğmesi nerede",
+        "terminal acilmiyo ctrl j",
+        "program çalışırken kutuda Programa / kabuğa girdi yazıyor, çalışmazken Komut yazıyor, farkı ne"
+      ],
+      "c": "Alttaki TERMİNAL paneli (Ctrl+J) hem çalışan programınla konuşmaya hem komut çalıştırmaya yarar. Program çalışırken yazdıkların programa gider (girdi_al() cevapları), seçim yokken Ctrl+C programı durdurur. Program çalışmıyorken yazdıkların Windows komutu olarak çalışır; ↑ / ↓ son 100 komutu getirir. Başlıkta TürKod Kabuğu, Hatayı AI ile açıkla, Yazıyı Küçült/Büyüt, Tüm çıktıyı kopyala, Temizle ve Kapat düğmeleri var."
+    },
+    "her-sekmenin-kendi-terminali": {
+      "baslik": "Her sekmenin kendi terminali",
+      "s": [
+        "her sekmenin ayrı terminali mi var",
+        "sekme değiştirince terminal kapandı neden",
+        "başka sekmeye geçince terminal çıktım kayboldu mu",
+        "iki programı aynı anda çalıştırabilir miyim",
+        "başka sekmede çalıştıra basınca eski program ne oluyor",
+        "Ayarlar sekmesinde terminal açılmıyor",
+        "cd ile girdiğim klasör diğer sekmede de geçerli mi",
+        "terminale yazdığım program ulaşmıyor, komut olarak çalışıyor",
+        "terminal basliginda baska sekme adi yaziyo",
+        "Ctrl+J bütün terminalleri mi kapatır",
+        "komut gecmisi sekmeye ozel mi",
+        "bir sekmede programım çalışırken başka sekmeye geçip terminale yazınca neden programa gitmiyor"
+      ],
+      "c": "Her sekmenin ayrı terminali vardır; çıktı, komut geçmişi ve cd klasörü o sekmeye aittir. Sekme değiştirince o sekmenin terminali açılmadıysa panel kapanır, geri dönünce eskisi yerinde bekler. Aynı anda tek program çalışabilir: başka sekmedeki program çalışırken yazdıkların ona gitmez, komut olarak çalışır; başka sekmede Çalıştır'a basarsan eski program durdurulur. Ayarlar sekmesinin terminali yoktur."
+    },
+    "türkçe-pip--kütüphane-kurma": {
+      "baslik": "Türkçe pip — kütüphane kurma",
+      "s": [
+        "kütüphane nasıl kurulur",
+        "pandas nasıl yüklerim",
+        "Türkçe pip komutları neler",
+        "kurduğum kütüphaneyi nasıl silerim",
+        "kurulu kütüphaneleri nasıl listelerim",
+        "kütüphaneyi nasıl güncellerim",
+        "gereksinimler.txt dosyasındaki her şeyi nasıl kurarım",
+        "belirli bir sürüm nasıl kurulur",
+        "pip yukle numpy calisir mi turkce harfsiz",
+        "pip install yazınca çalışıyor mu",
+        "kurduğum paketler nereye kaydediliyor",
+        "güncelleme yapınca kütüphanelerim silinir mi",
+        "pip --upgrade türkçesi ne",
+        "oyun yapmak için pygame kurdum, kurulu sürümünü ve nerede durduğunu nasıl görürüm"
+      ],
+      "c": "Terminalde pip yükle pandas ile kurar, pip güncelle ile günceller, pip sil ile kaldırır, pip listele ile kurulu olanları görürsün; sadece pip yazarsan Türkçe yardım çıkar. pip yükle -g gereksinimler.txt dosyadakileri kurar, pip yükle \"pandas==2.2.0\" sürüm belirtir. pip yukle gibi karaktersiz yazım ve pip install da çalışır. Kütüphaneler %LOCALAPPDATA%\\TurKod\\pip_packages içinde saklanır ve güncellemelerde korunur."
+    },
+    "turkod-komutu-komut-satırı": {
+      "baslik": "turkod komutu (komut satırı)",
+      "s": [
+        "komut isteminden TürKod programı nasıl çalıştırılır",
+        "cmd'de turkod komutu tanınmıyor",
+        "TürKod'u PATH'e ekleme",
+        "turkod komutları neler",
+        "turkod --yardim ne gösterir",
+        "komut satırından dosyamın hatası var mı nasıl bakarım",
+        "trpy dosyasını python koduna komutla çevirme",
+        "terminalden exe yapabilir miyim",
+        "trpy dosyasına çift tıklayınca ne olur",
+        "trpy dosyasini duzenlemek icin nasil acarim",
+        "turkod logo komutu",
+        "IDE terminalinde turkod komutu için PATH gerekir mi",
+        "turkod command line usage",
+        "kurulumda PATH seçeneğini işaretlemedim, sonradan turkod komutunu her yerde kullanabilmek için ne yapmalıyım"
+      ],
+      "c": "Kurulumda TürKod'u PATH'e ekle seçeneğini işaretlediysen ya da sonradan Ayarlar → Sistem Entegrasyonu'ndan açtıysan, herhangi bir komut isteminde turkod dosya.trpy ile programını çalıştırabilirsin. IDE terminalinde bunun için PATH gerekmez. turkod --yardim bütün komutları listeler. .trpy'ye çift tıklamak onu çalıştırır, düzenlemek için sağ tıkla → Editör ile aç."
+    },
+    "türkod-kabuğu-ve-türkod-terminali": {
+      "baslik": "TürKod Kabuğu ve TürKod Terminali",
+      "s": [
+        "TürKod Kabuğu nedir",
+        "tek satır kod hemen nasıl denerim",
+        "kabuk nasıl açılır",
+        "TürKod Terminali ne",
+        "Başlat menüsündeki TürKod Terminali programı ne işe yarıyor",
+        "kabukta eğer bloğu nasıl yazarım",
+        "kabuktaki dersler nasıl açılır",
+        "ders 3 örneğini nasıl çalıştırırım",
+        "anlam komutu ne yapar",
+        "print'in türkçesini kabukta nasıl bulurum",
+        "kabuk komutlarinin listesi",
+        "TürKod> yazısı ne demek",
+        "repl turkod",
+        "çocuklarla kısa denemeler yapmak için bir oyun alanı var mı, içinde ders de olsun"
+      ],
+      "c": "TürKod Kabuğu tek satırlık kodları hemen denediğin bir oyun alanıdır; sol şeritteki kabuk düğmesi, Ctrl+Shift+K ya da terminal başlığındaki düğmeyle açılır, Başlat menüsünde de TürKod Terminali olarak durur. TürKod> yanına yazıp Enter'a basınca sonuç gelir; bloklar boş satıra kadar sürer. dersler, ders 3 ve dene 3 ile 10 dersi kullanırsın; anlam yazdır anlamı söyler, yardım tüm komutları listeler."
+    }
+  }
+}

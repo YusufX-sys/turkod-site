@@ -1,0 +1,203 @@
+{
+  "sayfa": "/features/run-debug/",
+  "bolumler": {
+    "kodu-çalıştırma": {
+      "baslik": "Kodu çalıştırma",
+      "s": [
+        "kodumu nasıl çalıştırırım",
+        "programı başlatmak için hangi tuşa basmalıyım",
+        "yeşil üçgen düğmesi ne işe yarıyor",
+        "çalışan programı nasıl durdururum",
+        "Ctrl+R ne yapıyor",
+        "turkodu kullanmak için ayrıca python kurmam lazım mı",
+        "bilgisayarımda python yok, kodlarım yine çalışır mı",
+        "kod calistirma kisayolu ne",
+        "run tuşu nerede",
+        "çalıştır deyince durum çubuğunda Satır 3 diye bir yazı çıktı, bu ne demek",
+        "TürKod kodu çalıştırırken arka planda Python'a mı çeviriyor",
+        "Kodumu yazdım ama nasıl çalıştıracağımı bilmiyorum, araç çubuğunda hangi düğmeye basmam gerekiyor ve durdurmak istersem ne yapmalıyım?"
+      ],
+      "c": "Kodunu Ctrl+R ile ya da araç çubuğundaki yeşil ▶ düğmesiyle çalıştırırsın; kırmızı ⏹ düğmesi durdurur. Kod önce denetlenir, sözdizimi hatası varsa durum çubuğunda Satır N: ... diye görünür. TürKod kodu Python'a çevrilir ve TürKod ile gelen kendi Python'u ile çalışır, yani ayrıca Python kurman gerekmez."
+    },
+    "programa-girdi-verme": {
+      "baslik": "Programa girdi verme",
+      "s": [
+        "girdi_al ile sorduğum soruya cevabı nereye yazacağım",
+        "program benden bir şey istiyor ama nereye yazacağımı bulamıyorum",
+        "kullanıcıdan cevap alınca nereye yazılıyor",
+        "terminaldeki en alttaki kutu ne işe yarar",
+        "input fonksiyonunun cevabını turkodda nereye yazarım",
+        "girdi_al calismiyor cevap yazamiyorum",
+        "terminalde Ctrl+C ne yapar",
+        "çalışan programı klavyeyle nasıl durdururum",
+        "daha önce yazdığım girdiyi tekrar nasıl getiririm",
+        "yukarı ok tuşu terminalde ne yapıyor",
+        "Ctrl+C kopyalamıyor programı durduruyor neden",
+        "Programım girdi_al ile adımı soruyor, terminalde Programa / kabuğa girdi yazan bir kutu var, cevabımı oraya yazıp Enter'a mı basmam gerekiyor?"
+      ],
+      "c": "girdi_al() bir soru sorduğunda terminalin en altındaki kutuda Programa / kabuğa girdi… (Ctrl+C: durdur) yazar; cevabını oraya yazıp Enter'a basarsın. Hiçbir metin seçili değilken terminalde Ctrl+C'ye basarsan çalışan program durur. ↑ / ↓ tuşlarıyla daha önce yazdıklarını geri getirebilirsin."
+    },
+    "programın-çalıştığı-klasör": {
+      "baslik": "Programın çalıştığı klasör",
+      "s": [
+        "program hangi klasörde çalışıyor",
+        "aç(\"notlar.txt\") dosyayı bulamıyor neden",
+        "kodumun yanındaki txt dosyasını nasıl açarım",
+        "kaydetmediğim sekmede yazdığım dosya nereye gidiyor",
+        "kaydedilmemiş sekme geçici klasörde mi çalışır",
+        "başka bir trpy dosyasını içe aktarabilir miyim",
+        "aynı klasördeki başka dosyamı içe_aktar ile kullanmak",
+        "calisma klasoru neresi",
+        "working directory turkodda nerede",
+        "dosya yazdım ama kayboldu nerede",
+        "Kaydetmediğim bir sekmede bir dosyaya veri yazdırdım ama sonra o dosyayı hiçbir yerde bulamadım, kalıcı olması için ne yapmalıyım?"
+      ],
+      "c": "Kaydedilmiş bir dosya kendi klasöründe çalışır; yanındaki dosyaları adıyla açabilir (aç(\"notlar.txt\")) ve aynı klasördeki başka .trpy dosyalarını içe_aktar ile kullanabilirsin. Kaydedilmemiş sekme ise her çalıştırmada geçici bir klasörde çalışır. Kalıcı dosya okuyup yazmak için önce dosyanı kaydet ya da tam yol yaz."
+    },
+    "çalıştırma-argümanları": {
+      "baslik": "Çalıştırma argümanları",
+      "s": [
+        "programa komut satırı argümanı nasıl veririm",
+        "sys.argv turkodda nasıl kullanılır",
+        "Çalıştırma Argümanları menüsü nerede",
+        "programıma başlarken parametre göndermek istiyorum",
+        "argümanları nasıl ayırırım",
+        "içinde boşluk olan argümanı nasıl yazarım",
+        "her sekmeye farklı argüman verebilir miyim",
+        "verdiğim argümanlar kaydediliyor mu",
+        "komut satiri argumani verme",
+        "command line arguments turkod",
+        "Programım sys.argv ile dosya adı bekliyor ama editörden çalıştırınca nasıl argüman verebileceğimi bilmiyorum, nereden ayarlıyorum?"
+      ],
+      "c": "Programın komut satırı argümanı (sys.argv) bekliyorsa Çalıştır → Çalıştırma Argümanları… ile her sekme için ayrı argüman verebilirsin. Argümanları boşlukla ayır, boşluk içeren bir argümanı tırnak içine al. Verdiğin argümanlar sekmeyle birlikte kaydedilir."
+    },
+    "türkçe-çıktı-ve-hata-mesajları": {
+      "baslik": "Türkçe çıktı ve hata mesajları",
+      "s": [
+        "True yerine Doğru mu yazıyor",
+        "listeyi yazdırınca Doğru Yanlış Türkçe mi çıkar",
+        "hata mesajları Türkçe mi",
+        "pygame'in İngilizce uyarıları neden Türkçe görünüyor",
+        "warning yazısı Uyarı diye çıkıyor neden",
+        "Bunu mu demek istediniz yazısı ne demek",
+        "yazdir yerine yazdır yazmasam olur mu",
+        "turkce karakter olmadan yazsam calisir mi",
+        "Program 1 koduyla sonlandı ne demek",
+        "Durduruldu yazısı neden çıkıyor",
+        "Hatayı AI ile açıkla düğmesi ne işe yarar",
+        "None turkodda nasıl görünüyor",
+        "Bir değişken adını yanlış yazdım ve TürKod bana 'Bunu mu demek istediniz' diye başka bir ad önerdi, bu nasıl çalışıyor, hatalar hep Türkçe mi gösteriliyor?"
+      ],
+      "c": "Doğru, Yanlış ve Hiçlik değerleri ekrana Türkçe yazılır, listelerin içinde de. Hatalar Türkçe adı, satır numarası ve açıklamasıyla gösterilir; bir adı yanlış yazarsan TürKod doğrusunu önerir (Bunu mu demek istediniz: 'notlar'?). Birçok kelime Türkçe karaktersiz de tanınır, yazdir da yazdır gibi çalışır. pygame gibi kütüphanelerin İngilizce uyarıları da Türkçeleştirilir."
+    },
+    "sık-görülen-hata-adları": {
+      "baslik": "Sık görülen hata adları",
+      "s": [
+        "Girinti Hatası neden olur",
+        "Veri Tipi Hatası ne demek",
+        "Sıfıra Bölme Hatası aldım",
+        "Liste İndeks Hatası nedir",
+        "Sözlük Anahtar Hatası neden çıkar",
+        "Geçersiz Değer Hatası tamsayı çevirince",
+        "Sonsuz Özyineleme Hatası ne",
+        "Dosya Bulunamadı Hatası çözümü",
+        "SyntaxError turkodda ne diye geçiyor",
+        "TypeError ValueError KeyError türkçe karşılıkları",
+        "metinle sayıyı toplayınca hata veriyor",
+        "ozellik metot bulunamadi hatasi ne demek",
+        "Hataları kendim çözemiyorum, TürKod'da hatayı otomatik bulup düzelten ve nedenini anlatan bir şey var mı?"
+      ],
+      "c": "Sık hatalar şöyle: Sözdizimi Hatası (eksik :, parantez, tırnak), Girinti Hatası (satır başı boşlukları), Tanımsız İsim Hatası (yanlış yazılmış ad), Veri Tipi Hatası (metinle sayıyı toplamak), Geçersiz Değer Hatası (tamsayı(\"abc\")), Sıfıra Bölme, Liste İndeks ve Sözlük Anahtar hataları. Hatalı koddayken Düzelt (sihirli değnek)'e basarsan Akıllı Düzeltme çoğunu düzeltip nedenini anlatır."
+    },
+    "hazır-gelen-kütüphaneler": {
+      "baslik": "Hazır gelen kütüphaneler",
+      "s": [
+        "turkodla hangi kütüphaneler hazır geliyor",
+        "pygame kurmam gerekiyor mu",
+        "turtle kurulu mu",
+        "kaplumbağa kütüphanesi için bir şey yüklemem lazım mı",
+        "tkinter var mı",
+        "Ursina hazır mı geliyor",
+        "SymPy turkodda var mı",
+        "py_oyun nedir",
+        "hazir kutuphaneler neler",
+        "listede olmayan bir kütüphaneyi nasıl kurarım",
+        "Oyun yapmak için pygame ya da 3D için Ursina kullanmak istiyorum, bunları ayrıca indirmem gerekiyor mu yoksa TürKod'la birlikte mi geliyor?"
+      ],
+      "c": "kaplumbağa (turtle), tkinter, py_oyun (pygame), Ursina ve SymPy TürKod kurulumuyla birlikte gelir, ayrıca kurman gerekmez. Bunların dışındaki kütüphaneleri terminalde pip yükle ile kurabilirsin."
+    },
+    "hata-ayıklayıcı-debug": {
+      "baslik": "Hata ayıklayıcı (Debug)",
+      "s": [
+        "hata ayıklayıcı ne işe yarar",
+        "debugger var mı turkodda",
+        "kodu satır satır çalıştırabilir miyim",
+        "değişkenlerin o anki değerini nasıl görürüm",
+        "programın adım adım ne yaptığını izlemek istiyorum",
+        "debug ne demek",
+        "hata ayiklama nasil yapilir",
+        "kodum yanlış sonuç veriyor, nerede bozulduğunu nasıl bulurum",
+        "çalışırken değişkenleri görmek",
+        "Kodum hata vermiyor ama yanlış sonuç çıkarıyor, değişkenlerin her satırda ne değer aldığını görebileceğim bir araç var mı?"
+      ],
+      "c": "Hata ayıklayıcıyla kodunu satır satır çalıştırıp değişkenlerin o anki değerlerini görebilirsin. Böylece programın nerede beklemediğin bir şey yaptığını adım adım izleyerek bulursun."
+    },
+    "kesme-noktası-durma-noktası": {
+      "baslik": "Kesme noktası (durma noktası)",
+      "s": [
+        "kesme noktası nasıl konur",
+        "breakpoint koymak",
+        "F9 ne işe yarar",
+        "satır numarasının yanındaki kırmızı nokta ne",
+        "kesme noktasını nasıl kaldırırım",
+        "koşullu kesme noktası nedir",
+        "sadece belli bir değerde durmasını istiyorum",
+        "döngünün 5. turunda durdurmak istiyorum",
+        "turuncu nokta ne demek",
+        "Shift+F9 ne yapar",
+        "bütün kesme noktalarını tek seferde silmek",
+        "kesme noktalari kaydediliyo mu",
+        "Uzun bir döngüm var ve sadece puan 50'den küçük olduğunda programın durmasını istiyorum, bunu her turda durdurmadan nasıl yaparım?"
+      ],
+      "c": "Satır numarasının soluna tıkla ya da imleç o satırdayken F9'a bas; kırmızı nokta belirir, kaldırmak için tekrar tıkla. Shift+F9 ya da satır numarasına sağ tıkla koşullu kesme noktası koyarsın: yalnızca koşul (ör. puan < 50) doğruyken durur, Kaçıncı geçişte durulsun? kutusuyla da belli bir geçişte durdurabilirsin; turuncu görünür. Hepsini Çalıştır → Tüm Kesme Noktalarını Kaldır ile silersin."
+    },
+    "hata-ayıklamayı-başlatma-ve-ilerleme": {
+      "baslik": "Hata ayıklamayı başlatma ve ilerleme",
+      "s": [
+        "hata ayıklamayı nasıl başlatırım",
+        "uğur böceği düğmesi ne",
+        "F5 ne yapar",
+        "F10 ile F11 farkı ne",
+        "Adım At ile İçine Gir arasındaki fark",
+        "fonksiyonun içine girmeden sonraki satıra geçmek",
+        "fonksiyondan nasıl çıkarım debugda",
+        "Shift+F11 ne işe yarar",
+        "hata ayıklamayı nasıl bitiririm",
+        "step over step into turkodda",
+        "imlecin olduğu satıra kadar çalıştırmak",
+        "kesme noktası koymadan ilk satırdan adım adım başlamak",
+        "Hata ayıklamayı başlattım, program sarı bir satırda durdu; şimdi bir sonraki satıra geçmek ya da çağrılan fonksiyonun içine girmek için hangi tuşları kullanmalıyım?"
+      ],
+      "c": "F5 ya da turuncu Hata Ayıkla (uğur böceği) düğmesi başlatır; program ilk kesme noktasında durur ve o satır sarıyla vurgulanır. F5 devam eder, F6 duraklatır, F10 (Adım At) fonksiyona girmeden sonraki satıra geçer, F11 (İçine Gir) fonksiyonun içine girer, Shift+F11 dışına çıkar, Shift+F5 bitirir. Başlamadan F10/F11 ilk satırda durarak başlatır; Ctrl+F10 imlece kadar çalıştırır."
+    },
+    "panelde-neler-var": {
+      "baslik": "Panelde neler var?",
+      "s": [
+        "hata ayıklama panelinde neler var",
+        "yerel ve küresel değişkenler ne demek",
+        "listenin içini debug panelinde nasıl açarım",
+        "ifade kutusu ne işe yarar",
+        "izleme listesine nasıl ifade eklerim",
+        "göz simgesi ne yapıyor",
+        "çağrı yığını nedir",
+        "call stack turkodda nerede",
+        "program dururken değişkenin değerini değiştirebilir miyim",
+        "kalem simgesi ne",
+        "paneli nasıl küçültürüm",
+        "satir numaralari kapali kesme noktasi koyamiyorum",
+        "Program kesme noktasında durduğunda puan * 2 gibi bir hesabın o anki sonucunu görmek ve bunu her adımda takip etmek istiyorum, nasıl yaparım?"
+      ],
+      "c": "Panelde nerede ve neden durulduğu, YEREL DEĞİŞKENLER, KÜRESEL DEĞİŞKENLER (Türkçe türleriyle, oklarla içleri açılır) ve ÇAĞRI YIĞINI vardır. İfade (Enter: değerlendir) kutusuna puan * 2 gibi bir ifade yazıp Enter'a basarsın; 👁 ile İZLEME listesine eklersen her adımda yenilenir. Kalem simgesiyle değişkene yeni değer verebilirsin. Kesme noktası için Ayarlar → Satır Numaraları açık olmalı."
+    }
+  }
+}

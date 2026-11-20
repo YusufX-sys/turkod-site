@@ -1,0 +1,115 @@
+{
+  "sayfa": "/features/exe/",
+  "bolumler": {
+    "": {
+      "baslik": "EXE'ye Dönüştür",
+      "s": [
+        "programımı exe yapabilir miyim",
+        "arkadaşımın bilgisayarında TürKod yok oyunumu nasıl gösteririm",
+        "exe nedir",
+        "türkod kodunu exeye çevirmek",
+        "oyunumu başkasına göndermek",
+        "turkod olmadan programim calisir mi",
+        "çift tıklayınca açılan dosya yapmak",
+        "exe dosyasının içinde neler var",
+        "yaptığım oyunu TürKod kurulu olmayan bir bilgisayarda çalıştırmak istiyorum, bu mümkün mü",
+        "programi exe yapma",
+        "uygulama dosyası oluşturmak",
+        "kodumu paylaşılabilir program yapmak"
+      ],
+      "c": "Evet, TürKod programını bir EXE dosyasına dönüştürebilir. EXE, Windows'ta çift tıklanınca çalışan dosyadır; içine programın ve onu çalıştıracak her şey konur. Böylece arkadaşının bilgisayarında TürKod olmasa da oyununu çalıştırabilir."
+    },
+    "menüden": {
+      "baslik": "Menüden",
+      "s": [
+        "exe'ye dönüştür menüsü nerede",
+        "menüden exe nasıl yapılır",
+        "exe yapma adımları",
+        "EXE'ye Dönüştür düğmesine bastım ne kadar sürer",
+        "exe yapmadan önce kaydetmem gerekir mi",
+        "exe nereye kaydediliyor nasıl seçerim",
+        "exe donusturme nerde",
+        "Çalıştır menüsünde exe",
+        "exe derleme komutu nerede çalışıyor",
+        "kodumu yazdım, şimdi menüleri kullanarak adım adım EXE'ye nasıl çeviririm",
+        "exeye ad vermek",
+        "exe olusturma menusu"
+      ],
+      "c": "Önce programını kaydet. Sonra Çalıştır → EXE'ye Dönüştür… menüsünü aç; EXE'ye bir ad ver, kaydedileceği klasörü seç ve programın nasıl açılacağını işaretle. EXE'ye Dönüştür düğmesine bas; komut sekmenin terminalinde çalışır ve birkaç dakika sonra EXE hazır olur."
+    },
+    "seçenekler": {
+      "baslik": "Seçenekler",
+      "s": [
+        "exe simge değiştirme",
+        "exe'ye resim ve ses dosyası eklemek",
+        "terminal penceresi olmadan exe",
+        "exe açılınca hemen kapanıyor",
+        "--klasorlu ne işe yarar",
+        "tek dosya mı klasör mü seçmeliyim",
+        "windows konsolu ile türkod terminali farkı",
+        "girdi_al kullanan programda terminal olmadan seçersem ne olur",
+        "exe adını boş bırakırsam ne olur",
+        "kaplumbağa çizimi exe yapınca siyah pencere çıkmasın",
+        "exe ikon ekleme",
+        "Çalışacak komut kutusu ne",
+        "program bitince pencere kapaniyo sonucu goremiyorum",
+        "oyunumda resimler var, EXE yaptığımda resimlerin de içinde olması için hangi seçeneği kullanmalıyım"
+      ],
+      "c": "Her seçeneğin bir komut karşılığı var; tik attıkça Çalışacak komut kutusu değişir. Simge (--simge) EXE'nin simgesini, Dosya ekle (--dosya-ekle) resim ve ses dosyalarını belirler. Açılış biçimi TürKod terminalinde (varsayılan), Windows konsolunda ya da Terminal olmadan olabilir; Program bitince pencere kapanmasın konsolu açık tutar. girdi_al kullanıyorsan Terminal olmadan'ı seçme, cevap yazılacak yer olmaz."
+    },
+    "komutla-turkod-exe_yap": {
+      "baslik": "Komutla: turkod exe_yap",
+      "s": [
+        "komutla exe nasıl yapılır",
+        "turkod exe_yap nasıl kullanılır",
+        "exe_yap seçeneklerini nasıl görürüm",
+        "turkod exe_yap --yardim",
+        "terminalden exe yapmak",
+        "TürKod Kabuğu'nda turkod yazmak gerekir mi",
+        "exe yap komutu calismiyo komut isteminde",
+        "herhangi bir komut isteminde turkod komutu",
+        "exe_yap çıktısında Hazır yazınca bitti mi",
+        "sayi_tahmin.trpy dosyasını Sayı Tahmin Oyunu adıyla tek komutta EXE yapmak istiyorum",
+        "command line exe turkod",
+        "exe yap komutu"
+      ],
+      "c": "Aynı işi IDE terminalinde, TürKod Terminali'nde ya da PATH'e eklediysen herhangi bir komut isteminde tek komutla yapabilirsin: turkod exe_yap dosya.trpy ardından --ad, --kaynak-acik gibi seçenekler. TürKod Kabuğu'nda baştaki turkod kelimesini yazmasan da olur. Bütün seçenekleri görmek için turkod exe_yap --yardim yaz; [EXE] Hazır! satırını görünce EXE hazırdır."
+    },
+    "exenin-kaynak-kodunu-görmek": {
+      "baslik": "EXE’nin kaynak kodunu görmek",
+      "s": [
+        "exe'nin içindeki kodu görebilir miyim",
+        "exe kaynak kodunu açmak",
+        "turkod kaynak komutu ne yapar",
+        "Bu programın kaynak kodu gizli diyor",
+        "exeden trpy dosyası çıkarmak",
+        "kaynak kodu düğmesi nerede",
+        "kodumu kaybettim ama exe duruyor, kodu geri alabilir miyim",
+        "exe kaynagina bakarken program calisir mi",
+        "--kaydet ne işe yarar",
+        "EXE'nin Kaynak Kodunu Aç menüsü",
+        "kodumu başkaları görmesin istiyorum",
+        "exe kodu gizleme"
+      ],
+      "c": "Kaynak koduna bakılabilsin (--kaynak-acik) işaretliyse kodu üç yoldan görürsün: EXE'nin TürKod terminali penceresindeki Kaynak kodu düğmesi, Çalıştır → EXE'nin Kaynak Kodunu Aç… ya da terminalde turkod kaynak komutu. Sonuna --kaydet eklersen kod .trpy dosyasına kaydedilir; bakarken EXE çalıştırılmaz. Seçenek işaretli değilse EXE \"Bu programın kaynak kodu gizli\" der, içinde yalnızca derlenmiş hâli olur."
+    },
+    "bilmen-gerekenler": {
+      "baslik": "Bilmen gerekenler",
+      "s": [
+        "exe yapmak için internet gerekir mi",
+        "ilk exe neden uzun sürüyor",
+        "PyInstaller nedir kurmam gerekir mi",
+        "exe arkadaşımın bilgisayarında resimleri bulamıyor",
+        "[UYARI] satırı ne demek exe yaparken",
+        "exe hata mesajları türkçe mi",
+        "pygame hataları türkçe görünür mü",
+        "derlemeyi yarıda kestim eski exe bozulur mu",
+        "aynı adlı exe varsa üzerine yazar mı",
+        "ilk exe cok yavas oldu",
+        "exe yaparken internetim yoktu, ilk seferde ne olur",
+        "ursina iletileri türkçe mi"
+      ],
+      "c": "İlk seferde internet gerekir: EXE yapma aracı PyInstaller ilk kullanımda kendiliğinden indirilip kurulur, bu yüzden ilk EXE biraz uzun sürer. Resim ve sesleri --dosya-ekle ile koy, yoksa başka bilgisayarda bulunamazlar; eklenmemiş dosyalar için TürKod [UYARI] yazar. İletiler ve hata izleri Türkçe görünür. Yarıda kesilen derleme eski EXE'yi bozmaz, TürKod başka bir EXE'nin üzerine yazmaz, seni uyarır."
+    }
+  }
+}

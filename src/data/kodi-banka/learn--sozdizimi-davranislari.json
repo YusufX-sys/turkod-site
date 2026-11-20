@@ -1,0 +1,209 @@
+{
+  "sayfa": "/learn/sozdizimi-davranislari/",
+  "bolumler": {
+    "": {
+      "baslik": "Sözdizimi Davranışları",
+      "s": [
+        "sözdizimi davranışları ne demek",
+        "sözlükte yazmayan özel kurallar nereden geliyor",
+        "TurKod_Sozluk.txt dosyasında olmayan kurallar var mı",
+        "converter.py ne iş yapıyor",
+        "çevirici bazı kelimeleri neden sözlükten farklı çeviriyor",
+        "sozlukte olmayan kurallar nerden cikiyo",
+        "turkod kodumu pythona çevirirken özel durumlar var mı",
+        "bazı kelimeler sözlüğe göre değil de başka türlü davranıyor, bunun sebebi ne",
+        "çeviricinin özel işleme mantığı nedir",
+        "turkodun gizli kurallari neler",
+        "sözlüğe baktım ama döngü kelimesinin iki farklı karşılığı yazmıyor, bu kurallar nerede anlatılıyor",
+        "türkod çevirici özel durumlar"
+      ],
+      "c": "Bu kurallar TurKod_Sozluk.txt sözlüğünde yazmaz; kodunu Python'a çeviren converter.py içindeki özel işleme mantığından gelir. Yani bazı kelimeler, sözlükteki tek karşılıktan farklı olarak, yazıldıkları yere ve devamındaki yapıya göre davranır. Örneğin döngü ve için, ise, rezerve kelimeler ve f-string içindeki ifadeler bu özel kurallara uyar."
+    },
+    "döngü--için": {
+      "baslik": "döngü / için",
+      "s": [
+        "döngü ile için arasındaki fark ne",
+        "döngü kelimesi for mu while mı",
+        "turkodda while döngüsü nasıl yazılır",
+        "için kelimesi neye dönüşüyor",
+        "dongu ve icin ayni sey mi",
+        "bir koşul doğru olduğu sürece tekrar eden döngü nasıl yazarım",
+        "liste elemanlarını tek tek dolaşmak",
+        "pythondaki for i in range turkodda nasıl",
+        "döngü sayac < 3 yazınca ne oluyor",
+        "için i aralık(3) neyi yazdırır",
+        "döngüden sonra koşul yazarsam while gibi mi çalışır, içinde yazarsam for gibi mi",
+        "meyveler listesindeki her meyveyi ekrana yazdırmak istiyorum, hangi kelimeyi kullanmalıyım",
+        "dongu icinde yazinca for mu oluyo"
+      ],
+      "c": "döngü ve için kelimeleri devamındaki yapıya göre farklı Python koduna dönüşür. için i aralık(3): gibi bir yazım for gibi davranır, döngü sayac < 3: gibi bir koşulla yazarsan while gibi davranır. Bir listeyi dolaşmak için de için m içinde meyveler: yazabilirsin; her elemanı sırayla alır."
+    },
+    "ise": {
+      "baslik": "ise",
+      "s": [
+        "ise kelimesi ne işe yarar",
+        "eğer yas 18 ise ne demek",
+        "ise ile == aynı şey mi",
+        "eğer sayi ise yazınca koşul neden çalışmıyor",
+        "eger hazir ise nasil calisiyo",
+        "değil ise nasıl kullanılır",
+        "eğer renk mavi ise yazınca sözdizimi hatası alıyorum",
+        "ise ile metin karşılaştırma",
+        "eğer yas >= 18 ise neden hata veriyor",
+        "if not hazir turkodda nasıl yazılır",
+        "tek değişkenle ise kullanınca arka planda neye dönüşüyor",
+        "sayi = 5 iken eğer sayi ise koşulu neden sağlanmıyor, Doğru olması gerekmez mi",
+        "ise yerine ne kullanmalıyım emin değilim",
+        "ise sonrasına hangi değerler yazılabilir"
+      ],
+      "c": "ise bir karşılaştırma operatörü gibi davranır: eğer yas 18 ise: arka planda eğer yas == 18: olur. Tek değişkenle yazarsan == Doğru karşılaştırmasına dönüşür, bu yüzden yalnızca Doğru/Yanlış değerli değişkenlerle kullan; değil ise de if not olur. A B ise: biçiminde B yalnızca bir isim ya da pozitif sayı olabilir; metinde ise'yi araya yaz. Emin değilsen == kullan, her durumda çalışır."
+    },
+    "rezerve-kelimeler": {
+      "baslik": "Rezerve kelimeler",
+      "s": [
+        "komut olan bir kelimeyi değişken adı yapabilir miyim",
+        "toplam = 0 yazınca toplam(liste) neden çalışmıyor",
+        "kalan diye değişken açabilir miyim",
+        "değişkene metin adını verdim, metin(5) bozuldu",
+        "rezerve kelime nedir",
+        "degisken adi olarak liste kullanilir mi",
+        "bir kelimeye değer atayınca neden komut anlamı kayboluyor",
+        "parametre adını metin koydum başka yerde hata alıyorum",
+        "yerleşik fonksiyon adını değişken yapmak sorun olur mu",
+        "uzunluk diye değişken yaptım sonra uzunluk() çalışmadı, ne yapmalıyım",
+        "değişkenlere hangi adları vermemeliyim",
+        "sum fonksiyonu çevrilmiyor neden",
+        "toplam degiskeni yuzunden toplam komutu calismiyo"
+      ],
+      "c": "Evet, kalan, bul, durum, toplam gibi sözlükte karşılığı olan bir kelimeyi değişken adı yapabilirsin. Ama dosyanın herhangi bir yerinde ona değer atarsan, o dosyanın tamamında komut anlamı kalmaz; örneğin toplam = 0 yazdıktan sonra toplam(liste) artık sum olarak çevrilmez. liste, metin, sözlük, küme, toplam, uzunluk yerine metin_degeri, sayilar gibi adlar seç."
+    },
+    "adlı-değerler-ve-özellikler": {
+      "baslik": "Adlı değerler ve özellikler",
+      "s": [
+        "sözlük(renk=\"mavi\") neden color olarak çıkıyor",
+        "ad=değer yazınca adlar çevriliyor mu",
+        "nesne.ad biçimindeki kelimeler İngilizceye çevrilir mi",
+        "sozluk anahtarim ingilizceye donmus",
+        "kendisi.renk gibi özellikler korunuyor mu",
+        "kendi fonksiyonumun parametre adları değişir mi",
+        "sözlük anahtarlarını nasıl yazmalıyım",
+        "keyword argument turkodda çevriliyor mu",
+        "renk anahtarı çıktıda color olarak göründü, Türkçe kalması için ne yapayım",
+        "adlı parametre çevirisi",
+        "sözlük anahtarı tırnaklı mı yazılmalı",
+        "fonksiyona isimli değer verince sözlükteki karşılığı varsa ne olur"
+      ],
+      "c": "Fonksiyona ad=değer biçiminde verdiğin ya da nesne.ad biçiminde yazdığın kelimelerin sözlükte karşılığı varsa İngilizceye çevrilir; bu yüzden sözlük(renk=\"mavi\") çıktısı {'color': 'mavi'} olur. Kendi fonksiyonunun parametre adları ve kendisi.renk gibi sınıf özellikleri korunur. Sözlük anahtarlarını her zaman tırnakla yaz: {\"renk\": \"mavi\"}."
+    },
+    "eş-anlamlı-kelimeler": {
+      "baslik": "Eş anlamlı kelimeler",
+      "s": [
+        "aynı işi yapan farklı kelimeler var mı",
+        "en_büyük ile maksimum aynı mı",
+        "biçimle mi biçimlendir mi",
+        "max ve min turkodda nasıl yazılır",
+        "self ve __init__ karşılığı nedir",
+        "ters sıralama nasıl yapılır",
+        "reverse=True turkodda ne",
+        "sırala key parametresi türkçe mi",
+        "from math import sqrt nasıl yazılır",
+        "en_kucuk yerine minimum yazsam olur mu",
+        "isimleri uzunluklarına göre sıralamak istiyorum, sırala içinde ne yazmalıyım",
+        "kendisi ile başlat_özel ne demek",
+        "es anlamli kelimeler hangileri"
+      ],
+      "c": "Evet, bazı işlerin birden çok yazımı var ve hepsi aynı Python koduna dönüşür: en_büyük/maksimum (max), en_küçük/minimum (min), biçimle/biçimlendir (format), için x içinde ya da döngü x içinde (for x in). Ters sıralama için sırala(tersine_çevir=Doğru) yazılır. Sıralama ölçütü key= İngilizce kalır: isimler.sırala(key=uzunluk)."
+    },
+    "türkçe-karşılığı-olmayanlar": {
+      "baslik": "Türkçe karşılığı olmayanlar",
+      "s": [
+        "match case türkçesi var mı",
+        "ord fonksiyonunun türkçesi ne",
+        "AssertionError nasıl yazılır",
+        "Türkçe karşılığı olmayan komutlar hangileri",
+        "PermissionError turkodda ne",
+        "recursionerror turkce nasil yaziliyo",
+        "türkçesi olmayan kelimeleri nasıl yazarım",
+        "match case kullanmak istiyorum ama Türkçe kelime bulamadım",
+        "bazı hata adları neden İngilizce",
+        "turkodda switch case var mı",
+        "ingilizce yazmam gereken komutlar",
+        "ord() turkodda çalışır mı yoksa çevirisi mi var"
+      ],
+      "c": "match/case, ord() ve AssertionError, PermissionError, RecursionError gibi bazı hata adlarının Türkçe karşılığı yok. Bunları Python'daki gibi İngilizce yazman yeterli."
+    },
+    "bilinmeyen-kelime": {
+      "baslik": "Bilinmeyen kelime",
+      "s": [
+        "sözlükte olmayan bir kelime yazarsam ne olur",
+        "Tanımsız İsim Hatası ne demek",
+        "yanlış kelime yazdım ama derleme hata vermedi",
+        "bilinmeyen kelime hata veriyor mu",
+        "hatalar türkçe mi gösteriliyor",
+        "tanimsiz isim hatasi aliyorum",
+        "yazdır(bilinmeyen_kelime_xyz) neden hata veriyor",
+        "hata çevirme anında mı çalıştırma anında mı çıkıyor",
+        "bilinmeyen kelimeler pythona aynen mi geçiyor",
+        "NameError turkodda nasıl görünüyor",
+        "değişken tanımlı değil diyor ne yapmalıyım",
+        "bir kelimeyi yanlış yazmışım, program çalışınca satır numarasıyla hata verdi, bu ne demek"
+      ],
+      "c": "Sözlükte olmayan bir kelime hata vermeden aynen Python koduna geçer. Hata derleme anında değil, çalıştırma anında ortaya çıkar; tanımlanmamış bir ad kullandıysan IDE bunu Türkçe olarak Tanımsız İsim Hatası diye, satır numarası ve açıklamasıyla gösterir."
+    },
+    "metinler-yorumlar-ve-türkçe-karaktersiz-yazım": {
+      "baslik": "Metinler, yorumlar ve Türkçe karaktersiz yazım",
+      "s": [
+        "tırnak içindeki kelimeler çevriliyor mu",
+        "yorum satırları pythona çevrilir mi",
+        "türkçe karakter olmadan yazabilir miyim",
+        "eger yazsam olur mu",
+        "yazdir ile yazdır aynı mı",
+        "klavyemde ğ ş yok ne yapayim",
+        "yazdır(\"eğer yazdır\") ne yazar",
+        "degilse ve gec calisir mi",
+        "metnin içindeki komut kelimeleri bozulur mu",
+        "# ile yazdığım açıklamalar değişir mi",
+        "ingilizce klavye kullanıyorum, Türkçe harfleri yazmadan TürKod kodu yazabilir miyim",
+        "string icindeki turkce kelimeler ingilizceye donuyo mu"
+      ],
+      "c": "Tırnak içindeki metinler ve # ile başlayan yorumlar asla çevrilmez; yazdır(\"eğer yazdır\") ekrana eğer yazdır yazar. Türkçe karakterli kelimeleri Türkçe karakter olmadan da yazabilirsin: eger, yazdir, degilse, gec sırasıyla eğer, yazdır, değilse, geç ile aynıdır."
+    },
+    "modül-içe-aktarma": {
+      "baslik": "Modül içe aktarma",
+      "s": [
+        "turkodda import nasıl yapılır",
+        "içe_aktar matematik olarak m ne demek",
+        "from math import sqrt turkodda",
+        "den kalıbı nasıl yazılır",
+        "ice aktar den sirasi nasil",
+        "modülü kısa adla içe aktarmak",
+        "matematik.karekök(9) çevriliyor mu",
+        "import as turkodda",
+        "bir modülden tek fonksiyon almak istiyorum",
+        "içe_aktar karekök den matematik yazınca sıra neden ters",
+        "matematik modülünden karekök fonksiyonunu alıp kullanmak istiyorum, nasıl yazmalıyım",
+        "kütüphane ekleme turkod",
+        "pi sayısını nasıl kullanırım"
+      ],
+      "c": "içe_aktar matematik olarak m satırı import math as m olur, içe_aktar karekök den matematik ise from math import sqrt olur. Dikkat: den kalıbında sıra Python'un tersidir, önce ne alınacağı sonra modül yazılır. Modül adıyla yazılan fonksiyonlar da çevrilir: matematik.karekök(9) → math.sqrt(9)."
+    },
+    "f-string": {
+      "baslik": "f-string",
+      "s": [
+        "pythondaki f-string turkodda nasıl",
+        "f string içinde türkçe kod yazabilir miyim",
+        "süslü parantez içindeki ifade çevriliyor mu",
+        "metnin içine değişken koymak",
+        "fstring calisiyo mu turkodda",
+        "yazdır(f\"Sonuç: {toplam_deger}\") ne yazar",
+        "f\"\" içindeki {} blokları ne oluyor",
+        "değişkeni yazının arasına nasıl yerleştiririm",
+        "f-string içinde TürKod fonksiyonu kullanırsam Python'a çevrilir mi",
+        "biçimli metin yazmak",
+        "f-string icinde uzunluk yazsam olur mu",
+        "yazdırırken sonucu cümlenin içine koymak istiyorum"
+      ],
+      "c": "f-string içindeki {ifade} blokları da TürKod kodu olarak çevrilir. Yani yazdır(f\"Sonuç: {toplam_deger}\") yazarsan toplam_deger 5 iken ekrana Sonuç: 5 çıkar; süslü parantezlerin içine TürKod ifadeleri yazabilirsin."
+    }
+  }
+}

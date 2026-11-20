@@ -1,0 +1,937 @@
+{
+  "site-kesme-noktasi": [
+    "programın belli bir satırda durmasını nasıl sağlarım",
+    "satırın yanına tıklayınca çıkan kırmızı yuvarlak ne",
+    "kesme noktasi nasil konur",
+    "breakpoint nasıl eklenir turkodda",
+    "koyduğum nokta işe yaramıyor program durmadan bitiyor",
+    "bütün breakpointleri tek seferde silmek istiyorum",
+    "satir numarasinin yanina tiklayinca bisey olmuyo",
+    "duraklama noktası",
+    "kodun ortasında programı bekletip ne olduğuna bakmak istiyorum, bunun için bir yere işaret koymam lazım galiba, nasıl yapılıyor"
+  ],
+  "site-adim-adim": [
+    "kodu tek tek satır satır çalıştırabilir miyim",
+    "debugger var mı",
+    "step over step into turkodda hangi tuş",
+    "fonksiyonun içine girip nasıl ilerlerim",
+    "fonksiyondan dışarı nasıl çıkarım hata ayıklarken",
+    "adim adim calistirma nasil yapilir",
+    "f5 basinca ne oluyo",
+    "hata ayıklayıcı",
+    "programım yanlış sonuç veriyor, her satırda ne olduğunu yavaş yavaş görmek istiyorum, bunu sağlayan bir mod var mı"
+  ],
+  "site-degisken-izle": [
+    "program dururken değişkenin içinde ne var nasıl bakarım",
+    "debug sırasında değişken değerlerini görmek",
+    "watch listesi nerede",
+    "hata ayiklarken degiskenleri nerden gorurum",
+    "bir ifadenin sonucunu çalışırken hesaplatabilir miyim",
+    "göz düğmesi ne işe yarıyor",
+    "değişken takibi",
+    "döngü dönerken sayacımın kaça geldiğini anlık görmek istiyorum, değişkenleri gösteren bir pencere var mı"
+  ],
+  "site-duzelt-yanlis": [
+    "akıllı düzelt kodumu bozdu ne yapacağım",
+    "sihirli değnek yanlış değiştirdi eski haline dönmek istiyorum",
+    "duzelt dugmesi kodumu mahvetti",
+    "düzeltmeyi kabul etmeden önce görebilir miyim",
+    "akıllı düzeltmenin ne değiştirdiğini nasıl görürüm",
+    "smart fix undo",
+    "düzelt önerisini istemiyorum",
+    "duzeltme yaptiktan sonra kod calismaz oldu nasil geri alirim",
+    "düzelt'e bastım rapor çıktı ama önerdiği şey bana mantıklı gelmedi, uygulamazsam bir şey değişir mi"
+  ],
+  "site-hata-turkce": [
+    "hatalar neden ingilizce değil",
+    "syntaxerror yerine neden sözdizimi hatası yazıyor",
+    "türkçe hata mesajı ne işe yarıyor",
+    "hata mesajlari neden turkce yaziyo",
+    "typeerror turkodda ne diye geçiyor",
+    "hata adlarının türkçe olması",
+    "python hatalarını ingilizce görmek istemiyorum, türkod bunları türkçe mi gösteriyor",
+    "hata adlari turkce olunca ne fark ediyor"
+  ],
+  "site-hata-anlamadim": [
+    "kırmızı yazı çıktı ne anlama geliyor",
+    "programım hata verdi ama ne dediğini anlamıyorum",
+    "hata mesajinda ne yaziyo anlamadim",
+    "error mesajı nasıl yorumlanır",
+    "hata mesajında satır numarası nerede yazıyor",
+    "hatayı yapay zekaya açıklatabilir miyim",
+    "hatanın sebebini nasıl bulurum",
+    "anlamadığım hata",
+    "terminalde uzun bir hata yazısı çıkıyor, hangi kısmına bakmam gerektiğini bilmiyorum, bana açıklar mısın"
+  ],
+  "site-girdi-kutusu": [
+    "program bana soru soruyor ama cevabı nereye yazacağım",
+    "girdi_al çalışınca nereye yazıyorum",
+    "klavyeden yazdigim programa gitmiyo",
+    "input nereye girilir turkodda",
+    "terminalin altındaki kutu ne işe yarıyor",
+    "kullanıcı cevabı yazma yeri",
+    "program bekliyor ama yazamıyorum",
+    "adını soran bir program yaptım, çalıştırınca imleç yanıp sönüyor ama adımı nereye yazmam gerektiğini bulamadım"
+  ],
+  "site-satir-numarasi": [
+    "satır numaraları kayboldu nasıl geri getiririm",
+    "editörün solunda sayılar görünmüyor",
+    "satir numaralarini acmak",
+    "line numbers nasıl açılır",
+    "satır numarasını kapatabilir miyim",
+    "kodun yanındaki sayılar",
+    "hata satır 12 diyor ama satırların numarası gözükmüyor, numaraları nereden açarım",
+    "kod satirlarinin numarasi nasil gosterilir"
+  ],
+  "site-renkli-yazim": [
+    "kodlar neden farklı renklerde",
+    "yazdığım kelimeler renkleniyor mu",
+    "renklendirme var mi",
+    "editörde renkler neye göre değişiyor",
+    "yorumlar ve metinler ayrı renkte mi görünüyor",
+    "kod rengi",
+    "temayı değiştirince kod renkleri de değişir mi",
+    "yazdığım komutların renkli görünmesini istiyorum, türkod bunu kendisi yapıyor mu"
+  ],
+  "site-girinti-tab": [
+    "satırı içeri nasıl kaydırırım",
+    "girintiyi geri almak için hangi tuş",
+    "girinti kac bosluk olmali",
+    "indentation ayarı nerede",
+    "girintiyi 2 boşluk yapabilir miyim",
+    "boşlukları görünür yapmak istiyorum",
+    "tab ve boşluk karıştı kod hata veriyor",
+    "iki nokta koyup enter basınca alt satır kendiliğinden içeri kayıyor mu, girinti nasıl çalışıyor"
+  ],
+  "site-yorum-kisayol": [
+    "birkaç satırı aynı anda yoruma nasıl alırım",
+    "kodu silmeden geçici olarak devre dışı bırakmak",
+    "yorum satiri kisayolu ne",
+    "comment out kısayolu",
+    "türk klavyede ctrl / çalışmıyor",
+    "yorum aç kapat",
+    "yorumu geri açmak",
+    "bir bölümü denemek için diğer satırları kapatmak istiyorum ama hepsinin başına tek tek # koymak zor, kısa yolu var mı"
+  ],
+  "site-geri-al": [
+    "yanlışlıkla sildiğim kodu geri getirebilir miyim",
+    "son yaptığımı nasıl geri alırım",
+    "undo redo var mi",
+    "geri aldığımı tekrar ileri almak",
+    "kodinin yazdigi kodu geri alabilir miyim",
+    "ctrl+z",
+    "geri getirme",
+    "kodumun yarısını sildim ve panikledim, son değişikliklerimi geri getirmenin yolu var mı"
+  ],
+  "site-bul-degistir": [
+    "kodda bir kelimeyi nasıl ararım",
+    "değişkenin adını her yerde birden değiştirmek",
+    "bul ve degistir nerde",
+    "find replace kısayolu",
+    "bütün dosyalarda arama yapabilir miyim",
+    "büyük küçük harfe duyarlı arama",
+    "kelime arama",
+    "uzun bir kodda sayi diye bir değişken kullandım, hepsini tek seferde adet yapmak istiyorum, tek tek mi değiştireceğim"
+  ],
+  "site-calistir-olmuyor": [
+    "çalıştıra basıyorum hiçbir şey olmuyor",
+    "run butonu tepki vermiyor",
+    "program baslamiyo",
+    "kodum çalışmıyor neden",
+    "altta kırmızı yazı çıkıyor ve program başlamıyor",
+    "program başlatılıyor ekranında takıldı",
+    "çalıştır bozuk",
+    "kodu yazdım çalıştır tuşuna bastım ama terminalde hiçbir çıktı yok, sanki bir şey bekliyor gibi, sorun ne olabilir"
+  ],
+  "site-otomatik-kaydet": [
+    "kodlarım kendi kendine kaydediliyor mu",
+    "elektrik giderse yazdığım kod gider mi",
+    "autosave var mi",
+    "otomatik kaydetmeyi nasil acarim",
+    "kaç saniyede bir kaydediyor",
+    "kaydetmeden kapattım kodlarım geri gelir mi",
+    "kayıt",
+    "her seferinde ctrl s yapmayı unutuyorum, program benim yerime kaydetmeyi yapabilir mi"
+  ],
+  "site-exe-hata": [
+    "exe yapamıyorum hata veriyor",
+    "exe'ye dönüştür başarısız oldu",
+    "exe olusturamadim neden",
+    "exe yapmak için internet gerekiyor mu",
+    "exe yapmak çok uzun sürüyor ilk seferde",
+    "pyinstaller hata verdi",
+    "exe çıkmadı",
+    "programımı exe yapmaya çalıştım ama yarıda kaldı ve terminalde bir hata yazdı, ne yapmam gerekiyor"
+  ],
+  "site-exe-boyut": [
+    "küçük bir program için exe neden bu kadar yer kaplıyor",
+    "exe dosyam çok büyük çıktı",
+    "exe boyutunu küçültebilir miyim",
+    "exe neden bu kadar mb",
+    "tek dosya mı klasör mü seçmeliyim",
+    "exe neden yavas aciliyor",
+    "exe ağır",
+    "üç satırlık bir kodu exe yaptım ama dosya çok büyük oldu, içinde ne var ki bu kadar yer tutuyor"
+  ],
+  "site-exe-secenekler": [
+    "exe'ye kendi simgemi koyabilir miyim",
+    "exe nereye çıkıyor bulamadım",
+    "exe ikonu nasil degistirilir",
+    "siyah konsol penceresi açılmasın istiyorum",
+    "oyunumdaki resimleri exe'ye nasıl eklerim",
+    "exe hangi klasöre kaydedilir",
+    "exe ico",
+    "pencereli bir oyun yaptım, exe olarak açınca arkada siyah pencere de açılıyor, onu nasıl gizlerim"
+  ],
+  "site-exe-kapaniyor": [
+    "exe'yi açınca hemen kapanıyor",
+    "exe çalışınca pencere bir saniyede kayboluyor",
+    "exe acilip hemen kapaniyo",
+    "exe çıktısını göremiyorum",
+    "program bitince pencere kapanmasın",
+    "exe sonunda beklesin",
+    "programımı exe yaptım, çift tıklayınca bir şey yanıp sönüp kapanıyor, sonuçları okuyamıyorum",
+    "exe dosyası anında kapanıyor ne yapmalıyım"
+  ],
+  "site-exe-pyinstaller": [
+    "exe'yi hangi program oluşturuyor",
+    "pyinstaller kullanıyor musunuz",
+    "pyinstaller ayrıca kurmam gerekiyor mu",
+    "exe yapma araci ne",
+    "turkod exe nasil uretiyor",
+    "exe arka planda nasıl hazırlanıyor",
+    "exe yapmak için ekstra bir şey indirmem gerekiyor mu yoksa türkod kendisi mi hallediyor",
+    "exe için hangi araç kullanılıyor"
+  ],
+  "site-dosya-paylas": [
+    "kodumu öğretmenime nasıl gönderirim",
+    "arkadaşıma programımı göndermek istiyorum",
+    "trpy dosyasini nasil paylasirim",
+    "ödevimi nasıl teslim ederim",
+    "kod dosyasını başkası açabilir mi",
+    "türkod olmayan biri programımı çalıştırabilir mi",
+    "paylaşma",
+    "yaptığım oyunu arkadaşıma atmak istiyorum ama exe yapmak zorunda mıyım, dosyayı direkt göndersem olur mu"
+  ],
+  "site-yz-baglama": [
+    "yapay zekayı programa nasıl eklerim",
+    "api key nereye yapıştırılır",
+    "api anahtarini nereye girecegim",
+    "ai panelini nasıl çalıştırırım",
+    "göreve model nasıl atanır",
+    "sağlayıcı ekleme",
+    "bağlantıyı test etmek",
+    "anahtarı aldım ama ayarlarda nereye koyacağımı ve sonra ne yapacağımı bilmiyorum, adım adım anlatır mısın"
+  ],
+  "site-groq": [
+    "ücretsiz yapay zeka anahtarı nereden bulurum",
+    "groq hesabı nasıl açılır",
+    "groq anahtarı nasıl oluşturulur",
+    "groq para istiyor mu",
+    "gsk ile baslayan anahtar ne",
+    "api key almak",
+    "bedava ai anahtarı",
+    "kodiyi programda kullanmak istiyorum ama anahtar gerekiyormuş, para vermeden nasıl alabilirim"
+  ],
+  "site-yz-gizlilik": [
+    "api anahtarımı çalarlar mı",
+    "anahtarım nerede saklanıyor",
+    "yapay zekaya sordugum seyler nereye gidiyor",
+    "yapay zeka kullanınca kodlarım başkasına gidiyor mu",
+    "api key güvenli mi",
+    "anahtar şifreleme",
+    "yapay zeka kullanmak güvenli mi",
+    "anahtarımı programa girdim, birileri bunu görebilir mi, ayrıca kodlarım bir yere yollanıyor mu merak ediyorum"
+  ],
+  "site-yerel-model": [
+    "internet olmadan yapay zeka kullanabilir miyim",
+    "bilgisayarıma yapay zeka indirmek",
+    "yerel model nasil kurulur",
+    "offline ai var mı",
+    "bilgisayarıma hangi model uyar",
+    "motoru kur ne demek",
+    "kaç gb ram lazım yapay zeka için",
+    "ücretsiz model",
+    "anahtar almak istemiyorum ve internetim de iyi değil, yapay zekayı kendi bilgisayarımda çalıştırmanın yolu var mı"
+  ],
+  "site-yz-saglayici": [
+    "chatgpt'yi türkoda bağlayabilir miyim",
+    "hangi yapay zeka şirketleri destekleniyor",
+    "gemini kullanabilir miyim",
+    "ollama destekleniyor mu",
+    "deepseek baglanabilir mi",
+    "kaç sağlayıcı var",
+    "openai api",
+    "claude veya chatgpt hesabım var, bunlardan birini türkoddaki asistana bağlamak mümkün mü"
+  ],
+  "site-yz-ne-yapar": [
+    "yapay zeka benim için ne yapabilir",
+    "ai asistan neler yapıyor",
+    "yapay zeka kodumu açıklayabilir mi",
+    "optimize et ne işe yarıyor",
+    "yapay zekanin yazdigi kodu editore nasil koyarim",
+    "yapay zeka benim yerime kod yazar mı",
+    "asistan özellikleri",
+    "programdaki yapay zeka sadece soru mu cevaplıyor yoksa kodumu düzeltip iyileştirebiliyor mu"
+  ],
+  "site-yz-calismiyor": [
+    "ai paneli cevap vermiyor",
+    "kodi programda hiç konuşmuyor",
+    "yapay zeka hata veriyo",
+    "açıkla düğmesi çalışmıyor",
+    "api anahtarım çalışıyor mu nasıl anlarım",
+    "yapay zeka bozuk",
+    "anahtarı girdim ama asistana bir şey sorunca hiçbir cevap gelmiyor, neyi kontrol etmeliyim",
+    "yapay zekaya soru soruyorum cevap gelmiyor"
+  ],
+  "site-yz-limit": [
+    "yapay zeka hakkım bitti ne yapacağım",
+    "groq çok fazla istek diyor",
+    "429 too many requests",
+    "kullanim hakkim doldu",
+    "limit dolunca başka model kullanılır mı",
+    "kota",
+    "günlük soru hakkı bitince kodi ne zaman tekrar konuşur",
+    "çok soru sordum ve artık yapay zeka cevap vermiyor, limit dolmuş galiba, kesintisiz kullanmak için ne yapabilirim"
+  ],
+  "site-yz-model-secimi": [
+    "hangi modeli kullanmalıyım",
+    "en akıllı model hangisi",
+    "hangi model daha iyi",
+    "hayalet kod için hangi model",
+    "sohbet için büyük model mi küçük model mi",
+    "model seçimi",
+    "groqta bir sürü model var, hangisini seçeceğimi bilmiyorum, bana hangisi uygun",
+    "yeni başlayan için en uygun model"
+  ],
+  "site-yz-kapat": [
+    "yapay zekayı tamamen kapatmak istiyorum",
+    "ai paneli ekrandan nasıl kalkar",
+    "yapay zekasiz kullanmak",
+    "çocuğum yapay zeka kullanmasın istiyorum",
+    "api anahtarını nasıl silerim",
+    "bağlantıyı kes",
+    "yapay zeka olmadan türkod çalışır mı",
+    "öğrencilerim kodları kendileri yazsın diye programdaki yapay zeka özelliklerini kapatmak istiyorum, nasıl yaparım"
+  ],
+  "site-model-indirme": [
+    "model indirmesi çok yavaş",
+    "model indirirken takıldı",
+    "model indirmesi yarıda kaldı baştan mı başlar",
+    "model indirmeyi iptal edersem ne olur",
+    "model indirme ne kadar sürer",
+    "indirdigim modeller nerede",
+    "yerel model indiriyorum ama yüzde bir yerde durdu kaldı, internet koptu sanırım, tekrar mı indirmem gerekiyor",
+    "model indirme kopuyor"
+  ],
+  "site-kodi-yz": [
+    "sen chatgpt misin",
+    "kodi gerçekten düşünüyor mu",
+    "sen yapay zeka misin",
+    "cevapları nereden buluyorsun",
+    "sitedeki kodi ile programdaki kodi farklı mı",
+    "kodi nasıl çalışıyor",
+    "sen robot musun",
+    "bu sitedeki kodi sorularıma nasıl cevap veriyor, arkasında bir yapay zeka modeli mi var"
+  ],
+  "site-kodi-bilmiyor": [
+    "bilmediğin bir şey sorsam ne olur",
+    "her şeyi biliyor musun",
+    "internetten arama yapabilir misin",
+    "vikipediden bakabilir misin",
+    "kodi internette arıyor mu",
+    "sen her soruyu cevaplayabilir misin",
+    "türkod dışında bir şey sorarsam, mesela tarih ya da coğrafya, cevabı bir yerden bulabilir misin",
+    "cevabını bilmediğin sorularda ne yaparsın"
+  ],
+  "site-kodi-kapat": [
+    "kodi ekrandan nasıl gider",
+    "kodiyi gizlemek istiyorum",
+    "kodi kapatilir mi",
+    "kodinin yapabileceklerini sınırlamak",
+    "kodi beni rahatsız ediyor",
+    "kodiyi kapatma düğmesi",
+    "programda köşede duran robotu kod yazarken görmek istemiyorum, onu nasıl kapatırım",
+    "kodi baloncugunu kapatmak"
+  ],
+  "site-kodi-gorunum": [
+    "kodiyi başka yere taşıyabilir miyim",
+    "kodi'nin balonunu büyütmek",
+    "kodiyi masaustune cikarmak",
+    "kodiyi eski yerine nasil dondururum",
+    "kodinin kıyafetini değiştirebilir miyim",
+    "kodi yeri",
+    "kodi kodumun üstünü kapatıyor, onu ekranın başka bir köşesine çekmek mümkün mü",
+    "kodi pencerenin dışına çıkabilir mi"
+  ],
+  "site-kodi-gizlilik": [
+    "kodi konuştuklarımızı hatırlıyor mu",
+    "kodiyle sohbetlerim nerede saklanıyor",
+    "kodi sohbetlerini silmek",
+    "kodi sohbetleri kaydetmesin",
+    "kodi hafiza notlari nerede",
+    "kodi beni dinliyor mu",
+    "programdaki kodiye kişisel şeyler yazdım, bunlar bir yerde tutuluyor mu, silebilir miyim",
+    "kodi sohbet geçmişi"
+  ],
+  "site-geri-bildirim-site": [
+    "kodi yanlış bir şey söyledi nereye bildireyim",
+    "sitede hata buldum",
+    "sitede bozuk sayfa var",
+    "kodiye yeni bir sey ogretebilir miyim",
+    "github issue nasil acilir",
+    "programda hata bulursam nereye yazarım",
+    "hata bildirimi",
+    "bu sitedeki bir sayfa telefonumda düzgün görünmüyor, bunu geliştiricilere nasıl iletebilirim"
+  ],
+  "site-demo-nasil": [
+    "canlı demo nasıl çalışıyor",
+    "demoda kod nasıl çalıştırılıyor kurulum olmadan",
+    "demo neden ilk seferde yavaş",
+    "demo telefonda calisir mi",
+    "demo gerçek türkod mu",
+    "tarayıcıda python",
+    "demo yükleniyor diyor bekliyorum",
+    "programı kurmadan sitede kod çalıştırabiliyorum, bu nasıl oluyor, kurduğum programla aynı sonuçları verir mi"
+  ],
+  "site-demo-sinirlar": [
+    "demoda kaplumbağa çalışmıyor",
+    "demoda oyun yapabilir miyim",
+    "demoda girdi_al nasıl çalışır",
+    "demoda hangi kutuphaneler var",
+    "demoda pencere acilmiyor",
+    "demoda matematik kütüphanesi var mı",
+    "demo kısıtlamaları",
+    "sitedeki demoda kaplumbağa ile çizim yapmaya çalıştım ama olmadı, demoda neler çalışıyor neler çalışmıyor"
+  ],
+  "site-sitede-arama": [
+    "sitede bir konuyu nasıl bulurum",
+    "belgelerde arama yapabilir miyim",
+    "aradığım sayfayı bulamıyorum",
+    "sitede search var mi",
+    "belgelerde kelime aratmak",
+    "arama",
+    "dosyalarla ilgili bir sayfa okumuştum ama yerini hatırlamıyorum, sitede arayarak bulabilir miyim",
+    "belgelerde bir şey nasıl aranır"
+  ],
+  "site-okul": [
+    "türkodu derslerde kullanabilir miyim",
+    "öğretmenler türkodu sınıfta kullanabilir mi",
+    "okul bilgisayarlarına kurulur mu",
+    "okulda turkod kullanmak",
+    "bilişim dersinde türkod",
+    "kodlama kulübü için uygun mu",
+    "scratch'ten sonra türkod",
+    "bilişim öğretmeniyim, öğrencilerime türkçe kodlama öğretmek istiyorum, türkod sınıfta kullanıma uygun mu"
+  ],
+  "site-yas": [
+    "kaç yaşındaki çocuklar kullanabilir",
+    "8 yaşındaki çocuğum türkod öğrenebilir mi",
+    "turkod kac yas icin",
+    "ilkokul öğrencisi için uygun mu",
+    "yaş sınırı var mı",
+    "çocuklar için mi",
+    "küçük yaş",
+    "oğlum ortaokula gidiyor ve kod yazmaya meraklı, türkod onun yaşına uygun mu, tek başına kullanabilir mi"
+  ],
+  "site-okul-materyal": [
+    "öğretmenler için ders planı var mı",
+    "öğrencilerin ilerlemesini takip edebilir miyim",
+    "meb mufredatina uygun mu",
+    "çalışma soruları var mı",
+    "günün görevi nedir",
+    "alıştırma",
+    "kodlama macerası kitabı nedir",
+    "derste kullanmak için hazır etkinlikler ve ödevler arıyorum, türkod öğretmenlere ne tür materyal sunuyor"
+  ],
+  "site-python-cevir": [
+    "python kodunu türkçeye nasıl çeviririm",
+    "türkod kodunu pythona çevirmek",
+    "internetten buldugum python kodunu turkodda kullanmak",
+    "mor çevir düğmesi ne yapıyor",
+    "terminalden python haline çevirme",
+    "py dosyasını trpy yapmak",
+    "çeviri",
+    "internette ingilizce yazılmış bir python örneği buldum, bunu türkod koduna dönüştürmenin kolay bir yolu var mı"
+  ],
+  "site-turkod-python": [
+    "türkod öğrenirsem python da öğrenmiş olur muyum",
+    "türkod python mu",
+    "turkod python uyumlu mu",
+    "türkod hangi python sürümünü kullanıyor",
+    "ileride gerçek python'a geçmek zor olur mu",
+    "türkçe kod mu python mu",
+    "türkod kelimelerinin python karşılıkları",
+    "çocuğum türkodla başlıyor, ileride normal python yazmaya geçerken baştan mı öğrenmesi gerekecek"
+  ],
+  "site-veri-grafik": [
+    "türkodla grafik çizebilir miyim",
+    "çizgi grafiği nasıl yapılır",
+    "matplotlib turkodda calisir mi",
+    "pandas kullanabilir miyim",
+    "grafik_çiz nasıl kullanılır",
+    "veri görselleştirme",
+    "pasta grafigi",
+    "sınıfın not ortalamalarını bir grafikle göstermek istiyorum, türkodda bunu nasıl yaparım"
+  ],
+  "site-kutuphaneler": [
+    "türkodda hangi modülleri kullanabilirim",
+    "pygame var mı",
+    "numpy kullanılabiliyor mu",
+    "turkodla gelen kutuphaneler",
+    "pip yükle ile ne kurabilirim",
+    "kurulumla gelen kütüphaneler",
+    "kütüphaneler",
+    "oyun ve hesaplama için türkodda hazır hangi kütüphaneler var, başka bir şeyi sonradan kurabiliyor muyum"
+  ],
+  "site-utf8": [
+    "dosyaya yazınca ş ğ ı gibi harfler garip çıkıyor",
+    "unicodedecodeerror",
+    "turkce karakterler dosyada bozuk cikiyo",
+    "dosya okurken kodlama hatası alıyorum",
+    "kodlama utf-8 nereye yazılır",
+    "txt dosyasında türkçe harfler soru işareti oluyor",
+    "encoding hatası",
+    "not defterine öğrenci isimlerini yazdırdım ama açınca Çiçek yerine anlamsız işaretler var, nasıl düzeltirim"
+  ],
+  "site-veri-gizlilik": [
+    "türkod bilgilerimi topluyor mu",
+    "kodlarım internete gidiyor mu",
+    "turkod verilerimi nereye kaydediyor",
+    "ayarlarım nerede tutuluyor",
+    "türkod güvenli mi",
+    "gizlilik politikası",
+    "kişisel veri",
+    "çocuğum kullanacak, program onun hakkında bir bilgi toplayıp bir yere gönderiyor mu öğrenmek istiyorum"
+  ],
+  "site-dil": [
+    "türkod ingilizce kullanılabilir mi",
+    "arayüzü başka dile çevirebilir miyim",
+    "menuleri ingilizce yapmak",
+    "azerice destek var mı",
+    "türkod hangi dilleri destekliyor",
+    "dil değiştirme",
+    "language",
+    "yabancı bir arkadaşım da kullanmak istiyor, programın menülerini ingilizce ya da başka bir dile çevirmek mümkün mü"
+  ],
+  "site-neden-yapildi": [
+    "türkod niye var",
+    "türkodun amacı ne",
+    "turkod neden yapildi",
+    "türkçe programlama dili neden gerekli",
+    "türkod kim için yapıldı",
+    "proje neden başladı",
+    "zaten python var, neden ayrıca türkçe bir programlama ortamı yapma ihtiyacı duyuldu",
+    "türkodu yapma fikri nereden çıktı"
+  ],
+  "site-topluluk": [
+    "türkodun discord sunucusu var mı",
+    "türkod youtube kanalı",
+    "turkod ders videolari var mi",
+    "diğer kullanıcılarla nerede konuşabilirim",
+    "türkod instagram",
+    "topluluğa nasıl katılırım",
+    "soru sormak için bir forum ya da grup var mı, diğer türkod kullanıcılarıyla nerede buluşabilirim",
+    "türkodun sosyal medya hesapları"
+  ],
+  "site-nasil-kullanilir": [
+    "programı yeni kurdum nereden başlamalıyım",
+    "türkod nasıl kullanılıyor",
+    "turkodu nasil kullanirim",
+    "menüler ne işe yarıyor",
+    "arayüzü tanıtan bir rehber var mı",
+    "yeni başlayan rehberi",
+    "kullanım",
+    "türkodu ilk kez açtım, ekranda bir sürü düğme var, hangisi ne işe yarıyor ve ilk ne yapmalıyım"
+  ],
+  "site-ilk-ders": [
+    "derslere nereden başlamalıyım",
+    "birinci derste ne var",
+    "ilk ders ne ogretiyor",
+    "kodlamaya sıfırdan başlıyorum ilk ne öğrenirim",
+    "temel ifadeler dersi ne anlatıyor",
+    "ilk konu",
+    "derslerin sırası",
+    "hiç kod yazmadım, sitedeki derslere başlamak istiyorum, ilk derste hangi konular var ve ondan sonra ne geliyor"
+  ],
+  "site-web-projesi": [
+    "türkodla internet sitesi yapabilir miyim",
+    "flask kullanılabiliyor mu",
+    "web sitesi yapmak",
+    "django turkodda calisir mi",
+    "sitemi internette nasıl yayınlarım",
+    "web uygulaması yapmak",
+    "backend",
+    "kendi web sitemi türkodla yazmak istiyorum, bunun için hangi kütüphaneyi kurmam gerekiyor"
+  ],
+  "coklu-atama": [
+    "üç değişkene tek satırda değer vermek",
+    "a, b, c = 1, 2, 3 ne demek",
+    "tek satirda birden fazla degisken nasil olusturulur",
+    "x = y = 0 ne işe yarıyor",
+    "birkaç değişkene aynı anda sıfır vermek",
+    "multiple assignment",
+    "virgülle atama",
+    "her değişken için ayrı satır yazmaktan sıkıldım, birkaçını aynı satırda tanımlamanın bir yolu var mı"
+  ],
+  "degisken-takas": [
+    "iki değişkenin değerini değiştirmek",
+    "a ile b'yi yer değiştir",
+    "a, b = b, a ne yapıyor",
+    "degiskenlerin yerini degistirme",
+    "üçüncü değişken kullanmadan yer değiştirme",
+    "pythonda swap nasıl yapılır turkodda",
+    "değer değiş tokuş",
+    "a'nın içindekini b'ye, b'nin içindekini a'ya koymak istiyorum ama biri kayboluyor, nasıl yapmalıyım"
+  ],
+  "girdi-sayi-toplama": [
+    "5 ile 3'ü topluyorum 53 çıkıyor",
+    "girdi_al ile aldığım sayılar toplanmıyor",
+    "kullanicidan aldigim sayilari toplayinca yan yana yaziyo",
+    "input ile alınan sayıyı nasıl toplarım",
+    "girilen sayıyı sayıya çevirmek",
+    "toplama yapmıyor birleştiriyor",
+    "iki sayı toplama programı",
+    "hesap makinesi yapıyorum ama kullanıcıdan iki sayı alıp toplayınca toplam yerine sayıları birleştirip yazıyor"
+  ],
+  "harf-sayma": [
+    "bir kelimede kaç tane a harfi var",
+    "metinde bir harfin kaç kere geçtiğini bulmak",
+    "harf sayisi nasil bulunur",
+    "say() fonksiyonu metinde nasıl kullanılır",
+    "count turkodda ne",
+    "bir harfi saymak",
+    "harf geçme sayısı",
+    "kullanıcının yazdığı cümlede e harfinin kaç kere geçtiğini bulan bir program yazmak istiyorum"
+  ],
+  "sesli-harf-sayma": [
+    "cümlede kaç sesli harf var",
+    "ünlü harfleri sayan program",
+    "sesli harfleri sayma kodu",
+    "aeıioöuü harflerini saymak",
+    "sesli harf sayma",
+    "vowel count",
+    "sesli harf",
+    "kelimedeki sesli harflerin sayısını bulmak istiyorum ama büyük harfle yazılanları saymıyor, nasıl yaparım"
+  ],
+  "metin-ters-cevir": [
+    "kelimeyi tersten yazdırmak",
+    "yazıyı sondan başa çevirmek",
+    "kelimeyi ters cevirme",
+    "[::-1] ne demek",
+    "metni tersine çevirme",
+    "string reverse",
+    "ters yazdırma",
+    "kullanıcının girdiği kelimeyi sondan başa doğru yazdıran bir program yapmak istiyorum, kısa bir yolu var mı"
+  ],
+  "palindrom": [
+    "kelime tersten de aynı okunuyor mu",
+    "kayak gibi kelimeleri bulmak",
+    "palindrom nedir",
+    "palindrom kontrol eden program",
+    "bir kelimenin tersten okunuşu aynı mı nasıl anlarım",
+    "palindrome",
+    "ters okunuşu aynı",
+    "girilen kelimenin baştan ve sondan okunuşu aynıysa evet diyen bir program yazmak istiyorum, nasıl karşılaştırırım"
+  ],
+  "kelimeleri-ters-cevir": [
+    "cümledeki kelimelerin sırasını ters çevirmek",
+    "son kelimeyi başa almak",
+    "kelime sirasini tersine cevirme",
+    "cümledeki her kelimenin harflerini ters çevirmek",
+    "ben okula gidiyorum cümlesini gidiyorum okula ben yapmak",
+    "kelime ters",
+    "cümle ters",
+    "cümleyi bütün olarak değil kelime kelime ters çevirmek istiyorum, kelimelerin sırası değişsin, nasıl yaparım"
+  ],
+  "yeni-satir": [
+    "yazdırırken alt satıra nasıl geçerim",
+    "\\n ne işe yarıyor",
+    "tek yazdirla iki satir yazmak",
+    "metin içinde satır atlatmak",
+    "\\t ne demek",
+    "newline",
+    "alt satır",
+    "her şey tek satırda yan yana çıkıyor, aynı yazdır içinde bir kısmını alt satıra yazdırmanın yolu var mı"
+  ],
+  "tirnak-icinde-tirnak": [
+    "metnin içine tırnak işareti koymak",
+    "ekrana \" işaretini nasıl yazdırırım",
+    "tirnak yazdirinca hata veriyo",
+    "Ali'nin yazınca hata veriyor",
+    "ters bölü ile tırnak",
+    "kesme işareti",
+    "tırnak içinde tırnak",
+    "konuşma cümlesini tırnaklarıyla birlikte yazdırmak istiyorum ama tırnak koyunca metin bozuluyor"
+  ],
+  "metin-tekrar": [
+    "bir yazıyı birkaç kere yan yana yazdırmak",
+    "çizgi çekmek için - işaretini çoğaltmak",
+    "metni sayiyla carpmak",
+    "\"ha\" * 3 ne yapar",
+    "yıldız ile metin tekrar",
+    "string çarpma",
+    "süslü çizgi",
+    "ekrana yirmi tane tire yazdırmak istiyorum, tek tek yazmadan kısa bir yolu var mı"
+  ],
+  "metin-mi-sayi-mi": [
+    "kullanıcının yazdığı şey sayı mı nasıl anlarım",
+    "girilen değer rakam mı kontrol etmek",
+    "girdi sayi mi harf mi",
+    "rakam_mı nasıl kullanılır",
+    "bir değişkenin türünü öğrenmek",
+    "isdigit turkodda ne",
+    "tip kontrolü",
+    "kullanıcı sayı yerine harf yazınca program çöküyor, önce girilenin sayı olup olmadığını kontrol etmek istiyorum"
+  ],
+  "harf-harf-gez": [
+    "kelimenin harflerini tek tek yazdırmak",
+    "bir metnin her harfini alt alta yazmak",
+    "kelimeyi harflerine ayirmak",
+    "metni döngüyle gezmek",
+    "for ile string gezme",
+    "harf harf",
+    "her harf",
+    "kullanıcının adını alıp her harfini ayrı satıra yazdıran bir program yapmak istiyorum"
+  ],
+  "metinde-rakam-bul": [
+    "bir yazının içindeki sayıları çekmek",
+    "metinden sadece rakamları almak",
+    "yazidaki rakamlari ayirmak",
+    "cümlede rakam var mı",
+    "metindeki rakamları listeye koymak",
+    "rakamları süzmek",
+    "harflerle karışık yazılmış bir metinden sadece rakamları alıp birleştirmek istiyorum, nasıl ayıklarım",
+    "telefon numarasındaki rakamları yazıdan ayırmak"
+  ],
+  "ic-ice-liste": [
+    "liste içinde liste nasıl yapılır",
+    "iki boyutlu listeden eleman almak",
+    "tablo[1][2] ne demek",
+    "ic ice listede eleman nasil alinir",
+    "matris oluşturmak",
+    "2d list",
+    "satır sütun liste",
+    "sınıftaki öğrencilerin notlarını satır satır tablo gibi tutmak istiyorum, listenin içine liste koyabilir miyim"
+  ],
+  "liste-say": [
+    "listede 5 kaç tane var",
+    "listedeki bir elemanın tekrar sayısı",
+    "listede bir eleman kac defa var",
+    "say() listede çalışır mı",
+    "list count",
+    "aynı elemandan kaç tane",
+    "tekrar sayısı",
+    "notlar listesinde kaç kişinin 100 aldığını bulmak istiyorum, listede bir değerin kaç kez geçtiğini nasıl sayarım"
+  ],
+  "liste-temizle": [
+    "listenin içini boşaltmak",
+    "listedeki her şeyi silmek",
+    "listeyi bos hale getirmek",
+    "temizle() ne yapar",
+    "clear turkodda ne",
+    "liste sıfırlama",
+    "sepet listesindeki bütün ürünleri bir seferde silmek istiyorum, tek tek silmeden nasıl yaparım",
+    "listeyi boşaltınca liste silinir mi"
+  ],
+  "eleman-indeksi-bul": [
+    "bir eleman listenin kaçıncı sırasında",
+    "listede kirazın yerini bulmak",
+    "elemanin indeksini bulma",
+    "indeks() nasıl kullanılır",
+    "index turkodda ne",
+    "sıra numarası bulmak",
+    "eleman listede yoksa indeks hata veriyor",
+    "bir listede aradığım ismin kaçıncı sırada olduğunu öğrenmek istiyorum, hangi fonksiyonu kullanırım"
+  ],
+  "sozluk-anahtar-var-mi": [
+    "sözlükte böyle bir anahtar var mı nasıl bakarım",
+    "sözlükte olmayan anahtarı kontrol etmek",
+    "sozlukte anahtar var mi kontrol",
+    "keyerror almamak için önce kontrol",
+    "değil içinde sözlükte",
+    "dictionary key exists",
+    "anahtar sorgulama",
+    "öğrenci adını yazınca notunu gösteren program yaptım, olmayan bir ad yazınca hata veriyor, önce var mı diye nasıl sorarım"
+  ],
+  "sozluk-sil": [
+    "sözlükten bir öğeyi kaldırmak",
+    "sözlükteki bir kişiyi silmek",
+    "sozlukten anahtar nasil silinir",
+    "çıkar() sözlükte ne yapar",
+    "sil_beyan ile sözlük",
+    "dict pop del",
+    "sözlükten silme",
+    "not sözlüğümden okuldan ayrılan öğrenciyi çıkarmak istiyorum, anahtarı ve değerini nasıl silerim"
+  ],
+  "kume-ekle": [
+    "kümeye yeni bir şey nasıl eklenir",
+    "kümeye sona_ekle çalışmıyor",
+    "kumeye eleman ekleme",
+    "kümeden eleman çıkarmak",
+    "kümeye_ekle ne yapar",
+    "set add",
+    "küme eleman",
+    "renkler kümeme yeni bir renk eklemek istiyorum ama listeye eklediğim gibi yapınca hata alıyorum"
+  ],
+  "sozluk-ekle-guncelle": [
+    "sözlüğe yeni bilgi eklemek",
+    "sözlükteki bir değeri değiştirmek",
+    "sozluge yeni anahtar nasil eklenir",
+    "sözlükte notu güncellemek",
+    "kisi[\"yas\"] = 12 ne yapar",
+    "dict ekleme",
+    "sözlük değer değiştirme",
+    "öğrenci sözlüğümde bir öğrencinin notunu değiştirmek ve yeni bir öğrenci eklemek istiyorum, ikisini nasıl yaparım"
+  ],
+  "ogrenci-not-sozlugu": [
+    "öğrencilerin notlarını tutan program",
+    "isim ve not birlikte nasıl saklanır",
+    "ogrenci not programi yapmak",
+    "sınıfın not ortalamasını sözlükle hesaplamak",
+    "öğrenci adlarıyla notlarını yazdırmak",
+    "not defteri programı",
+    "karne",
+    "her öğrencinin adını ve notunu saklayıp hepsini listeleyen ve ortalamayı hesaplayan bir program yazmak istiyorum"
+  ],
+  "sozluk-birlestir": [
+    "iki sözlüğü tek sözlük yapmak",
+    "bir sözlüğü diğerine eklemek",
+    "sozlukleri birlestirme",
+    "güncelle() ne işe yarar",
+    "{**a, **b} ne demek",
+    "dict merge update",
+    "sözlük birleşimi",
+    "iki ayrı sınıfın not sözlüklerini tek bir sözlükte toplamak istiyorum, aynı isim varsa ne olur"
+  ],
+  "liste-mi-sozluk-mu": [
+    "listeyle sözlük arasında ne fark var",
+    "hangi durumda sözlük kullanılır",
+    "liste mi sozluk mu kullanayim",
+    "list vs dictionary",
+    "sözlük listeden ne zaman daha iyi",
+    "liste sözlük karşılaştırma",
+    "fiyat listesi yapacağım, ürün adlarını ve fiyatlarını tutmak için liste mi yoksa sözlük mü daha uygun",
+    "sozluk ile liste farki"
+  ],
+  "kume-liste-fark": [
+    "küme ile listenin farkı ne",
+    "küme ne zaman kullanılır liste yerine",
+    "kume mi liste mi",
+    "set ile list farkı",
+    "küme neden aynı elemanı iki kez tutmuyor",
+    "küme sıralı mı",
+    "küme liste",
+    "listeye 3'ü iki kez koyunca iki tane görünüyor ama kümede bir tane, ikisi arasındaki farkı anlatır mısın"
+  ],
+  "eger-hata-kontrol": [
+    "eğer satırında hata alıyorum",
+    "eğer yazdım ama çalışmıyor",
+    "eger komutu neden hata veriyo",
+    "if çalışmıyor turkodda",
+    "eğer'den sonra iki nokta unuttum",
+    "eğer içinde = mi == mi",
+    "koşul hatası",
+    "eğer ile bir koşul yazdım ama program hata veriyor ya da hiç içine girmiyor, nelere bakmalıyım"
+  ],
+  "yasa-gore-mesaj": [
+    "yaşa göre farklı mesaj gösteren program",
+    "yaşı küçükse çocuk bileti yazdırmak",
+    "yasina gore bilet fiyati",
+    "yaş sorup karar veren kod",
+    "kullanıcının yaşını kontrol etmek",
+    "yaş programı",
+    "yaş grubu",
+    "kullanıcıdan yaşını alıp 13'ten küçükse çocuk, 65'ten büyükse yaşlı diyen bir program nasıl yazılır"
+  ],
+  "pozitif-negatif-sifir": [
+    "sayının pozitif mi negatif mi olduğunu bulmak",
+    "girilen sayı sıfırdan büyük mü",
+    "sayi pozitif negatif sifir programi",
+    "negatif sayı kontrolü",
+    "sayının işaretini bulmak",
+    "eksi mi artı mı",
+    "pozitif",
+    "kullanıcının girdiği sayının pozitif mi, negatif mi yoksa sıfır mı olduğunu söyleyen program yazmak istiyorum"
+  ],
+  "sifre-kontrol": [
+    "şifre soran program",
+    "doğru şifreyi girince hoş geldin yazdırmak",
+    "sifre programi nasil yapilir",
+    "şifre yanlışsa uyarı vermek",
+    "giriş ekranı yapmak",
+    "password kontrolü",
+    "şifreli giriş",
+    "kullanıcıdan şifre isteyip doğruysa içeri alan, yanlışsa uyaran basit bir giriş programı yazmak istiyorum"
+  ],
+  "dongu-toplam": [
+    "1'den 100'e kadar sayıları toplamak",
+    "döngüyle sayıların toplamını bulmak",
+    "1 den 100 e kadar toplam kodu",
+    "aralık(1, 101) neden 101",
+    "döngüde toplamak",
+    "sum loop",
+    "ardışık sayılar toplamı",
+    "1'den kullanıcının girdiği sayıya kadar bütün sayıları toplayan bir döngü yazmak istiyorum, nasıl yaparım"
+  ],
+  "dongu-carpim": [
+    "1'den 5'e kadar sayıları çarpmak",
+    "döngüyle çarpım hesaplamak",
+    "carpim sonucu hep 0 cikiyo",
+    "*= ne demek",
+    "döngüde çarpma",
+    "sayıların çarpımı",
+    "çarpma döngüsü",
+    "sayıları döngüde birbirleriyle çarpmaya çalışıyorum ama sonuç hep sıfır çıkıyor, neyi yanlış yapıyorum"
+  ],
+  "dongu-sayac": [
+    "döngü kaç kere döndü nasıl anlarım",
+    "döngüde sayacı bir artırmak",
+    "sayac nasil tutulur",
+    "sayac += 1 ne demek",
+    "counter değişkeni",
+    "döngü turu saymak",
+    "sayma",
+    "döngünün içinde kaçıncı turda olduğumu tutmak ve sonunda toplam kaç tur döndüğünü yazdırmak istiyorum"
+  ],
+  "geri-sayim-dongu": [
+    "10'dan 1'e geri sayan program",
+    "sayıları büyükten küçüğe yazdırmak",
+    "geri sayim nasil yapilir",
+    "aralık'ta -1 ne demek",
+    "range ile geriye doğru",
+    "azalan sayılar",
+    "geri sayım",
+    "roket fırlatma gibi 10, 9, 8 diye geri sayıp sonunda başla yazan bir program yapmak istiyorum"
+  ],
+  "for-while-fark": [
+    "için ile döngü arasındaki fark ne",
+    "hangi durumda hangi döngü kullanılır",
+    "for ile while farki ne",
+    "ne zaman while kullanmalıyım",
+    "için döngüsü mü yoksa döngü mü daha iyi",
+    "döngü çeşitleri",
+    "iki tür döngü var, hangisini ne zaman seçmem gerektiğini anlamadım, farklarını anlatır mısın",
+    "ne zaman için ne zaman döngü yazılır"
+  ],
+  "n-kere-tekrarla": [
+    "bir şeyi 10 kere yazdırmak",
+    "merhaba'yı 5 kez ekrana yazmak",
+    "bir islemi 5 kere tekrarlamak",
+    "aralık(5) kaç kere döner",
+    "belli sayıda tekrar eden döngü",
+    "repeat",
+    "tekrar",
+    "aynı satırı yüz kere kopyalamak yerine bir işi istediğim sayıda tekrarlatmanın yolu var mı"
+  ],
+  "args-kwargs": [
+    "fonksiyona istediğim kadar sayı göndermek",
+    "parametre sayısı belli olmayan fonksiyon",
+    "*args turkodda nasil yazilir",
+    "**kwargs ne işe yarar",
+    "parametrenin önündeki yıldız ne demek",
+    "iki yıldızlı parametre",
+    "değişken parametre",
+    "topla fonksiyonuma bazen iki bazen beş sayı vermek istiyorum, parametre sayısını sabitlemeden nasıl yazarım"
+  ]
+}

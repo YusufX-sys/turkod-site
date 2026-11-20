@@ -1,0 +1,267 @@
+{
+  "sayfa": "/features/kodi/",
+  "bolumler": {
+    "": {
+      "baslik": "Kodi",
+      "s": [
+        "Kodi kim?",
+        "Kodi nedir, ne işe yarar?",
+        "Kitaptaki robot programın içinde de var mı?",
+        "kodi ne yapiyo",
+        "TürKod'daki yardımcı robot",
+        "Kodi hangi sürümde programa geldi?",
+        "Kodi bana programla ilgili soruları cevaplayabilir mi?",
+        "Kodi benim yerime iş yapabiliyor mu?",
+        "Kodlama Macerası kitabındaki robotun adı ne?",
+        "TürKod'un içinde sohbet edebileceğim, soru sorduğumda yardım eden bir asistan karakter var mı, varsa neler yapabiliyor?",
+        "turkoddaki robot kim",
+        "Kodi sadece kitapta mı yaşıyor?"
+      ],
+      "c": "Kodi, “TürKod ile Kodlama Macerası” kitabında sana yol gösteren robot. TürKod 3.3 ile programın içine de taşındı: programla ilgili her şeyi bilir, sorularını cevaplar ve istersen senin için iş yapar."
+    },
+    "kodiyi-çağırmak": {
+      "baslik": "Kodi’yi çağırmak",
+      "s": [
+        "Kodi'yi nasıl çağırırım?",
+        "Kodi'yi açmanın kısayolu ne?",
+        "Robotu ekrana nasıl getiririm?",
+        "kodiyi nasil acarim",
+        "Kodi'yi nasıl kapatırım, gitmesini nasıl sağlarım?",
+        "Kodi cevabı çok yavaş yazıyor, hemen tamamını görebilir miyim?",
+        "Balondaki ampul düğmesi ne işe yarıyor?",
+        "Kodi'yi başka bir yere taşıyabilir miyim?",
+        "Kodi'yi sürükledim, eski köşesine nasıl dönerim?",
+        "Kodi'nin balonunu büyütebilir miyim?",
+        "kodi sadece terminali ac gibi seyler yapiyor konusmuyor neden",
+        "Kodi'ye sorumu yazdım ama cevap beklerken vazgeçmek istiyorum, ne yapayım?",
+        "F1'e basınca ne oluyor?",
+        "Yardım menüsünden Kodi ile Konuş"
+      ],
+      "c": "Kodi’yi sol şeritteki robot yüzlü düğmeyle, F1’e basarak ya da Yardım → Kodi ile Konuş ile çağırırsın; aynı düğme ya da balondaki X ile gider. Sorunu kutuya yazıp Enter’a bas. Cevabı hemen görmek için balona tıkla, beklerken Vazgeç’e basabilirsin. Kodi’yi sürükleyip taşıyabilirsin, çift tıklarsan eski köşesine döner. Konuşabilmesi için bir yapay zekâ modeli bağlı olmalı."
+    },
+    "neler-sorabilirsin": {
+      "baslik": "Neler sorabilirsin?",
+      "s": [
+        "Kodi'ye neler sorabilirim?",
+        "Kodi hatamı bulabilir mi?",
+        "Kodumdaki hatayı Kodi'ye nasıl buldururum?",
+        "kodi kodumu gorebiliyor mu",
+        "Seçtiğim kodu Kodi'ye açıklatabilir miyim?",
+        "Kodi kitapta bir konuyu bulup açabilir mi?",
+        "Kodi'nin verdiği kodu editöre nasıl eklerim?",
+        "Kodi kod örneklerini Python ile mi yazıyor?",
+        "kodi exe yapmayi biliyor mu",
+        "Kodi terminaldeki hata mesajını görüyor mu, hangi satırda hata olduğunu söyler mi?",
+        "Kodi TürKod'u kimin yaptığını biliyor mu?",
+        "Cevaptaki kod örneğini tek tıkla yeni sekmede açabilir miyim?",
+        "Programım hata veriyor ve nedenini anlamıyorum; Kodi kodumu ve çıktıyı görüp düzeltilmiş halini verebilir mi?",
+        "Kodi'nin bildiği konular"
+      ],
+      "c": "Kodi programın her menüsünü, düğmesini, ayarını, kitabı ve GitHub sayfasını bilir. “Hatamı bulur musun?” dersen kodunu, terminal çıktısını ve hatayı görür, hatanın satırını söyleyip düzeltilmiş kodu verir. Editörde seçtiğin parçayı açıklayabilir, kitabı istediğin konuda açabilir. Kod örneklerini hep TürKod ile yazar; sağ üstteki düğmelerle yeni sekmede açabilir ya da imlece ekleyebilirsin."
+    },
+    "senin-için-iş-yapar": {
+      "baslik": "Senin için iş yapar",
+      "s": [
+        "Kodi benim için ne işler yapabilir?",
+        "Kodi'ye terminali açtırabilir miyim?",
+        "Kodi bana program yazabilir mi?",
+        "kodiye kod yazdirma",
+        "Kodi'den temayı açık yapmasını isteyebilir miyim?",
+        "Kodi'ye 40. satıra git desem gider mi?",
+        "Kodi'nin yazdığı kodu nasıl geri alırım?",
+        "Kodi bir cümlede birkaç iş istersem hepsini yapar mı?",
+        "Kodi kodu çalıştırmadan önce izin istiyor mu?",
+        "kodi uzun programi sohbete mi yaziyor",
+        "Kodi eklenti açabiliyor mu?",
+        "Kodi'ye 1'den 5'e sayan bir program yaz dedim, yeni sekmede aç mı imlece ekle mi diye soruyor; yazdığı kodu denetliyor mu?",
+        "Kodi dosya açabiliyor mu?",
+        "Kodi'ye sesli komut gibi iş yaptırma"
+      ],
+      "c": "Kodi söylediğini yapar: “Terminali aç”, “notlar.md dosyasını aç”, “40. satıra git”, “Temayı açık yap”, “EXE panelini aç” gibi istekleri yerine getirir, bir cümledeki birkaç işi sırayla yapar. Program yazdırırsan önce Yeni sekmede aç mı, İmlece ekle mi diye sorar, kod editöre akarak yazılır; Ctrl+Z hepsini bir kerede geri alır. Çalıştırmak, kaydetmek gibi işlerden önce İzin ver / Vazgeç diye sorar."
+    },
+    "ide-içindeki-tarayıcıda": {
+      "baslik": "IDE içindeki tarayıcıda",
+      "s": [
+        "Kodi tarayıcıyı kullanabiliyor mu?",
+        "Kodi benim için Google'da arama yapabilir mi?",
+        "Kodi internette site açabilir mi?",
+        "kodi tarayicida tiklayabiliyor mu",
+        "Kodi'nin mor imleci ne?",
+        "Kodi şifre kutusuna yazar mı?",
+        "Kodi internetten bir şey satın alabilir mi?",
+        "Kodi sayfayı okuyup kendi kendine devam ediyor mu?",
+        "TürKod içindeki tarayıcıyı Kodi'ye yönettirme",
+        "Kodi'den projenin GitHub sayfasını bulmasını istesem açar mı?",
+        "kodi odeme dugmesine basar mi",
+        "Kodi'ye bir siteyi açıp formdaki kutulara yazmasını ve sayfayı kaydırmasını söyleyebilir miyim, silme gibi düğmelere kendiliğinden basar mı?"
+      ],
+      "c": "Evet, Kodi TürKod’un içindeki tarayıcıyı yönetir: site açar, Google’da arar, sayfayı okur, mor imleciyle bağlantılara tıklar, kutulara yazar ve sayfayı kaydırır; iş bitene kadar kendiliğinden devam eder. Şifre kutularına yazmaz, satın alma, ödeme, silme gibi düğmelere basmadan önce izin ister."
+    },
+    "kodinin-yetkileri": {
+      "baslik": "Kodi’nin yetkileri",
+      "s": [
+        "Kodi'nin neler yapabileceğini nasıl sınırlarım?",
+        "Kodi'nin yetkilerini nereden ayarlarım?",
+        "Kodi ayarlarımı değiştirmesin istiyorum",
+        "kodi her seyden once izin istesin",
+        "Kodi API anahtarımı değiştirebilir mi?",
+        "Kodi kısayollarımı değiştirebilir mi?",
+        "Kodi'nin tarayıcıyı yönetmesini kapatabilir miyim?",
+        "Kodi bir işi yapamam diyor, neden?",
+        "kodi eklentileri acip kapatmasin",
+        "Kodi kendi yetkilerini kendisi açabilir mi?",
+        "Ayarlar Kodi bölümündeki seçenekler",
+        "Çocuğum kullanırken Kodi'nin panel açmak gibi küçük işlerde bile önce sormasını istiyorum; bunu nasıl açarım, varsayılan ne?",
+        "Kodi menü komutlarını çalıştırmasın"
+      ],
+      "c": "Ayarlar → Kodi bölümünden seçersin: Ayarları değiştirebilsin, Eklentileri açıp kapatabilsin, Program komutlarını çalıştırabilsin, Tarayıcıyı yönetebilsin ve Her işten önce izin istesin (varsayılan kapalı). Bu bölümü yalnızca sen değiştirebilirsin; API anahtarlarına ve kısayollara Kodi hiç dokunamaz. Yetki kapalıyken o işi istersen yapamayacağını ve nereden açılacağını söyler."
+    },
+    "sohbetler": {
+      "baslik": "Sohbetler",
+      "s": [
+        "Kodi ile eski sohbetlerime nasıl ulaşırım?",
+        "Kodi'yle konuştuklarım kayboluyor mu?",
+        "Yeni sohbet nasıl başlatılır?",
+        "kodi eski sohbet nerde",
+        "Kodi ile bir sohbeti nasıl silerim?",
+        "Önceki konuşmaya kaldığım yerden devam edebilir miyim?",
+        "Kodi'yi her çağırdığımda yeni sohbet mi açılıyor?",
+        "Sohbetler düğmesi ne gösteriyor?",
+        "kodi sohbet gecmisi",
+        "Dün Kodi'ye bir şey sormuştum, o konuşmayı bulup devam etmek istiyorum; sohbetler hangi sırayla listeleniyor?",
+        "Kodi sohbet listesindeki çöp kutusu",
+        "Kodi konuşma geçmişini silme"
+      ],
+      "c": "Kodi her çağrılışında ve Yeni sohbet düğmesine basınca yeni bir sohbet başlatır ama eskiler kaybolmaz. Balondaki Sohbetler düğmesi hepsini tarih ve mesaj sayısıyla, en yenisi üstte listeler. Birine tıklayıp kaldığın yerden sürdürürsün; çöp kutusu düğmesi sohbeti siler."
+    },
+    "hafıza": {
+      "baslik": "Hafıza",
+      "s": [
+        "Kodi beni hatırlıyor mu?",
+        "Kodi'ye bir şeyi hatırlatabilir miyim?",
+        "Kodi'nin hatırladığı bir şeyi nasıl unuttururum?",
+        "kodi adimi hatirlar mi",
+        "Kodi şifremi ya da telefon numaramı hatırlar mı?",
+        "Kodi'nin hafızasını nasıl yönetirim?",
+        "Hatırladım yazısı ne demek?",
+        "Kodi'nin beni hatırlamasını kapatabilir miyim?",
+        "kodi notlarini silme",
+        "Kodi'ye sevdiğim rengi söyledim, sonraki sohbette de bilecek mi, istemezsem nereden kapatırım?",
+        "Bütün sohbetleri silme düğmesi nerede?",
+        "Kodi'nin hafızası"
+      ],
+      "c": "Evet, kendinden bir şey söylersen ya da “bunu hatırla” dersen Kodi not alır, balonda “Hatırladım: …” yazar ve sonraki sohbetlerde de bilir. “Şunu unut” dersen notu siler. Şifre, adres, telefon, e-posta gibi özel bilgileri hatırlamaz. Ayarlar → Kodi’de Sohbet kaydedilsin ve Kodi beni hatırlasın seçenekleriyle Hafızayı yönet… ve Bütün sohbetleri sil düğmeleri vardır."
+    },
+    "ekran-görüntüsü-göndermek": {
+      "baslik": "Ekran görüntüsü göndermek",
+      "s": [
+        "Kodi'ye ekran görüntüsü gönderebilir miyim?",
+        "Kodi ekranımı görebilir mi?",
+        "Balondaki kamera düğmesi ne işe yarıyor?",
+        "kodiye ekran resmi atma",
+        "Kodi'ye bütün ekranın görüntüsünü nasıl gönderirim?",
+        "Sadece TürKod penceresinin görüntüsünü gönderebilir miyim?",
+        "Kodi görüntüyü göremiyorum diyor, neden?",
+        "Mesajla birlikte görüntü gönder ayarı nerede?",
+        "kodi ekran goruntusu varsayilan acik mi",
+        "Hatanın olduğu pencereyi Kodi'ye göstermek istiyorum; kamera düğmesine basınca hangi seçenekler sırayla geliyor?",
+        "Kodi'ye resim gösterme",
+        "Ekran görüntüsü gönderimini kapatma"
+      ],
+      "c": "Evet, balondaki kamera düğmesine her basışta sırayla görüntü gönderilmez (hep böyle başlar), TürKod penceresinin görüntüsü ve bütün ekranın görüntüsü arasında geçer. Aynı ayar Ayarlar → Kodi → Mesajla birlikte görüntü gönder satırında da var. Görüntü göremeyen bir model kullanıyorsan Kodi bunu söyler."
+    },
+    "sesli-konuşma": {
+      "baslik": "Sesli konuşma",
+      "s": [
+        "Kodi ile sesli konuşabilir miyim?",
+        "Kodi'ye sorumu söyleyerek sorabilir miyim?",
+        "Kodi cevapları sesli okuyabiliyor mu?",
+        "kodi mikrofon calismiyor",
+        "Kodi ile canlı sohbet nasıl yapılır?",
+        "Kodi kodları da sesli okuyor mu?",
+        "Canlı sohbet neden kendiliğinden durdu?",
+        "Konuşmayı yazıya çevirmek için ne gerekiyor?",
+        "kodinin sesi internet istiyor mu",
+        "Sesli konuşma için Groq ya da OpenAI anahtarı gerekiyor mu, sesim nereye gönderiliyor?",
+        "Hoparlör düğmesi ne yapıyor?",
+        "Telefonda konuşur gibi Kodi ile karşılıklı konuşmak istiyorum, mikrofona basınca sesimi duymuyor gibi; ne yapmalıyım?",
+        "Kodi Türkçe konuşuyor mu?"
+      ],
+      "c": "Evet, mikrofon düğmesine basıp sorunu söyle; susunca Kodi yazıya çevirip cevaplar. Hoparlör açıkken cevapları Türkçe sesle okur ama kodları okumaz. Canlı sohbette karşılıklı konuşursunuz, üç kez üst üste sessiz kalırsan durur. Yazıya çevirme için Ayarlar’da Groq ya da OpenAI anahtarı gerekir ve ses o sağlayıcıya gider; mikrofonun Windows’ta açık olmalı."
+    },
+    "masaüstünde-kodi": {
+      "baslik": "Masaüstünde Kodi",
+      "s": [
+        "Kodi'yi masaüstüne çıkarabilir miyim?",
+        "Kodi TürKod penceresinin dışına çıkabiliyor mu?",
+        "Masaüstüne çık düğmesi ne yapar?",
+        "kodi masaustunde durabilir mi",
+        "Kodi'yi TürKod'a nasıl geri getiririm?",
+        "Kodi başka pencerelerin üstünde durabilir mi?",
+        "Masaüstündeki Kodi dosya açabiliyor mu?",
+        "Kodi'yi pencereden dışarı sürükledim, ne oldu?",
+        "kodi pencereden cikti geri nasil gelir",
+        "Başka bir programda çalışırken Kodi ekranımda kalsın istiyorum; masaüstündeyken bütün özellikleri çalışıyor mu?",
+        "TürKod'a dön düğmesi",
+        "Kodi'yi masaüstünde istediğim yere koyabilir miyim?"
+      ],
+      "c": "Evet, Kodi’yi TürKod penceresinin dışına sürükle ya da balondaki Masaüstüne çık düğmesine bas; masaüstüne çıkar ve öteki pencerelerin üstünde durur, nereye sürüklersen orada kalır. Balonu ve özellikleri aynıdır, dosya açmak, kod yazmak gibi işleri yine TürKod’da yapar. TürKod’a dön düğmesi ya da çift tıklama onu sohbetiyle geri getirir."
+    },
+    "hangi-yapay-zekâyla-konuşur": {
+      "baslik": "Hangi yapay zekâyla konuşur?",
+      "s": [
+        "Kodi hangi yapay zekâyı kullanıyor?",
+        "Kodi'nin modelini nasıl değiştiririm?",
+        "Kodi için ayrı bir model seçebilir miyim?",
+        "kodi hangi modeli kullaniyo",
+        "Kodi otomatik ayarındayken hangi modeli kullanır?",
+        "Modelin kullanım hakkı dolunca Kodi ne yapar?",
+        "Kodi limit doldu diyor, ne zaman yine konuşabilirim?",
+        "Yapay Zekâ: Görevler bölümündeki Kodi satırı",
+        "Kodi'ye model nasıl bağlanır?",
+        "kodi llm secimi",
+        "AI Paneli ile Kodi aynı modeli mi kullanıyor?",
+        "Kodi'nin kullandığı modelin hakkı bitti ama elimde bağlı başka modeller de var; Kodi hata verir mi yoksa diğerine mi geçer?"
+      ],
+      "c": "Kodi’nin modelini Ayarlar → Yapay Zekâ: Görevler bölümündeki Kodi (yardımcı robot) satırından seçersin. Otomatik bırakırsan AI Paneli sohbetinin modelini kullanır; satırda hangisi olduğu yazar. Bir modelin hakkı dolarsa Kodi hata göstermeden bağlı başka modelle devam eder; hepsi dolduysa ne zaman yine konuşabileceğini söyler. Model bağlamayı Yapay Zekâ Modelleri sayfası anlatıyor."
+    },
+    "kurulum-rehberi": {
+      "baslik": "Kurulum rehberi",
+      "s": [
+        "Kodi'yi konuşturmak için ne yapmalıyım?",
+        "Kodi'ye ücretsiz yapay zekâ nasıl bağlarım?",
+        "Groq anahtarı nasıl alınır?",
+        "kodi kurulum rehberi nerde",
+        "Kurulum rehberi düğmesi ne işe yarıyor?",
+        "Create API Key düğmesine bastım, anahtarı nereye yapıştıracağım?",
+        "Groq anahtarım kayboldu, tekrar görebilir miyim?",
+        "API anahtarımı yanlışlıkla paylaştım, ne yapmalıyım?",
+        "gsk ile baslayan anahtar ne",
+        "Rehberi sonradan nasıl açarım?",
+        "Yanlış anahtar girersem ayarlarım bozulur mu?",
+        "Kodi hiç konuşmuyor, sadece kısa işler yapıyor ve balonda Kurulum rehberi yazıyor; ücretsiz bir anahtarla adım adım nasıl bağlarım?",
+        "API anahtarını ekran görüntüsünde göstermek sorun olur mu?",
+        "Groq hesap açma çocuklar için"
+      ],
+      "c": "Balondaki Kurulum rehberi’ne bas; TürKod’un tarayıcısında Groq’un anahtar sayfası açılır. Giriş yap ya da hesap aç (çocuklar bir büyüğüyle), Create API Key’e bas ve gsk_ ile başlayan anahtarı kopyala; Groq onu bir kez gösterir. Rehberdeki kutuya yapıştırıp Bağla’ya bas, Kodi gerisini ayarlar. Anahtar bir şifredir, kimseyle paylaşma; paylaştıysan Groq’ta silip yenisini oluştur."
+    },
+    "gizlilik": {
+      "baslik": "Gizlilik",
+      "s": [
+        "Kodi'ye yazdıklarım nereye gidiyor?",
+        "Kodi kodumu internete gönderiyor mu?",
+        "Kodi ile konuşmalarım nerede saklanıyor?",
+        "kodi gizlilik",
+        "Yerel model seçersem bilgilerim bilgisayardan çıkar mı?",
+        "Sohbetler hangi klasörde tutuluyor?",
+        "Kodi kişisel bilgilerimi kaydediyor mu?",
+        "Ekran görüntüsü gönderme açık mı başlıyor?",
+        "kodi verilerimi kime yolluyo",
+        "Kodi'nin sakladığı sohbetleri nasıl silerim?",
+        ".turkod klasörü ne?",
+        "Çocuğum Kodi kullanıyor; yazdıkları, terminal çıktısı ve ekran görüntüleri kime gönderiliyor, bunları bilgisayarda tutup tutmamayı nasıl seçerim?"
+      ],
+      "c": "Kodi’ye yazdıkların ve gereken bağlam (kodun, seçtiğin parça, terminal çıktısı) seçtiğin yapay zekâ sağlayıcısına gönderilir; yerel model seçtiysen hiçbir şey bilgisayarından çıkmaz. Ekran görüntüsü gönderme hep kapalı başlar. Sohbetler ve hafıza notları yalnızca bu bilgisayarda, kullanıcı klasöründeki .turkod klasöründe saklanır; Ayarlar → Kodi’den kapatılıp silinebilir."
+    }
+  }
+}

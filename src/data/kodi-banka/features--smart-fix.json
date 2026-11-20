@@ -1,0 +1,118 @@
+{
+  "sayfa": "/features/smart-fix/",
+  "bolumler": {
+    "": {
+      "baslik": "Akıllı Düzeltme",
+      "s": [
+        "akıllı düzeltme nedir",
+        "kodumdaki hataları otomatik düzelten bir şey var mı",
+        "Düzelt düğmesi nerede",
+        "sihirli değnek düğmesi ne işe yarar",
+        "akıllı düzeltme internete bağlanıyor mu",
+        "akilli duzeltme nasil acilir",
+        "komut satırından hata düzeltme",
+        "turkod --duzelt ne yapar",
+        "hata düzeltme yapay zeka mı kullanıyor",
+        "sarı düğmeye basınca ne oluyor",
+        "kodum hata veriyor ve nerede olduğunu bulamıyorum, TürKod benim yerime düzeltebilir mi",
+        "Araçlar menüsünde Düzelt",
+        "otomatik hata düzeltici"
+      ],
+      "c": "Akıllı Düzeltme kodundaki hataları bulup düzeltir ve ne yaptığını Türkçe bir raporla anlatır. Tamamen bilgisayarında çalışır, internete ya da bir yapay zekâ hizmetine bağlanmaz. Açmak için araç çubuğundaki sarı Düzelt (sihirli değnek) düğmesine bas ya da Araçlar → Düzelt'i seç; komut satırında turkod --duzelt dosya.trpy de aynı işi yapar."
+    },
+    "örnek": {
+      "baslik": "Örnek",
+      "s": [
+        "akıllı düzeltme örneği",
+        "eksik iki nokta ve kapanmamış parantezi düzeltiyor mu",
+        "girdi_al ile aldığım sayıyı toplayınca Veri Tipi Hatası alıyorum",
+        "girdi_al neden metin döndürüyor",
+        "kullanıcıdan alınan sayıyı nasıl sayıya çeviririm",
+        "düzeltme raporu ne kadar sürede açılır",
+        "motor her hatayı kendisi mi düzeltiyor",
+        "metinle sayı toplanmıyor ne yapmalıyım",
+        "girdi_al sayi toplama hatasi",
+        "topla fonksiyonundaki hataları nasıl buldu",
+        "düzeltme bazı sorunları neden bana bırakıyor",
+        "fonksiyon satırında : unuttum ve yazdır parantezini kapatmadım, Düzelt'e basınca ne olur",
+        "tamsayı(girdi_al(...)) ne işe yarar"
+      ],
+      "c": "Örnekte 1. satırda : eksik, 5. satırda parantez kapanmamış; sihirli değneğe basınca birkaç saniyede rapor açılır ve motor ikisini de düzeltir. Bir sorunu da sana söyler: girdi_al() her zaman metin döndürür, bu yüzden a + b çalışırken Veri Tipi Hatası verir. Bunu senin kararına bırakır; sayı istiyorsan girdiyi tamsayı(girdi_al(...)) ile sayıya çevirmelisin."
+    },
+    "neleri-düzeltir": {
+      "baslik": "Neleri düzeltir?",
+      "s": [
+        "akıllı düzeltme hangi hataları düzeltir",
+        "düzeltme kaç aşamada yapılıyor",
+        "yanlış girintiyi düzeltir mi",
+        "değilse eğer ayrı yazdım düzeltir mi",
+        "akıllı tırnakları düzeltiyor mu",
+        "sıfıra bölme hatasını düzeltir mi",
+        "eksik içe_aktar satırını ekler mi",
+        "sonsuz döngüyü düzeltiyor mu",
+        "kullanılmayan değişkenleri söylüyor mu",
+        "duzeltmede yapay zeka kullaniliyo mu",
+        "Akıllı Düzelt AI aşaması nedir",
+        "düzeltmeler doğru mu nasıl anlıyor",
+        "yerel motor çözemezse yapay zekâya sorulur mu, sohbet geçmişim etkilenir mi",
+        "sekme boşluk karışıklığı"
+      ],
+      "c": "Düzeltme yedi aşamada olur: okuma, ön temizlik, sözdizimi, anlam, çalışma, gözden geçirme, rapor. Girinti, eksik :, parantez, tırnak, tanımsız ad, eksik içe_aktar, sıfıra bölme gibi hataları düzeltir ve kodu yeniden çalıştırarak doğrular; sonsuz döngü riskinde yalnızca uyarır. Ayarlar → Yapay Zekâ: Görevler'de Akıllı Düzelt (AI aşaması) görevine model atadıysan son çare olarak AI'ya da danışılır."
+    },
+    "güvenlik-kodun-çalıştırılsın-mı": {
+      "baslik": "Güvenlik: kodun çalıştırılsın mı?",
+      "s": [
+        "akıllı düzeltme kodumu çalıştırıyor mu",
+        "kodun çalıştırılsın mı diye soruyor neden",
+        "çalıştırmadan düzelt ile çalıştırarak düzelt farkı",
+        "os modülü kullanınca neden izin istiyor",
+        "düzeltme dosyalarımı silebilir mi",
+        "deneme çalıştırmaları nerede yapılıyor",
+        "calistirmadan duzelt ne demek",
+        "riskli kod düzeltme",
+        "subprocess kullanan kodu düzeltirken ne olur",
+        "kodum dosya siliyor, düzeltme sırasında bilgisayarıma zarar gelir mi",
+        "varsayılan seçenek hangisi",
+        "çalışma hatalarını da bulmasını istiyorum ne seçmeliyim"
+      ],
+      "c": "Düzeltmeyi doğrulamak için kod denenerek çalıştırılır. Kodun os, shutil, subprocess, requests, eval ya da yazma kipinde aç gibi riskli işler yapabiliyorsa önce sorulur: Çalıştırmadan düzelt (varsayılan) yalnızca yazım ve sözdizimi hatalarını düzeltir, Çalıştırarak düzelt çalışma hatalarını da bulur, Vazgeç ise iptal eder. Deneme çalıştırmaları geçici bir klasörde, zaman sınırıyla yapılır."
+    },
+    "rapor": {
+      "baslik": "Rapor",
+      "s": [
+        "akıllı düzeltme raporunda neler var",
+        "düzeltmeyi nasıl uygularım",
+        "uyguladıktan sonra geri alabilir miyim",
+        "orijinal koduma dokunmadan düzeltilmiş hali görmek",
+        "Reddet ne yapar",
+        "kod farklarını göster",
+        "kod sağlığı ve güven yüzdesi ne demek",
+        "düşünce sürecini göster ne işe yarar",
+        "Satır N etiketine tıklayınca ne olur",
+        "duzeltilmis kodu yeni sekmede acmak",
+        "rapordaki öneriler ve uyarılar ne",
+        "düzeltmeyi beğenmedim, hiçbir şeyi değiştirmeden kapatmak istiyorum",
+        "motorun ne düşündüğünü canlı izleyebilir miyim"
+      ],
+      "c": "Düzeltme sırasında motorun ne düşündüğünü canlı izlersin; bitince raporda özet, Kod sağlığı % ve Güven % çubukları, tıklanabilir Satır N etiketli düzeltmeler, öneriler ve uyarılar, Düşünce sürecini göster ve Kod farklarını göster bulunur. Uygula editördeki kodu değiştirir (Ctrl+Z ile geri alırsın), Yeni Sekmede Aç orijinale dokunmaz, Reddet hiçbir şeyi değiştirmeden kapatır."
+    },
+    "ayarlar": {
+      "baslik": "Ayarlar",
+      "s": [
+        "akıllı düzeltme ayarları nerede",
+        "zaman aşımı nasıl değiştirilir",
+        "düzeltme zaman aşımı varsayılan kaç saniye",
+        "mesaj aralığı nedir",
+        "maksimum döngü sayısı ne işe yarar",
+        "gelişmiş düzeltmeyi kapatabilir miyim",
+        "duzeltme ayarlari",
+        "deneme çalıştırması çok çabuk kesiliyor, süreyi uzatmak istiyorum",
+        "canlı mesajlar çok hızlı akıyor yavaşlatabilir miyim",
+        "Ayarlar Düzeltme bölümü",
+        "düzeltme kaç tur deniyor",
+        "akilli duzeltmeyi kapatma"
+      ],
+      "c": "Ayarlar → Düzeltme bölümünden deneme çalıştırmalarının Zaman Aşımı (varsayılan 5 sn), canlı mesajlar arasındaki bekleme olan Mesaj Aralığı (varsayılan 100 ms) ve Maksimum Döngü Sayısı (varsayılan 12) değiştirilebilir. Gelişmiş düzeltme her zaman açıktır, kapatılamaz."
+    }
+  }
+}

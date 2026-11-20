@@ -1,0 +1,185 @@
+{
+  "sayfa": "/contribute/",
+  "bolumler": {
+    "": {
+      "baslik": "Katkıda Bulun",
+      "s": [
+        "TürKod açık kaynak mı",
+        "türkodun kaynak kodu nerede",
+        "TürKod GitHub deposu",
+        "turkod githubda var mi",
+        "projeye katkıda bulunabilir miyim",
+        "türkod hangi lisansla yayınlanıyor",
+        "turkod kodlarini inceleyebilir miyim",
+        "TürKod'un kodunu değiştirmeme izin var mı",
+        "proje neden var amacı ne",
+        "türkodun kaynak kodunu görmek ve geliştirmek istiyorum, nereden ulaşabilirim",
+        "github linki",
+        "open source mu"
+      ],
+      "c": "Evet, TürKod MIT lisanslı açık kaynak bir proje. Bütün kaynak kodu GitHub'da, github.com/YusufX-sys/turkod-ide deposunda; inceleyebilir, değiştirebilir, öğrenebilir ve katkıda bulunabilirsin. Proje kodlamaya yeni başlayanların Türkçe öğrenebilmesi için var ve her katkı bu amaca hizmet eder."
+    },
+    "nasıl-katkı-verebilirim": {
+      "baslik": "Nasıl katkı verebilirim?",
+      "s": [
+        "nasıl katkı verebilirim",
+        "hata bulursam nereye bildiririm",
+        "yeni Türkçe kelime önermek istiyorum",
+        "sözlükte yanlış karşılık var nasıl söylerim",
+        "özellik isteği nasıl gönderilir",
+        "hata bildirimi şablonu",
+        "program içinden hata bildirme",
+        "Yardım → Hata Bildir ne açar",
+        "kodlama bilmiyorum yine de yardım edebilir miyim",
+        "hata bildir nerde",
+        "sözlüğe tek kelime eklemek için PR açmaya değer mi",
+        "beklendiği gibi çalışmayan bir şey gördüm, bildirirken ne eklersem işe yarar",
+        "issue nasıl açılır"
+      ],
+      "c": "Dört yolu var: hata bildirimi şablonuyla hata bildir (hatayı üreten küçük bir .trpy örneği çok işe yarar), sözlük önerisi şablonuyla Türkçe karşılık öner, Özellik isteği şablonuyla neye ihtiyaç duyduğunu anlat ya da Pull Request ile kod veya belge gönder. Şablonlar GitHub'daki yeni issue sayfasında; programda Yardım → Hata Bildir / Öneri Gönder de GitHub Issues sayfasını açar."
+    },
+    "geliştirme-ortamı": {
+      "baslik": "Geliştirme ortamı",
+      "s": [
+        "TürKod'u geliştirmek için ne kurmam lazım",
+        "geliştirme ortamı gereksinimleri",
+        "hangi python sürümü gerekiyor",
+        "flutter gerekli mi",
+        "visual studio hangi bileşen lazım",
+        "python paketlerini nasıl kurarım",
+        "requirements.txt nasıl kurulur",
+        "turkodu kaynaktan nasil derlerim",
+        "derleme adımları nerede yazıyor",
+        "nasıl-build-edilir.txt nerede",
+        "depoyu fork edip klonladım, şimdi bilgisayarımda çalıştırmak için ne yapmalıyım",
+        "mac veya linuxta gelistirebilir miyim"
+      ],
+      "c": "Önce depoyu fork'la ve klonla. Gereksinimler: Windows 10/11, Python 3.12, Flutter SDK (stable) ve Visual Studio 2022 \"Desktop development with C++\". Python paketlerini python -m pip install -r requirements.txt ile kurarsın. Ayrıntılı derleme adımları depodaki TurKod-v3.3.0/nasıl-build-edilir.txt dosyasında."
+    },
+    "testler": {
+      "baslik": "Testler",
+      "s": [
+        "testleri nasıl çalıştırırım",
+        "göndermeden önce ne kontrol etmeliyim",
+        "unittest komutu ne",
+        "tablo_tutarlilik.py ne işe yarar",
+        "sözlüğü değiştirdim neyi çalıştırmalıyım",
+        "yeni özellik için test eklemeli miyim",
+        "testleri hangi klasörde çalıştırmalıyım",
+        "test calistirma komutu",
+        "TurKod_Sozluk.txt değişince ne yapılmalı",
+        "pull request açmadan önce kodumun bir şeyi bozmadığından nasıl emin olurum",
+        "python -m unittest discover",
+        "tablolar tutarlı mı nasıl kontrol edilir"
+      ],
+      "c": "Göndermeden önce TurKod-v3.3.0 klasöründe python -m unittest discover -s tests ile testleri ve python tools\\tablo_tutarlilik.py ile tablo kontrolünü çalıştır. Yeni bir özellik ya da hata düzeltmesi için mümkünse test ekle. Sözlük (turkod_ide/TurKod_Sozluk.txt) ya da ilgili tablolar değiştiğinde tools/tablo_tutarlilik.py temiz geçmelidir."
+    },
+    "değişiklik-yaparken": {
+      "baslik": "Değişiklik yaparken",
+      "s": [
+        "sözlüğe kelime eklerken nelere dikkat etmeliyim",
+        "eski kelime adlarını silebilir miyim",
+        "satır sonları LF mi CRLF mi olmalı",
+        "dosya kodlaması ne olmalı",
+        "kullanıcıya görünen metinler hangi dilde olmalı",
+        "menüyü değiştirince kitabı da güncellemeli miyim",
+        "turkod_ide klasöründeki dosyayı değiştirince imza bozuluyor",
+        "manifest dosyalarına dokunmalı mıyım",
+        "imza gecersiz oldu sorun mu",
+        "sozluk karsiliklari nasil olmali",
+        "geriye dönük uyumluluk nasıl korunur",
+        "bir dosyayı değiştirdim ve imza geçersiz uyarısı çıktı, PR'ımda bunu düzeltmem gerekir mi"
+      ],
+      "c": "Sözlükteki karşılıklar çocukların anlayacağı, doğal Türkçe olmalı; eski adları silme, geriye dönük uyumluluk için koru. Satır sonlarını (LF/CRLF) ve UTF-8 kodlamasını koru, görünen metinleri Türkçe yaz; menü, kısayol ya da ayar değişirse kitabı da güncelle. turkod_ide/ altındaki dosyayı değiştirmek imzayı bozar, bu beklenen bir durum; imzayı proje sahibi yeniler, sen manifest dosyalarına dokunma."
+    },
+    "pull-request-süreci": {
+      "baslik": "Pull Request süreci",
+      "s": [
+        "pull request nasıl açılır",
+        "PR için hangi daldan dal açmalıyım",
+        "dal adı nasıl olmalı",
+        "bir PR'da birden çok konu olabilir mi",
+        "PR şablonu kontrol listesi",
+        "inceleme sonrası değişiklik istenirse ne yapmalıyım",
+        "CONTRIBUTING.md nerede",
+        "pr gonderme adimlari",
+        "yeni branch açmak",
+        "kodumu gönderdim, yorum yapıp düzeltme istediler, yeni bir PR mı açayım",
+        "küçük değişiklik mi büyük mü göndermeliyim",
+        "katkı süreci adımları"
+      ],
+      "c": "main dalından yeni bir dal aç (ör. duzeltme/kaplumbaga-baslik). Küçük ve odaklı değişiklikler gönder; bir PR tek bir konuyu çözsün. PR şablonundaki kontrol listesini doldur, inceleme sonrası istenen değişiklikleri aynı dala gönder. Ayrıntılar CONTRIBUTING.md dosyasında."
+    },
+    "i̇mzayı-doğrulamak": {
+      "baslik": "İmzayı doğrulamak",
+      "s": [
+        "kaynak kodun imzasını nasıl doğrularım",
+        "TürKod dosyaları imzalı mı",
+        "hangi imza yöntemi kullanılıyor",
+        "RSA-PSS SHA-256 ne",
+        "imzayı doğrulamak için özel anahtar gerekir mi",
+        "kaynak_imzala.py --dogrula ne yapar",
+        "imza dogrulama komutu",
+        "indirdiğim kaynak kodun değiştirilmediğinden nasıl emin olurum",
+        "güncelleme bildirimleri imzalı mı",
+        "kurulu programın imzasını nasıl kontrol ederim",
+        "ortak anahtarla doğrulama",
+        "kodun orijinal olup olmadığını kontrol etmek"
+      ],
+      "c": "TürKod uygulama dosyalarını, kaynak kodu ve güncelleme bildirimlerini RSA-PSS (SHA-256) ile imzalar. Kaynak kodun imzasını özel anahtar olmadan, yalnızca ortak anahtarla doğrulayabilirsin: TurKod-v3.3.0 klasöründe python kaynak_imzala.py --dogrula çalıştır. Kurulu programda doğrulama için Güvenlik sayfasına bak."
+    },
+    "güvenlik-açığı-bildirmek": {
+      "baslik": "Güvenlik açığı bildirmek",
+      "s": [
+        "güvenlik açığı bulursam nasıl bildiririm",
+        "güvenlik açığını issue olarak açabilir miyim",
+        "Report a vulnerability nerede",
+        "güvenlik bildirimi e-posta adresi",
+        "guvenlik acigi bildirme",
+        "güvenlik bildiriminde neleri yazmalıyım",
+        "hangi sürümlere güvenlik düzeltmesi yapılıyor",
+        "eski sürümde güvenlik açığı düzeltilir mi",
+        "SECURITY.md",
+        "türkodda tehlikeli bir açık buldum ama herkes görmesin istiyorum, ne yapmalıyım",
+        "gizli güvenlik bildirimi",
+        "e-postanın konu satırına ne yazayım"
+      ],
+      "c": "Güvenlik açıklarını lütfen herkese açık bir issue olarak bildirme. Tercih edilen yol GitHub'daki Security → Report a vulnerability düğmesiyle gizli bildirim; ya da konu satırına \"TürKod güvenlik\" yazarak yusuftndgn.2@gmail.com adresine e-posta gönder. Etkilenen TürKod ve Windows sürümünü, sorunu, olası etkisini ve varsa yeniden üretme adımlarını yaz. Düzeltmeler yalnızca en son sürüme (3.3.x) yapılır."
+    },
+    "davranış-kuralları": {
+      "baslik": "Davranış kuralları",
+      "s": [
+        "topluluk davranış kuralları neler",
+        "CODE_OF_CONDUCT.md ne",
+        "toplulukta nasıl davranmalıyım",
+        "basit soru sormak sorun mu",
+        "eleştiri yaparken nelere dikkat etmeliyim",
+        "davranis kurallari",
+        "çocuklar için güvenli bir topluluk mu",
+        "projeye katılınca hangi kurallara uymayı kabul ediyorum",
+        "biri sorumu küçümsedi, bu kurallara aykırı mı",
+        "nazik olma kuralı",
+        "kapsayıcı topluluk",
+        "code of conduct turkod"
+      ],
+      "c": "TürKod yeni başlayanlar ve özellikle çocuklar için yapıldığından topluluğun herkes için güvenli, nazik ve kapsayıcı olması isteniyor. Nazik ve sabırlı ol, \"basit\" soruları küçümseme, eleştiriyi kişiye değil koda yönelt. Projeye katılan herkes davranış kurallarına uymayı kabul eder; ayrıntılar CODE_OF_CONDUCT.md dosyasında."
+    },
+    "lisans": {
+      "baslik": "Lisans",
+      "s": [
+        "TürKod'un lisansı ne",
+        "MIT lisansı mı",
+        "gönderdiğim katkılar hangi lisansla yayınlanır",
+        "turkod lisansi",
+        "katkım bana mı ait kalır yoksa hangi lisansa girer",
+        "turkod hangi lisans altinda yayimlaniyo",
+        "license",
+        "kodumu gönderirsem hangi şartlarla yayınlanır",
+        "turkod mit mi gpl mi",
+        "TürKod'a eklediğim kodun lisansı değişir mi",
+        "lisans türü nedir"
+      ],
+      "c": "TürKod MIT Lisansı ile yayımlanır. Senin gönderdiğin katkılar da aynı MIT lisansı altında yayımlanır."
+    }
+  }
+}

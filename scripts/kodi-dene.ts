@@ -13,9 +13,10 @@
 //   gelistirme / gizli:     [{ "soru", "beklenen": "madde-id" | null }]   null: Kodi hazır cevap vermemeli
 //   ozel-gelistirme / -gizli: [{ "soru", "sayfa": "/learn/strings/", "baslik": "Bölme ve birleştirme" }]
 //   baglam:                 [{ "onceki", "soru", "beklenen" }]
+import { existsSync } from 'node:fs';
 import { BILGI } from '../src/data/kodi-bilgi.ts';
 import { adaylariSirala, baglamliCevap, bolumAdaylari, yerelCevap } from '../src/data/kodi-motor.ts';
-import { bd, degerlendir, liste, sozluk } from './kodi-ortak.ts';
+import { bd, degerlendir, kok, liste, sozluk } from './kodi-ortak.ts';
 
 const [kip = 'gelistirme', ...geri] = process.argv.slice(2);
 const yuzde = (a: number, b: number) => (b ? ((100 * a) / b).toFixed(1) : '-') + '%';
@@ -69,5 +70,5 @@ function olc(ad: string, ayrintili: boolean) {
   if (ayrintili && yanlislar.length) console.log('\nYanlışlar:\n' + yanlislar.join('\n'));
 }
 
-if (kip === 'hepsi') for (const ad of ['gelistirme', 'gizli', 'ozel-gelistirme', 'ozel-gizli']) olc(ad, false);
+if (kip === 'hepsi') for (const ad of ['gelistirme', 'gizli', 'ozel-gelistirme', 'ozel-gizli', 'kapsam-gelistirme', 'kapsam-gizli']) if (existsSync(new URL(`scripts/kodi-deneme/${ad}.json`, kok))) olc(ad, false);
 else olc(kip, !kip.includes('gizli'));

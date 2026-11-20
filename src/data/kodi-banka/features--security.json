@@ -1,0 +1,72 @@
+{
+  "sayfa": "/features/security/",
+  "bolumler": {
+    "": {
+      "baslik": "Güvenlik",
+      "s": [
+        "turkod güvenli mi",
+        "turkod sürümleri imzalı mı",
+        "hangi imza yöntemi kullanılıyor",
+        "rsa pss sha-256 ne",
+        "turkod dijital imza",
+        "indirdiğim dosya gerçek mi",
+        "turkod imzali mi kontrol",
+        "is turkod signed",
+        "TürKod'u indirdim ama dosyanın gerçekten resmî sürüm olduğundan nasıl emin olabilirim, imza var mı?",
+        "guvenlik sayfasi ne anlatiyor"
+      ],
+      "c": "Her TürKod sürümü RSA anahtarıyla, PSS + SHA-256 kullanılarak imzalanır. Bu imza sayesinde dosyanın yayıncıdan geldiğini ve değiştirilmediğini doğrulayabilirsin."
+    },
+    "neden-önemli": {
+      "baslik": "Neden Önemli?",
+      "s": [
+        "imza neden önemli",
+        "dijital imza ne işe yarar",
+        "dosya değiştirilirse nasıl anlarım",
+        "imza tutmazsa ne demek",
+        "birisi programı değiştirirse fark eder miyim",
+        "imza ne gosterir",
+        "neden imzalı dosya indirmeliyim",
+        "Birisi TürKod dosyasının içine bir şey ekleyip internete koysa, imza bunu yakalar mı?",
+        "imzanin faydasi ne",
+        "why code signing matters"
+      ],
+      "c": "İmza, dosyanın yayıncının anahtarıyla imzalandığını ve sonradan değiştirilmediğini gösterir. Dosya değiştirilirse imza tutmaz ve bunu fark edersin."
+    },
+    "doğrulama": {
+      "baslik": "Doğrulama",
+      "s": [
+        "imzayı nasıl doğrularım",
+        "hakkında / imza nerede",
+        "programın içinden imza kontrolü",
+        "sha-256 özetini nerede görürüm",
+        "doğrulama başarısız oldu ne yapmalıyım",
+        "tüm dosyalar geçerli ne demek",
+        "imza dogrulama nasil yapilir",
+        "imza programın zararsız olduğunu garanti eder mi",
+        "turkodu nereden indirmeliyim",
+        "Yardım menüsünde imza kontrolü yaptım ama bir dosya geçersiz göründü; programı kullanmaya devam edebilir miyim, ne yapmalıyım?",
+        "degistirilmis program dogrulamayi yaniltabilir mi",
+        "imza durumu penceresi"
+      ],
+      "c": "Programı aç, üstteki Yardım menüsünden Hakkında / İmza’ya tıkla ve dosyaların taranmasını bekle; pencerede imza durumu, ayrıntılar ve SHA-256 özeti görünür. Tüm dosyalar geçerliyse imzayla eşleşiyorlar demektir. Doğrulama başarısız olursa programı kapat ve resmî kanaldan tekrar indir. İmza tek başına zararsızlık garantisi değildir; dosyayı yalnızca resmî GitHub sürüm sayfasından indir."
+    },
+    "kaynak-kodu-doğrulamak": {
+      "baslik": "Kaynak kodu doğrulamak",
+      "s": [
+        "kaynak kodun imzasını nasıl doğrularım",
+        "kaynak_imzala.py ne işe yarar",
+        "github'daki kodu doğrulamak",
+        "özel anahtar olmadan doğrulama yapılır mı",
+        "turkod açık kaynak mı",
+        "python kaynak_imzala.py --dogrula",
+        "güvenlik açığı buldum nereye bildiririm",
+        "guvenlik acigini issue olarak acabilir miyim",
+        "ortak anahtarla dogrulama",
+        "GitHub'dan TürKod'un kaynak kodunu indirdim; bu kodun değiştirilmediğini kendi bilgisayarımda hangi komutla kontrol ederim?",
+        "verify source code signature turkod"
+      ],
+      "c": "TürKod açık kaynaklıdır ve GitHub’daki kaynak kodun imzasını özel anahtar olmadan, yalnızca ortak anahtarla doğrulayabilirsin: klasöre girip python kaynak_imzala.py --dogrula komutunu çalıştır. Bir güvenlik açığı bulursan lütfen herkese açık issue açma; nasıl bildireceğin Katkıda Bulun sayfasında yazıyor."
+    }
+  }
+}

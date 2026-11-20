@@ -1,0 +1,73 @@
+{
+  "sayfa": "/features/updates/",
+  "bolumler": {
+    "": {
+      "baslik": "Otomatik Güncelleme",
+      "s": [
+        "turkod kendini günceller mi",
+        "güncelleme nasıl denetlenir",
+        "yeni sürüm var mı nasıl bakarım",
+        "güncelleştirmeleri denetle nerede",
+        "otomatik guncelleme var mi",
+        "turkod ne zaman guncelleme kontrolu yapiyor",
+        "elle güncelleme kontrolü",
+        "check for updates turkod",
+        "Programı açınca yeni sürüm olup olmadığına kendisi bakıyor mu, yoksa benim mi kontrol etmem gerekiyor?",
+        "guncelleme menusu nerede"
+      ],
+      "c": "TürKod açıldıktan birkaç saniye sonra arka planda yeni sürüm olup olmadığını kendisi denetler. İstediğin zaman Güncelleştirmeler → Güncelleştirmeleri Denetle ile de bakabilirsin."
+    },
+    "yeni-sürüm-olduğunda": {
+      "baslik": "Yeni sürüm olduğunda",
+      "s": [
+        "yeni sürüm yayınlandı penceresi çıktı ne yapmalıyım",
+        "yükle'ye basınca ne olur",
+        "atla ne demek",
+        "bir sürümü atladım tekrar nasıl bulurum",
+        "programınız güncel mesajı ne",
+        "sürüm notlarını nerede görürüm",
+        "guncellemeyi atlarsam bir daha sorar mi",
+        "guncelleme yuklerken dosyalarim kaydediliyor mu",
+        "Güncelleme penceresi açıldı ama şimdi kurmak istemiyorum; Atla dersem o sürümü bir daha hiç göremez miyim?",
+        "kurulu surum numarasini nasil gorurum",
+        "update popup skip turkod"
+      ],
+      "c": "Yeni sürüm yayınlandı penceresi yeni ve kurulu sürüm numaralarını ve sürüm notlarını gösterir. Yükle’ye basarsan güncelleme indirilir, açık dosyaların kaydedilir ve kurulum kendiliğinden yapılır. Atla dersen bu sürüm bir daha sorulmaz ama elle denetlersen yine görünür. Güncelsen Programınız Güncel mesajı çıkar."
+    },
+    "kurulum-sırasında": {
+      "baslik": "Kurulum sırasında",
+      "s": [
+        "güncelleme sırasında ne oluyor",
+        "güncelleme indiriliyor yazıyor sonra ne olacak",
+        "güncellemeden sonra ayarlarım kaybolur mu",
+        "kurduğum kütüphaneler silinir mi",
+        "açık sekmelerim gider mi",
+        "güncelleme indirilemedi hatası",
+        "guncelleme baslatilamadi ne yapmaliyim",
+        "guncelleme denetlenemedi diyor",
+        "güncelleme bozulursa program çalışmaz mı",
+        "Yükle'ye bastım, TürKod kapandı; tekrar kendisi açılacak mı, yoksa benim mi açmam gerek?",
+        "update failed turkod",
+        "dosyalariniz kaydediliyor mesaji"
+      ],
+      "c": "Yükle’ye basınca sırasıyla Güncelleme indiriliyor… %N, Dosyalarınız kaydediliyor… ve Güncelleme başlatılıyor… mesajlarını görürsün. Sonra TürKod kapanır, yeni sürüm kurulur ve kendiliğinden yeniden açılır; sekmelerin, ayarların ve kütüphanelerin korunur. Bir sorun olursa mevcut sürümün bozulmadan çalışır; çözüm için Sorun Giderme sayfasına bak."
+    },
+    "güvenlik": {
+      "baslik": "Güvenlik",
+      "s": [
+        "güncelleme güvenli mi",
+        "güncelleme nereden indiriliyor",
+        "sahte güncelleme gelebilir mi",
+        "latest.json nedir",
+        "güncelleme dosyası doğrulanıyor mu",
+        "sha-256 özeti güncellemede ne işe yarar",
+        "imza tutmazsa güncelleme kurulur mu",
+        "guncelleme https ile mi iniyor",
+        "Otomatik güncellemenin bilgisayarıma zararlı bir dosya kurmadığından nasıl emin olabilirim, hangi kontroller yapılıyor?",
+        "update signature verification turkod",
+        "guncelleme github dan mi geliyor"
+      ],
+      "c": "Güncelleme yalnızca resmî GitHub sürüm sayfasından ve yalnızca HTTPS ile indirilir. Kurmadan önce iki denetim yapılır: latest.json’un dijital imzası programın içindeki anahtarla doğrulanır ve kurulum dosyasının SHA-256 özeti imzalı bilgideki değerle karşılaştırılır. İkisinden biri tutmazsa güncelleme kurulmaz."
+    }
+  }
+}

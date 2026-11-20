@@ -1,0 +1,154 @@
+{
+  "sayfa": "/learn/basics/",
+  "bolumler": {
+    "": {
+      "baslik": "Temel İfadeler",
+      "s": [
+        "turkodun temel komutları neler",
+        "kod yazmaya nereden başlamalıyım",
+        "temel ifadeler sayfası ne anlatıyor",
+        "yazdırma girdi değişken liste döngü öğrenmek",
+        "kurmadan örnekleri deneyebilir miyim",
+        "turkod temelleri",
+        "dilin yapı taşları neler",
+        "yeni basladim temel seyleri nerden ogrenirim",
+        "bilgisayarıma TürKod'u kurmadan bu temel örnekleri bir yerde çalıştırabilir miyim",
+        "programlamaya sıfırdan başlıyorum, TürKod'da önce hangi konuları öğrenmeliyim",
+        "turkod basics",
+        "canlı demoda temel örnekler"
+      ],
+      "c": "TürKod'un temel yapı taşları yazdırma, girdi, değişkenler, listeler ve döngülerdir. Bu temel örneklerin hepsini kurmadan sitedeki Canlı Demo sayfasında deneyebilirsin."
+    },
+    "ekrana-yazdırma-ve-girdi": {
+      "baslik": "Ekrana Yazdırma ve Girdi",
+      "s": [
+        "ekrana yazı nasıl yazdırılır",
+        "yazdır komutu nasıl kullanılır",
+        "kullanıcıdan bilgi nasıl alınır",
+        "girdi_al ne işe yarar",
+        "merhaba dünya nasıl yazılır",
+        "print turkodda ne",
+        "input yerine ne yazıyoruz",
+        "kullanicidan isim alip ekrana yazdirma",
+        "adını soran program",
+        "iki yazıyı + ile birleştirip yazdırmak",
+        "programın kullanıcıya adını sormasını ve sonra ona merhaba demesini istiyorum",
+        "ekrana mesaj çıkarma",
+        "klavyeden veri okuma"
+      ],
+      "c": "Ekrana yazmak için yazdır(\"Merhaba Dünya\") kullanırsın. Kullanıcıdan bilgi almak için isim = girdi_al(\"Adın ne? \") yazarsın; cevap isim değişkenine girer. Sonra yazdır(\"Merhaba \" + isim) ile ikisini birleştirip yazdırabilirsin."
+    },
+    "değişkenler-ve-matematik": {
+      "baslik": "Değişkenler ve Matematik",
+      "s": [
+        "değişken nasıl tanımlanır",
+        "turkodda dört işlem",
+        "kalan nasıl bulunur",
+        "üs alma işareti ne",
+        "tam sayılı bölme nasıl yapılır",
+        "% işareti ne işe yarar",
+        "// ile / farkı ne",
+        "toplam diye değişken yaptım toplam() çalışmıyor",
+        "toplam adında değişken kullanabilir miyim",
+        "us alma ** mi",
+        "matematik işlemleri işaretleri",
+        "değişkene sayı koyup işlem yapmak, parantezlerle öncelik vermek istiyorum, nasıl yazılır",
+        "modulo turkod"
+      ],
+      "c": "Değişkeni yas = 15 gibi bir adla ve = ile tanımlarsın. + - * / dört işlemdir, // tam sayılı bölme, % kalan, ** üs alır; örneğin 7 % 3 kalanı, 2 ** 5 üssü verir. Dikkat: toplam listenin toplamını alan bir komuttur, toplam adında değişken yaparsan o dosyada toplam(...) çalışmaz, toplam_deger gibi bir ad seç."
+    },
+    "tür-dönüşümleri-ve-yardımcılar": {
+      "baslik": "Tür Dönüşümleri ve Yardımcılar",
+      "s": [
+        "metni sayıya nasıl çeviririm",
+        "tamsayı fonksiyonu",
+        "ondalıklı sayıya çevirme",
+        "sayıyı metne çevirme",
+        "uzunluk ne işe yarar",
+        "mutlak değer nasıl alınır",
+        "yuvarla komutu",
+        "int float str turkodda ne",
+        "tur donusumu nasil yapilir",
+        "aralık(5) ne verir",
+        "girdi_al ile aldığım sayı metin olarak geliyor, onu sayıya çevirmek için ne yazmalıyım",
+        "mantıksal(1) ne demek",
+        "bir yazının kaç harf olduğunu bulma"
+      ],
+      "c": "Tür dönüştürmek için tamsayı(\"42\"), ondalıklı(\"3.14\"), metin(100) ve mantıksal(1) kullanılır. Yardımcılardan uzunluk(\"TürKod\") uzunluğu, aralık(5) bir sayı aralığını, mutlak(-7) mutlak değeri, yuvarla(3.7) yuvarlanmış sayıyı verir."
+    },
+    "sık-kullanılan-yerleşik-fonksiyonlar": {
+      "baslik": "Sık kullanılan yerleşik fonksiyonlar",
+      "s": [
+        "en büyük sayıyı bulma",
+        "max min turkodda ne",
+        "listenin toplamını nasıl alırım",
+        "sıra numarasıyla döngü",
+        "enumerate türkçesi",
+        "map filter zip karşılıkları",
+        "ayırıcı ne işe yarar",
+        "yazdırınca alt satıra geçmesin istiyorum",
+        "sonlandırıcı nasıl kullanılır",
+        "sayilarin arasina tire koyarak yazdirma",
+        "üssü fonksiyonu",
+        "değerin türünü öğrenme",
+        "hepsi herhangi ne demek",
+        "listeyi bozmadan sıralı yeni bir liste nasıl alırım"
+      ],
+      "c": "Sık kullanılanlar: en_büyük / en_küçük (max / min), toplam (sum), sırala_builtin (sorted), sıralı_numaralandır (enumerate), harita (map), süz (filter), izdusum (zip), hepsi / herhangi (all / any), üssü (pow), tip (type). yazdır içinde ayırıcı= değerlerin arasına, sonlandırıcı= satırın sonuna ne konacağını belirler; örneğin ayırıcı=\"-\" ile a-b yazar."
+    },
+    "listeler": {
+      "baslik": "Listeler",
+      "s": [
+        "liste nasıl oluşturulur",
+        "listeye eleman ekleme",
+        "sona_ekle ne yapar",
+        "listeyi sıralama",
+        "listeyi ters çevirme",
+        "append sort reverse turkodda",
+        "liste siralama komutu",
+        "tersine_çevir nasıl kullanılır",
+        "listenin sonuna yeni sayı koymak",
+        "sayılardan oluşan bir liste yapıp ona eleman ekleyip küçükten büyüğe dizmek istiyorum",
+        "listeler turkod",
+        "listeyi yazdırma"
+      ],
+      "c": "Liste köşeli parantezle yazılır: sayilar = [3, 1, 2]. sona_ekle(4) sonuna eleman ekler, sırala() listeyi sıralar, tersine_çevir() sırasını ters çevirir. Sonucu yazdır(sayilar) ile görebilirsin."
+    },
+    "döngüler": {
+      "baslik": "Döngüler",
+      "s": [
+        "döngü nasıl yazılır",
+        "for döngüsü turkodda",
+        "while döngüsü turkodda",
+        "listenin elemanlarını tek tek gezmek",
+        "için içinde ne demek",
+        "döngüyü durdurma",
+        "break continue pass türkçesi",
+        "kır komutu ne yapar",
+        "devam_et ne işe yarar",
+        "geç ne demek",
+        "dongu ile 0 dan 4 e kadar yazdirma",
+        "bir koşul doğru olduğu sürece tekrar eden bir döngü nasıl yazarım",
+        "bir adımı atlayıp döngüye devam etmek"
+      ],
+      "c": "Sayı saymak için döngü i aralık(5): yazarsın; döngü sayac < 3: ise koşul doğru olduğu sürece tekrar eder. Listenin elemanlarını sırayla gezmek için için meyve içinde meyveler: kullanılır. kır döngüyü durdurur (break), devam_et o adımı atlar (continue), geç hiçbir şey yapmaz (pass)."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "temel ifadeler mini görev",
+        "kullanıcının yaşını alıp yazdırma görevi",
+        "yaş soran program",
+        "mini görevin cevabı nerede",
+        "temel konular alıştırma",
+        "yasimi sorup ekrana yazan kod",
+        "görevde takıldım cevaplara nereden bakarım",
+        "temel ifadeler sayfasındaki ödev ne",
+        "kullanıcıdan yaşını isteyip ekranda gösteren bir kod yazmam gerekiyor",
+        "basit pratik görevi",
+        "kendini test et sayfası"
+      ],
+      "c": "Görev şu: kullanıcıdan yaşını alıp ekrana yazdıran bir kod yaz. Bunun için girdi_al ile yaşını sor, sonra yazdır ile göster. Takılırsan cevaplar Kendini Test Et sayfasında."
+    }
+  }
+}

@@ -1,7 +1,9 @@
 // kodi-dene.ts ve kodi-ayarla.ts'in ortak parçaları: veriyi yükler ve bir cevabın doğru olup olmadığına karar verir.
 import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { bankaEkle, maddeBankasiOku } from '../src/integrations/kodi-bolumler.mjs';
 import { BILGI } from '../src/data/kodi-bilgi.ts';
-import { bolumDizini, sozlukDizini, yerelCevap, type BolumDizini, type BolumKaydi } from '../src/data/kodi-motor.ts';
+import { bolumDizini, maddeSorulari, sozlukDizini, yerelCevap, type BolumDizini, type BolumKaydi } from '../src/data/kodi-motor.ts';
 
 export const kok = new URL('..', import.meta.url);
 export const sozluk = sozlukDizini(JSON.parse(readFileSync(new URL('public/kodi-sozluk.json', kok), 'utf8')).k);
@@ -15,6 +17,13 @@ export const bolumKayitlari: BolumKaydi[] = (() => {
   }
   return JSON.parse(readFileSync(yol, 'utf8')).b;
 })();
+// Soru bankası her çalıştırmada kaynaktan eklenir (banka değişince yeniden derlemek gerekmesin).
+// KODI_BANKASIZ=1: bankasız ölçüm (karşılaştırma için).
+if (process.env.KODI_BANKASIZ) for (const k of bolumKayitlari) k.length = Math.min(k.length, 8);
+else {
+  await bankaEkle(bolumKayitlari, fileURLToPath(new URL('src/data/kodi-banka/', kok)));
+  maddeSorulari(await maddeBankasiOku(fileURLToPath(new URL('src/data/kodi-banka-madde/', kok))));
+}
 let _bd: BolumDizini | null = null;
 export const bd = () => (process.env.KODI_BOLUMSUZ ? null : (_bd ??= bolumKayitlari.length ? bolumDizini(bolumKayitlari) : null));
 export const bdSifirla = () => { _bd = null; };

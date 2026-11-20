@@ -1,0 +1,117 @@
+{
+  "sayfa": "/learn/extra-libs/",
+  "bolumler": {
+    "": {
+      "baslik": "Diğer Kütüphaneler",
+      "s": [
+        "turkod ile hangi kütüphaneler kurulu geliyor",
+        "pandas nasıl kurulur",
+        "pip ile kütüphane yükleme turkod",
+        "pip yükle komutu ne",
+        "yeni kütüphane eklemek istiyorum",
+        "turkodda pygame var mi",
+        "sympy hazır geliyor mu",
+        "numpy matplotlib flask kullanabilir miyim",
+        "turkodda pip install nasil yapilir",
+        "Türkçe sözdizimiyle oyun ve web projesi yapılabiliyor mu",
+        "bir kütüphane lazım ama yüklü değil, IDE'nin içinden nasıl kurarım",
+        "ek paket kurma",
+        "hazır gelen kütüphaneler hangileri, diğerlerini nereye yazarak kuruyorum"
+      ],
+      "c": "py_oyun (pygame), ursina ve sympy TürKod ile birlikte kurulu gelir. pandas, matplotlib, numpy, flask gibi diğerlerini IDE'nin terminalinde pip yükle pandas gibi bir komutla kurabilirsin. Böylece Türkçe sözdizimiyle oyun, veri ve web projeleri yapabilirsin."
+    },
+    "py_oyun-pygame--2b-oyunlar": {
+      "baslik": "py_oyun (pygame) — 2B oyunlar",
+      "s": [
+        "py_oyun nedir",
+        "turkodda pygame ile oyun nasıl yapılır",
+        "2b oyun yapmak istiyorum",
+        "oyun penceresi nasıl açılır",
+        "pencere başlığını nasıl değiştiririm",
+        "ekrana dikdörtgen çizme",
+        "daire nasıl çizilir py_oyun",
+        "cember cizme oyun",
+        "oyun penceresi kapat düğmesine basınca nasıl kapanır",
+        "py_oyun.ekran_güncelle ne işe yarar",
+        "basit bir oyun penceresi açıp içine mavi bir kutu çizen örnek var mı",
+        "olayları_al ve çıkış_olayı ne demek",
+        "pygame turkod karşılığı"
+      ],
+      "c": "py_oyun, pygame'in Türkçe hâlidir ve 2B oyunlar yapmanı sağlar. içe_aktar py_oyun ile başlar, oyun_başlat, ekran_oluştur ve pencere_başlığı ile pencereyi kurarsın; döngüde olayları_al ile çıkış_olayı gelince çalışıyor = Yanlış yapıp döngüyü bitirirsin. dikdörtgen_çiz ile kutu çizer, ekran_güncelle ile ekranı yenilersin. Daire için dikdörtgen_çiz yerine çember_çiz yazmayı dene."
+    },
+    "ursina--3b-oyun-motoru": {
+      "baslik": "ursina — 3B oyun motoru",
+      "s": [
+        "3b oyun nasıl yapılır",
+        "ursina nedir",
+        "ursina_kütüphanesi kullanımı",
+        "turkodda 3 boyutlu küp çizme",
+        "kırmızı bir küp oluşturmak",
+        "3d oyun motoru turkod",
+        "ursina ile varlık nasıl eklenir",
+        "ursina kurulu geliyor mu yoksa ayrıca mı kuracağım",
+        "ursina_renk ve ölçek ne işe yarıyor",
+        "ucboyutlu oyun yapcam",
+        "Türkçe kodla üç boyutlu bir sahnede kutu gösteren en basit örnek nasıl",
+        "ursina uygulamasını nasıl çalıştırırım"
+      ],
+      "c": "3B oyunlar için ursina kullanılır ve TürKod ile birlikte kurulu gelir. içe_aktar ursina_kütüphanesi yazar, başlat() ile uygulamayı açarsın; varlık(model=\"cube\", ursina_renk=ursina_kütüphanesi.renk.kırmızı, ölçek=2) ile kırmızı bir küp eklersin. En sonda çalıştır() ile sahneyi başlatırsın."
+    },
+    "veri-ve-grafik-pandas-matplotlib": {
+      "baslik": "Veri ve grafik (pandas, matplotlib)",
+      "s": [
+        "pandas nasıl kullanılır",
+        "turkodda tablo oluşturma",
+        "veri çerçevesi nedir",
+        "matplotlib ile grafik çizme",
+        "grafik nasıl gösterilir",
+        "baş_satırlar ne işe yarıyor",
+        "pandas_veri_çerçevesi örneği",
+        "grafik_çiz ve grafik_göster",
+        "pandas dataframe turkodda nasil yaziliyor",
+        "grafik ciz turkod",
+        "öğrencilerin adlarını ve puanlarını bir tabloya koyup yazdırmak istiyorum, nasıl yaparım",
+        "sayılardan çizgi grafiği yapmak",
+        "plt.plot plt.show türkçesi"
+      ],
+      "c": "Veri için içe_aktar pandas_veri_çerçevesi den pandas yazıp pandas_veri_çerçevesi({\"ad\": [...], \"puan\": [...]}) ile tablo oluşturur, baş_satırlar() ile ilk satırları yazdırırsın. Grafik için içe_aktar matplotlib.pyplot yazar, grafik_çiz([1, 4, 9, 16]) ile çizer, grafik_göster() ile gösterirsin. Bu kütüphaneler hazır gelmez, önce pip yükle ile kurmalısın."
+    },
+    "desteklenen-diğer-kütüphaneler": {
+      "baslik": "Desteklenen diğer kütüphaneler",
+      "s": [
+        "hangi kütüphaneler destekleniyor",
+        "numpy türkçe komutları neler",
+        "flask ile web sitesi yapabilir miyim",
+        "django turkodda var mı",
+        "from flask import Flask turkodda nasıl yazılır",
+        "den kalıbı ne işe yarar",
+        "kurulu paketleri nasıl görürüm",
+        "pip listele komutu",
+        "tensorflow torch kullanabilir miyim",
+        "numpy yazdım çalışmadı modül bulunamadı diyor",
+        "sympy ile türev alma",
+        "requests openai bs4 türkçe karşılıkları",
+        "tablodaki kütüphaneleri kullanmadan önce kurmam gerekiyor mu yoksa hazır mı geliyor",
+        "kutuphane listesi turkod"
+      ],
+      "c": "numpy, django, flask, fastapi, scipy, kivy, bs4, openai, requests gibi tablodaki kütüphaneler (ve tensorflow_kütüphanesi, torch_kütüphanesi) sözlükte vardır ama birlikte kurulu gelmez. Kullanmadan önce IDE terminalinde pip yükle numpy gibi kur, kurulu paketleri pip listele ile gör. Sınıf adları için den kalıbını kullan: içe_aktar flask_uygulaması den flask, Python'daki from flask import Flask olur."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "py_oyun mini görev ne",
+        "kendi adımı pencere başlığı yapmak",
+        "oyun ekranına daire çiz görevi",
+        "extra libs alıştırma",
+        "py_oyun ile pratik yapmak istiyorum",
+        "pencere basligina adimi yazcam",
+        "çember_çiz ile ilgili ödev",
+        "diğer kütüphaneler sayfasındaki görevin ipucu ne",
+        "pencere başlığı kendi adım olan ve içinde daire olan bir oyun ekranı yapmam isteniyor, nasıl başlarım",
+        "kütüphane alıştırması",
+        "oyun penceresi görevi"
+      ],
+      "c": "Görev şu: py_oyun ile pencere başlığını kendi adın yap ve ekrana bir daire çiz. İpucu olarak pencere_başlığı ile başlığı değiştir, dikdörtgen_çiz yerine çember_çiz kullanarak daireyi çiz."
+    }
+  }
+}

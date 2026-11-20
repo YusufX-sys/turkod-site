@@ -1,0 +1,198 @@
+{
+  "sayfa": "/features/settings/",
+  "bolumler": {
+    "": {
+      "baslik": "Ayarlar ve Temalar",
+      "s": [
+        "ayarlar nerede",
+        "ayarları nasıl açarım",
+        "dişli simgesi nerede",
+        "Görünüm menüsünden ayarlara gitmek",
+        "ayarları değiştirdim ama değişmedi",
+        "Kaydet ve Uygula düğmesi ne işe yarar",
+        "hangi ayarlar hemen uygulanıyor",
+        "tema değiştirdim ama ekran aynı kaldı",
+        "ayarlar sekmesi nerde aciliyo",
+        "settings menüsü turkodda",
+        "ayar kaydedilemedi uyarısı çıktı",
+        "Ayarlardan yazı boyutunu ve temayı değiştirdim ama hiçbir şey değişmedi, Mini Harita ise hemen açıldı; neden bazı ayarlar hemen uygulanıyor bazıları uygulanmıyor?"
+      ],
+      "c": "Ayarlara sol şeridin en altındaki ⚙️ dişli düğmesinden ya da Görünüm → Ayarlar'dan ulaşırsın; editörde Ayarlar sekmesi olarak açılır. Tema, yazı, otomatik tamamlama ve kaydetme, satır numaraları gibi ayarlar üstteki Kaydet ve Uygula'ya basınca etkinleşir. Mini Harita, girinti ve yapay zekâ görev atamaları gibi diğerleri seçer seçmez uygulanır."
+    },
+    "genel": {
+      "baslik": "Genel",
+      "s": [
+        "yazı boyutunu nasıl büyütürüm",
+        "editördeki yazılar çok küçük",
+        "yazı tipini değiştirmek",
+        "varsayılan yazı tipi ne",
+        "Ctrl fare tekerleği ile yazı büyütme",
+        "otomatik kaydetme nasıl açılır",
+        "otomatik kaydetme kaç saniyede bir kaydediyor",
+        "yazarken çıkan öneri listesini kapatmak",
+        "otomatik tamamlama nasıl kapatılır",
+        "yazi boyutu en fazla kac olur",
+        "font değiştirme turkod",
+        "Dosyalarımı kaydetmeyi sık sık unutuyorum, TürKod belirli aralıklarla kendiliğinden kaydedebilir mi, bu aralığı nasıl ayarlarım?"
+      ],
+      "c": "Genel bölümünde Tema (varsayılan Modern Koyu), Yazı Boyutu (8–32, varsayılan 14; Ctrl+fare tekerleğiyle de değişir), Yazı Tipi (varsayılan Consolas, bilgisayarındaki yazı tiplerinden seçilir) ve Otomatik Tamamlama (açık) vardır. Otomatik Kaydetme varsayılan olarak kapalıdır; açınca 5–600 saniye arasında bir aralık seçersin, varsayılan 30 saniyedir."
+    },
+    "temalar": {
+      "baslik": "Temalar",
+      "s": [
+        "hangi temalar var",
+        "açık tema var mı",
+        "koyu temayı beyaz yapmak istiyorum",
+        "Yüksek Kontrast teması ne",
+        "varsayılan tema hangisi",
+        "tema kod renklerini de değiştirir mi",
+        "ekran çok karanlık nasıl açarım",
+        "tema degistirme",
+        "dark mode light mode turkod",
+        "kaç tane tema var",
+        "Gözlerim koyu ekranda yoruluyor, TürKod'un arka planını beyaz yapabileceğim bir tema var mı ve kod renkleri de buna göre değişir mi?"
+      ],
+      "c": "Dört tema vardır: Modern Koyu (varsayılan), Koyu, Açık ve Yüksek Kontrast. Seçtiğin tema arayüzle birlikte editördeki kod renklerini de değiştirir."
+    },
+    "editör-görünümü": {
+      "baslik": "Editör Görünümü",
+      "s": [
+        "satır numaralarını nasıl açarım",
+        "uzun satırlar ekrandan taşıyor",
+        "word wrap nasıl açılır",
+        "kodda noktalar ve oklar görünüyor neden",
+        "boşluk göstergesini kapatmak",
+        "dikey ince çizgiler ne",
+        "Mini Harita nedir",
+        "girinti 4 yerine 2 boşluk olsun",
+        "kaydederken kodu otomatik düzenlesin",
+        "girintiyi dosyadan algıla ne demek",
+        "klavye kısayollarını değiştirmek",
+        "satir numaralari kapanirsa ne olur",
+        "Kodumun sağ tarafında küçük bir harita görmek ve uzun satırların alta kaymasını istiyorum, bunları hangi ayarlardan açarım?"
+      ],
+      "c": "Editör Görünümü'nde Satır Numaraları (açık, kesme noktası ve katlama için gerekir), Kelime Kaydırma (kapalı, uzun satırları alta kaydırır), Boşluk Göstergesi (boşluklar nokta, sekmeler ok), Girinti Kılavuzları ve Mini Harita (kapalı) vardır. Girinti genişliği 2, 4 ya da 8 olabilir, varsayılan 4. Kaydederken biçimlendir ve Girintiyi dosyadan algıla da buradadır; Klavye Kısayolları… düğmesi de bu bölümde."
+    },
+    "terminal": {
+      "baslik": "Terminal",
+      "s": [
+        "terminal yazı boyutunu değiştirmek",
+        "terminaldeki yazılar çok küçük",
+        "terminal yazısı ne kadar büyük olabilir",
+        "çıktı ekranındaki yazıyı büyütmek",
+        "terminal font size",
+        "terminalde Ctrl tekerlek ile büyütme",
+        "terminal yazi boyutu varsayilan kac",
+        "çıktı penceresinin yazısını editörden ayrı ayarlayabilir miyim",
+        "terminal ayarları nerede",
+        "Programımın çıktısını sınıfta projeksiyonda gösteriyorum ama terminaldeki yazılar çok küçük kalıyor, sadece terminali nasıl büyütürüm?"
+      ],
+      "c": "Terminal Yazı Boyutu 8 ile 28 arasında ayarlanır, varsayılanı 13'tür. İmleci terminalin üzerine getirip Ctrl + fare tekerleğiyle de boyutu hızlıca değiştirebilirsin."
+    },
+    "arayüz-turu-ve-sistem-entegrasyonu": {
+      "baslik": "Arayüz Turu ve Sistem Entegrasyonu",
+      "s": [
+        "arayüz turu her açılışta çıkıyor nasıl kapatırım",
+        "Turu şimdi başlat nerede",
+        "trpy dosyasına çift tıklayınca açılmıyor",
+        "trpy dosyalarını TürKod ile ilişkilendirmek",
+        "komut isteminden turkod komutunu kullanmak",
+        "TürKod'u PATH'e eklemek",
+        "cmd'de turkod dosya.trpy çalışmıyor",
+        "sistem entegrasyonu yönetici izni ister mi",
+        "sağ tıkta Editör ile aç çıkmıyor",
+        "trpy dosyasi cift tiklayinca ne olur",
+        "taşınabilir sürümde sistem entegrasyonu yok neden",
+        "Masaüstündeki .trpy dosyalarına çift tıklayınca doğrudan çalışmasını ve komut isteminde turkod yazarak çalıştırabilmeyi istiyorum, bunları nereden ayarlarım?"
+      ],
+      "c": "Her açılışta göster açıksa tur her açılışta başlar, kapalıyken yalnızca ilk açılışta; Turu şimdi başlat hemen açar. .trpy dosyalarını TürKod ile ilişkilendir seçilince dosyaya çift tıklayınca program çalışır, sağ tıkta Editör ile aç çıkar. TürKod'u PATH'e ekle ile komut isteminde turkod dosya.trpy kullanılır. Bunlar yönetici izni istemez ve yalnızca kurulmuş TürKod'da vardır."
+    },
+    "kodi": {
+      "baslik": "Kodi",
+      "s": [
+        "Kodi'nin ayarlarımı değiştirmesini istemiyorum",
+        "Kodi'nin yapabileceklerini nasıl sınırlarım",
+        "Kodi her işten önce izin istesin",
+        "Kodi sohbetleri kaydetmesin",
+        "Kodi beni hatırlamasın",
+        "Kodi'nin hafızasını nasıl silerim",
+        "bütün sohbetleri silmek",
+        "Kodi tarayıcıyı yönetebiliyor mu",
+        "mesajla birlikte ekran görüntüsü göndermek",
+        "kodi ayarlari nerde",
+        "Kodi kendi izinlerini değiştirebilir mi",
+        "Çocuğum TürKod kullanıyor; Kodi'nin ayarları değiştirmesini, program komutlarını çalıştırmasını engellemek ve her işten önce izin istemesini sağlamak istiyorum, nereden yaparım?"
+      ],
+      "c": "Ayarlar'daki Kodi bölümünde Kodi'nin neleri yapabileceğini seçersin; bu bölümü yalnızca sen değiştirebilirsin, Kodi dokunamaz. Ayarları değiştirebilsin, Eklentileri açıp kapatabilsin, Program komutlarını çalıştırabilsin, Tarayıcıyı yönetebilsin, Sohbet kaydedilsin, Kodi beni hatırlasın açık; Her işten önce izin istesin ve Mesajla birlikte görüntü gönder kapalıdır. Hafızayı yönet… ve Bütün sohbetleri sil de buradadır."
+    },
+    "yapay-zekâ-görevler": {
+      "baslik": "Yapay Zekâ: Görevler",
+      "s": [
+        "her yapay zeka işine farklı model atayabilir miyim",
+        "otomatik tamamlamaya hangi model kullanılıyor",
+        "model atamazsam ne olur",
+        "Model düşünsün ayarı ne",
+        "akıl yürütme nasıl açılır",
+        "hayalet kod önerisi geç geliyor",
+        "otomatik tamamlama gecikmesi ne kadar",
+        "çok satırlı öneri kapatmak",
+        "Akıllı Düzelt için model seçmek",
+        "gorevlere model atama",
+        "reasoning modunu açmak",
+        "Hayalet kod önerileri bazen birkaç satır birden geliyor ve biraz geç çıkıyor, bu davranışı ve hangi modelin kullanılacağını nereden ayarlarım?"
+      ],
+      "c": "Yapay Zekâ: Görevler bölümünde otomatik tamamlama, AI Paneli sohbet, kod açıklama / optimize, hata açıklama, Akıllı Düzelt ve Kodi'ye ayrı model atanır; seçim hemen kaydedilir, model atanmamış görev kapalıdır. Model düşünsün (varsayılan kapalı) AI Asistan'daki beyin düğmesiyle aynıdır. Otomatik tamamlama gecikmesi 300 ms'dir, Çok satırlı otomatik tamamlama ise açıktır."
+    },
+    "yapay-zekâ-modeller": {
+      "baslik": "Yapay Zekâ: Modeller",
+      "s": [
+        "API anahtarını nereye girerim",
+        "yapay zeka sağlayıcısı nasıl bağlanır",
+        "Bağla ve modelleri seç düğmesi nerede",
+        "bağlı modelleri nerede görürüm",
+        "sıcaklık ayarı ne işe yarar",
+        "temperature değeri kaç olmalı",
+        "en fazla token ayarı",
+        "sistem mesajı ne",
+        "api anahtari girme yeri",
+        "anahtarım doğru mu test etmek",
+        "Bir yapay zekâ sağlayıcısından API anahtarı aldım; bunu TürKod'a nereye yazıp bağlayacağım ve modelin cevap uzunluğu gibi ortak ayarları nereden değiştiririm?"
+      ],
+      "c": "Yapay Zekâ: Modeller'deki Sağlayıcı bağla bölümünde bir sağlayıcı seçip API anahtarını girersin; Bağlantıyı Test Et ve Bağla ve modelleri seç düğmeleri buradadır. Mevcut modeller listesi bağlı bütün modelleri gösterir. Ortak ayarlar Sıcaklık (0–2, varsayılan 0.70), En Fazla Token (4096) ve Sistem Mesajı'dır."
+    },
+    "düzeltme": {
+      "baslik": "Düzeltme",
+      "s": [
+        "Akıllı Düzeltme ayarları nerede",
+        "düzeltme zaman aşımı ne demek",
+        "düzeltme kaç kere deniyor",
+        "Maksimum Döngü Sayısı nedir",
+        "Mesaj Aralığı ayarı ne işe yarar",
+        "mesaj aralığı karakter mi milisaniye mi",
+        "düşünce mesajları çok yavaş geliyor",
+        "gelişmiş düzeltmeyi nasıl açarım",
+        "duzeltme ayarlari",
+        "düzeltme deneme süresi 5 saniye yetmiyor",
+        "Düzelt'e basınca canlı düşünce mesajları çok yavaş akıyor ve bazen erken vazgeçiyor; deneme sayısını ve hızını nereden ayarlayabilirim?"
+      ],
+      "c": "Düzeltme bölümünde Zaman Aşımı (varsayılan 5 saniye) bir deneme çalıştırmasının en uzun süresidir, Maksimum Döngü Sayısı (12) en fazla kaç deneme yapılacağıdır. Mesaj Aralığı (100) canlı düşünce mesajları arasındaki beklemedir; etiket karakter dese de değer milisaniyedir, en fazla 250, 0 en hızlısı. Gelişmiş düzeltme her zaman etkindir."
+    },
+    "ayarlar-nerede-saklanır": {
+      "baslik": "Ayarlar nerede saklanır?",
+      "s": [
+        "ayarlar hangi dosyada saklanıyor",
+        "turkod_ayarlar.json ne",
+        "API anahtarlarım güvende mi",
+        "anahtarlarım şifreli mi duruyor",
+        "ayar dosyası bozulursa ne olur",
+        "iki TürKod penceresi açıksa ayarlar karışır mı",
+        "açık sekmeler nereye kaydediliyor",
+        "panel düzenim nerede tutuluyor",
+        "ayarlar nerde saklaniyo",
+        "satır numaraları kapalıyken kesme noktası koyamıyorum",
+        "Bilgisayarı kardeşimle paylaşıyorum, ayar dosyasındaki API anahtarımı başkası okuyabilir mi, ayarlar tam olarak nerede duruyor?"
+      ],
+      "c": "Tüm ayarlar, açık sekmeler ve panel düzeni %USERPROFILE%\\.turkod_ayarlar.json dosyasında saklanır. API anahtarları Windows'un şifrelemesiyle durur; yalnızca senin Windows kullanıcı hesabın açabilir. Dosya bozulursa .bozuk uzantısıyla yedeklenir ve varsayılanlarla devam edilir; iki pencere açıkken ayarlar birbirini ezmeden birleştirilir. Satır Numaraları kapalıyken kesme noktası ve katlama fareyle kullanılamaz."
+    }
+  }
+}

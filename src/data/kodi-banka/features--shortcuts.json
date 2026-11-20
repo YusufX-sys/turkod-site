@@ -1,0 +1,190 @@
+{
+  "sayfa": "/features/shortcuts/",
+  "bolumler": {
+    "": {
+      "baslik": "Klavye Kısayolları",
+      "s": [
+        "kısayolu unuttum nasıl bulurum",
+        "kısayolları nasıl değiştiririm",
+        "kendi kısayolumu atayabilir miyim",
+        "komut paleti nasıl açılır",
+        "kisayollari degistirme",
+        "Klavye Kısayolları penceresi nerede",
+        "kısayolu varsayılana döndürmek",
+        "tüm kısayolları sıfırlamak istiyorum",
+        "bir tuş başka komutta kullanılıyorsa ne olur",
+        "düğmenin kısayolunu nasıl görürüm",
+        "tuş atamasını değiştirmek istiyorum, Görünüm menüsünde neye tıklamalıyım",
+        "menülerde kısayollar neden türkçe yazıyor",
+        "bütün komutların listesini kısayollarıyla görmek istiyorum"
+      ],
+      "c": "Kısayolu hatırlamıyorsan Ctrl+Shift+P ile Komut Paleti'ni aç; her komut kısayoluyla listelenir, düğmenin üzerinde fareyi bekletince de görünür. Değiştirmek için Görünüm → Klavye Kısayolları… (ya da Ayarlar'daki düğme) aç, komutun yanındaki kaleme bas, tuş birleşimine bas ve Ata de. Tuş başka komuttaysa uyarı çıkar; Varsayılana döndür tek komutu, Tümünü Sıfırla hepsini eski hâline getirir."
+    },
+    "dosya": {
+      "baslik": "Dosya",
+      "s": [
+        "kaydetme kısayolu ne",
+        "yeni sekme nasıl açılır klavyeyle",
+        "dosya açma kısayolu",
+        "son açtığım dosyalara hızlıca nasıl ulaşırım",
+        "hepsini birden kaydetmek",
+        "sekmeyi kapatma kısayolu",
+        "ctrl s ne yapar",
+        "ctrl+w neyi kapatır",
+        "tumunu kaydet kisayolu",
+        "ctrl t ne ise yariyo",
+        "açık olan bütün dosyaları tek tuşla kaydetmenin yolu var mı",
+        "son dosyalar listesini klavyeyle açmak istiyorum"
+      ],
+      "c": "Dosya işlemleri için: Ctrl+T Yeni Sekme, Ctrl+O Dosya Aç, Ctrl+Shift+O Son Dosyalar, Ctrl+S Kaydet, Ctrl+Shift+S Tümünü Kaydet, Ctrl+W Sekmeyi Kapat."
+    },
+    "düzenleme": {
+      "baslik": "Düzenleme",
+      "s": [
+        "geri alma kısayolu",
+        "yorum satırı yapma kısayolu",
+        "satırı çoğaltmak",
+        "satırı yukarı aşağı taşımak",
+        "birden fazla imleç nasıl eklenir",
+        "kodu düzgün hizalamak için kısayol",
+        "bul ve değiştir nasıl açılır",
+        "belirli bir satıra gitmek",
+        "ctrl+/ çalışmıyor",
+        "yazi boyutunu buyutme",
+        "değişkenin adını her yerde değiştirmek",
+        "fonksiyonun tanımına gitmek istiyorum",
+        "seçtiğim kelimenin bütün geçtiği yerleri seçmek istiyorum, hangi tuşa basmalıyım",
+        "satir cogaltma kisayolu calismiyo imlec terminaldeydi"
+      ],
+      "c": "En çok kullanılanlar: Ctrl+Z/Ctrl+Y Geri Al/Yinele, Ctrl+F Bul, Ctrl+H Bul/Değiştir, Ctrl+G Satıra Git, Ctrl+/ Yorum Aç/Kapat, Ctrl+Shift+D Satırı Çoğalt, Alt+↑/Alt+↓ Satırı Taşı, F2 Adı Değiştir, F12 Tanıma Git, Shift+Alt+F Kodu Biçimlendir, Ctrl+D ve Ctrl+Shift+L eşleşme seçimi. Yorum, satır çoğaltma, taşıma, çoklu imleç, F2 ve F12 yalnızca imleç editördeyken çalışır."
+    },
+    "görünüm": {
+      "baslik": "Görünüm",
+      "s": [
+        "terminali açıp kapatma kısayolu",
+        "editörü ikiye bölmek",
+        "iki dosyayı yan yana görmek",
+        "sorunlar paneli nasıl açılır",
+        "eklenti özellikleri kısayolu",
+        "markdown önizleme nasıl açılır",
+        "sekmeyi sola sağa taşımak",
+        "ctrl j ne yapiyo",
+        "ctrl+shift+v markdown önizleme açmıyor",
+        "ctrl+\\ neyi böler",
+        "sekmelerin sırasını klavyeyle değiştirmek istiyorum",
+        "md dosyamın önizlemesini görmek istiyorum ama kısayol çalışmıyor"
+      ],
+      "c": "Görünüm kısayolları: Ctrl+J Terminal Aç/Kapat, Ctrl+Shift+M Sorunlar, Ctrl+\\ Editörü Böl (Yan Yana), Ctrl+Shift+P Komut Paleti, Ctrl+Shift+X Eklenti Özellikleri, Ctrl+Shift+PageUp/PageDown sekmeyi sola/sağa taşır. Ctrl+Shift+V Markdown Önizleme yalnızca .md dosyasında ve eklenti açıksa çalışır."
+    },
+    "çalıştırma-ve-hata-ayıklama": {
+      "baslik": "Çalıştırma ve hata ayıklama",
+      "s": [
+        "kodu çalıştırma kısayolu",
+        "kesme noktası nasıl konur",
+        "hata ayıklamayı başlatma tuşu",
+        "adım adım çalıştırmak",
+        "fonksiyonun içine girmek debug",
+        "koşullu kesme noktası",
+        "hata ayıklamayı durdurmak",
+        "ctrl r ne yapar",
+        "f5 ile f10 farki",
+        "imlecin olduğu yere kadar çalıştırmak",
+        "programı duraklatmak",
+        "debug yaparken fonksiyondan dışarı çıkmak için hangi tuş",
+        "breakpoint kısayolu"
+      ],
+      "c": "Ctrl+R kodu çalıştırır. Hata ayıklamada: F9 Kesme Noktası Aç/Kapat, Shift+F9 Koşullu Kesme Noktası, F5 Başlat/Devam, F10 Adım At, F11 İçine Gir, Shift+F11 Dışına Çık, Ctrl+F10 İmlece Kadar Çalıştır, F6 Duraklat, Shift+F5 Hata Ayıklamayı Durdur."
+    },
+    "araçlar-ve-yardım": {
+      "baslik": "Araçlar ve yardım",
+      "s": [
+        "TürKod Kabuğu nasıl açılır",
+        "kod parçacıkları kısayolu",
+        "Kodi ile konuşmak için hangi tuş",
+        "f1 ne işe yarar",
+        "ctrl shift k ne aciyo",
+        "snippet kısayolu",
+        "yardımcı robotu açmak",
+        "kod parçacıkları kısayolu çalışmıyor",
+        "kabuk açma tuşu",
+        "Kodi'ye soru sormak istiyorum, klavyeden hızlıca nasıl açarım",
+        "araçlar menüsü kısayolları",
+        "ctrl+shift+j ne yapar"
+      ],
+      "c": "Ctrl+Shift+K TürKod Kabuğu'nu, Ctrl+Shift+J Kod Parçacıkları'nı (eklenti açıksa) açar. F1 ise Kodi ile Konuş'u açar."
+    },
+    "terminal": {
+      "baslik": "Terminal",
+      "s": [
+        "terminalde çalışan programı nasıl durdururum",
+        "önceki komutlara nasıl dönerim",
+        "terminal yazısını büyütmek",
+        "ctrl c terminalde ne yapar",
+        "sonsuz döngüye girdi programı nasıl keserim",
+        "terminalde yukarı ok ne yapar",
+        "terminale yazdığımı programa nasıl gönderirim",
+        "terminal yazisi cok kucuk",
+        "programi durdurma tusu",
+        "ctrl+c kopyalamak yerine programı durdurdu",
+        "girdi isteyen programa cevabı yazıp ne yapmalıyım",
+        "terminal kısayolları"
+      ],
+      "c": "Terminalde Enter yazdığını programa gönderir ya da komutu çalıştırır, ↑/↓ önceki komutları ve girdileri getirir. Seçim yokken Ctrl+C çalışan programı durdurur. Ctrl + fare tekerleği terminal yazısını büyütür ya da küçültür."
+    },
+    "otomatik-tamamlama-ve-hayalet-kod": {
+      "baslik": "Otomatik tamamlama ve hayalet kod",
+      "s": [
+        "otomatik tamamlama önerisini nasıl kabul ederim",
+        "hayalet kod nedir nasıl kabul edilir",
+        "hayalet kodun sadece bir kelimesini almak",
+        "öneri listesini kapatmak",
+        "hayalet kod önerisi istemek",
+        "gri yazılan öneriyi nasıl kabul ederim",
+        "oneriler arasinda gezinme",
+        "ctrl sag ok ne yapar",
+        "AI önerisini beklemeden istemek",
+        "esc ne kapatır",
+        "tab basınca hayalet kodun tamamı mı geliyor",
+        "yapay zekanın önerdiği kodun hepsini değil bir kısmını almak istiyorum",
+        "autocomplete kısayolları"
+      ],
+      "c": "Otomatik tamamlamada ↑/↓ öneriler arasında gezer, Tab ya da Enter kabul eder, Esc listeyi kapatır. Hayalet kodda Tab önerinin tamamını, Ctrl+→ bir kelimesini kabul eder, Esc kapatır. Ctrl+Shift+Boşluk beklemeden hayalet kod önerisi ister."
+    },
+    "pdf-sekmesi": {
+      "baslik": "PDF sekmesi",
+      "s": [
+        "pdf sekmesinde sayfa nasıl değiştirilir",
+        "pdf yakınlaştırma",
+        "pdfde ilk sayfaya gitmek",
+        "pdf genişliğe sığdır",
+        "pdf son sayfa kısayolu",
+        "pdf kucuk gorunuyo nasil buyuturum",
+        "ctrl 0 pdfde ne yapar",
+        "pdf okurken sonraki sayfa tuşu",
+        "pdf kısayolları",
+        "kitabı PDF sekmesinde okuyorum, sayfa ekrana tam sığsın istiyorum",
+        "pageup pagedown pdf"
+      ],
+      "c": "PDF sekmesinde PageUp/PageDown önceki/sonraki sayfaya, Home/End ilk/son sayfaya gider. Ctrl+= / Ctrl+- yakınlaştırır/uzaklaştırır (Ctrl+fare tekerleği de olur), Ctrl+0 genişliğe sığdırır."
+    },
+    "ai-asistan-kodi-ve-arayüz-turu": {
+      "baslik": "AI Asistan, Kodi ve arayüz turu",
+      "s": [
+        "AI paneline yazarken yeni satıra nasıl geçerim",
+        "Kodi'ye mesaj nasıl gönderilir",
+        "arayüz turunda ileri geri gitmek",
+        "turu nasıl kapatırım",
+        "türk klavyede ctrl+/ çalışmıyor",
+        "altgr ile süslü parantez yazınca kısayol mu sanılıyor",
+        "q klavyede yorum satiri kisayolu",
+        "shift enter AI panelinde ne yapar",
+        "köşeli parantez yazamıyorum kısayol çalışıyor",
+        "Türkçe Q klavyede | [ ] { } \\ karakterlerini yazarken sorun olur mu",
+        "ctrl shift 7 ne yapar",
+        "AI'ya mesaj gönderme tuşu",
+        "turda sonraki adıma geçmek"
+      ],
+      "c": "AI Asistan'da Enter gönderir, Shift+Enter yeni satır açar; Kodi'de de Enter gönderir. Arayüz turunda → veya Enter ileri, ← geri, Esc turu kapatır. Türkçe Q klavyede AltGr ile yazılan | [ ] { } \\ kısayol sanılmaz, editörde normal yazılır; Ctrl+/ yerine Ctrl+Shift+7 ya da sayı tuşlarındaki / da olur."
+    }
+  }
+}

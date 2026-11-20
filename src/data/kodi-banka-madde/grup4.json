@@ -1,0 +1,931 @@
+{
+  "fonksiyon-ornekleri": [
+    "iki sayıyı toplayıp sonucu veren bir fonksiyon örneği gösterir misin",
+    "bir sayının karesini hesaplayan fonksiyon nasıl yazılır",
+    "fonksiyon örnek kod",
+    "fonksiyonla toplama yapan küçük bir program",
+    "fonksiyon ornegi verirmisin basit olsun",
+    "kare hesaplayan fonksiyon yazmak istiyorum",
+    "ilk defa fonksiyon yazacağım, kolay bir örnekle gösterir misin döndür nasıl kullanılıyor",
+    "a ve b alıp toplamını geri döndüren fonksiyon",
+    "def ile fonksiyon ornegi turkodda",
+    "hazır bir fonksiyon örneği lazım ödev için"
+  ],
+  "isimli-parametre": [
+    "fonksiyonu çağırırken parametrenin adını yazabilir miyim",
+    "ad= diye yazarak fonksiyona değer göndermek",
+    "parametrelerin sırasını karıştırırsam ne olur, adıyla verebilir miyim",
+    "keyword argument turkodda nasil",
+    "selamla(selam=..., ad=...) şeklinde çağırmak",
+    "fonksiyona değeri isimle vermek",
+    "parametre adini yazarak cagirma",
+    "fonksiyonun birden çok parametresi var, hangisi hangisi karışmasın diye adlarını yazmak istiyorum",
+    "isimle argüman"
+  ],
+  "ic-ice-fonksiyon": [
+    "bir fonksiyonun içinde başka fonksiyon tanımlanabilir mi",
+    "fonksiyonun içine fonksiyon yazınca ne olur",
+    "iç fonksiyon dış fonksiyonun değişkenlerini görebilir mi",
+    "nested function turkod",
+    "fonksiyon icinde fonksyon tanimlamak olurmu",
+    "içteki fonksiyonu dışarıdan çağırabilir miyim",
+    "büyük bir fonksiyonun içinde sadece onun kullanacağı küçük bir yardımcı fonksiyon yazmak istiyorum, olur mu",
+    "fonksiyonda fonksiyon"
+  ],
+  "sinif-metot": [
+    "sınıfın içine fonksiyon nasıl yazılır",
+    "metot ne demek",
+    "kendisi parametresi neden ilk sırada",
+    "nesne.metot() nasıl çağrılır",
+    "class icinde def yazmak turkodda",
+    "sinifa metod eklemek istiyorum nasil",
+    "kedi sınıfıma miyavla diye bir davranış eklemek istiyorum",
+    "method nedir",
+    "sınıfın fonksiyonunda nesnenin adına nasıl ulaşırım"
+  ],
+  "nesne-ozellik-degistir": [
+    "nesnenin özelliğini sonradan nasıl değiştiririm",
+    "oyuncu.can değerini 5 yapmak",
+    "oluşturduğum nesnenin bilgisini güncellemek",
+    "nesne ozelligine yeni deger vermek",
+    "attribute değiştirmek turkod",
+    "sınıftan nesne yaptım, canını dışarıdan artırmak istiyorum nasıl",
+    "nesnenin özelliğini nasıl okurum",
+    "nesne.ozellik = deger"
+  ],
+  "dosyaya-ekle": [
+    "dosyaya yazınca eski yazılar siliniyor",
+    "dosyanın sonuna yeni satır eklemek",
+    "w ile yazınca öncekiler gidiyor, korumak istiyorum",
+    "append mode turkod",
+    "dosyaya ekleme yapmak icin hangi kip",
+    "dosyaya yazdigim her sey siliniyo neden",
+    "her çalıştırmada not dosyasına bir satır daha eklensin istiyorum ama öncekiler kaybolmasın",
+    "\"a\" kipi ne işe yarar",
+    "dosyaya devam ettirerek yazmak"
+  ],
+  "dosya-var-mi": [
+    "açmadan önce dosyanın olup olmadığını nasıl anlarım",
+    "dosya yoksa hata vermesin",
+    "var_mı ile dosya kontrolü",
+    "os.path.exists turkodda ne",
+    "dosya varmi diye bakmak",
+    "notlar.txt var mı yok mu kontrol etmek",
+    "program dosyayı okumaya çalışıp hata veriyor çünkü dosya henüz yok, önce bakabilir miyim",
+    "dosya mevcut mu sorgula",
+    "dosya bulunuyor mu"
+  ],
+  "json-dosya": [
+    "sözlüğü dosyaya nasıl kaydederim",
+    "json dosyasından veri okumak",
+    "oyun puanlarını kapatınca kaybolmasın diye dosyaya kaydetmek istiyorum",
+    "json.dump turkodda ne",
+    "jng_kaydet nasıl kullanılır",
+    "json kaydetme ornegi",
+    "verileri saklayıp sonra geri yüklemek",
+    "json.load karşılığı",
+    "listeyi dosyada saklamak json"
+  ],
+  "iki-basamak-goster": [
+    "virgülden sonra sadece iki rakam görünsün",
+    "3.14159 yerine 3.14 yazdırmak",
+    "ondalıklı sayıyı kısaltarak göstermek",
+    "round fonksiyonu turkodda",
+    ".2f ne demek",
+    "sonuc cok uzun cikiyo virgulden sonra 2 tane olsun",
+    "ortalama hesapladım ama 7.333333 çıkıyor, sadece 7.33 göstermek istiyorum",
+    "sayiyi yuvarlamak",
+    "ondalik basamak sinirla"
+  ],
+  "yas-hesapla": [
+    "doğum yılından kaç yaşında olduğumu hesaplayan program",
+    "bugünün yılını nasıl alırım",
+    "yaş bulma kodu",
+    "kullanıcı doğum yılını girsin programa yaşını söylesin",
+    "yas hesaplayan program yazmak",
+    "datetime now turkodda",
+    "şimdiki tarihten doğum yılını çıkarmak",
+    "kac yasindasin programi"
+  ],
+  "kendi-modul": [
+    "başka bir dosyadaki fonksiyonu nasıl kullanırım",
+    "kendi yazdığım dosyayı içe aktarmak",
+    "kodumu iki dosyaya bölmek istiyorum",
+    "import my own file turkod",
+    "yardimci dosyadan fonksiyon cagirmak",
+    "kendi modulumu nasil yaparim",
+    "ana programım çok uzadı, fonksiyonları ayrı bir trpy dosyasına koyup oradan çağırmak istiyorum",
+    "kendi kütüphanem",
+    "içe_aktar ile kendi dosyam"
+  ],
+  "carpim-tablosu": [
+    "çarpım tablosu programı",
+    "bir sayının 1'den 10'a kadar katlarını yazdırmak",
+    "kullanıcının girdiği sayının çarpım tablosunu gösteren kod",
+    "carpim tablosu nasil yapilir",
+    "multiplication table turkod",
+    "5 ler tablosu yazdırma",
+    "ödevim çarpım tablosu yazdırmak, döngüyle nasıl yaparım",
+    "tüm çarpım tablosunu iç içe döngüyle yazdırmak"
+  ],
+  "sifre-uretici": [
+    "rastgele şifre oluşturan program",
+    "harf ve rakamlardan karışık parola yapmak",
+    "random password generator turkod",
+    "sifre uretme kodu",
+    "8 haneli rastgele şifre",
+    "metin_sabitleri ne işe yarar",
+    "her çalıştığında farklı güvenli bir şifre veren küçük bir program yazmak istiyorum",
+    "parola oluşturucu"
+  ],
+  "basamak-toplam": [
+    "bir sayının rakamlarını toplamak",
+    "1234'ün basamakları toplamı nasıl bulunur",
+    "sayının basamaklarını ayırıp toplama",
+    "rakam toplami bulan program",
+    "sum of digits turkod",
+    "basamaklarini toplayan kod",
+    "kullanıcının girdiği sayının her rakamını toplayıp sonucu yazdırmak istiyorum, % 10 ile mi",
+    "basamak toplamı"
+  ],
+  "armstrong-sayi": [
+    "153 neden armstrong sayısı",
+    "armstrong sayısı nedir",
+    "bir sayının armstrong olup olmadığını kontrol etmek",
+    "armstrong number turkod",
+    "armstrong sayi bulan program",
+    "armstong sayisi nasil bulunur",
+    "basamaklarının küpleri toplamı kendisine eşit olan sayılar",
+    "armstrong"
+  ],
+  "adam-asmaca": [
+    "adam asmaca oyunu nasıl yapılır",
+    "kelimeyi tahmin etme oyunu yazmak",
+    "hangman turkod",
+    "harf tahmin edip kelimeyi bulan oyun",
+    "bilinmeyen harfleri alt çizgiyle göstermek",
+    "adam asmaca kodu yazar misin",
+    "arkadaşlarımla oynayabileceğim, yanlış tahminde hakkın azaldığı bir kelime oyunu yapmak istiyorum",
+    "adamasmaca"
+  ],
+  "yildiz-piramidi": [
+    "yıldızlarla üçgen nasıl yazdırılır",
+    "yıldız piramidi kodu",
+    "ters üçgen yıldız deseni",
+    "ortalı piramit yazdırmak",
+    "her satırda bir fazla yıldız",
+    "yildizlarla piramit yapma",
+    "star pattern turkod",
+    "ödevde * işaretleriyle üçgen yapmamız isteniyor, döngüyle nasıl yaparım",
+    "yıldız merdiven"
+  ],
+  "kur-hesaplayici": [
+    "tl'yi dolara çeviren program",
+    "döviz çevirme kodu",
+    "kaç TL kaç dolar eder hesaplayan program",
+    "currency converter turkod",
+    "kur hesaplama programi",
+    "euro hesaplayici yapmak",
+    "turkod güncel dolar kurunu internetten alabilir mi",
+    "kullanıcı TL girsin, program bunu dolara çevirip söylesin istiyorum",
+    "para çevirici"
+  ],
+  "asal-sayi-hizli": [
+    "asal sayı kontrolü büyük sayılarda çok yavaş",
+    "asal sayıyı daha hızlı nasıl bulurum",
+    "karekökü kadar bölen denemek yeter mi",
+    "i * i <= n neden kullanılıyor",
+    "asal kontrolunu hizlandirmak",
+    "prime check optimize turkod",
+    "asal sayı programım büyük sayı girince çok uzun sürüyor, nasıl kısaltırım",
+    "asal hızlı"
+  ],
+  "sayi-tahmin-hak": [
+    "tahmin oyununa hak sınırı koymak",
+    "sayı tahmin oyununda 5 hak vermek",
+    "daha büyük daha küçük diye ipucu veren tahmin oyunu",
+    "tahmin oyununda kac hak olsun",
+    "haklar bitince oyunu bitirmek",
+    "number guessing game with limited tries turkod",
+    "sayı tahmin oyunum var ama sonsuza kadar tahmin edilebiliyor, belli sayıda deneme hakkı olsun istiyorum",
+    "tahmin hakkı bitti"
+  ],
+  "tur-karsiliklari": [
+    "int'in türkçesi ne",
+    "str turkodda ne oluyor",
+    "float yerine ne yazıyorum",
+    "veri tiplerinin türkçe adları",
+    "list dict tuple set turkodda nasıl yazılır",
+    "pythondaki int str float turkodda ne",
+    "bool karşılığı mantıksal mı",
+    "Python'daki tür adlarını biliyorum, TürKod'da bunların hangi kelimelere karşılık geldiğini öğrenmek istiyorum",
+    "tur isimleri turkce"
+  ],
+  "iki-nokta-nedir": [
+    "satırın sonuna : neden konuyor",
+    "eğer satırının sonundaki iki nokta ne işe yarıyor",
+    "iki nokta üst üste ne anlama geliyor",
+    "colon neden gerekli",
+    "ikinokta nereye konur",
+    "fonksiyon ve döngü satırlarında hep : var, bunun anlamı ne",
+    "iki nokta koymazsam ne olur",
+    "iki nokta"
+  ],
+  "hata-yakala-tur": [
+    "hata_yakala sadece belli bir hatayı yakalayabilir mi",
+    "yakaladığım hatanın mesajını nasıl yazdırırım",
+    "except ValueError as e turkodda",
+    "birden fazla hata_yakala yazılabilir mi",
+    "farkli hatalar icin farkli mesaj vermek",
+    "hata_yakala adı yazmazsam her şeyi yakalar mı",
+    "sıfıra bölme ve yanlış giriş için ayrı ayrı uyarı göstermek istiyorum, nasıl ayırırım",
+    "olarak hata ne demek"
+  ],
+  "kaplumbaga-renk": [
+    "kaplumbağanın çizgisini kırmızı yapmak",
+    "çizdiğim şeklin içini boyamak",
+    "turtle color turkod",
+    "kalem rengi nasıl değiştirilir",
+    "kare çizip içini sarıya boyamak",
+    "kaplumbaga renkli cizim",
+    "dolgu_başla ve dolgu_bitir ne işe yarar",
+    "kaplumbağayla çizdiğim şekiller hep siyah çıkıyor, renkli olsun istiyorum",
+    "pencolor fillcolor karşılığı"
+  ],
+  "kaplumbaga-yildiz": [
+    "kaplumbağayla yıldız nasıl çizilir",
+    "beş köşeli yıldız çizme kodu",
+    "yıldız çizerken neden 144 derece dönülüyor",
+    "turtle star turkod",
+    "kaplumbaga yildiz cizimi",
+    "tek çizgiyle yıldız çizmek",
+    "kaplumbağa ile gökyüzüne yıldız çizmek istiyorum ama açıyı bulamadım",
+    "yıldız şekli kaplumbağa"
+  ],
+  "kaplumbaga-kalem": [
+    "kaplumbağa çizgi çizmeden nasıl başka yere gider",
+    "kalem_kaldır ne işe yarar",
+    "penup pendown turkod",
+    "iki şekil arasında çizgi olmasın",
+    "kaplumbaganin izi kalmasin",
+    "kesik kesik çizgi çizmek",
+    "ikinci şekli başka yere çizmek istiyorum ama arada bir çizgi oluşuyor",
+    "kalemi kaldırıp tekrar indirmek"
+  ],
+  "kaplumbaga-ucgen": [
+    "kaplumbağayla üçgen çizmek",
+    "eşkenar üçgen kodu",
+    "üçgen çizerken kaç derece dönmeli",
+    "turtle triangle turkod",
+    "ucgen cizme kodu",
+    "beşgen ya da kare için kaç derece dönülür",
+    "üçgen çizmeye çalışıyorum ama 60 derece dönünce şekil kapanmıyor",
+    "üçgen kaplumbağa"
+  ],
+  "kaplumbaga-ev": [
+    "kaplumbağayla ev resmi çizmek",
+    "kare üstüne üçgen çatı çizmek",
+    "ev çizme kodu",
+    "turtle house turkod",
+    "evin catisini nasil cizerim",
+    "kaplumbaga ev cizimi",
+    "çocuklar için duvarı ve çatısı olan basit bir ev çizdirmek istiyorum",
+    "çatılı ev"
+  ],
+  "kaplumbaga-hiz": [
+    "kaplumbağa çok yavaş çiziyor",
+    "çizim hızını artırmak",
+    "turtle speed turkod",
+    "hız(0) ne demek",
+    "kaplumbagayi hizli yapmak",
+    "kaplumbağa en hızlı nasıl çizer",
+    "büyük bir desen çizdiriyorum, bitmesi dakikalar sürüyor, hızlandırabilir miyim",
+    "kaplumbağayı yavaşlatmak"
+  ],
+  "tkinter-dugme": [
+    "pencereye buton nasıl koyarım",
+    "düğmeye tıklayınca bir şey olsun",
+    "tkinter button turkod",
+    "komut= ne işe yarar",
+    "butona basinca yazi degissin",
+    "düğmeye fonksiyon bağlamak",
+    "düğmeye basmadan fonksiyon hemen çalışıyor, komut kısmına ne yazmalıyım",
+    "tkinter_arayüz düğme"
+  ],
+  "tkinter-giris": [
+    "pencerede kullanıcının yazı yazacağı kutu",
+    "tkinter entry turkod",
+    "kutuya yazılan yazıyı nasıl alırım",
+    "metin_kutusu nasıl kullanılır",
+    "pencereden isim almak",
+    "girdi kutusu tkinter",
+    "pencereli programda girdi_al yerine kullanıcıdan nasıl bilgi alırım",
+    "yazi kutusundaki metni okumak"
+  ],
+  "tkinter-pencere-ayar": [
+    "pencerenin başlığını nasıl değiştiririm",
+    "pencere boyutunu 400x300 yapmak",
+    "tkinter title geometry turkod",
+    "pencereyi büyütmek",
+    "pencere basligi koymak",
+    "başlık_yap ve geometri nedir",
+    "açılan pencere çok küçük ve üstünde tk yazıyor, kendi adımı ve boyutumu vermek istiyorum",
+    "pencere ölçüsü"
+  ],
+  "ses-cal": [
+    "oyunuma ses nasıl eklerim",
+    "mp3 çalmak",
+    "pygame ses turkod",
+    "arka planda müzik çalsın",
+    "zil sesi calmak",
+    "py_oyun ile ses efekti",
+    "karakter zıplayınca ses çıksın ve oyun boyunca müzik çalsın istiyorum",
+    "wav dosyası oynatmak",
+    "muzik calma kodu"
+  ],
+  "top-sektirme": [
+    "ekranda kenarlara çarpıp seken top",
+    "topu hareket ettiren animasyon",
+    "pygame bouncing ball turkod",
+    "top sektirme kodu",
+    "duvara çarpınca top geri dönsün",
+    "hx = -hx ne işe yarıyor",
+    "py_oyun ile ekranda sürekli hareket eden bir top yapmak istiyorum",
+    "top sekme oyunu"
+  ],
+  "fare-tiklama": [
+    "fareyle tıklanan yeri nasıl bulurum",
+    "py_oyun'da tıklamayı algılamak",
+    "pygame mouse click turkod",
+    "farenin konumunu öğrenmek",
+    "mouse ile tiklayinca bir sey olsun",
+    "fare_basma_olayı nedir",
+    "oyunumda ekrana tıklayınca o noktaya bir şey çizilsin istiyorum",
+    "tıklama koordinatı"
+  ],
+  "site-durdur": [
+    "program durmuyor nasıl kapatırım",
+    "sonsuz döngüye girdi nasıl durdururum",
+    "çalışan kodu nasıl durdururum",
+    "stop düğmesi nerede",
+    "programi nasil kapaticam",
+    "kırmızı kare düğme ne işe yarar",
+    "kodu çalıştırdım ve sürekli yazıyor, bitmiyor, ne yapmalıyım",
+    "çalıştırmayı iptal etmek"
+  ],
+  "tas-kagit-makas": [
+    "taş kağıt makas oyunu nasıl yapılır",
+    "bilgisayarla taş kağıt makas oynamak",
+    "rock paper scissors turkod",
+    "tas kagit makas kodu",
+    "kim kazandı nasıl kontrol edilir taş kağıt makas",
+    "bilgisayar rastgele seçsin ben de seçeyim, kazananı söyleyen oyun",
+    "tkm",
+    "taş makası yener kodla"
+  ],
+  "hata-eof": [
+    "EOFError: EOF when reading a line",
+    "Dosya Sonu Hatası ne demek",
+    "exe girdi_al yerinde hata veriyor",
+    "programım cevap beklerken hata verip kapanıyor",
+    "eof hatasi neden",
+    "girdi alirken hata veriyo",
+    "EXE'yi terminal seçeneği olmadan yaptım, girdi istediği yerde çöküyor",
+    "DosyaSonuHatası nasıl çözülür"
+  ],
+  "hata-klavye-kesintisi": [
+    "KeyboardInterrupt hatası ne",
+    "program Klavye Kesintisi yazıp bitti",
+    "ctrl c'ye basınca çıkan hata",
+    "durdur düğmesine basınca kesinti yazıyor",
+    "keyboard interrupt nedir",
+    "klavye kesintisi hata mi",
+    "kopyalamak için ctrl c yaptım program kapandı, KlavyeKesintisi dedi",
+    "KlavyeKesintisi yakalamak"
+  ],
+  "hata-sayi-tasma": [
+    "OverflowError: int too large to convert to float",
+    "Sayı Taşma Hatası nedir",
+    "sayı çok büyük olunca hata veriyor",
+    "çok büyük üs alınca hata",
+    "tasma hatasi neden olur",
+    "OverflowError: (34, 'Result too large')",
+    "faktöriyeli ondalıklıya çevirmeye çalıştım ama sayı sığmıyor diyor",
+    "sayı sığmıyor"
+  ],
+  "hata-izin": [
+    "PermissionError: [Errno 13] Permission denied",
+    "İzin Hatası ne demek",
+    "dosyaya yazamıyorum izin yok diyor",
+    "C:\\ klasörüne dosya kaydedemiyorum",
+    "izin hatasi nasil cozulur",
+    "erişim reddedildi hatası",
+    "excel'de açık olan dosyaya yazmaya çalışınca hata veriyor",
+    "permission denied"
+  ],
+  "hata-dizin": [
+    "IsADirectoryError: [Errno 21] Is a directory",
+    "NotADirectoryError ne demek",
+    "dosya yerine klasör yolu verdim hata aldım",
+    "Dizin Hatası nedir",
+    "dizin hatasi neden cikiyor",
+    "açık() ile klasörü açmaya çalışınca hata",
+    "yolu Belgeler'e kadar yazdım ama dosya adını yazmadım, hata veriyor",
+    "YolBirDizinHatası"
+  ],
+  "hata-karakter-kodlama": [
+    "UnicodeDecodeError: 'charmap' codec can't decode byte",
+    "türkçe harfler dosyada bozuk çıkıyor",
+    "ğ ş ı yerine garip işaretler görünüyor",
+    "UnicodeEncodeError hatası",
+    "dosyayi okurken kodlama hatasi",
+    "utf-8 nereye yazılır",
+    "not defterinden kaydettiğim dosyayı okuyunca Türkçe karakterler saçma sapan çıkıyor",
+    "karakter kodlama sorunu",
+    "turkce karakter bozuluyor"
+  ],
+  "hata-sekme-girinti": [
+    "TabError: inconsistent use of tabs and spaces in indentation",
+    "Sekme Hatası ne demek",
+    "tab ve boşluk karışmış hatası",
+    "girintiler aynı görünüyor ama hata veriyor",
+    "sekme hatasi nasil duzelir",
+    "tab error",
+    "internetten aldığım kodu yapıştırdım, girintiler doğru görünüyor ama TabError diyor",
+    "girinti genişliğini nasıl ayarlarım"
+  ],
+  "hata-beklenmeyen-iki-nokta": [
+    "yazdır satırının sonuna : koyunca hata",
+    "fazladan iki nokta koydum sözdizimi hatası",
+    "SyntaxError: invalid syntax iki nokta",
+    "iki nokta nerede kullanılmaz",
+    "atamanın sonuna iki nokta koyulur mu",
+    "beklenmeyen : hatasi",
+    "her satırın sonuna iki nokta koydum ve sözdizimi hatası aldım",
+    "gereksiz iki nokta üst üste"
+  ],
+  "hata-metin-degistirilemez": [
+    "TypeError: 'str' object does not support item assignment",
+    "metnin bir harfini nasıl değiştiririm",
+    "ad[0] = 'M' hata veriyor",
+    "kelimenin ilk harfini büyük harfle değiştirmek istiyorum ama hata",
+    "metin harfi degistirilemiyor",
+    "string immutable turkod",
+    "metindeki bir harfi başka harfle değiştirmeye çalışınca Veri Tipi Hatası alıyorum",
+    "metin değiştirilemez neden"
+  ],
+  "hata-demet-degismez": [
+    "AttributeError: 'tuple' object has no attribute 'append'",
+    "demete eleman nasıl eklenir",
+    "tuple'a ekleme yapamıyorum",
+    "demet ile liste farkı değiştirmek",
+    "demete sona_ekle calismiyor",
+    "parantezle yaptığım listeye eleman ekleyemiyorum",
+    "(1, 2) şeklinde tanımladım, sona_ekle deyince özelliği yok diyor",
+    "demet değiştirilemez mi"
+  ],
+  "hata-hiclik-nesne": [
+    "AttributeError: 'NoneType' object has no attribute",
+    "TypeError: 'NoneType' object is not subscriptable",
+    "NoneType hatası ne demek",
+    "liste = liste.sırala() yazınca liste kayboluyor",
+    "Hiçlik nesnesi hatası",
+    "nonetype object is not iterable neden",
+    "listeyi sıraladıktan sonra elemanına ulaşmaya çalışınca hata veriyor",
+    "none tipi hatasi"
+  ],
+  "hata-fonksiyon-hiclik": [
+    "fonksiyon sonuç yerine None yazıyor",
+    "yazdırınca sonunda None çıkıyor",
+    "fonksiyonum bir şey döndürmüyor",
+    "neden ekranda None görüyorum",
+    "fonksiyon cagirinca none yaziyo",
+    "döndür yazmayı unutunca ne olur",
+    "topla fonksiyonunu yazdırdım ama sonuç yerine None çıktı, nerede hata yaptım",
+    "hiçlik dönüyor"
+  ],
+  "hata-acilamiyor": [
+    "ValueError: too many values to unpack (expected 2)",
+    "ValueError: not enough values to unpack",
+    "a, b = [1, 2, 3] hata veriyor",
+    "listeyi birkaç değişkene dağıtınca hata",
+    "unpack hatasi ne demek",
+    "değişken sayısı değer sayısına uymuyor",
+    "girdi_al ile iki sayıyı split edip iki değişkene koyuyorum ama açılamıyor hatası alıyorum",
+    "çok fazla değer"
+  ],
+  "hata-matematik-alan": [
+    "ValueError: math domain error",
+    "negatif sayının karekökü hata veriyor",
+    "karekök alırken Geçersiz Değer Hatası",
+    "logaritma sıfır hata",
+    "math domain error ne demek",
+    "karekok -9 alinmiyor",
+    "ikinci derece denklem çözerken diskriminant negatif olunca program çöküyor",
+    "sqrt hatası"
+  ],
+  "hata-dongude-degistirme": [
+    "RuntimeError: dictionary changed size during iteration",
+    "listeden çift sayıları silmeye çalışıyorum ama bazıları kalıyor",
+    "döngüde eleman silince bazıları atlanıyor",
+    "sözlüğü gezerken silince hata",
+    "Çalışma Zamanı Hatası boyut değişti",
+    "dongu icinde listeden silme",
+    "for ile listeyi dönerken remove yapınca garip sonuçlar çıkıyor",
+    "gezerken eleman çıkarmak"
+  ],
+  "hata-bellek": [
+    "MemoryError hatası",
+    "Bellek Yetersiz Hatası ne demek",
+    "bilgisayar dondu bellek doldu",
+    "çok büyük liste yapınca hata",
+    "bellek hatasi neden olur",
+    "ram yetmiyor hatası",
+    "döngüde listeye ekliyorum, program yavaşladı sonra bellek hatası verdi",
+    "out of memory"
+  ],
+  "hata-iddia": [
+    "AssertionError nedir",
+    "iddia_et hatası ne demek",
+    "assert yanlış çıkınca ne olur",
+    "Doğrulama Hatası alıyorum",
+    "iddia et ne ise yarar",
+    "assert mesaj yazmak",
+    "iddia_et satırında program durdu ama mesaj yok, ne yapmalıyım",
+    "assertion error"
+  ],
+  "hata-yazilmamis-ozellik": [
+    "NotImplementedError hatası",
+    "Henüz Yazılmamış Özellik Hatası ne demek",
+    "UygulanmadıHatası neden çıkıyor",
+    "metot yazilmamis hatasi",
+    "alt sınıfta metodu yazmayınca hata",
+    "şablon kodu çalıştırınca uygulanmadı hatası verdi",
+    "hayvan sınıfından kedi yaptım, ses metodunu çağırınca not implemented diyor",
+    "not implemented error"
+  ],
+  "hata-normal-python": [
+    "NameError: name 'yazdır' is not defined",
+    "kodumu IDLE'da çalıştırınca yazdır tanınmıyor",
+    "turkod kodunu normal pythonda calistirmak",
+    "Replit'te yazdır çalışmıyor",
+    "File \"<stdin>\", line 1, in <module> NameError yazdır",
+    "Colab'da türkçe komutlar hata veriyor",
+    "turkod kodunu python koduna nasıl çeviririm",
+    "okuldaki bilgisayarda python var ama TürKod'da yazdığım kod çalışmıyor, neden",
+    "girdi_al is not defined"
+  ],
+  "hata-tanimsiz-nerede": [
+    "fonksiyonu yazdım ama tanımsız diyor",
+    "fonksiyonu çağırdıktan sonra tanımladım, hata veriyor",
+    "fonksiyonun içindeki değişkene dışarıdan ulaşamıyorum",
+    "NameError fonksiyon aşağıda tanımlı",
+    "degiskeni nerede tanimlamaliyim",
+    "değişken döngüden sonra tanımsız oluyor",
+    "fonksiyonda oluşturduğum sonucu dışarıda yazdırınca Tanımsız İsim Hatası alıyorum",
+    "tanım sırası önemli mi"
+  ],
+  "hata-program-hemen-kapaniyor": [
+    "exe açılıp hemen kapanıyor",
+    "siyah pencere bir anda kayboluyor",
+    "program açıldığı gibi kapanıyor sonucu göremiyorum",
+    "çift tıklayınca program görünüp kayboluyor",
+    "exe acilir acilmaz kapaniyo",
+    "konsol penceresi kapanmasın",
+    "yaptığım exe'yi arkadaşıma gönderdim, açınca yanıp sönüp kapanıyor diyor",
+    "program bitince pencere kapanmasın"
+  ],
+  "hata-pencere-kapaniyor": [
+    "kaplumbağa çizimi bitince pencere kapanıyor",
+    "turtle penceresi hemen kapanıyor",
+    "pygame penceresi açılıp kapanıyor",
+    "tkinter penceresi görünüp kayboluyor",
+    "cizim penceresi kapaniyor ne yapmaliyim",
+    "kaplumbaga.tamamla ne işe yarar",
+    "kaplumbağa ile güzel bir şekil çiziyorum ama bitince pencere kendiliğinden kapanıyor",
+    "turtle.done turkod"
+  ],
+  "hata-cikti-yok": [
+    "çalıştır diyorum ama hiçbir şey olmuyor",
+    "terminal boş kalıyor",
+    "kodum çalışıyor ama ekranda bir şey görünmüyor",
+    "fonksiyonu çağırdım çıktı yok",
+    "hicbir sey yazmiyo",
+    "selamla yazdım ama çalışmadı",
+    "hesap yaptım ama sonucu görmek için çalıştırınca hiçbir şey çıkmadı",
+    "sonuç ekrana gelmiyor",
+    "output yok"
+  ],
+  "hata-cikti-iki-kere": [
+    "çıktı iki kez görünüyor",
+    "Merhaba iki defa yazılıyor",
+    "aynı yazı iki kere çıkıyor neden",
+    "çıktının altında bir de None var",
+    "iki kere yaziyo",
+    "fonksiyon iki defa çalışıyor",
+    "fonksiyonu bir kere çağırdığımı sanıyorum ama ekranda iki kez görüyorum",
+    "çift çıktı"
+  ],
+  "hata-girdi-soru-cikmiyor": [
+    "girdi_al cevabını nereye yazacağım",
+    "program soru soruyor ama yazamıyorum",
+    "girdi_al sorusu ekranda görünmüyor",
+    "input nereye yazilir turkod",
+    "cevabı terminale yazamıyorum",
+    "girdi kutusu nerede",
+    "program adımı soruyor ama klavyeden yazdığım hiçbir yere gitmiyor",
+    "kullanıcı girişi yazılamıyor"
+  ],
+  "hata-sayi-metin-gibi": [
+    "5 ile 5'i toplayınca 55 çıkıyor",
+    "sayılar toplanmıyor yan yana yazılıyor",
+    "girdi_al ile aldığım sayıları toplayamıyorum",
+    "input sayi toplama yanlis",
+    "sayıyı 3 ile çarpınca 555 yazıyor",
+    "girdi_al'dan gelen değer metin mi",
+    "hesap makinesi yaptım ama 2 ile 3'ü toplayınca 23 diyor",
+    "sayilar birlesiyor toplanmiyo",
+    "tamsayıya çevirmek girdi"
+  ],
+  "hata-harf-girilince": [
+    "kullanıcı sayı yerine harf yazınca program çöküyor",
+    "yanlış giriş yapılınca tekrar sorsun",
+    "ValueError: invalid literal for int() with base 10",
+    "harf girilince hata vermesin",
+    "kullanici yanlis yazarsa ne yapmali",
+    "doğru sayı girene kadar sormak",
+    "yaşını sorunca biri 'on beş' yazarsa program kapanıyor, bunu nasıl önlerim",
+    "geçersiz girişi kontrol etmek"
+  ],
+  "hata-liste-sonu-asma": [
+    "döngüde listenin son elemanından sonra hata",
+    "aralık(uzunluk(liste) + 1) yazınca IndexError",
+    "IndexError: list index out of range döngüde",
+    "boş listenin ilk elemanını alınca hata",
+    "liste bos mu nasil kontrol ederim",
+    "döngü bir fazla dönüyor liste",
+    "listeyi sırayla yazdırıyorum, en sonda hata veriyor",
+    "olmayan son eleman"
+  ],
+  "hata-kosul-yanlis-sonuc": [
+    "eğer koşulum hiç doğru çıkmıyor",
+    "hep değilse kısmı çalışıyor",
+    "\"5\" > \"10\" neden doğru",
+    "if blogu calismiyor",
+    "evet yazıyorum ama koşul yanlış sayıyor",
+    "karşılaştırma beklediğim gibi çalışmıyor",
+    "kullanıcı 18 yazıyor ama yaş kontrolü hep reşit değil diyor",
+    "koşul hep yanlış çıkıyor",
+    "esitlik kontrolu calismiyo"
+  ],
+  "hata-veya-hep-dogru": [
+    "eğer isim == 'ali' veya 'veli' hep doğru çıkıyor",
+    "veya ile iki değeri karşılaştırmak",
+    "or kullanınca koşul her zaman doğru",
+    "veya kosulu yanlis calisiyor",
+    "bir değişken iki değerden birine eşit mi",
+    "veya kullanimi dogru nasil",
+    "renk kırmızı veya mavi mi diye bakıyorum ama yeşil yazınca da içeri giriyor",
+    "veya hep çalışıyor"
+  ],
+  "hata-liste-bos-cikiyor": [
+    "listeye eleman ekliyorum ama liste boş",
+    "döngüden sonra liste boş çıkıyor",
+    "her turda liste sıfırlanıyor",
+    "sona_ekle ekledigim gorunmuyo",
+    "listeme hiçbir şey eklenmiyor",
+    "liste = liste.sona_ekle yazınca ne oluyor",
+    "döngüde sayıları listeye ekliyorum ama sonunda sadece sonuncu var ya da hiç yok",
+    "liste dolmuyor neden"
+  ],
+  "hata-yazilan-dosya-nerede": [
+    "oluşturduğum txt dosyası nerede",
+    "dosyaya yazdım ama bilgisayarda bulamıyorum",
+    "programın yazdığı dosya hangi klasöre gidiyor",
+    "kaydettigim dosya yok",
+    "dosyayı masaüstüne kaydetmek",
+    "w ile açtığım dosyayı göremiyorum",
+    "programım not.txt oluşturdu dedi ama klasörde böyle bir dosya yok",
+    "dosya konumu"
+  ],
+  "hata-donunca-kod-kaybolur": [
+    "program donarsa yazdığım kod silinir mi",
+    "kapatırsam kodlarım gider mi",
+    "sayfa yenilenince kodum kayboldu",
+    "canlı demoda kod kaydediliyor mu",
+    "kodum silindi ne yapayim",
+    "program takılırsa nasıl kapatırım kodu kaybetmeden",
+    "bilgisayar dondu, açınca yazdıklarım duruyor mu korkuyorum",
+    "kod kaybolması"
+  ],
+  "hata-kod-yavas": [
+    "programım çok yavaş çalışıyor",
+    "kodun hangi kısmı yavaş nasıl anlarım",
+    "kod kaç saniye sürüyor ölçmek",
+    "time.perf_counter turkod",
+    "program cok uzun suruyo",
+    "kodu hızlandırmak",
+    "büyük sayılarla çalıştırınca bitmesi çok uzun sürüyor, nerede zaman kaybediyorum",
+    "yavaşlık ölçme"
+  ],
+  "hata-dun-calisiyordu": [
+    "dün çalışan kodum bugün çalışmıyor",
+    "hiçbir şeyi değiştirmedim ama bozuldu",
+    "kod aniden hata vermeye başladı",
+    "dun calisiyodu bugun calismiyo",
+    "eskiden çalışıyordu şimdi olmuyor",
+    "aynı kodu açtım ama sonuç değişti",
+    "dün ödevimi bitirmiştim, bugün açınca çalışmıyor, neden olabilir",
+    "kendiliğinden bozuldu"
+  ],
+  "hata-kopyalanan-kod": [
+    "internetten kopyaladığım kod hata veriyor",
+    "örnek kodu yapıştırınca çalışmıyor",
+    "arkadaşımda çalışan kod bende çalışmıyor",
+    "kopyalayinca girinti bozuluyor",
+    "akıllı tırnaklar hata veriyor",
+    "yapıştırdığım kodda görünmeyen hata",
+    "kitaptaki örneği aynen yazdım ama hata alıyorum",
+    "kopyala yapıştır sorunu"
+  ],
+  "hata-rastgele-ayni": [
+    "zar her seferinde aynı sayıyı atıyor",
+    "rastgele sayı değişmiyor",
+    "random hep ayni sayi veriyor",
+    "döngüde hep aynı rastgele sayı",
+    "her turda yeni rastgele sayı nasıl üretilir",
+    "zar atma oyunum hep aynı geliyor",
+    "rastgele_tamsayı bir kere çalışıyor sonra hep aynı kalıyor",
+    "rastgele sayi tekrar ediyor"
+  ],
+  "hata-yazdirinca-tirnak": [
+    "listeyi yazdırınca köşeli parantez ve tırnaklar çıkıyor",
+    "liste tırnaksız nasıl yazdırılır",
+    "['elma', 'armut'] yerine elma, armut yazdırmak",
+    "liste elemanlarini duz yazdirmak",
+    "çıktıda tırnaklar olmasın",
+    "join turkodda",
+    "meyveleri yazdırınca ekranda parantezler ve tırnaklar görünüyor, temiz olsun istiyorum",
+    "tirnak cikmasin"
+  ],
+  "hata-ondalik-hassasiyet": [
+    "0.1 + 0.2 neden 0.30000000000000004",
+    "ondalıklı toplama yanlış sonuç veriyor",
+    "küsurat çok uzun çıkıyor",
+    "float hassasiyet sorunu",
+    "ondalik sayilar neden tam cikmiyor",
+    "virgüllü sayılarda garip sonuç",
+    "para hesabı yaparken sonuç 2.9999999 gibi çıkıyor, hata mı",
+    "kayan nokta hatası"
+  ],
+  "hata-dongu-az-donuyor": [
+    "döngüm sadece bir kere çalışıyor",
+    "for döngüsü ilk turda bitiyor",
+    "döngü hiç çalışmıyor",
+    "döngünün içine döndür yazınca ne olur",
+    "dongu bi kere donup bitiyo",
+    "döngü erken duruyor",
+    "listedeki tüm sayıları toplamak istiyorum ama fonksiyon sadece ilkini döndürüyor",
+    "döngüye hiç girmiyor"
+  ],
+  "hata-degisken-degismiyor": [
+    "toplam hep son sayıyı gösteriyor",
+    "sayaç artmıyor",
+    "döngüde değer birikmiyor",
+    "toplam = sayi ile toplam += sayi farki",
+    "sayac her turda sifirlaniyor",
+    "değişken döngüde güncellenmiyor",
+    "notların toplamını bulmak istiyorum ama sonuç hep en son girdiğim not",
+    "biriktirme yapamıyorum"
+  ],
+  "hata-virgul-eksik": [
+    "SyntaxError: invalid syntax. Perhaps you forgot a comma?",
+    "yazdır içinde virgül unutunca ne olur",
+    "iki metin bitişik yazılıyor",
+    "virgülü mü unuttun hatası",
+    "yazdir(\"merhaba\" isim) hata",
+    "metin ve değişkeni yan yana yazdırmak",
+    "yazdırda kelimeler arasında boşluk olmadan yapışık çıkıyor",
+    "virgul unuttum hatasi"
+  ],
+  "hata-degilse-yanlis": [
+    "else if turkodda nasil yazilir",
+    "değilse eğer ayrı yazınca hata veriyor",
+    "değilse satırında sözdizimi hatası",
+    "elif karşılığı ne",
+    "egerse diye bir sey var mi",
+    "değilse nereye hizalanmalı",
+    "üç farklı not aralığı için koşul yazıyorum ama ikinci koşulda hata alıyorum",
+    "değilse_eğer"
+  ],
+  "hata-satir-nerede": [
+    "hata kaçıncı satırda nasıl anlarım",
+    "hatanın yerini nasıl bulurum",
+    "satır numaraları görünmüyor",
+    "editörde kırmızı işaretli satır ne",
+    "hata hangi satirda gorunmuyo",
+    "hata gösterilen satırda değil gibi",
+    "mesajda satır 12 diyor ama orada bir sorun göremiyorum",
+    "satır numarası"
+  ],
+  "hata-mesaji-okuma": [
+    "hata mesajını anlamıyorum",
+    "Traceback (most recent call last) ne demek",
+    "uzun kırmızı yazıların neresine bakmalıyım",
+    "hata ingilizce cikiyo anlamiyorum",
+    "hata mesajı nasıl okunur",
+    "[HATA] satırında ne yazıyor",
+    "ekranda bir sürü kırmızı yazı çıktı, hangisi önemli bilmiyorum",
+    "traceback okumak"
+  ],
+  "hata-genel-adimlar": [
+    "kodum çalışmıyor ne yapmalıyım",
+    "hatayı bulamıyorum yardım",
+    "kod hata veriyor nereden başlayayım",
+    "hata ayıklama adımları",
+    "kodum calismiyo yardim edin",
+    "hatayı kendi başıma nasıl çözerim",
+    "yarın teslim edeceğim ödevde hata var ve ne yapacağımı bilmiyorum",
+    "debug nasıl yapılır"
+  ],
+  "hata-yakalanacak-ad": [
+    "hata_yakala'ya hangi hatayı yazmalıyım",
+    "except'ten sonra ne yazılır",
+    "hata türünün adını nereden öğrenirim",
+    "DeğerHatası mı TürHatası mı yazmalıyım",
+    "hata yakala yanina ne yazicam",
+    "yakalanacak hatanın kod adı",
+    "programı çalıştırınca Geçersiz Değer Hatası çıkıyor, bunu yakalamak için ne yazmalıyım",
+    "İstisna hepsini yakalar mı"
+  ],
+  "hata-herkes-yapar": [
+    "sürekli hata yapıyorum normal mi",
+    "ben programcı olamam galiba",
+    "her denemede hata alıyorum bıktım",
+    "programlamayı bırakmak istiyorum",
+    "hep hata veriyo sinir oldum",
+    "profesyoneller de hata yapar mı",
+    "saatlerdir uğraşıyorum ve hâlâ hata alıyorum, galiba bu işe yeteneğim yok",
+    "hata yapmak kötü mü"
+  ],
+  "hata-turkce-ingilizce-ayni": [
+    "türkod'daki hatalar python'dakilerle aynı mı",
+    "türkçe hata mesajları gerçek python'da işe yarar mı",
+    "NameError ile Tanımsız İsim Hatası aynı şey mi",
+    "turkodda ogrendigim hatalar pythonda da olur mu",
+    "hataların ingilizcesi ne",
+    "türkçe hata mesajı öğrenmek kolay mı",
+    "ileride gerçek Python'a geçince hataları yeniden mi öğrenmem gerekecek",
+    "hata isimleri ayni mi"
+  ],
+  "hata-en-sik-gorulen": [
+    "yeni başlayanların en çok aldığı hatalar",
+    "en yaygın hata türleri neler",
+    "hangi hataları sık görürüm",
+    "hata çeşitleri listesi",
+    "en cok yapilan hatalar neler",
+    "python common errors",
+    "programlamaya yeni başladım, karşıma en çok hangi hatalar çıkar önceden öğrenmek istiyorum",
+    "sık hatalar"
+  ],
+  "hata-sonuc-yanlis": [
+    "kod hata vermiyor ama sonuç yanlış",
+    "program çalışıyor ama istediğimi yapmıyor",
+    "mantık hatası nasıl bulunur",
+    "cevap yanlis cikiyo ama hata yok",
+    "hesap yanlış çıkıyor",
+    "logic error turkod",
+    "ortalama hesaplıyorum, kod çalışıyor ama elle bulduğumdan farklı sonuç veriyor",
+    "beklenmedik sonuç"
+  ],
+  "hata-takildigi-yer": [
+    "program bitmiyor ama hata da yok",
+    "kod nerede takıldı nasıl bulurum",
+    "program bir yerde kalıyor",
+    "duraklat düğmesi ne işe yarar",
+    "program takiliyo nerde bilmiyorum",
+    "F6 ile programı durdurup bakmak",
+    "çalıştırınca hiçbir şey olmadan bekliyor, hangi satırda beklediğini görmek istiyorum",
+    "takılan satırı bulmak"
+  ],
+  "hata-ingilizce-komut": [
+    "türkod'da print yazabilir miyim",
+    "ingilizce python komutları çalışır mı",
+    "input mu girdi_al mı kullanmalıyım",
+    "import random turkodda olur mu",
+    "for while if ingilizce yazsam olur mu",
+    "turkce ve ingilizce komutlari karistirabilir miyim",
+    "Python biliyorum, TürKod'da da İngilizce yazmaya devam edebilir miyim",
+    "print yazdim calisir mi"
+  ],
+  "hata-kodi-aciklar": [
+    "bu hatanın ne olduğunu açıklar mısın",
+    "hata mesajımı yapıştırsam yardım eder misin",
+    "kodumda hata var bakabilir misin",
+    "bu ne hatası",
+    "hatami anlatir misin",
+    "Kodi hata mesajlarını anlatabilir mi",
+    "bir hata aldım ve ne demek olduğunu anlamadım, sana yazsam açıklar mısın",
+    "hata açıklama yardımı"
+  ]
+}

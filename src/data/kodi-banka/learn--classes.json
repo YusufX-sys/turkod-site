@@ -1,0 +1,107 @@
+{
+  "sayfa": "/learn/classes/",
+  "bolumler": {
+    "": {
+      "baslik": "Sınıflar",
+      "s": [
+        "sınıf nedir",
+        "class turkodda nasıl yazılır",
+        "self'in türkçesi ne",
+        "__init__ turkodda ne diye geçiyor",
+        "super turkodda nasıl yazılır",
+        "isinstance karşılığı ne",
+        "staticmethod classmethod türkçe nasıl",
+        "kendi veri türümü oluşturmak istiyorum",
+        "nesne yönelimli programlama turkod",
+        "sinif ne ise yarar",
+        "__str__ karşılığı",
+        "Python'daki class, self, __init__ ve @property gibi kelimelerin TürKod'daki karşılıkları neler, sınıf kavramını kısaca anlatır mısın?"
+      ],
+      "c": "Sınıf, kendi veri türünü oluşturmanı sağlar: bir kalıp çizersin, sonra o kalıptan istediğin kadar nesne üretirsin. TürKod karşılıkları: sınıf (class), kendisi (self), başlat_özel (__init__), metin_özel (__str__), üst_sınıf (super), nesne_mi (isinstance), @özellik_adı (@property), @durum_metodu (@staticmethod), @sınıf_metodu (@classmethod)."
+    },
+    "i̇lk-sınıf": {
+      "baslik": "İlk sınıf",
+      "s": [
+        "ilk sınıfımı nasıl yazarım",
+        "başlat_özel ne zaman çalışır",
+        "kendisi ne demek",
+        "her metodun ilk parametresi neden kendisi",
+        "metin_özel ne işe yarar",
+        "nesneyi yazdırınca güzel görünsün istiyorum",
+        "sınıfa metot nasıl eklenir",
+        "nesne oluştururken değer vermek",
+        "ogrenci sinifi ornegi",
+        "yazdır(nesne) yapınca garip bir yazı çıkıyor",
+        "constructor turkodda",
+        "Öğrencinin adını ve puanını tutan bir sınıf yazmak, geçip geçmediğini söyleyen bir metot eklemek ve yazdırınca 'Zeynep: 95' gibi görünmesini sağlamak istiyorum, nasıl yaparım?"
+      ],
+      "c": "Sınıfı sınıf ile tanımlarsın. başlat_özel nesne oluşturulurken çalışır; kendisi nesnenin kendisini gösterir ve her metodun ilk parametresidir. metin_özel, nesne yazdır ile basıldığında ne görüneceğini belirler; örnekte Ogrenci nesnesi Zeynep: 95 diye yazılır, gecti_mi metodu da puan 50 ve üstündeyse Doğru döndürür."
+    },
+    "kalıtım": {
+      "baslik": "Kalıtım",
+      "s": [
+        "kalıtım nedir",
+        "bir sınıf başka sınıftan nasıl türetilir",
+        "üst_sınıf ne işe yarar",
+        "super().__init__ turkodda",
+        "alt sınıf üst sınıfın metotlarını kullanabilir mi",
+        "inheritance turkod",
+        "Kopek sınıfı Hayvan'dan nasıl miras alır",
+        "üst sınıfın başlat_özel metodunu çağırmak",
+        "kalitim nasil yapilir",
+        "aynı metodu alt sınıfta değiştirmek",
+        "Hayvan diye bir sınıfım var, Köpek sınıfının onun adını ve tanıt metodunu kullanmasını ama kendine ait cins bilgisini de eklemesini istiyorum, bunu nasıl yaparım?"
+      ],
+      "c": "Kalıtımla bir sınıf başka bir sınıfın özelliklerini devralır; sınıf Kopek(Hayvan) diye yazarsın. Alt sınıfta üst_sınıf() ile üstteki sınıfın metotlarına ulaşırsın, örneğin üst_sınıf().başlat_özel(ad). Örnekte Kopek kendi cins bilgisini ekler ve tanit metodunu yeniden yazar, çıktı Ben Karabaş, cinsim Kangal olur."
+    },
+    "özellik-property": {
+      "baslik": "Özellik (property)",
+      "s": [
+        "@özellik_adı ne işe yarar",
+        "property turkodda nasıl yazılır",
+        "metodu parantezsiz çağırmak",
+        "Daire(2).alan neden parantezsiz",
+        "hesaplanan bir değeri değişken gibi okumak",
+        "@property karşılığı",
+        "dairenin alanını özellik olarak yazmak",
+        "ozellik_adi dekoratoru",
+        "metodu nitelik gibi kullanmak",
+        "Daire sınıfında alanı her seferinde alan() diye çağırmak yerine sadece daire.alan yazınca hesaplanmasını istiyorum, bu mümkün mü?"
+      ],
+      "c": "Evet, metodun üstüne @özellik_adı (Python'daki @property) yazarsan onu parantezsiz, bir değişken gibi okuyabilirsin. Örnekte Daire sınıfının alan metodu 3.14 * kendisi.r ** 2 döndürür ve yazdır(Daire(2).alan) 12.56 yazar."
+    },
+    "kendi-hata-sınıfın": {
+      "baslik": "Kendi hata sınıfın",
+      "s": [
+        "kendi hata sınıfımı nasıl yazarım",
+        "özel hata türü oluşturmak",
+        "İstisna'dan sınıf türetmek",
+        "custom exception turkod",
+        "BakiyeYetersiz hatası nasıl tanımlanır",
+        "boş sınıf nasıl yazılır geç ile",
+        "self yerine kendisi yazmak zorunda mıyım",
+        "__init__ İngilizce yazsam çalışır mı",
+        "kendi hatami tanimlama",
+        "ingilizce ve türkçe yazımı karıştırabilir miyim",
+        "Banka programımda bakiye yetmediğinde kendi adını taşıyan bir hata fırlatmak istiyorum, bunun için nasıl bir sınıf yazmalıyım?"
+      ],
+      "c": "Kendi hata sınıfını İstisna'dan türeterek yazarsın: sınıf BakiyeYetersiz(İstisna): ve içine geç. İpucu olarak, İngilizce yazımlar da çalışır (self, __init__), ama bir dosyada tek bir yazımı kullanmak okumayı kolaylaştırır."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "sınıflar mini görev ne",
+        "Araba sınıfı alıştırması",
+        "sınıflarla ilgili ödev",
+        "hizlan metodu nasıl yazılır",
+        "marka ve hız özelliği olan sınıf",
+        "hızı 10 artıran metot",
+        "sinif alistirmasi",
+        "sınıf konusunu pekiştirmek için ne yapayım",
+        "class practice exercise turkod",
+        "Sınıfları öğrendim, kendimi denemek için küçük bir görev var mı? Araba ile ilgili bir şey görmüştüm, tam olarak ne yapmam isteniyor?"
+      ],
+      "c": "Mini görev şu: Araba adında bir sınıf yaz; marka ve hiz özellikleri olsun, hizlan() metodu hızı 10 artırsın. Özellikleri başlat_özel içinde kendisi ile tanımlamayı unutma."
+    }
+  }
+}

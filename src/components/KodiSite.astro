@@ -43,7 +43,7 @@
 </section>
 
 <script>
-  import { DOLGU, baglamliCevap, bolumDizini, katla, sadelestir, sozlukDizini, takipMi, type BolumDizini, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
+  import { DOLGU, baglamliCevap, bolumDizini, maddeSorulari, katla, sadelestir, sozlukDizini, takipMi, type BolumDizini, type KodiCevap, type SozlukDizini } from '../data/kodi-motor';
   import type { HesapBaglami } from '../data/kodi-hesap';
   import { kodiCiz, type KodiIfadesi } from '../data/kodi-ciz';
 
@@ -106,13 +106,20 @@
       .then((r) => (r.ok ? r.json() : null))
       .then((v) => (v?.k ? sozlukDizini(v.k) : null))
       .catch(() => null));
-  // Belge bölümleri (derlemede üretilir, ≈120 KB): Kodi ayrıntılı soruları buradan cevaplar.
+  // Belge bölümleri + soru bankası (derlemede üretilir, gzip ≈115 KB): Kodi ayrıntılı soruları buradan cevaplar.
   let bolumler: Promise<BolumDizini | null> | null = null;
   const bolumAl = () =>
     (bolumler ??= fetch('/kodi-bolumler.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((v) => (v?.b?.length ? bolumDizini(v.b) : null))
       .catch(() => null));
+  // Hazır maddelerin soru bankası (derlemede üretilir): yoksa Kodi yalnızca anahtar kelimelerle eşleştirir.
+  let maddeBanka: Promise<void> | null = null;
+  const maddeBankaAl = () =>
+    (maddeBanka ??= fetch('/kodi-madde-sorular.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((v) => { if (v?.s) maddeSorulari(v.s); })
+      .catch(() => undefined));
 
   const robotKutu = document.querySelector<HTMLElement>('[data-kodi-robot-kutu]');
   const balon = document.querySelector<HTMLElement>('[data-kodi-balon]');
@@ -632,7 +639,7 @@
       giris.placeholder = 'Kodi cevaplıyor…';
       balon.dataset.bekliyor = '1';
       const bitir = dusunuyor();
-      const [dizin, bdz, { BILGI }, { hesapCevabi, hesapSorusuGibi }] = await Promise.all([sozlukAl(), bolumAl(), bilgiAl(), hesapAl(), bekle(600)]);
+      const [dizin, bdz, { BILGI }, { hesapCevabi, hesapSorusuGibi }] = await Promise.all([sozlukAl(), bolumAl(), bilgiAl(), hesapAl(), bekle(600), maddeBankaAl()]);
       // Matematik: Kodi soruyu TürKod koduna çevirip arkada çalıştırır (değişken adları sözlükteki kelimelerle çakışmaz)
       let hesap = null;
       try { hesap = hesapCevabi(soru, durum.hesap, (ad) => !!dizin?.tr.has(katla(ad))); } catch { hesap = null; }

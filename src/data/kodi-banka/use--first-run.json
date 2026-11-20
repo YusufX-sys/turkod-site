@@ -1,0 +1,135 @@
+{
+  "sayfa": "/use/first-run/",
+  "bolumler": {
+    "": {
+      "baslik": "İlk Programını Çalıştır",
+      "s": [
+        "ilk programımı nasıl yazarım",
+        "turkodda ilk kodu yazmak ne kadar sürer",
+        "yeni başladım, ilk örnek program ne olsun",
+        "notları harfe çeviren program örneği",
+        "adımı soran basit bir program yapmak istiyorum",
+        "ilk programi nasil calistiririm",
+        "turkod ile hello world gibi ilk deneme",
+        "başlangıç için adım adım ilk program rehberi",
+        "hiç kod yazmadım, TürKod'u açtım, şimdi ilk olarak ne yapmalıyım",
+        "öğrencilerime ilk derste yazdırabileceğim kısa bir örnek program var mı",
+        "ilk kod denemesi",
+        "2 dakikada program yazmak"
+      ],
+      "c": "İlk programın için sana adını soran ve notlarını harfe çeviren küçük bir program yazabilirsin, toplam yaklaşık 2 dakika sürer. Adımlar şöyle: yeni sekme aç, kodu yaz, istersen kaydet, ▶️ ile çalıştır ve terminale cevabını yaz."
+    },
+    "1️⃣-yeni-sekme-aç": {
+      "baslik": "1️⃣ Yeni sekme aç",
+      "s": [
+        "yeni dosya nasıl açarım",
+        "yeni sekme açma kısayolu",
+        "ctrl+t ne işe yarıyor",
+        "boş bir sayfa açıp kod yazmak istiyorum",
+        "Adsız-1.trpy nedir",
+        "yeni sekme nerden aciliyo",
+        "artı düğmesi nerede, yeni sekme",
+        "hiç dosya açık değilken nasıl yeni dosya oluştururum",
+        "karşılama ekranındaki Yeni Dosya kartı ne yapıyor",
+        "editörde yeni bir boş dosya oluşturmanın yolları neler",
+        "turkod yeni dosya olusturma",
+        "program açıldı ama yazacak yer yok, nereden yeni sekme açacağım",
+        "new file turkodda nasıl"
+      ],
+      "c": "Sekme çubuğunun sağındaki + düğmesine tıkla ya da Ctrl+T'ye bas. Editörde Adsız-1.trpy adında boş bir sekme açılır. Hiç dosya açık değilse karşılama ekranındaki Yeni Dosya kartı da aynı işi yapar."
+    },
+    "2️⃣-kodu-yaz": {
+      "baslik": "2️⃣ Kodu yaz",
+      "s": [
+        "not hesaplayıcı kodunda ne oluyor",
+        "harf_notu fonksiyonu ne yapıyor",
+        "girdi_al ne işe yarar",
+        "kodun başındaki boşluklar neden önemli",
+        "girinti kaç boşluk olmalı",
+        "iki noktadan sonra enter'a basınca neden içeri kayıyor",
+        "sözdizimi doğru yazısı ne demek",
+        "f-string içindeki süslü parantezler ne yapıyor",
+        "eğer değilse_eğer değilse nasıl çalışıyor bu örnekte",
+        "girinti hatasi aliyorum bosluk kac tane",
+        "için n içinde notlar satırı ne anlama geliyor",
+        "ilk örnek kodu yazdım, satırların her birinin ne yaptığını anlamadım, açıklar mısın",
+        "indentation turkodda nasıl"
+      ],
+      "c": "Bu örnekte fonksiyon harf_notu(puan) puanı harf notuna çeviren bir fonksiyon tanımlar; eğer / değilse_eğer / değilse hangi harfin döneceğine karar verir. girdi_al(...) soru sorup cevabını isim kutusuna koyar, için n içinde notlar her not için satırı tekrarlar. Girinti önemli: blok içindeki satırlar 4 boşlukla içeride olmalı, : yazıp Enter'a basınca editör girintiyi kendisi ekler."
+    },
+    "3️⃣-kaydet-isteğe-bağlı": {
+      "baslik": "3️⃣ Kaydet (isteğe bağlı)",
+      "s": [
+        "dosyamı nasıl kaydederim",
+        "kaydetme kısayolu ne",
+        "ctrl+s ile kaydetme",
+        "turkod dosya uzantısı nedir",
+        ".trpy uzantısı ne",
+        "kaydetmeden çalıştırabilir miyim",
+        "programı kapatırsam kaydetmediğim sekmeler kaybolur mu",
+        "kaydetmedim kodlarim gider mi",
+        "disket simgesi ne işe yarıyor",
+        "kaydetmek zorunlu mu",
+        "yazdığım kodu bir isimle saklamak istiyorum, nasıl yaparım ve hangi uzantıyla kaydolur",
+        "save turkodda nerde"
+      ],
+      "c": "💾 simgesine ya da Ctrl+S'ye bas ve dosyana bir ad ver; uzantısı .trpy olur. Kaydetmek zorunlu değil, kaydetmeden de çalıştırabilirsin. Kaydetmediğin sekmeler de program kapanıp açıldığında geri gelir."
+    },
+    "4️⃣-çalıştır": {
+      "baslik": "4️⃣ Çalıştır",
+      "s": [
+        "kodu nasıl çalıştırırım",
+        "çalıştırma kısayolu ne",
+        "ctrl+r ne yapıyor",
+        "yeşil oynat düğmesi nerede",
+        "programı başlatmak için hangi tuşa basmalıyım",
+        "kodu calistirinca ne oluyo",
+        "çalıştırınca altta bir pencere açıldı, bu ne",
+        "programa / kabuğa girdi yazısı ne demek",
+        "program bekliyor gibi duruyor, donmuş mu",
+        "run tuşu turkod",
+        "kodu yazdım, şimdi çalıştırıp sonucunu görmek istiyorum, nereden başlatıyorum",
+        "kod çalıştırma"
+      ],
+      "c": "Araç çubuğundaki yeşil ▶️ düğmesine ya da Ctrl+R'ye bas. Altta terminal açılır ve program sorusunu sorar. En alttaki kutuda Programa / kabuğa girdi… yazıyorsa program donmamıştır, senin cevabını bekliyordur."
+    },
+    "5️⃣-terminale-cevap-yaz": {
+      "baslik": "5️⃣ Terminale cevap yaz",
+      "s": [
+        "program soru soruyor, cevabı nereye yazacağım",
+        "girdi_al sorusuna nasıl cevap veririm",
+        "terminale nasıl yazı yazarım",
+        "programa / kabuğa girdi kutusu nerede",
+        "adimi nereye yaziyorum",
+        "ilk programın çıktısı nasıl olmalı",
+        "Ayşe: 92 puan -> A çıktısı",
+        "bu kod canlı demoda çalışır mı",
+        "canlı demoda f-string çalışıyor mu",
+        "kaplumbağa ve oyun kütüphanesi canlı demoda neden çalışmıyor",
+        "site üzerindeki canlı demoda programı denedim, pencere açan kütüphaneler orada da çalışır mı",
+        "terminale cevap yazıp enter'a bastım, sonra ne görmeliyim",
+        "input'a cevap verme turkod"
+      ],
+      "c": "En alttaki Programa / kabuğa girdi… kutusuna adını yaz ve Enter'a bas; terminalde her notun harfe çevrildiğini görürsün, örneğin Ayşe: 92 puan -> A. Bu sayfadaki her şey, f\"...\" dahil, sitedeki Canlı Demo'da da çalışır. Yalnızca pencere açan kütüphaneler (kaplumbağa, oyun) sadece programda çalışır."
+    },
+    "takıldın-mı": {
+      "baslik": "Takıldın mı?",
+      "s": [
+        "programım çalışmıyor ne yapmalıyım",
+        "hatayı nerede görürüm",
+        "kırmızı hata yazısı çıktı",
+        "sihirli değnek düğmesi ne işe yarar",
+        "eksik iki nokta hatasını otomatik düzeltme",
+        "çalışan programı nasıl durdururum",
+        "program bitmiyor sonsuz döngüde kaldı durdurma",
+        "ctrl+c terminalde ne yapar",
+        "f1 ile kodi'yi çağırmak",
+        "hatami kim bulur yardim",
+        "kodumda bir hata var ama nerede olduğunu bulamıyorum, TürKod bana yardım edebilir mi",
+        "kapanmamış parantez hatası nasıl düzeltilir",
+        "durdur düğmesi"
+      ],
+      "c": "Önce durum çubuğundaki kırmızı hata yazısına ve terminaldeki Türkçe hata mesajına bak. Düzelt (sihirli değnek) düğmesi eksik : ya da kapanmamış parantez gibi hataları senin yerine düzeltebilir. Programı durdurmak için kırmızı ⏹️ düğmesine ya da terminalde Ctrl+C'ye bas; F1 ile Kodi'yi çağırıp hatanı sorabilirsin (bir yapay zekâ modeli bağlıysa)."
+    }
+  }
+}

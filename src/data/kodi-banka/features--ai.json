@@ -1,0 +1,81 @@
+{
+  "sayfa": "/features/ai/",
+  "bolumler": {
+    "": {
+      "baslik": "AI Asistan",
+      "s": [
+        "TürKod'da yapay zekâ var mı?",
+        "AI asistan ne işe yarıyor?",
+        "sağ paneldeki yapay zeka ne yapar",
+        "Kodumu bana açıklayan bir şey var mı programda?",
+        "AI asistan neden çalışmıyor, kapalı görünüyor",
+        "yapay zeka asistanı kullanmak için ne lazım",
+        "turkodda chatgpt gibi bisey varmi",
+        "AI asistan ücretli mi, para vermem gerekiyor mu?",
+        "Asistanı açınca hiçbir model bağlı değil diyor, neden varsayılan olarak kapalı?",
+        "API anahtarım yok, yine de yapay zekâyı kullanabilir miyim?",
+        "ai assistant turkod",
+        "Kodumu iyileştirmek için öneri veren bir yardımcı var mı, ona soru da sorabilir miyim?"
+      ],
+      "c": "Evet, sağ paneldeki AI Asistan kodunu açıklayabilir, iyileştirme önerebilir ve sorularını cevaplayabilir. Ama varsayılan olarak kapalıdır; kullanmak için bir yapay zekâ modeli bağlaman gerekir. Bunun için ya kendi API anahtarınla bir sağlayıcı bağlarsın ya da bilgisayarında çalışan ücretsiz bir yerel model kurarsın."
+    },
+    "kurulum": {
+      "baslik": "Kurulum",
+      "s": [
+        "AI asistanı nasıl kurarım?",
+        "API anahtarını nereye yapıştırıyorum?",
+        "yapay zeka modeli nasil baglanir",
+        "Groq anahtarı nasıl bağlanır?",
+        "OpenAI ya da Gemini'yi TürKod'a bağlayabilir miyim?",
+        "Hangi yapay zekâ sağlayıcıları destekleniyor?",
+        "Anahtarı girdim ama çalışıp çalışmadığını nasıl anlarım?",
+        "AI paneli için hangi modeli kullanacağımı nereden seçerim?",
+        "internetsiz ücretsiz yapay zeka kullanabilirmiyim",
+        "Bilgisayarıma yerel model indirmek istiyorum, nasıl yaparım?",
+        "sıcaklık ve en fazla token ayarı nerede",
+        "sistem mesajını nereden değiştiririm",
+        "Hiç yapay zekâ bağlamadım ve nereden başlayacağımı bilmiyorum, adım adım gösteren bir rehber var mı?",
+        "Ayarlar'da sağlayıcı seçip Bağla ve modelleri seç'e bastım, sonra Kod açıklama görevi için modeli nereden atarım?"
+      ],
+      "c": "Ayarlar → Yapay Zekâ: Modeller → Sağlayıcı bağla bölümünde bir sağlayıcı seç (Groq, OpenAI, Google gibi 220'den fazla seçenek var), API anahtarını yapıştır, Bağlantıyı Test Et ile dene, sonra Bağla ve modelleri seç'e bas. Ardından Ayarlar → Yapay Zekâ: Görevler'de AI Paneli sohbet ve Kod açıklama / optimize için modelini seç. Ücretsiz ve internetsiz yol için paneldeki Ücretsiz yerel model kur düğmesini kullanabilirsin."
+    },
+    "kullanım": {
+      "baslik": "Kullanım",
+      "s": [
+        "AI asistanı nasıl kullanırım?",
+        "AI paneli kayboldu, nasıl geri açarım?",
+        "Açıkla düğmesi ne yapıyor?",
+        "Optimize et ne işe yarar?",
+        "asistana kendi sorumu nasil yazarim",
+        "Soru kutusunda alt satıra nasıl geçerim, Enter basınca gönderiyor",
+        "beyin düğmesi ne",
+        "Asistanın verdiği kodu editöre nasıl koyarım?",
+        "Üzerine Yaz ile İmlece Ekle arasındaki fark ne?",
+        "AI sohbetini nasıl silerim?",
+        "Asistan Python kodu verince TürKod'a çevirmem gerekir mi?",
+        "cevap yarıda kesiliyo uzun cevaplarda ne olur",
+        "Programım hatayla bitti, hatayı yapay zekâya açıklatabilir miyim?",
+        "Bir modelin kullanım hakkı dolarsa ne oluyor, cevabı hangi model verdi nasıl anlarım?"
+      ],
+      "c": "Asistan sağ paneldedir; kapalıysa üst satırdaki AI Asistan düğmesiyle ya da Görünüm → AI Panelini Aç/Kapat ile açarsın. Açıkla kodunu anlatır, Optimize et iyileştirme önerir, Sor… kutusuna kendi sorunu yazarsın (Enter gönderir, Shift+Enter yeni satır). Cevaptaki kodlar TürKod'a çevrilir; kod bloğundaki Üzerine Yaz, İmlece Ekle ya da Yeni Sekme ile kodu editöre alabilirsin. Temizle sohbeti siler."
+    },
+    "gizlilik": {
+      "baslik": "Gizlilik",
+      "s": [
+        "AI asistan kodumu nereye gönderiyor?",
+        "Yapay zekâ kullanınca kodum internete gidiyor mu?",
+        "API anahtarım güvende mi?",
+        "api anahtarlari nerede saklaniyo",
+        "Yerel model kullanırsam bilgilerim bilgisayardan çıkar mı?",
+        "Sor kutusuna yazınca ne gönderiliyor?",
+        "turkod_ayarlar.json dosyası ne",
+        "AI anahtarım şifreli mi saklanıyor?",
+        "yapay zeka gizlilik",
+        "Başkası bilgisayarımdaki API anahtarımı görebilir mi?",
+        "Açıkla'ya basınca bütün dosyam mı yoksa bir kısmı mı sağlayıcıya gidiyor, merak ediyorum",
+        "Okulda öğrencilerimin kodu yabancı bir şirkete gitmesin istiyorum, hiçbir şey dışarı çıkmadan asistanı kullanmanın yolu var mı?"
+      ],
+      "c": "Açıkla ve Optimize et açık dosyayı, Sor ise sorunla birlikte kodunun son kısmını seçtiğin sağlayıcıya gönderir. Yerel bir model kullanırsan hiçbir şey bilgisayarından çıkmaz. API anahtarların kullanıcı klasöründeki .turkod_ayarlar.json dosyasında Windows'un şifrelemesiyle saklanır ve yalnızca senin Windows hesabın açabilir; yine de anahtarlarını kimseyle paylaşma."
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "sayfa": "/learn/conditions/",
+  "bolumler": {
+    "": {
+      "baslik": "Koşullar",
+      "s": [
+        "koşullar nedir",
+        "kod nasıl karar verir",
+        "turkodda if nasıl yazılır",
+        "koşul yapıları neler",
+        "eğer değilse_eğer değilse ne demek",
+        "kosullar konusu",
+        "karşılaştırma ve mantıksal bağlaçlar nerede anlatılıyor",
+        "koşul örneklerini nerede deneyebilirim",
+        "programım duruma göre farklı şey yapsın istiyorum",
+        "if else turkod",
+        "karar verme komutları",
+        "koşul örneklerini bilgisayarıma kurmadan denemek istiyorum, mümkün mü"
+      ],
+      "c": "Koşullar, kodun karar vermesini sağlar. TürKod'da bunun için eğer / değilse_eğer / değilse yapısını, karşılaştırma işleçlerini ve ve, veya, değil gibi mantıksal bağlaçları kullanırsın. Örneklerin hepsini Canlı Demo sayfasında deneyebilirsin."
+    },
+    "eğer--değilse": {
+      "baslik": "eğer / değilse",
+      "s": [
+        "eğer değilse nasıl kullanılır",
+        "if else turkodda nasıl yazılır",
+        "koşul sağlanmazsa başka bir şey yapmak",
+        "eger degilse ornegi",
+        "yaş 18'den büyükse reşitsin yazdırmak",
+        "değilse ne zaman çalışır",
+        "eğer satırının sonuna ne koyulur",
+        "eğerin altındaki kod neden içeride yazılıyor",
+        "else turkodda",
+        "yaşa göre reşit olup olmadığını yazan bir program yapmak istiyorum, nasıl yazarım",
+        "iki seçenekli koşul",
+        "degilse kelimesi"
+      ],
+      "c": "eğer'den sonra koşulu yazıp sonuna : koyarsın, koşul doğruysa altındaki girintili satırlar çalışır; değilse: altındakiler ise koşul yanlış olduğunda çalışır. Örneğin yas 15 iken eğer yas >= 18: koşulu sağlanmaz, bu yüzden değilse dalındaki Reşit değilsin yazdırılır."
+    },
+    "değilse_eğer--birden-çok-koşul": {
+      "baslik": "değilse_eğer — birden çok koşul",
+      "s": [
+        "birden çok koşul nasıl yazılır",
+        "değilse_eğer ne işe yarar",
+        "elif turkodda nasıl",
+        "not ortalamasına göre Pekiyi İyi yazdırmak",
+        "degilse eger ayri mi yazilir",
+        "üç seçenekli koşul",
+        "not_ort 76 olunca hangi dal çalışır",
+        "koşullar sırayla mı kontrol ediliyor",
+        "else if turkod",
+        "puanı 85 üstüyse bir şey, 70 üstüyse başka bir şey, yoksa üçüncü bir şey yazdırmak istiyorum",
+        "değilse_eğer kaç tane yazılabilir",
+        "kodun hangi dala girdiğini nasıl izlerim"
+      ],
+      "c": "Birden çok koşul için eğer'den sonra değilse_eğer, en sonda da değilse yazarsın. Koşullar sırayla denenir ve ilk doğru olan dal çalışır: not_ort 76 iken 85 koşulu sağlanmaz, 70 koşulu sağlanır ve İyi yazdırılır. not_ort değerini değiştirip kodun hangi dala girdiğini izleyebilirsin."
+    },
+    "karşılaştırma-ve-mantık": {
+      "baslik": "Karşılaştırma ve Mantık",
+      "s": [
+        "and or not turkodda ne",
+        "ve veya değil nasıl kullanılır",
+        "iki koşulu birden kontrol etmek",
+        "karşılaştırma işaretleri neler",
+        "eşit değil nasıl yazılır",
+        "büyük eşit işareti turkodda aynı mı",
+        "aynı_mı ne demek",
+        "is turkodda nasil yaziliyo",
+        "koşullardan biri doğruysa çalışsın istiyorum",
+        "in operatörünün türkçesi",
+        "hava güneşliyse ve yağmur yağmıyorsa dışarı çık yazdırmak istiyorum, iki koşulu nasıl birleştiririm",
+        "mantıksal bağlaçlar",
+        "ve ile veya farkı"
+      ],
+      "c": "> < >= <= == != işleçleri Python'dakiyle aynıdır. Mantıksal bağlaçlar Türkçe: ve (and), veya (or), değil (not); ayrıca içinde (in) ve aynı_mı (is) var. Örneğin eğer hava == \"güneşli\" ve değil yağmur: iki koşulu birleştirir."
+    },
+    "doğru--yanlış--hiçlik": {
+      "baslik": "Doğru / Yanlış / Hiçlik",
+      "s": [
+        "True False None turkodda nasıl yazılır",
+        "Hiçlik ne demek",
+        "boş değer nasıl kontrol edilir",
+        "dogru yanlis hiclik",
+        "bir değişkenin None olduğunu nasıl anlarım",
+        "puan aynı_mı Hiçlik ne demek",
+        "değer verilmemiş değişken için ne yazılır",
+        "Doğru ve Yanlış büyük harfle mi yazılır",
+        "None karşılaştırması turkod",
+        "mantıksal değerler",
+        "aktif Doğru ve puan Hiçlik iken koşul çalışır mı",
+        "puan henüz girilmediyse bunu koşulla kontrol etmek istiyorum"
+      ],
+      "c": "TürKod'da True Doğru, False Yanlış, None Hiçlik olarak yazılır. Bir değerin Hiçlik olup olmadığını aynı_mı ile kontrol edersin: aktif = Doğru ve puan = Hiçlik iken eğer aktif ve puan aynı_mı Hiçlik: koşulu sağlanır ve Çalışıyor yazdırılır."
+    },
+    "içinde-ile-üyelik-kontrolü": {
+      "baslik": "içinde ile üyelik kontrolü",
+      "s": [
+        "bir şey listede var mı nasıl kontrol edilirim",
+        "listede olmadığını kontrol etmek",
+        "değil içinde nasıl yazılır",
+        "not in turkodda",
+        "içinde kelimesi koşulda ne yapar",
+        "aynı_mı değil ne demek",
+        "is not None turkod",
+        "elma listede var mi kontrol",
+        "kiraz listede yoksa yazdırmak",
+        "puanın girilmiş olup olmadığını kontrol etmek",
+        "meyveler listemde bir meyvenin olup olmadığına göre farklı mesaj yazdırmak istiyorum",
+        "üyelik kontrolü",
+        "Hiçlik olmayan değeri sormak"
+      ],
+      "c": "Bir şeyin listede olup olmadığını içinde ile sorarsın: eğer \"elma\" içinde meyveler:. Listede olmadığını sormak için değil içinde yaz: eğer \"kiraz\" değil içinde meyveler:. Bir değerin Hiçlik olmadığını sormak için de aynı_mı değil kullanılır: eğer puan aynı_mı değil Hiçlik:."
+    },
+    "tek-satırda-koşul-üçlü-ifade": {
+      "baslik": "Tek satırda koşul (üçlü ifade)",
+      "s": [
+        "tek satırda koşul nasıl yazılır",
+        "üçlü ifade nedir",
+        "ternary operator turkod",
+        "koşula göre değişkene değer vermek",
+        "aralık kontrolü nasıl yapılır",
+        "50 ile 85 arasında mı kontrol etmek",
+        "= ile == farkı ne",
+        "koşulda tek eşittir yazınca hata alıyorum",
+        "tek satir eger degilse",
+        "zincirleme karşılaştırma",
+        "yaş 18'den küçükse çocuk değilse yetişkin yazan değişkeni tek satırda yazmak istiyorum",
+        "en sık yapılan koşul hatası",
+        "eşittir ile çift eşittir"
+      ],
+      "c": "Tek satırda koşul şöyle yazılır: durum_metni = \"yetişkin\" eğer yas >= 18 değilse \"çocuk\"; yas 12 iken çıktı çocuk olur. Aralık kontrolünü zincirleme yazabilirsin: eğer 50 <= not_ort < 85:. Dikkat: = atama yapar, == karşılaştırır; koşul içinde tek = yazmak en sık yapılan başlangıç hatasıdır."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "koşullar mini görev ne",
+        "sayının pozitif negatif sıfır olduğunu yazdırmak",
+        "koşullar alıştırması",
+        "mini görevin cevabı nerede",
+        "pozitif negatif sifir odevi",
+        "koşullarla ilgili kendimi denemek istiyorum",
+        "Kendini Test Et sayfası",
+        "koşul konusu için ödev",
+        "sayı sıfırdan büyük mü küçük mü yazdıran program",
+        "mini görevi yaptım, cevabımı nerede kontrol edebilirim",
+        "koşullar pratik sorusu"
+      ],
+      "c": "Mini görev: bir sayının pozitif, negatif veya sıfır olduğunu yazdıran koşulları yaz. Bunun için eğer, değilse_eğer ve değilse kullanabilirsin. Cevapları Kendini Test Et sayfasında bulursun."
+    }
+  }
+}

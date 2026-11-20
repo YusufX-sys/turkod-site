@@ -1,0 +1,43 @@
+{
+  "sayfa": "/demo/",
+  "bolumler": {
+    "": {
+      "baslik": "Canlı Demo",
+      "s": [
+        "TürKod'u kurmadan deneyebilir miyim?",
+        "Tarayıcıda kod çalıştırabileceğim bir yer var mı?",
+        "Canlı demo nedir?",
+        "indirmeden turkod denemek istiyorum",
+        "Demoda kaplumbağa neden çalışmıyor?",
+        "Demoda py_oyun ile oyun yapabilir miyim?",
+        "Demoyu ilk çalıştırınca neden bekliyor?",
+        "demo cok yavas aciliyor neden",
+        "Demoda girdi_al çalışıyor mu, cevabı nereye yazacağım?",
+        "Demo gerçek TürKod gibi mi çalışıyor yoksa basit bir taklit mi?",
+        "Online TürKod editörü",
+        "Okuldaki bilgisayara program kuramıyorum; tarayıcıdan döngü, liste, sözlük ve matematik kütüphanesi kullanan kodlarımı deneyebilir miyim?",
+        "Demoda hata mesajları Türkçe çıkıyor mu?",
+        "Python yüklemeden tarayıcıda Türkçe kod çalıştırma"
+      ],
+      "c": "Evet, Canlı Demo’da kurulum yapmadan kutuya kod yazıp ▶ Çalıştır’a basabilirsin. Demo programın gerçek çeviricisiyle çalışır; döngüler, sınıflar, listeler, matematik, rastgele gibi kütüphaneler ve Türkçe hata mesajları programdaki gibidir. İlk çalıştırmada Python yüklendiği için birkaç saniye beklenir. Pencere açan kaplumbağa, py_oyun ve pencere yalnızca tam sürümde çalışır."
+    },
+    "nasıl-kullanılır": {
+      "baslik": "Nasıl Kullanılır?",
+      "s": [
+        "Canlı demo nasıl kullanılır?",
+        "Demoda kodu nasıl çalıştırırım?",
+        "Demoda sonucu nerede göreceğim?",
+        "demo nasil calistirilir",
+        "Demodaki hazır kodu değiştirebilir miyim?",
+        "Demoda ne denemeliyim, bir fikir verir misin?",
+        "Demodaki yaş örneğiyle ne yapabilirim?",
+        "Çalıştır'a bastım, çıktı nerede?",
+        "demoda yas degiskenini degistirince ne oluyor",
+        "Demoda kendi eğer koşulumu yazabilir miyim?",
+        "Sol kutudaki kodu silip kendi kodumu yazsam olur mu, sonra ne yapmam gerekiyor?",
+        "Demo kullanım adımları"
+      ],
+      "c": "Sol kutuda hazır bir kod var, istersen değiştir. Sonra ▶ Çalıştır’a bas ve sonucu sağdaki terminalde gör. Örneğin yas değişkeninin değerini değiştirip yeniden çalıştırabilir ya da eğer yas >= 65: gibi kendi koşullarını yazabilirsin."
+    }
+  }
+}

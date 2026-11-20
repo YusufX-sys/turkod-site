@@ -9,8 +9,9 @@ export type SozlukKaydi = [string, string, string];
 const HARF: Record<string, string> = { ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' };
 
 /** Küçük harf + Türkçe harfleri sadeleştir (alt çizgi ve noktayı korur). */
+// toLocaleLowerCase('tr-TR') yerine toLowerCase(): yalnızca I/İ'de farklılar, ikisi de aşağıda "i"ye katlanır (çok daha hızlı).
 export const katla = (s: string) =>
-  s.toLocaleLowerCase('tr-TR').replace(/[çğıöşüâîû]/g, (h) => HARF[h] || h).replace(/i̇/g, 'i');
+  s.toLowerCase().replace(/[çğıöşüâîû]/g, (h) => HARF[h] || h).replace(/i̇/g, 'i');
 
 /** Eşleştirme için: katla + noktalama/alt çizgi boşluk olur. */
 export const sadelestir = (s: string) =>
@@ -25,6 +26,7 @@ export const DOLGU = new Set([
   'karsilik', 'turkcesi', 'turkce', 'python', 'pythonda', 'turkod', 'turkodda', 'komut', 'komutu', 'kelime', 'kelimesi',
   'fonksiyonu', 'anlami', 'anlamina', 'gelir', 'geliyor', 'kodu', 'yazilir', 'yazarim',
   'peki', 'hani', 'ayrica', 'sonra', 'tamam', 'bende', 'benden', 'sende', 'senden', 'bizde', 'bizim',
+  'falan', 'filan', 'beraber', 'mesela', 'yani', 'sey', 'seyi',
 ]);
 
 // ---------------------------------------------------------------- bilgi tabanı
@@ -118,14 +120,24 @@ function uzaklik(a: string, b: string, sinir: number): number {
 }
 
 /** Ayarlanabilir ağırlıklar (scripts/kodi-dene.ts ile ölçülerek seçildi). */
-export const AGIRLIK = { anahtar: 3, id: 2, cevap: 1, ek: 0.7, kalip: 0.2, k1: 1.2, b: 0.4, tam: 8 };
+export const AGIRLIK = { anahtar: 2, id: 2, cevap: 1, ek: 0.7, kalip: 0.5, k1: 1.2, b: 0.4, tam: 8, soru: 1 };
 
 type Belge = { b: KodiBilgi; tf: Map<string, number>; uzunluk: number; tekler: string[]; ifadeler: string[]; tamlar: string[] };
-type Dizin = { belgeler: Belge[]; df: Map<string, number>; ortUzunluk: number; sozcukler: string[] };
+type Dizin = { belgeler: Belge[]; df: Map<string, number>; ortUzunluk: number; sozcukler: string[]; sorular: TfDizin<SoruBelge> };
 let dizin: Dizin | null = null;
 let dizinKaynak: KodiBilgi[] | null = null;
 /** Ağırlıklar değişince dizini yeniden kurdurur (deneme aracı). */
 export const dizinSifirla = () => { dizin = null; };
+
+/**
+ * Hazır maddelerin soru bankası (src/data/kodi-banka-madde/, derlemede /kodi-madde-sorular.json):
+ * her madde için önceden üretilmiş olası kullanıcı soruları. Verilmezse Kodi yalnızca anahtarlarla çalışır.
+ */
+let maddeBankasi: Record<string, string[]> = {};
+export function maddeSorulari(banka: Record<string, string[]> | null | undefined) {
+  maddeBankasi = banka ?? {};
+  dizin = null;
+}
 
 const terimler = (s: string) => sadelestir(s).split(' ').filter((w) => w.length > 1 && !DOLGU.has(w));
 /** Dizin için: dolgu sözcükleri de tutulur (BM25 sık geçenlerin ağırlığını zaten düşürür). */
@@ -146,8 +158,13 @@ export function dizinKur(bilgi: KodiBilgi[]): Dizin {
     return { b, tf, uzunluk, tekler, ifadeler, tamlar };
   });
   const ortUzunluk = belgeler.reduce((s, x) => s + x.uzunluk, 0) / belgeler.length;
+  const sorular = tfDizini(belgeler.flatMap((b, i) => (maddeBankasi[b.b.id] ?? []).map((s) => {
+    const tf = new Map<string, number>();
+    tfEkle(tf, s, 1);
+    return { i, tf, uzunluk: 0 };
+  })));
   dizinKaynak = bilgi;
-  return (dizin = { belgeler, df, ortUzunluk, sozcukler: [...df.keys()] });
+  return (dizin = { belgeler, df, ortUzunluk, sorular, sozcukler: [...new Set([...df.keys(), ...sorular.df.keys()])] });
 }
 
 /** Sorudaki sözcüğü dizindeki terimlere bağlar; yoksa yazım hatası olarak en yakın terime. */
@@ -204,8 +221,15 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
                   ...ek.map((w, i) => ({ w, t: eslesenTerimler(w, d), agirlik: AGIRLIK.ek, asilMi: false, kaynak: ekKaynak[i] }))];
   const sozcukler = s.split(' ');
   const cerceve = ` ${s} `;
+  // Bankadaki en benzer hazır soru (madde başına en iyisi): [puan, karşılanan asıl sözcük sayısı]
+  const soruPuani = new Map<number, [number, number]>();
+  if (AGIRLIK.soru > 0) for (const sb of d.sorular.belgeler) {
+    const p = bm25(sb, d.sorular, baglar);
+    const once = soruPuani.get(sb.i);
+    if (p[0] > 0 && (!once || p[0] > once[0])) soruPuani.set(sb.i, p);
+  }
   const sonuc: Eslesme[] = [];
-  for (const belge of d.belgeler) {
+  for (const [bi, belge] of d.belgeler.entries()) {
     // 1) BM25: her soru sözcüğü için belgede en iyi uyan terimin katkısı
     let bm = 0;
     const karsilananlar = new Set<string>();
@@ -233,8 +257,10 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
     // Soru, bir anahtarın kendisiyse ("dongu nedir", "hahaha") en güçlü işarettir
     const tamEslesme = belge.ifadeler.includes(s) || belge.tekler.includes(s) || belge.tamlar.includes(s);
     if (tamEslesme) kalip += AGIRLIK.tam / AGIRLIK.kalip;
-    const puan = bm + kalip * AGIRLIK.kalip;
-    if (puan > 0) sonuc.push({ bilgi: belge.b, puan, kapsam: tamEslesme ? 1 : asil.length ? karsilananlar.size / asil.length : 0 });
+    const [sp, sk] = soruPuani.get(bi) ?? [0, 0];
+    const puan = bm + kalip * AGIRLIK.kalip + sp * AGIRLIK.soru;
+    const kapsam = tamEslesme ? 1 : asil.length ? Math.max(karsilananlar.size, sk) / asil.length : 0;
+    if (puan > 0) sonuc.push({ bilgi: belge.b, puan, kapsam });
   }
   return sonuc.sort((a, b) => b.puan - a.puan);
 }
@@ -243,58 +269,91 @@ export function adaylariSirala(soru: string, bilgi: KodiBilgi[], sozluk?: Sozluk
 // Sitedeki her belge sayfasının ## / ### bölümleri (derlemede üretilir: /kodi-bolumler.json).
 // Hazır bilgide olmayan ayrıntılı sorular buradan, bölümün özeti ve bağlantısıyla cevaplanır.
 
-/** [sayfa, sayfa başlığı, bölüm başlığı, çapa, özet, ilk kod, tam metin ('' = özetle aynı), bütün kodlar] */
-export type BolumKaydi = [string, string, string, string, string, string, string?, string[]?];
-type BolumBelge = { k: BolumKaydi; tf: Map<string, number>; uzunluk: number };
-export type BolumDizini = { belgeler: BolumBelge[]; df: Map<string, number>; ortUzunluk: number; sozcukler: string[] };
+/**
+ * [sayfa, sayfa başlığı, bölüm başlığı, çapa, özet, ilk kod, tam metin ('' = özetle aynı), bütün kodlar,
+ *  bankadaki olası sorular, bankadaki kısa cevap] — son ikisi src/data/kodi-banka/'dan (bkz. kodi-bolumler.mjs).
+ */
+export type BolumKaydi = [string, string, string, string, string, string, string?, string[]?, string[]?, string?];
+type TfBelge = { tf: Map<string, number>; uzunluk: number };
+type BolumBelge = TfBelge & { k: BolumKaydi };
+/** Bankadaki her soru ayrı bir belge: kullanıcının sorusu en çok benzediği hazır soruya göre bölüme bağlanır. */
+type SoruBelge = TfBelge & { i: number };
+type TfDizin<T extends TfBelge> = { belgeler: T[]; df: Map<string, number>; ortUzunluk: number };
+export type BolumDizini = TfDizin<BolumBelge> & { sorular: TfDizin<SoruBelge>; sozcukler: string[] };
 export type BolumEslesme = { k: BolumKaydi; puan: number; kapsam: number };
 
 /** Bölüm dizini ağırlıkları ve eşikleri (scripts/kodi-ayarla.ts ile ölçülerek seçildi). */
-export const BOLUM = { baslik: 2, sayfa: 1.5, ozet: 1, kod: 0.5, esik: 12, kapsam: 0.4, oran: 0.8 };
+export const BOLUM = { baslik: 2, sayfa: 1.5, ozet: 1, kod: 0.5, esik: 23, kapsam: 0.4, oran: 0.8, soru: 1, oranTam: 2, tamKapsam: 0.75 };
+
+function tfDizini<T extends TfBelge>(belgeler: T[]): TfDizin<T> {
+  const df = new Map<string, number>();
+  for (const b of belgeler) {
+    for (const w of b.tf.keys()) df.set(w, (df.get(w) ?? 0) + 1);
+    for (const v of b.tf.values()) b.uzunluk += v;
+  }
+  return { belgeler, df, ortUzunluk: belgeler.reduce((s, x) => s + x.uzunluk, 0) / Math.max(1, belgeler.length) };
+}
+
+const tfEkle = (tf: Map<string, number>, s: string, agirlik: number) => {
+  for (const w of dizinTerimleri(s.replace(/_/g, ' '))) tf.set(w, (tf.get(w) ?? 0) + agirlik);
+};
 
 export function bolumDizini(kayitlar: BolumKaydi[]): BolumDizini {
-  const df = new Map<string, number>();
-  const belgeler = kayitlar.map((k) => {
+  const ana = tfDizini(kayitlar.map((k) => {
     const tf = new Map<string, number>();
-    const ekle = (s: string, agirlik: number) => {
-      for (const w of dizinTerimleri(s.replace(/_/g, ' '))) tf.set(w, (tf.get(w) ?? 0) + agirlik);
-    };
-    ekle(k[2], BOLUM.baslik);
-    ekle(k[1], BOLUM.sayfa);
-    ekle(k[6] || k[4], BOLUM.ozet);           // bölümün TAM metni aranır
-    for (const kod of k[7]?.length ? k[7] : [k[5]]) ekle(kod, BOLUM.kod);
-    for (const w of tf.keys()) df.set(w, (df.get(w) ?? 0) + 1);
-    let uzunluk = 0;
-    for (const v of tf.values()) uzunluk += v;
-    return { k, tf, uzunluk };
-  });
-  const ortUzunluk = belgeler.reduce((s, x) => s + x.uzunluk, 0) / Math.max(1, belgeler.length);
-  return { belgeler, df, ortUzunluk, sozcukler: [...df.keys()] };
+    tfEkle(tf, k[2], BOLUM.baslik);
+    tfEkle(tf, k[1], BOLUM.sayfa);
+    tfEkle(tf, k[6] || k[4], BOLUM.ozet);           // bölümün TAM metni aranır
+    for (const kod of k[7]?.length ? k[7] : [k[5]]) tfEkle(tf, kod, BOLUM.kod);
+    return { k, tf, uzunluk: 0 };
+  }));
+  const sorular = tfDizini(kayitlar.flatMap((k, i) => (k[8] ?? []).map((s) => {
+    const tf = new Map<string, number>();
+    tfEkle(tf, s, 1);
+    return { i, tf, uzunluk: 0 };
+  })));
+  return { ...ana, sorular, sozcukler: [...new Set([...ana.df.keys(), ...sorular.df.keys()])] };
+}
+
+type Bag = { t: string[]; agirlik: number; asilMi: boolean };
+/** Bir belgenin BM25 puanı ve karşılanan asıl soru sözcüğü sayısı. */
+function bm25<T extends TfBelge>(belge: T, d: TfDizin<T>, baglar: Bag[]): [number, number] {
+  const N = d.belgeler.length, k1 = AGIRLIK.k1, bb = AGIRLIK.b;
+  let puan = 0, karsilanan = 0;
+  for (const { t, agirlik, asilMi } of baglar) {
+    let en = 0;
+    for (const terim of t) {
+      const f = belge.tf.get(terim);
+      if (!f) continue;
+      const n = d.df.get(terim) ?? 0;
+      const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
+      en = Math.max(en, idf * (f * (k1 + 1)) / (f + k1 * (1 - bb + (bb * belge.uzunluk) / d.ortUzunluk)));
+    }
+    if (en > 0 && asilMi) karsilanan++;
+    puan += en * agirlik;
+  }
+  return [puan, karsilanan];
 }
 
 export function bolumAdaylari(soru: string, d: BolumDizini, sozluk?: SozlukDizini | null): BolumEslesme[] {
   const { asil, ek } = soruTerimleri(soru, sozluk);
   if (!asil.length) return [];
-  const N = d.belgeler.length, k1 = AGIRLIK.k1, bb = AGIRLIK.b;
-  const baglar = [...asil.map((w) => ({ t: eslesenTerimler(w, d), agirlik: 1, asilMi: true })),
-                  ...ek.map((w) => ({ t: eslesenTerimler(w, d), agirlik: AGIRLIK.ek, asilMi: false }))];
-  const sonuc: BolumEslesme[] = [];
-  for (const belge of d.belgeler) {
-    let puan = 0, karsilanan = 0;
-    for (const { t, agirlik, asilMi } of baglar) {
-      let en = 0;
-      for (const terim of t) {
-        const f = belge.tf.get(terim);
-        if (!f) continue;
-        const n = d.df.get(terim) ?? 0;
-        const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
-        en = Math.max(en, idf * (f * (k1 + 1)) / (f + k1 * (1 - bb + (bb * belge.uzunluk) / d.ortUzunluk)));
-      }
-      if (en > 0 && asilMi) karsilanan++;
-      puan += en * agirlik;
-    }
-    if (puan > 0) sonuc.push({ k: belge.k, puan, kapsam: karsilanan / asil.length });
+  const baglar: Bag[] = [...asil.map((w) => ({ t: eslesenTerimler(w, d), agirlik: 1, asilMi: true })),
+                         ...ek.map((w) => ({ t: eslesenTerimler(w, d), agirlik: AGIRLIK.ek, asilMi: false }))];
+  // Bankadaki en benzer hazır soru (bölüm başına en iyisi)
+  const soruPuani = new Map<number, [number, number]>();
+  if (BOLUM.soru > 0) for (const s of d.sorular.belgeler) {
+    const p = bm25(s, d.sorular, baglar);
+    const once = soruPuani.get(s.i);
+    if (p[0] > 0 && (!once || p[0] > once[0])) soruPuani.set(s.i, p);
   }
+  const sonuc: BolumEslesme[] = [];
+  d.belgeler.forEach((belge, i) => {
+    const [p, k] = bm25(belge, d, baglar);
+    const [sp, sk] = soruPuani.get(i) ?? [0, 0];
+    const puan = p + sp * BOLUM.soru;
+    if (puan > 0) sonuc.push({ k: belge.k, puan, kapsam: Math.max(k, sk) / asil.length });
+  });
   return sonuc.sort((a, b) => b.puan - a.puan);
 }
 
@@ -339,10 +398,12 @@ function enUygunKisim(tam: string, ozet: string, soruKokleri: string[]): string 
 
 /** Bölümden Kodi cevabı: soruya en uygun cümleler + en uygun kod örneği + bölüme bağlantı. */
 export function bolumCevabi(e: BolumEslesme, soru = ''): KodiCevap & { id: string } {
-  const [sayfa, sayfaBaslik, baslik, capa, ozet, ilkKod, tam, kodlar] = e.k;
+  const [sayfa, sayfaBaslik, baslik, capa, ozet, ilkKod, tam, kodlar, , hazir] = e.k;
   const yer = baslik && baslik !== sayfaBaslik ? `"${sayfaBaslik}" sayfasının "${baslik}" bölümünde` : `"${sayfaBaslik}" sayfasında`;
   const kokler = soru ? soruTerimleri(soru).asil : [];
   const metin = enUygunKisim(tam || '', ozet, kokler);
+  // Bankadaki hazır cevap, soru belgedeki bir cümleyle ondan belirgin biçimde daha çok örtüşmüyorsa gösterilir.
+  const hazirMi = !!hazir && (!kokler.length || ortusme(hazir, kokler) + 1 >= ortusme(metin, kokler));
   // Birden çok kod varsa soruyla en çok örtüşeni
   let kod = ilkKod;
   if (kodlar && kodlar.length > 1 && kokler.length) {
@@ -351,14 +412,14 @@ export function bolumCevabi(e: BolumEslesme, soru = ''): KodiCevap & { id: strin
   }
   return {
     id: `bolum:${sayfa}#${capa}`,
-    metin: metin ? `Bu, ${yer} anlatılıyor:\n\n${metin}` : `Bu, ${yer} anlatılıyor. Örneğe bak:`,
+    metin: hazirMi ? hazir! : metin ? `Bu, ${yer} anlatılıyor:\n\n${metin}` : `Bu, ${yer} anlatılıyor. Örneğe bak:`,
     kod: kod || undefined,
     linkler: [{ t: baslik && baslik !== sayfaBaslik ? `${sayfaBaslik} › ${baslik}` : sayfaBaslik, u: capa ? `${sayfa}#${capa}` : sayfa }],
   };
 }
 
 /** Bir eşleşmenin cevap verecek kadar güçlü olup olmadığı. */
-export const ESIK = { puan: 5, kapsam: 0.34 };
+export const ESIK = { puan: 5, kapsam: 0.5 };
 const yeterli = (e: Eslesme | undefined) => !!e && e.puan >= ESIK.puan && e.kapsam >= ESIK.kapsam;
 
 /** Soruya en uygun bilgi kaydını puanıyla döndürür (yoksa null). */
@@ -503,11 +564,33 @@ export const siraSifirla = () => siradaki.clear();
 /** "bir tane daha", "başka", "yine": önceki maddenin sıradaki cevabı istenir. */
 const TEKRAR = /^(?:peki\s+|hadi\s+|ya\s+)?(?:bir\s+(?:tane\s+)?daha|bi\s+(?:tane\s+)?daha|baska(?:\s+bir)?(?:\s+tane)?|daha\s+(?:var\s+mi|anlat|soyle|yap)|yine|tekrar|bir\s+daha|devam|bir\s+tane\s+daha)\b/;
 
-export const SOZLUK_ONCELIK = { kalip: 9, normal: 6 };
+export const SOZLUK_ONCELIK = { kalip: 18, normal: 6 };
+
+// ---------------------------------------------------------------- kapsam dışı bekçisi
+
+/** Kapsam dışı eşiği: sorunun anlamlı sözcüklerinin bu oranı Kodi'nin hiçbir verisinde yoksa hazır cevap verilmez. */
+export const KAPSAM = { oran: 0.15, enAz: 3 };
+
+/**
+ * Sorunun anlamlı sözcüklerinden (en az KAPSAM.enAz harfli, sayı değil) kaçı Kodi'nin hiçbir verisinde
+ * (hazır maddeler + banka soruları, belge bölümleri, sözlük) geçmiyor; yazım hatası ve ekler hoş görülür.
+ * "dünyanın en uzun nehri", "c++ pointer", "vim modu" gibi sorularda bilinmeyen sözcük çıkar.
+ */
+export function bilinmeyenOrani(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | null, bd?: BolumDizini | null): number {
+  const temiz = soru.replace(/(?<=[\p{L}\p{N}])['’][\p{L}]+/gu, '');
+  const sozcukler = [...new Set(terimler(temiz))].filter((w) => w.length >= KAPSAM.enAz && !/^\d+$/.test(w));
+  if (!sozcukler.length) return 0;
+  const md = dizinKur(bilgi);
+  const bilinir = (w: string) =>
+    !!(d?.tr.has(w) || d?.py.has(w)) || eslesenTerimler(w, md).length > 0 || (!!bd && eslesenTerimler(w, bd).length > 0);
+  return sozcukler.filter((w) => !bilinir(w)).length / sozcukler.length;
+}
 
 export function yerelCevap(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | null, bd?: BolumDizini | null)
   : (KodiCevap & { id?: string }) | null {
   soru = isaretleriCevir(soru);
+  // Bilinmeyen sözcükler çoksa uydurma bir cevap yerine site araması / Vikipedi devreye girsin.
+  if (bilinmeyenOrani(soru, bilgi, d, bd) >= KAPSAM.oran) return null;
   const r = hazirCevap(soru, bilgi, d);
   if (!bd) return r;
   // Belge bölümleri: hazır cevap yoksa ya da bir bölüm belirgin biçimde daha iyi eşleşiyorsa.
@@ -518,7 +601,11 @@ export function yerelCevap(soru: string, bilgi: KodiBilgi[], d: SozlukDizini | n
   // "exe yaparken kaynak kodu koymak ne işe yarar" gibi uzun sorularda belge bölümü kazanır.
   if (r.id === undefined) return soruTerimleri(soru).asil.length <= 2 ? r : bolumCevabi(bl, soru);
   const es = bilgiBul(soru, bilgi, d);
-  if (!es || bl.puan >= es.puan * BOLUM.oran) return bolumCevabi(bl, soru);
+  // Hazır madde sorunun sözcüklerini (neredeyse) tamamen karşılıyorsa ("KeyError hatası", "len ne işe yarar")
+  // o madde tam olarak bu soru için yazılmıştır: bölümün onu geçmesi için daha yüksek puan gerekir.
+  // Madde uzun bir sorunun yalnızca bir parçasına değiyorsa, ayrıntıyı anlatan bölüm daha kolay kazanır.
+  const oran = es && es.kapsam >= BOLUM.tamKapsam ? BOLUM.oranTam : BOLUM.oran;
+  if (!es || bl.puan >= es.puan * oran) return bolumCevabi(bl, soru);
   return r;
 }
 

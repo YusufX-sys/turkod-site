@@ -1,0 +1,97 @@
+{
+  "sayfa": "/about/",
+  "bolumler": {
+    "": {
+      "baslik": "Yusuf Tandoğan",
+      "s": [
+        "turkodu kim yaptı",
+        "turkod geliştiricisi kim",
+        "yusuf tandoğan kimdir",
+        "geliştiriciye nasıl ulaşırım",
+        "iletişim e-posta adresi ne",
+        "geliştiricinin github profili",
+        "turkodu yapan kisi kim",
+        "yapımcıya mail atmak istiyorum",
+        "bu programı geliştiren kişiyle iletişime geçmek istiyorum, adresi nedir",
+        "hakkımda sayfası",
+        "who made turkod",
+        "turkod sahibi"
+      ],
+      "c": "TürKod'un geliştiricisi Yusuf Tandoğan. GitHub profili github.com/YusufX-sys, iletişim adresi yusuftndgn.2@gmail.com."
+    },
+    "-motivasyon": {
+      "baslik": "🎯 Motivasyon",
+      "s": [
+        "turkod neden yapıldı",
+        "turkodun amacı ne",
+        "neden türkçe programlama dili",
+        "ingilizce bilmeden kod yazabilir miyim",
+        "hata mesajları türkçe mi",
+        "SyntaxError türkçesi ne",
+        "ImportError yerine ne yazıyor",
+        "turkod sadece ceviri mi",
+        "ingilizce yüzünden programlamayı bırakmak üzereydim, turkod bana nasıl yardım eder",
+        "dil bariyeri ne demek",
+        "turkodun ortaya cikis hikayesi",
+        "İngilizce hata mesajlarını anlamıyorum, bunun çözümü var mı"
+      ],
+      "c": "TürKod, İngilizce yüzünden programlamadan vazgeçenler için dil bariyerini yıkmak amacıyla yapıldı. Burada SyntaxError yerine Sözdizimi (Yazım) Hatası, ImportError yerine İçe Aktarma Hatası görürsün. Böylece beynin aynı anda hem programlama mantığını hem de yabancı dili çözmek zorunda kalmaz."
+    },
+    "-proje-hedefleri": {
+      "baslik": "🎨 Proje Hedefleri",
+      "s": [
+        "turkod ücretsiz mi",
+        "turkod paralı mı",
+        "reklam var mı",
+        "premium sürüm var mı",
+        "turkod açık kaynak mı",
+        "lisansı ne",
+        "MIT lisansı mı",
+        "kurulumu uzun sürüyor mu",
+        "turkod python'un yeni özelliklerini destekliyor mu",
+        "her şey türkçe mi arayüz dahil",
+        "turkod bedava mi ucret istiyo mu",
+        "TürKod'un hedefleri neler, ücretsiz kalacak mı ve kaynak kodunu görebilir miyim",
+        "kaynak kodu nerede"
+      ],
+      "c": "TürKod arayüzden hata mesajlarına kadar %100 Türkçe olmayı hedefler. Sonsuza dek ücretsizdir; reklam ve premium sürüm yoktur. Çift tıkla, adımları izle, 5 dakikada hazır olur; Python'un yeni özellikleriyle güncel tutulur. Tüm kod GitHub'da MIT Lisansı ile açık kaynak olarak yayımlanır."
+    },
+    "️-teknoloji-yığını": {
+      "baslik": "🛠️ Teknoloji Yığını",
+      "s": [
+        "turkod hangi dille yazıldı",
+        "turkodun arayüzü neyle yapıldı",
+        "flutter mı kullanılıyor",
+        "turkod hangi python sürümünü kullanıyor",
+        "exe nasıl paketleniyor",
+        "pyinstaller kullanılıyor mu",
+        "sürümler nasıl doğrulanıyor güvenlik",
+        "bu web sitesi neyle yapıldı",
+        "astro starlight mi",
+        "turkod teknolojileri",
+        "tech stack turkod",
+        "turkodun arka planinda hangi teknolojiler var cekirdek arayuz paketleme"
+      ],
+      "c": "Çekirdek Python 3.12 ile, arayüz Dart (Flutter) ile yazıldı. Tek tıkla çalışan .exe PyInstaller ile paketlenir, her sürüm cryptography ile RSA imzalanıp doğrulanır. Web sitesi ise Astro + Starlight ile yapıldı."
+    },
+    "-katkıda-bulun": {
+      "baslik": "🤝 Katkıda Bulun",
+      "s": [
+        "turkoda nasıl katkıda bulunurum",
+        "hata buldum nereye bildiririm",
+        "github issues",
+        "pull request gönderebilir miyim",
+        "sözlüğe yeni kelime eklemek istiyorum",
+        "dokümantasyona örnek eklemek",
+        "yeni sürümü test edip geri bildirim vermek",
+        "güvenlik açığı nasıl bildirilir",
+        "turkod projesine yardim etmek istiyorum",
+        "bug report turkod",
+        "kod yazmayı biliyorum ve projeye bir özellik eklemek istiyorum, nasıl katılabilirim",
+        "topluluk projesi mi",
+        "hata bildirme şablonu"
+      ],
+      "c": "Hata bulursan GitHub Issues sayfasında bildirebilirsin. Yeni özellik ya da düzeltme için pull request gönderebilirsin, sözlüğe bir kelime eklemek bile değerli. Öğrenme sayfalarına örnek ekleyebilir ya da yeni sürümü deneyip geri bildirim verebilirsin. Hata bildirme şablonları, geliştirme ortamı, testler ve güvenlik açığı bildirme için Katkıda Bulun sayfasına bak."
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "sayfa": "/getting-started/",
+  "bolumler": {
+    "": {
+      "baslik": "Giriş",
+      "s": [
+        "TürKod ne?",
+        "turkod nedir kisaca",
+        "Bu program ne işe yarıyor?",
+        "TürKod yeni başlayanlar için mi?",
+        "Türkçe programlama öğrenme ortamı var mı?",
+        "turkod ne ise yarar",
+        "Kodlamaya yeni başlıyorum, TürKod bana uygun mu?",
+        "TürKod'u tek cümleyle anlatır mısın?",
+        "Bu site hangi program hakkında?",
+        "Tamamen Türkçe bir kodlama programı arıyorum, TürKod öyle bir şey mi?"
+      ],
+      "c": "TürKod, yeni başlayanlar için tamamen Türkçe hazırlanmış bir programlama öğrenme ortamıdır. Kod yazmayı Türkçe komutlarla, Türkçe menü ve açıklamalarla öğrenirsin."
+    },
+    "-türkod-nedir": {
+      "baslik": "🤔 TürKod Nedir?",
+      "s": [
+        "TürKod hangi dile dayanıyor?",
+        "TürKod Python mu?",
+        "turkod hangi python surumunu kullaniyo",
+        "İngilizce bilmeden kod yazabilir miyim?",
+        "Hata mesajları Türkçe mi çıkıyor?",
+        "TypeError yerine Türkçe ne yazıyor?",
+        "Menüler Türkçe mi?",
+        "TürKod'un normal Python'dan farkı ne?",
+        "turkod python 3.12 mi",
+        "TürKod'un avantajı ne, neden kullanayım?",
+        "ingilizcem yok programci olabilirmiyim",
+        "İlk kodumu yazınca İngilizce hata alıyorum ve anlamıyorum, TürKod'da hatalar nasıl görünüyor?"
+      ],
+      "c": "TürKod, Python 3.12 tabanlı, tamamen Türkçe bir kodlama ortamıdır; menüler, hata mesajları ve yardımlar Türkçedir. Örneğin \"TypeError: unsupported operand\" yerine \"Veri Tipi Hatası\" ve Türkçe bir açıklama görürsün. Böylece yabancı kelimelerle uğraşmadan doğrudan mantığa odaklanırsın, İngilizce bilmeden de programcı olabilirsin."
+    },
+    "-hedef-kitle": {
+      "baslik": "👥 Hedef Kitle",
+      "s": [
+        "TürKod kimler için?",
+        "turkod kimlere uygun",
+        "Öğretmenler TürKod'u derste kullanabilir mi?",
+        "Yetişkinler de TürKod kullanabilir mi?",
+        "Öğrenciler için uygun mu?",
+        "Hobi olarak kod yazmak isteyenler için de mi?",
+        "Okulda programlama dersi alıyorum, TürKod işime yarar mı?",
+        "ingilizce bilmeyen biri kullanabilirmi",
+        "turkod hedef kitle",
+        "Sınıfta öğrencilere Türkçe kod yazdırarak ders anlatmak istiyorum, bu program buna uygun mu?",
+        "Otomasyon ve küçük projeler yapmak isteyenler için de mi?"
+      ],
+      "c": "TürKod; ilk kez kod yazacak öğrenciler, dil bariyerini aşmak isteyen İngilizce bilmeyen yetişkinler, otomasyon ve küçük projelerle uğraşan hobiciler ve sınıfta Türkçe kod yazdırmak isteyen öğretmenler için. Kod yazmak istiyorsan ama İngilizce engel gibi duruyorsa, TürKod tam sana göre."
+    },
+    "-kapsam": {
+      "baslik": "📚 Kapsam",
+      "s": [
+        "TürKod ile neler öğrenebilirim?",
+        "turkodda hangi konular var",
+        "TürKod'un kapsamı ne?",
+        "Bu programla neyi öğrenirim?",
+        "Hangi programlama konularını kapsıyor?",
+        "turkod ile ne ogrenilir",
+        "Sadece temel şeyler mi var yoksa ileri konular da var mı?",
+        "Konu listesi var mı?",
+        "TürKod'da öğrenebileceğim konuları temelden ileriye doğru sıralar mısın?",
+        "Kodlama öğrenmeye başlasam hangi başlıklarla karşılaşacağım?"
+      ],
+      "c": "TürKod ile temel konulardan (değişkenler, matematik, yazdırma, girdi alma) başlayıp ileri konulara (koşullar, döngüler, fonksiyonlar, listeler, kütüphaneler) kadar ilerlersin."
+    },
+    "temel-konular": {
+      "baslik": "Temel Konular",
+      "s": [
+        "Temel konular neler?",
+        "İlk önce neleri öğrenirim?",
+        "değişken nedir",
+        "Ekrana mesaj göstermeyi öğrenebilir miyim?",
+        "Kullanıcıdan bilgi almak hangi konuda?",
+        "toplama carpma gibi hesaplar ogretiliyo mu",
+        "Yazdırma ve girdi alma temel konu mu?",
+        "Başlangıç seviyesindeki konular hangileri?",
+        "Veriyi saklamayı hangi konuda öğreniyorum?",
+        "Hiç kod bilmiyorum, en basit konulardan hangileri var, değişken ve matematik gibi şeyler de öğretiliyor mu?"
+      ],
+      "c": "Temel konular dört tane: Değişkenler (veriyi sakla ve kullan), Matematik (hesapla, topla, çarp), Yazdırma (ekrana mesaj göster) ve Girdi Alma (kullanıcıdan bilgi al)."
+    },
+    "i̇leri-konular": {
+      "baslik": "İleri Konular",
+      "s": [
+        "İleri konular neler?",
+        "TürKod'da döngü ve fonksiyon da var mı?",
+        "eğer değilse_eğer değilse ne",
+        "Kütüphanelerle oyun yapabilir miyim?",
+        "TürKod kitabı var mı?",
+        "Kodlama Macerası kitabını nasıl açarım?",
+        "kitap pdf nerde",
+        "Kitap ücretsiz mi?",
+        "Kitabı programın içinde okuyabilir miyim?",
+        "Listelerde gezinmeyi hangi konuda öğrenirim?",
+        "döngü ve aralık ile tekrar",
+        "Temel konuları bitirdim, sonra koşullar, döngüler, fonksiyonlar gibi konular var mı, bir de kitapla öğrenmek istiyorum, nereden açarım?"
+      ],
+      "c": "İleri konular: koşullar (eğer / değilse_eğer / değilse), döngüler (döngü ve aralık), fonksiyonlar, listeler ve kütüphaneler. TürKod ayrıca ücretsiz TürKod ile Kodlama Macerası PDF kitabıyla gelir; Öğren → TürKod ile Kodlama Macerası (Kitap), sol şeritteki kitap düğmesi ya da karşılama ekranındaki Kitabı Oku kartıyla programda açarsın. Başlat menüsündeki TürKod klasöründen de açabilirsin."
+    },
+    "️-öğrenme-yolu": {
+      "baslik": "🗺️ Öğrenme Yolu",
+      "s": [
+        "Hangi sırayla öğrenmeliyim?",
+        "Nereden başlamalıyım, öğrenme yolu ne?",
+        "turkod ogrenme sirasi",
+        "Temel İfadeler'den sonra neye geçeyim?",
+        "Koşullardan sonra ne öğrenilir?",
+        "Kendimi nasıl test ederim?",
+        "Varsayılan kütüphaneler ne zaman öğreniliyor?",
+        "ders sırası",
+        "Hazır kütüphaneler ve oyun kütüphaneleri hangi aşamada?",
+        "Sayfaları rastgele okuyorum ve kafam karışıyor, adım adım hangi sayfaları takip etmem gerekiyor?",
+        "öğrenme planı var mı"
+      ],
+      "c": "Şu sırayla ilerle: Temel İfadeler (ilk kod ve değişkenler), Koşullar (kodun karar vermesi), Varsayılan Kütüphaneler (matematik, rastgele, tarih gibi hazır araçlar), Diğer Kütüphaneler (oyun, veri, web) ve son olarak Kendini Test Et. Her sayfa bir öncekinin üzerine kurulur."
+    },
+    "-i̇lk-adımlar": {
+      "baslik": "🚀 İlk Adımlar",
+      "s": [
+        "TürKod'a nasıl başlarım?",
+        "İlk adımlar neler?",
+        "Kurmadan TürKod'u deneyebilir miyim?",
+        "tarayicida turkod denenebilirmi",
+        "Canlı Demo nedir?",
+        "Takılınca kime sorarım?",
+        "Kodi'yi nasıl açarım?",
+        "F1 ne işe yarar?",
+        "Bu sürümde neler değişti?",
+        "TürKod güvenli mi?",
+        "ilk ne yapmaliyim",
+        "Programı yeni indirdim, kurduktan sonra ekranı tanımak ve ilk programımı çalıştırmak için hangi sayfalara bakmalıyım?"
+      ],
+      "c": "Önce Kurulum sayfasından programı indirip kur, sonra Arayüz Turu ile ekranı tanı ve İlk Programını Çalıştır sayfasına geç. Kurmadan denemek istersen Canlı Demo ile tarayıcıda ilk kodunu yazabilirsin. Güvenlik sayfasına da bak; takıldığında programdaki yardımcı robot Kodi'ye F1 ile sorabilirsin. Yenilikler için 3.3 Yenilikleri sayfası var."
+    },
+    "-resmî-bağlantılar": {
+      "baslik": "🔗 Resmî Bağlantılar",
+      "s": [
+        "TürKod'un GitHub sayfası nerede?",
+        "turkod github",
+        "Resmî indirme bağlantısı hangisi?",
+        "Releases sayfası nerede?",
+        "Kaynak kodu nerede?",
+        "TürKod'a katkıda bulunmak istiyorum",
+        "Takıldığımda hangi sayfalara bakabilirim?",
+        "turkod resmi site linkleri",
+        "SSS sayfası var mı?",
+        "Projenin repo linki nedir?",
+        "Sahte sitelerden indirmek istemiyorum, TürKod'un resmî indirme adresi ve GitHub reposu tam olarak ne?"
+      ],
+      "c": "GitHub reposu: https://github.com/YusufX-sys/turkod-ide. İndirmeler (Releases): https://github.com/YusufX-sys/turkod-ide/releases. Takıldığında Sorun Giderme ve SSS sayfalarına, katkıda bulunmak için Katkıda Bulun sayfasına bakabilirsin."
+    }
+  }
+}

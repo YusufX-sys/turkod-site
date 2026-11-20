@@ -1,0 +1,263 @@
+{
+  "sayfa": "/use/tour/",
+  "bolumler": {
+    "": {
+      "baslik": "Arayüz Turu",
+      "s": [
+        "TürKod'un ekranı hangi bölümlerden oluşuyor?",
+        "Programı açınca gördüğüm yerler ne?",
+        "TürKod arayüzü nasıl?",
+        "turkod ekrani neler var",
+        "Panelleri nasıl büyütüp küçültürüm?",
+        "Panel boyutlarını ayarladım, kapatınca sıfırlanır mı?",
+        "Editör, terminal ve AI Asistan ekranın neresinde?",
+        "panellerin boyutu nasil degisir",
+        "Ekranın en altındaki ve en üstündeki çubuklar ne?",
+        "TürKod'u ilk kez açtım ve ekranda bir sürü bölüm var; hangisi nerede, sırayla anlatır mısın?",
+        "TürKod düzenimi hatırlıyor mu?",
+        "Arayüz bölgeleri"
+      ],
+      "c": "TürKod’u açtığında en üstte menü satırı, en solda ince şerit, solda Gezgin, ortada araç çubuğu, editör ve terminal, sağda AI Asistan, en altta durum çubuğu olur. Panellerin kenarını fareyle tutup çekerek büyütüp küçültebilirsin; TürKod bu düzeni hatırlar ve ertesi gün her şey bıraktığın gibi durur."
+    },
+    "-program-içi-tur": {
+      "baslik": "🎓 Program içi tur",
+      "s": [
+        "Program içi tur nedir?",
+        "Arayüz turunu tekrar nasıl açarım?",
+        "İlk açılıştaki tanıtımı kapattım, yeniden görebilir miyim?",
+        "tur nasil atlanir",
+        "Turda bir sonraki adıma nasıl geçerim?",
+        "Tur kaç adım?",
+        "Tur her açılışta başlasın istiyorum",
+        "Arayüz turu hangi bölümleri anlatıyor?",
+        "turu tekrar baslatma",
+        "Turu kapatmak için hangi tuşa basılır?",
+        "Ayarlar'dan turu başlatma",
+        "Öğrencilerime programı tanıtmak istiyorum; ekranı adım adım gösteren tur hangi menüden açılıyor ve klavyeyle nasıl ilerleniyor?",
+        "Tur sırasında parlayan çerçeve ne?"
+      ],
+      "c": "İlk açılışta TürKod 14 adımlık bir turla ekranı tanıtır ve anlattığı düğmeyi parlak bir çerçeveyle gösterir. İleri / Geri düğmeleri ya da → ← tuşlarıyla gezinirsin; Esc veya Turu atla turu kapatır. Yeniden açmak için Yardım → Arayüz Turu, karşılama ekranındaki Arayüz Turu kartı ya da Ayarlar → Arayüz Turu → Turu şimdi başlat’ı kullan. Her açılışta göster kutusu turu her açılışta başlatır."
+    },
+    "-karşılama-ekranı": {
+      "baslik": "👋 Karşılama ekranı",
+      "s": [
+        "Karşılama ekranı nedir?",
+        "Hiç dosya açık değilken ne görünüyor?",
+        "Son açtığım dosyalara nasıl ulaşırım?",
+        "gunun ipucu nerde",
+        "Karşılama ekranındaki kartlar ne işe yarıyor?",
+        "Başlangıç ekranından yeni dosya açabilir miyim?",
+        "Son Dosyalar listesi",
+        "Açılış ekranından kitabı okuyabilir miyim?",
+        "turkod acilinca cikan ekran",
+        "Bütün dosyaları kapatınca editörün yerinde kartlar çıkıyor; bunlar neler ve kaldığım dosyaya buradan devam edebilir miyim?",
+        "Günün İpucu ne?",
+        "Hoş geldin sayfası"
+      ],
+      "c": "Hiç dosya açık değilken editörün yerinde karşılama ekranı çıkar. Başla kartlarıyla Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku, Arayüz Turu ve Komut Paleti’ni açarsın. Son Dosyalar’da en son açtıkların durur, adına tıklayıp kaldığın yerden devam edersin. Günün İpucu her gün yeni bir püf noktası gösterir."
+    },
+    "-menü-satırı": {
+      "baslik": "📋 Menü satırı",
+      "s": [
+        "TürKod'da hangi menüler var?",
+        "En üstteki menüler neler?",
+        "Bir komutu adıyla nasıl bulurum?",
+        "komut ara kutusu kisayolu",
+        "Ctrl+Shift+P ne işe yarıyor?",
+        "Menü satırının sağındaki üç düğme ne yapar?",
+        "Gezgin, Terminal ve AI Asistan'ı üstten nasıl açıp kapatırım?",
+        "Panel düzeni düğmesi nerede?",
+        "menude ne var",
+        "Hangi panelin açık olduğunu nasıl anlarım?",
+        "Bir komutun hangi menüde olduğunu bilmiyorum; menüleri tek tek gezmeden adını yazıp bulabileceğim bir yer var mı?",
+        "Menü Rehberi sayfası"
+      ],
+      "c": "En üstte Dosya, Düzenle, Görünüm, Çalıştır, Araçlar, Öğren, Yardım ve Güncelleştirmeler menüleri var; içleri Menü Rehberi sayfasında. Ortadaki Komut ara… kutusu (Ctrl+Shift+P) her komutu adıyla bulur. Sağdaki üç düğme Gezgin, Terminal ve AI Asistan’ı açıp kapatır, açık olan renkli yanar. En sağdaki Panel düzeni düğmesi hazır düzenleri açar."
+    },
+    "-sol-şerit": {
+      "baslik": "🧭 Sol şerit",
+      "s": [
+        "Soldaki ince şeritteki düğmeler ne işe yarıyor?",
+        "Bütün dosyalarda kelime nasıl aranır?",
+        "Yapboz simgesi ne?",
+        "sol taraftaki dunya simgesi ne",
+        "Kitabı program içinde nasıl açarım?",
+        "TürKod Kabuğu nerede?",
+        "Ayarlar düğmesi nerede?",
+        "Ctrl+Shift+F ne yapar?",
+        "eklenti panelindeki sayi ne demek",
+        "Sol şeritteki robot yüzlü düğme",
+        "Gezgin düğmesine tekrar basınca panel kapanıyor mu?",
+        "Ekranın en solunda büyüteç, yapboz, dünya ve dişli gibi simgeler var; hangisi neyi açıyor, seçili olanı nasıl anlarım?",
+        "Ctrl+Shift+K kısayolu"
+      ],
+      "c": "Sol şeritte Gezgin (dosyalar), Dosyalarda Ara (büyüteç, Ctrl+Shift+F), Eklenti Özellikleri (yapboz; üstündeki sayı açık eklenti sayısı), Kitap, Tarayıcı (dünya), Kodi (robot yüzü, F1), altta TürKod Kabuğu (Ctrl+Shift+K) ve Ayarlar (dişli) var. Seçili düğme renkli kare ve solundaki çizgiyle belirgin olur; Gezgin açıksa tekrar basınca kapanır."
+    },
+    "-araç-çubuğu": {
+      "baslik": "🔧 Araç çubuğu",
+      "s": [
+        "Araç çubuğundaki düğmeler neler?",
+        "Çalıştır düğmesi nerede?",
+        "Programı çalıştırma kısayolu ne?",
+        "durdur dugmesi neden gri",
+        "Hata ayıklama düğmesi hangisi?",
+        "Mor düğme ne işe yarıyor?",
+        "Sarı Düzelt düğmesi ne yapar?",
+        "araç cubugundaki yazilar kayboldu sadece simgeler var",
+        "Adım At, İçine Gir düğmeleri neden görünmüyor?",
+        "Bul / Değiştir kısayolu",
+        "Düğmeler sığmıyor, nasıl kaydırırım?",
+        "Kodum çalışmıyor ve nedenini anlamıyorum; araç çubuğunda önce hangi düğmeyi denemeliyim, olmazsa ne yapmalıyım?",
+        "Bir düğmenin kısayolunu nasıl öğrenirim?",
+        "Ctrl+R ve F5"
+      ],
+      "c": "Editörün üstündeki düğmeler üç grup: Dosya (Dosya Aç Ctrl+O, Klasör Aç, Kaydet Ctrl+S, Farklı Kaydet), Çalıştırma (yeşil Çalıştır Ctrl+R, kırmızı Durdur, turuncu Hata Ayıkla F5), Araçlar (mor Çevir, sarı Düzelt, pembe Bul / Değiştir Ctrl+H). Editör darsa yazılar saklanır, simgeler kalır. Kodun çalışmazsa önce Düzelt’i dene, sonra hata ayıklayıcıyı, sonra F1 ile Kodi’yi."
+    },
+    "-gezgin": {
+      "baslik": "📁 Gezgin",
+      "s": [
+        "Gezgin paneli ne işe yarar?",
+        "Yeni dosya nasıl oluştururum?",
+        "Dosya nasıl silinir?",
+        "dosyayi yeniden adlandirma",
+        "Gezgin'den sildiğim dosya nereye gidiyor?",
+        "Klasörün içini nasıl açarım?",
+        "Gezgin boş, dosyalarım görünmüyor",
+        "USB bellekteki dosyayı silince ne oluyor?",
+        "yeni dosyanin adi neden yeni.trpy",
+        "Gezgin başlığındaki dört simge ne?",
+        "Yanlışlıkla bir dosyayı sildim, tamamen gitti mi yoksa geri getirebilir miyim?",
+        "Gezgin'de sağ tık menüsü",
+        "Dosya listesini yenileme"
+      ],
+      "c": "GEZGİN paneli açtığın klasördeki dosyaları gösterir; tıklayınca dosya editörde açılır, klasörlerin yanındaki okla içini açıp kapatırsın. Başlıktaki simgeler Yeni Dosya, Yeni Klasör, Klasör Aç, Yenile’dir; sağ tıkta Yeniden Adlandır ve Sil de var. Sil onay ister ve dosyayı Geri Dönüşüm Kutusu’na taşır; USB bellek gibi yerlerde silmeden önce sorar."
+    },
+    "️-editör-ve-sekmeler": {
+      "baslik": "✍️ Editör ve sekmeler",
+      "s": [
+        "Yeni sekme nasıl açılır?",
+        "Sekmeyi nasıl kapatırım?",
+        "Sekmedeki sarı nokta ne demek?",
+        "adsiz-1.trpy ne",
+        "Kesme noktası nasıl konur?",
+        "Kod bloğunu nasıl katlarım?",
+        "Mini Harita nedir, nasıl açılır?",
+        "Ctrl+T ve Ctrl+W ne yapar?",
+        "kaydetmeden sekmeyi kapatirsam ne olur",
+        "Kodumdaki kelimeler neden farklı renklerde?",
+        "PDF dosyaları nerede açılıyor?",
+        "Bir dosyada değişiklik yaptım ama kaydetmeden kapatmaya çalıştım; çıkan pencerede ne seçmeliyim, değişikliklerim kaybolur mu?",
+        "Satır numaraları nerede?",
+        "Editör sekmeleri"
+      ],
+      "c": "Her dosya kendi sekmesinde açılır; + ya da Ctrl+T yeni sekme açar, Ctrl+W aktif sekmeyi kapatır. Kaydedilmemiş değişiklik varsa sekmede sarı nokta görünür ve kapatırken Vazgeç / Kapat / Kaydet sorulur. Satır numarasına tıklayarak kesme noktası koyar, ▼ okuyla bloğu katlarsın. Mini Harita Ayarlar’dan açılır; PDF ve tarayıcı da birer sekmede açılır."
+    },
+    "-terminal": {
+      "baslik": "💻 Terminal",
+      "s": [
+        "Programın çıktısını nerede görürüm?",
+        "girdi_al sorduğunda cevabı nereye yazarım?",
+        "Program N koduyla sonlandı ne demek?",
+        "terminal komut yazma",
+        "Terminalde önceki komutları nasıl getiririm?",
+        "Her sekmenin ayrı terminali mi var?",
+        "Terminal çıktısını nasıl kopyalarım?",
+        "Terminal yazısını büyütebilir miyim?",
+        "program bitince hicbir sey yazmiyor normal mi",
+        "Durduruldu yazısı neden çıkıyor?",
+        "Hatayı AI ile açıkla düğmesi",
+        "Program çalışmıyorken terminale pip komutu yazabilir miyim?",
+        "Başka bir sekmeye geçince terminaldeki çıktım kayboldu; terminal her dosyaya ayrı mı, ayrı pencerede açabilir miyim?",
+        "Terminali temizleme"
+      ],
+      "c": "Programı çalıştırınca altta TERMİNAL paneli açılır; çıktılar ve sorular burada görünür. girdi_al() sorunca cevabı en alttaki kutuya yazıp Enter’a basarsın. Sorunsuz biterse ek satır çıkmaz; hatayla biterse [Program N koduyla sonlandı], durdurursan [Durduruldu] yazar. Her sekmenin kendi terminali vardır. Program çalışmıyorken Komut… kutusuna komut yazabilir, ↑ / ↓ ile öncekileri getirebilirsin."
+    },
+    "-ai-asistan": {
+      "baslik": "🤖 AI Asistan",
+      "s": [
+        "AI Asistan ne işe yarar?",
+        "AI Asistan neden çalışmıyor?",
+        "Kodumu yapay zekâya nasıl açıklatırım?",
+        "ai asistan optimize et ne yapiyor",
+        "AI Asistan'a nasıl soru sorarım?",
+        "AI Asistan'da yeni satıra nasıl geçerim?",
+        "AI sohbetini nasıl temizlerim?",
+        "Ücretsiz yerel model kur düğmesi",
+        "sag paneldeki asistan",
+        "Panelin üstündeki renkli nokta ne anlama geliyor?",
+        "Sağdaki asistana kodumun ne yaptığını sade bir dille anlatmasını ve daha temiz hale getirmesini istiyorum; önce ne yapmam gerekiyor?",
+        "AI Asistan için model bağlamak gerekiyor mu?"
+      ],
+      "c": "Sağdaki AI Asistan TürKod sözlüğünü bilen bir yardımcı; kullanmak için önce bir yapay zekâ modeli bağlamalısın, panelde Ücretsiz yerel model kur düğmesi de var. 💡 Açıkla kodunu sade anlatır, ⚡ Optimize et öneriler sunar. Sor… kutusuna yazıp Enter ile gönderirsin, Shift+Enter yeni satırdır. Üstteki kart modeli ve durumunu gösterir, 🗑️ sohbeti temizler."
+    },
+    "-panelleri-taşıma": {
+      "baslik": "🔀 Panelleri taşıma",
+      "s": [
+        "Panellerin yerini değiştirebilir miyim?",
+        "Gezgin'i sağa nasıl alırım?",
+        "AI Asistan'ı sola taşımak istiyorum",
+        "panel duzenini sifirlama",
+        "Panelleri sürükleyip bırakabilir miyim?",
+        "Hazır panel düzenleri neler?",
+        "Panel düzenim bozuldu, eski haline nasıl döndürürüm?",
+        "Yan Panellerin Yerini Değiştir komutu",
+        "gezgin ile ai yer degistirme",
+        "İkisini de sağda tutabilir miyim?",
+        "Solak olduğum için dosya panelinin sağda, yapay zekânın solda olmasını istiyorum; bunu fareyle ya da menüden nasıl yaparım?",
+        "Panel başlığını sürükleme"
+      ],
+      "c": "Evet. Bir panelin başlığını (ör. GEZGİN) tutup başka bölgenin üstüne sürükle; bölge parlar, bırakınca yer değiştirirler. En üst satırın en sağındaki Panel düzeni düğmesinden hazır düzen seçebilirsin: Gezgin solda AI sağda, tersi, ikisi sağda ya da ikisi solda. Görünüm → Yan Panellerin Yerini Değiştir de işe yarar; Görünüm → Panel Düzenini Sıfırla her şeyi ilk hâline döndürür."
+    },
+    "-durum-çubuğu": {
+      "baslik": "📊 Durum çubuğu",
+      "s": [
+        "En alttaki çubuk ne gösteriyor?",
+        "Durum çubuğundaki kırmızı yazı ne?",
+        "Bağlantı yok ne demek?",
+        "sozdizimi dogru yazisi",
+        "İmlecin hangi satırda olduğunu nasıl görürüm?",
+        "Sorunlar listesini nasıl açarım?",
+        "Kod İstatistikleri nerede?",
+        "Yapılacaklar Listesi'ni nasıl açarım?",
+        "alttaki satir sutun ne",
+        "Dosya Yok yazıyor, neden?",
+        "En altta Satır 1: ':' bekleniyor diye kırmızı bir yazı çıktı; bu ne anlama geliyor, tıklayınca ne olur?",
+        "Durum çubuğunun renkleri ne anlatır?",
+        "Hakkında penceresi"
+      ],
+      "c": "En alttaki çubuk solda programın durumunu (Hazır, yeşil Program çalışıyor, turuncu Hata ayıklanıyor, kırmızı Bağlantı yok) gösterir. ✓ Sözdizimi doğru ya da Satır 1: ':' bekleniyor gibi kırmızı bir hata çıkar; kırmızıya tıklarsan Sorunlar listesi açılır. Satır, Sütun imlecin yerini, dosya adı ve UTF-8 da yazar. Sağdaki simgeler Kod İstatistikleri, Yapılacaklar Listesi, Kod Arama Çevirici ve Hakkında / İmza’yı açar."
+    },
+    "-bildirimler": {
+      "baslik": "🔔 Bildirimler",
+      "s": [
+        "Sağ altta çıkan mesajlar ne?",
+        "Eski bildirimleri nasıl görürüm?",
+        "Bildirim paneli nerede?",
+        "bildirimi kacirdim tekrar nasil bakarim",
+        "Kaydettikten sonra çıkan küçük yazı",
+        "Zil simgesi ne işe yarıyor?",
+        "TürKod bildirimleri",
+        "son bildirimler",
+        "Çeviri yaptıktan sonra köşede bir mesaj çıktı ama hemen kayboldu; okuyamadım, nereden tekrar bakabilirim?",
+        "Bildirimler nerede görünür?"
+      ],
+      "c": "Kaydetme, çeviri gibi işlemlerden sonra sağ altta kısa bir bildirim belirir. Kaçırdıysan bildirimdeki 🔔 simgesine bas; son bildirimlerin tamamını gösteren panel açılır."
+    },
+    "sırada-ne-var": {
+      "baslik": "Sırada ne var?",
+      "s": [
+        "Arayüzü öğrendim, şimdi ne yapmalıyım?",
+        "Turdan sonra nereden devam edeyim?",
+        "İlk programımı nasıl çalıştırırım?",
+        "simdi ne yapayim",
+        "Sonraki adım ne?",
+        "Kod yazmaya nereden başlarım?",
+        "Arayüz turu bitti sırada ne var",
+        "ilk program",
+        "Ekranın bütün bölümlerini tanıdım; artık gerçekten kod yazmaya başlamak istiyorum, hangi sayfaya geçmeliyim?",
+        "Arayüzden sonra hangi sayfa?"
+      ],
+      "c": "Arayüzü tanıdığına göre artık kod yazma zamanı. Sıradaki adım İlk programını çalıştır sayfası; oradan devam edebilirsin."
+    }
+  }
+}

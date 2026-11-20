@@ -147,6 +147,46 @@ export async function bolumleriUret(distKlasoru) {
   return kayitlar;
 }
 
+/**
+ * Soru-cevap bankası (src/data/kodi-banka/*.json): her bölüm için önceden (geliştirici makinesinde,
+ * bir dil modeliyle) üretilmiş olası kullanıcı soruları ve bölüme dayalı kısa cevap. Tarayıcıda model
+ * çalışmaz; Kodi bu soruları da arar ve cevabı gösterir. Kayda iki alan eklenir: [8] sorular, [9] cevap.
+ * Dönen değer: bankada olup sitede artık bulunmayan bölümler (belge değiştiyse banka güncellenmeli).
+ */
+export async function bankaEkle(kayitlar, bankaKlasoru) {
+  let dosyalar = [];
+  try { dosyalar = (await readdir(bankaKlasoru)).filter((d) => d.endsWith('.json')); } catch { return []; }
+  const banka = new Map();
+  for (const d of dosyalar) {
+    const { sayfa, bolumler } = JSON.parse(await readFile(path.join(bankaKlasoru, d), 'utf8'));
+    for (const [capa, v] of Object.entries(bolumler ?? {})) banka.set(`${sayfa}#${capa}`, v);
+  }
+  const kullanilan = new Set();
+  for (const k of kayitlar) {
+    const anahtar = `${k[0]}#${k[3]}`;
+    const v = banka.get(anahtar);
+    if (!v) continue;
+    kullanilan.add(anahtar);
+    while (k.length < 8) k.push(k.length === 7 ? [] : '');
+    k[8] = (v.s ?? []).filter((s) => typeof s === 'string' && s.trim());
+    k[9] = typeof v.c === 'string' ? v.c.trim() : '';
+  }
+  return [...banka.keys()].filter((a) => !kullanilan.has(a));
+}
+
+/** Hazır maddelerin soru bankası (src/data/kodi-banka-madde/*.json): { madde-id: [sorular] } birleştirilir. */
+export async function maddeBankasiOku(klasor) {
+  let dosyalar = [];
+  try { dosyalar = (await readdir(klasor)).filter((d) => d.endsWith('.json')).sort(); } catch { return {}; }
+  const banka = {};
+  for (const d of dosyalar) {
+    for (const [id, sorular] of Object.entries(JSON.parse(await readFile(path.join(klasor, d), 'utf8')))) {
+      if (Array.isArray(sorular)) banka[id] = [...(banka[id] ?? []), ...sorular.filter((s) => typeof s === 'string' && s.trim())];
+    }
+  }
+  return banka;
+}
+
 export default function kodiBolumleri() {
   return {
     name: 'kodi-bolumler',
@@ -154,8 +194,13 @@ export default function kodiBolumleri() {
       'astro:build:done': async ({ dir, logger }) => {
         const kok = fileURLToPath(dir);
         const b = await bolumleriUret(kok);
+        const eski = await bankaEkle(b, fileURLToPath(new URL('../data/kodi-banka/', import.meta.url)));
+        if (eski.length) logger.warn(`Kodi bankasında sitede bulunmayan ${eski.length} bölüm var: ${eski.slice(0, 5).join(', ')}${eski.length > 5 ? ' …' : ''}`);
         await writeFile(path.join(kok, 'kodi-bolumler.json'), JSON.stringify({ b }));
-        logger.info(`Kodi için ${b.length} belge bölümü yazıldı (kodi-bolumler.json).`);
+        logger.info(`Kodi için ${b.length} belge bölümü yazıldı (kodi-bolumler.json), ${b.filter((k) => k[8]?.length).length} tanesi soru bankalı.`);
+        const s = await maddeBankasiOku(fileURLToPath(new URL('../data/kodi-banka-madde/', import.meta.url)));
+        await writeFile(path.join(kok, 'kodi-madde-sorular.json'), JSON.stringify({ s }));
+        logger.info(`Kodi için ${Object.keys(s).length} hazır maddenin soru bankası yazıldı (kodi-madde-sorular.json).`);
       },
     },
   };

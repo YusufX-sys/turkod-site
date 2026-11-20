@@ -1,0 +1,203 @@
+{
+  "sayfa": "/features/local-models/",
+  "bolumler": {
+    "": {
+      "baslik": "Yapay Zekâ Modelleri",
+      "s": [
+        "turkodda yapay zeka nasıl çalışıyor",
+        "bulut modeli ile yerel model farkı ne",
+        "yapay zekâ için internet şart mı",
+        "yerel model kodumu internete gönderir mi",
+        "bulut modeli için ne gerekir",
+        "yapay zeka ayarlari nerede",
+        "hangi özellikler yapay zekâ kullanıyor",
+        "groq openai google anthropic kullanabilir miyim",
+        "yerel model ucretsiz mi internetsiz mi",
+        "Kodumun bilgisayarımdan hiç çıkmamasını istiyorum, TürKod'da bunu sağlayan bir yapay zekâ seçeneği var mı?",
+        "local llm vs cloud model turkod",
+        "Yapay Zekâ: Görevler ve Modeller bölümleri ne"
+      ],
+      "c": "TürKod’un yapay zekâ özellikleri iki tür modelle çalışır. Bulut modelleri Groq, OpenAI, Google, Anthropic gibi sağlayıcıların internetteki modelleridir ve kendi API anahtarın gerekir. Yerel modeller bilgisayarına indirdiğin küçük modellerdir; internetsiz ve ücretsiz çalışır, kodun bilgisayarından hiç çıkmaz. Ayarlar sekmesinde Yapay Zekâ: Görevler ve Yapay Zekâ: Modeller bölümlerindedir."
+    },
+    "sağlayıcı-bağlamak": {
+      "baslik": "Sağlayıcı bağlamak",
+      "s": [
+        "api anahtarımı nereye yapıştırırım",
+        "groq nasıl bağlanır",
+        "sağlayıcı nasıl eklenir",
+        "anahtarımın çalışıp çalışmadığını nasıl denerim",
+        "bağlantıyı test et ne yapar",
+        "listede olmayan bir modeli ekleyebilir miyim",
+        "sağlayıcıyı nasıl kaldırırım",
+        "sıcaklık ayarı ne işe yarar",
+        "en fazla token ne demek",
+        "api anahtari guvende mi saklaniyor",
+        "ucretsiz yapay zeka nasil baslarim",
+        "Groq'tan aldığım anahtarı yapıştırdım ama modelleri nasıl seçeceğimi bilmiyorum, sırayla ne yapmalıyım?",
+        "lm studio baglamak istiyorum",
+        "connect openai api key turkod"
+      ],
+      "c": "Ayarlar → Yapay Zekâ: Modeller → Sağlayıcı bağla bölümüne git. Sağlayıcı kutusuna adını yazıp seç (ör. groq), anahtarı API Anahtarı kutusuna yapıştır, Bağlantıyı Test Et ile dene, sonra Bağla ve modelleri seç’e bas. Groq’un ücretsiz hesabı Kodi ve AI Asistan için yeter. Anahtarlar Windows’un şifrelemesiyle saklanır."
+    },
+    "hakkı-dolan-model": {
+      "baslik": "Hakkı dolan model",
+      "s": [
+        "modelin hakkı doldu ne olacak",
+        "kullanım hakkı bitince cevap gelmiyor mu",
+        "yedek model nasıl çalışıyor",
+        "hız sınırına takıldım",
+        "rate limit hatası alıyorum",
+        "sunucuya ulaşılamazsa ne olur",
+        "neden birkaç model seçmeliyim",
+        "cevabı hangi model verdi nasıl anlarım",
+        "groqta her modelin hakki ayri mi",
+        "modelin hakki dolunca baska modele geciyor mu",
+        "Kodi bir süre sonra cevap vermeyi bıraktı, sanırım günlük hakkım bitti; başka model işaretlersem işe yarar mı?",
+        "hakki dolan model tekrar ne zaman denenir"
+      ],
+      "c": "Hız sınırına takılınca kısa bir bekleme yetiyorsa istek kendiliğinden bir kez daha denenir. Bir modelin hakkı dolunca ya da sunucusuna ulaşılamayınca istek beklemeden bağlı başka bir modele gider ve cevabı hangi modelin verdiği yazar. Bu Kodi, AI Paneli ve Akıllı Düzelt için geçerli; o yüzden birkaç model işaretlemek işe yarar, Groq’ta her modelin hakkı ayrıdır."
+    },
+    "görev-başına-model-atama": {
+      "baslik": "Görev başına model atama",
+      "s": [
+        "her işe farklı model atayabilir miyim",
+        "görev başına model nasıl seçilir",
+        "kodi hangi modeli kullanıyor",
+        "hata açıklama için model seçme",
+        "ai paneli sohbet modeli nereden değişir",
+        "bir göreve model atamazsam ne olur",
+        "kodide otomatik seçeneği ne demek",
+        "Groq • openai/gpt-oss-20b ne demek",
+        "eski ayarlarim kayboldu mu yeni surumde",
+        "gorev atama nerede",
+        "Hayalet kod için küçük bir model, sohbet için büyük bir model kullanmak istiyorum; bunları ayrı ayrı nereden ayarlarım?",
+        "açıkla ve optimize et düğmeleri hangi modeli kullanır"
+      ],
+      "c": "Yapay zekânın her işi ayrı bir görev ve her göreve ayrı model atanabilir. Ayarlar → Yapay Zekâ: Görevler bölümünde her satırdan bir model seçersin, seçim hemen kaydedilir; model atanmamış görev kapalıdır. Kodi Otomatik’te AI Paneli sohbet modelini kullanır. Modeller “Sağlayıcı • Model” biçiminde görünür."
+    },
+    "düşünme-denetimi": {
+      "baslik": "Düşünme denetimi",
+      "s": [
+        "model düşünsün seçeneği ne",
+        "akıl yürütmeyi nasıl kapatırım",
+        "cevaplar çok yavaş geliyor, hızlandırabilir miyim",
+        "beyin düğmesi ne işe yarar",
+        "modelin düşüncesini görebilir miyim",
+        "cevabin ustundeki balon ne",
+        "reasoning kapatma",
+        "dusunme denetimi nerede",
+        "AI Asistan'da cevabın üstünde açılıp kapanan bir balon var, içinde modelin düşündükleri yazıyor; bunu kapatabilir miyim?",
+        "düşünme açıkken ne değişir",
+        "thinking mode turkod"
+      ],
+      "c": "Bazı modeller cevap vermeden önce düşünür. Ayarlar → Yapay Zekâ: Görevler’deki Model düşünsün (akıl yürütme) seçeneği bunu açıp kapatır; AI Asistan’daki beyin düğmesi de aynı işi yapar. Kapalıyken cevap daha hızlı gelir, açıkken modelin düşüncesi cevabın üstünde açılıp kapanan bir balonda görünür."
+    },
+    "yerel-modeller": {
+      "baslik": "Yerel modeller",
+      "s": [
+        "yerel modelleri nereden yönetirim",
+        "model yöneticisi nerede",
+        "yerel ai modelleri penceresi",
+        "llama.cpp motorunu nasıl kurarım",
+        "motoru nasil kaldiririm",
+        "bilgisayarıma uygun model hangisi",
+        "hugging face'ten model arayabilir miyim",
+        "gguf model nasıl bulunur",
+        "uygun olmayan modelleri gizleme",
+        "indirdiğim modeli nasıl silerim",
+        "ücretsiz yerel model kur düğmesi ne yapar",
+        "Bilgisayarımın belleğine ve ekran kartına göre hangi modeli indirmem gerektiğini bilmiyorum, TürKod bana öneri veriyor mu?",
+        "yerel model penceresinde neler var"
+      ],
+      "c": "Yerel modelleri Araçlar → Yerel AI Modelleri… ya da sol şeritteki Eklenti Özellikleri → Model Yöneticisi ile yönetirsin. Pencere donanımını gösterir, llama.cpp motorunu Motoru kur ile tek tıkla kurar. Önerilen bölümünde RAM, ekran kartı ve diske göre seçilmiş modeller var; Tüm modeller / Ara ile Hugging Face’te GGUF modelleri arayabilir, Yalnızca uygun olanlar ile süzebilirsin."
+    },
+    "ekran-kartı-mı-işlemci-mi": {
+      "baslik": "Ekran kartı mı, işlemci mi?",
+      "s": [
+        "yerel model ekran kartında mı çalışır",
+        "nvidia ekran kartım var, kullanılır mı",
+        "cuda gerekli mi",
+        "amd ekran kartında hızlanır mı",
+        "intel ekran kartı destekleniyor mu",
+        "ekran kartim yok model calisir mi",
+        "cuda kitaplıklarını elle mi kurmalıyım",
+        "gpu hizlandirma calismiyor",
+        "Ekran kartı sürümü çalışmadı diye bir mesaj aldım, model işlemcide mi çalışacak, ne yapmalıyım?",
+        "model neden çok yavaş çalışıyor, işlemcide mi",
+        "hangi cuda surumu lazim"
+      ],
+      "c": "NVIDIA ekran kartın ve CUDA 12.1 ya da üstünü destekleyen bir sürücün varsa modeller ekran kartında çok daha hızlı çalışır; gereken CUDA kitaplıkları kendiliğinden kurulur. Yoksa işlemcide çalışır. AMD ve Intel kartlarda neden hızlandırılamadığı açıklanır. Ekran kartı sürümü çalışmazsa nedeni yazar ve yeniden denemek için düğme çıkar."
+    },
+    "i̇ndirme": {
+      "baslik": "İndirme",
+      "s": [
+        "model indirmesi yarıda kaldı",
+        "indirme koptu baştan mı başlar",
+        "indirmeyi iptal edersem yarım dosya kalır mı",
+        "indirdiğim model hangi göreve atanır",
+        "bağlam ne demek",
+        "kodi için uygun rozeti ne",
+        "kodi ile hangi yerel model konuşabilir",
+        "indirme takildi ne yapayim",
+        "hafif model otomatik tamamlamaya mi atanir",
+        "İnternetim kesildi ve model indirmesi durdu, tekrar başlatınca en baştan mı indirmem gerekecek?",
+        "model ne kadar uzun metni hatirliyor"
+      ],
+      "c": "İndirme takılırsa ya da koparsa kaldığı yerden sürer; iptal edilen indirmenin yarım dosyası silinir. İndirdiğin hafif model otomatik tamamlamaya, büyük model sohbete kendiliğinden atanır (boştaysa). Her modelin ne kadar uzun metni aklında tutabildiği (bağlam) gösterilir; Kodi için uygun rozeti Kodi’yle konuşabilecek kadar geniş bağlamı olan modelleri işaretler."
+    },
+    "model-klasörü": {
+      "baslik": "Model klasörü",
+      "s": [
+        "modeller nereye iniyor",
+        "model klasörünü değiştirmek istiyorum",
+        "C diskim doldu, modelleri başka sürücüye taşıyabilir miyim",
+        "yerel_ai modeller klasoru nerede",
+        "model yolunu elle düzenleme",
+        "varsayılana çevir ne yapar",
+        "localappdata turkod modeller",
+        "modelleri D diskine kaydetme",
+        "Modeller çok yer kaplıyor ve ana diskimde yer kalmadı, indirme konumunu nereden değiştiririm?",
+        "depolama bolumu nerede",
+        "model klasoru varsayilan yeri"
+      ],
+      "c": "Modeller varsayılan olarak %LOCALAPPDATA%\\TurKod\\yerel_ai\\modeller klasörüne iner. Depolama bölümünden başka bir sürücüye taşıyabilirsin; her sürücünün boş yeri gösterilir. Yolu elle de düzenleyebilir ya da Varsayılana çevir ile sıfırlayabilirsin."
+    },
+    "i̇lk-yerel-modelini-kur": {
+      "baslik": "İlk yerel modelini kur",
+      "s": [
+        "ilk yerel modelimi nasıl kurarım",
+        "yerel model kurulumu adım adım",
+        "motoru kur'a bastım sonra ne yapmalıyım",
+        "indirdiğim modeli ai panelinde nasıl kullanırım",
+        "ilk cevap neden geç geliyor",
+        "yerel model kurdum ama ilk mesaj yavas",
+        "yerel model sunucusuna başkası bağlanabilir mi",
+        "yerel model veri gönderir mi",
+        "uygunsuz içerikli modeller gizleniyor mu",
+        "internetsiz yapay zeka nasil kurulur",
+        "Hiç yapay zekâ kurmadım, interneti olmayan bir bilgisayarda çalışacak ücretsiz bir model kurmak istiyorum; hangi sırayla ilerlemeliyim?",
+        "program kapaninca yerel sunucu duruyor mu"
+      ],
+      "c": "Araçlar → Yerel AI Modelleri… penceresini aç. Motor kurulu değilse Motoru kur’a bas ve bekle. Önerilen sekmesinde en hafif modelin yanındaki İndir’e bas, bitince İndirilenler’de AI Panelinde kullan’a bas. Sonra AI Asistan’a “Merhaba!” yaz; model yüklendiği için ilk cevap biraz gecikebilir. Yerel modeller hiçbir veriyi internete göndermez."
+    },
+    "hayalet-kod": {
+      "baslik": "Hayalet kod",
+      "s": [
+        "hayalet kod nasıl çalışır",
+        "gri eğik yazıyla gelen öneri ne",
+        "öneriyi tab ile kabul etme",
+        "sadece bir kelimeyi nasıl alırım",
+        "ai önerisi iste nerede",
+        "kelimenin ortasında neden öneri gelmiyor",
+        "öneri ne kadar sonra geliyor, ayarlanabilir mi",
+        "cok satirli otomatik tamamlama",
+        "FIM nedir",
+        "hayalet kod icin hangi model iyi",
+        "Hayalet kod önerileri bulut modelinde ve yerel modelde farklı mı çalışıyor, değişken adlarımı değiştiriyor mu?",
+        "otomatik tamamlama gecikmesi nerede",
+        "esc ile oneri kapatma"
+      ],
+      "c": "Otomatik tamamlama görevine model atadıysan, yazmayı bırakınca imlecin arkasında gri, eğik bir öneri çıkar. Tab tamamını, Ctrl+→ bir kelimesini alır, Esc kapatır, Ctrl+Shift+Boşluk hemen öneri ister. Yerel modelde FIM, bulutta sohbet yoluyla tamamlanır; adların korunur. Gecikme ve çok satırlı öneri Ayarlar → Yapay Zekâ: Görevler’de; küçük, hızlı bir model en iyisidir."
+    }
+  }
+}

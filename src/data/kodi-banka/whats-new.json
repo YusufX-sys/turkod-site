@@ -1,0 +1,240 @@
+{
+  "sayfa": "/whats-new/",
+  "bolumler": {
+    "": {
+      "baslik": "3.3 Yenilikleri: Kodi Artık Yanında",
+      "s": [
+        "3.3 sürümünde neler yeni",
+        "turkod 3.3 yenilikleri neler",
+        "yeni güncellemede ne değişti",
+        "TürKod IDE 3.3.0 ile ne geldi?",
+        "son sürümde hangi özellikler eklendi",
+        "bu güncelleme büyük mü, neler var",
+        "yeni surumde ne var ki",
+        "3.3 ne getirdi kısaca anlatır mısın",
+        "turkodun en buyuk guncellemesi hangisi",
+        "TürKod'u güncelledim, ekran değişmiş; bu sürümde başka neler değişti, öne çıkanlar neler?",
+        "what's new in turkod 3.3",
+        "Kodi programa mı geldi, exe yapma da mı eklendi, yeni sürümde neler var?"
+      ],
+      "c": "TürKod IDE 3.3.0 şimdiye kadarki en büyük güncelleme. Kitaptaki robot Kodi artık programın içinde, yapay zekâ ayarları baştan yazıldı, programlarını EXE’ye dönüştürebiliyorsun ve bütün ekran yenilendi."
+    },
+    "kodi-programda": {
+      "baslik": "Kodi programda",
+      "s": [
+        "Kodi'yi programda nasıl açarım",
+        "robot arkadaşı nasıl çağırırım",
+        "kodi programın içinde mi artık",
+        "F1'e basınca ne oluyor",
+        "kodi ne işe yarıyor, benim için ne yapabilir",
+        "kodi kod yazarken izin istiyor mu",
+        "hatamı kodiye buldurabilir miyim",
+        "kodi beni hatırlar mı, sesli konuşur mu",
+        "kodi nasil acilir",
+        "yapay zeka bağlı değil, kodi yine de yardım eder mi",
+        "Yardım menüsünde Kodi ile Konuş diye bir şey gördüm, bu robot neler yapabiliyor ve dosyalarıma kendi başına dokunur mu?",
+        "kodiye groq anahtari nasil baglarim",
+        "Kodi terminaldeki hataları görebiliyor mu, hangi satırda hata var söyler mi?"
+      ],
+      "c": "Kodi artık programın içinde. Sol şeritteki Kodi düğmesine, F1’e ya da Yardım → Kodi ile Konuş’a basınca gelir. Panel açar, satıra gider, kod yazar, ayar değiştirir ama kod yazmadan, çalıştırmadan ya da kaydetmeden önce izin ister. Kodunu ve terminaldeki hataları görür; hiç yapay zekâ bağlı değilse ücretsiz Groq anahtarı almanı adım adım gösterir."
+    },
+    "yapay-zekâ-ve-yerel-modeller": {
+      "baslik": "Yapay Zekâ ve Yerel Modeller",
+      "s": [
+        "3.3'te yapay zekâ ayarlarında ne değişti",
+        "birden fazla yapay zeka sağlayıcısı bağlanabiliyor mu",
+        "api anahtarlarım güvende mi",
+        "her iş için farklı model seçebilir miyim",
+        "modelin hakkı biterse ne oluyor",
+        "internetsiz çalışan yapay zeka var mı",
+        "yerel model ucretsiz mi",
+        "LM Studio veya llama.cpp ile çalışıyor mu",
+        "düşünme balonu nedir, kapatılabilir mi",
+        "ai paneli uzun cevapları kesiyordu, düzeldi mi",
+        "Yeni sürümde Groq dışında başka sağlayıcılar ve bilgisayarıma indirdiğim modelleri de kullanabilir miyim, ekran kartım NVIDIA?",
+        "yedek model ozelligi ne ise yarar",
+        "openai uyumlu özel adres eklenebiliyor mu"
+      ],
+      "c": "Artık Ayarlar’da istediğin kadar sağlayıcıyı kendi API anahtarıyla bağlayabilirsin; 220’den fazla sağlayıcı, LM Studio, llama.cpp sunucusu ve OpenAI uyumlu adresler olur. Anahtarlar Windows’un şifrelemesiyle saklanır. Her göreve ayrı model seçebilir, hakkı dolan modelin yerine yedek modele geçilmesini sağlayabilirsin. Yerel modeller tek tıkla kurulur, internetsiz ve ücretsiz çalışır."
+    },
+    "hayalet-kod": {
+      "baslik": "Hayalet Kod",
+      "s": [
+        "hayalet kod nedir",
+        "yazarken çıkan gri yazı ne",
+        "imlecin arkasındaki gri öneriyi nasıl kabul ederim",
+        "öneriyi yalnızca bir kelime almak istiyorum",
+        "gri öneriyi nasıl kapatırım",
+        "beklemeden öneri nasıl isterim",
+        "hayalet kod kisayollari",
+        "otomatik tamamlama yapay zeka ile nasıl açılır",
+        "ghost text autocomplete turkodda var mı",
+        "oneri ingilizce mi geliyor turkce mi",
+        "Yazmayı bırakınca imlecin yanında soluk bir kod parçası beliriyor; bunu Tab ile mi alıyorum, değişken adlarımı bozar mı?",
+        "tab basinca ne oluyor hayalet kodda"
+      ],
+      "c": "Bir modeli Otomatik tamamlama (hayalet kod) görevine atarsan, yazmayı bıraktığında imlecin arkasında gri bir öneri belirir. Tab tamamını, Ctrl+→ bir kelimesini kabul eder; Esc kapatır, Ctrl+Shift+Boşluk beklemeden öneri ister. Öneri her zaman TürKod’a çevrilir ve senin verdiğin adlar korunur."
+    },
+    "yenilenen-arayüz": {
+      "baslik": "Yenilenen Arayüz",
+      "s": [
+        "yeni arayüzde neler değişti",
+        "araç çubuğundaki renkli düğmeler ne anlama geliyor",
+        "komut ara kutusu nerede",
+        "gezgin terminal ve ai asistan panellerini nasıl açıp kapatırım",
+        "adım düğmeleri neden görünmüyor",
+        "sol şeritte hangi düğmeler var",
+        "durum çubuğunda Hazır yazıyor, bu ne",
+        "yesil kirmizi turuncu dugmeler ne",
+        "yüksek kontrast temada renkler okunuyor mu",
+        "kod renkleri temaya göre değişiyor mu",
+        "Programı güncelledim, düğmeler ortaya kaymış ve renklenmiş; mor, sarı, pembe düğmeler ne işe yarıyor, Çalıştır hangisi?",
+        "ayarlar dugmesi nereye gitti",
+        "turkod kabugu nerede"
+      ],
+      "c": "Üst satırda menülerin yanında ortada Komut ara… kutusu, sağda Gezgin, Terminal ve AI Asistan düğmeleri var. Araç çubuğu editörün üstünde: yeşil Çalıştır, kırmızı Durdur, turuncu Hata Ayıkla; mor Çevir, sarı Düzelt, pembe Bul. Adım düğmeleri yalnızca hata ayıklarken görünür. Sol şeridin altında TürKod Kabuğu ve Ayarlar bulunur."
+    },
+    "karşılama-ekranı": {
+      "baslik": "Karşılama ekranı",
+      "s": [
+        "karşılama ekranı nedir",
+        "hiç dosya açık değilken ne çıkıyor",
+        "programı açınca gelen kartlar ne",
+        "günün ipucu nerede",
+        "son açtığım dosyalara nasıl ulaşırım",
+        "arayüz turu nereden başlatılır",
+        "bos sayfa yerine gelen ekran ne",
+        "karsilama ekraninda neler var",
+        "welcome screen turkod",
+        "TürKod'u açtığımda Yeni Dosya, Kitabı Oku gibi kartlar görüyorum; bu ekran ne ve başka neler var?",
+        "kitabı oku kartı nerede çıkıyor"
+      ],
+      "c": "Hiç dosya açık değilken boş sayfa yerine karşılama ekranı çıkar. Orada Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku, Arayüz Turu ve Komut Paleti kartları, son açılan dosyalar ve her gün yeni bir Günün İpucu bulursun."
+    },
+    "panelleri-taşıma": {
+      "baslik": "Panelleri taşıma",
+      "s": [
+        "panellerin yerini nasıl değiştiririm",
+        "ai asistanı sola almak istiyorum",
+        "gezgini sağa taşıyabilir miyim",
+        "panel düzeni düğmesi ne işe yarar",
+        "panelleri karıştırdım, eski hâline nasıl döndürürüm",
+        "panel duzenini sifirla nerede",
+        "editörle gezginin yerini değiştirme",
+        "paneli surukleyip tasima",
+        "Yanlışlıkla bir paneli sürükledim ve ekran dağıldı, her şeyi ilk hâline nasıl getiririm?",
+        "hazır panel düzenleri var mı",
+        "panel basligini tutup surukleyince ne olur"
+      ],
+      "c": "Gezgin, editör ve AI Asistan birbirleriyle yer değiştirebilir. Bir panelin başlığını tutup başka bölgenin üstüne sürükle ya da sağ üstteki Panel düzeni düğmesinden hazır bir düzen seç. Her şeyi ilk hâline döndürmek için Görünüm → Panel Düzenini Sıfırla’yı kullan."
+    },
+    "exeye-dönüştür": {
+      "baslik": "EXE’ye Dönüştür",
+      "s": [
+        "programımı exe yapabilir miyim",
+        "exe'ye nasıl dönüştürürüm",
+        "arkadaşımın bilgisayarında turkod yok, oyunumu çalıştırabilir mi",
+        "çift tıklayınca açılan program yapmak",
+        "terminalden exe nasil yapilir",
+        "turkod exe_yap komutu ne yapar",
+        "exe yapma menüsü nerede",
+        "exe'nin içindeki koda sonradan bakılabilir mi",
+        "make executable turkod",
+        "Yazdığım oyunu TürKod kurulu olmayan başka bir Windows bilgisayara götürüp çalıştırmak istiyorum, ne yapmalıyım?",
+        "trpy dosyasini exe ye cevirme"
+      ],
+      "c": "Evet, programını TürKod kurulu olmayan her Windows bilgisayarda çift tıklanınca çalışan bir EXE’ye dönüştürebilirsin: Çalıştır → EXE’ye Dönüştür…. Aynı iş terminalde turkod exe_yap oyun.trpy komutuyla da yapılır. İstersen EXE’nin TürKod koduna sonradan bakılabilir."
+    },
+    "tarayıcı-ve-pdf": {
+      "baslik": "Tarayıcı ve PDF",
+      "s": [
+        "turkod içinde tarayıcı var mı",
+        "dünya düğmesi ne işe yarar",
+        "kodi internette arama yapabilir mi",
+        "kodi şifremi yazar mı",
+        "kodi bir şey satın alır mı, ödeme yapar mı",
+        "pdf dosyası turkodda açılır mı",
+        "pdf'i yakınlaştırma ve sayfaya atlama",
+        "kitabı programın içinde nasıl okurum",
+        "gorunum tarayici nerede",
+        "TürKod ile Kodlama Macerası kitabını ayrı bir programda mı açmam gerek, yoksa TürKod'un içinde mi açılıyor?",
+        "kodi google da arama yapip sayfayi okuyabilir mi",
+        "pdf sayfa sayfa acilmiyor mu"
+      ],
+      "c": "Sol şeritteki dünya düğmesi ya da Görünüm → Tarayıcı, TürKod’un içinde bir tarayıcı sekmesi açar. Kodi de bu tarayıcıyla site açar, Google’da arar, sayfayı okur; şifre kutularına yazmaz, satın alma, ödeme, silme gibi düğmelerden önce izin ister. PDF dosyaları yeni bir sekmede sayfa sayfa açılır ve kitap da artık programın içinde açılıyor."
+    },
+    "terminal-ve-komut-satırı": {
+      "baslik": "Terminal ve Komut Satırı",
+      "s": [
+        "her sekmenin ayrı terminali mi var",
+        "bir sekmede yazdığım komut başka programa gidiyordu, düzeldi mi",
+        "TürKod Terminali nedir",
+        "anlam komutu ne yapar",
+        "turkod --duzelt gibi yeni komutlar neler",
+        "terminalden kod çevirme komutu var mı",
+        "turkod terminali baslat menusunde mi",
+        "kaplumbağa penceresinde python logosu çıkıyordu",
+        "tkinter penceresi görev çubuğunda hangi simgeyle görünür",
+        "Terminalde dersler var mı, bir kelimenin anlamını çocuklara uygun şekilde öğrenebileceğim bir komut var mı?",
+        "turkod --bicimlendir ve --kontrol ne",
+        "cd klasoru sekmeye ozel mi"
+      ],
+      "c": "Artık her sekmenin kendi terminali var; çıktı, komut geçmişi ve cd klasörü sekmeye özel. TürKod Terminali Başlat menüsünde ayrı bir program; dersler, anlam komutu ve satır satır çalıştırma içerir. Yeni komutlar: turkod --duzelt, --kontrol, --bicimlendir, --cevir, --python, --turkod, --anlam ve --dersler. Program pencereleri görev çubuğunda TürKod simgesiyle görünür."
+    },
+    "dil-ve-sözlük": {
+      "baslik": "Dil ve Sözlük",
+      "s": [
+        "yeni türkçe karşılıklar eklendi mi",
+        "kaplumbağa çizimi nasıl bitirilir artık",
+        "cikista_bekle hala calisiyor mu",
+        "renkleri türkçe yazabilir miyim",
+        "\"açık mavi\" ile \"acik mavi\" aynı mı",
+        "alt klasördeki dosyayı nasıl içe aktarırım",
+        "csv modülünün türkçe adı ne",
+        "__init__ türkçede nasıl yazılır",
+        "başlat_özel yerine ne kullanmalıyım",
+        "kaplumbaga.tamamla ne ise yarar",
+        "Kaplumbağa ile çember çizip pencerenin kapanmamasını istiyorum, en sonda hangi komutu yazmalıyım ve renk adını Türkçe verebilir miyim?",
+        "kitaba tam kılavuz eklendi mi",
+        "kac modul turkce ad aldi"
+      ],
+      "c": "340’tan fazla yeni Türkçe karşılık ve Türkçe adı olan 24 modül geldi; örneğin csv’nin adı vad. Kaplumbağa çizimini bitiren komut artık kaplumbağa.tamamla(), eski çıkışta_bekle de çalışır. Renkleri \"açık mavi\" gibi Türkçe yazabilirsin. Alt klasördeki .trpy dosyalarını içe_aktar araçlar.sayılar gibi aktarabilir, __başlat__ gibi özel adları kullanabilirsin."
+    },
+    "önemli-düzeltmeler": {
+      "baslik": "Önemli Düzeltmeler",
+      "s": [
+        "3.3'te hangi hatalar düzeltildi",
+        "otomatik kaydetme sildiğim dosyayı geri getiriyordu",
+        "farklı kaydet sekmemi sormadan kapatıyordu",
+        "sütun çizgileri ayarı nereye gitti",
+        "TODO listesi neden adı değişti",
+        "# YAPILACAK notları toplanıyor mu",
+        "akilli duzelt matematk yazimini duzeltiyor mu",
+        "iptal yerine vazgeç mi yazıyor",
+        "durum cubugunda sutun 0 dan mi basliyor",
+        "Python'dan çevirince super() ve f-string içindeki ifadeler bozuluyordu, bu düzeldi mi?",
+        "usb bellekte dosya silerken soruyor mu",
+        "kodu bicimlendir girinti ayarina uyuyor mu",
+        "hata mesajlari python yeni surumde de turkce mi"
+      ],
+      "c": "Otomatik kaydetme silinen dosyayı geri oluşturmuyor, Farklı Kaydet sekmeyi sormadan kapatmıyor. Python’dan çeviride super() ve f-metin ifadeleri doğru çevriliyor; Akıllı Düzelt matematk gibi yanlış modül adlarını düzeltiyor. Sütun Çizgileri’nin adı Girinti Kılavuzları, TODO Listesi’nin adı Yapılacaklar Listesi oldu; her yerde “İptal” yerine “Vazgeç” yazıyor."
+    },
+    "açık-kaynak": {
+      "baslik": "Açık kaynak",
+      "s": [
+        "turkod açık kaynak mı",
+        "projeye nasıl katkı veririm",
+        "hata bildirmek istiyorum",
+        "sözlüğe yeni kelime önermek",
+        "katkı rehberi var mı",
+        "eski sürümleri nereden indiririm",
+        "surum gecmisi nerede",
+        "ozellik onerisi nasil yapilir",
+        "contribute to turkod",
+        "TürKod'a kendi kodumla katkıda bulunmak ya da bir hata bildirmek istersem hangi şablonları kullanabilirim?",
+        "davranis kurallari ve guvenlik politikasi eklendi mi"
+      ],
+      "c": "Proje artık katkıya hazır: katkı rehberi, güvenlik politikası, davranış kuralları ve hata, özellik ve sözlük önerisi şablonları eklendi. Hata bildirmek, sözlük önermek ya da koda katkı vermek için Katkıda Bulun sayfasına; bütün sürümler ve indirme bağlantıları için Sürüm Geçmişi’ne bakabilirsin."
+    }
+  }
+}

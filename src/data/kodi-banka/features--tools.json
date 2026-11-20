@@ -1,0 +1,181 @@
+{
+  "sayfa": "/features/tools/",
+  "bolumler": {
+    "": {
+      "baslik": "Araçlar",
+      "s": [
+        "TürKod'daki araçlar neler",
+        "Araçlar menüsü ne işe yarar",
+        "durum çubuğunun sağındaki küçük simgeler ne",
+        "kod istatistiklerine hızlı nasıl ulaşırım",
+        "yapılacaklar listesini nereden açarım",
+        "kod arama çeviriciye kısa yol",
+        "araclar nerde",
+        "turkod tools menu",
+        "öğrenmeyi kolaylaştıran yardımcılar var mı",
+        "menüye girmeden Kod İstatistikleri ve Yapılacaklar Listesi'ni açmanın bir yolu var mı"
+      ],
+      "c": "Araçlar menüsündeki yardımcılar hem öğrenmeyi hem kod yazmayı hızlandırır. Kod İstatistikleri, Yapılacaklar Listesi ve Kod Arama Çevirici'ye alttaki durum çubuğunun sağındaki küçük simgelerden de ulaşabilirsin."
+    },
+    "türkod--python-çevir": {
+      "baslik": "TürKod ⇄ Python Çevir",
+      "s": [
+        "TürKod kodumu Python'a nasıl çeviririm",
+        "Python kodunu TürKod'a çevirme",
+        "mor Çevir düğmesi ne yapar",
+        "internetten bulduğum Python örneğini TürKod'a çevirebilir miyim",
+        "çevirince orijinal dosyam değişir mi",
+        "cevrilmis.py nedir",
+        "çeviride metinlerim de çevriliyor mu",
+        "değişken adlarım da çevrilir mi",
+        "fonksiyon python'da ne oluyor",
+        "random kütüphanesi türkod'da ne",
+        "python ceviri nasil yapilir",
+        "translate to python turkod",
+        "yazdığım kodun Python hâlini görmek istiyorum ama orijinal dosyamı bozmasın, nasıl yaparım"
+      ],
+      "c": "Araç çubuğundaki mor Çevir düğmesine ya da Araçlar → TürKod ⇄ Python Çevir'e bas; açık dosyanın dilini kendiliğinden anlar. TürKod kodu cevrilmis.py, Python kodu cevrilmis.trpy adlı yeni sekmede açılır, orijinal sekmen değişmez. Metinlerin, senin verdiğin adlar ve kütüphane adlarının içi çevrilmez; yalnızca dilin kelimeleri çevrilir (fonksiyon → def, random → rastgele gibi)."
+    },
+    "kod-arama-çevirici": {
+      "baslik": "Kod Arama Çevirici",
+      "s": [
+        "print'in TürKod karşılığı ne",
+        "bir Python kelimesinin Türkçesini nasıl bulurum",
+        "Kod Arama Çevirici nedir",
+        "while True ne demek türkodda",
+        "tek bir kelimeyi hızlıca çevirme",
+        "bütün bir satırı çevirebilir miyim",
+        "def türkçesi",
+        "len ne demek turkodda",
+        "python kelimesi sozluk",
+        "TürKod kelimesinin İngilizcesi nasıl bulunur",
+        "word translator turkod python",
+        "dosyanın tamamını değil sadece bir satırı ya da kelimeyi çevirmek istiyorum, hangi araç"
+      ],
+      "c": "Kod Arama Çevirici'ye print, def, while gibi bir Python kelimesi ya da bir TürKod kelimesi yazıp Çevir'e bas; kelime kelime karşılıklar ve tam çeviri gösterilir. Bütün bir satırı da yazabilirsin; örneğin while True: print(len(name)) satırı döngü Doğru: yazdır(uzunluk(varlık_adı)) olur."
+    },
+    "kod-i̇statistikleri": {
+      "baslik": "Kod İstatistikleri",
+      "s": [
+        "kodum kaç satır nasıl öğrenirim",
+        "Kod İstatistikleri ne gösterir",
+        "kaç fonksiyon yazdığımı görmek istiyorum",
+        "yorum satırı sayısı",
+        "boş satır sayısını görme",
+        "karakter sayısını nasıl bulurum",
+        "kac degisken kullandim",
+        "sınıf sayısı istatistik",
+        "code statistics turkod",
+        "satir sayisi ogrenme",
+        "ödevimde toplam kaç satır kod, kaç yorum ve kaç fonksiyon olduğunu raporlamam gerekiyor, nasıl bakarım"
+      ],
+      "c": "Kod İstatistikleri açık dosya için toplam satır, kod satırı, yorum satırı, boş satır, karakter ve boşluksuz karakter sayısını, ayrıca fonksiyon, sınıf ve değişken sayısını gösterir. Araçlar menüsünden ya da durum çubuğunun sağındaki simgeden açabilirsin."
+    },
+    "yapılacaklar-listesi": {
+      "baslik": "Yapılacaklar Listesi",
+      "s": [
+        "Yapılacaklar Listesi nasıl çalışır",
+        "kodun içine not nasıl bırakırım",
+        "# YAPILACAK: yazınca ne olur",
+        "TODO yorumları TürKod'da çalışır mı",
+        "yorumum listede çıkmıyor neden",
+        "küçük harfle yapılacak yazdım tanınmadı",
+        "DÜZELT notu ne işe yarar",
+        "listedeki nota tıklayınca ne olur",
+        "FIXME HACK BUG tanınıyor mu",
+        "yapilacaklar listesi bos gorunuyo",
+        "yarım bıraktığım yerleri kodda işaretleyip sonra hepsini tek yerde görmek istiyorum"
+      ],
+      "c": "Koduna # YAPILACAK: ya da # DÜZELT: gibi notlar yazarsan hepsi Yapılacaklar Listesi'nde toplanır. Türkçe işaretler yalnızca BÜYÜK harfle yazıldığında tanınır, böylece sıradan yorumlar not sayılmaz. İngilizce TODO, FIXME, HACK, XXX ve BUG da olur. Bir öğenin yanındaki düğmeye tıklayınca o satıra gidersin."
+    },
+    "komut-paleti": {
+      "baslik": "Komut Paleti",
+      "s": [
+        "Komut Paleti nedir",
+        "Komut Paleti nasıl açılır",
+        "Ctrl+Shift+P ne yapar",
+        "en üstteki Komut ara kutusu ne işe yarıyor",
+        "bir komutun kısayolunu hatırlamıyorum",
+        "menüde komutu bulamıyorum nasıl ararım",
+        "komut paletinde nasıl seçerim",
+        "command palette turkod",
+        "komut ara kutusu",
+        "kisayolu unuttum ne yapcam",
+        "menüleri tek tek gezmeden istediğim komutu adını yazarak bulabileceğim bir yer var mı"
+      ],
+      "c": "Komut Paleti'ni Ctrl+Shift+P ile ya da en üst satırın ortasındaki Komut ara… kutusuna tıklayarak açarsın. Komutun adını yazmaya başla; menülerdeki tüm komutlar kısayollarıyla listelenir. ↑ / ↓ ile seçip Enter'a bas. Kısayolunu hatırlamadığın her şeyi buradan bulabilirsin."
+    },
+    "bildirim-geçmişi": {
+      "baslik": "Bildirim geçmişi",
+      "s": [
+        "kaybolan bildirimi tekrar nasıl görürüm",
+        "bildirim geçmişi nerede",
+        "sağ alttaki zil düğmesi ne",
+        "🔔 düğmesi ne işe yarar",
+        "Bildirimler paneli nasıl açılır",
+        "bildirimleri nasıl temizlerim",
+        "bildirim cok hizli kayboldu okuyamadim",
+        "eski bildirimler",
+        "notification history turkod",
+        "sağ altta bir mesaj çıktı ama okuyamadan gitti, neydi diye bakabilir miyim"
+      ],
+      "c": "Sağ altta beliren bildirimlerdeki 🔔 düğmesi, son bildirimlerin tamamını gösteren Bildirimler panelini açar. Böylece hızla kaybolan bir bildirimi tekrar okuyabilirsin. Temizle düğmesi listeyi boşaltır."
+    },
+    "pdf-görüntüleyici": {
+      "baslik": "PDF görüntüleyici",
+      "s": [
+        "TürKod'da PDF açabilir miyim",
+        "PDF'te sayfa nasıl değiştirilir",
+        "belirli bir sayfaya nasıl atlarım",
+        "PDF'i nasıl yakınlaştırırım",
+        "PDF'i genişliğe sığdırma",
+        "bütün sayfayı ekranda görmek istiyorum",
+        "PDF'in içine yazabilir miyim",
+        "kitap hangi sekmede açılıyor",
+        "pdf dosyasi gezginde kirmizi gorunuyo",
+        "pdf'te ilk ve son sayfaya gitme",
+        "Ctrl+0 ne yapar pdf",
+        "pdf viewer turkod",
+        "kitabın uzun sayfaları arasında hızlıca gezinmek istiyorum, kaydırma çubuğu gibi bir şey var mı"
+      ],
+      "c": "Gezgin'de bir PDF'e tıklarsan TürKod onu yeni sekmede sayfa sayfa açar; kitap da bu sekmede açılır. Sayfayı oklar, PageUp / PageDown ya da tekerlekle değiştirir, sayfa kutusuna numara yazıp Enter'la atlarsın (Home / End ilk/son sayfa). Sağdaki tutamaçla hızla gezinir, Ctrl+tekerlek veya Ctrl+= / Ctrl+- ile yakınlaştırır, Ctrl+0 ile genişliğe sığdırırsın. PDF yalnızca okunur."
+    },
+    "tarayıcı": {
+      "baslik": "Tarayıcı",
+      "s": [
+        "TürKod'un içinde internete girebilir miyim",
+        "tarayıcı sekmesi nasıl açılır",
+        "sol şeritteki dünya düğmesi ne",
+        "TürKod tarayıcısında nasıl arama yaparım",
+        "tarayıcıdayken kısayollar çalışır mı",
+        "başka sekmeye geçince tarayıcı ne oluyor",
+        "Kodi tarayıcıyı kullanabiliyor mu",
+        "Kodi benim için site açabilir mi",
+        "tarayicida kopyala yapistir calisiyo mu",
+        "built in browser turkod",
+        "görünüm tarayıcı",
+        "kod yazarken bir şeye bakmak için ayrı tarayıcı açmak istemiyorum, TürKod içinde sayfa açabilir miyim"
+      ],
+      "c": "Sol şeritteki dünya düğmesi ya da Görünüm → Tarayıcı, TürKod'un içinde bir tarayıcı sekmesi açar. Üstte geri, ileri, yenile, Google düğmeleri ve adres çubuğu var; adres ya da aramak istediğini yazıp Enter'a bas. Ctrl+Shift+P, F1 gibi kısayollar çalışır, kopyala/yapıştır sayfada kalır. Başka sekmedeyken bekletilir, sekme kapanınca kapanır. Kodi de bu tarayıcıda site açıp arayabilir, sayfayı okuyabilir."
+    },
+    "eklenti-özellikleri": {
+      "baslik": "Eklenti Özellikleri",
+      "s": [
+        "eklentileri nasıl açarım",
+        "Eklenti Özellikleri paneli nerede",
+        "sol şeritteki yapboz düğmesi ne",
+        "Ctrl+Shift+X ne yapar",
+        "hangi eklentiler var",
+        "Odak Zamanlayıcı nedir",
+        "markdown dosyalarını nasıl önizlerim",
+        "Karalama Defteri ne işe yarar",
+        "Günün Görevi eklentisi",
+        "kendi kod kalıbımı ekleyebilir miyim",
+        "eklentiyi nasil kapatirim",
+        "pomodoro turkodda var mi",
+        "kod parçacıkları menüde çalışmıyor, eklentiyi nereden etkinleştirmeliyim"
+      ],
+      "c": "Sol şeritteki yapboz düğmesi ya da Ctrl+Shift+X Eklenti Özellikleri panelini açar; en üstte Yerel AI Modelleri kartı, altında eklentiler durur. Etkinleştir ile açar, Devre dışı bırak ile kapatırsın. Eklentiler: Kod Parçacıkları (Ctrl+Shift+J, kendi kalıplarını da eklersin), Odak Zamanlayıcı (25 dk çalışma, 5 dk mola), Markdown Önizleme, Karalama Defteri ve Günün Görevi."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "sayfa": "/features/ui/",
+  "bolumler": {
+    "": {
+      "baslik": "Arayüz",
+      "s": [
+        "TürKod'un menüleri Türkçe mi?",
+        "Programın arayüzü hangi dilde?",
+        "Hata mesajları İngilizce mi çıkıyor yoksa Türkçe mi?",
+        "turkod menuleri turkce mi",
+        "ingilizce bilmeyen biri turkodu kullanabilir mi",
+        "Yardım metinlerini Türkçe okuyabilir miyim?",
+        "TürKod arayüz dili",
+        "Python'da hatalar İngilizce çıkıyor, TürKod'da da öyle mi?",
+        "Programın yazıları Türkçe mi, dil değiştirmem gerekiyor mu?",
+        "Öğrencilerim İngilizce bilmiyor; TürKod'un menüleri, hata mesajları ve yardım yazıları onlar için tamamen Türkçe mi?",
+        "turkodda hata mesajlari hangi dilde",
+        "Türkçe arayüzlü kod yazma programı"
+      ],
+      "c": "Evet, TürKod’un tüm menüleri, hata mesajları ve yardım metinleri Türkçedir. Yani İngilizce bilmeden de programı rahatça kullanabilirsin."
+    },
+    "öne-çıkan-özellikler": {
+      "baslik": "Öne Çıkan Özellikler",
+      "s": [
+        "TürKod'un öne çıkan özellikleri neler?",
+        "TürKod neler yapabiliyor?",
+        "Bu programın özelliklerini kısaca sayar mısın?",
+        "turkod ozellikleri neler",
+        "TürKod'da yapay zekâ var mı?",
+        "Programımı EXE yapabilir miyim, TürKod'da hangi araçlar var?",
+        "TürKod internetsiz hata düzeltebiliyor mu?",
+        "kac tane yapay zeka saglayicisi destekleniyor",
+        "TürKod ile Python arasında çeviri yapılabiliyor mu?",
+        "Okulda kullanmak için bir kod programı arıyorum; TürKod'da editör, hata ayıklayıcı, yapay zekâ ve paket kurma gibi neler var, özetler misin?",
+        "TürKod 3.3 ile neler geldi?",
+        "turkodu kurmadan deneyebilir miyim",
+        "Özellik listesi"
+      ],
+      "c": "TürKod’da otomatik tamamlamalı Kod Editörü, Türkçe hata mesajları ve adım adım hata ayıklayıcı, internetsiz çalışan Akıllı Düzeltme, 220’den fazla sağlayıcıyla ya da ücretsiz yerel modellerle AI Asistan, yardımcı robot Kodi (F1), EXE’ye Dönüştür, TürKod ⇄ Python çeviri ve Türkçe pip komutları var. Kurmadan denemek için Canlı Demo’yu kullanabilirsin."
+    }
+  }
+}

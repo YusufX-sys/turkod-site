@@ -1,0 +1,127 @@
+{
+  "sayfa": "/learn/errors-files/",
+  "bolumler": {
+    "": {
+      "baslik": "Hatalar ve Dosyalar",
+      "s": [
+        "Hata olunca programın durmaması için ne yaparım?",
+        "try except TürKod'da ne?",
+        "dene hata_yakala nedir",
+        "Hata yakalama komutları neler?",
+        "raise TürKod'da nasıl yazılır?",
+        "finally karşılığı ne?",
+        "assert turkodda ne",
+        "olarak kelimesi ne işe yarar?",
+        "programim hata verince kapaniyo",
+        "Python'daki try, except, else, finally, raise anahtar kelimelerinin Türkçeleri neler?",
+        "Hata çıkınca programın çökmesi yerine ne yapılacağına kendim karar vermek istiyorum, mümkün mü?"
+      ],
+      "c": "Bir hata olunca program durmak zorunda değil: dene / hata_yakala ile hatayı yakalar, ne yapılacağına sen karar verirsin. Karşılıklar: dene (try), hata_yakala (except), değilse (else), sonunda (finally), hata_fırlat (raise), olarak (as), iddia_et (assert)."
+    },
+    "hata-yakalama": {
+      "baslik": "Hata yakalama",
+      "s": [
+        "Sıfıra bölme hatasını nasıl yakalarım?",
+        "dene bloğunda değilse ne zaman çalışır?",
+        "sonunda bloğu ne zaman çalışır?",
+        "Birden fazla hatayı aynı anda nasıl yakalarım?",
+        "hata_yakala ile iki hata türü",
+        "Hata olmazsa çalışacak kodu nereye yazarım?",
+        "try except else finally ornegi",
+        "Her durumda çalışması gereken kod",
+        "bol fonksiyonu sıfıra bölünce ne yazdırıyor",
+        "sonunda hata olsa da çalışır mı",
+        "DizinHatası ve AnahtarHatası'nı tek satırda yakalamak",
+        "Bir sayıyı başka bir sayıya bölen fonksiyon yazdım, sıfıra bölünce program çöküyor; hatayı yakalayıp mesaj göstermek ve sonunda 'işlem bitti' yazdırmak istiyorum."
+      ],
+      "c": "Hatalı olabilecek kodu dene içine, hata türünü hata_yakala SıfıraBölmeHatası: gibi yazarsın. değilse bloğu yalnızca hata olmazsa, sonunda bloğu her durumda çalışır. Birden çok hatayı birlikte yakalamak için hata_yakala (DizinHatası, AnahtarHatası): yazabilirsin."
+    },
+    "kullanıcı-girdisini-güvenle-sayıya-çevirme": {
+      "baslik": "Kullanıcı girdisini güvenle sayıya çevirme",
+      "s": [
+        "Kullanıcı sayı yerine yazı girerse ne olur?",
+        "tamsayı() hata veriyor, ne yapmalıyım?",
+        "Girdiyi güvenle sayıya nasıl çeviririm?",
+        "kullanici harf yazinca program cokuyo",
+        "DeğerHatası nasıl yakalanır?",
+        "tamsayı(\"on iki\") neden hata verir?",
+        "ValueError int dönüşümü",
+        "girdi sayı mı kontrol etme",
+        "Kullanıcıya 'Lütfen rakamla yaz' demek",
+        "Yaş soruyorum, biri rakam yerine 'on iki' yazınca program duruyor, bunu nasıl engellerim?"
+      ],
+      "c": "Dönüşümü dene içine koy ve DeğerHatası'nı yakala. Örneğin tamsayı(\"on iki\") DeğerHatası verir; hata_yakala DeğerHatası: bloğunda \"Lütfen rakamla yaz.\" gibi bir mesaj yazdırırsın, program da çökmez."
+    },
+    "kendi-hatanı-fırlatma": {
+      "baslik": "Kendi hatanı fırlatma",
+      "s": [
+        "Kendi hatamı nasıl oluştururum?",
+        "hata_fırlat nasıl kullanılır?",
+        "raise ValueError TürKod'da nasıl?",
+        "Negatif yaş girilince hata vermek istiyorum",
+        "Hatanın mesajını nasıl yazdırırım?",
+        "olarak hata ne demek?",
+        "kendi hata mesajimi firlatma",
+        "Fonksiyonda yanlış değer gelince hata vermek",
+        "Yakaladığım hatayı bir değişkene alıp yazdırmak",
+        "yas_kontrol(-5) neden Yaş negatif olamaz yazdırıyor",
+        "Fonksiyonuma yanlış bir değer gelince programın kendi Türkçe mesajımla hata vermesini ve bu hatayı başka yerde yakalamayı istiyorum."
+      ],
+      "c": "hata_fırlat ile kendi hatanı fırlatırsın: hata_fırlat DeğerHatası(\"Yaş negatif olamaz\"). Bu hatayı hata_yakala DeğerHatası olarak hata: diye yakalarsan, yazdır(hata) senin yazdığın mesajı gösterir."
+    },
+    "hata-adları": {
+      "baslik": "Hata adları",
+      "s": [
+        "Hata türleri nelerdir?",
+        "ValueError'un Türkçesi ne?",
+        "KeyError TürKod'da ne?",
+        "IndexError ne demek?",
+        "İsimHatası ne zaman çıkar?",
+        "TürHatası neden olur?",
+        "dosya bulunamadi hatasi",
+        "Bütün hataları yakalamak için hangi adı kullanırım?",
+        "AttributeError turkce",
+        "Hata mesajı neden İngilizce çıktı?",
+        "[HATA]: Sıfıra Bölme Hatası ne demek?",
+        "Python hata adlarının TürKod karşılıklarını liste halinde görmek istiyorum, hangisi ne zaman çıkıyor?",
+        "olarak hata ile yakaladığım hatanın mesajı İngilizce, normal mi?"
+      ],
+      "c": "Başlıcaları: İstisna (her türlü hata), DeğerHatası (yanlış değer), TürHatası (\"a\" + 5 gibi yanlış tür), DizinHatası (listede olmayan sıra), AnahtarHatası (sözlükte olmayan anahtar), İsimHatası (tanımsız değişken), SıfıraBölmeHatası, DosyaBulunamadıHatası ve ÖzellikHatası. Yakalanmayan hatalar IDE'de Türkçe görünür; olarak hata ile yakaladığın hatanın kendi mesajı İngilizce kalabilir."
+    },
+    "dosyaya-yazma-ve-okuma": {
+      "baslik": "Dosyaya yazma ve okuma",
+      "s": [
+        "Dosyaya nasıl yazarım?",
+        "Dosyadan nasıl okurum?",
+        "with open TürKod'da nasıl?",
+        "dosyaya yazinca turkce karakterler bozuluyo",
+        "Dosyanın sonuna nasıl eklerim?",
+        "\"r\", \"w\", \"a\" ne demek?",
+        "Dosyayı kapatmam gerekiyor mu?",
+        "kodlama=\"utf-8\" neden yazılıyor?",
+        "Dosyayı satır satır nasıl okurum?",
+        "Oluşturduğum dosya kayboluyor, nerede?",
+        "txt dosyasina kayit",
+        "satırları_oku ne işe yarar",
+        "Programımla notlar.txt dosyası oluşturdum ama sonra bulamıyorum; dosyanın kalıcı olması için ne yapmalıyım?"
+      ],
+      "c": "ile açık(\"notlar.txt\", \"w\", kodlama=\"utf-8\") olarak dosya: ile dosyayı açarsın, iş bitince kendiliğinden kapanır. Kipler: \"r\" oku, \"w\" sıfırdan yaz, \"a\" sonuna ekle; yaz, oku ve satırları_oku kullanılır. Türkçe karakterler bozulmasın diye hep kodlama=\"utf-8\" yaz. Programın geçici bir klasörde çalışır, dosya kalıcı olsun istersen tam yol kullan."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "Hata yakalama için alıştırma var mı?",
+        "Hatalar konusunda mini görev ne?",
+        "Geçersiz sayı yazdırma görevi",
+        "kullanicidan sayi al sayi degilse hata yakala",
+        "DeğerHatası alıştırması",
+        "Girdi sayı değilse ne yazdırmalıyım?",
+        "hata yakalama pratik",
+        "try except alistirma",
+        "Kullanıcı yanlış bir şey yazarsa 'Geçersiz sayı' göstermek için ne yapmalıyım?",
+        "Hata yakalamayı denemek için küçük bir görev verir misin?"
+      ],
+      "c": "Görevde kullanıcıdan bir sayı alıyorsun; girilen şey sayı değilse DeğerHatası'nı yakalayıp \"Geçersiz sayı\" yazdırıyorsun. Bunun için dönüşümü dene içine, mesajı hata_yakala DeğerHatası: bloğuna yaz."
+    }
+  }
+}

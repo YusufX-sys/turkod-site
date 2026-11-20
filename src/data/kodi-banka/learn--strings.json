@@ -1,0 +1,132 @@
+{
+  "sayfa": "/learn/strings/",
+  "bolumler": {
+    "": {
+      "baslik": "Metin İşlemleri",
+      "s": [
+        "metin işlemleri komutları neler",
+        "string nedir turkodda",
+        "metin nasıl yazılır tırnak",
+        "tırnak içindeki eğer kelimesi çevrilir mi",
+        "upper lower türkçesi ne",
+        "metin komutları listesi",
+        "replace split join turkodda ne",
+        "string metodlari turkce",
+        "yazıyla ilgili hangi türkçe komutlar var, python karşılıklarıyla görmek istiyorum",
+        "rakam mı harf mi kontrolü",
+        "zfill turkod karşılığı",
+        "tirnak icindeki yazilar degisir mi"
+      ],
+      "c": "Metinler tırnak içinde yazılır ve tırnak içindeki yazılar asla çevrilmez; yazdır(\"eğer\") ekrana eğer yazar. Komutlar Python karşılıklarıyla: büyük_harf (upper), küçük_harf (lower), başlık_yap (title), kırp (strip), böl (split), birleştir (join), yer_değiştir (replace), bul (find), say (count), rakam_mi (isdigit), biçimle (format), sıfır_doldur (zfill) ve daha fazlası."
+    },
+    "büyük--küçük-harf-ve-boşluk": {
+      "baslik": "Büyük / küçük harf ve boşluk",
+      "s": [
+        "yazıyı büyük harfe çevirme",
+        "metni küçük harf yapma",
+        "baştaki ve sondaki boşlukları silme",
+        "kırp ne işe yarar",
+        "her kelimenin ilk harfini büyütme",
+        "başlık_yap nasıl kullanılır",
+        "isimde fazla bosluk var silme",
+        "strip upper title turkod",
+        "kullanıcının girdiği isimde başta sonda boşluk kalıyor, onları temizleyip büyük harfle yazdırmak istiyorum",
+        "büyük_harf komutu",
+        "kırp ve büyük_harf birlikte kullanılır mı",
+        "merhaba dünya yazısını Merhaba Dünya yapma"
+      ],
+      "c": "kırp() baştaki ve sondaki boşlukları siler, büyük_harf() hepsini büyük yapar, başlık_yap() her kelimenin ilk harfini büyütür. Bunları zincirleyebilirsin: ad.kırp().büyük_harf() önce boşlukları siler sonra büyütür, \"  Ayşe Yılmaz  \" AYŞE YILMAZ olur."
+    },
+    "bölme-ve-birleştirme": {
+      "baslik": "Bölme ve birleştirme",
+      "s": [
+        "metni virgülden bölme",
+        "böl komutu ne yapar",
+        "metni listeye çevirme",
+        "listeyi tek bir metinde birleştirme",
+        "birleştir nasıl kullanılır",
+        "split join turkodda",
+        "virgullu yaziyi parcalara ayirma",
+        "liste elemanlarının arasına tire koyarak yazdırma",
+        "elma,armut,kiraz yazısını ayrı ayrı meyvelere ayırmak istiyorum",
+        "parçaları birleştirip araya ayırıcı koymak",
+        "cümleyi kelimelere ayırma"
+      ],
+      "c": "böl(\",\") bir metni verdiğin işaretten parçalara ayırıp liste yapar: \"elma,armut,kiraz\".böl(\",\") ['elma', 'armut', 'kiraz'] verir. Tersini birleştir yapar: \" - \".birleştir(meyveler) parçaları araya \" - \" koyarak elma - armut - kiraz şeklinde birleştirir."
+    },
+    "arama-ve-değiştirme": {
+      "baslik": "Arama ve değiştirme",
+      "s": [
+        "metin içinde kelime arama",
+        "bul komutu ne döndürür",
+        "bir kelime kaç kez geçiyor",
+        "say komutu nasıl kullanılır",
+        "kelimeyi başka kelimeyle değiştirme",
+        "yer_değiştir ne işe yarar",
+        "metin böyle mi başlıyor kontrolü",
+        "başlangıç_mi bitiş_mi",
+        "bul bulamazsa ne olur -1",
+        "yazidaki kedi kelimesini kopek yap",
+        "find count replace startswith turkod",
+        "bir cümlede bir kelimenin nerede olduğunu ve kaç kere geçtiğini bulmak istiyorum",
+        "metinde değiştirme"
+      ],
+      "c": "bul(\"kedi\") kelimenin yerini (sırasını) verir, yoksa -1 döner; say(\"kedi\") kaç kez geçtiğini sayar. yer_değiştir(\"kedi\", \"köpek\") her kediyi köpek yapar. başlangıç_mi(\"Ben\") metin böyle başlıyorsa Doğru verir, bitiş_mi de sonunu kontrol eder."
+    },
+    "biçimlendirme": {
+      "baslik": "Biçimlendirme",
+      "s": [
+        "f-string nasıl kullanılır",
+        "değişkeni metnin içine yazma",
+        "pythondaki f-string turkodda nasıl",
+        "biçimle komutu",
+        "format turkodda ne",
+        "sayının başına sıfır ekleme",
+        "7 yi 007 yapma",
+        "sıfır_doldur nasıl kullanılır",
+        "süslü parantez içine değişken yazma",
+        "metinle sayıyı birlikte yazdırmak istiyorum, + ile hata alıyorum",
+        "isim ve yaşı tek cümlede yazdırmak",
+        "basina sifir koyma",
+        "yer tutucu doldurma"
+      ],
+      "c": "En kolay yol f-string'dir: tırnağın önüne f koy, değişkeni { } içine yaz, örneğin f\"{isim} {yas} yaşında\". Aynı şeyi \"{} {} yaşında\".biçimle(isim, yas) ile de yapabilirsin. Başa sıfır eklemek için sıfır_doldur kullan: \"7\".sıfır_doldur(3) 007 verir."
+    },
+    "harflere-ulaşma": {
+      "baslik": "Harflere ulaşma",
+      "s": [
+        "metnin ilk harfini alma",
+        "son harfe nasıl ulaşırım",
+        "kelime[0] ne demek",
+        "metni ters çevirme",
+        "kelimeyi tersten yazdırma",
+        "ilk üç harfi alma",
+        "[::-1] ne yapar",
+        "metnin uzunluğu kaç harf",
+        "eksi bir indeks ne demek",
+        "kelimenin harflerine tek tek ulaşmak",
+        "string slicing turkod",
+        "bir kelimenin ilk birkaç harfini ve son harfini ayrı ayrı yazdırmak istiyorum",
+        "metin dilimleme"
+      ],
+      "c": "Harflere köşeli parantezle ulaşırsın: kelime[0] ilk harfi, kelime[-1] son harfi verir. kelime[0:3] ilk üç harfi alır, kelime[::-1] kelimeyi ters çevirir; \"Merhaba\" için abahreM olur. uzunluk(kelime) kaç harf olduğunu söyler."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "metin işlemleri mini görev",
+        "adımı büyük harfle yazdırma görevi",
+        "ismin kaç harf olduğunu yazdırma",
+        "string alıştırması",
+        "büyük_harf ve uzunluk görevi",
+        "adimi alip harf sayisini yazdir",
+        "metin sayfasındaki ödev ne",
+        "kullanıcıdan adını alıp hem büyük harfle hem de harf sayısıyla göstermem gerekiyor",
+        "metin pratiği",
+        "isim uzunluğu alıştırma",
+        "ad büyük harf görevi"
+      ],
+      "c": "Görev şu: kullanıcıdan adını al, büyük_harf ile büyük harflerle yazdır, uzunluk ile kaç harf olduğunu yazdır. Adı girdi_al ile alabilirsin."
+    }
+  }
+}

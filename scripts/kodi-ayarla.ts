@@ -3,11 +3,11 @@
 // Yanlış cevap, "bilmiyorum" demekten daha kötüdür; kapsam dışı sorular böylece korunur.
 //   node scripts/kodi-ayarla.ts            (önce "npm run build": belge bölümleri için)
 import { existsSync } from 'node:fs';
-import { AGIRLIK, BOLUM, ESIK, SOZLUK_ONCELIK, dizinSifirla } from '../src/data/kodi-motor.ts';
+import { AGIRLIK, BOLUM, ESIK, KAPSAM, SOZLUK_ONCELIK, dizinSifirla } from '../src/data/kodi-motor.ts';
 import { bdSifirla, degerlendir, kok, liste, type Ornek } from './kodi-ortak.ts';
 
 const listeler: Ornek[] = [...liste('gelistirme')];
-if (existsSync(new URL('scripts/kodi-deneme/ozel-gelistirme.json', kok))) listeler.push(...liste('ozel-gelistirme'));
+for (const ad of ['ozel-gelistirme', 'kapsam-gelistirme']) if (existsSync(new URL(`scripts/kodi-deneme/${ad}.json`, kok))) listeler.push(...liste(ad));
 
 const olc = () => {
   let d = 0;
@@ -23,11 +23,13 @@ const aralik: Record<string, [Record<string, number>, string, number[]]> = {
   anahtar: [AGIRLIK, 'anahtar', [2, 3]],
   cevap: [AGIRLIK, 'cevap', [0.5, 1, 1.5]],
   ek: [AGIRLIK, 'ek', [0.7, 1, 1.3]],
-  kalip: [AGIRLIK, 'kalip', [0.2, 0.35, 0.5]],
+  kalip: [AGIRLIK, 'kalip', [0.2, 0.35, 0.5, 0.7]],
+  soru: [AGIRLIK, 'soru', [0, 0.5, 0.75, 1, 1.5]],
+  kapsamOran: [KAPSAM, 'oran', [0.01, 0.15, 0.2, 0.25, 0.34, 0.5, 1.01]],
   b: [AGIRLIK, 'b', [0.4, 0.6, 0.75]],
   esikPuan: [ESIK, 'puan', [4, 5, 6]],
   esikKapsam: [ESIK, 'kapsam', [0.25, 0.34, 0.4, 0.5]],
-  kalipOnc: [SOZLUK_ONCELIK, 'kalip', [8, 9, 11]],
+  kalipOnc: [SOZLUK_ONCELIK, 'kalip', [9, 12, 15, 18, 22]],
   normalOnc: [SOZLUK_ONCELIK, 'normal', [6, 8]],
   bBaslik: [BOLUM, 'baslik', [2, 3, 4]],
   bSayfa: [BOLUM, 'sayfa', [0.5, 1, 1.5, 2]],
@@ -35,7 +37,10 @@ const aralik: Record<string, [Record<string, number>, string, number[]]> = {
   bKod: [BOLUM, 'kod', [0, 0.5, 1]],
   bEsik: [BOLUM, 'esik', [8, 10, 12, 14, 16, 19, 23]],
   bKapsam: [BOLUM, 'kapsam', [0.4, 0.5, 0.6, 0.67, 0.75]],
-  bOran: [BOLUM, 'oran', [0.5, 0.65, 0.8, 1, 1.3]],
+  bOran: [BOLUM, 'oran', [0.65, 0.8, 1, 1.2]],
+  bOranTam: [BOLUM, 'oranTam', [1.3, 1.6, 2, 2.5]],
+  bTamKapsam: [BOLUM, 'tamKapsam', [0.67, 0.75, 0.85]],
+  bSoru: [BOLUM, 'soru', [0.25, 0.5, 0.75, 1, 1.5]],
 };
 
 // Koordinat iniş: her değişkeni sırayla en iyi değerine getir, iyileşme kalmayınca dur.

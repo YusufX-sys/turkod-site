@@ -1,0 +1,171 @@
+{
+  "sayfa": "/use/menus/",
+  "bolumler": {
+    "": {
+      "baslik": "Menü Rehberi",
+      "s": [
+        "menü çubuğunda hangi menüler var",
+        "TürKod'da kaç menü var",
+        "bir komutun kısayolunu unuttum nasıl bulurum",
+        "kısayolları nasıl değiştiririm",
+        "klavye kısayollarını kendime göre ayarlamak istiyorum",
+        "Komut Paleti nasıl açılır",
+        "üstteki Komut ara kutusu ne işe yarar",
+        "menudeki kisayollar nerde yaziyo",
+        "değiştirdiğim kısayol menüde de görünür mü",
+        "menü rehberi",
+        "keyboard shortcuts degistirme turkod",
+        "menülerdeki bütün komutları ve kısayollarını tek yerde görmek istiyorum, nereden bakabilirim"
+      ],
+      "c": "Menü çubuğunda sekiz menü vardır ve kısayolu olan komutların kısayolu menüde Türkçe olarak yazar. Kısayolları Görünüm → Klavye Kısayolları… ile değiştirebilirsin; değiştirdiğin kısayol menüde de görünür. Bir kısayolu hatırlamıyorsan Ctrl+Shift+P ya da en üstteki Komut ara… kutusuyla Komut Paleti'ni açıp komutun adını yazmaya başla."
+    },
+    "dosya": {
+      "baslik": "Dosya",
+      "s": [
+        "Dosya menüsünde neler var",
+        "yeni sekme nasıl açılır",
+        "dosya kaydetme kısayolu",
+        "bütün sekmeleri birden nasıl kaydederim",
+        "farklı kaydet nerede",
+        "sekmeyi kapatma kısayolu",
+        "Ctrl+T ne yapar",
+        "Adsız-1.trpy ne demek",
+        "proje klasörü nasıl açılır",
+        "bilgisayarımdaki bir dosyayı nasıl açarım",
+        "son acilan dosyalar kisayolu",
+        "kaydet dedim ama ad sordu neden",
+        "save as turkodda nerede",
+        "dosyamın bir kopyasını başka bir isimle başka klasöre kaydetmek istiyorum, hangi menüden yaparım"
+      ],
+      "c": "Dosya menüsünde Yeni Sekme (Ctrl+T), Dosya Aç (Ctrl+O), Son Dosyalar (Ctrl+Shift+O), Klasör Aç, Kaydet (Ctrl+S), Tümünü Kaydet (Ctrl+Shift+S), Sekmeyi Kapat (Ctrl+W) ve Farklı Kaydet vardır. Kaydet, dosyanın adı yoksa sana ad sorar; Farklı Kaydet ise dosyayı yeni bir adla ya da konuma kaydeder."
+    },
+    "düzenle": {
+      "baslik": "Düzenle",
+      "s": [
+        "Düzenle menüsünde neler var",
+        "geri alma kısayolu",
+        "bir değişkenin adını her yerde nasıl değiştiririm",
+        "F2 ne işe yarar",
+        "Adı Değiştir metinlerin içini de değiştirir mi",
+        "kodumu nasıl düzgün hale getiririm",
+        "Kodu Biçimlendir kısayolu",
+        "birden fazla imleç nasıl eklerim",
+        "Ctrl+D ne yapar",
+        "tüm eşleşmeleri seçme",
+        "bütün dosyalarda arama nasıl yapılır",
+        "tanima git f12",
+        "multi cursor turkodda var mi",
+        "Kodu Biçimlendir girintiyi kaç boşluk yapıyor, bunu nereden ayarlarım"
+      ],
+      "c": "Düzenle menüsünde Geri Al/Yinele (Ctrl+Z/Ctrl+Y), Bul (Ctrl+F), Bul / Değiştir (Ctrl+H), Dosyalarda Ara (Ctrl+Shift+F), Tanıma Git (F12), Alta/Üste İmleç Ekle (Ctrl+Alt+↓/↑), Ctrl+D, Adı Değiştir… (F2) ve Kodu Biçimlendir (Shift+Alt+F) gibi komutlar var. Adı Değiştir bir adı kodun her yerinde değiştirir ama metinlere ve yorumlara dokunmaz. Kodu Biçimlendir, Ayarlar'daki girinti genişliğine uyar."
+    },
+    "görünüm": {
+      "baslik": "Görünüm",
+      "s": [
+        "Görünüm menüsünde neler var",
+        "terminal nasıl açılıp kapanır",
+        "editörü ikiye bölmek istiyorum",
+        "iki dosyayı yan yana nasıl görürüm",
+        "panel düzenim bozuldu nasıl sıfırlarım",
+        "yan panellerin yerini değiştirme",
+        "Sorunlar paneli kısayolu",
+        "markdown önizleme nasıl açılır",
+        "ayarlar nerede",
+        "gezgini gizlemek istiyorum",
+        "panellerin boyutu kapatip acinca kaliyo mu",
+        "Ctrl+\\ ne yapar",
+        "split editor turkod",
+        "AI panelini kapattım, tekrar nasıl açarım ve programı yeniden açınca panel düzenim aynı kalır mı"
+      ],
+      "c": "Görünüm menüsünde Sorunlar (Ctrl+Shift+M), Gezgin ve AI Paneli Aç/Kapat, Terminal Aç/Kapat (Ctrl+J), Editörü Böl (Ctrl+\\), Yan Panellerin Yerini Değiştir, Panel Düzenini Sıfırla, Komut Paleti, Klavye Kısayolları…, Ayarlar, Tarayıcı, Eklenti Özellikleri (Ctrl+Shift+X) ve Markdown Önizleme bulunur. Panellerin açık/kapalı durumu, boyutları ve yerleri kaydedilir; programı yeniden açınca aynı düzeni bulursun."
+    },
+    "çalıştır": {
+      "baslik": "Çalıştır",
+      "s": [
+        "kodu çalıştırma kısayolu",
+        "Çalıştır menüsünde neler var",
+        "kesme noktası nasıl konur",
+        "koşullu kesme noktası nedir",
+        "F9 ne yapar",
+        "programa komut satırı argümanı nasıl veririm",
+        "programımı exe yapmak istiyorum hangi menü",
+        "bir exe dosyasının kodunu nasıl görürüm",
+        "satır satır çalıştırma nasıl yapılır",
+        "F10 F11 farkı ne",
+        "imlece kadar çalıştır",
+        "calisan programi nasil durdururum",
+        "debug kisayollari turkod",
+        "döngüde sadece i 5 olduğunda durmak istiyorum, hata ayıklarken bunu nasıl yaparım"
+      ],
+      "c": "Çalıştır menüsünde Çalıştır (Ctrl+R), Durdur, Kesme Noktası Aç/Kapat (F9), Koşullu Kesme Noktası… (Shift+F9, örneğin i == 5), Çalıştırma Argümanları…, EXE'ye Dönüştür… ve EXE'nin Kaynak Kodunu Aç… var. Hata ayıklama için F5 başlatır ya da devam ettirir, F10 / F11 / Shift+F11 satır satır ilerletir, Ctrl+F10 imlece kadar çalıştırır, F6 duraklatır, Shift+F5 bitirir."
+    },
+    "araçlar": {
+      "baslik": "Araçlar",
+      "s": [
+        "Araçlar menüsünde neler var",
+        "kodumu Python'a nasıl çeviririm",
+        "Düzelt komutu ne yapar",
+        "TürKod Kabuğu nasıl açılır",
+        "Ctrl+Shift+K ne işe yarar",
+        "yerel yapay zeka modellerini nereden yönetirim",
+        "kod parçacıkları nasıl eklenir",
+        "Ctrl+Shift+J çalışmıyor",
+        "akilli duzeltme nerde",
+        "kod istatistikleri hangi menüde",
+        "snippet ekleme turkod",
+        "bilgisayarımda çalışan ücretsiz bir yapay zekâ modeli kullanmak istiyorum, hangi menüden ayarlarım"
+      ],
+      "c": "Araçlar menüsünde TürKod ⇄ Python Çevir (dosyayı öbür dile çevirip yeni sekmede açar), Düzelt (Akıllı Düzeltme), Kod İstatistikleri, Yapılacaklar Listesi, Kod Arama Çevirici, TürKod Kabuğu… (Ctrl+Shift+K), Yerel AI Modelleri… ve Kod Parçacıkları… (Ctrl+Shift+J) bulunur. Kod Parçacıkları yalnızca Kod Parçacıkları eklentisi açıksa çalışır."
+    },
+    "öğren": {
+      "baslik": "Öğren",
+      "s": [
+        "Öğren menüsünde ne var",
+        "TürKod kitabını nasıl açarım",
+        "TürKod ile Kodlama Macerası kitabı nerede",
+        "kitap programın içinde mi açılıyor",
+        "dokümantasyon sitesine nasıl giderim",
+        "kitaba Başlat menüsünden ulaşabilir miyim",
+        "kitap nerde bulamadim",
+        "turkod ders kitabi pdf",
+        "belgeleri tarayıcıda açmak istiyorum",
+        "kurulumla gelen kitabı okumak istiyorum ama TürKod'u açmadan da ulaşabilir miyim"
+      ],
+      "c": "Öğren menüsündeki TürKod ile Kodlama Macerası (Kitap), kurulumla gelen kitabı programın içinde yeni bir PDF sekmesinde açar; kitaba Başlat menüsündeki TürKod klasöründen de ulaşabilirsin. Dokümantasyon Sitesi ise belgeleri tarayıcıda açar."
+    },
+    "yardım": {
+      "baslik": "Yardım",
+      "s": [
+        "Yardım menüsünde neler var",
+        "Kodi'yi nasıl çağırırım",
+        "F1 ne yapar",
+        "arayüz turunu tekrar nasıl başlatırım",
+        "hata bildirmek istiyorum",
+        "öneri göndermek için ne yapmalıyım",
+        "geliştiriciye nasıl ulaşırım",
+        "TürKod'un lisansı ne",
+        "sürüm numarasını nerede görürüm",
+        "imza dogrulama nerde",
+        "turkod github sayfasi",
+        "programda bir hata buldum ve geliştiriciye haber vermek istiyorum, Yardım menüsünden nasıl yaparım"
+      ],
+      "c": "Yardım menüsünde Arayüz Turu, Kodi ile Konuş (F1), GitHub Sayfası, Hata Bildir / Öneri Gönder (GitHub Issues sayfasını açar), İletişim (geliştiriciye e-posta için e-posta programını açar), Lisanslar (MIT lisansı ve diğer açık kaynak lisansları) ve Hakkında / İmza (sürüm numarası, bağlantılar, imza doğrulaması) bulunur."
+    },
+    "güncelleştirmeler": {
+      "baslik": "Güncelleştirmeler",
+      "s": [
+        "güncelleme var mı nasıl bakarım",
+        "TürKod'u nasıl güncellerim",
+        "yeni sürüm çıktı mı",
+        "Güncelleştirmeleri Denetle ne işe yarar",
+        "guncelleme kontrolu nerde",
+        "check for updates turkod",
+        "en son sürümü kullanıp kullanmadığımı öğrenmek istiyorum",
+        "elle güncelleme denetimi",
+        "turkod guncellemesi nasil yapilir",
+        "otomatik güncellemeyi beklemeden hemen yeni sürüm var mı diye kontrol edebilir miyim"
+      ],
+      "c": "Güncelleştirmeleri Denetle komutu yeni bir sürüm olup olmadığına hemen bakar. Ayrıntılar için Otomatik Güncelleme sayfasına göz atabilirsin."
+    }
+  }
+}

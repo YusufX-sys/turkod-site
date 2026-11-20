@@ -1,0 +1,145 @@
+{
+  "sayfa": "/learn/data-structures/",
+  "bolumler": {
+    "": {
+      "baslik": "Veri Yapıları",
+      "s": [
+        "Veri yapıları nelerdir?",
+        "Birden çok değeri bir arada nasıl tutarım?",
+        "liste sozluk kume demet farki ne",
+        "TürKod'da kaç tane veri yapısı var?",
+        "Köşeli parantez, süslü parantez ve normal parantez hangi yapı için?",
+        "data structures turkod",
+        "Liste ile sözlük arasındaki fark ne?",
+        "Çok sayıda değeri tek değişkende saklamak istiyorum",
+        "Python'daki list, dict, set ve tuple TürKod'da ne oluyor?",
+        "Bir sürü öğrencinin adını ve notunu tek bir yerde tutmak istiyorum, hangi yapıları kullanabilirim?"
+      ],
+      "c": "Birden çok değeri bir arada tutmak için dört yapı vardır: liste [ ], sözlük { }, küme ve demet ( ). Listeler sıralı değerler, sözlükler anahtar-değer çiftleri, kümeler tekrarsız değerler tutar; demet ise değiştirilemeyen bir listedir. Her birinin Türkçe komutları var."
+    },
+    "liste-metotları": {
+      "baslik": "Liste metotları",
+      "s": [
+        "Listeye eleman nasıl eklenir?",
+        "append TürKod'da ne?",
+        "listenin sonuna ekleme",
+        "Listenin başına eleman nasıl eklerim?",
+        "Listeden eleman nasıl silinir?",
+        "pop turkodda ne",
+        "Listeyi nasıl sıralarım?",
+        "Listeyi büyükten küçüğe nasıl sıralarım?",
+        "Bir değer listede kaç kere geçiyor nasıl bulurum?",
+        "listeyi ters cevirme",
+        "İki listeyi birleştirmek istiyorum, genişlet mi kullanmalıyım?",
+        "Listedeki bir değerin kaçıncı sırada olduğunu nasıl bulurum?",
+        "Listenin hepsini silmek ya da kopyasını almak için hangi komut var?",
+        "Python'daki insert, remove, extend, sort gibi liste metotlarının TürKod karşılıkları neler?"
+      ],
+      "c": "Liste metotları Türkçedir: sona_ekle sona ekler, araya_ekle istenen sıraya, genişlet başka listeyi ekler; kaldır değeri siler, çıkar sıradakini çıkarıp verir. indeks değerin sırasını bulur, say kaç tane olduğunu sayar, sırala sıralar, tersine_çevir ters çevirir, kopyala kopya verir, temizle hepsini siler. Büyükten küçüğe için sayilar.sırala(tersine_çevir=Doğru) yaz."
+    },
+    "dilimleme-ve-indeks": {
+      "baslik": "Dilimleme ve indeks",
+      "s": [
+        "Listenin ilk elemanını nasıl alırım?",
+        "Listenin son elemanı nasıl alınır?",
+        "liste sirasi 0dan mi baslar 1den mi",
+        "Eksi indeks ne demek?",
+        "sayilar[-1] ne verir?",
+        "Listenin bir kısmını nasıl alırım?",
+        "dilimleme nedir",
+        "sayilar[1:3] neden 2 eleman veriyor?",
+        "Listeyi [::-1] ile ters çevirmek",
+        "Metinlerde de indeks kullanılır mı?",
+        "python slicing turkodda nasil",
+        "İlk elemanı almak için 1 yazdım ama ikinci eleman geldi, neden?",
+        "Bir listenin ilk iki elemanını ya da sondan başa doğru tamamını tek satırda nasıl alırım?"
+      ],
+      "c": "Sıra numaraları 0'dan başlar, eksi sayılar sondan sayar: sayilar[0] ilk, sayilar[-1] son elemanı verir. Dilimlemede sayilar[1:3] 1. ve 2. sıradakileri, sayilar[:2] ilk ikisini, sayilar[::-1] listenin tersini verir. Aynısı metinlerde de geçerlidir."
+    },
+    "sözlükler": {
+      "baslik": "Sözlükler",
+      "s": [
+        "Sözlük nedir?",
+        "Sözlüğe yeni anahtar nasıl eklenir?",
+        "sozlukte olmayan anahtar hata veriyo",
+        "get TürKod'da ne?",
+        "Sözlükte döngüyle nasıl gezerim?",
+        "Sözlükten bir anahtarı nasıl silerim?",
+        "keys values items türkçesi",
+        "Bir anahtarın sözlükte olup olmadığını nasıl kontrol ederim?",
+        "sil_beyan ne işe yarar?",
+        "Sözlük anahtarlarını tırnaksız yazınca ne olur?",
+        "dictionary turkod",
+        "Öğrencilerin adlarını ve notlarını saklamak istiyorum, sözlükte her adı ve puanı nasıl yazdırırım?",
+        "renk= diye yazdım İngilizceye çevrildi, neden?"
+      ],
+      "c": "Sözlük, değerleri bir anahtarla saklar; notlar[\"Can\"] = 70 ile ekleme yaparsın. Komutlar: anahtarlar, değerler, öğeler, getir, güncelle, çıkar ve silmek için sil_beyan. getir(\"Veli\", 0) anahtar yoksa 0 verir. Anahtarları tırnak içinde yaz ({\"renk\": \"mavi\"}); tırnaksız renk= gibi yazılan kelimeler karşılığı varsa İngilizceye çevrilir."
+    },
+    "kümeler": {
+      "baslik": "Kümeler",
+      "s": [
+        "Küme nedir?",
+        "Tekrarsız değer tutmak için ne kullanırım?",
+        "Boş küme nasıl oluşturulur?",
+        "{} boş küme mi?",
+        "kumeye eleman ekleme",
+        "İki kümenin birleşimi nasıl bulunur?",
+        "Kesişim ve fark nasıl hesaplanır?",
+        "set add turkodda ne",
+        "Kümeden eleman nasıl atılır?",
+        "Bir küme diğerinin alt kümesi mi nasıl anlarım?",
+        "union intersection difference türkçe",
+        "Matematik dersindeki kümeler gibi iki sayı grubunun ortak elemanlarını ve farkını bulmak istiyorum, nasıl yaparım?"
+      ],
+      "c": "Küme tekrarsız değerler tutar. Boş küme küme() ile oluşturulur; {} boş sözlüktür. Komutlar: ekle_küme (add), at_küme (discard), birleşim, kesişim, fark ve alt_küme_mi. Örneğin {1, 2, 3} ile {2, 3, 4} için kesişim {2, 3} olur."
+    },
+    "demetler": {
+      "baslik": "Demetler",
+      "s": [
+        "Demet nedir?",
+        "tuple TürKod'da ne?",
+        "Değiştirilemeyen liste var mı?",
+        "Demetteki değerleri ayrı değişkenlere nasıl alırım?",
+        "x, y = nokta ne demek?",
+        "demet ile liste farki",
+        "Demette bir değer kaç kere geçiyor?",
+        "Normal parantezle yazılan yapı ne?",
+        "Koordinat gibi değişmeyecek değerleri nasıl saklarım?",
+        "(3, 4) gibi bir noktayı iki ayrı değişkene bölmek istiyorum, nasıl yapılır?"
+      ],
+      "c": "Demet, değiştirilemeyen bir listedir ve normal parantezle yazılır, örneğin nokta = (3, 4). x, y = nokta yazınca değerler ayrı değişkenlere geçer. Demette de say kullanılabilir: renkler.say(\"kırmızı\") bir değerin kaç kez geçtiğini verir."
+    },
+    "kısa-yoldan-liste-oluşturma": {
+      "baslik": "Kısa yoldan liste oluşturma",
+      "s": [
+        "Tek satırda liste nasıl oluşturulur?",
+        "list comprehension TürKod'da nasıl?",
+        "Bir listenin karelerini kısa yoldan nasıl bulurum?",
+        "listeden cift sayilari tek satirda secme",
+        "Döngüyü tek satırda yazabilir miyim?",
+        "[x * x için x içinde sayilar] ne demek?",
+        "Liste oluştururken eğer ile filtreleme",
+        "kisa yoldan liste",
+        "For döngüsü yazmadan yeni liste yapmak",
+        "Bir sayı listesinden sadece çift olanları alıp yeni bir liste yapmak istiyorum, uzun döngü yazmadan olur mu?"
+      ],
+      "c": "Evet, bir döngüyü tek satırda yazabilirsin: kareler = [x * x için x içinde sayilar] her sayının karesini alır. Sonuna eğer eklersen filtrelersin: [x için x içinde sayilar eğer x % 2 == 0] yalnızca çift sayıları verir."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "Veri yapıları için alıştırma var mı?",
+        "Sözlükte en büyük değeri nasıl bulurum?",
+        "arkadaslarin yaslarini sozlukte tutma",
+        "en_büyük ile sözlük değerleri",
+        "Sözlükteki en büyük yaşı bulmak",
+        "Veri yapıları mini görev ne?",
+        "değerler() içinden en büyüğü nasıl alırım?",
+        "max ile sozluk",
+        "Üç arkadaşımın yaşını sözlüğe yazdım, en büyüğünü bulmak için ne yazmalıyım?",
+        "Sözlüklerle pratik yapmak istiyorum, küçük bir görev verir misin?"
+      ],
+      "c": "Bu görevde bir sözlükte üç arkadaşının yaşını tutuyorsun; anahtarlar adlar, değerler yaşlar olsun. En büyük yaşı bulmak için en_büyük(yaslar.değerler()) yazman yeterli."
+    }
+  }
+}

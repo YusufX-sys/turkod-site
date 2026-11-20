@@ -1,0 +1,140 @@
+{
+  "sayfa": "/learn/stdlib/",
+  "bolumler": {
+    "": {
+      "baslik": "Varsayılan Kütüphaneler",
+      "s": [
+        "TürKod'da hazır kütüphaneler var mı",
+        "Python kütüphanelerini TürKod'da kullanabilir miyim",
+        "varsayılan kütüphaneler neler",
+        "kurmadan kullanabileceğim kütüphaneler",
+        "kütüphanelerin Türkçe adları var mı",
+        "en çok kullanılan türkod kütüphaneleri",
+        "standart kutuphane turkod",
+        "python standard library turkce",
+        "matematik ve çizim için hazır modül var mı",
+        "öğrencilerime TürKod'la gelen hazır kütüphaneleri tanıtmak istiyorum, hangileri en çok kullanılıyor"
+      ],
+      "c": "Evet, TürKod Python'un hazır kütüphanelerini Türkçe adlarla içe aktarır. En çok kullanılanlar matematik, rastgele, tarih_saat, istatistik ve çizim için kaplumbaga'dır."
+    },
+    "matematik": {
+      "baslik": "matematik",
+      "s": [
+        "karekök nasıl alınır",
+        "TürKod'da pi sayısı nasıl yazılır",
+        "matematik kütüphanesi nasıl kullanılır",
+        "math modülünün türkçesi ne",
+        "16'nın karekökünü bulma",
+        "sqrt turkodda ne",
+        "matematik.karekök ne yapar",
+        "math.pi turkod",
+        "karekok alma kodu",
+        "matematik modulu ice aktarma",
+        "geometri ödevi için kodumda pi sayısını ve karekökü kullanmam lazım, hangi kütüphaneyi nasıl eklerim"
+      ],
+      "c": "Önce içe_aktar matematik yaz, sonra matematik.karekök(16) ile karekök alır, matematik.pi_sayısı ile pi sayısını kullanırsın. Bu, Python'daki math kütüphanesinin Türkçe hâlidir."
+    },
+    "rastgele": {
+      "baslik": "rastgele",
+      "s": [
+        "rastgele sayı nasıl üretilir",
+        "1 ile 10 arası rastgele sayı",
+        "random modülü türkodda ne",
+        "zar atma programı için rastgele sayı",
+        "randint türkçesi",
+        "rastgele_tamsayı nasıl kullanılır",
+        "her çalıştırmada farklı sayı çıksın istiyorum",
+        "rastgele sayi uretme kodu",
+        "rastgele kutuphanesi",
+        "random number turkod",
+        "sayı tahmin oyunu yapıyorum, bilgisayarın her seferinde 1 ile 10 arasında farklı bir sayı tutmasını nasıl sağlarım"
+      ],
+      "c": "içe_aktar rastgele yazdıktan sonra rastgele.rastgele_tamsayı(1, 10) sana 1 ile 10 arasında rastgele bir tam sayı verir. Kodu birkaç kez çalıştırırsan her seferinde sayının değiştiğini görürsün."
+    },
+    "tarih_saat": {
+      "baslik": "tarih_saat",
+      "s": [
+        "şu anki tarih ve saati nasıl yazdırırım",
+        "tarih_saat kütüphanesi",
+        "datetime türkodda ne",
+        "bugünün tarihini gösterme",
+        "saat kaç programı",
+        "tarih_saat.şimdi() ne yapar",
+        "simdiki zamani yazdirma",
+        "tarih saat modulu turkod",
+        "datetime.now turkce",
+        "programım çalıştığı anın tarihini ve saatini ekrana yazsın istiyorum, nasıl yaparım"
+      ],
+      "c": "içe_aktar tarih_saat yazıp yazdır(tarih_saat.şimdi()) dersen o anki tarih ve saat ekrana yazılır."
+    },
+    "istatistik": {
+      "baslik": "istatistik",
+      "s": [
+        "ortalama nasıl hesaplanır",
+        "bir listenin ortalamasını bulma",
+        "istatistik kütüphanesi nasıl kullanılır",
+        "statistics modülü türkçesi",
+        "mean türkodda ne",
+        "notlarımın ortalamasını hesaplamak istiyorum",
+        "istatistik.ortalama ne yapar",
+        "sayilarin ortalamasi kodu",
+        "ortalama hesaplama kutuphane",
+        "sınıfın sınav notlarını bir listeye koydum, ortalamayı tek tek toplamadan hazır bir fonksiyonla bulabilir miyim"
+      ],
+      "c": "Evet, içe_aktar istatistik yazıp sayılarını bir listeye koy, sonra istatistik.ortalama(sayilar) ile ortalamayı bul. Örneğin [1, 2, 2, 3] listesinin ortalaması bu fonksiyonla hesaplanır."
+    },
+    "kaplumbaga--çizerek-öğren": {
+      "baslik": "kaplumbaga — çizerek öğren",
+      "s": [
+        "kaplumbaga ile nasıl çizim yapılır",
+        "turtle türkodda ne",
+        "kare ya da çember çizmek istiyorum",
+        "kaplumbaga.ileri ne yapar",
+        "kaplumbağayı nasıl döndürürüm",
+        "çember çizme kodu",
+        "kaplumbaga Canlı Demo'da çalışmıyor neden",
+        "cizim ornegi sitede calismiyo",
+        "turtle graphics turkce",
+        "çizerek kodlama öğrenmek",
+        "çocuklarla şekil çizerek kodlama öğretmek istiyorum, kaplumbaga örneğini tarayıcıdaki demoda çalıştırabilir miyim"
+      ],
+      "c": "içe_aktar kaplumbaga yazdıktan sonra kaplumbaga.ileri(100) ile ileri gider, kaplumbaga.sola_dön(90) ile döner, kaplumbaga.çember(50) ile çember çizersin. Çizim pencere açtığı için yalnızca tam sürümde çalışır; matematik, rastgele, tarih_saat gibi kütüphaneler ise Canlı Demo'da da çalışır."
+    },
+    "diğer-hazır-kütüphaneler": {
+      "baslik": "Diğer hazır kütüphaneler",
+      "s": [
+        "os modülünün türkçesi ne",
+        "re modülü türkodda ne",
+        "sqlite veritabanı kullanabilir miyim",
+        "tkinter ile pencere yapabilir miyim türkodda",
+        "pathlib türkçe adı",
+        "json okuma yazma kütüphanesi",
+        "kesirli sayılarla işlem yapmak",
+        "subprocess türkçesi",
+        "takvim kütüphanesi var mı",
+        "guvenli rastgele sifre uretme kutuphanesi",
+        "pickle hashlib threading turkce adlari",
+        "dosya ve klasör işlemleri için hangi kütüphane",
+        "diğer hazır kütüphaneler listesi",
+        "Python'da bildiğim os, re, sqlite3 gibi kütüphanelerin TürKod'daki adlarını tek bir tabloda görmek istiyorum"
+      ],
+      "c": "Başka hazır kütüphaneler de var: işletim_sistemi (os), json, desen (re), yol_kütüphanesi (pathlib), özet_kütüphanesi (hashlib), serilestirici (pickle), takvim (calendar), güvenli_sır (secrets), iş_parçacığı (threading), alt_süreç (subprocess), veritabanı_sqlite (sqlite3), tkinter_arayüz (tkinter), fonksiyon_araclari (functools) ve kesirler (fractions)."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "stdlib mini görevi ne",
+        "1-100 arası sayı üretip 50'den büyük mü bakma",
+        "rastgele sayının 50'den büyük olup olmadığını nasıl yazdırırım",
+        "kütüphaneler sayfasındaki alıştırma",
+        "rastgele mini gorev ipucu",
+        "rastgele sayı ve koşul alıştırması",
+        "mini görevi yapamadım ipucu var mı",
+        "1 ile 100 arasi sayi buyuk mu kucuk mu",
+        "random exercise turkod",
+        "rastgele kütüphanesiyle bir sayı üretip onu 50 ile karşılaştırmam isteniyor, nereden başlamalıyım"
+      ],
+      "c": "Görev şu: rastgele kütüphanesiyle 1-100 arası bir sayı üret ve 50'den büyük olup olmadığını yazdır. Sayıyı rastgele.rastgele_tamsayı(1, 100) ile üretebilirsin; karşılaştırma için Koşullar sayfasına bakman ipucu olarak veriliyor."
+    }
+  }
+}

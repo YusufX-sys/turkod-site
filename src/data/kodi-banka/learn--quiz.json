@@ -1,0 +1,25 @@
+{
+  "sayfa": "/learn/quiz/",
+  "bolumler": {
+    "": {
+      "baslik": "Kendini Test Et",
+      "s": [
+        "Kendimi test edebileceğim sorular var mı?",
+        "TürKod alıştırma soruları",
+        "Öğrendiklerimi denemek için bir test var mı?",
+        "turkod quiz",
+        "Ekrana TürKod yazdırmanın cevabı ne?",
+        "ve, veya, değil Python'da neye karşılık gelir?",
+        "Türkçe kodla 2B oyun yapmak için hangi kütüphane kullanılır?",
+        "matematik kütüphanesiyle 81'in karekökü nasıl yazdırılır?",
+        "0'dan 4'e kadar sayıları yazdırma sorusunun cevabı",
+        "yas 18 ve uzeriyse resitsin yazdir sorusunun cevabi ne",
+        "Testteki soruları kurmadan deneyebilir miyim?",
+        "Öğrencilerime küçük bir sınav yapmak istiyorum; yazdırma, koşul, döngü ve kütüphanelerle ilgili hazır sorular ve cevapları nerede?",
+        "Testi bitirdim, sırada ne var?",
+        "cevabi goster dugmesi ne ise yariyor"
+      ],
+      "c": "Evet, Kendini Test Et sayfasında yedi soru var: yazdırma, eğer/değilse, döngü, matematik ile karekök, ve/veya/değil’in Python karşılığı (and, or, not), 2B oyun kütüphanesi (py_oyun, yani pygame) ve pandas’tan içe aktarma. Cevabı önce kendin yaz, sonra Cevabı Göster ile kontrol et. Kurmadan Canlı Demo’da deneyebilirsin; kaplumbağa ve oyun örnekleri tam sürüm ister."
+    }
+  }
+}

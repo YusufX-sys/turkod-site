@@ -1,0 +1,130 @@
+{
+  "sayfa": "/install/",
+  "bolumler": {
+    "": {
+      "baslik": "Kurulum",
+      "s": [
+        "TürKod'u nasıl kurarım?",
+        "TürKod hangi bilgisayarlarda çalışır?",
+        "Python kurmam gerekiyor mu?",
+        "turkod icin once python yuklemem lazim mi",
+        "Windows 7'de çalışır mı?",
+        "32 bit bilgisayara kurulur mu?",
+        "Mac'e ya da Linux'a TürKod kurabilir miyim?",
+        "turkod sistem gereksinimleri",
+        "Kurmadan önce neye dikkat etmeliyim?",
+        "Bilgisayarımda Python yok, TürKod kendi Python'uyla mı geliyor?",
+        "Windows 11 destekleniyor mu?",
+        "Okul bilgisayarlarına kuracağım, Windows 10 ve 64 bit yetiyor mu, ayrıca başka bir şey yüklemem gerekir mi?"
+      ],
+      "c": "Başlamadan önce bilgisayarının Windows 10 ya da 11 ve 64-bit olduğundan emin ol. Python kurmana gerek yok, çünkü TürKod kendi Python'uyla birlikte gelir. Sonra sırayla indirip kurulum sihirbazını çalıştırman yeterli."
+    },
+    "adım-1--i̇ndir": {
+      "baslik": "Adım 1 — İndir",
+      "s": [
+        "TürKod'u nereden indiririm?",
+        "turkod indir",
+        "En yeni sürümü nereden bulurum?",
+        "indirme linki nerde",
+        "Kurulum dosyasını nereden alırım?",
+        "Sürüm Geçmişi sayfasında hangi sürümü indirmeliyim?",
+        "Windows İçin İndir düğmesi neyi indiriyor?",
+        "turkod download",
+        "Ana sayfada indirme düğmesi var mı?",
+        "Programın son sürümünü indirmek istiyorum ama birçok sürüm var, hangisi doğru?",
+        "setup exe dosyası nereden indirilir",
+        "TürKod ücretsiz indirilebiliyor mu, hangi sayfaya gitmeliyim?"
+      ],
+      "c": "Sürüm Geçmişi sayfasına git ve en üstteki, yani en yeni sürümü indir. İstersen ana sayfadaki Windows İçin İndir düğmesini de kullanabilirsin; seni doğrudan en yeni kurulum dosyasına götürür."
+    },
+    "adım-2--kurulum-sihirbazını-çalıştır": {
+      "baslik": "Adım 2 — Kurulum sihirbazını çalıştır",
+      "s": [
+        "İndirdiğim dosyayı nasıl kurarım?",
+        "Kurulum yönetici izni istiyor mu?",
+        "TürKod bilgisayarda nereye kuruluyor?",
+        "turkod nereye kuruluyo",
+        "Masaüstüne kısayol nasıl eklenir?",
+        "Kurulumda masaüstü simgesi neden çıkmadı?",
+        ".trpy dosyalarına çift tıklayınca TürKod ile açılsın istiyorum",
+        "TürKod'u PATH'e eklemek ne işe yarar?",
+        "komut isteminde turkod dosya.trpy nasil calistirilir",
+        "Kurulumdan sonra Başlat menüsünde neler var?",
+        "Kitap PDF'i ve TürKod Terminali nerede?",
+        "Kurulumda dosya ilişkilendirme seçeneğini işaretlemeyi unuttum, sonradan açabilir miyim?",
+        "Admin şifresi bilmiyorum, okul bilgisayarında yönetici olmadan kurulum yapabilir miyim?",
+        "TurKod-Setup exe açılınca sihirbaz üç seçenek soruyor, bunlar ne işe yarıyor?"
+      ],
+      "c": "İndirdiğin TurKod-Setup-X.Y.Z.exe dosyasını çift tıkla ve sihirbazı izle. Kurulum yönetici izni istemez; yalnızca senin hesabına, genellikle %LOCALAPPDATA%\\Programs\\TurKod klasörüne kurulur. Sihirbazda üç isteğe bağlı seçenek var: masaüstü kısayolu, .trpy dosyalarını TürKod ile ilişkilendirme ve PATH'e ekleme. Son ikisini sonradan Ayarlar → Sistem Entegrasyonu'ndan da açıp kapatabilirsin."
+    },
+    "adım-3--başlat": {
+      "baslik": "Adım 3 — Başlat",
+      "s": [
+        "Kurduktan sonra ne yapmalıyım?",
+        "İlk açılışta ne oluyor?",
+        "arayüz turu nedir",
+        "Karşılama ekranında neler var?",
+        "Windows bilgisayarınızı korudu uyarısı çıktı, ne yapmalıyım?",
+        "windows smartscreen turkodu engelliyo",
+        "Yine de çalıştır'a basmak güvenli mi?",
+        "TürKod'u başka bir siteden indirsem olur mu?",
+        "Programı ilk açtım, ekranda bir tur başladı, sonra nereden başlayacağım?",
+        "Kurulumdan sonra ilk kodumu nasıl yazarım?",
+        "Mavi bir Windows uyarı penceresi çıkıyor ve programı açmama izin vermiyor, virüs mü?",
+        "Hiç dosya açık değilken çıkan kartlar ne işe yarar?"
+      ],
+      "c": "Programı aç; ilk açılışta kısa bir arayüz turu ekranın her bölümünü tanıtır. Tur bitince Yeni Dosya, Dosya Aç, Klasör Aç, Kitabı Oku gibi kartlar olan bir karşılama ekranı görürsün. Windows \"Windows bilgisayarınızı korudu\" derse ve dosyayı resmî bağlantıdan indirdiysen Ek bilgi → Yine de çalıştır'ı kullanabilirsin. TürKod'u yalnızca resmî bağlantıdan indir."
+    },
+    "güncelleme": {
+      "baslik": "Güncelleme",
+      "s": [
+        "TürKod'u nasıl güncellerim?",
+        "Yeni sürüm çıkınca tekrar indirmem gerekiyor mu?",
+        "turkod guncelleme nasil yapilir",
+        "Güncelleyince ayarlarım silinir mi?",
+        "Güncellemede kurduğum kütüphaneler kaybolur mu?",
+        "Açık sekmelerim güncellemeden sonra kalıyor mu?",
+        "otomatik güncelleme var mı",
+        "Yeni sürüme geçmek için eskisini kaldırmalı mıyım?",
+        "Program yeni sürümü kendisi buluyor mu?",
+        "update turkod",
+        "pip ile yüklediğim paketler ve ayarlarım yeni sürüme geçerken korunuyor mu, yoksa baştan mı kurmalıyım?"
+      ],
+      "c": "Yeni sürümü elle indirmene gerek yok: TürKod açılışta yeni sürümü kendisi denetler ve tek tıkla kurar. Güncellemede ayarların, açık sekmelerin ve kurduğun kütüphaneler korunur."
+    },
+    "kaldırma": {
+      "baslik": "Kaldırma",
+      "s": [
+        "TürKod'u nasıl kaldırırım?",
+        "turkodu bilgisayardan silmek istiyorum",
+        "Kaldırınca ayarlarım da siliniyor mu?",
+        "Programı tamamen temizlemek için hangi klasörleri silmeliyim?",
+        "Kodi'nin sohbetleri nerede duruyor?",
+        "İndirdiğim yerel AI modelleri nerede saklanıyor?",
+        "uninstall turkod",
+        "Kaldırınca .trpy ilişkisi ve PATH kaydı kalıyor mu?",
+        "pip_packages klasörü nerede",
+        ".turkod_ayarlar.json dosyasını silmeli miyim?",
+        "turkod kaldirdim ama dosyalari hala duruyo",
+        "Bilgisayarı başkasına vereceğim, API anahtarlarım dahil TürKod'dan hiçbir iz kalmasın istiyorum, ne yapmalıyım?"
+      ],
+      "c": "Windows Ayarları → Uygulamalar → Yüklü uygulamalar listesinden TürKod IDE'yi bulup Kaldır'a bas; .trpy ilişkisi ve PATH kaydı da kalkar. Kişisel verilerin silinmez; tamamen temizlemek istersen %USERPROFILE%\\.turkod_ayarlar.json (ayarlar ve şifreli API anahtarları), %USERPROFILE%\\.turkod (Kodi'nin sohbetleri) ve %LOCALAPPDATA%\\TurKod (kütüphaneler, yerel AI modelleri, günlükler) yollarını da elle silebilirsin."
+    },
+    "sorun-mu-çıktı": {
+      "baslik": "Sorun mu çıktı?",
+      "s": [
+        "TürKod açılmıyor, ne yapmalıyım?",
+        "Program başlatılıyor ekranında takılı kaldı",
+        "turkod acilmiyo",
+        "Kurdum ama program hiç açılmıyor",
+        "Açılış ekranı geçmiyor, sürekli yükleniyor",
+        "kurulumdan sonra sorun cikti",
+        "TürKod başlamıyor, yardım",
+        "Program başlatılıyor yazısında donuyor",
+        "Simgeye tıklıyorum ama hiçbir şey olmuyor",
+        "Kurulum bitti ama TürKod'u açınca 'Program başlatılıyor…' yazısında kalıyor, nereye bakmalıyım?"
+      ],
+      "c": "Program açılmıyorsa ya da \"Program başlatılıyor…\" ekranında kalıyorsa Sorun Giderme sayfasına bak; oradaki adımlar bu durum için hazırlandı."
+    }
+  }
+}

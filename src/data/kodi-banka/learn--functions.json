@@ -1,0 +1,144 @@
+{
+  "sayfa": "/learn/functions/",
+  "bolumler": {
+    "": {
+      "baslik": "Fonksiyonlar",
+      "s": [
+        "fonksiyon nedir",
+        "fonksiyonlar ne işe yarar",
+        "def türkçesi ne",
+        "return turkodda nasıl yazılır",
+        "lambda türkçe karşılığı",
+        "global nonlocal turkodda",
+        "fonksiyon anahtar kelimeleri",
+        "ayni kodu tekrar tekrar yazmamak icin ne yapmaliyim",
+        "döndür ne demek",
+        "python def return lambda kelimelerinin TürKod'daki karşılıkları neler",
+        "fonksiyonlar sayfası",
+        "fonksiyon komutları"
+      ],
+      "c": "Fonksiyonlar bir işi bir kez yazıp tekrar tekrar kullanmanı sağlar. TürKod'da def için fonksiyon, return için döndür, lambda için isimsiz, global için küresel, nonlocal için yerel_olmayan yazılır."
+    },
+    "fonksiyon-tanımlama": {
+      "baslik": "Fonksiyon tanımlama",
+      "s": [
+        "fonksiyon nasıl tanımlanır",
+        "fonksiyon nasıl yazılır",
+        "varsayılan değer nedir",
+        "parametreye varsayılan değer verme",
+        "selam=\"Merhaba\" ne demek",
+        "fonksiyona bilgi göndermeden çağırırsam ne olur",
+        "fonksiyon cagirma",
+        "değer döndüren fonksiyon örneği",
+        "fonksiyona isim verip selamlama yaptırmak",
+        "default parameter turkod",
+        "fonksiyon yazdım ama bazen bir bilgiyi vermek istemiyorum, o zaman otomatik bir değer kullansın istiyorum",
+        "fonksiyon tanimlama ornegi",
+        "adlı argüman ile çağırma"
+      ],
+      "c": "fonksiyon selamla(isim, selam=\"Merhaba\"): şeklinde tanımlar, döndür ile sonucu geri verirsin. selam=\"Merhaba\" bir varsayılan değerdir: o bilgiyi vermezsen bu değer kullanılır. selamla(\"Ayşe\") Merhaba, Ayşe! verir; selamla(\"Mehmet\", selam=\"Günaydın\") ise Günaydın, Mehmet! verir."
+    },
+    "birden-çok-değer-döndürme": {
+      "baslik": "Birden çok değer döndürme",
+      "s": [
+        "fonksiyondan iki değer döndürme",
+        "birden fazla sonuç döndürmek",
+        "döndür ile virgüllü değerler",
+        "fonksiyon iki şey geri verebilir mi",
+        "en küçük ve en büyüğü birlikte döndürme",
+        "return a, b turkodda",
+        "fonksiyonun döndürdüğü iki değeri iki değişkene almak",
+        "iki deger dondurme fonksiyon",
+        "listedeki en küçük ve en büyük sayıyı tek fonksiyonda bulup ikisini de geri almak istiyorum",
+        "küçük, büyük = ne demek",
+        "çoklu değer döndürme"
+      ],
+      "c": "Evet, döndür'den sonra değerleri virgülle yazarsın: döndür en_küçük(sayılar), en_büyük(sayılar). Çağırırken de küçük, büyük = en_uçlar([4, 9, 1, 7]) gibi iki değişkene alırsın; bu örnek 1 9 yazdırır."
+    },
+    "değişken-sayıda-bilgi-almak": {
+      "baslik": "Değişken sayıda bilgi almak",
+      "s": [
+        "fonksiyona istediğim kadar sayı gönderme",
+        "yıldız parametre ne demek",
+        "*sayılar ne işe yarar",
+        "**bilgiler ne yapar",
+        "args kwargs turkodda",
+        "değişken sayıda parametre",
+        "adlı değerleri sözlükte toplamak",
+        "kac tane sayi gelecegini bilmiyorum fonksiyon",
+        "tek yıldız ile çift yıldız farkı",
+        "fonksiyona kaç bilgi gelecek bilmiyorum, hepsini toplayan bir fonksiyon yazmak istiyorum",
+        "sınırsız parametre",
+        "öğeler() ile anahtar değer gezmek"
+      ],
+      "c": "* istediğin kadar değeri bir demette toplar, ** ise adlı değerleri bir sözlükte toplar. fonksiyon topla(*sayılar): döndür toplam(sayılar) ile topla(1, 2, 3) 6 verir. bilgi_ver(**bilgiler) içinde öğeler() ile gezersen bilgi_ver(ad=\"Ali\", yas=12) ad = Ali ve yas = 12 yazdırır."
+    },
+    "isimsiz--tek-satırlık-fonksiyon": {
+      "baslik": "isimsiz — tek satırlık fonksiyon",
+      "s": [
+        "isimsiz fonksiyon nedir",
+        "lambda turkodda nasıl yazılır",
+        "tek satırlık fonksiyon",
+        "kısa fonksiyon yazma",
+        "isimsiz x: x * x ne demek",
+        "kare alan fonksiyon tek satırda",
+        "lamda nasil kullanilir",
+        "fonksiyon yazmadan hızlıca küçük bir işlem tanımlamak istiyorum",
+        "isimsiz anahtar kelimesi",
+        "anonim fonksiyon"
+      ],
+      "c": "isimsiz, Python'daki lambda'dır ve tek satırlık kısa fonksiyon yazar. kare_al = isimsiz x: x * x dersen kare_al(7) 49 verir."
+    },
+    "küresel-ve-yerel_olmayan": {
+      "baslik": "küresel ve yerel_olmayan",
+      "s": [
+        "fonksiyon içinden dışarıdaki değişkeni değiştirme",
+        "küresel ne işe yarar",
+        "global değişken turkodda",
+        "yerel_olmayan ne demek",
+        "nonlocal turkod",
+        "fonksiyonda sayacı arttırdım ama dışarıda değişmiyor",
+        "iç içe fonksiyonda üstteki değişken",
+        "kuresel degisken nasil kullanilir",
+        "fonksiyon içinde dışarıdaki sayac değişkenini artırmak istiyorum ama değişmiyor, ne yapmalıyım",
+        "küresel sayac örneği",
+        "dış değişkene erişim"
+      ],
+      "c": "Fonksiyon içinden dışarıdaki bir değişkeni değiştirmek için fonksiyonun başında küresel sayac yazarsın; örnekte artir() iki kez çağrılınca sayac 2 olur. İç içe fonksiyonlarda bir üstteki fonksiyonun değişkenini değiştirmek için yerel_olmayan kullanılır."
+    },
+    "kendini-çağıran-fonksiyon": {
+      "baslik": "Kendini çağıran fonksiyon",
+      "s": [
+        "kendini çağıran fonksiyon nedir",
+        "özyineleme nasıl yapılır",
+        "recursion turkodda",
+        "faktöriyel hesaplama fonksiyonu",
+        "5 faktöriyel nasıl bulunur",
+        "parametre adı olarak liste kullanabilir miyim",
+        "parametreye metin adı verdim komut çalışmıyor",
+        "fonksiyon kendi icinde kendini cagirabilir mi",
+        "faktoriyel kodu",
+        "parametre ismi olarak toplam ya da uzunluk yazınca neden sorun çıkıyor",
+        "recursive fonksiyon örneği",
+        "bir fonksiyonun kendisini tekrar çağırarak sonucu bulmasını istiyorum, nasıl yazılır"
+      ],
+      "c": "Fonksiyon kendini çağırabilir: faktoriyel(n) n <= 1 ise 1 döndürür, değilse n * faktoriyel(n - 1) döndürür; faktoriyel(5) 120 verir. Dikkat: parametre adı olarak metin, liste, toplam, uzunluk gibi TürKod komutlarını kullanma, yoksa o dosyanın tamamında komut anlamını kaybeder."
+    },
+    "mini-görev": {
+      "baslik": "Mini Görev",
+      "s": [
+        "fonksiyonlar mini görev",
+        "buyugu_bul fonksiyonu",
+        "iki sayıdan büyüğünü döndüren fonksiyon",
+        "fonksiyon alıştırması",
+        "büyük sayıyı bulan fonksiyon yazma",
+        "iki sayi alip buyugu donduren kod",
+        "fonksiyonlar sayfasındaki ödev ne",
+        "iki sayıyı alıp hangisi büyükse onu geri veren bir fonksiyon yazmam isteniyor",
+        "fonksiyon pratiği",
+        "buyugu bul gorevi"
+      ],
+      "c": "Görev şu: iki sayı alıp büyük olanı döndüren buyugu_bul adında bir fonksiyon yaz. fonksiyon ile tanımlayıp eğer / değilse ile karşılaştırabilir, döndür ile büyük olanı geri verebilirsin."
+    }
+  }
+}

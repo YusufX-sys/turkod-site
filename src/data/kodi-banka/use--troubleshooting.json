@@ -1,0 +1,251 @@
+{
+  "sayfa": "/use/troubleshooting/",
+  "bolumler": {
+    "": {
+      "baslik": "Sorun Giderme ve SSS",
+      "s": [
+        "bir sorun yaşıyorum nereye bakmalıyım",
+        "hata bildirmek istiyorum nasıl yaparım",
+        "TürKod'daki bir hatayı nereye bildiririm",
+        "öneri göndermek istiyorum",
+        "Hata Bildir / Öneri Gönder nerede",
+        "GitHub Issues sayfası var mı",
+        "turkod bozuldu ne yapicam",
+        "sık sorulan sorular sayfası",
+        "bug report turkod",
+        "Programda çözemediğim bir sorun var ve burada cevabını bulamadım, geliştiricilere nasıl ulaşıp sorunu anlatabilirim?"
+      ],
+      "c": "Bir şey ters gittiğinde önce sorun giderme sayfasındaki başlıklara göz at. Çözümü orada yoksa GitHub Issues sayfasından ya da program içinden Yardım → Hata Bildir / Öneri Gönder ile bildirebilirsin."
+    },
+    "program-başlatılıyor-ekranında-kalıyor-ya-da-hata-veriyor": {
+      "baslik": "“Program başlatılıyor…” ekranında kalıyor ya da hata veriyor",
+      "s": [
+        "TürKod açılışta Program başlatılıyor ekranında takılı kalıyor",
+        "açılış ekranında turuncu uyarı çıktı",
+        "Yeniden dene ve Yine de aç düğmeleri ne işe yarar",
+        "Yine de aç dersem ne olur",
+        "turkod acilmiyor yukleniyor ekraninda kaliyor",
+        "backend.log dosyası nerede",
+        "antivirüs turkod_backend.exe dosyasını sildi",
+        "virüs programı TürKod'u engelliyor",
+        "arka plan programı başlatılamadı",
+        "kurulum yarım kaldı galiba açılmıyor",
+        "program açıldı ama çalıştır düğmesi çalışmıyor",
+        "TürKod'u açtığımda Program başlatılıyor yazısında bekliyor, sonra turuncu bir uyarı çıkıyor; yeniden denedim olmadı, sorunun nedenini nasıl bulabilirim?"
+      ],
+      "c": "Açılış ekranı, kodu çalıştıran arka plan programı hazır olana kadar bekler. Başlatılamazsa çıkan Yeniden dene çoğu zaman yeter; Yine de aç arayüzü açar ama çalıştırma, düzeltme gibi özellikler bağlantı kurulana kadar çalışmaz. Sık neden antivirüsün turkod_backend.exe'yi engellemesidir, TürKod klasörünü izinli listeye ekle ya da yeniden kur. Ayrıntılar %LOCALAPPDATA%\\TurKod\\backend.log dosyasındadır."
+    },
+    "windows-bilgisayarınızı-korudu-uyarısı": {
+      "baslik": "“Windows bilgisayarınızı korudu” uyarısı",
+      "s": [
+        "Windows bilgisayarınızı korudu uyarısı çıktı",
+        "kurulumda mavi bir uyarı ekranı çıkıyor",
+        "SmartScreen TürKod'u engelledi",
+        "windows korudu diyor kuramıyorum",
+        "Ek bilgi Yine de çalıştır güvenli mi",
+        "turkod virüs mü windows uyarı veriyor",
+        "kurulum dosyasını açınca Windows izin vermiyor",
+        "dosyanın değiştirilmediğini nasıl anlarım",
+        "windows bilgisayarinizi korudu nasil gecilir",
+        "TürKod kurulum dosyasını indirip açtığımda Windows bilgisayarınızı korudu diye bir uyarı çıkıyor ve çalıştır düğmesi yok, ne yapmalıyım?"
+      ],
+      "c": "Bu, Windows'un az indirilen programlar için gösterdiği standart bir uyarıdır. Dosyayı resmî bağlantıdan indirdiysen Ek bilgi → Yine de çalıştır'a basabilirsin. Dosyanın değiştirilmediğinden emin olmak için Güvenlik sayfasına bakabilirsin."
+    },
+    "32-bit-windows-ya-da-windows-78-kullanıyorum": {
+      "baslik": "32-bit Windows ya da Windows 7/8 kullanıyorum",
+      "s": [
+        "TürKod Windows 7'de çalışır mı",
+        "32 bit bilgisayara kurabilir miyim",
+        "Windows 8 destekleniyor mu",
+        "eski bilgisayarım var TürKod çalışır mı",
+        "hangi Windows sürümleri gerekli",
+        "win7 de turkod calisirmi",
+        "kurulum yapmadan deneyebilir miyim",
+        "Canlı Demo ne zaman işime yarar",
+        "Mac ya da 32-bit sistemde TürKod",
+        "Okuldaki bilgisayarlar Windows 7 ve 32-bit, TürKod'u kuramıyorsak öğrenciler yine de temel konuları deneyebilir mi?"
+      ],
+      "c": "TürKod yalnızca 64-bit Windows 10 ve 11 üzerinde çalışır, ayrıntılar Gereksinimler sayfasında. 32-bit Windows ya da Windows 7/8 kullanıyorsan kurulum yapmadan Canlı Demo ile temel konuları deneyebilirsin."
+    },
+    "durum-çubuğunda-kırmızı-bir-hata-var": {
+      "baslik": "Durum çubuğunda kırmızı bir hata var",
+      "s": [
+        "durum çubuğunda kırmızı bir hata yazıyor",
+        "Satır 1: ':' bekleniyor ne demek",
+        "satırım kırmızıyla işaretlendi neden",
+        "iki nokta bekleniyor hatası",
+        "eğer satırının sonuna ne koymam lazım",
+        "parantezi kapatmayı unuttum hata veriyor",
+        "girinti hatası alıyorum",
+        "kirmizi hata cikti kod calismiyor",
+        "syntax error nasıl düzeltilir",
+        "bu hataları otomatik düzelten bir şey var mı",
+        "Kodumu çalıştırmaya çalışınca alttaki çubukta kırmızı bir yazı çıkıyor ve bir satır kırmızı oluyor, genelde neden olur ve nasıl düzeltirim?"
+      ],
+      "c": "Kod çalıştırılmadan önce denetlenir; hata satır numarasıyla (ör. Satır 1: ':' bekleniyor) gösterilir ve satır kırmızıyla işaretlenir. En sık nedenler: eğer, için, döngü, fonksiyon, sınıf satırlarının sonunda : unutulması, kapanmamış parantez ya da tırnak ve hatalı girinti. Araç çubuğundaki Düzelt (sihirli değnek) bunların çoğunu otomatik düzeltir."
+    },
+    "tanımsız-i̇sim-hatası-diyor": {
+      "baslik": "“Tanımsız İsim Hatası” diyor",
+      "s": [
+        "Tanımsız İsim Hatası alıyorum",
+        "NameError ne demek turkodda",
+        "kelimeyi yanlış yazınca neden hemen hata vermiyor",
+        "bir komutun doğru yazımını nereden bulurum",
+        "Kod Arama Çevirici nedir",
+        "tanimsiz isim hatasi neden olur",
+        "yazdığım TürKod kelimesi tanınmıyor",
+        "otomatik tamamlamadaki kitap simgeli öneriler ne",
+        "doğru kelimeyi bilmiyorum sözlük var mı",
+        "Kodumda bir kelime yazdım, kırmızı hata çıkmadı ama çalıştırınca Tanımsız İsim Hatası verdi; kelimeyi yanlış mı yazdım, doğrusunu nasıl öğrenirim?"
+      ],
+      "c": "Büyük ihtimalle bir kelimeyi yanlış yazdın. Sözlükte olmayan bir kelime denetimde hata vermeden aynen geçer ve çalışırken Tanımsız İsim Hatası (NameError) üretir. Doğru yazımı Sözlük sayfasında ya da Araçlar → Kod Arama Çevirici ile bulabilirsin; otomatik tamamlamanın 📚 önerileri de doğru yazımı gösterir."
+    },
+    "program-bitmiyor--donmuş-gibi": {
+      "baslik": "Program bitmiyor / donmuş gibi",
+      "s": [
+        "programım bitmiyor donmuş gibi",
+        "kod çalışıyor ama hiçbir şey olmuyor",
+        "program takıldı kaldı",
+        "sonsuz döngüye girdim nasıl durdururum",
+        "program cevap vermiyor ne yapmalıyım",
+        "while döngüsü durmuyor",
+        "program bekliyo ama bisey yazmiyo",
+        "terminalde Programa / kabuğa girdi yazıyor ve program ilerlemiyor",
+        "çalışan programı zorla durdurmak",
+        "Çalıştır'a bastım, program hiç bitmiyor ve ekranda yeni bir şey çıkmıyor; bilgisayar mı dondu yoksa program bir şey mi bekliyor?"
+      ],
+      "c": "Program büyük ihtimalle senden girdi bekliyordur: terminalin en altındaki kutuda Programa / kabuğa girdi… yazıyorsa cevabını yazıp Enter'a bas. Sonsuz döngüye girdiyse kırmızı ⏹️ Durdur düğmesine ya da terminalde Ctrl+C'ye bas."
+    },
+    "dosya-okuyamıyorum--yazdığım-dosya-kayboldu": {
+      "baslik": "Dosya okuyamıyorum / yazdığım dosya kayboldu",
+      "s": [
+        "dosya okuyamıyorum bulunamadı diyor",
+        "yazdığım dosya kayboldu",
+        "kodumun yanındaki txt dosyasını açamıyorum",
+        "programın oluşturduğu dosya nerede",
+        "kaydetmeden çalıştırınca dosyalar nereye gidiyor",
+        "notlar.txt dosyasını göremiyor",
+        "dosyaya yazdim ama yok",
+        "geçici klasör ne demek",
+        "File not found ama dosya orada",
+        "Programımla bir metin dosyası oluşturdum ama klasörde yok, aynı yerdeki bir dosyayı da okuyamıyorum; sekmeyi henüz kaydetmedim, bunun bir ilgisi var mı?"
+      ],
+      "c": "Evet, kaydedilmemiş bir sekme her çalıştırmada geçici bir klasörde çalışır. Önce dosyanı kaydet: kaydedilmiş dosyalar kendi klasörlerinde çalışır ve yanındaki dosyaları adlarıyla (\"notlar.txt\") açabilir. Ayrıntılar Çalıştırma ve Hata Ayıklama sayfasında."
+    },
+    "modül-bulunamadı-hatası": {
+      "baslik": "“Modül Bulunamadı Hatası”",
+      "s": [
+        "Modül Bulunamadı Hatası alıyorum",
+        "ModuleNotFoundError nasıl çözülür",
+        "kütüphane kurulu değil diyor",
+        "numpy bulunamadı hatası",
+        "eksik kütüphaneyi nasıl yüklerim",
+        "pip yükle ne demek",
+        "modul bulunamadi hatasi",
+        "içe_aktar yaptım ama modül yok diyor",
+        "pip install turkodda nasıl",
+        "İnternetten bulduğum bir kodu çalıştırınca Modül Bulunamadı Hatası verdi, bu kütüphaneyi TürKod'a nasıl eklerim?"
+      ],
+      "c": "Bu hata, kullandığın kütüphanenin kurulu olmadığını söyler. Terminale pip yükle kütüphane_adı yazarak kurabilirsin. Ayrıntılar Terminal ve Paketler sayfasında."
+    },
+    "ayarlarım-nerede-saklanıyor": {
+      "baslik": "Ayarlarım nerede saklanıyor?",
+      "s": [
+        "ayarlarım hangi dosyada duruyor",
+        "turkod_ayarlar.json nerede",
+        "Kodi'nin sohbetleri nereye kaydediliyor",
+        "indirdiğim yerel AI modelleri nerede",
+        "pip ile kurduğum kütüphaneler hangi klasörde",
+        "log dosyası nerede",
+        "AI anahtarlarım nerede saklanıyor",
+        "ayar dosyam bozulursa ne olur",
+        ".bozuk uzantılı dosya ne",
+        "ayarlar nerde kayitli",
+        "Bilgisayarımı değiştireceğim; TürKod ayarlarım, Kodi'nin hafıza notları ve kurduğum kütüphaneler bilgisayarda hangi klasörlerde duruyor?"
+      ],
+      "c": "Ayarlar, açık sekmeler ve şifrelenmiş AI anahtarları %USERPROFILE%\\.turkod_ayarlar.json dosyasında; Kodi'nin sohbetleri ve hafıza notları %USERPROFILE%\\.turkod klasöründe durur. Yerel AI modelleri %LOCALAPPDATA%\\TurKod\\yerel_ai\\modeller, pip yükle ile kurulanlar %LOCALAPPDATA%\\TurKod\\pip_packages, günlük dosyası %LOCALAPPDATA%\\TurKod\\backend.log içindedir. Bozulan ayar dosyası .turkod_ayarlar.json.bozuk olarak yedeklenir."
+    },
+    "ayarları-sıfırlamak-istiyorum": {
+      "baslik": "Ayarları sıfırlamak istiyorum",
+      "s": [
+        "ayarları nasıl sıfırlarım",
+        "TürKod'u fabrika ayarlarına döndürmek",
+        "varsayılan ayarlara dönmek istiyorum",
+        "ayarlari sifirlama",
+        "ayar dosyasını silersem ne olur",
+        "her şeyi baştan başlatmak istiyorum ayarları bozdum",
+        "reset settings turkod",
+        "sıfırlayınca açık sekmelerim gider mi",
+        "ayarları silince AI anahtarlarım da silinir mi",
+        "Ayarlarla çok oynadım ve her şey karıştı, TürKod'u ilk kurduğum haline nasıl döndürürüm, bunu yaparken nelere dikkat etmeliyim?"
+      ],
+      "c": "TürKod kapalıyken %USERPROFILE%\\.turkod_ayarlar.json dosyasını sil; program bir sonraki açılışta varsayılan ayarlarla başlar. Bunu yaparsan açık sekmelerin ve AI anahtarların da silinir, ona göre hazırlıklı ol."
+    },
+    "arayüz-turunu-kaçırdım": {
+      "baslik": "Arayüz turunu kaçırdım",
+      "s": [
+        "arayüz turunu kaçırdım",
+        "tanıtım turunu tekrar nasıl izlerim",
+        "ilk açılıştaki rehberi yeniden açmak",
+        "arayuz turu tekrar",
+        "Arayüz Turu menüsü nerede",
+        "programı tanıtan turu kapattım geri getirebilir miyim",
+        "ekranı tanıtan rehber nereden başlar",
+        "tour tekrar başlatma",
+        "Programı ilk açtığımda bir tanıtım turu vardı ama hızlıca geçtim, şimdi o turu baştan izlemek istiyorum, nasıl yaparım?",
+        "arayüzü tanıtan gezintiyi yeniden görmek istiyorum"
+      ],
+      "c": "Arayüz turunu istediğin zaman Yardım → Arayüz Turu ile yeniden başlatabilirsin."
+    },
+    "açıkla--optimize-et-ya-da-kodi-çalışmıyor": {
+      "baslik": "Açıkla / Optimize et ya da Kodi çalışmıyor",
+      "s": [
+        "Açıkla düğmesi çalışmıyor",
+        "Optimize et bir şey yapmıyor",
+        "Kodi cevap vermiyor",
+        "yapay zeka özellikleri çalışmıyor",
+        "göreve model atamak nerede",
+        "API anahtarım çalışıyor mu nasıl test ederim",
+        "Bağlantıyı Test Et ne işe yarar",
+        "kotam doldu ne olur",
+        "internetsiz AI kullanabilir miyim",
+        "ai paneli calismiyo",
+        "model atanmamış görev ne demek",
+        "Kodu Açıkla'ya basıyorum ama hiçbir cevap gelmiyor, Kodi de konuşmuyor; API anahtarı mı eksik yoksa başka bir ayar mı yapmam lazım?"
+      ],
+      "c": "Önce Ayarlar → Yapay Zekâ: Görevler'de ilgili göreve (AI Paneli sohbet, Kod açıklama / optimize, Kodi) model atanmış mı bak; model atanmamış görev kapalıdır. Ayarlar → Yapay Zekâ: Modeller'deki Mevcut modeller listesi API anahtarı eksik modeli uyarır, Bağlantıyı Test Et ile dene. İnternetini ve sağlayıcı kotanı kontrol et; internetsiz çalışmak için yerel model kurabilirsin."
+    },
+    "güncelleme-denetlenemedi-diyor": {
+      "baslik": "“Güncelleme denetlenemedi” diyor",
+      "s": [
+        "Güncelleme denetlenemedi hatası",
+        "güncellemeleri kontrol edemiyor",
+        "okul ağında güncelleme çalışmıyor",
+        "GitHub erişimi engelli güncelleme yapamıyorum",
+        "yeni sürümü elle nasıl indiririm",
+        "guncelleme denetlenemedi ne yapmaliyim",
+        "Güncelleştirmeleri Denetle nerede",
+        "update check failed turkod",
+        "Sürüm Geçmişi sayfasından indirmek",
+        "Okuldaki bilgisayarda TürKod'u güncellemeye çalışınca Güncelleme denetlenemedi diyor, internet var ama yine olmuyor, ne yapabilirim?"
+      ],
+      "c": "İnternet bağlantını kontrol et ve Güncelleştirmeler → Güncelleştirmeleri Denetle ile tekrar dene. Kurum ağlarında GitHub erişimi kısıtlı olabilir; bu durumda yeni sürümü Sürüm Geçmişi sayfasından elle indirebilirsin."
+    },
+    "bir-sürümü-atla-dedim-geri-getirmek-istiyorum": {
+      "baslik": "Bir sürümü “Atla” dedim, geri getirmek istiyorum",
+      "s": [
+        "bir sürümü atla dedim geri getirebilir miyim",
+        "atladığım güncellemeyi nasıl kurarım",
+        "güncellemeyi yanlışlıkla atladım",
+        "atlanan sürüm bir daha sorulmuyor",
+        "surumu atla dedim simdi kuramiyorum",
+        "skip version geri alma",
+        "atladığım güncelleme tekrar görünür mü",
+        "elle güncelleme denetlemek",
+        "Güncelleme çıktığında yanlışlıkla Atla düğmesine bastım ve artık o sürüm için bildirim gelmiyor, onu nasıl tekrar bulup kurabilirim?",
+        "Atla dediğim sürüm Güncelleştirmeleri Denetle ile görünür mü"
+      ],
+      "c": "Atladığın sürüm otomatik denetimde bir daha sorulmaz, ama Güncelleştirmeleri Denetle ile elle baktığında yine görünür. Oradan kurabilirsin."
+    }
+  }
+}
